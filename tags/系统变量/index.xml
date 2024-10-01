@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>系统变量 on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F/</link>
+        <description>Recent content in 系统变量 on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Tue, 05 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux系统的系统变量合集</title>
+        <link>https://hublog.netlify.app/p/2309003/</link>
+        <pubDate>Tue, 05 Sep 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2309003/</guid>
+        <description>&lt;pre&gt;&lt;code&gt;HOME：用户的主目录，通常是/home/用户名。
+USER：当前登录的用户名。
+PATH：环境变量，包含了可执行文件的搜索路径。
+BASH_VERSION：Bash shell的版本信息。
+PWD：当前工作目录的绝对路径。
+SHELL：当前使用的shell类型（如bash、zsh等）。
+LANG：系统的语言和字符集设置。
+TERM：终端类型。
+LOGNAME：当前登录的用户名。
+MAIL：用户的邮件地址。
+HISTSIZE：命令历史记录的数量。
+EDITOR：默认的文本编辑器。
+PS1：命令提示符的格式。
+LD_LIBRARY_PATH：动态链接库的搜索路径。
+LD_PRELOAD：动态链接库的预加载设置。
+HOSTNAME：主机名。
+IP_ADDRESS：本地IP地址。
+IPV6_ADDRESS：IPv6地址。
+IFS：内部字段分隔符。
+COLUMNS：终端的列数。
+LINES：终端的行数。
+USER：非root用户的用户名。
+UID：用户ID（root用户为0）。
+GID：组ID（root用户为0）。
+OPIE：是否启用OpenPGP加密支持。
+RUNLEVEL：运行级别。
+PS1、PS2、PS3：自定义命令提示符的前缀、后缀和中间部分。
+EDITOR、VISUAL：自定义文本编辑器和可视化编辑器。
+MANPATH：手册页的搜索路径。
+MYTMPDIR：临时文件目录。
+TMPDIR：临时目录。
+TMUX_PANE：当前活动的tmux面板。
+TMUX_WINDOW：当前活动的tmux窗口。
+TMUX_STATUS：当前活动的tmux状态。
+TMUX_PID：当前活动的tmux进程ID。
+TMUX_SERVER：当前活动的tmux服务器。
+TMUX_PORT：当前活动的tmux端口。
+TMUX_LISTEN_ADDRESS：当前活动的tmux监听地址。
+TMUX_UNIX_SOCKET：当前活动的tmux Unix套接字。
+TMUX_WINDOWS_SOCKET：当前活动的tmux Windows套接字。
+TMUX_PID：当前活动的tmux进程ID。
+TMUX_SERVER：当前活动的tmux服务器。
+TMUX_PORT：当前活动的tmux端口。
+TMUX_LISTEN_ADDRESS：当前活动的tmux监听地址。
+TMUX_UNIX_SOCKET：当前活动的tmux Unix套接字。
+TMUX_WINDOWS_SOCKET：当前活动的tmux Windows套接字。
+TMUX_VERSION：当前活动的tmux版本。
+TMUX_CONFIG_FILE：当前活动的tmux配置文件路径。
+TMUX_DEFAULT_COMMAND：当前活动的tmux默认命令。
+TMUX_CURRENT_COMMAND：当前活动的tmux当前命令。&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

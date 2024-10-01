@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="archlinux自动挂载windows的不同盘符（驱动器） 1. 前言 1.1. 需求 双系统windows和archlinux，有时候在windows下编">
+<title>archlinux自动挂载windows的不同盘符（驱动器）</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2310001/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="archlinux自动挂载windows的不同盘符（驱动器）">
+<meta property='og:description' content="archlinux自动挂载windows的不同盘符（驱动器） 1. 前言 1.1. 需求 双系统windows和archlinux，有时候在windows下编">
+<meta property='og:url' content='https://hublog.netlify.app/p/2310001/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='archlinux' /><meta property='article:tag' content='windows' /><meta property='article:tag' content='mount' /><meta property='article:published_time' content='2023-10-01T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-01T14:07:10&#43;08:00'/>
+<meta name="twitter:title" content="archlinux自动挂载windows的不同盘符（驱动器）">
+<meta name="twitter:description" content="archlinux自动挂载windows的不同盘符（驱动器） 1. 前言 1.1. 需求 双系统windows和archlinux，有时候在windows下编">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-需求">1.1. 需求</a></li>
+    <li><a href="#12-解决思路">1.2. 解决思路</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-创建目录">2.1. 创建目录</a></li>
+    <li><a href="#22-安装ntfs-3g">2.2. 安装ntfs-3g</a></li>
+    <li><a href="#23-编辑etcfstable文件">2.3. 编辑/etc/fstable文件</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2310001/">archlinux自动挂载windows的不同盘符（驱动器）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 01, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>archlinux自动挂载windows的不同盘符（驱动器）</p>
+<h1 id="1-前言">1. 前言
+</h1><h2 id="11-需求">1.1. 需求
+</h2><p>双系统windows和archlinux，有时候在windows下编写的代码，在切换成archlinux后，这时需要编辑windows下的代码，但是使用之前，需要在文件管理器中输入密码，会自动挂载到 <code>/run/media/用户名</code>目录下，挂载的名字是windows驱动器的命名。一般来说，编辑器默认选择打开的目录就是用户家目录。由于挂载的目录不太常用，在打开目录的时候需要手动选择，不太方便。</p>
+<h2 id="12-解决思路">1.2. 解决思路
+</h2><p>可以挂载到用户家目录下。在用户家目录创建一个以<code>windows</code>为名的目录，接着在<code>windows</code> 目录下创建驱动器的目录，将不同的驱动器挂载到相应的目录，如c盘驱动器的名字是base，d盘驱动器的名字是soft，d盘驱动器的名字是data，在windows目录下分别创建 <code>base、soft、data</code>三个目录。并分别挂载到它们。</p>
+<h1 id="2-解决过程">2. 解决过程
+</h1><h2 id="21-创建目录">2.1. 创建目录
+</h2><p>首先在家目录下创建挂载的目录点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p ~/windows/base <span class="o">&amp;&amp;</span> mkdir -p ~/windows/soft <span class="o">&amp;&amp;</span> mkdir -p ~/windows/data
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>挂载点分别为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/home/koko/windows/base
+</span></span><span class="line"><span class="cl">/home/koko/windows/soft
+</span></span><span class="line"><span class="cl">/home/koko/windows/data
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 以上目录分别对应着c盘，d盘，e盘</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="22-安装ntfs-3g">2.2. 安装ntfs-3g
+</h2><p>为了解决挂载需要输入密码的问题，需要额外安装一个工具，名字叫做 <code>ntfs-3g</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo pacman -S ntfs-3g
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成之后，编写开机自启的服务文件，放入 <code>/etc/systemd/system/</code> ，文件名为 <code>windows-mount.service</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Unit]
+</span></span><span class="line"><span class="cl">Description=Mount Windows Partition  
+</span></span><span class="line"><span class="cl">After=network-online.target  
+</span></span><span class="line"><span class="cl">Wants=network-online.target  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">[Service]  
+</span></span><span class="line"><span class="cl">ExecStart=/usr/bin/mount -a  
+</span></span><span class="line"><span class="cl">Type=oneshot  
+</span></span><span class="line"><span class="cl">RemainAfterExit=yes  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">[Install]  
+</span></span><span class="line"><span class="cl">WantedBy=default.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出后，启动并开启自启</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> windows-mount.service  
+</span></span><span class="line"><span class="cl">sudo systemctl start windows-mount.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-编辑etcfstable文件">2.3. 编辑/etc/fstable文件
+</h2><p>自动挂载目录可以编辑<code>/etc/fsable</code>文件，里面包含了挂载的信息，我的文件内容如下</p>
+<blockquote>
+<p>/etc/fstable</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@myarch ~<span class="o">]</span><span class="c1"># cat /etc/fstab </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p6 LABEL=myArch</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>cea4c38b-f7eb-4690-a35b-d4b6e8506d4d       /               btrfs           rw,relatime,compress<span class="o">=</span>zstd:3,ssd,discard<span class="o">=</span>async,space_cache<span class="o">=</span>v2,subvolid<span class="o">=</span>256,subvol<span class="o">=</span>/@     <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p1</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>5F77-1EE1          /boot/efi       vfat            rw,relatime,fmask<span class="o">=</span>0022,dmask<span class="o">=</span>0022,codepage<span class="o">=</span>437,iocharset<span class="o">=</span>ascii,shortname<span class="o">=</span>mixed,utf8,errors<span class="o">=</span>remount-ro   <span class="m">0</span> <span class="m">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p6 LABEL=myArch</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>cea4c38b-f7eb-4690-a35b-d4b6e8506d4d       /home           btrfs           rw,relatime,compress<span class="o">=</span>zstd:3,ssd,discard<span class="o">=</span>async,space_cache<span class="o">=</span>v2,subvolid<span class="o">=</span>257,subvol<span class="o">=</span>/@home <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># /dev/nvme0n1p5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>0ca07983-0116-4006-aa45-04a2abb129e6       none            swap            defaults        <span class="m">0</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>关于/etc/fatable 文件各列的简单解释</p>
+<ul>
+<li>第一列是挂载的设备（可以填写设备label或者uuid）</li>
+<li>第二列是挂载点。（必须是已经存在的目录）</li>
+<li>第三列是分区的格式。（如ntfs、btrfs、ext2、ext3、nfs、vfat）</li>
+<li>第四列是mount的挂载参数，一般情况下，直接写defaults即可。</li>
+<li>第五列的数字表示是否被dump备份，是的话为1，不是为0。</li>
+<li>第六列是开机时是否自检磁盘。1，2都表示检测，0表示不检测。但1，2表示不同的优先级，1更高。所以/ 分区必须设为1，而且整个fstab只允许出现一个1，若有多个分区需要检测，那么都设为2。</li>
+</ul>
+</blockquote>
+<p>我们需要的就是在文件的后面继续添加挂载windows的配置</p>
+<p>挂载设备的label或者uuid可以通过<code>blkid</code>查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>root@myarch ~<span class="o">]</span><span class="c1"># blkid</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p5: <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;0ca07983-0116-4006-aa45-04a2abb129e6&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;swap&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;b05fdaf2-9db0-424a-a133-b1874795e894&#34;</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p3: <span class="nv">LABEL</span><span class="o">=</span><span class="s2">&#34;soft&#34;</span> <span class="nv">BLOCK_SIZE</span><span class="o">=</span><span class="s2">&#34;512&#34;</span> <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;64443273443247D6&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;ntfs&#34;</span> <span class="nv">PARTLABEL</span><span class="o">=</span><span class="s2">&#34;Basic data partition&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;71911f30-8521-4624-a8e3-1cbac1090f45&#34;</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p1: <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;5F77-1EE1&#34;</span> <span class="nv">BLOCK_SIZE</span><span class="o">=</span><span class="s2">&#34;512&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;vfat&#34;</span> <span class="nv">PARTLABEL</span><span class="o">=</span><span class="s2">&#34;EFI system partition&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;3589701f-9bee-4c72-b2e6-79e486eecff0&#34;</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p6: <span class="nv">LABEL</span><span class="o">=</span><span class="s2">&#34;myArch&#34;</span> <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;cea4c38b-f7eb-4690-a35b-d4b6e8506d4d&#34;</span> <span class="nv">UUID_SUB</span><span class="o">=</span><span class="s2">&#34;06d834ba-5c70-4c39-b750-245fd8b3a4a0&#34;</span> <span class="nv">BLOCK_SIZE</span><span class="o">=</span><span class="s2">&#34;4096&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;btrfs&#34;</span> <span class="nv">PTTYPE</span><span class="o">=</span><span class="s2">&#34;PMBR&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;cd79b562-bd9c-e04e-b539-e2eedee44d44&#34;</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p4: <span class="nv">LABEL</span><span class="o">=</span><span class="s2">&#34;data&#34;</span> <span class="nv">BLOCK_SIZE</span><span class="o">=</span><span class="s2">&#34;512&#34;</span> <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;F23E39943E395339&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;ntfs&#34;</span> <span class="nv">PARTLABEL</span><span class="o">=</span><span class="s2">&#34;Basic data partition&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;8ee13aea-ebaa-4b0f-bf71-d30653055be3&#34;</span>
+</span></span><span class="line"><span class="cl">/dev/nvme0n1p2: <span class="nv">LABEL</span><span class="o">=</span><span class="s2">&#34;base&#34;</span> <span class="nv">BLOCK_SIZE</span><span class="o">=</span><span class="s2">&#34;512&#34;</span> <span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;3E2A25472A24FE11&#34;</span> <span class="nv">TYPE</span><span class="o">=</span><span class="s2">&#34;ntfs&#34;</span> <span class="nv">PARTLABEL</span><span class="o">=</span><span class="s2">&#34;Basic data partition&#34;</span> <span class="nv">PARTUUID</span><span class="o">=</span><span class="s2">&#34;54d043d7-3703-4fb8-88d1-c288bedba407&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据以上信息，追加的fstable文件内容为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># windows</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># base</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>3E2A25472A24FE11       /home/koko/windows/base            ntfs-3g            defaults,noauto,x-systemd.automount        <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># base</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>64443273443247D6       /home/koko/windows/soft            ntfs-3g            defaults,noauto,x-systemd.automount        <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># base</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>F23E39943E395339       /home/koko/windows/d            ntfs-3g            defaults,noauto,x-systemd.automount        <span class="m">0</span> <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>至此，自动挂载不需要输入密码就完成了！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/archlinux/">Archlinux</a>
+        
+            <a href="/tags/windows/">Windows</a>
+        
+            <a href="/tags/mount/">Mount</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/2406009/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">linux开机自动挂载windows磁盘</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240818210871/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LinuxMirrors，使Linux换源变得简单</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240802150825/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux开启ssh密码登陆，root用户远程登陆</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2407022/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VMware在Linux运行出现VMWare Kernel Module Updater</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2407012/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">neovim,vim的增强版，安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

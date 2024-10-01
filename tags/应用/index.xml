@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>应用 on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/%E5%BA%94%E7%94%A8/</link>
+        <description>Recent content in 应用 on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Sat, 16 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%BA%94%E7%94%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>服务器安装的应用以及TODO</title>
+        <link>https://hublog.netlify.app/p/2309015/</link>
+        <pubDate>Sat, 16 Sep 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2309015/</guid>
+        <description>&lt;h2 id=&#34;已经安装的应用&#34;&gt;已经安装的应用
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;应用名称&lt;/th&gt;
+&lt;th&gt;安装方式&lt;/th&gt;
+&lt;th&gt;简介&lt;/th&gt;
+&lt;th&gt;是否启用&lt;/th&gt;
+&lt;th&gt;官方地址&lt;/th&gt;
+&lt;th&gt;是否开源&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;docker-flare&lt;/td&gt;
+&lt;td&gt;docker-compose&lt;/td&gt;
+&lt;td&gt;导航页&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/soulteary/docker-flare&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/soulteary/docker-flare&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;halo&lt;/td&gt;
+&lt;td&gt;docker-compose&lt;/td&gt;
+&lt;td&gt;优秀的博客系统&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://halo.run/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://halo.run/&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;nginx proxy manager&lt;/td&gt;
+&lt;td&gt;docker-compose&lt;/td&gt;
+&lt;td&gt;nginx的web管理工具&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/NginxProxyManager/nginx-proxy-manager&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/NginxProxyManager/nginx-proxy-manager&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;alist&lt;/td&gt;
+&lt;td&gt;docker-compose&lt;/td&gt;
+&lt;td&gt;网盘聚合工具&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/alist-org/alist&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cloudreve&lt;/td&gt;
+&lt;td&gt;程序安装&lt;/td&gt;
+&lt;td&gt;开源网盘&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/cloudreve/Cloudreve&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/cloudreve/Cloudreve&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MrDoc&lt;/td&gt;
+&lt;td&gt;docker-compose&lt;/td&gt;
+&lt;td&gt;在线文档系统&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/zmister2016/MrDoc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zmister2016/MrDoc&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Jupyter Lab&lt;/td&gt;
+&lt;td&gt;程序安装&lt;/td&gt;
+&lt;td&gt;Jupyter Lab&lt;/td&gt;
+&lt;td&gt;否&lt;/td&gt;
+&lt;td&gt;教程 &lt;a class=&#34;link&#34; href=&#34;http://t.csdn.cn/rocxW&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://t.csdn.cn/rocxW&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;/&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;YesPlayMusic&lt;/td&gt;
+&lt;td&gt;docker&lt;/td&gt;
+&lt;td&gt;高颜值的第三方网易云播放器&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/qier222/YesPlayMusic&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/qier222/YesPlayMusic&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;it-tools&lt;/td&gt;
+&lt;td&gt;docker&lt;/td&gt;
+&lt;td&gt;it人员的工具&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/CorentinTh/it-tools&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/CorentinTh/it-tools&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;是&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;todo&#34;&gt;TODO
+&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;应用名称&lt;/th&gt;
+&lt;th&gt;简介&lt;/th&gt;
+&lt;th&gt;官方地址&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;koodo-reader&lt;/td&gt;
+&lt;td&gt;一个跨平台的电子书阅读器&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/troyeguo/koodo-reader&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/troyeguo/koodo-reader&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ddns-go&lt;/td&gt;
+&lt;td&gt;简单好用的DDNS&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jeessy2/ddns-go&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/jeessy2/ddns-go&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="最开始的话 在写这篇文章时，我可是广搜资料，尝试了太多方式，都不能远程访问，jupyter官方网站也没找到教程，尝试了一个下午和一个晚上也没整">
+<title>Linux（Debian）安装jupyter lab，实现远程登录访问</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2405006/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux（Debian）安装jupyter lab，实现远程登录访问">
+<meta property='og:description' content="最开始的话 在写这篇文章时，我可是广搜资料，尝试了太多方式，都不能远程访问，jupyter官方网站也没找到教程，尝试了一个下午和一个晚上也没整">
+<meta property='og:url' content='https://hublog.netlify.app/p/2405006/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='jupyter' /><meta property='article:tag' content='lab' /><meta property='article:published_time' content='2024-05-06T16:05:43&#43;08:00'/><meta property='article:modified_time' content='2024-05-06T16:05:43&#43;08:00'/>
+<meta name="twitter:title" content="Linux（Debian）安装jupyter lab，实现远程登录访问">
+<meta name="twitter:description" content="最开始的话 在写这篇文章时，我可是广搜资料，尝试了太多方式，都不能远程访问，jupyter官方网站也没找到教程，尝试了一个下午和一个晚上也没整">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#一安装minconda非必须但建议">一、安装minconda（非必须，但建议）</a></li>
+    <li><a href="#二安装jupyterlab">二、安装jupyterlab</a></li>
+    <li><a href="#三修改配置使jupyterlab可以远程连接重要">三、修改配置，使jupyterlab可以远程连接（重要）</a></li>
+    <li><a href="#四查看配置项非必须">四、查看配置项（非必须）</a></li>
+    <li><a href="#五启动jupyter-lab">五、启动jupyter lab</a>
+      <ol>
+        <li><a href="#51-前台启动不建议">5.1 前台启动（不建议）</a></li>
+        <li><a href="#51-后台启动推荐">5.1 后台启动（推荐）</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/linux/" >
+                Linux
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2405006/">Linux（Debian）安装jupyter lab，实现远程登录访问</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 06, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="最开始的话">最开始的话
+</h1><p>在写这篇文章时，我可是广搜资料，尝试了太多方式，都不能远程访问，jupyter官方网站也没找到教程，尝试了一个下午和一个晚上也没整好，导致瞌睡都没睡好，第二天早上，突然灵光乍现，改变了修改的配置文件，然后就成了！！这其中的辛酸，不足道也。</p>
+<h1 id="起因">起因
+</h1><p>为了更好，更便捷的使用python，在服务器上安装jupyterlab，随时随地都可访问。</p>
+<h1 id="步骤">步骤
+</h1><h2 id="一安装minconda非必须但建议">一、安装minconda（非必须，但建议）
+</h2><p>使用conda可以更好的管理包和环境，所以采用conda的方式安装jupyter和python，环境新建一个，再使用即可</p>
+<p>下载minconda，下载的位置任意即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>下载完成后的名字为  Miniconda3-latest-Linux-x86_64.sh  ，给它赋予可执行权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x Miniconda3-latest-Linux-x86_64.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>安装执行，根据提示安装即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./Miniconda3-latest-Linux-x86_64.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p> 如果还需要配置环境变量，因为我使用的是zsh，命令如下（不可全抄，路径可能不一样）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># zsh环境执行这个</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;PATH=</span><span class="nv">$PATH</span><span class="s2">:~/minconda/bin&#34;</span> &gt;&gt; ~/.zshrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># bash环境执行这个</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;PATH=</span><span class="nv">$PATH</span><span class="s2">:~/minconda/bin&#34;</span> &gt;&gt; ~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>新建一个python环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda create -n lab <span class="nv">python</span><span class="o">=</span>3.10
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<p> 如果下载速度比较慢，那么需要修改镜像源</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
+</span></span><span class="line"><span class="cl">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/
+</span></span><span class="line"><span class="cl">conda config --set show_channel_urls yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</blockquote>
+<p>激活环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda activate lab
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<p> 默认情况下，会进入base环境，我的建议是可以关闭默认base环境</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">conda config --set auto_activate_base <span class="nb">false</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</blockquote>
+<h2 id="二安装jupyterlab">二、安装jupyterlab
+</h2><p>本文采用的是conda安装jupyter，执行如下命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 进入conda创建的环境，前文已经创建</span>
+</span></span><span class="line"><span class="cl">conda activate lab
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装jupyterlab</span>
+</span></span><span class="line"><span class="cl">conda install jupyter
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者，建议安装jupyter,比较全</span>
+</span></span><span class="line"><span class="cl">conda install jupyterlab
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出环境</span>
+</span></span><span class="line"><span class="cl">conda deactivate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<p>如果使用python自带的pip安装，那么执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install jupyter
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</blockquote>
+<h2 id="三修改配置使jupyterlab可以远程连接重要">三、修改配置，使jupyterlab可以远程连接（重要）
+</h2><blockquote>
+<p><em>这步是核心，生成的命令有,有的教程用的是jupyter notebook，我需要的jupyter lab，还有的教程用的是jupyter lab，生成的却是jupyter notebook，我想不是很理解这个做法。根据最后结果，生成的文件配置了也是不能生效的，这部分可花了我太多时间了，我一个一个尝试，都以失败告终。这点希望后来人引以为戒</em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jupyter server --generate-config
+</span></span><span class="line"><span class="cl">jupyter-lab --generate-config
+</span></span><span class="line"><span class="cl">jupyter-notebook --generate-config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+</blockquote>
+<p>以下为成功配置：</p>
+<p>直接生成密码配置文件，jupyter远程访问，没有密码怎么可以呢，<strong>请妥善保存密码，后续登录jupyter lab会用到</strong></p>
+<p>至于为什么要先生成密码，后续会用到生成的配置文件，默认位置会在家目录生成 <strong>.jupyter/jupyter_server_config.json</strong></p>
+<p>我的则是  /home/ecs-user/.jupyter/jupyter_server_config.json，如下所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jupyter server password                                                                                                                                                                
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Enter password: 
+</span></span><span class="line"><span class="cl">Verify password: 
+</span></span><span class="line"><span class="cl"><span class="o">[</span>JupyterPasswordApp<span class="o">]</span> Wrote hashed password to /home/ecs-user/.jupyter/jupyter_server_config.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>在 <strong>jupyter_server_config.json</strong> 文件里面，默认生成就是密码了，如图</p>
+<p><img src="https://img-blog.csdnimg.cn/c038bc7e771b4613ae722278ed66db0a.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>修改生成的 json文件，我们需要添加的内容有</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    <span class="s2">&#34;ip&#34;</span>: <span class="s2">&#34;*&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;port&#34;</span>: 8899,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;open_browser&#34;</span>: false,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;allow_remote_access&#34;</span>: <span class="nb">true</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;notebook_dir&#34;</span>: <span class="s2">&#34;/home/ecs-user/codespace/jupyterProjects&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<blockquote>
+<p> 根据实际情况修改即可，</p>
+<p>ip                                         直接填 * 号即可</p>
+<p>port                                     为端口号，你可以更改，</p>
+<p>open_browser                    为默认打开浏览器，服务器资源宝贵，没安装图形化界面，关闭</p>
+<p>allow_remote_access        允许远程访问，这个必须打开</p>
+<p>notebook_dir                        jupyter默认打开的位置</p>
+</blockquote>
+<p>修改后如图所示：</p>
+<p><img src="https://img-blog.csdnimg.cn/4020f276a7ae4c78b5dfe99f186cb2cf.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<h2 id="四查看配置项非必须">四、查看配置项（非必须）
+</h2><p>在第三步中，给出的配置项从哪知道呢，这就可以用到生成默认配置文件模板了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">jupyter server --generate-config                                                                                                                                                         ─╯
+</span></span><span class="line"><span class="cl">Writing default config to: /home/ecs-user/.jupyter/jupyter_server_config.py
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>生成的文件默认路径在用户家目录下 <strong>.jupyter/jupyter_server_config.py</strong></p>
+<hr>
+<p> 重要！！！：如果你生成了该文件，请修改名字，否则会导致jupyter lab启动读取该文件而不读取json文件，而该文件就算修改了也没有效果，谨记！！！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv jupyter_server_config.py jupyter_server_config.py.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<hr>
+<p>我们先来瞄一眼大概长什么样</p>
+<p><img src="https://img-blog.csdnimg.cn/c9d868d13a6f406388f5a2b0ad1577fc.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p> <img src="https://img-blog.csdnimg.cn/974bf7bb5aef4a8ba1fc855a5d987e56.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>来对比一下 jupyter_server_config.json</p>
+<p><img src="https://img-blog.csdnimg.cn/53fc57cd51474dc8b91e85f60b9a8548.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>根据如上图的对比所示，大致也明白了，json文件中该如何修改了。</p>
+<h2 id="五启动jupyter-lab">五、启动jupyter lab
+</h2><p>在 使用 lab 环境下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 使用lab环境</span>
+</span></span><span class="line"><span class="cl">conda activate lab
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="51-前台启动不建议">5.1 前台启动（不建议）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 启动jupyter lab</span>
+</span></span><span class="line"><span class="cl">jupyter-lab
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://img-blog.csdnimg.cn/f6c54cd6e9754a14a5392588bac8bf46.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<h3 id="51-后台启动推荐">5.1 后台启动（推荐）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 后台启动，标准输出重定向到 /dev/null 标准错误重定向到 标准输出</span>
+</span></span><span class="line"><span class="cl">nohup jupyter-lab &gt;/deb/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://img-blog.csdnimg.cn/1a33977d4a114a338abf093f4c6c8aab.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>打开本地浏览器窗口，输入ip:port，输入密码（这个密码在生成密码配置文件的时候输入的密码）</p>
+<blockquote>
+<p>如果服务端安全组端口没有打开，请自寻资料打开；</p>
+<p>防火墙需要关闭的关闭；</p>
+<p>这里就不介绍了</p>
+</blockquote>
+<p>输入ip和端口后，界面如下</p>
+<p><img src="https://img-blog.csdnimg.cn/7b99c9959b7d4b02b9300011833dc03b.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>输入密码，进入如下界面</p>
+<p><img src="https://img-blog.csdnimg.cn/210139482cc74d1abce196eb6bc86d76.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+><img src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw=="
+	
+	
+	
+	loading="lazy"
+	
+	
+>​编辑</p>
+<p>至此，恭喜你，终于完成了，完结撒花 ｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡+ﾟ</p>
+<p>​</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/jupyter/">Jupyter</a>
+        
+            <a href="/tags/lab/">Lab</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/240818210871/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LinuxMirrors，使Linux换源变得简单</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240802150825/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux开启ssh密码登陆，root用户远程登陆</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2407022/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VMware在Linux运行出现VMWare Kernel Module Updater</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2407012/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">neovim,vim的增强版，安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2407011/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">lunarvim，开箱即用的neovim</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

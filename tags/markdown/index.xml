@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Markdown on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/markdown/</link>
+        <description>Recent content in Markdown on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Thu, 13 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Markdown软件推荐，Typora下位替代品marktext</title>
+        <link>https://hublog.netlify.app/p/2406013/</link>
+        <pubDate>Thu, 13 Jun 2024 16:06:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2406013/</guid>
+        <description>&lt;h2 id=&#34;marktext&#34;&gt;marktext
+&lt;/h2&gt;&lt;p&gt;破解typora怎么说都不是一件值得推广的事，在寻找typora替代软件的过程中，发现了 marktext，外观类似typora，有些方面可能更美观。神奇的是目前（2024-06-15）已经45k star了，但是已经很久没有更新发行版了，最新的版本还停留在2022年3月，Issuse已经积累到1.1k，pull requests42各没有处理。仓库的develop分支还在小幅度不定时更新，也一直没合并到主分支。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/marktext/marktext&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/marktext/marktext&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/cAPfu7MxSOaknj8.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240615160637754&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;安装后主界面长这样&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/L7H5XD8lGYnt6mR.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240615160838872&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;整体默认的样式看上去就很舒服，细心的同学可以看到，代码块有复制按钮，同obsibian一样，但是obsibian太丑了。&lt;/p&gt;
+&lt;p&gt;目前有几个影响写作体验感的方面：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无法识别picgo，也无法设置命令行，这对写文章需要图片上传的时候是个很严重的影响。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/MFqmaxGDXSrJW5g.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240615161507701&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;可以看到左侧显示没有picgo，右边全局变量设置后其实已经可以用了，切换到命令行脚本，实际上却无法保存。&lt;/p&gt;
+&lt;p&gt;当然了，这也不知道是不是和我的环境有关。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;typora 剪贴板有超链接，使用ctrl+k后自动补全，光标自动跳转到链接标题，输入即可，这点体验感很好。但是marktext还是在链接末尾，需要手动调整光标到标题框。&lt;/p&gt;
+&lt;p&gt;另一个是marktext粘贴超链接到文档中有明显的卡顿。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这两点对于我写作就有相当大的考验，总观全文，你就知道我为了方便查看跳转设置了多个带标题的超链接，而不是直接粘贴链接，那样太影响阅读体验了。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;marktext连续的两个代码块之间新增一行，~~变得很困难，~~比如我有时侯会修改内容，现在有两个代码块，我在后面的代码块前面新增说明而不是写入代码块中，typora只需要通过键盘将光标定位到前面的代码块最后一行的最后位置，按ctrl+enter，即可新建一行不包含代码块的内容。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;在marktext中则是需要移动鼠标到代码块前面，在弹出的框选择&lt;code&gt;New Paragraph&lt;/code&gt;。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;使用少，经验不足，原来有个内置的快捷键&lt;code&gt;ctrl+shift+n&lt;/code&gt;即可新建一行，不管光标在代码哪个位置，即可新建一行，反转！比typora更好用，typora要么使用上述使用的方案，要么使用菜单-段落-在下方插入段落。而这个操作typora自定义快捷键更麻烦。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;最后，如果在众多软件中选择一个替代品，我优先推荐 marktext。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;obsibian&#34;&gt;Obsibian
+&lt;/h2&gt;&lt;p&gt;它并不能算一个纯粹的Markdown编辑器，而是一个markdown仓库管理软件，网络上已经有很多人介绍过了，我这就不献丑了。&lt;/p&gt;
+&lt;p&gt;推荐和typora或marktext一起使用，obsibian管理仓库，不好编辑的时候交给typora或者marktext。&lt;/p&gt;
+&lt;p&gt;它很强大，但是默认有点点丑，需要自己摸索。我一般用来管理markdown文章。&lt;/p&gt;
+&lt;p&gt;下面是我定制obsibian过后的界面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/rxifpA6WVkQZNEC.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20240615164759697&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

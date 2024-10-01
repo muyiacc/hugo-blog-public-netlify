@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Firefox on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/firefox/</link>
+        <description>Recent content in Firefox on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Mon, 26 Aug 2024 19:08:28 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/firefox/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>firefox个性化配置</title>
+        <link>https://hublog.netlify.app/p/240826190828/</link>
+        <pubDate>Mon, 26 Aug 2024 19:08:28 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/240826190828/</guid>
+        <description>&lt;p&gt;关闭 http 自动转 https 访问&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;地址栏输入 &lt;code&gt;about:config&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;接受风险并继续&lt;/li&gt;
+&lt;li&gt;输入 &lt;code&gt;network.stricttransportsecurity.preloadlist&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;切换为 false&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;network.stricttransportsecurity.preloadlist&lt;/code&gt;：将其设置为 &lt;code&gt;false&lt;/code&gt;，可以让 Firefox 不使用 HSTS 预加载列表，但这并不完全阻止 HSTS 的使用。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="20240614更新， 本教程同样适用于同一台蓝牙设备，同一个主机上的多系统蓝牙连接。 本身具有多蓝牙设备切换功能的键盘（如本教程使用的K380">
+<title>蓝牙设备连接双（多）系统（windows和archlinux）</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2406028/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="蓝牙设备连接双（多）系统（windows和archlinux）">
+<meta property='og:description' content="20240614更新， 本教程同样适用于同一台蓝牙设备，同一个主机上的多系统蓝牙连接。 本身具有多蓝牙设备切换功能的键盘（如本教程使用的K380">
+<meta property='og:url' content='https://hublog.netlify.app/p/2406028/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-28T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-28T16:06:01&#43;08:00'/>
+<meta name="twitter:title" content="蓝牙设备连接双（多）系统（windows和archlinux）">
+<meta name="twitter:description" content="20240614更新， 本教程同样适用于同一台蓝牙设备，同一个主机上的多系统蓝牙连接。 本身具有多蓝牙设备切换功能的键盘（如本教程使用的K380">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#连接archlinux">连接archlinux</a></li>
+    <li><a href="#连接windows">连接windows</a></li>
+    <li><a href="#修改配置文件">修改配置文件</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2406028/">蓝牙设备连接双（多）系统（windows和archlinux）</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Jun 28, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <hr>
+<p>20240614更新，</p>
+<p>本教程同样适用于同一台蓝牙设备，同一个主机上的多系统蓝牙连接。</p>
+<p>本身具有多蓝牙设备切换功能的键盘（如本教程使用的K380），连接不同设备可以生效，比如我可以同时连接 Windows10，手机。但是现在电脑上装了Windows10，Debian12两个系统，使用K380键盘不同模式蓝牙连接后会导致前一个失效（就是蓝牙1连接Windows10，蓝牙2连接Debian12，后连接的那个会导致第一个失效），我猜测可能是一台机器上的蓝牙有唯一标识，所以键盘就算有多蓝牙支持，连接一个系统后，再切换系统、切换键盘蓝牙模式，也会导致前一个蓝牙失效，这也是写本教程的主要原因。</p>
+<p>如果一个设备只装一个系统，且键盘支持多蓝牙切换模式，应该是不会出现这个问题的。当然如果键盘只支持一个模式蓝牙，使用本教程也是可以的。</p>
+<p>下面是正文。。。</p>
+<hr>
+<h1 id="起因">起因
+</h1><p>因为我在一台机器上装了两种不同的系统，windows和archlinux系统，在切换系统的时候，蓝牙键盘和蓝牙鼠标会失效，也就是在其中一个系统配对使用后，切换到另一个系统鼠标和键盘会用不了，为了解决这个问题，我查看了archlinux的wiki，和搜索了其他的经验，发现并不是很好理解。所以自己编写了这篇文章以供自己和后来人参考。</p>
+<blockquote>
+<p>archlinux 官方wiki关于蓝牙的介绍：https://wiki.archlinuxcn.org/wiki/%E8%93%9D%E7%89%99</p>
+</blockquote>
+<h1 id="设备">设备
+</h1><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>设备</th>
+<th>说明</th>
+<th>蓝牙5.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统</td>
+<td>Windows10 ，Arch Linux</td>
+<td>/</td>
+</tr>
+<tr>
+<td>键盘</td>
+<td>罗技k380</td>
+<td>否</td>
+</tr>
+<tr>
+<td>鼠标</td>
+<td>acer M115</td>
+<td>是</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>为什么要关注 蓝牙的频率呢？
+因为后面的配置文件一样，bt5.0要稍微复杂一下，这个也不用自己查询， 通过archlinux配对蓝牙生成的文件就可以看出来。</p>
+</blockquote>
+<h1 id="步骤">步骤
+</h1><p>整体步骤总结为：</p>
+<ol>
+<li>先连接蓝牙，在系统内生成配置文件，有多少个系统就先连接多少个。</li>
+<li>修改蓝牙配置文件，确保所有系统中的配置与<strong>最后一次蓝牙连接的系统配置一致</strong>。</li>
+</ol>
+<blockquote>
+<p>温馨提示，修改linux配置更方便。</p>
+<p>如果我有两个系统 archlinux、windows10，那么我应该先连接archlinux，再连接windows，记录下windows的蓝牙配置，修改archlinux的蓝牙配置。这样就可以实现同一个蓝牙连接两个系统。</p>
+<p>同理，我有三个设备，先连接3个系统生成配置文件，再修改前两次连接的配置。</p>
+</blockquote>
+<h2 id="连接archlinux">连接archlinux
+</h2><p>我安装了图形化界面，对于配对蓝牙比较方便，这个过程不再演示。</p>
+<blockquote>
+<p>如果你是无图形化界面，请参考 <a class="link" href="https://wiki.archlinuxcn.org/wiki/%E8%93%9D%E7%89%99"  target="_blank" rel="noopener"
+    >蓝牙连接</a></p>
+</blockquote>
+<p>配对成功后，打开终端，在 /var/lib/bluetooth 下可以看到 蓝牙设备的mac地址，继续进入蓝牙的mac地址，可以看到已经配对的蓝牙设备的mac地址，每个人的mac地址不一样，请根据自己情况操作。比如我的如下：</p>
+<p><img src="https://img-blog.csdnimg.cn/d532d6125d6a467eb005a63c688bae0a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="在这里插入图片描述"
+	
+	
+></p>
+<p>34开头的对应的是我的键盘k380，C8开头的对应的是鼠标m115。让我们来看看他们各自的配置文件是怎样的：</p>
+<p><strong>键盘k380</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/8249d9c033a54335929e89208e19054b.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="在这里插入图片描述"
+	
+	
+></p>
+<p>上图的info内容对应的就是一个蓝牙2.4G的设备，后续的更改只需要修改 [LinkKey]标签下的Key即可。</p>
+<p><strong>acer m115鼠标</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/9172664349194211bcb36001560a9f20.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="在这里插入图片描述"
+	
+	
+></p>
+<p>通过图中的配置文件就可以看出，配置多了许多，这是蓝牙5.0的配置文件，我们需要修改的内容大概有</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">[IdentityResolvingKey]
+</span></span><span class="line"><span class="cl">Key=75543290F900B56B68F2EA4EF34A2DA9
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[LongTermKey]
+</span></span><span class="line"><span class="cl">Key=0932311C7550DDE3A0D73A479A521187
+</span></span><span class="line"><span class="cl">EncSize=16
+</span></span><span class="line"><span class="cl">EDiv=35838
+</span></span><span class="line"><span class="cl">Rand=220192556329416
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里面的内容对应windows的内容，查看windows蓝牙注册表对应后，你就一目了然了。</p>
+<p>了解了archlinux的配置文件之后，让我们切换系统到windows，查看windows下的对应的配置。</p>
+<h2 id="连接windows">连接windows
+</h2><p>在windows的环境下配对蓝牙设备，这个过程不再演示。</p>
+<h2 id="修改配置文件">修改配置文件
+</h2><ol>
+<li>根据前文的知识，我们需要知道archlinux需要配置的值对应windows下是什么，这个值需要通过注册表查看。</li>
+<li>为了查看这些值，还需要准备一个软件，正常查看注册表是看不到的，还需要下载微软提供的 PsTool ,下载地址为：https://download.sysinternals.com/files/PSTools.zip</li>
+<li>解压软件之后，在解压的目录打开命令行执行下列命令，需要提醒的是，此操作需要管理员权限，建议通过管理员打开powershell，再进入到解压的路径下，比如</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd &#39;D:\Program Files\PSTools&#39;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 在PsTool所在目录执行这个</span>
+</span></span><span class="line"><span class="cl"><span class="p">.\</span><span class="n">PsExec64</span><span class="p">.</span><span class="py">exe</span> <span class="n">-s</span> <span class="n">-i</span> <span class="n">regedit</span><span class="p">.</span><span class="py">exe</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>接着会打开注册表，在注册表的地址找到</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>在keys下面有子项，子项的名称和数据对应的是键盘的mac地址和linkkey</li>
+</ol>
+<p><img src="https://s2.loli.net/2024/06/14/6C8V5PrTAOjdn7p.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240614194455161"
+	
+	
+></p>
+<p>这是蓝牙2.4G，把mac地址对应的值记录下来，替换archlinux键盘的linkkey的key，只需要重启蓝牙，这样就实现了键盘在双系统的无缝切换。重启蓝牙的命令为 ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart bluetooth
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="6">
+<li>对于鼠标，它的项根据我这边的情况，在键盘的项的下面，也就是 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys</code> 的子项的子项，点开可以看到一列些熟悉的值，比如 EDIV，IRK，ERand，LTK等值，我们可以把项导出为 .reg文件查看，但是我并不建议导出来，因为archlinux的值是十进制的，windows到处的值是十六进制，后续还要转换进制，稍显麻烦，你细心 的话在注册表里就可以看到转换过的值，也就是括号里面的内容，如图：
+<img src="https://s2.loli.net/2024/06/14/b9PsGX3OgdBcNUT.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20240614192140389"
+	
+	
+></li>
+</ol>
+<p>记录对应名称对应的数据，有括号记录括号的内容，没有括号的记录整条数据。</p>
+<p><strong>切换到 archlinux 系统</strong></p>
+<p>替换archlinux下对应设备的值和windows一样。</p>
+<p>修改LTK，IRK的时候，把小写字母转换成大写。全部替换完成之后，重启蓝牙。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 重启蓝牙</span>
+</span></span><span class="line"><span class="cl">sudo systemctl restart bluetooth
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看蓝牙设备是否正常工作。</p>
+<blockquote>
+<p>额外的。archlinux wiki说需要转换，如果不能工作再尝试。</p>
+<p>根据我的经验来看，记录windows注册表蓝牙对应值的时候，仔细小心，如果不行，请参考<a class="link" href="https://wiki.archlinuxcn.org/wiki/%e8%93%9d%e7%89%99"  target="_blank" rel="noopener"
+    >官方蓝牙教程</a></p>
+</blockquote>
+<p>至此，完结撒花 ｡:.ﾟヽ(｡◕‿◕｡)ﾉﾟ.:｡+ﾟ</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/240905211706/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240902180979/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">玩客云刷机安装armbian系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240901100943/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OBS使用经验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240826190828/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">firefox个性化配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240826140866/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">openwrt实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

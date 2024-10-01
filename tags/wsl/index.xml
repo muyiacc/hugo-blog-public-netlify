@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Wsl on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/wsl/</link>
+        <description>Recent content in Wsl on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Sun, 18 Aug 2024 21:08:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/wsl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows使用WSL安装Linux系统</title>
+        <link>https://hublog.netlify.app/p/240818210841/</link>
+        <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/240818210841/</guid>
+        <description>&lt;p&gt;参考文档&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://learn.microsoft.com/zh-cn/windows/wsl/&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="我发现certbot安装还是过于麻烦，使用snap又不轻量，不使用snap使用nginx容器出问题，今天使用acme.sh申请ssl之后，发">
+<title>acme.sh申请ssl证书</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2405002/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="acme.sh申请ssl证书">
+<meta property='og:description' content="我发现certbot安装还是过于麻烦，使用snap又不轻量，不使用snap使用nginx容器出问题，今天使用acme.sh申请ssl之后，发">
+<meta property='og:url' content='https://hublog.netlify.app/p/2405002/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssl' /><meta property='article:published_time' content='2024-05-02T16:05:43&#43;08:00'/><meta property='article:modified_time' content='2024-05-02T16:05:43&#43;08:00'/>
+<meta name="twitter:title" content="acme.sh申请ssl证书">
+<meta name="twitter:description" content="我发现certbot安装还是过于麻烦，使用snap又不轻量，不使用snap使用nginx容器出问题，今天使用acme.sh申请ssl之后，发">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#http方式">http方式</a>
+      <ol>
+        <li><a href="#apache">apache</a></li>
+        <li><a href="#nginx">nginx</a></li>
+        <li><a href="#no-web-server">no web server</a></li>
+      </ol>
+    </li>
+    <li><a href="#dns方式">dns方式</a>
+      <ol>
+        <li><a href="#手动-dns-方式">手动 dns 方式</a></li>
+      </ol>
+    </li>
+  </ol>
+
+  <ol>
+    <li><a href="#apache-example">Apache example:</a></li>
+    <li><a href="#nginx-example">Nginx example:</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2405002/">acme.sh申请ssl证书</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 02, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>我发现certbot安装还是过于麻烦，使用snap又不轻量，不使用snap使用nginx容器出问题，今天使用acme.sh申请ssl之后，发现很方便，这篇教程来教如何使用acme.sh</p>
+<p>相比于 certbot不同的地方在于 使用 nginx/apaceh时候不会修改原有的配置，好处不用担心配置被搞坏，缺点是需要手动配置ssl证书的位置。</p>
+<blockquote>
+<p>Github地址：https://github.com/acmesh-official/acme.sh</p>
+</blockquote>
+<p>关于更多信息请查看官方教程。。。</p>
+<h1 id="安装-acmesh">安装 acme.sh
+</h1><p>一条命令解决</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>my@example.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="生成证书">生成证书
+</h1><h2 id="http方式">http方式
+</h2><h3 id="apache">apache
+</h3><p>待续。。。</p>
+<h3 id="nginx">nginx
+</h3><p>先在 nginx配置文件夹新增conf文件，填好基础的模板，比如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name youdomain.com<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:80<span class="p">;</span>  <span class="c1"># 替换为你的应用程序地址</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-Proto <span class="nv">$scheme</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再使用acme.sh申请</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d mydomain.com --nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="no-web-server">no web server
+</h3><p>如果你还没有运行任何 web 服务, <strong>80</strong> 端口是空闲的, 那么 <strong>acme.sh</strong> 还能假装自己是一个webserver, 临时听在<strong>80</strong> 端口, 完成验证:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d mydomain.com --standalone
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更高级的用法请参考: <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert"  target="_blank" rel="noopener"
+    >https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert</a></p>
+<h2 id="dns方式">dns方式
+</h2><h3 id="手动-dns-方式">手动 dns 方式
+</h3><p>手动在域名上添加一条 txt 解析记录, 验证域名所有权.</p>
+<p>这种方式的好处是, 你不需要任何服务器, 不需要任何公网 ip, 只需要 dns 的解析记录即可完成验证. 坏处是，如果不同时配置 Automatic DNS API，使用这种方式 acme.sh 将无法自动更新证书，每次都需要手动再次重新解析验证域名所有权。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue --dns -d mydomain.com \
+</span></span><span class="line"><span class="cl"> --yes-I-know-dns-manual-mode-enough-go-ahead-please
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后, <strong>acme.sh</strong> 会生成相应的解析记录显示出来, 你只需要在你的域名管理面板中添加这条 txt 记录即可.</p>
+<p>等待解析完成之后, 重新生成证书:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --renew -d mydomain.com \
+</span></span><span class="line"><span class="cl">  --yes-I-know-dns-manual-mode-enough-go-ahead-please
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意第二次这里用的是 <code>--renew</code></p>
+<p>dns 方式的真正强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证.</p>
+<p><strong>acme.sh</strong> 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十种解析商的自动集成.</p>
+<p>以 dnspod 为例, 你需要先登录到 dnspod 账号, 生成你的 api id 和 api key, 都是免费的. 然后:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">DP_Id</span><span class="o">=</span><span class="s2">&#34;1234&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">DP_Key</span><span class="o">=</span><span class="s2">&#34;sADDsdasdgdsf&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">acme</span><span class="o">.</span><span class="n">sh</span> <span class="o">--</span><span class="n">issue</span> <span class="o">--</span><span class="n">dns</span> <span class="n">dns_dp</span> <span class="o">-</span><span class="n">d</span> <span class="n">aa</span><span class="o">.</span><span class="n">com</span> <span class="o">-</span><span class="n">d</span> <span class="n">www</span><span class="o">.</span><span class="n">aa</span><span class="o">.</span><span class="n">com</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来你在使用 dnspod api 的时候, 就不需要再次指定了. 直接生成就好了:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue -d mydomain2.com --dns  dns_dp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更详细的 api 用法: <a class="link" href="https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md"  target="_blank" rel="noopener"
+    >https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md</a></p>
+<h1 id="安装copy-证书">安装/copy 证书
+</h1><p>前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.</p>
+<p>注意, 默认生成的证书都放在安装目录下: <code>~/.acme.sh/</code>, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx/apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.</p>
+<p>正确的使用方法是使用 <code>--install-cert</code> 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如:</p>
+<h2 id="apache-example">Apache example:
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--cert-file      /path/to/certfile/in/apache/cert.pem  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /path/to/keyfile/in/apache/key.pem  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /path/to/fullchain/certfile/apache/fullchain.pem <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--reloadcmd     <span class="s2">&#34;service apache2 force-reload&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="nginx-example">Nginx example:
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /path/to/keyfile/in/nginx/key.pem  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /path/to/fullchain/nginx/cert.pem <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--reloadcmd     <span class="s2">&#34;service nginx force-reload&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(一个小提醒, 这里用的是 <code>service nginx force-reload</code>, 不是 <code>service nginx reload</code>, 据测试, <code>reload</code> 并不会重新加载证书, 所以用的 <code>force-reload</code>)</p>
+<p>Nginx 的配置 <code>ssl_certificate</code> 使用 <code>/etc/nginx/ssl/fullchain.cer</code> ，而非 <code>/etc/nginx/ssl/&lt;domain&gt;.cer</code> ，否则 <a class="link" href="https://www.ssllabs.com/ssltest/"  target="_blank" rel="noopener"
+    >SSL Labs</a> 的测试会报 <code>Chain issues Incomplete</code> 错误。</p>
+<p><code>--install-cert</code>命令可以携带很多参数, 来指定目标文件. 并且可以指定 reloadcmd, 当证书更新以后, reloadcmd会被自动调用,让服务器生效.</p>
+<p>详细参数请参考: <a class="link" href="https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc"  target="_blank" rel="noopener"
+    >https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc</a></p>
+<p>值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用.</p>
+<h1 id="查看已安装证书信息">查看已安装证书信息
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --info -d example.com
+</span></span><span class="line"><span class="cl"><span class="c1"># 会输出如下内容：</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN_CONF</span><span class="o">=</span>/root/.acme.sh/example.com/example.com.conf
+</span></span><span class="line"><span class="cl"><span class="nv">Le_Domain</span><span class="o">=</span>example.com
+</span></span><span class="line"><span class="cl"><span class="nv">Le_Alt</span><span class="o">=</span>no
+</span></span><span class="line"><span class="cl"><span class="nv">Le_Webroot</span><span class="o">=</span>dns_ali
+</span></span><span class="line"><span class="cl"><span class="nv">Le_PreHook</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_PostHook</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RenewHook</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_API</span><span class="o">=</span>https://acme-v02.api.letsencrypt.org/directory
+</span></span><span class="line"><span class="cl"><span class="nv">Le_Keylength</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_OrderFinalize</span><span class="o">=</span>https://acme-v02.api.letsencrypt.org/acme/finalize/23xxxx150/781xxxx4310
+</span></span><span class="line"><span class="cl"><span class="nv">Le_LinkOrder</span><span class="o">=</span>https://acme-v02.api.letsencrypt.org/acme/order/233xxx150/781xxxx4310
+</span></span><span class="line"><span class="cl"><span class="nv">Le_LinkCert</span><span class="o">=</span>https://acme-v02.api.letsencrypt.org/acme/cert/04cbd28xxxxxx349ecaea8d07
+</span></span><span class="line"><span class="cl"><span class="nv">Le_CertCreateTime</span><span class="o">=</span><span class="m">1649358725</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_CertCreateTimeStr</span><span class="o">=</span>Thu Apr  <span class="m">7</span> 19:12:05 UTC <span class="m">2022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_NextRenewTimeStr</span><span class="o">=</span>Mon Jun  <span class="m">6</span> 19:12:05 UTC <span class="m">2022</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_NextRenewTime</span><span class="o">=</span><span class="m">1654456325</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealCertPath</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealCACertPath</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealKeyPath</span><span class="o">=</span>/etc/acme/example.com/privkey.pem
+</span></span><span class="line"><span class="cl"><span class="nv">Le_ReloadCmd</span><span class="o">=</span>service nginx force-reload
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealFullChainPath</span><span class="o">=</span>/etc/acme/example.com/chain.pem
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="更新证书">更新证书
+</h1><p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
+<p>请确保 cronjob 正确安装, 看起来是类似这样的:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">crontab  -l
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">56</span> * * * * <span class="s2">&#34;/root/.acme.sh&#34;</span>/acme.sh --cron --home <span class="s2">&#34;/root/.acme.sh&#34;</span> &gt; /dev/null
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="关于修改reloadcmd">关于修改ReloadCmd
+</h1><p><a class="link" href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E#6-%e5%85%b3%e4%ba%8e%e4%bf%ae%e6%94%b9reloadcmd"  target="_blank" rel="noopener"
+    ></a></p>
+<p>目前修改<code>ReloadCmd</code>没有专门的命令，可以通过重新安装证书来实现修改<code>reloadCmd</code>的目的。 此外，安装证书后，相关信息是保存在<code>~/.acme.sh/example.com/example.conf</code>文件下的，内容就是<code>acme.sh --info -d example.com</code>输出的信息，不过<code>ReloadCmd</code>在文件中使用了Base64编码。理论上可以通过直接修改该文件来修改<code>ReloadCmd</code>，且修改时，无需Base64编码，直接写命令原文<code>acme.sh</code>也可以识别。 不过，<code>example.conf</code>文件的位置和内容格式以后可能会改变！<code>example.conf</code>一直都是内部使用, 后面有可能会改为用 sqlite 或者mysql 格式存储. 所以一般不建议自己修改。</p>
+<h1 id="更新-acmesh">更新 acme.sh
+</h1><p>目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.</p>
+<p>升级 acme.sh 到最新版 :</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --upgrade
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你不想手动升级, 可以开启自动升级:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --upgrade --auto-upgrade
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>之后, acme.sh 就会自动保持更新了.</p>
+<p>你也可以随时关闭自动更新:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --upgrade --auto-upgrade  <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="出错怎么办">出错怎么办：
+</h1><p>如果出错, 请添加 debug log：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue  .....  --debug 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue  .....  --debug  <span class="m">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请参考： <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh"  target="_blank" rel="noopener"
+    >https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh</a></p>
+<p>在DNS验证模式下如果debug中出现诸如&quot;timed out&quot;等字样可能是因为GFW拦截了相应请求，需要添加http(s) proxy环境变量。（请按照自己实际设定修改）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="k">export</span> <span class="n">http_proxy</span><span class="o">=</span><span class="s2">&#34;socks5h://localhost:1081&#34;</span> <span class="o">&amp;&amp;</span> <span class="k">export</span> <span class="n">https_proxy</span><span class="o">=</span><span class="s2">&#34;socks5h://localhost:1081&#34;</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果是使用docker则完整示例配置如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run --rm  -it  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v <span class="s2">&#34;/etc/acme&#34;</span>:/acme.sh  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="s2">&#34;CF_Token=[填入自己的信息]&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="s2">&#34;CF_Account_ID=[填入自己的信息]&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="s2">&#34;CF_Zone_ID=[填入自己的信息]&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">http_proxy</span><span class="o">=</span><span class="s2">&#34;socks5h://[代理A]:1234&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">https_proxy</span><span class="o">=</span><span class="s2">&#34;socks5h://[代理A]:1234&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network container:<span class="o">[</span>代理A<span class="o">]</span><span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  neilpang/acme.sh <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --issue -d example.com --dns dns_cf --debug
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述例子中使用cloudflare的DNS来签发证书，并通过把acme.sh链接到容器[代理A]，来转发curl请求（请按照自己实际设定修改）</p>
+<p>最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.</p>
+<p><a class="link" href="https://github.com/Neilpang/acme.sh/wiki"  target="_blank" rel="noopener"
+    >https://github.com/Neilpang/acme.sh/wiki</a></p>
+<h1 id="一键脚本适合初次申请">一键脚本（适合初次申请）
+</h1><p>本脚本为了简化acme.sh申请证书过程，会修改配置，如已有的配置，请勿使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim acme-autossl.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ssl/">Ssl</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/2403008/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">openssl小小使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2403006/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let&#39;s Encrypt证书</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2310019/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ssl证书格式的转换</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240905211706/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240902180979/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">玩客云刷机安装armbian系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

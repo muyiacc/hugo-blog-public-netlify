@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="和往常一样，系统为 debian，让我们开始吧。 1. Nginx 安装和配置 Nginx官网文档 https://nginx.org/en/docs/ Nginx（发音为&quot;engine-x&quot;）">
+<title>Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let&#39;s Encrypt证书</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2403006/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let's Encrypt证书">
+<meta property='og:description' content="和往常一样，系统为 debian，让我们开始吧。 1. Nginx 安装和配置 Nginx官网文档 https://nginx.org/en/docs/ Nginx（发音为&quot;engine-x&quot;）">
+<meta property='og:url' content='https://hublog.netlify.app/p/2403006/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='ssl' /><meta property='article:tag' content='certbot' /><meta property='article:published_time' content='2024-03-06T00:03:15&#43;08:00'/><meta property='article:modified_time' content='2024-03-06T00:03:15&#43;08:00'/>
+<meta name="twitter:title" content="Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let's Encrypt证书">
+<meta name="twitter:description" content="和往常一样，系统为 debian，让我们开始吧。 1. Nginx 安装和配置 Nginx官网文档 https://nginx.org/en/docs/ Nginx（发音为&quot;engine-x&quot;）">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-安装">1.1 安装</a></li>
+    <li><a href="#12-配置文件">1.2 配置文件</a></li>
+    <li><a href="#13--配置件的结构">1.3  配置⽂件的结构</a>
+      <ol>
+        <li><a href="#131-全局块">1.3.1 全局块</a></li>
+        <li><a href="#132-events块">1.3.2 events块</a></li>
+        <li><a href="#133-http块">1.3.3 http块</a></li>
+        <li><a href="#134-server块">1.3.4 server块</a></li>
+      </ol>
+    </li>
+    <li><a href="#14-nginx常用命令">1.4 Nginx常用命令</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-安装-certbot">2.1 安装 certbot</a></li>
+    <li><a href="#22-申请域名证书">2.2 申请域名证书</a></li>
+    <li><a href="#23-dns获取ssl泛域名证书推荐">2.3 DNS获取SSL泛域名证书（推荐）</a>
+      <ol>
+        <li><a href="#231-certbot-dns-dnspod">2.3.1 certbot-dns-dnspod</a></li>
+      </ol>
+    </li>
+    <li><a href="#24-自动续期">2.4 自动续期</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-需求1">3.1 需求1</a>
+      <ol>
+        <li><a href="#311--脚本的配置">3.1.1  脚本的配置</a></li>
+      </ol>
+    </li>
+    <li><a href="#32-需求2">3.2 需求2</a>
+      <ol>
+        <li><a href="#321--脚本的配置">3.2.1  脚本的配置</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2403006/">Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let&#39;s Encrypt证书</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 06, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>和往常一样，系统为 debian，让我们开始吧。</p>
+<h1 id="1-nginx-安装和配置">1. Nginx 安装和配置
+</h1><blockquote>
+<p>Nginx官网文档
+<a class="link" href="https://nginx.org/en/docs/"  target="_blank" rel="noopener"
+    >https://nginx.org/en/docs/</a></p>
+</blockquote>
+<p><strong>Nginx</strong>（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。</p>
+<h2 id="11-安装">1.1 安装
+</h2><p>（1）安装Nginx</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># debian</span>
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># centos</span>
+</span></span><span class="line"><span class="cl">sudo yum update
+</span></span><span class="line"><span class="cl">sudo yum install nginx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>关于Nginx的一些命令和配置文件的位置介绍</p>
+<p>在安装过程中可以看到 配置文件的位置在 <code>/etc/nginx</code>下
+当然不同的安装方式也可能不一样，可以通过 <code>whereis nginx</code>来搜索</p>
+</blockquote>
+<h2 id="12-配置文件">1.2 配置文件
+</h2><p>通过包管理工具安装的Nginx一般在 <code>/etc/nginx</code>下</p>
+<p>其中有一个 <code>nginx.conf</code> 文件，它就是Nginx的配置文件，但是为了方便管理，所以我一般不直接修改该文件，而是在 <code>/etc/nginx/conf.d/</code> 下新建文件。</p>
+<p>在默认的 <code>nginx.conf</code>中 <code>http</code>模块下，有这样一条命令 <code>include /etc/nginx/conf.d/*.conf;</code> 它表示包含了 <code>/etc/nginx/conf.d/</code>下所有文件，所以我们在<code>/etc/nginx/conf.d/</code>直接添加新文件即可，如果没有该命令需要手动把文件的路径添加到 <code>nginx.conf</code>中</p>
+<p>关于 Nginx配置文件模块该如何书写，以下做一些简单介绍。</p>
+<h2 id="13--配置件的结构">1.3  配置⽂件的结构
+</h2><p>Nginx的配置⽂件是由⼀系列的指令组成的，每个指令都是由⼀个指令名和⼀个或者多个参数组成的。</p>
+<p>指令和参数之间使⽤空格来分隔，指令以分号 ; 结尾，参数可以使⽤单引号或者双引号来包裹。</p>
+<p>配置⽂件分为以下⼏个部分：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 全局块</span>
+</span></span><span class="line"><span class="cl">worker_processes 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">events <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># events块</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">http <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># http块</span>
+</span></span><span class="line"><span class="cl">	server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># server块</span>
+</span></span><span class="line"><span class="cl">		location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># location块</span>
+</span></span><span class="line"><span class="cl">		<span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">server {  
+</span></span><span class="line"><span class="cl">    listen 80;  
+</span></span><span class="line"><span class="cl">    server_name seektao.cc;
+</span></span><span class="line"><span class="cl">    return 301 https://www.seektao.cc$request_uri;  
+</span></span><span class="line"><span class="cl">}  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">server {  
+</span></span><span class="line"><span class="cl">    listen 80;  
+</span></span><span class="line"><span class="cl">    server_name www.seektao.cc;  
+</span></span><span class="line"><span class="cl">    return 301 https://$host$request_uri;  
+</span></span><span class="line"><span class="cl">}  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">server {  
+</span></span><span class="line"><span class="cl">    listen 443 ssl http2;  
+</span></span><span class="line"><span class="cl">    server_name www.seektao.cc;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个Nginx配置文件包含了三个server块，每个块定义了不同的虚拟主机配置。</p>
+<ol>
+<li>第一个server块：
+<ul>
+<li><code>listen 80;</code>: 监听80端口，表示这个server块用于处理HTTP请求。</li>
+<li><code>server_name seektao.cc;</code>: 指定服务器的域名为<code>seektao.cc</code>。</li>
+<li><code>return 301 https://www.seektao.cc$request_uri;</code>: 当有HTTP请求访问<code>seektao.cc</code>时，返回301重定向到<code>https://www.seektao.cc$request_uri</code>，即将HTTP请求重定向到HTTPS协议的<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+<li>第二个server块：
+<ul>
+<li><code>listen 80;</code>: 同样监听80端口，处理HTTP请求。</li>
+<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
+<li><code>return 301 https://$host$request_uri;</code>: 当有HTTP请求访问<code>www.seektao.cc</code>时，返回301重定向到<code>https://$host$request_uri</code>，即将HTTP请求重定向到HTTPS协议的<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+<li>第三个server块：
+<ul>
+<li><code>listen 443 ssl http2;</code>: 监听443端口，启用SSL和HTTP/2协议。</li>
+<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+</ol>
+<p>这个配置文件的作用是：</p>
+<ul>
+<li>当有HTTP请求访问<code>seektao.cc</code>或<code>www.seektao.cc</code>时，会将请求重定向到相应的HTTPS地址。</li>
+<li>对于HTTPS请求，只有<code>www.seektao.cc</code>会被处理，而其他域名或路径则没有配置处理规则，可能会返回默认的Nginx页面或404错误。</li>
+</ul>
+<p>这只是一个简单的配置示例，实际生产环境中还需要根据具体需求进行进一步配置，例如配置SSL证书、代理、缓存等功能。</p>
+<h3 id="131-全局块">1.3.1 全局块
+</h3><p>全局块是配置⽂件的第⼀个块，也是配置⽂件的主体部分，主要⽤来设置⼀些影响Nginx服务器整体运⾏的配置指令，主要包括配置运⾏Nginx服务器的⽤户（组）、允许⽣成的workerprocess数、进程PID存放路径、⽇志存放路径和类型以及配置⽂件引⼊等。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 指定运⾏Nginx服务器的⽤户，只能在全局块配置</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将user指令注释掉，或者配置成nobody的话所有⽤户都可以运⾏</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># user [user] [group]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># user nobody nobody;</span>
+</span></span><span class="line"><span class="cl">user nginx<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 指定⽣成的worker进程的数量，也可使⽤⾃动模式，只能在全局块配置</span>
+</span></span><span class="line"><span class="cl">worker_processes 1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 错误⽇志存放路径和类型</span>
+</span></span><span class="line"><span class="cl">error_log /var/log/nginx/error.log warn<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 进程PID存放路径</span>
+</span></span><span class="line"><span class="cl">pid /var/run/nginx.pid<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="132-events块">1.3.2 events块
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">events <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 指定使⽤哪种⽹络IO模型，只能在events块中进⾏配置</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># use epoll</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 每个worker process允许的最⼤连接数</span>
+</span></span><span class="line"><span class="cl">	worker_connections 1024<span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="133-http块">1.3.3 http块
+</h3><p>http块是配置⽂件的主要部分，包括http全局块和server块。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">http <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># nginx 可以使用include指令引入其他配置文件</span>
+</span></span><span class="line"><span class="cl">    include /etc/nginx/mime.types<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 默认类型，如果请求的URL没有包含文件类型，会使用默认类型</span>
+</span></span><span class="line"><span class="cl">    default_type application/octet-stream<span class="p">;</span> <span class="c1"># 默认类型</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 开启高效文件传输模式</span>
+</span></span><span class="line"><span class="cl">    sendfile on<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 连接超时时间</span>
+</span></span><span class="line"><span class="cl">    keepalive_timeout 65<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># access_log 日志存放路径和类型</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 格式为：access_log &lt;path&gt; [format [buffer=size] [gzip[=level]] [flush=time] [if=condition]];</span>
+</span></span><span class="line"><span class="cl">    access_log /var/log/nginx/access.log main<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 定义日志格式</span>
+</span></span><span class="line"><span class="cl">    log_format main <span class="s1">&#39;$remote_addr - $remote_user [$time_local] &#34;$request&#34; $status $body_bytes_sent &#34;$http_referer&#34; &#34;$http_user_agent&#34; &#34;$http_x_forwarded_for&#34;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 设置sendfile最大传输片段大小，默认为0，表示不限制</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># sendfile_max_chunk 1m;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 每个连接的请求次数</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># keepalive_requests 100;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># keepalive超时时间</span>
+</span></span><span class="line"><span class="cl">    keepalive_timeout 65<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 开启gzip压缩</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip on;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 开启gzip压缩的最小文件大小</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip_min_length 1k;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip压缩级别，1-9，级别越高压缩率越高，但是消耗CPU资源也越多</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip_comp_level 2;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip压缩文件类型</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># upstream指令用于定义一组服务器，一般用来配置反向代理和负载均衡</span>
+</span></span><span class="line"><span class="cl">    upstream www.example.com <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># ip_hash指令用于设置负载均衡的方式，ip_hash表示使用客户端的IP进行hash，这样可以保证同一个客户端的请求每次都会分配到同一个服务器，解决了session共享的问题</span>
+</span></span><span class="line"><span class="cl">        ip_hash<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># weight 用于设置权重，权重越高被分配到的几率越大</span>
+</span></span><span class="line"><span class="cl">        server 192.168.50.11:80 <span class="nv">weight</span><span class="o">=</span>3<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 192.168.50.12:80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        server 192.168.50.13:80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 参考server块的配置</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="134-server块">1.3.4 server块
+</h3><p>server块是配置虚拟主机的，⼀个http块可以包含多个server块，每个server块就是⼀个虚拟主机。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 监听IP和端口</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen的格式为：</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen [ip]:port [default_server] [ssl] [http2] [spdy] [proxy_protocol] [setfib=number] [fastopen=number] [backlog=number];</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen指令非常灵活，可以指定多个IP和端口，也可以使用通配符</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是几个实际的例子：</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1:80; # 监听来自127.0.0.1的80端口的请求</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 80; # 监听来自所有IP的80端口的请求</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen *:80; # 监听来自所有IP的80端口的请求，同上</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1; # 监听来自来自127.0.0.1的80端口，默认端口为80</span>
+</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name 用来指定虚拟主机的域名，可以使用精确匹配、通配符匹配和正则匹配等方式</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name example.org www.example.org; # 精确匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name *.example.org; # 通配符匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name ~^www\d+\.example\.net$; # 正则匹配</span>
+</span></span><span class="line"><span class="cl">    server_name localhost<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># location块用来配置请求的路由，一个server块可以包含多个location块，每个location块就是一个请求路由</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># location块的格式是：</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># location [=|~|~*|^~] /uri/ { ... }</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># = 表示精确匹配，只有完全匹配上才能生效</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ~ 表示区分大小写的正则匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ~* 表示不区分大小写的正则匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ^~ 表示普通字符匹配，如果匹配成功，则不再匹配其他location</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># /uri/ 表示请求的URI，可以是字符串，也可以是正则表达式</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># { ... } 表示location块的配置内容</span>
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># root指令用于指定请求的根目录，可以是绝对路径，也可以是相对路径</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span> <span class="c1"># 根目录</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># index指令用于指定默认文件，如果请求的是目录，则会在目录下查找默认文件</span>
+</span></span><span class="line"><span class="cl">        index index.html index.htm<span class="p">;</span> <span class="c1"># 默认文件</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是一些location的示例：</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">location</span> <span class="o">=</span> / <span class="o">{</span> <span class="c1"># 精确匹配请求</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        index index.html index.htm<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    location ^~ /images/ <span class="o">{</span> <span class="c1"># 匹配以/images/开头的请求</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    location ~* <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 匹配以gif、jpg或者jpeg结尾的请求</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    location !~ <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    location !~* <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># error_page 用于指定错误页面，可以指定多个，按照优先级从高到低依次查找</span>
+</span></span><span class="line"><span class="cl">    error_page <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span> /50x.html<span class="p">;</span> <span class="c1"># 错误页面</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="14-nginx常用命令">1.4 Nginx常用命令
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl start nginx 	<span class="c1"># 启动Nginx (默认已经启动)</span>
+</span></span><span class="line"><span class="cl">systemctl stop nginx	<span class="c1"># 关闭Nginx</span>
+</span></span><span class="line"><span class="cl">systemctl status nginx 	<span class="c1"># 查看Nginx状态</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo nginx -t 			<span class="c1"># 检查Nginx配置文件语法是否正确</span>
+</span></span><span class="line"><span class="cl">sudo nginx -s reload	<span class="c1"># 重新加载Nginx配置</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo nginx 				<span class="c1"># 启动Nginx</span>
+</span></span><span class="line"><span class="cl">sudo nginx -c filename 	<span class="c1"># 指定配置⽂件</span>
+</span></span><span class="line"><span class="cl">nginx -V 				<span class="c1"># 查看Nginx的版本和编译参数等信息</span>
+</span></span><span class="line"><span class="cl">sudo nginx -s quit 		<span class="c1"># 优雅停⽌Nginx</span>
+</span></span><span class="line"><span class="cl">sudo nginx -s stop 		<span class="c1"># 快速停⽌Nginx</span>
+</span></span><span class="line"><span class="cl">sudo nginx -s reopen 	<span class="c1"># 重新打开⽇志⽂件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>到此位置，Nginx就结束啦，马上开始我们的SSL证书之旅吧。</p>
+<h1 id="2-certbot-申请ssl证书">2. Certbot 申请SSL证书
+</h1><p><strong>Certbot</strong> 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数据传输的安全性和隐私性。</p>
+<p>Certbot 支持大多数常见的 Web 服务器，包括 Apache、Nginx、IIS 等。</p>
+<h2 id="21-安装-certbot">2.1 安装 certbot
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># debian</span>
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl"><span class="c1"># 添加软件源</span>
+</span></span><span class="line"><span class="cl">sudo apt install software-properties-common
+</span></span><span class="line"><span class="cl">sudo add-apt-repository ppa:certbot/certbot
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装certbot</span>
+</span></span><span class="line"><span class="cl">sudo apt install certbot
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># centos 没用，不太清楚，应该类似于debian</span>
+</span></span><span class="line"><span class="cl">sudo yum update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">此处省略添加软件源，请自己记得添加。。。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo yum install certbot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>这里注意：一定要添加软件源，安装最新版本的 certbot，否则后面提示安装dns插件有问题</p>
+</blockquote>
+<p>安装完成，查看版本 <code>certbot --version</code>，目前是 2.9.0</p>
+<blockquote>
+<p>官方使用snap安装的教程：
+<a class="link" href="https://certbot.eff.org/instructions?ws=nginx&amp;os=debianbuster"  target="_blank" rel="noopener"
+    >https://certbot.eff.org/instructions?ws=nginx&os=debianbuster</a></p>
+</blockquote>
+<h2 id="22-申请域名证书">2.2 申请域名证书
+</h2><p>使用certbot 来申请 Let&rsquo;s Encrypt免费CA的SSL证书</p>
+<blockquote>
+<p>官网教程
+<a class="link" href="https://eff-certbot.readthedocs.io/en/latest/using.html#getting-certificates-and-choosing-plugins"  target="_blank" rel="noopener"
+    >https://eff-certbot.readthedocs.io/en/latest/using.html#getting-certificates-and-choosing-plugins</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 比如，实际我没用，我使用的是下面的dns插件来获取</span>
+</span></span><span class="line"><span class="cl">certbot certonly --webroot -w /path/to/your/website -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用Web根目录<code>/path/to/your/website</code>中的文件验证您拥有<code>yourdomain.com</code>的控制权，并为该域名获取SSL证书。</p>
+<h2 id="23-dns获取ssl泛域名证书推荐">2.3 DNS获取SSL泛域名证书（推荐）
+</h2><p>DNS获取证书的好处在于可以申请泛域名证书，也就是像 <code>*.seektao.cc</code>也就是一次申请，到处使用，方便至极。</p>
+<h3 id="231-certbot-dns-dnspod">2.3.1 certbot-dns-dnspod
+</h3><p>certbot-dns-dnspod 是dnspod的插件，默认的certbot是没有的，需要手动安装</p>
+<blockquote>
+<p>Github地址</p>
+<p><a class="link" href="https://github.com/tengattack/certbot-dns-dnspod"  target="_blank" rel="noopener"
+    >https://github.com/tengattack/certbot-dns-dnspod</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># pip</span>
+</span></span><span class="line"><span class="cl">sudo pip install git+https://github.com/tengattack/certbot-dns-dnspod.git
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># snap 本次没有采用</span>
+</span></span><span class="line"><span class="cl">sudo snap install certbot-dns-dnspod
+</span></span><span class="line"><span class="cl">sudo snap <span class="nb">set</span> certbot trust-plugin-with-root<span class="o">=</span>ok
+</span></span><span class="line"><span class="cl">sudo snap connect certbot:plugin certbot-dns-dnspod
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成之后新建一个 .ini文件，比如 /etc/certbot/dnspod.ini</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir /etc/certbot
+</span></span><span class="line"><span class="cl">sudo touch /etc/certbot/dnspod.ini
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑 dnspod.ini，填入下面的内容，<a class="link" href="https://console.dnspod.cn/account/token/token"  target="_blank" rel="noopener"
+    >点此跳转到dnspod api 申请页面</a>，注意申请的是dnspod token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_id</span> <span class="p">=</span> <span class="m">12345</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_token</span> <span class="p">=</span> <span class="m">1234567890</span>abcdef<span class="m">1234567890</span>abcdef
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo chmod <span class="m">600</span> /etc/certbot/dnspod.ini
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>申请，替换为自己的域名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot certonly -a dns-dnspod <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --dns-dnspod-credentials /etc/certbot/dnspod.ini <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d seektao.cc <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d <span class="s2">&#34;*.seektao.cc&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">接着就是:
+</span></span><span class="line"><span class="cl">输入邮箱，
+</span></span><span class="line"><span class="cl">是否同意注册acme（选Y），
+</span></span><span class="line"><span class="cl">是否同意发送邮件。。。看自己吧
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">接着等待，等待。。就完成了
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过日志可以看到证书文件保存在  <code>/etc/letsencrypt/live</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 其中 </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/privkey.pem：证书的私钥。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/fullchain.pem：在大多数服务器软件中使用的证书文件。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/chain.pem：在Nginx &gt;<span class="o">=</span>1.3.7 中用于 OCSP stapling。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/cert.pem：会破坏许多服务器配置，不应在未进一步阅读文档的情况下使用。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们用到  privkey.pem，fullchain.pem即可。</p>
+<p>此节关于 dnspod 申请ssl证书就是如此。</p>
+<h2 id="24-自动续期">2.4 自动续期
+</h2><p>自动续期添加一个定时任务即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置定时任务</span>
+</span></span><span class="line"><span class="cl">sudo crontab -e
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 每月1号的午夜执行 certbot renew 命令来续订证书</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> * * /usr/local/bin/certbot renew
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>需要注意自己的certbot执行路径是否正确</p>
+<p><code>which certbot</code> 可以看到certbot执行路径</p>
+</blockquote>
+<blockquote>
+<p>关于续期的更多文档可以观看</p>
+<p><a class="link" href="https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal"  target="_blank" rel="noopener"
+    >https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal</a></p>
+</blockquote>
+<h1 id="3-nginx一键生成模板">3. Nginx一键生成模板
+</h1><h2 id="31-需求1">3.1 需求1
+</h2><p>这个需求在于我使用Nginx作为反代服务器，每新增一个服务，就要手动去新增一个nginx文件，而且我主要使用的是二级域名加端口的模式，配合使用 泛域名证书来编写这个脚本就很方便了。</p>
+<p>现在想要实现输入 <code>脚本文件 域名 端口 </code> 就会在 <code>/etc/nginx/conf.d/</code>下新增一个以域名开头的配置文件，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ sudo ./generate_nginx_simple_template.sh test1.seektao.cc <span class="m">5980</span>
+</span></span><span class="line"><span class="cl">Do you want to reload Nginx configuration? <span class="o">(</span>y/n<span class="o">)</span> y
+</span></span><span class="line"><span class="cl">Reloading Nginx configuration...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ll /etc/nginx/conf.d/test1.conf 
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">965</span> Mar <span class="m">25</span> 13:01 /etc/nginx/conf.d/test1.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>模板的内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cat /etc/nginx/conf.d/test1.conf 
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    server_name test1.seektao.cc<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="m">301</span> <span class="nv">$scheme</span>://test1.seektao.cc<span class="nv">$request_uri</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">    listen <span class="m">443</span> ssl http2<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    server_name test1.seektao.cc<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 证书配置  </span>
+</span></span><span class="line"><span class="cl">    ssl_certificate /etc/letsencrypt/live/seektao.cc/fullchain.pem<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_certificate_key /etc/letsencrypt/live/seektao.cc/privkey.pem<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 安全设置  </span>
+</span></span><span class="line"><span class="cl">    ssl_protocols TLSv1.2 TLSv1.3<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_ciphers HIGH:!aNULL:!MD5<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_prefer_server_ciphers on<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 反向代理  </span>
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:5980/<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-Proto <span class="nv">$scheme</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 日志配置  </span>
+</span></span><span class="line"><span class="cl">    access_log /var/log/nginx/test1.seektao.cc.access.log<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    error_log /var/log/nginx/test1.seektao.cc.error.log<span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="311--脚本的配置">3.1.1  脚本的配置
+</h3><p><strong>使用这个脚本请先申请泛域名证书，或者你自己再修改配置文件的证书位置。</strong></p>
+<p><code>vim generate_nginx_simple_template.sh</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash  
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查参数数量  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$#</span><span class="s2">&#34;</span> -ne <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;domain&gt; &lt;application_port&gt;&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN</span><span class="o">=</span><span class="nv">$1</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">APPLICATION_PORT</span><span class="o">=</span><span class="nv">$2</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">PORT_HTTP</span><span class="o">=</span><span class="m">80</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">PORT_HTTPS</span><span class="o">=</span><span class="m">443</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CERT_DOMAIN</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span> <span class="p">|</span> awk -F. <span class="s1">&#39;{print $(NF-1)&#34;.&#34;$NF}&#39;</span><span class="k">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CONF_FILE_PREFIX</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span> <span class="p">|</span> awk -F. <span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CONF_FILE</span><span class="o">=</span><span class="s2">&#34;/etc/nginx/conf.d/</span><span class="si">${</span><span class="nv">CONF_FILE_PREFIX</span><span class="si">}</span><span class="s2">.conf&#34;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成 Nginx 配置内容  </span>
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt; $CONF_FILE
+</span></span></span><span class="line"><span class="cl"><span class="s">server {  
+</span></span></span><span class="line"><span class="cl"><span class="s">    listen $PORT_HTTP;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    server_name $DOMAIN;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    return 301 \$scheme://$DOMAIN\$request_uri;  
+</span></span></span><span class="line"><span class="cl"><span class="s">}  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">server {  
+</span></span></span><span class="line"><span class="cl"><span class="s">    listen $PORT_HTTPS ssl http2;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    server_name $DOMAIN;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # SSL 证书配置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_certificate /etc/letsencrypt/live/$CERT_DOMAIN/fullchain.pem;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_certificate_key /etc/letsencrypt/live/$CERT_DOMAIN/privkey.pem;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 安全设置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_protocols TLSv1.2 TLSv1.3;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_ciphers HIGH:!aNULL:!MD5;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_prefer_server_ciphers on;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 反向代理  
+</span></span></span><span class="line"><span class="cl"><span class="s">    location / {  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_pass http://127.0.0.1:$APPLICATION_PORT/;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header Host \$host;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Real-IP \$remote_addr;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    }  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 日志配置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    access_log /var/log/nginx/$DOMAIN.access.log;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    error_log /var/log/nginx/$DOMAIN.error.log;  
+</span></span></span><span class="line"><span class="cl"><span class="s">}  
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查临时文件是否成功创建  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CONF_FILE</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to create temporary configuration file.&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 提示用户是否需要修改配置文件  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># read -p &#34;Do you want to modify the configuration file before saving? (y/n) &#34; choice  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据用户选择执行相应操作  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># case &#34;$choice&#34; in  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     y|Y )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         # 使用文本编辑器让用户修改配置文件  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Editing configuration file...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         vim &#34;${CONF_FILE}&#34; # 或者使用你喜欢的其他文本编辑器，如 nano  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     n|N )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         # 直接将临时文件移动到目标位置  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Saving configuration file without modification...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         mv &#34;${CONF_FILE}&#34; &#34;${CONF_FILE}&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     * )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Invalid choice. Exiting...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         exit 1  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># esac  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查 SSL 证书路径是否存在，如果不存在，提示用户手动申请  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -e <span class="s2">&#34;/etc/letsencrypt/live/</span><span class="nv">$CERT_DOMAIN</span><span class="s2">/fullchain.pem&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Warning: SSL certificate for </span><span class="nv">$CERT_DOMAIN</span><span class="s2"> does not exist.&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Please use certbot or another tool to manually obtain a certificate for </span><span class="nv">$CERT_DOMAIN</span><span class="s2">.&#34;</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 提示用户是否需要重新加载 Nginx 配置  </span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Do you want to reload Nginx configuration? (y/n) &#34;</span> reload_choice  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$reload_choice</span><span class="s2">&#34;</span> in  
+</span></span><span class="line"><span class="cl">    y<span class="p">|</span>Y <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="c1"># 重新加载 Nginx 配置  </span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Reloading Nginx configuration...&#34;</span>  
+</span></span><span class="line"><span class="cl">        sudo nginx -s reload  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl">    n<span class="p">|</span>N <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Nginx configuration will not be reloaded.&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl">    * <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Invalid choice. Exiting...&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="32-需求2">3.2 需求2
+</h2><p><strong>此内容为更新内容：
+和需求1不同的是：生成的nginx配置文件为<code>域名.conf</code>而非 <code>域名前缀.conf</code>
+这么做的目的是我在使用多个不同域名方便区分配置文件，特此更改。</strong></p>
+<hr>
+<p>以下内容为正文：从需求1复制更改</p>
+<hr>
+<p>这个需求在于我使用Nginx作为反代服务器，每新增一个服务，就要手动去新增一个nginx文件，而且我主要使用的是二级域名加端口的模式，配合使用 泛域名证书来编写这个脚本就很方便了。</p>
+<p>现在想要实现输入 <code>脚本文件 域名 端口 </code> 就会在 <code>/etc/nginx/conf.d/</code>下新增一个以<strong>全域名</strong>开头的配置文件，例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ sudo ./generate_nginx_simple_template.sh test1.seektao.cc <span class="m">5980</span>
+</span></span><span class="line"><span class="cl">Do you want to reload Nginx configuration? <span class="o">(</span>y/n<span class="o">)</span> y
+</span></span><span class="line"><span class="cl">Reloading Nginx configuration...
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ ll /etc/nginx/conf.d/test1.seektao.cc.conf 
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root <span class="m">965</span> Mar <span class="m">25</span> 13:01 /etc/nginx/conf.d/test1.seektao.cc.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>模板的内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cat /etc/nginx/conf.d/test1.seektao.cc.conf 
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    server_name test1.seektao.cc<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="m">301</span> <span class="nv">$scheme</span>://test1.seektao.cc<span class="nv">$request_uri</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">server <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">    listen <span class="m">443</span> ssl http2<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    server_name test1.seektao.cc<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 证书配置  </span>
+</span></span><span class="line"><span class="cl">    ssl_certificate /etc/letsencrypt/live/seektao.cc/fullchain.pem<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_certificate_key /etc/letsencrypt/live/seektao.cc/privkey.pem<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 安全设置  </span>
+</span></span><span class="line"><span class="cl">    ssl_protocols TLSv1.2 TLSv1.3<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_ciphers HIGH:!aNULL:!MD5<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    ssl_prefer_server_ciphers on<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 反向代理  </span>
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>  
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:5980/<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-Proto <span class="nv">$scheme</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">    <span class="c1"># 日志配置  </span>
+</span></span><span class="line"><span class="cl">    access_log /var/log/nginx/test1.seektao.cc.access.log<span class="p">;</span>  
+</span></span><span class="line"><span class="cl">    error_log /var/log/nginx/test1.seektao.cc.error.log<span class="p">;</span>  
+</span></span><span class="line"><span class="cl"><span class="o">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="321--脚本的配置">3.2.1  脚本的配置
+</h3><p><strong>使用这个脚本请先申请泛域名证书，或者你自己再修改配置文件的证书位置。</strong></p>
+<p><code>vim generate_nginx_simple_template1.sh</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash  
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查参数数量  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$#</span><span class="s2">&#34;</span> -ne <span class="m">2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Usage: </span><span class="nv">$0</span><span class="s2"> &lt;domain&gt; &lt;application_port&gt;&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN</span><span class="o">=</span><span class="nv">$1</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">APPLICATION_PORT</span><span class="o">=</span><span class="nv">$2</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">PORT_HTTP</span><span class="o">=</span><span class="m">80</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">PORT_HTTPS</span><span class="o">=</span><span class="m">443</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CERT_DOMAIN</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span> <span class="p">|</span> awk -F. <span class="s1">&#39;{print $(NF-1)&#34;.&#34;$NF}&#39;</span><span class="k">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CONF_FILE_PREFIX</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$DOMAIN</span><span class="s2">&#34;</span><span class="k">)</span>  
+</span></span><span class="line"><span class="cl"><span class="nv">CONF_FILE</span><span class="o">=</span><span class="s2">&#34;/etc/nginx/conf.d/</span><span class="si">${</span><span class="nv">CONF_FILE_PREFIX</span><span class="si">}</span><span class="s2">.conf&#34;</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成 Nginx 配置内容  </span>
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt; $CONF_FILE
+</span></span></span><span class="line"><span class="cl"><span class="s">server {  
+</span></span></span><span class="line"><span class="cl"><span class="s">    listen $PORT_HTTP;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    server_name $DOMAIN;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    return 301 \$scheme://$DOMAIN\$request_uri;  
+</span></span></span><span class="line"><span class="cl"><span class="s">}  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">server {  
+</span></span></span><span class="line"><span class="cl"><span class="s">    listen $PORT_HTTPS ssl http2;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    server_name $DOMAIN;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # SSL 证书配置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_certificate /etc/letsencrypt/live/$CERT_DOMAIN/fullchain.pem;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_certificate_key /etc/letsencrypt/live/$CERT_DOMAIN/privkey.pem;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 安全设置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_protocols TLSv1.2 TLSv1.3;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_ciphers HIGH:!aNULL:!MD5;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    ssl_prefer_server_ciphers on;  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 反向代理  
+</span></span></span><span class="line"><span class="cl"><span class="s">    location / {  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_pass http://127.0.0.1:$APPLICATION_PORT/;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header Host \$host;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Real-IP \$remote_addr;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;  
+</span></span></span><span class="line"><span class="cl"><span class="s">        proxy_set_header X-Forwarded-Proto \$scheme;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    }  
+</span></span></span><span class="line"><span class="cl"><span class="s">  
+</span></span></span><span class="line"><span class="cl"><span class="s">    # 日志配置  
+</span></span></span><span class="line"><span class="cl"><span class="s">    access_log /var/log/nginx/$DOMAIN.access.log;  
+</span></span></span><span class="line"><span class="cl"><span class="s">    error_log /var/log/nginx/$DOMAIN.error.log;  
+</span></span></span><span class="line"><span class="cl"><span class="s">}  
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查临时文件是否成功创建  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;</span><span class="si">${</span><span class="nv">CONF_FILE</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Error: Failed to create temporary configuration file.&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 提示用户是否需要修改配置文件  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># read -p &#34;Do you want to modify the configuration file before saving? (y/n) &#34; choice  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 根据用户选择执行相应操作  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># case &#34;$choice&#34; in  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     y|Y )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         # 使用文本编辑器让用户修改配置文件  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Editing configuration file...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         vim &#34;${CONF_FILE}&#34; # 或者使用你喜欢的其他文本编辑器，如 nano  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     n|N )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         # 直接将临时文件移动到目标位置  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Saving configuration file without modification...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         mv &#34;${CONF_FILE}&#34; &#34;${CONF_FILE}&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     * )  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         echo &#34;Invalid choice. Exiting...&#34;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         exit 1  </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         ;;  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># esac  </span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 检查 SSL 证书路径是否存在，如果不存在，提示用户手动申请  </span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -e <span class="s2">&#34;/etc/letsencrypt/live/</span><span class="nv">$CERT_DOMAIN</span><span class="s2">/fullchain.pem&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Warning: SSL certificate for </span><span class="nv">$CERT_DOMAIN</span><span class="s2"> does not exist.&#34;</span>  
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Please use certbot or another tool to manually obtain a certificate for </span><span class="nv">$CERT_DOMAIN</span><span class="s2">.&#34;</span>  
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="c1"># 提示用户是否需要重新加载 Nginx 配置  </span>
+</span></span><span class="line"><span class="cl"><span class="nb">read</span> -p <span class="s2">&#34;Do you want to reload Nginx configuration? (y/n) &#34;</span> reload_choice  
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$reload_choice</span><span class="s2">&#34;</span> in  
+</span></span><span class="line"><span class="cl">    y<span class="p">|</span>Y <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="c1"># 重新加载 Nginx 配置  </span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Reloading Nginx configuration...&#34;</span>  
+</span></span><span class="line"><span class="cl">        sudo nginx -s reload  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl">    n<span class="p">|</span>N <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Nginx configuration will not be reloaded.&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl">    * <span class="o">)</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;Invalid choice. Exiting...&#34;</span>  
+</span></span><span class="line"><span class="cl">        <span class="nb">exit</span> <span class="m">1</span>  
+</span></span><span class="line"><span class="cl">        <span class="p">;;</span>  
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4-后话">4. 后话
+</h1><p>在编写这篇教程之前，我一直都是用的是 Nginx Proxy Manager （简称NPM）图形化管理界面，觉得Nginx配置看不懂，太复杂，对Nginx也不太懂。</p>
+<p>教程的前一天，我想使用Nginx Proxy Manager为反代的服务添加 location片段，却会导致添加了location的服务挂掉，不论是图形化添加还是修改配置文件，我还以为是我的配置姿势不对，添加的location内容有错，后面找了很久的资料，却没能找到解决办法，最后还是在 NPM 的Github issues很多人出现了这个问题，而且没有一个合适的解决方案，NPM的bug。唉，一不做，二不休，不如直接用Nginx，还少去了NPM占据了一部分内存。</p>
+<p>安装Nginx的过程还是很愉快的。但是对于ssl证书我又了解甚少了，对此又花费了很多精力去了解 certbot，结果apt安装的certbot没有dnspod插件？？我一个大问号，又卸载了apt方式安装的certbot，去安装snap，通过snap安装certbot，我发现 snap也有问题？？但是找到了snap上GitHub上的 dnspod插件，也支持snap，然后又卸载 certbot，snap，重新通过 apt 安装 certbot，然后下载dnspod，结果又在申请证书的时候出错了。原来我为了简便，dnspod.ini 用的是 NPM之前的配置。后来改了就好了。</p>
+<p>现在只差反代了，上面的脚本也是为了我在 NPM已经反代的服务而写的，毕竟一个一个复制然后改端口也挺麻烦的。</p>
+<p>全文完。</p>
+<p>制作不易，如果对您有一丢丢帮助，您可以点赞收藏转发，一键三连，🤞🤞，谢谢您咧~~</p>
+<p>如需转载，请注明出处。</p>
+<blockquote>
+<p>创作时间：2024-03-25 13:40</p>
+<p>创作者：muyiacc</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/nginx/">Nginx</a>
+        
+            <a href="/tags/ssl/">Ssl</a>
+        
+            <a href="/tags/certbot/">Certbot</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/2407014/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Nginx配置模板</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2405002/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">acme.sh申请ssl证书</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2404001/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Certbot申请域名的多种方式</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2403008/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">openssl小小使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2403005/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">nginx-proxy-manager申请证书失败之缺乏zope模块【已解决】</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

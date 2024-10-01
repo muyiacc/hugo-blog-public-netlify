@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>微信 on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/</link>
+        <description>Recent content in 微信 on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Fri, 05 Jul 2024 10:07:32 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Debian安装微信</title>
+        <link>https://hublog.netlify.app/p/2310011/</link>
+        <pubDate>Wed, 11 Oct 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2310011/</guid>
+        <description>&lt;h1 id=&#34;linux原生版微信&#34;&gt;linux原生版微信
+&lt;/h1&gt;&lt;p&gt;linux上的微信版本今天发现优麒麟的适配比较好&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://www.ubuntukylin.com/applications/106-cn.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dpkg -i 下载的安装包
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;引用自
+未公开发行的Linux版微信：&lt;/p&gt;
+&lt;p&gt;其实早就已经有原生态的微信，但是没有公开的发行。我是在阿里的源里面 &amp;gt; 找的原生微信。功能比较简陋，但是可以使用，已经升级几个版本了。有兴趣的可以去下载。
+下载链接：
+&lt;a class=&#34;link&#34; href=&#34;https://mirrors.aliyun.com/ubuntukylin/pool/partner/weixin_2.1.4_amd64.deb?spm=a2c6h.25603864.0.0.7ead34376Zfwrf&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mirrors.aliyun.com/ubuntukylin/pool/partner/weixin_2.1.4_amd64.deb?spm=a2c6h.25603864.0.0.7ead34376Zfwrf&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;linux-wine版微信&#34;&gt;linux wine版微信
+&lt;/h1&gt;&lt;p&gt;上述是一个原生版本的微信，功能呢相对较少。&lt;/p&gt;
+&lt;p&gt;除此之外，星火商店还有个wine版本的微信，功能趋近于windows平台。&lt;/p&gt;
+&lt;p&gt;可以通过下载星火商店来安装wine版本的微信&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;星火商店地址：https://spark-app.store&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

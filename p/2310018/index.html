@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="首言 本文编辑于 2023-09-14 作者：muyiacc Github：github.com/muyiacc 环境：debian11 为了通过网址远程查看服务器及容器">
+<title>Prometheus&#43;node_exporter&#43;Grafana实现监控服务器</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/2310018/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Prometheus+node_exporter+Grafana实现监控服务器">
+<meta property='og:description' content="首言 本文编辑于 2023-09-14 作者：muyiacc Github：github.com/muyiacc 环境：debian11 为了通过网址远程查看服务器及容器">
+<meta property='og:url' content='https://hublog.netlify.app/p/2310018/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-10-18T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-18T14:07:10&#43;08:00'/>
+<meta name="twitter:title" content="Prometheus+node_exporter+Grafana实现监控服务器">
+<meta name="twitter:description" content="首言 本文编辑于 2023-09-14 作者：muyiacc Github：github.com/muyiacc 环境：debian11 为了通过网址远程查看服务器及容器">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-概述">1.1. 概述</a></li>
+    <li><a href="#12-安装">1.2. 安装</a></li>
+    <li><a href="#13-启动">1.3. 启动</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#21-概述">2.1. 概述</a></li>
+    <li><a href="#22-安装">2.2. 安装</a></li>
+    <li><a href="#23-启动">2.3. 启动</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#31-概述">3.1 概述</a></li>
+    <li><a href="#32-安装">3.2 安装</a></li>
+    <li><a href="#33-启动">3.3 启动</a></li>
+    <li><a href="#34-集成prometheus">3.4 集成Prometheus</a>
+      <ol>
+        <li><a href="#341-配置数据源">3.4.1 配置数据源</a></li>
+        <li><a href="#342-创建仪表盘-dashboard">3.4.2 创建仪表盘 Dashboard</a></li>
+        <li><a href="#343-导入仪表盘-dashboard">3.4.3 导入仪表盘 Dashboard</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/2310018/">Prometheus&#43;node_exporter&#43;Grafana实现监控服务器</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 18, 2023</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="首言">首言
+</h1><blockquote>
+<p>本文编辑于 2023-09-14</p>
+<p>作者：muyiacc</p>
+<p>Github：github.com/muyiacc</p>
+<p>环境：debian11</p>
+</blockquote>
+<p>为了通过网址远程查看服务器及容器的运行状况，选择了时下最热门的监控方案：Prometheus+node_exporter+Grafana。</p>
+<p>现记录下自己的安装过程。</p>
+<h1 id="1-prometheus">1. Prometheus
+</h1><blockquote>
+<p>官网地址	https://prometheus.io/docs/introduction/overview/</p>
+</blockquote>
+<h2 id="11-概述">1.1. 概述
+</h2><p>Prometheus 是一个开源的系统监控和警报工具包，由SoundCloud 构建，由Golang编写，现有非常活跃的开发人员和社区，是一个独立的开源项目，于2016年加入了云原生计算基金会，成为继Kubernetes之后的第二个托管项目。总结：非常热门+ NB。</p>
+<h2 id="12-安装">1.2. 安装
+</h2><p>话不多说，开始使用安装之旅。</p>
+<p>1）官网下载页面</p>
+<blockquote>
+<p><a class="link" href="https://prometheus.io/download/"  target="_blank" rel="noopener"
+    >https://prometheus.io/download/</a></p>
+</blockquote>
+<p>核心组件 prometheus的最新版下载地址为：</p>
+<blockquote>
+<p><a class="link" href="https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz"  target="_blank" rel="noopener"
+    >https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz</a></p>
+</blockquote>
+<p>上面的地址为github，众所周知，因为某些原因，你下载可能会出现网络问题，这里不做解决。</p>
+<p>如果你的系统可直连github，可以通过如下命令直接下载。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://github.com/prometheus/prometheus/releases/download/v2.47.0/prometheus-2.47.0.linux-amd64.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>提示 wget 没安装？</p>
+<p>debian： sudo apt install wget</p>
+<p>centos: 	sudo yum install wget</p>
+</blockquote>
+<p>2）解压安装</p>
+<p>下载完成之后，解压安装</p>
+<blockquote>
+<p>解压放到自己熟悉的路径即可。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -zxvf prometheus-2.47.0.linux-amd64.tar.gz -C ~/opt/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改名字</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt
+</span></span><span class="line"><span class="cl">mv prometheus-2.47.0.linux-amd64 prometheus-2.47.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在解压的目录下，找到 prometheus.yml 文件，这是prometheus的配置文件</p>
+<p>本文只为快速搭建使用，对于配置的含义不做详细解释。</p>
+<p>默认的文件也不需要修改，需要注意的地方是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">scrape_configs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># The job name is added as a label `job=&lt;job_name&gt;` to any timeseries scraped from this config.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;prometheus&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># metrics_path defaults to &#39;/metrics&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c"># scheme defaults to &#39;http&#39;.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&#34;localhost:9090&#34;</span><span class="p">]</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>默认的端口是9090，如果你的端口被占用了，只需要修改上述的端口即可。</p>
+<h2 id="13-启动">1.3. 启动
+</h2><p>因为使用go语言编写，编译后的文件 只需要执行解压后的文件 prometheus</p>
+<p>进入解压的目录</p>
+<p>1）前台启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./prometheus --config.file<span class="o">=</span>prometheus.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>2）后台启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup ./prometheus --config.file<span class="o">=</span>prometheus.yml <span class="p">&amp;</span>&gt;&gt; prometheus.log <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述的命令的含义为：后台启动，错误的日志重定向到标准输出，也就是将所有的日志追加到prometheus.log 中，prometheus.log会自动生成</p>
+<p>通过浏览器 ip:端口 就可以访问。</p>
+<blockquote>
+<p>如果是服务器，需要开放安全组，这里不做介绍。</p>
+</blockquote>
+<p>关于对 Prometheus 的简单介绍就先到这里。</p>
+<h1 id="2-node_exporter">2. node_exporter
+</h1><h2 id="21-概述">2.1. 概述
+</h2><p>在 Prometheus 的架构设计中，Prometheus Server 主要负责数据的收集，存储并且对外提供数据查询支持。</p>
+<p>实际的监控样本数据的收集则是由 Exporter 完成，因此为了能够监控到某些东西，如主机的 CPU 使用率，我们需要使用到 Exporter。</p>
+<p>Prometheus 周期性的从 Exporter 暴露的 HTTP 服务地址（通常是/metrics）拉取监控样本数据。</p>
+<p>为了能够采集到主机的运行指标如 CPU, 内存，磁盘等信息。我们可以使用 Node Exporter。Node Exporter 同样采用 Golang 编写，并且不存在任何的第三方依赖，只需要下载，解压即可运行。</p>
+<blockquote>
+<p>下载地址：	https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz</p>
+</blockquote>
+<h2 id="22-安装">2.2. 安装
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压</span>
+</span></span><span class="line"><span class="cl">tar -zxvf node_exporter-1.6.1.linux-amd64 -C ~/opt/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改名字</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt/ <span class="o">&amp;&amp;</span> mv node_exporter-1.6.1.linux-amd64 node_exporter-1.6.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-启动">2.3. 启动
+</h2><p>直接执行 node_exporter文件即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt/linux-amd64 node_exporter-1.6.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./node_exporter
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过控制台打印的信息可以知道，端口为 9100</p>
+<p>浏览器访问 ip:9100即可访问</p>
+<p>设置开机自启，编写systemd 服务脚本</p>
+<blockquote>
+<p>关于如何编写，可以观看这篇文章</p>
+<p><a class="link" href="https://blog.csdn.net/lu_embedded/article/details/132424115"  target="_blank" rel="noopener"
+    >https://blog.csdn.net/lu_embedded/article/details/132424115</a></p>
+</blockquote>
+<p>服务脚本文件以 .service 结尾，由 Unit、Service 和 Install 三个区块组成，这里提供一个示例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>   
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span><span class="nb">test</span>   		<span class="c1"># 简单描述服务</span>
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target    <span class="c1"># 描述服务类别，表示本服务需要在network服务启动后在启动</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Before</span><span class="o">=</span>xxx.service      <span class="c1"># 表示需要在某些服务启动之前启动，After和Before字段只涉及启动顺序，不涉及依赖关系</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span> 
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>forking     		<span class="c1"># 设置服务的启动方式</span>
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>USER        		<span class="c1"># 设置服务运行的用户</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Group</span><span class="o">=</span>USER       		<span class="c1"># 设置服务运行的用户组</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WorkingDirectory</span><span class="o">=</span>/PATH	<span class="c1"># 设置服务运行的路径(cwd)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">KillMode</span><span class="o">=</span>control-group  <span class="c1"># 定义systemd如何停止服务</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>no        		<span class="c1"># 定义服务进程退出后，systemd的重启方式，默认是不重启</span>
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/start.sh    	<span class="c1"># 服务启动命令，命令需要绝对路径（采用sh脚本启动其他进程时Type须为forking）</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>   
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target  <span class="c1"># 多用户</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建 service 文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /usr/lib/systemd/system/node_exporter.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>node_export
+</span></span><span class="line"><span class="cl"><span class="nv">Documentation</span><span class="o">=</span>https://github.com/prometheus/node_exporter
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>simple
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>ecs-user
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/home/ecs-user/opt/node_exporter-1.6.1/node_exporter
+</span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>on-failure
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>开启自启</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 查看状态</span>
+</span></span><span class="line"><span class="cl">systemctl status node_exporter 
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动node_exporter</span>
+</span></span><span class="line"><span class="cl">systemctl start node_exporter 
+</span></span><span class="line"><span class="cl"><span class="c1"># 开启自启</span>
+</span></span><span class="line"><span class="cl">systemctl <span class="nb">enable</span> node_exporter 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="3-grafana">3. Grafana
+</h1><h2 id="31-概述">3.1 概述
+</h2><p>Grafana 是一款采用 Go 语言编写的开源应用，主要用于大规模指标数据的可视化展现</p>
+<p>是网络架构和应用分析中最流行的时序数据展示工具，目前已经支持绝大部分常用的时序数据库。</p>
+<blockquote>
+<p>官网：https://grafana.com/zh-cn/grafana/</p>
+</blockquote>
+<h2 id="32-安装">3.2 安装
+</h2><p>个人使用，选择 Standalone Linux Binaries 版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载</span>
+</span></span><span class="line"><span class="cl">wget https://dl.grafana.com/enterprise/release/grafana-enterprise-10.1.1.linux-amd64.tar.gz
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 解压</span>
+</span></span><span class="line"><span class="cl">tar -zxvf grafana-enterprise-10.1.1.linux-amd64.tar.gz -C ~/opt/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 不用修改名字了，默认为grafana-10.1.1</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="33-启动">3.3 启动
+</h2><p>进入解压的目录之后</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup ./bin/grafana-server web <span class="p">&amp;</span>&gt;&gt; grafana.log <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="34-集成prometheus">3.4 集成Prometheus
+</h2><p>启动Grafana之后，浏览器访问 ip:3000，进入登录界面，默认用户和密码都为admin</p>
+<p>输出密码之后，会提示修改密码，修改即可。</p>
+<p>完成之后，进入主界面 ，大概如下：</p>
+<p>![image-20230914174457412](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 17-45-17_image-20230914174457412.png)</p>
+<h3 id="341-配置数据源">3.4.1 配置数据源
+</h3><p>按住Ctrl+K，搜索 data sources，选中data sources 配置数据源，进入如下界面</p>
+<p>![image-20230914174701933](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 17-47-04_image-20230914174701933.png)</p>
+<p>选择 add new data source ，选择Prometheus，进入配置</p>
+<p>![image-20230914174847825](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 17-48-49_image-20230914174847825.png)</p>
+<p>这里只需要配置一下 Prometheus server URL，默认没改端口的填入 http://localhost:9090，不要选择https，滑到最底下，选择save &amp; test按钮，如果显示Successfully queried the Prometheus API，表示对接成功。</p>
+<h3 id="342-创建仪表盘-dashboard">3.4.2 创建仪表盘 Dashboard
+</h3><p>Ctrl + K，搜索 Dashboards，进入Dashboards，选择new dashborad，后续自行探索吧。</p>
+<p>![image-20230914175424008](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 17-54-27_image-20230914175424008.png)</p>
+<h3 id="343-导入仪表盘-dashboard">3.4.3 导入仪表盘 Dashboard
+</h3><p>Ctrl + K，搜索 Dashboards，进入Dashboards，选择Import</p>
+<p>![image-20230914175910755](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 17-59-12_image-20230914175910755.png)</p>
+<p>填入 ID ,Load 即可</p>
+<blockquote>
+<p>对于如何寻找已经创建好的仪表盘，可在官网寻找 <a class="link" href="https://grafana.com/grafana/dashboards/"  target="_blank" rel="noopener"
+    >https://grafana.com/grafana/dashboards/</a></p>
+</blockquote>
+<p>![image-20230914180001302](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 18-00-03_image-20230914180001302.png)</p>
+<p>这里推荐一个 <a class="link" href="https://grafana.com/grafana/dashboards/12633-linux/"  target="_blank" rel="noopener"
+    >https://grafana.com/grafana/dashboards/12633-linux/</a></p>
+<p>填入的id为12633，load后进入如下界面，选择之前连接的Prometheus，最后 Import就大功告成了。</p>
+<p>![image-20230914180651577](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 18-06-53_image-20230914180651577.png)</p>
+<p>最后的展示</p>
+<p>![image-20230914180755078](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14"  target="_blank" rel="noopener"
+    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-14</a> 18-07-57_image-20230914180755078.png)</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/240905211706/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240902180979/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">玩客云刷机安装armbian系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240901100943/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OBS使用经验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240826190828/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">firefox个性化配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240826140866/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">openwrt实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

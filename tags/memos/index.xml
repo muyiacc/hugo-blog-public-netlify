@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Memos on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/tags/memos/</link>
+        <description>Recent content in Memos on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Tue, 07 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/memos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>memos插件firefox</title>
+        <link>https://hublog.netlify.app/p/2405007/</link>
+        <pubDate>Tue, 07 May 2024 16:05:43 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2405007/</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/memos-ff/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://addons.mozilla.org/en-US/firefox/addon/memos-ff/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;之前搭建过的memos，使用频率不高，最近看到有这个插件，装上了确实方便了使用&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

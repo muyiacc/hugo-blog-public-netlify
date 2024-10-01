@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Windows on Seektao | 寻道之旅</title>
+        <link>https://hublog.netlify.app/categories/windows/</link>
+        <description>Recent content in Windows on Seektao | 寻道之旅</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Seektao | 寻道之旅</copyright>
+        <lastBuildDate>Sun, 18 Aug 2024 21:08:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windows使用WSL安装Linux系统</title>
+        <link>https://hublog.netlify.app/p/240818210841/</link>
+        <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/240818210841/</guid>
+        <description>&lt;p&gt;参考文档&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://learn.microsoft.com/zh-cn/windows/wsl/&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows创建系统服务的方式</title>
+        <link>https://hublog.netlify.app/p/240801170846/</link>
+        <pubDate>Thu, 01 Aug 2024 17:08:46 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/240801170846/</guid>
+        <description>&lt;h2 id=&#34;方式一sc&#34;&gt;方式一：SC
+&lt;/h2&gt;</description>
+        </item>
+        <item>
+        <title>Windows软件清单</title>
+        <link>https://hublog.netlify.app/p/2406026/</link>
+        <pubDate>Tue, 25 Jun 2024 16:06:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2406026/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/08/17/nWP4hYF7iKcaS32.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图片.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;office&#34;&gt;Office
+&lt;/h2&gt;&lt;h2 id=&#34;浏览器&#34;&gt;浏览器
+&lt;/h2&gt;&lt;h3 id=&#34;firefox&#34;&gt;FireFox
+&lt;/h3&gt;&lt;h3 id=&#34;google-chrome&#34;&gt;Google Chrome
+&lt;/h3&gt;&lt;h3 id=&#34;edge&#34;&gt;Edge
+&lt;/h3&gt;&lt;h2 id=&#34;邮箱&#34;&gt;邮箱
+&lt;/h2&gt;&lt;h3 id=&#34;thunderbird&#34;&gt;Thunderbird
+&lt;/h3&gt;&lt;p&gt;开源邮箱客户端，&lt;a class=&#34;link&#34; href=&#34;https://www.thunderbird.net/zh-CN/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.thunderbird.net/zh-CN/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;outlook&#34;&gt;Outlook
+&lt;/h3&gt;&lt;h2 id=&#34;交流&#34;&gt;交流
+&lt;/h2&gt;&lt;h3 id=&#34;qq&#34;&gt;QQ
+&lt;/h3&gt;&lt;h3 id=&#34;微信&#34;&gt;微信
+&lt;/h3&gt;&lt;h3 id=&#34;腾讯会议&#34;&gt;腾讯会议
+&lt;/h3&gt;&lt;h3 id=&#34;zoom&#34;&gt;Zoom
+&lt;/h3&gt;&lt;h3 id=&#34;钉钉&#34;&gt;钉钉
+&lt;/h3&gt;&lt;h2 id=&#34;视频播放器&#34;&gt;视频/播放器
+&lt;/h2&gt;&lt;h3 id=&#34;mpv&#34;&gt;mpv
+&lt;/h3&gt;&lt;p&gt;开源，极简播放器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/muyiacc/portable_config&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;个人配置文件&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vlc&#34;&gt;vlc
+&lt;/h3&gt;&lt;p&gt;另一款开源播放器&lt;/p&gt;
+&lt;h3 id=&#34;bilibili&#34;&gt;bilibili
+&lt;/h3&gt;&lt;p&gt;bilibili客户端&lt;/p&gt;
+&lt;h3 id=&#34;zyplayer&#34;&gt;Zyplayer
+&lt;/h3&gt;&lt;h3 id=&#34;terminus-player&#34;&gt;Terminus Player
+&lt;/h3&gt;&lt;p&gt;第三方 Emby 播放器&lt;/p&gt;
+&lt;h2 id=&#34;音乐播放器&#34;&gt;音乐/播放器
+&lt;/h2&gt;&lt;h3 id=&#34;spotify&#34;&gt;Spotify
+&lt;/h3&gt;&lt;h3 id=&#34;方格音乐&#34;&gt;方格音乐
+&lt;/h3&gt;&lt;h3 id=&#34;网易云音乐&#34;&gt;网易云音乐
+&lt;/h3&gt;&lt;h3 id=&#34;qq音乐&#34;&gt;QQ音乐
+&lt;/h3&gt;&lt;h3 id=&#34;musicplayer2&#34;&gt;MusicPlayer2
+&lt;/h3&gt;&lt;p&gt;开源纯音频播放器，&lt;a class=&#34;link&#34; href=&#34;https://github.com/zhongyang219/MusicPlayer2/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/zhongyang219/MusicPlayer2/releases&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;落雪-lx-music&#34;&gt;落雪 Lx-Music
+&lt;/h3&gt;&lt;h2 id=&#34;阅读&#34;&gt;阅读
+&lt;/h2&gt;&lt;h3 id=&#34;koodo-reader&#34;&gt;Koodo Reader
+&lt;/h3&gt;&lt;p&gt;阅读神器，支持多种格式&lt;/p&gt;
+&lt;h2 id=&#34;下载工具&#34;&gt;下载工具
+&lt;/h2&gt;&lt;h3 id=&#34;gopeed&#34;&gt;Gopeed
+&lt;/h3&gt;&lt;p&gt;Go编写的下载工具，跨平台。&lt;/p&gt;
+&lt;h3 id=&#34;ytdownloader&#34;&gt;YTDownloader
+&lt;/h3&gt;&lt;p&gt;Youtube 下载神器，强烈推荐。&lt;/p&gt;
+&lt;p&gt;地址：https://github.com/aandrew-me/ytDownloader&lt;/p&gt;
+&lt;h3 id=&#34;neat-download-manager&#34;&gt;Neat Download Manager
+&lt;/h3&gt;&lt;p&gt;Windows下多线程下载工具&lt;/p&gt;
+&lt;h3 id=&#34;qbittorrent-enhanced-edition&#34;&gt;qBittorrent-Enhanced-Edition
+&lt;/h3&gt;&lt;p&gt;增强版的qBittorrent，地址：https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases&lt;/p&gt;
+&lt;h3 id=&#34;motrix&#34;&gt;Motrix
+&lt;/h3&gt;&lt;p&gt;下载工具&lt;/p&gt;
+&lt;h3 id=&#34;aria2-windows&#34;&gt;Aria2-Windows
+&lt;/h3&gt;&lt;p&gt;Windows下的Aria2下载工具，下载地址：&lt;/p&gt;
+&lt;p&gt;链接: &lt;a class=&#34;link&#34; href=&#34;https://pan.baidu.com/s/1nf2XaO7NprysGgOFXJpeYQ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://pan.baidu.com/s/1nf2XaO7NprysGgOFXJpeYQ&lt;/a&gt; 提取码: love 复制这段内容后打开百度网盘手机App，操作更方便哦&lt;/p&gt;
+&lt;h3 id=&#34;小白羊云盘&#34;&gt;小白羊云盘
+&lt;/h3&gt;&lt;p&gt;第三方阿里云盘播放器，https://github.com/gaozhangmin/aliyunpan&lt;/p&gt;
+&lt;h2 id=&#34;剪辑&#34;&gt;剪辑
+&lt;/h2&gt;&lt;h3 id=&#34;ps&#34;&gt;PS
+&lt;/h3&gt;&lt;h3 id=&#34;剪影&#34;&gt;剪影
+&lt;/h3&gt;&lt;h3 id=&#34;handbrake&#34;&gt;HandBrake
+&lt;/h3&gt;&lt;h2 id=&#34;infotechit&#34;&gt;InfoTech（IT）
+&lt;/h2&gt;&lt;h3 id=&#34;jetbrains&#34;&gt;Jetbrains
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Idea&lt;/li&gt;
+&lt;li&gt;Datagrip&lt;/li&gt;
+&lt;li&gt;Goland&lt;/li&gt;
+&lt;li&gt;PyCharm&lt;/li&gt;
+&lt;li&gt;WebStorm&lt;/li&gt;
+&lt;li&gt;Android Studio&lt;/li&gt;
+&lt;li&gt;PhpStorm&lt;/li&gt;
+&lt;li&gt;Fleet&lt;/li&gt;
+&lt;li&gt;Jetbrains ToolBox&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;vmware-workstation-pro&#34;&gt;VMware Workstation Pro
+&lt;/h3&gt;&lt;h3 id=&#34;tabby&#34;&gt;Tabby
+&lt;/h3&gt;&lt;p&gt;ssh工具，地址：https://github.com/Eugeny/tabby&lt;/p&gt;
+&lt;h3 id=&#34;vscode&#34;&gt;VSCode
+&lt;/h3&gt;&lt;h3 id=&#34;gitbash&#34;&gt;GitBash
+&lt;/h3&gt;&lt;h3 id=&#34;fiddler-classic&#34;&gt;Fiddler Classic
+&lt;/h3&gt;&lt;h3 id=&#34;mysql-workbench-80-ce&#34;&gt;MySQL Workbench 8.0 CE
+&lt;/h3&gt;&lt;h3 id=&#34;tiny-rdm&#34;&gt;Tiny RDM
+&lt;/h3&gt;&lt;h3 id=&#34;dbeaver&#34;&gt;DBeaver
+&lt;/h3&gt;&lt;h3 id=&#34;navicat-premium-16&#34;&gt;Navicat Premium 16
+&lt;/h3&gt;&lt;h3 id=&#34;phpstudy_pro&#34;&gt;phpstudy_pro
+&lt;/h3&gt;&lt;p&gt;Windows下php集成开发环境，地址：https://www.xp.cn/download.html&lt;/p&gt;
+&lt;h3 id=&#34;apifox&#34;&gt;Apifox
+&lt;/h3&gt;&lt;p&gt;api测试工具&lt;/p&gt;
+&lt;h3 id=&#34;postman&#34;&gt;Postman
+&lt;/h3&gt;&lt;h3 id=&#34;mobaxterm&#34;&gt;MobaXterm
+&lt;/h3&gt;&lt;p&gt;ssh工具，只支持Windows&lt;/p&gt;
+&lt;h3 id=&#34;filezilla&#34;&gt;FileZilla
+&lt;/h3&gt;&lt;p&gt;开源sftp工具&lt;/p&gt;
+&lt;h2 id=&#34;编辑器&#34;&gt;编辑器
+&lt;/h2&gt;&lt;h3 id=&#34;typora&#34;&gt;Typora
+&lt;/h3&gt;&lt;h3 id=&#34;obsidian&#34;&gt;Obsidian
+&lt;/h3&gt;&lt;p&gt;推荐和Typora使用&lt;/p&gt;
+&lt;h3 id=&#34;notepad--&#34;&gt;Notepad&amp;ndash;
+&lt;/h3&gt;&lt;p&gt;替代Notpad++&lt;/p&gt;
+&lt;h3 id=&#34;masscode&#34;&gt;massCode
+&lt;/h3&gt;&lt;p&gt;开源，常用代码保存&lt;/p&gt;
+&lt;h3 id=&#34;sublime-text&#34;&gt;Sublime Text
+&lt;/h3&gt;&lt;h3 id=&#34;drawio&#34;&gt;draw.io
+&lt;/h3&gt;&lt;p&gt;开源画图工具&lt;/p&gt;
+&lt;h3 id=&#34;notion&#34;&gt;Notion
+&lt;/h3&gt;&lt;h3 id=&#34;notepad3&#34;&gt;Notepad3
+&lt;/h3&gt;&lt;p&gt;替代notepad&lt;/p&gt;
+&lt;h2 id=&#34;大杂烩&#34;&gt;大杂烩
+&lt;/h2&gt;&lt;h3 id=&#34;7-zip-file-manager&#34;&gt;7-Zip File Manager
+&lt;/h3&gt;&lt;p&gt;解压缩工具&lt;/p&gt;
+&lt;h3 id=&#34;snipaste&#34;&gt;Snipaste
+&lt;/h3&gt;&lt;p&gt;截图神器&lt;/p&gt;
+&lt;h3 id=&#34;mumu模拟器12&#34;&gt;MuMu模拟器12
+&lt;/h3&gt;&lt;h3 id=&#34;geek强烈推荐&#34;&gt;geek（强烈推荐）
+&lt;/h3&gt;&lt;p&gt;卸载软件神器，可卸载安装软件自动删除注册表&lt;/p&gt;
+&lt;h3 id=&#34;nmap---zenmap-gui&#34;&gt;Nmap - Zenmap GUI
+&lt;/h3&gt;&lt;h3 id=&#34;quicklook&#34;&gt;QuickLook
+&lt;/h3&gt;&lt;h3 id=&#34;switchhosts&#34;&gt;SwitchHosts
+&lt;/h3&gt;&lt;p&gt;快速切换hosts&lt;/p&gt;
+&lt;h3 id=&#34;obs-studio-64bit&#34;&gt;OBS Studio (64bit)
+&lt;/h3&gt;&lt;h3 id=&#34;speedtest&#34;&gt;Speedtest
+&lt;/h3&gt;&lt;h3 id=&#34;everything&#34;&gt;Everything
+&lt;/h3&gt;&lt;h3 id=&#34;screentogif&#34;&gt;ScreenToGif
+&lt;/h3&gt;&lt;h3 id=&#34;scrcpy&#34;&gt;scrcpy
+&lt;/h3&gt;&lt;p&gt;开源投屏工具&lt;/p&gt;
+&lt;h3 id=&#34;rustdesk&#34;&gt;RustDesk
+&lt;/h3&gt;&lt;h3 id=&#34;todesk&#34;&gt;ToDesk
+&lt;/h3&gt;&lt;h3 id=&#34;bandizip&#34;&gt;Bandizip
+&lt;/h3&gt;&lt;h3 id=&#34;localsend&#34;&gt;LocalSend
+&lt;/h3&gt;&lt;h3 id=&#34;ttime&#34;&gt;TTime
+&lt;/h3&gt;&lt;p&gt;翻译软件，好用&lt;/p&gt;
+&lt;h3 id=&#34;有道翻译&#34;&gt;有道翻译
+&lt;/h3&gt;&lt;h3 id=&#34;bitwarden&#34;&gt;Bitwarden
+&lt;/h3&gt;&lt;h3 id=&#34;umi-ocr&#34;&gt;Umi-OCR
+&lt;/h3&gt;&lt;h3 id=&#34;utools&#34;&gt;uTools
+&lt;/h3&gt;&lt;h3 id=&#34;steam&#34;&gt;Steam
+&lt;/h3&gt;&lt;h3 id=&#34;microsoft-support-and-recovery-assistant&#34;&gt;Microsoft Support and Recovery Assistant
+&lt;/h3&gt;&lt;h3 id=&#34;hubstudio&#34;&gt;Hubstudio
+&lt;/h3&gt;&lt;p&gt;指纹浏览器&lt;/p&gt;
+&lt;h3 id=&#34;gologin&#34;&gt;GoLogin
+&lt;/h3&gt;&lt;p&gt;指纹浏览器&lt;/p&gt;
+&lt;h3 id=&#34;dolphin-anty&#34;&gt;Dolphin Anty
+&lt;/h3&gt;&lt;p&gt;指纹浏览器&lt;/p&gt;
+&lt;h3 id=&#34;vmlogin&#34;&gt;VMLogin
+&lt;/h3&gt;&lt;p&gt;指纹浏览器&lt;/p&gt;
+&lt;h3 id=&#34;incogniton&#34;&gt;Incogniton
+&lt;/h3&gt;&lt;p&gt;指纹浏览器&lt;/p&gt;
+&lt;h3 id=&#34;全国资格考试网报平台证件照片审核处理系统&#34;&gt;全国资格考试网报平台证件照片审核处理系统
+&lt;/h3&gt;&lt;h3 id=&#34;raidrive&#34;&gt;RaiDrive
+&lt;/h3&gt;&lt;p&gt;挂载工具，Windows推荐使用&lt;/p&gt;
+&lt;h2 id=&#34;剪辑-1&#34;&gt;剪辑
+&lt;/h2&gt;&lt;h3 id=&#34;哔哩哔哩投稿工具&#34;&gt;哔哩哔哩投稿工具
+&lt;/h3&gt;&lt;h3 id=&#34;哔哩哔哩直播姬&#34;&gt;哔哩哔哩直播姬
+&lt;/h3&gt;&lt;h3 id=&#34;adobe-photoshop-2023&#34;&gt;Adobe Photoshop 2023
+&lt;/h3&gt;&lt;h3 id=&#34;剪映专业版&#34;&gt;剪映专业版
+&lt;/h3&gt;&lt;h3 id=&#34;handbrake-1&#34;&gt;HandBrake
+&lt;/h3&gt;&lt;h2 id=&#34;代理工具&#34;&gt;代理工具
+&lt;/h2&gt;&lt;h3 id=&#34;v2rayn&#34;&gt;v2rayN
+&lt;/h3&gt;&lt;h3 id=&#34;nekoray&#34;&gt;nekoray
+&lt;/h3&gt;&lt;h3 id=&#34;oblivion-desktop&#34;&gt;Oblivion Desktop
+&lt;/h3&gt;&lt;h3 id=&#34;cloudflare-warp&#34;&gt;Cloudflare WARP
+&lt;/h3&gt;&lt;h3 id=&#34;wireguard&#34;&gt;WireGuard
+&lt;/h3&gt;&lt;h3 id=&#34;hiddify&#34;&gt;Hiddify
+&lt;/h3&gt;&lt;h3 id=&#34;nodescatch&#34;&gt;nodesCatch
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>windows下hosts目录</title>
+        <link>https://hublog.netlify.app/p/2406016/</link>
+        <pubDate>Sun, 16 Jun 2024 16:06:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2406016/</guid>
+        <description>&lt;p&gt;有时候需要查看hosts，每次都是从网上查看，不如自己记录一下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C:\Windows\System32\drivers\etc\hosts
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;通过移动硬盘系统挂载后的位置（这个比较随机，看系统）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/media/taoone/C0260DE6260DDDF2/Windows/System32/drivers/etc/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Windows将程序设置开机自启</title>
+        <link>https://hublog.netlify.app/p/2404011/</link>
+        <pubDate>Thu, 11 Apr 2024 15:07:04 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2404011/</guid>
+        <description>&lt;p&gt;有些程序使用的频繁，为了免去手动运行，可以设置开机自启动。&lt;/p&gt;
+&lt;p&gt;但是有些程序自身没有开机自启的设置，此情况下，我们可以将&lt;strong&gt;程序的快捷方式&lt;/strong&gt;添加到Windows的【启动】文件夹，实现程序开机自启。&lt;/p&gt;
+&lt;p&gt;Windows程序自启动目录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C:\Users\taoone\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者通过 win+r ，输入 &lt;code&gt;shell:startup&lt;/code&gt;回车打开。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>windows右键新增打开cmd</title>
+        <link>https://hublog.netlify.app/p/2404010/</link>
+        <pubDate>Wed, 10 Apr 2024 15:07:04 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2404010/</guid>
+        <description>&lt;h1 id=&#34;方式一手动修改注册表&#34;&gt;方式一：手动修改注册表
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;打开注册表，win+s搜索注册表或者regedit打开注册表，&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;定位到&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算机&lt;span class=&#34;se&#34;&gt;\H&lt;/span&gt;KEY_CLASSES_ROOT&lt;span class=&#34;se&#34;&gt;\D&lt;/span&gt;irectory&lt;span class=&#34;se&#34;&gt;\B&lt;/span&gt;ackground&lt;span class=&#34;se&#34;&gt;\s&lt;/span&gt;hell
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;右键新增项，名字随意，建议有意义的名字，比如 OpenCmdHere&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 OpenCmdHere 下继续新增项，名字为 &lt;font color=&#39;red&#39;&gt;command&lt;/font&gt;，这个名字不可更改。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;在 command 下修改默认的数据，改为&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cmd.exe /k &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;%V&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在OpenCmdHere 下新增字符串值，名称为 Icon，数据为 cmd.exe&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;退出查看效果如何&lt;/p&gt;
+&lt;h1 id=&#34;方式二执行reg文件&#34;&gt;方式二：执行reg文件
+&lt;/h1&gt;&lt;p&gt;为了简化操作，方式一的注册表我已导出为 .reg文件，只需要新建文件，后缀改为 .reg，把下面的内容粘贴进去执行即可&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-reg&#34; data-lang=&#34;reg&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Windows Registry Editor Version 5.00
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\Directory\Background\shell\OpenCmdHere]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Open Cmd Here&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;&amp;#34;Icon&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cmd.exe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;\Directory\Background\shell\OpenCmdHere\command]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;na&#34;&gt;@&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;cmd.exe /k cd \&amp;#34;%V\&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>redis-windows安装</title>
+        <link>https://hublog.netlify.app/p/2404009/</link>
+        <pubDate>Tue, 09 Apr 2024 15:07:04 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2404009/</guid>
+        <description>&lt;p&gt;GitHub项目：https://github.com/redis-windows/redis-windows&lt;/p&gt;
+&lt;p&gt;下载解压&lt;/p&gt;
+&lt;p&gt;安装服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc.exe create Redis binpath=RedisService.exe详细所在位置 start= auto
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 例如
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc.exe create Redis binpath=D:\develop\Redis-7.2.4-Windows-x64-cygwin-with-Service\RedisService.exe start= auto
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;服务启动停止&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 启动&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net start Redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 停止&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net stop Redis
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 删除服务&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc.exe delete Redis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>使用Windows10搭建DDNS服务和HTTP服务</title>
+        <link>https://hublog.netlify.app/p/2312013/</link>
+        <pubDate>Wed, 13 Dec 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2312013/</guid>
+        <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+&lt;/h1&gt;&lt;p&gt;本地的一些环境如何部署到公网访问，本地在有公网ip的情况下实现&lt;/p&gt;
+&lt;h1 id=&#34;2-准备工作&#34;&gt;2. 准备工作
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;公网ip&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows搭建RustDesk-Server并使用-1</title>
+        <link>https://hublog.netlify.app/p/2312011/</link>
+        <pubDate>Mon, 11 Dec 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2312011/</guid>
+        <description>&lt;blockquote&gt;
+&lt;p&gt;Windows10专业工作站版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+&lt;/h1&gt;&lt;p&gt;RuskDesk 是一个使用 rust语言编写的开源的远程控制，支持自行搭建服务端，本次就来介绍一下如何在 windows上搭建。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;官网地址：https://rustdesk.com&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;2-搭建rustdesk-server&#34;&gt;2. 搭建RustDesk Server
+&lt;/h1&gt;&lt;p&gt;下载两个工具：&lt;a class=&#34;link&#34; href=&#34;https://nssm.cc/release/nssm-2.24.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NSSM&lt;/a&gt; ，&lt;a class=&#34;link&#34; href=&#34;https://github.com/rustdesk/rustdesk-server/releases/download/1.1.8-2/rustdesk-server-windows-x86_64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RuskDesk Server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压它们，放到各自的文件夹下，把 NSSM 加入到系统的环境变量，确保可随处执行&lt;/p&gt;
+&lt;p&gt;xxxxxxxxxx nssm stop JupyterLabService​​nssm remove JupyterLabServicecmd&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install &lt;span class=&#34;s2&#34;&gt;&amp;#34;RustDesk hbbs service&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;C:\Program Files\RustDesk Server\hbbs.exe&amp;#34;&lt;/span&gt; -r 0.0.0.0 -k _
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install &lt;span class=&#34;s2&#34;&gt;&amp;#34;RustDesk hbbr service&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;C:\Program Files\RustDesk Server\hbbr.exe&amp;#34;&lt;/span&gt; -k _
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;比如我的如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install &lt;span class=&#34;s2&#34;&gt;&amp;#34;RustDesk hbbs service&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\rustdesk-server-windows-x86_64\hbbs.exe&amp;#34;&lt;/span&gt; -r 0.0.0.0 -k _
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;执行完成之后应该在 &lt;code&gt;服务&lt;/code&gt; 能够看到这个
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_65263.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;启动服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm start &lt;span class=&#34;s2&#34;&gt;&amp;#34;RustDesk hbbs service&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm stop &lt;span class=&#34;s2&#34;&gt;&amp;#34;RustDesk hbbs service&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;3-客户端&#34;&gt;3. 客户端
+&lt;/h1&gt;&lt;p&gt;下载客户端：&lt;a class=&#34;link&#34; href=&#34;https://github.com/rustdesk/rustdesk/releases/download/1.2.3/rustdesk-1.2.3-x86_64.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装到本地，安装过程不做介绍。&lt;/p&gt;
+&lt;p&gt;安装完成应该如下
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_15584.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击我所标记的地方，进入设置
+接着点击网络，解锁网络设置
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_76236.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;填如id服务器，和Key。等等，我发现了个问题，web端官方给出的文档是 21114端口，好像无法访问，先打开打开cmd，查看监听的端口，
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_32623.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;果然没有21114端口，然后我去github官方找doc了， 搜索 21114，有一个相关的回答，官方说web端被移除了，合着我白忙活了？？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_00329.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;不过别慌，不就是没有web客户端嘛，先填写本机ip试试先，至于这个 key嘛，如果你留意文件夹还记得是否还记得有个 &lt;code&gt;.pub&lt;/code&gt;结尾的。熟悉证书的都有点灵感了，这个一般都是公钥，使用记事本打开复制到key中试试，结果如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_48300.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;返回主页，看中间的底部，有个 &lt;code&gt;就绪&lt;/code&gt;字样
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_30016.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;可以了？？为了确定到底是不是，然后我就把那个id服务器随便填了一个ip，发现还真就不行了，多试了几次也还是这样，填回自己的就好了，为了给你们看看还是截图为证&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_03986.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_41679.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;好了，关于这部分应该就是可以了，至于远程连接实际有没有问题，下次再测试测试，现在已经晚上12：23了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在后来我找解决web客户端的时候，我发现 rustdesk server 文件夹下有个&lt;code&gt;RustDeskServer.Setup.exe&lt;/code&gt; 好家伙，这不就是server安装程序嘛，我还用nssm干嘛，点击下一步下一步就好了，后面测试了确实是可以的，不过有一步是弹出个程序框，需要点击启动。好了，现在真的12：30了。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows搭建Jupyter-lab服务，加入系统服务，开机自启。指定端口和默认路径，开启远程访问，配合公网ip，可远程工作。(未完成)</title>
+        <link>https://hublog.netlify.app/p/2312010/</link>
+        <pubDate>Sun, 10 Dec 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2312010/</guid>
+        <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+&lt;/h1&gt;&lt;p&gt;想在 Windows上搭建 Jupyter-lab服务，开启自启，有公网ip的同学还可以远程访问，实现远程办公。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;conda install jupyterlab
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install JupyterLabService &lt;span class=&#34;s2&#34;&gt;&amp;#34;jupyter-lab&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;--config=C:\path\to\your\jupyter_config.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install JupyterLabService &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\develop\miniconda3\Scripts\jupyter-lab.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;--config=C:\path\to\your\jupyter_config.json&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc create JupyterLabService binPath= &lt;span class=&#34;s2&#34;&gt;&amp;#34;\&amp;#34;&lt;/span&gt;D:\develop\miniconda3\Scripts\jupyter-lab.exe\&lt;span class=&#34;s2&#34;&gt;&amp;#34; --config=C:\path\to\your\jupyter_config.json&amp;#34;&lt;/span&gt; start= auto
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;使用以下命令来启动这个服务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm start JupyterLabService
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这将会启动 JupyterLab 服务，并让它使用你指定的 &lt;code&gt;jupyter_server_config.json&lt;/code&gt; 配置文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm stop JupyterLabService
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove JupyterLabService
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>删除windows的defender误报</title>
+        <link>https://hublog.netlify.app/p/2311017/</link>
+        <pubDate>Fri, 17 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311017/</guid>
+        <description>&lt;p&gt;打开 C:\ProgramData\Microsoft\Windows Defender\Scans\History，然后删除里面的一个叫 “Service” 的文件夹。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>修复Windows的Defender脱机版扫描点击无反应</title>
+        <link>https://hublog.netlify.app/p/2311015/</link>
+        <pubDate>Wed, 15 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311015/</guid>
+        <description>&lt;p&gt;win+s 搜索cmd，使用管理员打开，依此执行以下的命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这一步耐心等待
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;%i in (%&lt;/span&gt;windir&lt;span class=&#34;nv&#34;&gt;%\system32\*.dll) do regsvr32.exe /s %&lt;/span&gt;i  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;for &lt;span class=&#34;nv&#34;&gt;%i in (%&lt;/span&gt;windir&lt;span class=&#34;nv&#34;&gt;%\system32\*.ocx) do regsvr32.exe /s %&lt;/span&gt;i  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;执行完毕后重启设备，继续执行下方命令：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Dism /Online /Cleanup-Image /ScanHealth
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Dism /Online /Cleanup-Image /CheckHealth  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;这一步可能会卡住62.3%，等待太久就关掉它，重新执行，直到成功
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DISM /Online /Cleanup-image /RestoreHealth  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;前面没有问题，到这一步结束后会显示修复成功的信息，执行完重启
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sfc /SCANNOW
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Windows启用Administrator</title>
+        <link>https://hublog.netlify.app/p/2311013/</link>
+        <pubDate>Mon, 13 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311013/</guid>
+        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;net user administrator /active:yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Windows下安装Alist，并安装系统服务自启动</title>
+        <link>https://hublog.netlify.app/p/2311012/</link>
+        <pubDate>Sun, 12 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311012/</guid>
+        <description>&lt;p&gt;Alist是一个网盘管理工作，可以挂在多个网盘，使用go编写，所以多平台支持，之前在服务器安装了alist，使用的Linux系统，这次在Windows下也安装一下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;笔者Windows版本为 Windows10 专业工作站，我不确定家庭版是否有限制&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-下载&#34;&gt;1. 下载
+&lt;/h2&gt;&lt;p&gt;下载地址： &lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/alist-org/alist/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点我可直接下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载的文件解压到一个目录，最好先手动创建一个文件夹，比如 &lt;code&gt;D:\Program Files\alist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;完整的路径如下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:&lt;span class=&#34;se&#34;&gt;\P&lt;/span&gt;rogram Files&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;2-运行&#34;&gt;2. 运行
+&lt;/h2&gt;&lt;p&gt;启动服务，在地址栏输入cmd快速进入当前目录，输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;就会在当前目录下生成 data文件夹。包含了程序的数据。&lt;/p&gt;
+&lt;p&gt;打开浏览器：localhost:5244 即可访问，终端出现了随机密码，但是默认密码太麻烦了，建议直接重置密码。&lt;/p&gt;
+&lt;p&gt;回到 alist所在目录，看到 第一次运行的时候生成的 data 文件夹，这个是存放数据的文件夹。&lt;/p&gt;
+&lt;p&gt;生成（重置）密码：回到 &lt;code&gt;alist.exe&lt;/code&gt;所在目录，重新打开一个 cmd 窗口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 指定密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe admin set 你的密码 --data .\data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 随机生成密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe admin random --data .\data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--data&lt;/code&gt; 表示指定数据目录。不指定可能会报错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果出现了如下报错，表示修改密码没有生效，报错如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ERRO[2023-11-29 17:42:49] [del_user_cache_online] error: that&amp;#39;s not even a token
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;回到浏览器：输入：&lt;code&gt;localhost:5244&lt;/code&gt; 即可使用 alist了。&lt;/p&gt;
+&lt;p&gt;现在我们使用的是默认端口，由于我的电脑上 &lt;code&gt;小白羊盘&lt;/code&gt; 内置了alist占用了 5244端口，所以在运行alist的时候可以把 端口修改，进入 data，可以看到有个 &lt;code&gt;config.json&lt;/code&gt;的文件，里面就包含了端口的信息。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件所在的路径：D:\Program Files\alist\data\config.json&lt;/li&gt;
+&lt;li&gt;打开 config.json，修改以下的值
+&lt;ul&gt;
+&lt;li&gt;修改 &amp;ldquo;http_port&amp;rdquo;: 5244, 为 &amp;ldquo;http_port&amp;rdquo;: 5245,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重新启动服务，指定数据所在的目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe server --data=.\data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;现在打开浏览器：输入 localhost:5245 即可打开 alist&lt;/p&gt;
+&lt;h2 id=&#34;3-系统服务&#34;&gt;3. 系统服务
+&lt;/h2&gt;&lt;p&gt;还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。&lt;/p&gt;
+&lt;p&gt;下载nssm： &lt;a class=&#34;link&#34; href=&#34;https://nssm.cc/release/nssm-2.24.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将 nssm 解压之后，将所在的路径（比如 &lt;code&gt;D:\Program Files\nssm-2.24\win64&lt;/code&gt;）添加到系统环境变量，确保可随处执行 nssm。&lt;/p&gt;
+&lt;p&gt;创建 alist 自启动 服务，使用管理员运行 cmd：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;server --data=\&amp;#34;&lt;/span&gt;D:\Program Files\alist\data\&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;停止之前运行中的alist，使用 系统服务运行。&lt;/p&gt;
+&lt;p&gt;启动服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm start alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;停止服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm stop alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;重启服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm restart alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;移除服务（先要停止）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ps：最后：windows 上创建系统服务真的好麻烦，这个系统服务我搞了好久才解决，要么就是 “” 不能加，还用过sc创建，也不行。各种问题，还是linux方便。&lt;/p&gt;
+&lt;p&gt;错误记录：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe&amp;#34;&lt;/span&gt; server --data=&lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\data&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe&amp;#34;&lt;/span&gt; server --data=&lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\data&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc create alist binPath= &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe server --data=\&amp;#34;&lt;/span&gt;D:\Program Files\alist\data\&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;4-附录&#34;&gt;4. 附录
+&lt;/h2&gt;&lt;p&gt;关于 帮助命令&lt;/p&gt;
+&lt;p&gt;alist&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist -h
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist admin -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;nssm&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Windows10沙盒无法运行解决办法参考</title>
+        <link>https://hublog.netlify.app/p/2311011/</link>
+        <pubDate>Sat, 11 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311011/</guid>
+        <description>&lt;h3 id=&#34;win10系统windows-沙盒无法启动0x80070005错误解决方法&#34;&gt;win10系统Windows 沙盒无法启动0x80070005错误解决方法
+&lt;/h3&gt;&lt;p&gt;1、在开始菜单中搜索cmd ，以管理员身份运行【命令提示符】；&lt;/p&gt;
+&lt;p&gt;2、请您启动管理员模式的命令提示符，依次输入以下命令并回车 &lt;br&gt;
+Dism /Online /Cleanup-Image /ScanHealth &lt;/p&gt;
+&lt;p&gt;Dism /Online /Cleanup-Image /CheckHealth &lt;/p&gt;
+&lt;p&gt;DISM /Online /Cleanup-image /RestoreHealth &lt;/p&gt;
+&lt;p&gt;运行管理员身份的命令提示符并执行以下命令（重置组策略） &lt;br&gt;
+RD /S /Q &amp;ldquo;%WinDir%\System32\GroupPolicyUsers&amp;rdquo; 回车 &lt;br&gt;
+RD /S /Q &amp;ldquo;%WinDir%\System32\GroupPolicy&amp;rdquo; 回车 &lt;br&gt;
+gpupdate /force 回车 &lt;br&gt;
+重新启动计算机后即可正常运行沙盒！&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>一条命令激活Windows和Office</title>
+        <link>https://hublog.netlify.app/p/2309012/</link>
+        <pubDate>Wed, 13 Sep 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2309012/</guid>
+        <description>&lt;p&gt;本次介绍 github上面一个激活 Windows和Office（支持Office365） 的脚本，拥有 &lt;strong&gt;stat 41.1k&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;支持 Windows 8.1/10/11&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;地址 &lt;a class=&#34;link&#34; href=&#34;https://github.com/massgravel/Microsoft-Activation-Scripts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/massgravel/Microsoft-Activation-Scripts&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;有两种方法激活&lt;/p&gt;
+&lt;h1 id=&#34;方法一-推荐&#34;&gt;方法一 （推荐）
+&lt;/h1&gt;&lt;p&gt;打开 powershell (win+x再按a)， 输入以下命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;irm &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;massgrave&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;iex
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;根据提示操作即可。以下给出激活office的示例过程&lt;/p&gt;
+&lt;h2 id=&#34;激活office365&#34;&gt;激活Office365
+&lt;/h2&gt;&lt;p&gt;Office365需要先去下载，离线版下载地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;123：https://www.123pan.com/s/4MOKVv-NnPpd.html提取码:pole&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载安装完成之后在 Powshell 运行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;irm &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;massgrave&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;iex
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;出现如下的画面&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_42660.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;20231130144148.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择2，接着出现&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_38989.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231130145008173&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;等待完成即可，类似如下
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_51757.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;打开Office365的软件验证，比如Word，打开Word，选择账户，可以看到订阅的产品。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_17003.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20231130145240349&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;方法二&#34;&gt;方法二
+&lt;/h1&gt;&lt;p&gt;下载 &lt;a class=&#34;link&#34; href=&#34;https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;激活脚本 &lt;/a&gt; ， 并解压&lt;/p&gt;
+&lt;p&gt;解压后找到 &lt;code&gt;All-In-One-Version&lt;/code&gt; 文件夹&lt;/p&gt;
+&lt;p&gt;执行 &lt;code&gt;MAS_AIO.cmd&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Windows命令行下对文件做MD5校验</title>
+        <link>https://hublog.netlify.app/p/2309011/</link>
+        <pubDate>Tue, 12 Sep 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2309011/</guid>
+        <description>&lt;p&gt;Windows命令行下对文件做MD5校验&lt;/p&gt;
+&lt;p&gt;按【win】+R键来打开运行cmd命令行窗口&lt;/p&gt;
+&lt;p&gt;进入cmd命令行界面，使用如下命令做MD5校验：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;CertUtil&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-hashfile&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xxx&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;tar&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MD5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此命令还可以支持其他的哈希算法，具体如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;CertUtil -hashfile 文件路径 算法
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;支持的算法有：MD2 MD4 MD5 SHA1 SHA256 SHA384 SHA512&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
