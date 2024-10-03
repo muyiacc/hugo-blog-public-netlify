@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="ssl证书格式的转换 需求 把 ssl 证书，以 pem 结尾的证书改成 key、crt结尾。 因为我是使用的 npm（nginx proxy manager）生成的ssl证书，">
-<title>ssl证书格式的转换</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="需求： 转换申请的 ssl 证书格式，以 pem 结尾的证书改成 key、crt结尾。 科普：证书格式 cert.pem：这是服务器证书，也称为公钥证书或端点证书。">
+<title>SSL证书格式转换</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2310019/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="ssl证书格式的转换">
-<meta property='og:description' content="ssl证书格式的转换 需求 把 ssl 证书，以 pem 结尾的证书改成 key、crt结尾。 因为我是使用的 npm（nginx proxy manager）生成的ssl证书，">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="SSL证书格式转换">
+<meta property='og:description' content="需求： 转换申请的 ssl 证书格式，以 pem 结尾的证书改成 key、crt结尾。 科普：证书格式 cert.pem：这是服务器证书，也称为公钥证书或端点证书。">
 <meta property='og:url' content='https://hublog.netlify.app/p/2310019/'>
 <meta property='og:site_name' content='Seektao | 寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssl' /><meta property='article:published_time' content='2023-10-19T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-19T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="ssl证书格式的转换">
-<meta name="twitter:description" content="ssl证书格式的转换 需求 把 ssl 证书，以 pem 结尾的证书改成 key、crt结尾。 因为我是使用的 npm（nginx proxy manager）生成的ssl证书，">
+<meta name="twitter:title" content="SSL证书格式转换">
+<meta name="twitter:description" content="需求： 转换申请的 ssl 证书格式，以 pem 结尾的证书改成 key、crt结尾。 科普：证书格式 cert.pem：这是服务器证书，也称为公钥证书或端点证书。">
   
 
 
@@ -226,7 +226,39 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#需求">需求：</a></li>
+    <li><a href="#解决方法">解决方法</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -245,7 +277,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2310019/">ssl证书格式的转换</a>
+            <a href="/p/2310019/">SSL证书格式转换</a>
         </h2>
     
         
@@ -283,73 +315,50 @@
     <section class="article-content">
     
     
-    <p>ssl证书格式的转换</p>
-<h1 id="需求">需求
-</h1><p>把 ssl 证书，以 <code>pem</code> 结尾的证书改成 <code>key、crt</code>结尾。</p>
-<p>因为我是使用的 npm（nginx proxy manager）生成的ssl证书，下载下来的证书格式全部为 <code>pem</code> 结尾，现在其他地方需要用到ssl证书，但不是 pem 结尾，而是要求格式为 <code>private.key、public.crt</code>，这前者是私钥，后者是公钥。</p>
-<p>npm下载的证书的文件有</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">cert1.pem  chain1.pem  fullchain1.pem  privkey1.pem
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>它们的含义分别为：</p>
+    <h2 id="需求">需求：
+</h2><p><strong>转换申请的 <code>ssl</code> 证书格式，以 <code>pem</code> 结尾的证书改成 <code>key、crt</code>结尾。</strong></p>
+<p><strong>科普</strong>：证书格式</p>
 <ul>
-<li>
-<p><strong>cert1.pem</strong>：这是服务器证书，也称为公钥证书或端点证书。当客户端请求与服务器建立SSL/TLS连接时，服务器会将此证书发送给客户端以验证身份和建立安全连接。</p>
-</li>
-<li>
-<p><strong>chain1.pem</strong>：这是证书链（CA Bundle），其中包括根证书和中间证书。证书链用于构建完整的证书信任链，以验证服务器证书的真实性。</p>
-</li>
-<li>
-<p><strong>fullchain1.pem</strong>：这是服务器证书和证书链的组合。它包括服务器证书和中间证书链，但不包括根证书，因为客户端应该已经具有根证书的信任。</p>
-</li>
-<li>
-<p><strong>privkey1.pem</strong>：这是私钥文件，它是与服务器证书配对使用的秘密密钥。私钥文件必须保持机密，不应共享或泄露给其他人，以确保安全连接的保密性</p>
-</li>
+<li><strong>cert.pem</strong>：这是服务器证书，也称为公钥证书或端点证书。当客户端请求与服务器建立SSL/TLS连接时，服务器会将此证书发送给客户端以验证身份和建立安全连接。</li>
+<li><strong>chain.pem</strong>：这是证书链（CA Bundle），其中包括根证书和中间证书。证书链用于构建完整的证书信任链，以验证服务器证书的真实性。</li>
+<li><strong>fullchain.pem</strong>：这是服务器证书和证书链的组合。它包括服务器证书和中间证书链，但不包括根证书，因为客户端应该已经具有根证书的信任。</li>
+<li><strong>privkey.pem</strong>：这是私钥文件，它是与服务器证书配对使用的秘密密钥。私钥文件必须保持机密，不应共享或泄露给其他人，以确保安全连接的保密性</li>
 </ul>
-<p>我需要做的就是将privkey1.pem转化成privkey.key，将cert1.pem转化成public.crt</p>
-<p>根据这个情况，linux系统终端有openssl工具，以下为转换步骤</p>
-<h1 id="解决办法">解决办法
-</h1><p>将cert1.pem转化成public.crt</p>
+<h2 id="解决方法">解决方法
+</h2><ul>
+<li><code>fullchain.pem</code> 转换 <code>public.crt</code></li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl x509 -in cert1.pem -out public.crt
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl x509 -in fullchain.pem -out public.crt
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>将privkey1.pem转化成privkey.key</p>
-<p>尝试一：</p>
+</div><ul>
+<li><code>privkey.pem</code> 转换 <code>privkey.key</code></li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl rsa -in privkey1.pem -out private.key
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl ec -in privkey.pem -out private.key
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>尝试二：</p>
-<blockquote>
-<p>如果出现了错误，具体原因为 加密算法不是 RSA，除此RSA外，还有 EC、DSA等，</p>
+</div><blockquote>
+<p>如果出现了错误，具体原因为 加密算法不是 EC
+其实还有 RSA、DSA等加密算法。</p>
 </blockquote>
-<p>使用EC密钥算法，最后成功</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">openssl ec -in privkey1.pem -out private.key
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">read</span> EC key
-</span></span><span class="line"><span class="cl">writing EC key
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 使用rsa算法转换</span>
+</span></span><span class="line"><span class="cl">openssl rsa -in privkey.pem -out private.key
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -406,12 +415,12 @@
             
                 
 <article class="">
-    <a href="/p/2405002/">
+    <a href="/p/241003151158/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">acme.sh申请ssl证书</h2>
+            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
         </div>
     </a>
 </article>
@@ -425,19 +434,6 @@
 
         <div class="article-details">
             <h2 class="article-title">openssl小小使用</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2403006/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Nginx使用，配置，模板一键生成，Certbot安装和申请免费Let&#39;s Encrypt证书</h2>
         </div>
     </a>
 </article>
@@ -464,6 +460,19 @@
 
         <div class="article-details">
             <h2 class="article-title">玩客云刷机安装armbian系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240901100943/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">OBS使用经验</h2>
         </div>
     </a>
 </article>
