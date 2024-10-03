@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="以前写过一篇关于archlinux挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/fstabl">
-<title>linux开机自动挂载windows磁盘</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 以前写过一篇关于archlinux开机自动挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/">
+<title>Linux开机自动挂载Windows磁盘</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2406009/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="linux开机自动挂载windows磁盘">
-<meta property='og:description' content="以前写过一篇关于archlinux挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/fstabl">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux开机自动挂载Windows磁盘">
+<meta property='og:description' content="前言 以前写过一篇关于archlinux开机自动挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/">
 <meta property='og:url' content='https://hublog.netlify.app/p/2406009/'>
 <meta property='og:site_name' content='Seektao | 寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mount' /><meta property='article:tag' content='disk' /><meta property='article:published_time' content='2024-06-09T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-09T16:06:01&#43;08:00'/>
-<meta name="twitter:title" content="linux开机自动挂载windows磁盘">
-<meta name="twitter:description" content="以前写过一篇关于archlinux挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/fstabl">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mount' /><meta property='article:tag' content='disk' /><meta property='article:tag' content='windows' /><meta property='article:published_time' content='2024-06-09T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-09T16:06:01&#43;08:00'/><meta property='og:image' content='https://s2.loli.net/2024/10/03/nEjbHgrFzmXRsc8.png' />
+<meta name="twitter:title" content="Linux开机自动挂载Windows磁盘">
+<meta name="twitter:description" content="前言 以前写过一篇关于archlinux开机自动挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装ntfs-3g，但是/etc/"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s2.loli.net/2024/10/03/nEjbHgrFzmXRsc8.png' />
   
 
 
@@ -226,11 +227,52 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#准备">准备</a></li>
+    <li><a href="#debian系统">Debian系统</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/p/2406009/">
+                
+                    <img src="https://s2.loli.net/2024/10/03/nEjbHgrFzmXRsc8.png" loading="lazy" alt="Featured image of post Linux开机自动挂载Windows磁盘" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -245,7 +287,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2406009/">linux开机自动挂载windows磁盘</a>
+            <a href="/p/2406009/">Linux开机自动挂载Windows磁盘</a>
         </h2>
     
         
@@ -283,12 +325,9 @@
     <section class="article-content">
     
     
-    <p>以前写过一篇关于archlinux挂载windows磁盘的文章，这次教程和之前核心一样，都需要安装<code>ntfs-3g</code>，但是<code>/etc/fstable文件编写的格式不一样</code></p>
-<blockquote>
-<p>ntfs-3g：https://github.com/tuxera/ntfs-3g</p>
-</blockquote>
-<p>关于/etc/fatable 文件各列的简单解释</p>
-<blockquote>
+    <h2 id="前言">前言
+</h2><p>以前写过一篇关于<code>archlinux</code>开机自动挂载<code>windows</code>磁盘的文章，这次教程和之前核心一样，都需要安装<code>ntfs-3g</code>，但是<code>/etc/fstable</code> 文件编写的内容不一样`</p>
+<p>关于<code>/etc/fatable</code> 文件各列的简单解释：</p>
 <ul>
 <li>第一列是挂载的设备（可以填写设备label或者uuid）</li>
 <li>第二列是挂载点。（必须是已经存在的目录）</li>
@@ -297,10 +336,15 @@
 <li>第五列的数字表示是否被dump备份，是的话为1，不是为0。</li>
 <li>第六列是开机时是否自检磁盘。1，2都表示检测，0表示不检测。但1，2表示不同的优先级，1更高。所以/ 分区必须设为1，而且整个fstab只允许出现一个1，若有多个分区需要检测，那么都设为2。</li>
 </ul>
+<h2 id="准备">准备
+</h2><p>本身直接挂载windows磁盘也是可以的，不过需要每次都输入密码，为了解决这个问题，所以需要安装 <code>ntfs-3g</code></p>
+<blockquote>
+<p>源码：https://github.com/tuxera/ntfs-3g</p>
 </blockquote>
-<p>本文章将持续更新。</p>
-<h2 id="debian">debian
-</h2><p>安装ntfs-3g</p>
+<p>下面介绍各个系统如何自动挂载windows磁盘</p>
+<h2 id="debian系统">Debian系统
+</h2><p>此节介绍Debian系统通过ntfs-3g自动挂载磁盘</p>
+<p>安装ntfs-3g</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -348,7 +392,8 @@
 </span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>default.target
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><p>服务开机自启动</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -358,7 +403,7 @@
 </span></span><span class="line"><span class="cl">sudo systemctl start windows-mount.service
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>查看<code>/etc/fstab</code></p>
+</div><p>查看<code>/etc/fstab</code>，仿照格式，将windows磁盘对应的信息填进去</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -367,8 +412,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat /etc/fstab    
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>得到如下结果</p>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -406,8 +450,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>185f74ac-8a42-4433-8fbe-361f63ef7320 none            swap    sw              <span class="m">0</span>       <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>仿照上述格式，将windows磁盘对应的信息填进去</p>
-<p>查看磁盘详细信息</p>
+</div><p>查看磁盘详细信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -416,38 +459,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT,LABEL,UUID
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>输出内容类似如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">NAME        FSTYPE   SIZE MOUNTPOINT                     LABEL UUID
-</span></span><span class="line"><span class="cl">sda                476.9G                                      
-</span></span><span class="line"><span class="cl">├─sda1      vfat     480M /boot/efi                            B601-46F5
-</span></span><span class="line"><span class="cl">├─sda2      ext4   475.5G /                                    97f36186-e41b-4a80-b3e2-306671b3a72a
-</span></span><span class="line"><span class="cl">└─sda3      swap     960M <span class="o">[</span>SWAP<span class="o">]</span>                               185f74ac-8a42-4433-8fbe-361f63ef7320
-</span></span><span class="line"><span class="cl">nvme0n1            931.5G                                      
-</span></span><span class="line"><span class="cl">├─nvme0n1p1 vfat     100M                                      BE03-0352
-</span></span><span class="line"><span class="cl">├─nvme0n1p2           16M                                      
-</span></span><span class="line"><span class="cl">├─nvme0n1p3 ntfs   300.8G /media/taoone/C0260DE6260DDDF2       C0260DE6260DDDF2
-</span></span><span class="line"><span class="cl">├─nvme0n1p4 ntfs     150G /media/taoone/Soft             Soft  72C2959BC29563DF
-</span></span><span class="line"><span class="cl">├─nvme0n1p5 ntfs     480G /media/taoone/File             File  C6A4ED67A4ED5A87
-</span></span><span class="line"><span class="cl">└─nvme0n1p6 ntfs     608M                                      64EC9616EC95E29A
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>编辑<code>/etc/fstab</code>，你需要修改的有uuid，挂载点</p>
+</div><p>创建挂载点</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -458,7 +470,8 @@
 </span></span><span class="line"><span class="cl">mkdir -p /home/taoone/c /home/taoone/d /home/taoone/e
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><p>编辑<code>/etc/fstab</code></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -466,7 +479,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/fstab
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><p>填入如下内容（请修改为自己的磁盘信息）</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -484,15 +498,8 @@
 </span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>C6A4ED67A4ED5A87       /home/taoone/e            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">重启系统
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div><p>重启系统，查看是否成功</p>
+
 </section>
 
 
@@ -503,6 +510,8 @@
             <a href="/tags/mount/">Mount</a>
         
             <a href="/tags/disk/">Disk</a>
+        
+            <a href="/tags/windows/">Windows</a>
         
     </section>
 
