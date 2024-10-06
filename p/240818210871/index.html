@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="官网：https://linuxmirrors.cn/ 执行一次 中国大陆 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) 中国大陆教育网 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --edu 海外地区 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --abroad 下载到本地 1 sudo">
-<title>LinuxMirrors，使Linux换源变得简单</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="LinuxMirrors 是一个 GNU/Linux 更换系统软件源脚本及 Docker 安装脚本 官网：https://linuxmirrors.cn/ 源码：https://github.com/S">
+<title>超级简单的Linux换源工具LinuxMirrors</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240818210871/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="LinuxMirrors，使Linux换源变得简单">
-<meta property='og:description' content="官网：https://linuxmirrors.cn/ 执行一次 中国大陆 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) 中国大陆教育网 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --edu 海外地区 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --abroad 下载到本地 1 sudo">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="超级简单的Linux换源工具LinuxMirrors">
+<meta property='og:description' content="LinuxMirrors 是一个 GNU/Linux 更换系统软件源脚本及 Docker 安装脚本 官网：https://linuxmirrors.cn/ 源码：https://github.com/S">
 <meta property='og:url' content='https://hublog.netlify.app/p/240818210871/'>
 <meta property='og:site_name' content='Seektao | 寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mirror' /><meta property='article:published_time' content='2024-08-18T21:08:11&#43;08:00'/><meta property='article:modified_time' content='2024-08-18T21:08:11&#43;08:00'/>
-<meta name="twitter:title" content="LinuxMirrors，使Linux换源变得简单">
-<meta name="twitter:description" content="官网：https://linuxmirrors.cn/ 执行一次 中国大陆 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) 中国大陆教育网 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --edu 海外地区 1 bash &lt;(curl -sSL https://linuxmirrors.cn/main.sh) --abroad 下载到本地 1 sudo">
+<meta name="twitter:title" content="超级简单的Linux换源工具LinuxMirrors">
+<meta name="twitter:description" content="LinuxMirrors 是一个 GNU/Linux 更换系统软件源脚本及 Docker 安装脚本 官网：https://linuxmirrors.cn/ 源码：https://github.com/S">
   
 
 
@@ -250,8 +250,8 @@
   <ol>
     <li>
       <ol>
-        <li><a href="#执行一次">执行一次</a></li>
-        <li><a href="#下载到本地">下载到本地</a></li>
+        <li><a href="#一键执行推荐">一键执行（推荐）</a></li>
+        <li><a href="#下载到本地执行">下载到本地执行</a></li>
       </ol>
     </li>
   </ol>
@@ -281,7 +281,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/240818210871/">LinuxMirrors，使Linux换源变得简单</a>
+            <a href="/p/240818210871/">超级简单的Linux换源工具LinuxMirrors</a>
         </h2>
     
         
@@ -319,10 +319,17 @@
     <section class="article-content">
     
     
-    <p>官网：<a class="link" href="https://linuxmirrors.cn/"  target="_blank" rel="noopener"
-    >https://linuxmirrors.cn/</a></p>
-<h3 id="执行一次">执行一次
-</h3><p>中国大陆</p>
+    <p><strong>LinuxMirrors</strong> 是一个 GNU/Linux 更换系统软件源脚本及 Docker 安装脚本</p>
+<blockquote>
+<p>官网：<a class="link" href="https://linuxmirrors.cn/"  target="_blank" rel="noopener"
+    >https://linuxmirrors.cn/</a>
+源码：<a class="link" href="https://github.com/SuperManito/LinuxMirrors"  target="_blank" rel="noopener"
+    >https://github.com/SuperManito/LinuxMirrors</a></p>
+</blockquote>
+<h3 id="一键执行推荐">一键执行（推荐）
+</h3><ul>
+<li>中国大陆（默认）</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -331,7 +338,9 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -sSL https://linuxmirrors.cn/main.sh<span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>中国大陆教育网</p>
+</div><ul>
+<li>中国大陆教育网</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -340,7 +349,9 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -sSL https://linuxmirrors.cn/main.sh<span class="o">)</span> --edu
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>海外地区</p>
+</div><ul>
+<li>海外地区</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -349,13 +360,26 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -sSL https://linuxmirrors.cn/main.sh<span class="o">)</span> --abroad
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="下载到本地">下载到本地
-</h3><div class="highlight"><div class="chroma">
+</div><p><strong>注意事项：</strong></p>
+<ol>
+<li><strong>需使用 <code>ROOT</code> 用户执行脚本</strong>
+切换命令为 <code>sudo -i</code> 或 <code>su root</code>。不同系统使用的命令不同，因为有些系统没有在初始安装时为 ROOT 账户设置密码（例如 Ubuntu），故需要使用 <code>sudo -i</code> 命令来切换至 ROOT</li>
+<li><strong>建议使用 <code>SSH</code> 远程工具</strong>
+如果你使用的系统终端界面无法正常显示中文内容那么将导致无法查看交互内容。部分系统会自动开启 SSH 服务，否则请参考<a class="link" href="https://linuxmirrors.cn/use/help/#%E5%85%B3%E4%BA%8E%E5%BC%80%E5%90%AF-ssh-%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E7%9A%84%E6%96%B9%E6%B3%95"  target="_blank" rel="noopener"
+    >启用方法</a></li>
+<li><strong>如果是在新系统上首次执行脚本</strong>
+当前执行方式依赖 <code>curl</code> 指令获取脚本内容并执行，但部分操作系统没有预装此软件包，届时则会报错 <code>Command not found</code>，安装方法详见<a class="link" href="https://linuxmirrors.cn/use/help/#%E5%85%B3%E4%BA%8E%E6%8A%A5%E9%94%99-command-not-found"  target="_blank" rel="noopener"
+    >常见问题</a>。还可自行复制<a class="link" href="https://gitee.com/SuperManito/LinuxMirrors/raw/main/ChangeMirrors.sh"  target="_blank" rel="noopener"
+    >源码</a>至本地新建任意名称的 <code>.sh</code> 脚本，粘贴源码内容后通过 <code>bash</code> 指令手动执行</li>
+</ol>
+<h3 id="下载到本地执行">下载到本地执行
+</h3><p>注意：切换为 root 用户</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo curl -sSL https://linuxmirrors.cn/main.sh -o /usr/local/bin/ChangeMirrors.sh
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo su -
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -363,7 +387,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo chmod a+x /usr/local/bin/ChangeMirrors.sh
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -sSL https://linuxmirrors.cn/main.sh -o /usr/local/bin/changeMirrors.sh <span class="o">&amp;&amp;</span> chmod +x /usr/local/bin/changeMirrors.sh
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行脚本</p>
@@ -372,7 +396,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">chmod +x ChangeMirrors.sh
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">changeMirrors.sh
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -434,7 +458,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">debian更换国内镜像源</h2>
+            <h2 class="article-title">Debian更换国内镜像源</h2>
         </div>
     </a>
 </article>

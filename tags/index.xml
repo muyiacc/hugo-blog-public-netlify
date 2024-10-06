@@ -7,7 +7,47 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 03 Oct 2024 15:11:58 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Oct 2024 16:34:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Awk</title>
+        <link>https://hublog.netlify.app/tags/awk/</link>
+        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/awk/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Grep</title>
+        <link>https://hublog.netlify.app/tags/grep/</link>
+        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/grep/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://hublog.netlify.app/tags/linux/</link>
+        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Sed</title>
+        <link>https://hublog.netlify.app/tags/sed/</link>
+        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/sed/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Browser</title>
+        <link>https://hublog.netlify.app/tags/browser/</link>
+        <pubDate>Fri, 04 Oct 2024 15:55:49 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/browser/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Nginx</title>
         <link>https://hublog.netlify.app/tags/nginx/</link>
         <pubDate>Thu, 03 Oct 2024 15:11:58 +0800</pubDate>
@@ -109,14 +149,6 @@
         <pubDate>Mon, 19 Aug 2024 11:08:08 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/curl/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://hublog.netlify.app/tags/linux/</link>
-        <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/linux/</guid>
         <description></description>
         </item>
         <item>
@@ -893,14 +925,6 @@
         <pubDate>Tue, 07 Nov 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/netcat/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Maven</title>
-        <link>https://hublog.netlify.app/tags/maven/</link>
-        <pubDate>Mon, 06 Nov 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/maven/</guid>
         <description></description>
         </item>
         <item>

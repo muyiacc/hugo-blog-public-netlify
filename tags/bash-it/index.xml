@@ -8,26 +8,51 @@
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
         <lastBuildDate>Mon, 02 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/bash-it/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>bash-it，增强的bash框架</title>
+        <title>增强的bash命令行工具：bash-it</title>
         <link>https://hublog.netlify.app/p/2310002/</link>
         <pubDate>Mon, 02 Oct 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2310002/</guid>
-        <description>&lt;h2 id=&#34;概述&#34;&gt;概述
-&lt;/h2&gt;&lt;h3 id=&#34;bash&#34;&gt;bash
-&lt;/h3&gt;&lt;p&gt;bash作为众多linux发行版的默认shell，和它打交道的实在太频繁了。但是它有些不足的地方，比如别名很多需要自己定制（debian12就连&lt;code&gt;ll&lt;/code&gt;都没有），默认样式我觉得比较丑等等，所以我曾经一度换到zsh&lt;/p&gt;
-&lt;h3 id=&#34;zsh&#34;&gt;zsh
-&lt;/h3&gt;&lt;p&gt;zsh很强大，补全，命令历史记录等等优点，但是使用zsh过一段时间之后，我也发现也有些问题，比如，zsh下使用reboot没找到是肿么回事？也可能是我菜，最后还得自己把命令添加到&lt;code&gt;.zshrc&lt;/code&gt;中，就是很多系统下bash换到zsh会找不到，这就违背了方便的初心，而且把环境变量放到 &lt;code&gt;/etc/profile&lt;/code&gt;或者 &lt;code&gt;/etc/profile.d文件夹下&lt;/code&gt;会不识别，导致一系列问题。&lt;/p&gt;
-&lt;p&gt;所以，既然bash是linux的默认shell，那么是否有它的增强工具呢，减少我们的配置，今天的主角 &lt;strong&gt;bash-it&lt;/strong&gt; 就是我们需要的东西&lt;/p&gt;
-&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Bash-it/bash-it&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/Bash-it/bash-it&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;下载，这个仓库为我自己的&lt;/p&gt;
+        <description>&lt;h2 id=&#34;shell概述&#34;&gt;Shell概述
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;bash vs zsh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash&lt;/code&gt; 作为众多 &lt;code&gt;linux&lt;/code&gt; 发行版的默认&lt;code&gt;shell&lt;/code&gt;，和它打交道的实在太频繁了。但是它有些不足的地方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;别名很多需要自己定制（ Debian12 就连&lt;code&gt;ll&lt;/code&gt;都没有）&lt;/li&gt;
+&lt;li&gt;默认样式太简陋，所以我曾经一度换到 &lt;code&gt;zsh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;zsh&lt;/code&gt;：
+&lt;code&gt;zsh&lt;/code&gt; 很强大！拥有超多的插件，增强的命令补全，界面美化等等优点。&lt;/p&gt;
+&lt;p&gt;但是！使用 &lt;code&gt;zsh&lt;/code&gt; 一段时间之后，我发现也有些问题，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zsh&lt;/code&gt; 下使用 &lt;code&gt;reboot&lt;/code&gt; 没找到是肿么回事？也可能是我菜，最后还得自己把命令添加到&lt;code&gt;.zshrc&lt;/code&gt;中，就是很多系统下 &lt;code&gt;bash&lt;/code&gt; 换到 &lt;code&gt;zsh&lt;/code&gt; 会找不到&lt;/li&gt;
+&lt;li&gt;把环境变量放到 &lt;code&gt;/etc/profile&lt;/code&gt;或者 &lt;code&gt;/etc/profile.d&lt;/code&gt; 文件夹下会不识别，导致一系列问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这就违背了初心，所以，既然 &lt;code&gt;bash&lt;/code&gt; 是 众多 &lt;code&gt;linux&lt;/code&gt; 发行版的默认 &lt;code&gt;shell&lt;/code&gt;，那么是否有 &lt;code&gt;bash&lt;/code&gt; 的增强工具呢？&lt;/p&gt;
+&lt;p&gt;今天的主角 &lt;strong&gt;bash-it&lt;/strong&gt; 就是我们需要的东西！&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Bash-it 是一个为 Bash 3.2+ 版本提供的社区命令和脚本集合。（这也是对 oh-my-zsh 的无耻模仿 😃）&lt;/p&gt;
+&lt;p&gt;它包括自动补全、主题、别名、自定义函数，以及一些来自 Steve Losh 的代码片段，等等。&lt;/p&gt;
+&lt;p&gt;Bash-it 为您日常工作中使用、开发和维护 shell 脚本和自定义命令提供了一个可靠的框架。如果您经常使用 Bourne Again Shell（Bash），并且一直在寻找一种简单的方法来管理这些小脚本和别名，那么 Bash-it 非常适合您！
+停止污染您的 ~/bin 目录和 .bashrc 文件，fork/clone Bash-it 并开始修改吧。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;如果需要官方的，可以执行
-git clone &amp;ndash;depth=1 &lt;a class=&#34;link&#34; href=&#34;https://github.com/Bash-it/bash-it.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/Bash-it/bash-it.git&lt;/a&gt; ~/.bash_it&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Bash-it/bash-it&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Bash-it/bash-it&lt;/a&gt;
+官网：&lt;a class=&#34;link&#34; href=&#34;https://bash-it.readthedocs.io/en/latest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://bash-it.readthedocs.io/en/latest/&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;p&gt;（1）克隆仓库&lt;/p&gt;
+&lt;p&gt;官方版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone --depth&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://github.com/Bash-it/bash-it.git ~/.bash_it
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我修改过后的版本（增加主题、修改了某些命令）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -36,7 +61,7 @@ git clone &amp;ndash;depth=1 &lt;a class=&#34;link&#34; href=&#34;https://github
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone --depth&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; https://github.com/muyiacc/bash-it.git ~/.bash_it
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;安装&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;（2）安装&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -45,24 +70,18 @@ git clone &amp;ndash;depth=1 &lt;a class=&#34;link&#34; href=&#34;https://github
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.bash_it/install.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;这一步会出现&lt;/p&gt;
-&lt;p&gt;Installing bash-it
-Would you like to keep your .bashrc and append bash-it templates at the end? [y/N]&lt;/p&gt;
-&lt;p&gt;意思就是需要你选择配置 &lt;code&gt;.bashrc&lt;/code&gt;的策略：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;这一步需要选择配置 &lt;code&gt;.bashrc&lt;/code&gt;的策略：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;选择是的话会将 bash_it 的配置进行追加&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;否的话，会覆盖 .bashrc，并将 &lt;code&gt;.bashrc&lt;/code&gt;复制一份为 &lt;code&gt;.bashrc.bak&lt;/code&gt; 的备份&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;选择是的话会将 bash_it 的配置进行追加&lt;/li&gt;
+&lt;li&gt;否的话，会覆盖 .bashrc，并将 &lt;code&gt;.bashrc&lt;/code&gt;复制一份为 &lt;code&gt;.bashrc.bak&lt;/code&gt; 的备份&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;我不是纯净的系统，环境中已经有一些软件的配置，选择 y&lt;/p&gt;
-&lt;p&gt;安装完成之后，新开一个终端查看是否生效&lt;/p&gt;
+&lt;p&gt;如果不是纯净的系统，环境中已经有一些软件的配置，选择 &lt;code&gt;是&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;安装之后，新开一个终端查看是否生效&lt;/p&gt;
 &lt;h2 id=&#34;主题&#34;&gt;主题
 &lt;/h2&gt;&lt;p&gt;默认主题是 &lt;code&gt;bobby&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;我觉得默认主题比较花哨，包含的信息容易影响注意力，所以我换成了内置的主题 &lt;code&gt;bakke&lt;/code&gt;，看着简洁很多又不失美感&lt;/p&gt;
-&lt;p&gt;更换主题的方式依旧在 &lt;code&gt;.bashrc&lt;/code&gt;文件下，搜索 &lt;code&gt;BASH_IT_THEME&lt;/code&gt;关键字，更改后面的内容就可以更换了，如下&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;默认主题比较花哨，包含的信息容易影响注意力，所以我换成了内置的主题 &lt;code&gt;bakke&lt;/code&gt;，看着简洁很多又不失美感&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;每次安装更换主题已经厌烦了，已经习惯了默认配置，果然默认就是最好的！&lt;/p&gt;
+&lt;p&gt;更换主题的方式在 &lt;code&gt;.bashrc&lt;/code&gt;文件下，搜索 &lt;code&gt;BASH_IT_THEME&lt;/code&gt;关键字，更改后面的内容就可以了，如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -71,51 +90,36 @@ Would you like to keep your .bashrc and append bash-it templates at the end? [y/
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;BASH_IT_THEME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;bakke&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;关于其他主题，你可以打开这个网址进行查找和预览
-&lt;a class=&#34;link&#34; href=&#34;https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;补充：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;快速切换主题：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自定义主题 seektao，主题已上传至github
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/muyiacc/bash-it.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/muyiacc/bash-it.git&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;也可以使用这个命令快速替换&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 这个主题笔者编写，未提交到主项目&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^export BASH_IT_THEME=.*/export BASH_IT_THEME=&amp;#34;seektao&amp;#34;/g&amp;#39;&lt;/span&gt; ~/.bashrc  
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^export BASH_IT_THEME=.*/export BASH_IT_THEME=&amp;#34;bakke&amp;#34;/g&amp;#39;&lt;/span&gt; ~/.bashrc  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果你使用的是我修改过后的版本，可以使用主题 &lt;code&gt;seektao&lt;/code&gt;，这个主题未提交到主项目（提交很麻烦~）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/^export BASH_IT_THEME=.*/export BASH_IT_THEME=&amp;#34;seektao&amp;#34;/g&amp;#39;&lt;/span&gt; ~/.bashrc  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;样式如下：
-&lt;img src=&#34;https://s2.loli.net/2023/12/03/O9qxHRKNGb8oFS5.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image.png&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/12/03/i6lFCsIJOwXAGpo.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image.png&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2023/12/03/O9qxHRKNGb8oFS5.png&#34; alt=&#34;image.png&#34; style=&#34;zoom:50%;&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2023/12/03/i6lFCsIJOwXAGpo.png&#34; alt=&#34;image.png&#34; style=&#34;zoom:67%;&#34; /&gt;
+&lt;blockquote&gt;
+&lt;p&gt;关于其他主题，你可以打开这个网址进行查找和预览
+&lt;a class=&#34;link&#34; href=&#34;https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://bash-it.readthedocs.io/en/latest/themes-list/#list-of-themes&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;更多主题：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -167,54 +171,24 @@ Would you like to keep your .bashrc and append bash-it templates at the end? [y/
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;主题列表：&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;别名&#34;&gt;别名
+&lt;/h2&gt;&lt;p&gt;bash-it 配置了很多别名，但是需要手动启用&lt;/p&gt;
+&lt;p&gt;别名配置文件在&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;90210&lt;/span&gt;            cupcake                      hawaii50      nwinkler_random_colors  rana  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;agnoster         demula                       iterate       oh-my-posh              redline  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;atomic           dos                          kitsune       p4helpers.theme.bash    rjorgenson  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;axin             doubletime                   liquidprompt  parrot                  robbyrussell  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bakke            doubletime_multiline         luan          pete                    roderik  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;barbuk           doubletime_multiline_pyonly  mairan        powerline               sexy  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;base.theme.bash  dulcie                       mbriggs       powerline-multiline     simple  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;binaryanomaly    duru                         metal         powerline-naked         sirup  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bira             easy                         minimal       powerline-plain         slick  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bobby            elixr                        modern        powerturk               standard  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bobby-python     emperor                      modern-t      primer                  tonka  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brainy           envy                         modern-time   pro                     tonotdo  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;brunton          essential                    morris        pure                    tylenol  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;candy            font                         n0qorg        purity                  wanelo  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;clean            gallifrey                    newin         radek                   zitron  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;codeword         githelpers.theme.bash        norbu         rainbowbrite            zork  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cooperkid        gitline                      nwinkler      ramses
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;插件&#34;&gt;插件
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash-it 
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.bash_it/aliases/available
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;启用别名的方式为&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash-it &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;更多&#34;&gt;更多
