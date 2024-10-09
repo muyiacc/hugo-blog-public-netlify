@@ -7,7 +7,47 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 05 Oct 2024 16:34:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 09 Oct 2024 15:58:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mpv</title>
+        <link>https://hublog.netlify.app/tags/mpv/</link>
+        <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/mpv/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Video</title>
+        <link>https://hublog.netlify.app/tags/video/</link>
+        <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/video/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Yarn</title>
+        <link>https://hublog.netlify.app/tags/yarn/</link>
+        <pubDate>Tue, 08 Oct 2024 08:29:30 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/yarn/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Go</title>
+        <link>https://hublog.netlify.app/tags/go/</link>
+        <pubDate>Mon, 07 Oct 2024 10:57:58 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/go/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Slice</title>
+        <link>https://hublog.netlify.app/tags/slice/</link>
+        <pubDate>Mon, 07 Oct 2024 10:57:58 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/slice/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Awk</title>
         <link>https://hublog.netlify.app/tags/awk/</link>
         <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
@@ -189,14 +229,6 @@
         <pubDate>Sat, 03 Aug 2024 13:08:35 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/g/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Go</title>
-        <link>https://hublog.netlify.app/tags/go/</link>
-        <pubDate>Sat, 03 Aug 2024 13:08:35 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/go/</guid>
         <description></description>
         </item>
         <item>
@@ -792,14 +824,6 @@
         <description></description>
         </item>
         <item>
-        <title>Mpv</title>
-        <link>https://hublog.netlify.app/tags/mpv/</link>
-        <pubDate>Tue, 12 Dec 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/mpv/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Minconda</title>
         <link>https://hublog.netlify.app/tags/minconda/</link>
         <pubDate>Wed, 06 Dec 2023 14:07:10 +0800</pubDate>
@@ -949,14 +973,6 @@
         <pubDate>Wed, 01 Nov 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/locales/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>List</title>
-        <link>https://hublog.netlify.app/tags/list/</link>
-        <pubDate>Sun, 29 Oct 2023 14:07:29 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/list/</guid>
         <description></description>
         </item>
         <item>

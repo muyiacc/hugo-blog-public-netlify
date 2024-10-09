@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文档记录 mpv 播放器的所有快捷键 以下皆为内置快捷键 常用快捷键 f 全屏 ecs 关闭控制台，退出quan&rsquo;pin q 停止播放并退出 Q 停止播放并退">
+<title>MPV播放器指南-快捷键</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/241009155809/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MPV播放器指南-快捷键">
+<meta property='og:description' content="本文档记录 mpv 播放器的所有快捷键 以下皆为内置快捷键 常用快捷键 f 全屏 ecs 关闭控制台，退出quan&rsquo;pin q 停止播放并退出 Q 停止播放并退">
+<meta property='og:url' content='https://hublog.netlify.app/p/241009155809/'>
+<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mpv' /><meta property='article:tag' content='video' /><meta property='article:published_time' content='2024-10-09T15:58:09&#43;08:00'/><meta property='article:modified_time' content='2024-10-09T15:58:09&#43;08:00'/><meta property='og:image' content='https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png' />
+<meta name="twitter:title" content="MPV播放器指南-快捷键">
+<meta name="twitter:description" content="本文档记录 mpv 播放器的所有快捷键 以下皆为内置快捷键 常用快捷键 f 全屏 ecs 关闭控制台，退出quan&rsquo;pin q 停止播放并退出 Q 停止播放并退"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png' />
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
+            <h2 class="site-description">欢迎来到我的主页</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#常用快捷键">常用快捷键</a></li>
+    <li><a href="#所有快捷键">所有快捷键</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/241009155809/">
+                
+                    <img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" loading="lazy" alt="Featured image of post MPV播放器指南-快捷键" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/241009155809/">MPV播放器指南-快捷键</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Oct 09, 2024</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>本文档记录 mpv 播放器的所有快捷键</p>
+<p>以下皆为内置快捷键</p>
+<h2 id="常用快捷键">常用快捷键
+</h2><ul>
+<li><code>f</code>   全屏</li>
+<li><code>ecs</code> 关闭控制台，退出quan&rsquo;pin</li>
+<li><code>q</code>   停止播放并退出</li>
+<li><code>Q</code>   停止播放并退出，如果重新播放，尽可能恢复播放的文件的播放位置</li>
+<li><code>9</code> 调小音量</li>
+<li><code>0</code> 调大音量</li>
+<li><code>m</code>   静音，再按 取消静音</li>
+<li><code>j</code> 下一个字幕轨</li>
+<li><code>J</code> 上一个字幕轨</li>
+<li><code>[</code> 播放速度减小10%</li>
+<li><code>]</code> 播放速度增加10%</li>
+<li><code>backspace</code> 将速度重置为正常</li>
+<li><code>space</code> 或者 <code>p</code> 暂停，再按取消暂停</li>
+<li><code>P</code> 播放进度</li>
+<li><code>.</code> 点击逐帧播放下一帧，长按连续播放</li>
+<li><code>,</code> 点击逐帧播放上一帧，长按连续播放</li>
+</ul>
+<h2 id="所有快捷键">所有快捷键
+</h2><p><img src="https://s2.loli.net/2023/12/14/KtUzvg3OmJB89Rh.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mpbindings.png"
+	
+	
+></p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>中文</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEFT and RIGHT</td>
+<td>向后/向前跳转5秒。Shift+箭头进行1秒精确跳转（见&ndash;hr-seek）。</td>
+<td>Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see &ndash;hr-seek).</td>
+</tr>
+<tr>
+<td>UP and DOWN</td>
+<td>向前/向后跳转1分钟。Shift+箭头进行5秒精确跳转（见&ndash;hr-seek）。</td>
+<td>Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see &ndash;hr-seek).</td>
+</tr>
+<tr>
+<td>Ctrl+LEFT and Ctrl+RIGHT</td>
+<td>跳转到上一个/下一个字幕。受一些限制，可能并不总是有效；参见sub-seek命令。</td>
+<td>Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see sub-seek command.</td>
+</tr>
+<tr>
+<td>Ctrl+Shift+LEFT and Ctrl+Shift+RIGHT</td>
+<td>调整字幕延迟，以便下一个或上一个字幕立即显示。这对于将字幕与音频同步特别有用。</td>
+<td>Adjust subtitle delay so that the next or previous subtitle is displayed now. This is especially useful to sync subtitles to audio.</td>
+</tr>
+<tr>
+<td>[ and ]</td>
+<td>将当前播放速度减小/增加10%。</td>
+<td>Decrease/increase current playback speed by 10%.</td>
+</tr>
+<tr>
+<td>{ and }</td>
+<td>当前播放速度减半/加倍。</td>
+<td>Halve/double current playback speed.</td>
+</tr>
+<tr>
+<td>BACKSPACE</td>
+<td>将播放速度重置为正常。</td>
+<td>Reset playback speed to normal.</td>
+</tr>
+<tr>
+<td>Shift+BACKSPACE</td>
+<td>撤销上次跳转。仅当播放列表条目未更改时有效。再次按下将返回到原始位置。有关详细信息，请参阅revert-seek命令。</td>
+<td>Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.</td>
+</tr>
+<tr>
+<td>Shift+Ctrl+BACKSPACE</td>
+<td>标记当前位置。然后Shift+BACKSPACE将使用该标记位置作为还原位置（一旦您跳回，标记将被重置）。您可以使用此功能在文件中进行跳转，然后返回到您离开的确切位置。</td>
+<td>Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.</td>
+</tr>
+<tr>
+<td>&lt; and &gt;</td>
+<td>在播放列表中向后/向前。</td>
+<td>Go backward/forward in the playlist.</td>
+</tr>
+<tr>
+<td>ENTER</td>
+<td>在播放列表中向前。</td>
+<td>Go forward in the playlist.</td>
+</tr>
+<tr>
+<td>p and SPACE</td>
+<td>暂停（再次按下取消暂停）。</td>
+<td>Pause (pressing again unpauses).</td>
+</tr>
+<tr>
+<td>.</td>
+<td>向前一步。按一次将暂停，每连续按下一次将播放一帧，然后再次进入暂停模式。</td>
+<td>Step forward. Pressing once will pause, every consecutive press will play one frame and then go into pause mode again.</td>
+</tr>
+<tr>
+<td>,</td>
+<td>向后一步。按一次将暂停，每连续按下一次将倒放一帧，然后再次进入暂停模式。</td>
+<td>Step backward. Pressing once will pause, every consecutive press will play one frame in reverse and then go into pause mode again.</td>
+</tr>
+<tr>
+<td>q</td>
+<td>停止播放并退出。</td>
+<td>Stop playing and quit.</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>类似于q，但存储当前播放位置。如果可能的话，稍后再次播放相同的文件将在旧的播放位置继续播放。请参阅RESUMING PLAYBACK。</td>
+<td>Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible. See RESUMING PLAYBACK.</td>
+</tr>
+<tr>
+<td>/ and *</td>
+<td>减小/增大音量。</td>
+<td>Decrease/increase volume.</td>
+</tr>
+<tr>
+<td>9 and 0</td>
+<td>减小/增大音量。</td>
+<td>Decrease/increase volume.</td>
+</tr>
+<tr>
+<td>m</td>
+<td>静音。</td>
+<td>Mute sound.</td>
+</tr>
+<tr>
+<td>_</td>
+<td>循环浏览可用的视频轨道。</td>
+<td>Cycle through the available video tracks.</td>
+</tr>
+<tr>
+<td>#</td>
+<td>循环浏览可用的音频轨道。</td>
+<td>Cycle through the available audio tracks.</td>
+</tr>
+<tr>
+<td>E</td>
+<td>循环浏览可用的版本。</td>
+<td>Cycle through the available Editions.</td>
+</tr>
+<tr>
+<td>f</td>
+<td>切换全屏（另请参阅&ndash;fs）。</td>
+<td>Toggle fullscreen (see also &ndash;fs).</td>
+</tr>
+<tr>
+<td>ESC</td>
+<td>退出全屏模式。</td>
+<td>Exit fullscreen mode.</td>
+</tr>
+<tr>
+<td>T</td>
+<td>切换置顶（另请参阅&ndash;ontop）。</td>
+<td>Toggle stay-on-top (see also &ndash;ontop).</td>
+</tr>
+<tr>
+<td>w and W</td>
+<td>减小/增大平移和扫描范围。当前e键目前执行相同操作，但不建议使用。</td>
+<td>Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.</td>
+</tr>
+<tr>
+<td>o and P</td>
+<td>在OSD上显示进度条、已用时间和总持续时间。</td>
+<td>Show progression bar, elapsed time and total duration on the OSD.</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在OSD状态之间切换正常和播放时间/持续时间。</td>
+<td>Toggle OSD states between normal and playback time/duration.</td>
+</tr>
+<tr>
+<td>v</td>
+<td>切换字幕可见性。</td>
+<td>Toggle subtitle visibility.</td>
+</tr>
+<tr>
+<td>j and J</td>
+<td>循环浏览可用的字幕。</td>
+<td>Cycle through the available subtitles.</td>
+</tr>
+<tr>
+<td>z and Z</td>
+<td>通过+/- 0.1秒调整字幕延迟。当前x键执行相同操作，但不建议使用。</td>
+<td>Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.</td>
+</tr>
+<tr>
+<td>l</td>
+<td>设置/清除A-B循环点。有关详细信息，请参阅ab-loop命令。</td>
+<td>Set/clear A-B loop points. See ab-loop command for details.</td>
+</tr>
+<tr>
+<td>L</td>
+<td>切换无限循环。</td>
+<td>Toggle infinite looping.</td>
+</tr>
+<tr>
+<td>Ctrl++ and Ctrl+-</td>
+<td>通过+/- 0.1秒调整音频延迟（A/V同步）。</td>
+<td>Adjust audio delay (A/V sync) by +/- 0.1 seconds.</td>
+</tr>
+<tr>
+<td>Shift+g and Shift+f</td>
+<td>通过+/- 10%调整字幕字体大小。</td>
+<td>Adjust subtitle font size by +/- 10%.</td>
+</tr>
+<tr>
+<td>u</td>
+<td>在SSA/ASS字幕中切换仅应用&ndash;sub-ass-*覆盖（默认）和几乎完全覆盖它们的常规字幕样式。有关更多信息，请参阅&ndash;sub-ass-override。</td>
+<td>Switch between applying only &ndash;sub-ass-* overrides (default) to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See &ndash;sub-ass-override for more info.</td>
+</tr>
+<tr>
+<td>V</td>
+<td>切换字幕VSFilter纵横比兼容模式。有关更多信息，请参阅&ndash;sub-ass-vsfilter-aspect-compat。</td>
+<td>Toggle subtitle VSFilter aspect compatibility mode. See &ndash;sub-ass-vsfilter-aspect-compat for more info.</td>
+</tr>
+<tr>
+<td>r and R</td>
+<td>上/下移动字幕。当前t键执行相同操作，但不建议使用。</td>
+<td>Move subtitles up/down. The t key does the same as R currently, but use is discouraged.</td>
+</tr>
+<tr>
+<td>s</td>
+<td>拍摄截图。</td>
+<td>Take a screenshot.</td>
+</tr>
+<tr>
+<td>S</td>
+<td>拍摄截图，不带字幕。（这取决于VO驱动程序支持与否。）</td>
+<td>Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)</td>
+</tr>
+<tr>
+<td>Ctrl+s</td>
+<td>拍摄截图，如窗口显示（带字幕、OSD和缩放视频）。</td>
+<td>Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).</td>
+</tr>
+<tr>
+<td>PGUP and PGDWN</td>
+<td>跳转到上一个/下一个章节的开始。在大多数情况下，“上一个”实际上将会到达当前章节的开始；请参阅&ndash;chapter-seek-threshold。</td>
+<td>Seek to the beginning of the previous/next chapter. In most cases, &ldquo;previous&rdquo; will actually go to the beginning of the current chapter; see &ndash;chapter-seek-threshold.</td>
+</tr>
+<tr>
+<td>Shift+PGUP and Shift+PGDWN</td>
+<td>向后或向前跳转10分钟。（这曾经映射到不带Shift的PGUP/PGDWN。）</td>
+<td>Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)</td>
+</tr>
+<tr>
+<td>d</td>
+<td>激活/停用去隔行。</td>
+<td>Activate/deactivate deinterlacer.</td>
+</tr>
+<tr>
+<td>A</td>
+<td>循环切换宽高比覆盖。</td>
+<td>Cycle aspect ratio override.</td>
+</tr>
+<tr>
+<td>Ctrl+h</td>
+<td>切换硬件视频解码开/关。</td>
+<td>Toggle hardware video decoding on/off.</td>
+</tr>
+<tr>
+<td>Alt+LEFT, Alt+RIGHT, Alt+UP, Alt+DOWN</td>
+<td>移动视频矩形（平移）。</td>
+<td>Move the video rectangle (panning).</td>
+</tr>
+<tr>
+<td>Alt++ and Alt+-</td>
+<td>将Alt与+或-键组合可更改视频缩放。</td>
+<td>Combining Alt with the + or - keys changes video zoom.</td>
+</tr>
+<tr>
+<td>Alt+BACKSPACE</td>
+<td>重置平移/缩放设置。</td>
+<td>Reset the pan/zoom settings.</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>显示播放列表和其中的当前位置（仅在使用UI窗口时有用，在终端上损坏）。</td>
+<td>Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).</td>
+</tr>
+<tr>
+<td>F9</td>
+<td>显示音频和字幕流列表（仅在使用UI窗口时有用，在终端上损坏）。</td>
+<td>Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).</td>
+</tr>
+<tr>
+<td>i and I</td>
+<td>显示/切换显示有关当前播放文件的统计信息的叠加层，例如编解码器、帧速率、丢帧数等。有关更多信息，请参阅STATS。</td>
+<td>Show/toggle an overlay displaying statistics about the currently playing file such as codec, framerate, number of dropped frames and so on. See STATS for more information.</td>
+</tr>
+<tr>
+<td>DEL</td>
+<td>在OSC之间循环显示可见性：从不/自动（鼠标移动）/始终</td>
+<td>Cycle OSC visibility between never / auto (mouse-move) / always</td>
+</tr>
+<tr>
+<td>`</td>
+<td>显示控制台。（ESC关闭它。有关CONSOLE的详细信息，请参阅CONSOLE。）</td>
+<td>Show the console. (ESC closes it again. See CONSOLE.)</td>
+</tr>
+<tr>
+<td>1 and 2</td>
+<td>调整对比度。</td>
+<td>Adjust contrast.</td>
+</tr>
+<tr>
+<td>3 and 4</td>
+<td>调整亮度。</td>
+<td>Adjust brightness.</td>
+</tr>
+<tr>
+<td>5 and 6</td>
+<td>调整伽马值。</td>
+<td>Adjust gamma.</td>
+</tr>
+<tr>
+<td>7 and 8</td>
+<td>调整饱和度。</td>
+<td>Adjust saturation.</td>
+</tr>
+<tr>
+<td>Alt+0 (and Command+0 on macOS)</td>
+<td>将视频窗口调整为原始大小的一半。</td>
+<td>Resize video window to half its original size.</td>
+</tr>
+<tr>
+<td>Alt+1 (and Command+1 on macOS)</td>
+<td>将视频窗口调整为其原始大小。</td>
+<td>Resize video window to its original size.</td>
+</tr>
+<tr>
+<td>Alt+2 (and Command+2 on macOS)</td>
+<td>将视频窗口调整为其原始大小的两倍。</td>
+<td>Resize video window to double its original size.</td>
+</tr>
+<tr>
+<td>Command + f (macOS only)</td>
+<td>切换全屏（另请参阅&ndash;fs）。</td>
+<td>Toggle fullscreen (see also &ndash;fs).</td>
+</tr>
+<tr>
+<td>PAUSE</td>
+<td>暂停。</td>
+<td>Pause.</td>
+</tr>
+<tr>
+<td>STOP</td>
+<td>停止播放并退出。</td>
+<td>Stop playing and quit.</td>
+</tr>
+<tr>
+<td>PREVIOUS and NEXT</td>
+<td>向后/向前跳转1分钟。</td>
+<td>Seek backward/forward 1 minute.</td>
+</tr>
+<tr>
+<td>ZOOMIN and ZOOMOUT</td>
+<td>更改视频缩放。</td>
+<td>Changes video zoom.</td>
+</tr>
+</tbody>
+</table></div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/mpv/">Mpv</a>
+        
+            <a href="/tags/video/">Video</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/2312012/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MPV播放器指南-脚本-第一期：自动连播</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2312007/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">mpv播放器，安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241004155549/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">指纹浏览器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/241003151158/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png" loading="lazy" data-key="&#34;241003151158&#34;" data-hash="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/240905211706/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2024 Seektao | 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

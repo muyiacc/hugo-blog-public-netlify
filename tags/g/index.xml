@@ -8,20 +8,13 @@
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
         <lastBuildDate>Sat, 03 Aug 2024 13:08:35 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/g/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>g，go的多版本管理工具</title>
+        <title>Go的多版本管理工具：g</title>
         <link>https://hublog.netlify.app/p/240803130835/</link>
         <pubDate>Sat, 03 Aug 2024 13:08:35 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/240803130835/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post g，go的多版本管理工具" /&gt;&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;g 是管理 go 版本的工具，可以简化 go 的版本管理。&lt;/p&gt;
-&lt;p&gt;相似项目：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;gvm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;goenv&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post Go的多版本管理工具：g" /&gt;&lt;h2 id=&#34;概述&#34;&gt;概述
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;g&lt;/code&gt; 是管理 go 版本的工具，可以简化 go 的版本管理。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/voidint/g&lt;/a&gt;&lt;/p&gt;
@@ -275,6 +268,13 @@
 &lt;p&gt;按照惯例，g 默认会将&lt;code&gt;~/.g&lt;/code&gt;目录作为其家目录。若想自定义家目录（Windows 用户需求强烈），可使用该环境变量切换到其他家目录。由于&lt;strong&gt;该特性还属于实验特性&lt;/strong&gt;，需要先开启实验特性开关&lt;code&gt;G_EXPERIMENTAL=true&lt;/code&gt;才能生效。特别注意，该方案并不十分完美，因此才将其归类为实验特性，详见&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/issues/18&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;#18&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相似项目：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;gvm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;goenv&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

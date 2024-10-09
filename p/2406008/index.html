@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 Linux Debian 默认版本仓库可能比较旧，建议不用。 警告 gvm使用安装go过程并不简单，且容易出现问题，请搜索 g，go的多版本管理工具 根据这篇教程管理">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
 <title>go的安装和配置</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2406008/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="go的安装和配置">
-<meta property='og:description' content="安装 Linux Debian 默认版本仓库可能比较旧，建议不用。 警告 gvm使用安装go过程并不简单，且容易出现问题，请搜索 g，go的多版本管理工具 根据这篇教程管理">
+<meta property='og:description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
 <meta property='og:url' content='https://hublog.netlify.app/p/2406008/'>
 <meta property='og:site_name' content='Seektao | 寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go' /><meta property='article:published_time' content='2024-06-08T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-08T16:06:01&#43;08:00'/>
 <meta name="twitter:title" content="go的安装和配置">
-<meta name="twitter:description" content="安装 Linux Debian 默认版本仓库可能比较旧，建议不用。 警告 gvm使用安装go过程并不简单，且容易出现问题，请搜索 g，go的多版本管理工具 根据这篇教程管理">
+<meta name="twitter:description" content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
   
 
 
@@ -248,13 +248,14 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#安装">安装</a>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#配置">配置</a>
       <ol>
-        <li><a href="#linux">Linux</a></li>
+        <li><a href="#goproxy">GOPROXY</a></li>
+        <li><a href="#gopath">GOPATH</a></li>
       </ol>
     </li>
-    <li><a href="#代理">代理</a></li>
-    <li><a href="#常见操作">常见操作</a></li>
+    <li><a href="#go命令行">Go命令行</a></li>
   </ol>
 </nav>
         </div>
@@ -321,10 +322,7 @@
     
     
     <h2 id="安装">安装
-</h2><h3 id="linux">Linux
-</h3><p><strong>Debian</strong></p>
-<p>默认版本仓库可能比较旧，建议不用。</p>
-<style type="text/css">
+</h2><style type="text/css">
      
     .notice {
         --title-color: #fff;
@@ -445,9 +443,13 @@
   <path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/>
 </svg>
 
-        </span>警告</p><p>gvm使用安装go过程并不简单，且容易出现问题，请搜索 <code>g，go的多版本管理工具</code> 根据这篇教程管理go版本。</p></div>
+        </span>警告</p><p>本篇安装过程不建议观看，请使用搜索并移步 <code>Go的多版本管理工具：g</code></p></div>
 
+<p><strong>Linux</strong></p>
+<p><strong>Debian</strong></p>
+<p>默认版本仓库可能比较旧，建议不用。</p>
 <p>go 没有官方 apt 仓库，只有手动安装来获取所需版本，但是管理go版本比较麻烦，这里使用 gvm来管理Go版本</p>
+<p>注意：gvm使用安装go过程并不简单，且容易出现问题。</p>
 <blockquote>
 <p>gvm源码：<a class="link" href="https://github.com/moovweb/gvm"  target="_blank" rel="noopener"
     >https://github.com/moovweb/gvm</a></p>
@@ -531,22 +533,43 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go version
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="代理">代理
-</h2><p>七牛云</p>
+</div><h2 id="配置">配置
+</h2><h3 id="goproxy">GOPROXY
+</h3><p>配置代理</p>
+<p>七牛云</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go env -w <span class="nv">GO111MODULE</span><span class="o">=</span>on
-</span></span><span class="line"><span class="cl">go env -w <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.cn,direct
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go env -w <span class="nv">GO111MODULE</span><span class="o">=</span>on <span class="c1"># 启用模块</span>
+</span></span><span class="line"><span class="cl">go env -w <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.cn,direct <span class="c1"># 加快go模块下载速度</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>以下非必须操作</p>
-</blockquote>
-<p>GOPATH下创建三个文件夹</p>
+</div><h3 id="gopath">GOPATH
+</h3><p>使用以下命令设置 <code>GOPATH</code>（假设设置为 <code>~/codespace/goProjects</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">```</span><span class="n">shell</span>
+</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">GOPATH</span><span class="o">=~/</span><span class="n">codespace</span><span class="o">/</span><span class="n">goProjects</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为了方便使用 Go 命令，建议将 <code>$GOPATH/bin</code> 加入到你的 <code>PATH</code> 中：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>持久化设置：<br>
+如果你希望每次打开终端时都自动设置，可以将上述命令添加到你的 shell 配置文件中（如 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -554,13 +577,28 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">pkg 
-</span></span><span class="line"><span class="cl">src
-</span></span><span class="line"><span class="cl">bin
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export GOPATH=~/codespace/goProjects&#39;</span> &gt;&gt; ~/.bashrc 
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=$PATH:$GOPATH/bin&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="常见操作">常见操作
-</h2><p>下载依赖</p>
+</div><p>在 <code>GOPATH</code> 目录下，通常有三个子目录：</p>
+<ul>
+<li><code>src</code>: 存放源代码。</li>
+<li><code>pkg</code>: 存放编译后的包。</li>
+<li><code>bin</code>: 存放可执行文件。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$GOPATH</span>/src <span class="nv">$GOPATH</span>/pkg <span class="nv">$GOPATH</span>/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以后就可以把代码放在 <code>$GOPATH/src</code>下了。</p>
+<h2 id="go命令行">Go命令行
+</h2><p>自动解决依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -622,6 +660,25 @@
         <div class="flex article-list--tile">
             
                 
+<article class="has-image">
+    <a href="/p/241009155809/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" loading="lazy" data-key="&#34;241009155809&#34;" data-hash="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MPV播放器指南-快捷键</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="">
     <a href="/p/241004155549/">
         
@@ -674,19 +731,6 @@
 
         <div class="article-details">
             <h2 class="article-title">玩客云刷机安装armbian系统</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/240901100943/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">OBS使用经验</h2>
         </div>
     </a>
 </article>
