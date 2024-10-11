@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="刷机过程 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果">
-<title>玩客云刷机安装armbian系统</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
+<title>玩客云onecloud刷机安装armbian系统，安装应用</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240902180979/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="玩客云刷机安装armbian系统">
-<meta property='og:description' content="刷机过程 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="玩客云onecloud刷机安装armbian系统，安装应用">
+<meta property='og:description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
 <meta property='og:url' content='https://hublog.netlify.app/p/240902180979/'>
 <meta property='og:site_name' content='Seektao | 寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='armbian' /><meta property='article:published_time' content='2024-09-02T18:09:19&#43;08:00'/><meta property='article:modified_time' content='2024-09-02T18:09:19&#43;08:00'/>
-<meta name="twitter:title" content="玩客云刷机安装armbian系统">
-<meta name="twitter:description" content="刷机过程 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果">
+<meta name="twitter:title" content="玩客云onecloud刷机安装armbian系统，安装应用">
+<meta name="twitter:description" content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
   
 
 
@@ -292,7 +292,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/240902180979/">玩客云刷机安装armbian系统</a>
+            <a href="/p/240902180979/">玩客云onecloud刷机安装armbian系统，安装应用</a>
         </h2>
     
         
@@ -331,7 +331,8 @@
     
     
     <h2 id="刷机过程">刷机过程
-</h2><h2 id="基本设置">基本设置
+</h2><p>略</p>
+<h2 id="基本设置">基本设置
 </h2><h3 id="灯">灯
 </h3><p><a class="link" href="https://www.bilibili.com/read/cv21700714/"  target="_blank" rel="noopener"
     >https://www.bilibili.com/read/cv21700714/</a></p>
@@ -491,7 +492,72 @@
 <p>官网：https://alist.nn.ci/zh/</p>
 <p>源码：https://github.com/alist-org/alist</p>
 </blockquote>
-<p>docker 安装</p>
+<p>二进制文件安装</p>
+<p>下载地址：<a class="link" href="https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz"  target="_blank" rel="noopener"
+    >https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载</span>
+</span></span><span class="line"><span class="cl">mkdir -p /opt/alist
+</span></span><span class="line"><span class="cl">wget https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf alist-linux-arm-7.tar.gz -C /opt/alist
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装启动</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/alist
+</span></span><span class="line"><span class="cl">chmod +x alist
+</span></span><span class="line"><span class="cl">./alist server <span class="c1"># 启动会前台阻塞</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 新开一个终端设置密码</span>
+</span></span><span class="line"><span class="cl">./alist admin <span class="nb">set</span> 密码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装服务</span>
+</span></span><span class="line"><span class="cl">vim /usr/lib/systemd/system/alist.service
+</span></span><span class="line"><span class="cl"><span class="c1"># 填入一下内容</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>alist
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>simple
+</span></span><span class="line"><span class="cl"><span class="nv">WorkingDirectory</span><span class="o">=</span>/opt/alist
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/opt/alist/alist server
+</span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>on-failure
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker 安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
