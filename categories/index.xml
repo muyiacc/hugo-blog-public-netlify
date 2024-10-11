@@ -7,10 +7,18 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Wed, 09 Oct 2024 15:58:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 11 Oct 2024 03:01:40 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Database</title>
+        <link>https://hublog.netlify.app/categories/database/</link>
+        <pubDate>Fri, 11 Oct 2024 03:01:40 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/database/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/database/3a34b22f901c4a55dcfbb35c717f6564.png" alt="Featured image of post Database" /&gt;</description>
+        </item>
+        <item>
         <title>Default</title>
         <link>https://hublog.netlify.app/categories/default/</link>
-        <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
+        <pubDate>Wed, 09 Oct 2024 21:30:26 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/default/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/default/wallhaven-6dr5rl.jpg" alt="Featured image of post Default" /&gt;</description>
@@ -26,7 +34,7 @@
         <item>
         <title>Golang</title>
         <link>https://hublog.netlify.app/categories/golang/</link>
-        <pubDate>Mon, 07 Oct 2024 10:57:58 +0800</pubDate>
+        <pubDate>Mon, 07 Oct 2024 12:57:53 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/golang/</guid>
         <description></description>
@@ -34,7 +42,7 @@
         <item>
         <title>Linux</title>
         <link>https://hublog.netlify.app/categories/linux/</link>
-        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        <pubDate>Sun, 06 Oct 2024 11:09:05 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/linux/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/linux/GNU_Linux_minimalism_blue_background_Tux_Nord_Theme-2285394.png" alt="Featured image of post Linux" /&gt;</description>
@@ -86,14 +94,6 @@
         
         <guid>https://hublog.netlify.app/categories/vue/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/vue/dinh-nghia-ve-vuejs-1210x642.jpg" alt="Featured image of post Vue" /&gt;</description>
-        </item>
-        <item>
-        <title>Database</title>
-        <link>https://hublog.netlify.app/categories/database/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/database/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/database/3a34b22f901c4a55dcfbb35c717f6564.png" alt="Featured image of post Database" /&gt;</description>
         </item>
         <item>
         <title>Go</title>

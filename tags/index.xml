@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Wed, 09 Oct 2024 15:58:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 11 Oct 2024 03:01:40 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Mysql</title>
+        <link>https://hublog.netlify.app/tags/mysql/</link>
+        <pubDate>Fri, 11 Oct 2024 03:01:40 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/mysql/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vscode</title>
+        <link>https://hublog.netlify.app/tags/vscode/</link>
+        <pubDate>Wed, 09 Oct 2024 21:30:26 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/vscode/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Mpv</title>
         <link>https://hublog.netlify.app/tags/mpv/</link>
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
@@ -32,9 +48,17 @@
         <description></description>
         </item>
         <item>
+        <title>Fonts</title>
+        <link>https://hublog.netlify.app/tags/fonts/</link>
+        <pubDate>Mon, 07 Oct 2024 17:07:49 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/fonts/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Go</title>
         <link>https://hublog.netlify.app/tags/go/</link>
-        <pubDate>Mon, 07 Oct 2024 10:57:58 +0800</pubDate>
+        <pubDate>Mon, 07 Oct 2024 12:57:53 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/go/</guid>
         <description></description>
@@ -101,6 +125,14 @@
         <pubDate>Thu, 03 Oct 2024 15:11:58 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/ssl/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Sqlite</title>
+        <link>https://hublog.netlify.app/tags/sqlite/</link>
+        <pubDate>Wed, 02 Oct 2024 08:08:30 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/sqlite/</guid>
         <description></description>
         </item>
         <item>
@@ -733,14 +765,6 @@
         <pubDate>Mon, 08 Apr 2024 15:07:04 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/picgo/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Mysql</title>
-        <link>https://hublog.netlify.app/tags/mysql/</link>
-        <pubDate>Sun, 07 Apr 2024 15:07:04 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/mysql/</guid>
         <description></description>
         </item>
         <item>
