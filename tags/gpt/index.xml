@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Gpt on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/gpt/</link>
-        <description>Recent content in Gpt on Seektao | 寻道之旅</description>
+        <title>Gpt on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/gpt/</link>
+        <description>Recent content in Gpt on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 09 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/gpt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Thu, 09 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/gpt/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Monica，一个使用最先进的AI模型（GPT-4、Claude3、Gemini 等）帮助你对话、搜索、写作、翻译的一站式 AI 助手。</title>
-        <link>https://hublog.netlify.app/p/2405009/</link>
+        <link>https://blog.seektao.cc/p/2405009/</link>
         <pubDate>Thu, 09 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2405009/</guid>
+        <guid>https://blog.seektao.cc/p/2405009/</guid>
         <description>&lt;p&gt;Monica 是一个使用最先进的 AI 模型（GPT-4、Claude 3、Gemini 等）帮助你对话、搜索、写作、翻译的一站式 AI 助手。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;温馨提示：该网站需要魔法&lt;/p&gt;
@@ -46,10 +46,10 @@
         </item>
         <item>
         <title>Monica，ChatGPT AI助手</title>
-        <link>https://hublog.netlify.app/p/2405008/</link>
+        <link>https://blog.seektao.cc/p/2405008/</link>
         <pubDate>Wed, 08 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2405008/</guid>
+        <guid>https://blog.seektao.cc/p/2405008/</guid>
         <description>&lt;p&gt;Monica 是一个使用最先进的 AI 模型（GPT-4、Claude 3、Gemini 等）帮助你对话、搜索、写作、翻译的一站式 AI 助手。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;温馨提示：该网站需要魔法&lt;/p&gt;
@@ -83,10 +83,10 @@
         </item>
         <item>
         <title>gpt4free免费的aigc项目</title>
-        <link>https://hublog.netlify.app/p/2404002/</link>
+        <link>https://blog.seektao.cc/p/2404002/</link>
         <pubDate>Tue, 02 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2404002/</guid>
+        <guid>https://blog.seektao.cc/p/2404002/</guid>
         <description>&lt;p&gt;docker一键启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -104,10 +104,10 @@
         </item>
         <item>
         <title>批量注册chatgpt账号</title>
-        <link>https://hublog.netlify.app/p/2312014/</link>
+        <link>https://blog.seektao.cc/p/2312014/</link>
         <pubDate>Thu, 14 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2312014/</guid>
+        <guid>https://blog.seektao.cc/p/2312014/</guid>
         <description>&lt;p&gt;邮箱&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -161,10 +161,10 @@ sess-3ZHvR7crqpBtrJj0D94cXdQxA6P2r24RipUtuNgm&lt;/p&gt;
         </item>
         <item>
         <title>Docker部署ChatGPT-Next-Web</title>
-        <link>https://hublog.netlify.app/p/2310013/</link>
+        <link>https://blog.seektao.cc/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310013/</guid>
+        <guid>https://blog.seektao.cc/p/2310013/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用chatgpt接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。&lt;/p&gt;
@@ -239,10 +239,10 @@ sess-3ZHvR7crqpBtrJj0D94cXdQxA6P2r24RipUtuNgm&lt;/p&gt;
         </item>
         <item>
         <title>pandora-免翻访问gpt</title>
-        <link>https://hublog.netlify.app/p/2309005/</link>
+        <link>https://blog.seektao.cc/p/2309005/</link>
         <pubDate>Thu, 07 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309005/</guid>
+        <guid>https://blog.seektao.cc/p/2309005/</guid>
         <description>&lt;p&gt;&lt;strong&gt;pandora&lt;/strong&gt;-潘多拉魔盒，一个提供免翻的方式访问openai提供的gpt&lt;/p&gt;
 &lt;p&gt;官方地址：https://github.com/pengzhile/pandora&lt;/p&gt;
 &lt;p&gt;本次介绍如何如何使用docker的方式部署pandora&lt;/p&gt;

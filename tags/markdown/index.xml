@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Markdown on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/markdown/</link>
-        <description>Recent content in Markdown on Seektao | 寻道之旅</description>
+        <title>Markdown on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/markdown/</link>
+        <description>Recent content in Markdown on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 13 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Thu, 13 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/markdown/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Markdown软件推荐，Typora下位替代品marktext</title>
-        <link>https://hublog.netlify.app/p/2406013/</link>
+        <link>https://blog.seektao.cc/p/2406013/</link>
         <pubDate>Thu, 13 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2406013/</guid>
+        <guid>https://blog.seektao.cc/p/2406013/</guid>
         <description>&lt;h2 id=&#34;marktext&#34;&gt;marktext
 &lt;/h2&gt;&lt;p&gt;破解typora怎么说都不是一件值得推广的事，在寻找typora替代软件的过程中，发现了 marktext，外观类似typora，有些方面可能更美观。神奇的是目前（2024-06-15）已经45k star了，但是已经很久没有更新发行版了，最新的版本还停留在2022年3月，Issuse已经积累到1.1k，pull requests42各没有处理。仓库的develop分支还在小幅度不定时更新，也一直没合并到主分支。&lt;/p&gt;
 &lt;blockquote&gt;

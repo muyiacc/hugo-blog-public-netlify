@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Kde on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/kde/</link>
-        <description>Recent content in Kde on Seektao | 寻道之旅</description>
+        <title>Kde on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/kde/</link>
+        <description>Recent content in Kde on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Tue, 11 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/kde/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Tue, 11 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/kde/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux系统桌面Kde plasma个性化设置</title>
-        <link>https://hublog.netlify.app/p/2406011/</link>
+        <link>https://blog.seektao.cc/p/2406011/</link>
         <pubDate>Tue, 11 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2406011/</guid>
+        <guid>https://blog.seektao.cc/p/2406011/</guid>
         <description>&lt;p&gt;首先极不建议过多美化，美化过重导致系统容易崩溃不说，又占用资源，又耗费时间，且我觉得不耐看，要知道，美化的尽头是默认。。。&lt;/p&gt;
 &lt;p&gt;本章目录结构采用和kde系统设置一致，便于查看&lt;/p&gt;
 &lt;h2 id=&#34;外观&#34;&gt;外观
@@ -44,10 +44,10 @@
         </item>
         <item>
         <title>Linux下kde环境将应用程序添加快捷方式和全局搜索</title>
-        <link>https://hublog.netlify.app/p/2310014/</link>
+        <link>https://blog.seektao.cc/p/2310014/</link>
         <pubDate>Sat, 14 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310014/</guid>
+        <guid>https://blog.seektao.cc/p/2310014/</guid>
         <description>&lt;p&gt;今天安装了postman，下载下来之后发现是一个压缩包的文件，kde的全局搜索（alt+space）搜不到，想把它加进去。&lt;/p&gt;
 &lt;p&gt;压缩包包含的目录如下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

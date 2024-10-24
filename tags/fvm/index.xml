@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Fvm on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/fvm/</link>
-        <description>Recent content in Fvm on Seektao | 寻道之旅</description>
+        <title>Fvm on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/fvm/</link>
+        <description>Recent content in Fvm on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/fvm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 03 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/fvm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FVM，Flutter的多版本管理工具</title>
-        <link>https://hublog.netlify.app/p/2403003/</link>
+        <link>https://blog.seektao.cc/p/2403003/</link>
         <pubDate>Sun, 03 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403003/</guid>
+        <guid>https://blog.seektao.cc/p/2403003/</guid>
         <description>&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://fvm.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://fvm.app/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装

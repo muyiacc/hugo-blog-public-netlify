@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Aria2 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/aria2/</link>
-        <description>Recent content in Aria2 on Seektao | 寻道之旅</description>
+        <title>Aria2 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/aria2/</link>
+        <description>Recent content in Aria2 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 01 Dec 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/aria2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 01 Dec 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/aria2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>aria2下载工具安装，并安装前端界面webui-aria2</title>
-        <link>https://hublog.netlify.app/p/2312001/</link>
+        <link>https://blog.seektao.cc/p/2312001/</link>
         <pubDate>Fri, 01 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2312001/</guid>
+        <guid>https://blog.seektao.cc/p/2312001/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;aria2 is a &lt;strong&gt;lightweight&lt;/strong&gt; multi-protocol &amp;amp; multi-source command-line &lt;strong&gt;download utility&lt;/strong&gt;. It supports &lt;strong&gt;HTTP/HTTPS&lt;/strong&gt;, &lt;strong&gt;FTP&lt;/strong&gt;, &lt;strong&gt;SFTP&lt;/strong&gt;, &lt;strong&gt;BitTorrent&lt;/strong&gt; and &lt;strong&gt;Metalink&lt;/strong&gt;. aria2 can be manipulated via built-in &lt;strong&gt;JSON-RPC&lt;/strong&gt; and &lt;strong&gt;XML-RPC&lt;/strong&gt; interfaces.&lt;/p&gt;
 &lt;h1 id=&#34;2-下载安装&#34;&gt;2. 下载安装

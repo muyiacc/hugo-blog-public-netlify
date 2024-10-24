@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>全局搜索 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/</link>
-        <description>Recent content in 全局搜索 on Seektao | 寻道之旅</description>
+        <title>全局搜索 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/</link>
+        <description>Recent content in 全局搜索 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 13 Jul 2024 19:07:28 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 13 Jul 2024 19:07:28 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux下kde环境将应用程序添加快捷方式和全局搜索</title>
-        <link>https://hublog.netlify.app/p/2310014/</link>
+        <link>https://blog.seektao.cc/p/2310014/</link>
         <pubDate>Sat, 14 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310014/</guid>
+        <guid>https://blog.seektao.cc/p/2310014/</guid>
         <description>&lt;p&gt;今天安装了postman，下载下来之后发现是一个压缩包的文件，kde的全局搜索（alt+space）搜不到，想把它加进去。&lt;/p&gt;
 &lt;p&gt;压缩包包含的目录如下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

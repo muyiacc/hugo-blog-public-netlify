@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Mysql on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/mysql/</link>
-        <description>Recent content in Mysql on Seektao | 寻道之旅</description>
+        <title>Mysql on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/mysql/</link>
+        <description>Recent content in Mysql on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 11 Oct 2024 03:01:40 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 11 Oct 2024 03:01:40 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/mysql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>mysql备份数据库</title>
-        <link>https://hublog.netlify.app/p/2404007/</link>
+        <link>https://blog.seektao.cc/p/2404007/</link>
         <pubDate>Sun, 07 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2404007/</guid>
+        <guid>https://blog.seektao.cc/p/2404007/</guid>
         <description>&lt;h1 id=&#34;mysqldump方式&#34;&gt;mysqldump方式
 &lt;/h1&gt;&lt;p&gt;使用mysql自带的备份工具&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -39,19 +39,19 @@
         </item>
         <item>
         <title>Mysql内存优化</title>
-        <link>https://hublog.netlify.app/p/2403004/</link>
+        <link>https://blog.seektao.cc/p/2403004/</link>
         <pubDate>Mon, 04 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403004/</guid>
+        <guid>https://blog.seektao.cc/p/2403004/</guid>
         <description>&lt;p&gt;暂无&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Debian通过apt安装MySQL</title>
-        <link>https://hublog.netlify.app/p/2403001/</link>
+        <link>https://blog.seektao.cc/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403001/</guid>
+        <guid>https://blog.seektao.cc/p/2403001/</guid>
         <description>&lt;p&gt;之前一直使用 下载压缩包的方式，发现并不好用，因为每次新装还要下载指定的版本，而且版本还不一定好找，之前教程安装过程的命令复用性不高， 这次直接使用apt安装，添加MySQL的apt源即可，就算是其他人也可以直接复制&lt;/p&gt;
 &lt;h1 id=&#34;先卸载&#34;&gt;先卸载
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -134,10 +134,10 @@
         </item>
         <item>
         <title>Linux使用APT仓库安装MySQL</title>
-        <link>https://hublog.netlify.app/p/2403001/</link>
+        <link>https://blog.seektao.cc/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403001/</guid>
+        <guid>https://blog.seektao.cc/p/2403001/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt仓库安装。&lt;/p&gt;
 &lt;h2 id=&#34;卸载&#34;&gt;卸载
@@ -237,10 +237,10 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
         </item>
         <item>
         <title>Debian12安装和卸载MySQL8.0</title>
-        <link>https://hublog.netlify.app/p/2310008/</link>
+        <link>https://blog.seektao.cc/p/2310008/</link>
         <pubDate>Sun, 08 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310008/</guid>
+        <guid>https://blog.seektao.cc/p/2310008/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;官网下载地址：https://downloads.mysql.com/archives/community/&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -424,10 +424,10 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
         </item>
         <item>
         <title>Windows10安装多版本MySQL</title>
-        <link>https://hublog.netlify.app/p/2309010/</link>
+        <link>https://blog.seektao.cc/p/2309010/</link>
         <pubDate>Mon, 11 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309010/</guid>
+        <guid>https://blog.seektao.cc/p/2309010/</guid>
         <description>&lt;h1 id=&#34;1-需求&#34;&gt;1. 需求
 &lt;/h1&gt;&lt;p&gt;现在MySQL5.7和8.0版本用的人和需求都有，为了能让电脑上同时安装MySQL5.7 和MySQL8.0版本，也就有了这篇文章，更准确的叫法可以说是笔记，以便日后回顾。&lt;/p&gt;
 &lt;p&gt;本次通过下载zip安装包进行安装&lt;/p&gt;
@@ -517,7 +517,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysqld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-initialize&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-user&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysql&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-console&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;你会得到类似的结果，如图&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140411/20231203T140411_21497.png#averageHue=%23062a5c&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=215&amp;amp;id=u7dbc51ec&amp;amp;originHeight=379&amp;amp;originWidth=1690&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=123487&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ubc9bdb9f-7d1f-4794-9367-16ab7f0d93b&amp;amp;title=&amp;amp;width=957.6666666666667&#34;
+&lt;/div&gt;&lt;p&gt;你会得到类似的结果，如图&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140411/20231203T140411_21497.png#averageHue=%23062a5c&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=215&amp;amp;id=u7dbc51ec&amp;amp;originHeight=379&amp;amp;originWidth=1690&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=123487&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=ubc9bdb9f-7d1f-4794-9367-16ab7f0d93b&amp;amp;title=&amp;amp;width=957.6666666666667&#34;
 	
 	
 	
@@ -539,7 +539,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mysqld&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;exe&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MySQL57&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-defaults&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\\Development\\DB\\mysql-5.7.41-winx64\\my.ini&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;执行成功，你会得到类似的结果：&lt;br /&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140411/20231203T140411_65301.png#averageHue=%23032758&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=53&amp;amp;id=u05a544d9&amp;amp;originHeight=93&amp;amp;originWidth=1680&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=24184&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6d9de297-3f32-4ba9-b7ce-426495f088d&amp;amp;title=&amp;amp;width=952&#34;
+&lt;/div&gt;&lt;p&gt;执行成功，你会得到类似的结果：&lt;br /&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140411/20231203T140411_65301.png#averageHue=%23032758&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=53&amp;amp;id=u05a544d9&amp;amp;originHeight=93&amp;amp;originWidth=1680&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=24184&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u6d9de297-3f32-4ba9-b7ce-426495f088d&amp;amp;title=&amp;amp;width=952&#34;
 	
 	
 	
@@ -591,7 +591,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;36-配置环境变量非必须&#34;&gt;3.6 配置环境变量（非必须）
 &lt;/h2&gt;&lt;p&gt;1）复制安装路径，&lt;strong&gt;windows+R&lt;/strong&gt; 打开运行，输入 &lt;strong&gt;sysdm.cpl&lt;/strong&gt; 回车，选择 &lt;strong&gt;高级&lt;/strong&gt;&lt;br /&gt;![image.png](&lt;a class=&#34;link&#34; href=&#34;https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15&lt;/a&gt; 09-31-38_1611160475021-7136cdf9-9675-4d92-a7aa-c2d0712c9701.png)&lt;br /&gt;打开 &lt;strong&gt;环境变量 &lt;strong&gt;，在&lt;/strong&gt;系统环境变量&lt;/strong&gt;中新建：&lt;br /&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140411/20231203T140411_84456.png#averageHue=%23efefee&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=171&amp;amp;id=ua251d55d&amp;amp;originHeight=302&amp;amp;originWidth=1211&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=20565&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u121cc083-6dba-485e-9235-1e0d4670506&amp;amp;title=&amp;amp;width=686.2333333333333&#34;
+    &gt;https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15&lt;/a&gt; 09-31-38_1611160475021-7136cdf9-9675-4d92-a7aa-c2d0712c9701.png)&lt;br /&gt;打开 &lt;strong&gt;环境变量 &lt;strong&gt;，在&lt;/strong&gt;系统环境变量&lt;/strong&gt;中新建：&lt;br /&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140411/20231203T140411_84456.png#averageHue=%23efefee&amp;amp;clientId=ucce33620-9683-4&amp;amp;from=paste&amp;amp;height=171&amp;amp;id=ua251d55d&amp;amp;originHeight=302&amp;amp;originWidth=1211&amp;amp;originalType=binary&amp;amp;ratio=1.7647058823529411&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=20565&amp;amp;status=done&amp;amp;style=none&amp;amp;taskId=u121cc083-6dba-485e-9235-1e0d4670506&amp;amp;title=&amp;amp;width=686.2333333333333&#34;
 	
 	
 	
@@ -600,7 +600,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
 		alt=&#34;图片.png&#34;
 	
 	
-&gt;&lt;br /&gt;选中 &lt;strong&gt;系统变量-Path&lt;/strong&gt;，点击 &lt;strong&gt;编辑&lt;/strong&gt;，再点击 &lt;strong&gt;新建&lt;/strong&gt;，输入：**%MYSQL_HOME%\bin **，再点击 **确定 **保存（注意返回上一级也要保存，否则可能保存不成功）&lt;br /&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140411/20231203T140411_61721.png#averageHue=%23efeeed&amp;amp;height=242&amp;amp;id=pSBEI&amp;amp;originHeight=484&amp;amp;originWidth=1183&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=60196&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=591.5&#34;
+&gt;&lt;br /&gt;选中 &lt;strong&gt;系统变量-Path&lt;/strong&gt;，点击 &lt;strong&gt;编辑&lt;/strong&gt;，再点击 &lt;strong&gt;新建&lt;/strong&gt;，输入：**%MYSQL_HOME%\bin **，再点击 **确定 **保存（注意返回上一级也要保存，否则可能保存不成功）&lt;br /&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140411/20231203T140411_61721.png#averageHue=%23efeeed&amp;amp;height=242&amp;amp;id=pSBEI&amp;amp;originHeight=484&amp;amp;originWidth=1183&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=60196&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=591.5&#34;
 	
 	
 	
@@ -808,7 +808,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;46-配置环境变量非必须&#34;&gt;4.6 配置环境变量（非必须）
-&lt;/h2&gt;&lt;p&gt;1）复制安装路径，&lt;strong&gt;windows+R&lt;/strong&gt; 打开运行，输入 &lt;strong&gt;sysdm.cpl&lt;/strong&gt; 回车，选择 &lt;strong&gt;高级&lt;/strong&gt;&lt;br /&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140411/20231203T140411_14833.png#averageHue=%23f6f6f5&amp;amp;height=547&amp;amp;id=lVKJB&amp;amp;originHeight=1094&amp;amp;originWidth=958&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=75109&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=479&#34;
+&lt;/h2&gt;&lt;p&gt;1）复制安装路径，&lt;strong&gt;windows+R&lt;/strong&gt; 打开运行，输入 &lt;strong&gt;sysdm.cpl&lt;/strong&gt; 回车，选择 &lt;strong&gt;高级&lt;/strong&gt;&lt;br /&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140411/20231203T140411_14833.png#averageHue=%23f6f6f5&amp;amp;height=547&amp;amp;id=lVKJB&amp;amp;originHeight=1094&amp;amp;originWidth=958&amp;amp;originalType=binary&amp;amp;ratio=1&amp;amp;rotation=0&amp;amp;showTitle=false&amp;amp;size=75109&amp;amp;status=done&amp;amp;style=none&amp;amp;title=&amp;amp;width=479&#34;
 	
 	
 	

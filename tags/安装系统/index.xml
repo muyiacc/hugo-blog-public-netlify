@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>安装系统 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</link>
-        <description>Recent content in 安装系统 on Seektao | 寻道之旅</description>
+        <title>安装系统 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</link>
+        <description>Recent content in 安装系统 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Sep 2023 14:12:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 03 Sep 2023 14:12:15 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>debian物理机安装提示缺少网卡固件解决办法</title>
-        <link>https://hublog.netlify.app/p/2309001/</link>
+        <link>https://blog.seektao.cc/p/2309001/</link>
         <pubDate>Sun, 03 Sep 2023 14:12:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309001/</guid>
+        <guid>https://blog.seektao.cc/p/2309001/</guid>
         <description>&lt;p&gt;debian物理机安装提示缺少网卡固件，ath10k/cal-pci-0000:01:00.0.bin，ath10k/pre-cal-pci-0000:01:00.0.bin解决办法&lt;/p&gt;
 &lt;p&gt;使用离线dvd镜像安装，先跳过安装固件这个步骤。&lt;/p&gt;
 &lt;p&gt;正常安装完系统后，再使用wifi联网，因为缺乏这个固件的问题，会导致wifi连接后，过一会就上不了网，所以在连上wifi后，及时安装固件&lt;/p&gt;

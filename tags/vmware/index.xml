@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Vmware on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/vmware/</link>
-        <description>Recent content in Vmware on Seektao | 寻道之旅</description>
+        <title>Vmware on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/vmware/</link>
+        <description>Recent content in Vmware on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Mon, 22 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/vmware/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Mon, 22 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/vmware/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VMware在Linux运行出现VMWare Kernel Module Updater</title>
-        <link>https://hublog.netlify.app/p/2407022/</link>
+        <link>https://blog.seektao.cc/p/2407022/</link>
         <pubDate>Mon, 22 Jul 2024 15:07:51 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407022/</guid>
+        <guid>https://blog.seektao.cc/p/2407022/</guid>
         <description>&lt;h2 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu
 &lt;/h2&gt;&lt;p&gt;运行这个命令后重启软件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -29,10 +29,10 @@
         </item>
         <item>
         <title>VMware17安装MacOS13（待）</title>
-        <link>https://hublog.netlify.app/p/2312009/</link>
+        <link>https://blog.seektao.cc/p/2312009/</link>
         <pubDate>Sat, 09 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2312009/</guid>
+        <guid>https://blog.seektao.cc/p/2312009/</guid>
         <description>&lt;h1 id=&#34;工具下载&#34;&gt;工具下载
 &lt;/h1&gt;&lt;p&gt;下载 Unlocker: &lt;a class=&#34;link&#34; href=&#34;https://github.com/DrDonk/unlocker/releases/download/v4.2.7/unlocker427.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/DrDonk/unlocker/releases/download/v4.2.7/unlocker427.zip&lt;/a&gt;&lt;/p&gt;
@@ -106,7 +106,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mouse.vusb.enable = &amp;#34;TRUE&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T135121/20231203T135121_51085.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T135121/20231203T135121_51085.png&#34;
 	
 	
 	

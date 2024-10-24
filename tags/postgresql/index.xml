@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Postgresql on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/postgresql/</link>
-        <description>Recent content in Postgresql on Seektao | 寻道之旅</description>
+        <title>Postgresql on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/postgresql/</link>
+        <description>Recent content in Postgresql on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 11 Oct 2024 22:42:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 11 Oct 2024 22:42:04 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PostgreSQL备份数据库</title>
-        <link>https://hublog.netlify.app/p/2403009/</link>
+        <link>https://blog.seektao.cc/p/2403009/</link>
         <pubDate>Sat, 09 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403009/</guid>
+        <guid>https://blog.seektao.cc/p/2403009/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;使用 &lt;code&gt;pg_dump&lt;/code&gt; 命令备份整个数据库&lt;/strong&gt;：&lt;/p&gt;

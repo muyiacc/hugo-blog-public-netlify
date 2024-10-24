@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>输入法 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
-        <description>Recent content in 输入法 on Seektao | 寻道之旅</description>
+        <title>输入法 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+        <description>Recent content in 输入法 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 07 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 07 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>debian12安装中文输入法</title>
-        <link>https://hublog.netlify.app/p/2310007/</link>
+        <link>https://blog.seektao.cc/p/2310007/</link>
         <pubDate>Sat, 07 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310007/</guid>
+        <guid>https://blog.seektao.cc/p/2310007/</guid>
         <description>&lt;p&gt;debian12 安装中文输入法&lt;/p&gt;
 &lt;p&gt;如果安装系统的时候选择是中文安装，默认就会安装好中文输入法，因为后面我安装rime,不熟悉卸载了fcitx5导致默认的中文失效，发现rime配置太麻烦，默认还不好用，所以打算又重新安装默认的中文输入法，但一直没搞对，后来终于解决了，这里介绍一下经验&lt;/p&gt;
 &lt;p&gt;在使用fcitx5的前提下，安装中文输入法。本文不涉及字体等等&lt;/p&gt;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>One-Api on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/one-api/</link>
-        <description>Recent content in One-Api on Seektao | 寻道之旅</description>
+        <title>One-Api on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/one-api/</link>
+        <description>Recent content in One-Api on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Mon, 15 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/one-api/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Mon, 15 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/one-api/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>one-api</title>
-        <link>https://hublog.netlify.app/p/2407015/</link>
+        <link>https://blog.seektao.cc/p/2407015/</link>
         <pubDate>Mon, 15 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407015/</guid>
+        <guid>https://blog.seektao.cc/p/2407015/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;通过标准的 OpenAI API 格式访问所有的大模型，开箱即用&lt;/p&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/songquanpeng/one-api&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -71,10 +71,10 @@
         </item>
         <item>
         <title>new-api，基于one-api</title>
-        <link>https://hublog.netlify.app/p/2407013/</link>
+        <link>https://blog.seektao.cc/p/2407013/</link>
         <pubDate>Sat, 13 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407013/</guid>
+        <guid>https://blog.seektao.cc/p/2407013/</guid>
         <description>&lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;h3 id=&#34;docker&#34;&gt;docker
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

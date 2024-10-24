@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Spotify on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/spotify/</link>
-        <description>Recent content in Spotify on Seektao | 寻道之旅</description>
+        <title>Spotify on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/spotify/</link>
+        <description>Recent content in Spotify on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 10 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/spotify/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 10 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/spotify/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SpotX，Spotify的开源去广告工具</title>
-        <link>https://hublog.netlify.app/p/2405010/</link>
+        <link>https://blog.seektao.cc/p/2405010/</link>
         <pubDate>Fri, 10 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2405010/</guid>
+        <guid>https://blog.seektao.cc/p/2405010/</guid>
         <description>&lt;p&gt;项目地址：https://github.com/SpotX-Official/SpotX&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

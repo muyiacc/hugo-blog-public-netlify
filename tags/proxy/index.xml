@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Proxy on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/proxy/</link>
-        <description>Recent content in Proxy on Seektao | 寻道之旅</description>
+        <title>Proxy on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/proxy/</link>
+        <description>Recent content in Proxy on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 10 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/proxy/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 10 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/proxy/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>web端的v2ray工具v2raya</title>
-        <link>https://hublog.netlify.app/p/2309009/</link>
+        <link>https://blog.seektao.cc/p/2309009/</link>
         <pubDate>Sun, 10 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309009/</guid>
+        <guid>https://blog.seektao.cc/p/2309009/</guid>
         <description>&lt;h2 id=&#34;概述&#34;&gt;概述
 &lt;/h2&gt;&lt;p&gt;V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -449,10 +449,10 @@
         </item>
         <item>
         <title>pandora-免翻访问gpt</title>
-        <link>https://hublog.netlify.app/p/2309005/</link>
+        <link>https://blog.seektao.cc/p/2309005/</link>
         <pubDate>Thu, 07 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309005/</guid>
+        <guid>https://blog.seektao.cc/p/2309005/</guid>
         <description>&lt;p&gt;&lt;strong&gt;pandora&lt;/strong&gt;-潘多拉魔盒，一个提供免翻的方式访问openai提供的gpt&lt;/p&gt;
 &lt;p&gt;官方地址：https://github.com/pengzhile/pandora&lt;/p&gt;
 &lt;p&gt;本次介绍如何如何使用docker的方式部署pandora&lt;/p&gt;

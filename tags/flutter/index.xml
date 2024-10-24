@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Flutter on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/flutter/</link>
-        <description>Recent content in Flutter on Seektao | 寻道之旅</description>
+        <title>Flutter on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/flutter/</link>
+        <description>Recent content in Flutter on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 03 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FVM，Flutter的多版本管理工具</title>
-        <link>https://hublog.netlify.app/p/2403003/</link>
+        <link>https://blog.seektao.cc/p/2403003/</link>
         <pubDate>Sun, 03 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403003/</guid>
+        <guid>https://blog.seektao.cc/p/2403003/</guid>
         <description>&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://fvm.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://fvm.app/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
@@ -72,10 +72,10 @@
         </item>
         <item>
         <title>Flutter安装配置</title>
-        <link>https://hublog.netlify.app/p/2312005/</link>
+        <link>https://blog.seektao.cc/p/2312005/</link>
         <pubDate>Tue, 05 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2312005/</guid>
+        <guid>https://blog.seektao.cc/p/2312005/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;h3 id=&#34;linux&#34;&gt;Linux
 &lt;/h3&gt;&lt;p&gt;官方教程：&lt;a class=&#34;link&#34; href=&#34;https://docs.flutter.cn/get-started/install/linux&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Obs on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/obs/</link>
-        <description>Recent content in Obs on Seektao | 寻道之旅</description>
+        <title>Obs on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/obs/</link>
+        <description>Recent content in Obs on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 01 Sep 2024 10:09:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/obs/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 01 Sep 2024 10:09:09 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/obs/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>OBS使用经验</title>
-        <link>https://hublog.netlify.app/p/240901100943/</link>
+        <link>https://blog.seektao.cc/p/240901100943/</link>
         <pubDate>Sun, 01 Sep 2024 10:09:09 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/240901100943/</guid>
+        <guid>https://blog.seektao.cc/p/240901100943/</guid>
         <description>&lt;h2 id=&#34;设置&#34;&gt;设置
 &lt;/h2&gt;&lt;h3 id=&#34;输入&#34;&gt;输入
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;变为高级模式&lt;/strong&gt;&lt;/p&gt;
@@ -73,10 +73,10 @@
         </item>
         <item>
         <title>obs-studio在wayland环境下出现黑屏，解决方案</title>
-        <link>https://hublog.netlify.app/p/2406014/</link>
+        <link>https://blog.seektao.cc/p/2406014/</link>
         <pubDate>Fri, 14 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2406014/</guid>
+        <guid>https://blog.seektao.cc/p/2406014/</guid>
         <description>&lt;p&gt;启用屏幕录制提示错误：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

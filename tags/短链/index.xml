@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>短链 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/%E7%9F%AD%E9%93%BE/</link>
-        <description>Recent content in 短链 on Seektao | 寻道之旅</description>
+        <title>短链 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/%E7%9F%AD%E9%93%BE/</link>
+        <description>Recent content in 短链 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Tue, 23 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E7%9F%AD%E9%93%BE/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Tue, 23 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E7%9F%AD%E9%93%BE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>短链系统yourls安装使用</title>
-        <link>https://hublog.netlify.app/p/2407027/</link>
+        <link>https://blog.seektao.cc/p/2407027/</link>
         <pubDate>Sun, 07 Jul 2024 15:07:53 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407027/</guid>
+        <guid>https://blog.seektao.cc/p/2407027/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;YOURLS 是一个强大的 PHP 脚本集，可以让您在服务器上运行自己的 URL 缩短程序。有了 YOURLS，你可以完全控制你的链接、详细的统计数据、插件支持等等，所有这些都包装在一个免费的开源软件包中。&lt;/p&gt;
 &lt;p&gt;官网：https://yourls.org&lt;/p&gt;

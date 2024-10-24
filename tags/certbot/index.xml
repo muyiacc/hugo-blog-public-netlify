@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Certbot on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/certbot/</link>
-        <description>Recent content in Certbot on Seektao | 寻道之旅</description>
+        <title>Certbot on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/certbot/</link>
+        <description>Recent content in Certbot on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 04 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/certbot/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 04 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/certbot/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Debian下的Certbot安装使用，附nginx使用</title>
-        <link>https://hublog.netlify.app/p/2405004/</link>
+        <link>https://blog.seektao.cc/p/2405004/</link>
         <pubDate>Sat, 04 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2405004/</guid>
+        <guid>https://blog.seektao.cc/p/2405004/</guid>
         <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Certbot&lt;/strong&gt; 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数据传输的安全性和隐私性。&lt;/p&gt;
 &lt;p&gt;Certbot 支持大多数常见的 Web 服务器，包括 Apache、Nginx、IIS 等。&lt;/p&gt;
@@ -355,10 +355,10 @@
         </item>
         <item>
         <title>Certbot申请域名的多种方式</title>
-        <link>https://hublog.netlify.app/p/2404001/</link>
+        <link>https://blog.seektao.cc/p/2404001/</link>
         <pubDate>Mon, 01 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2404001/</guid>
+        <guid>https://blog.seektao.cc/p/2404001/</guid>
         <description>&lt;h1 id=&#34;nginx&#34;&gt;Nginx
 &lt;/h1&gt;&lt;p&gt;先写好nginx配置文件，&lt;/p&gt;
 &lt;blockquote&gt;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>激活 on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/%E6%BF%80%E6%B4%BB/</link>
-        <description>Recent content in 激活 on Seektao | 寻道之旅</description>
+        <title>激活 on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/%E6%BF%80%E6%B4%BB/</link>
+        <description>Recent content in 激活 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Wed, 25 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E6%BF%80%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Wed, 25 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E6%BF%80%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>自己搭建kms实现Windows激活</title>
-        <link>https://hublog.netlify.app/p/2310025/</link>
+        <link>https://blog.seektao.cc/p/2310025/</link>
         <pubDate>Wed, 25 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310025/</guid>
+        <guid>https://blog.seektao.cc/p/2310025/</guid>
         <description>&lt;p&gt;自己搭建的kms激活服务器
 一条命令激活windows，只需要管理员打开cmd运行下面这条命令即可&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -27,10 +27,10 @@
         </item>
         <item>
         <title>一条命令激活Windows和Office</title>
-        <link>https://hublog.netlify.app/p/2309012/</link>
+        <link>https://blog.seektao.cc/p/2309012/</link>
         <pubDate>Wed, 13 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309012/</guid>
+        <guid>https://blog.seektao.cc/p/2309012/</guid>
         <description>&lt;p&gt;本次介绍 github上面一个激活 Windows和Office（支持Office365） 的脚本，拥有 &lt;strong&gt;stat 41.1k&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;支持 Windows 8.1/10/11&lt;/p&gt;
 &lt;blockquote&gt;
@@ -64,7 +64,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;出现如下的画面&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_42660.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140334/20231203T140334_42660.png&#34;
 	
 	
 	
@@ -75,7 +75,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;选择2，接着出现&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_38989.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140334/20231203T140334_38989.png&#34;
 	
 	
 	
@@ -86,7 +86,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;等待完成即可，类似如下
-&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_51757.png&#34;
+&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140334/20231203T140334_51757.png&#34;
 	
 	
 	
@@ -97,7 +97,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;打开Office365的软件验证，比如Word，打开Word，选择账户，可以看到订阅的产品。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140334/20231203T140334_17003.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140334/20231203T140334_17003.png&#34;
 	
 	
 	

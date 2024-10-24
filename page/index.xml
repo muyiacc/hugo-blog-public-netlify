@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pages on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/page/</link>
-        <description>Recent content in Pages on Seektao | 寻道之旅</description>
+        <title>Pages on 寻道之旅</title>
+        <link>https://blog.seektao.cc/page/</link>
+        <description>Recent content in Pages on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://hublog.netlify.app/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.seektao.cc/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>归档</title>
-        <link>https://hublog.netlify.app/archives/</link>
+        <link>https://blog.seektao.cc/archives/</link>
         <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://hublog.netlify.app/archives/</guid>
+        <guid>https://blog.seektao.cc/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>链接</title>
-        <link>https://hublog.netlify.app/links/</link>
+        <link>https://blog.seektao.cc/links/</link>
         <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://hublog.netlify.app/links/</guid>
+        <guid>https://blog.seektao.cc/links/</guid>
         <description></description>
         </item>
         <item>
         <title>搜索</title>
-        <link>https://hublog.netlify.app/search/</link>
+        <link>https://blog.seektao.cc/search/</link>
         <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://hublog.netlify.app/search/</guid>
+        <guid>https://blog.seektao.cc/search/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>https://hublog.netlify.app/about/</link>
+        <link>https://blog.seektao.cc/about/</link>
         <pubDate>Fri, 15 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://hublog.netlify.app/about/</guid>
+        <guid>https://blog.seektao.cc/about/</guid>
         <description>&lt;div style=&#34;text-align: center;&#34;&gt;
     &lt;span style=&#34;color: blue; font-weight: bold; font-size: 1em;&#34;&gt;本网站的内容不定，只记录自己喜欢的东西。&lt;/span&gt;
 &lt;/div&gt;

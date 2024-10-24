@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Kodi on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/kodi/</link>
-        <description>Recent content in Kodi on Seektao | 寻道之旅</description>
+        <title>Kodi on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/kodi/</link>
+        <description>Recent content in Kodi on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 04 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/kodi/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Thu, 04 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/kodi/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Kodi，超级强大的多功能媒体播放器</title>
-        <link>https://hublog.netlify.app/p/2407004/</link>
+        <link>https://blog.seektao.cc/p/2407004/</link>
         <pubDate>Thu, 04 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407004/</guid>
+        <guid>https://blog.seektao.cc/p/2407004/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;h3 id=&#34;linux&#34;&gt;Linux
 &lt;/h3&gt;&lt;p&gt;Debian&lt;/p&gt;

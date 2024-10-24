@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Vue on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/categories/vue/</link>
-        <description>Recent content in Vue on Seektao | 寻道之旅</description>
+        <title>Vue on 寻道之旅</title>
+        <link>https://blog.seektao.cc/categories/vue/</link>
+        <description>Recent content in Vue on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 12 Oct 2024 08:51:29 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/vue/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 12 Oct 2024 08:51:29 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/vue/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>对于没有使用过vue的人，如何快速运行其他人的vue项目</title>
-        <link>https://hublog.netlify.app/p/2309014/</link>
+        <link>https://blog.seektao.cc/p/2309014/</link>
         <pubDate>Fri, 15 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309014/</guid>
+        <guid>https://blog.seektao.cc/p/2309014/</guid>
         <description>&lt;p&gt;在用git拉取别人的前端项目之后&lt;/p&gt;
 &lt;p&gt;通过命令行进入项目的根目录&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;npm install&lt;/code&gt;  安装依赖&lt;/p&gt;

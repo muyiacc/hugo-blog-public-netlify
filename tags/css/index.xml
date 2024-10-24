@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Css on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/css/</link>
-        <description>Recent content in Css on Seektao | 寻道之旅</description>
+        <title>Css on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/css/</link>
+        <description>Recent content in Css on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 12 Oct 2024 11:13:37 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/css/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 12 Oct 2024 11:13:37 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/css/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

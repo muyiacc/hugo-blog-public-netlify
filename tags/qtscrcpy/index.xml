@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Qtscrcpy on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/qtscrcpy/</link>
-        <description>Recent content in Qtscrcpy on Seektao | 寻道之旅</description>
+        <title>Qtscrcpy on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/qtscrcpy/</link>
+        <description>Recent content in Qtscrcpy on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Tue, 09 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/qtscrcpy/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Tue, 09 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/qtscrcpy/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>linux安装安卓控制工具，QtScrcpy</title>
-        <link>https://hublog.netlify.app/p/2407009/</link>
+        <link>https://blog.seektao.cc/p/2407009/</link>
         <pubDate>Tue, 09 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407009/</guid>
+        <guid>https://blog.seektao.cc/p/2407009/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/barry-ran/QtScrcpy/releases/tag/v2.2.1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Gofilm on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/gofilm/</link>
-        <description>Recent content in Gofilm on Seektao | 寻道之旅</description>
+        <title>Gofilm on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/gofilm/</link>
+        <description>Recent content in Gofilm on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Mon, 11 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/gofilm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Mon, 11 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/gofilm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>开源多播放源采集在线影视GoFilm</title>
-        <link>https://hublog.netlify.app/p/2403011/</link>
+        <link>https://blog.seektao.cc/p/2403011/</link>
         <pubDate>Mon, 11 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403011/</guid>
+        <guid>https://blog.seektao.cc/p/2403011/</guid>
         <description>&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;最近在看动漫，但是好多站点要么没有，要么搜不到，有些搜索还有时间限制，或者从网盘转存，太繁琐了。所以想在自己的服务器新增一个看影视的功能，毕竟有时候找资源是真的痛苦。&lt;/p&gt;
 &lt;p&gt;加上之前了解到GitHub上有一个在线采集影视的项目，正好今天上上手，自己动手部署，丰衣足食。&lt;/p&gt;

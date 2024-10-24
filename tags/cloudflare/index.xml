@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cloudflare on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/cloudflare/</link>
-        <description>Recent content in Cloudflare on Seektao | 寻道之旅</description>
+        <title>Cloudflare on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/cloudflare/</link>
+        <description>Recent content in Cloudflare on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Wed, 04 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Wed, 04 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Debain12安装cloudflare-warp</title>
-        <link>https://hublog.netlify.app/p/2310004/</link>
+        <link>https://blog.seektao.cc/p/2310004/</link>
         <pubDate>Wed, 04 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310004/</guid>
+        <guid>https://blog.seektao.cc/p/2310004/</guid>
         <description>&lt;h1 id=&#34;命令英文版&#34;&gt;命令英文版
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -307,10 +307,10 @@
         </item>
         <item>
         <title>CloudFlare NameServer</title>
-        <link>https://hublog.netlify.app/p/2310003/</link>
+        <link>https://blog.seektao.cc/p/2310003/</link>
         <pubDate>Tue, 03 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310003/</guid>
+        <guid>https://blog.seektao.cc/p/2310003/</guid>
         <description>&lt;p&gt;dempsey.dnspod.net
 edmund.dnspod.net&lt;/p&gt;
 &lt;p&gt;gigi.ns.cloudflare.com

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Archlinux on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/archlinux/</link>
-        <description>Recent content in Archlinux on Seektao | 寻道之旅</description>
+        <title>Archlinux on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/archlinux/</link>
+        <description>Recent content in Archlinux on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 01 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 01 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/archlinux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>archlinux自动挂载windows的不同盘符（驱动器）</title>
-        <link>https://hublog.netlify.app/p/2310001/</link>
+        <link>https://blog.seektao.cc/p/2310001/</link>
         <pubDate>Sun, 01 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310001/</guid>
+        <guid>https://blog.seektao.cc/p/2310001/</guid>
         <description>&lt;p&gt;archlinux自动挂载windows的不同盘符（驱动器）&lt;/p&gt;
 &lt;h1 id=&#34;1-前言&#34;&gt;1. 前言
 &lt;/h1&gt;&lt;h2 id=&#34;11-需求&#34;&gt;1.1. 需求

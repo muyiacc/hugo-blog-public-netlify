@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般最常用的是debian系统，centos因">
-<title>Debian更换国内镜像源</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般用的是 Debian 系统，Centos 因为变得不再稳定">
+<title>Debian软件源之国内镜像源</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/2310012/'>
+<link rel='canonical' href='https://blog.seektao.cc/p/2310012/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Debian更换国内镜像源">
-<meta property='og:description' content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般最常用的是debian系统，centos因">
-<meta property='og:url' content='https://hublog.netlify.app/p/2310012/'>
-<meta property='og:site_name' content='Seektao | 寻道之旅'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Debian软件源之国内镜像源">
+<meta property='og:description' content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般用的是 Debian 系统，Centos 因为变得不再稳定">
+<meta property='og:url' content='https://blog.seektao.cc/p/2310012/'>
+<meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='mirror' /><meta property='article:published_time' content='2023-10-12T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-12T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="Debian更换国内镜像源">
-<meta name="twitter:description" content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般最常用的是debian系统，centos因">
+<meta name="twitter:title" content="Debian软件源之国内镜像源">
+<meta name="twitter:description" content="前言 每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找 我一般用的是 Debian 系统，Centos 因为变得不再稳定">
   
 
 
@@ -65,17 +65,36 @@
                 
                 </a>
                 
-                    <span class="emoji">🍥</span>
-                
             </figure>
             
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">Seektao | 寻道之旅</a></h1>
-            <h2 class="site-description">欢迎来到我的主页</h2>
+            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/481543302'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z"></path>
+    <path d="M8 3l2 3"></path>
+    <path d="M16 3l-2 3"></path>
+    <path d="M9 13v-2"></path>
+    <path d="M15 11v2"></path>
+  </svg>
+                        
+                    </a>
+                </li>
             
                 <li>
                     <a 
@@ -248,13 +267,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#step-1">step 1</a></li>
-    <li><a href="#step-2可选">step 2（可选）</a></li>
-    <li><a href="#step-3">step 3</a></li>
+    <li><a href="#step-1">Step 1</a></li>
+    <li><a href="#step-2可选">Step 2（可选）</a></li>
+    <li><a href="#step-3">Step 3</a></li>
   </ol>
 
   <ol>
-    <li><a href="#debian10">debian10</a></li>
+    <li><a href="#debian10">Debian10</a></li>
   </ol>
 </nav>
         </div>
@@ -282,7 +301,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2310012/">Debian更换国内镜像源</a>
+            <a href="/p/2310012/">Debian软件源之国内镜像源</a>
         </h2>
     
         
@@ -322,9 +341,9 @@
     
     <h1 id="前言">前言
 </h1><p>每次装新系统都要网上搜各种换仓库镜像源的教程，有的还不一定准确，自己总结下，免得到处翻找</p>
-<p>我一般最常用的是debian系统，centos因为变得不再稳定，所以我已不再使用，如果你用的是debian系，应该也适合你，如ubuntu。</p>
-<p>以下教程都是在root用户使用，新用户还需要编辑sudoer文件，太麻烦了，索性直接用root用户，不过便于以后使用，以后可能普通用户也有换源的需求，有的命令也加上sudo</p>
-<p>查看自己的debian发行版本</p>
+<p>我一般用的是 Debian 系统，Centos 因为变得不再稳定，所以我已不再使用，如果你用的是 Debian 系，应该也适合你，如 Ubuntu。</p>
+<p>以下教程都是在 root 用户使用，新用户还需要编辑 sudoer 文件，太麻烦了，索性直接用 roo t用户，不过便于以后使用，以后可能普通用户也有换源的需求，有的命令也加上 sudo</p>
+<p>查看自己的 Debian 发行版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -340,7 +359,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>本次教程发行版本是 <code>Debian 12 (bookworm)</code></p>
-<p>debian的镜像源文件所在位置 <code>/etc/apt/sources.list</code></p>
+<p>Debian 软件源文件所在位置 <code>/etc/apt/sources.list</code></p>
 <p>修改之前先备份</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -351,8 +370,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="清华源">清华源
-</h1><p>官方帮助地址：https://mirrors.tuna.tsinghua.edu.cn/help/debian/</p>
-<h2 id="step-1">step 1
+</h1><blockquote>
+<p>官方帮助地址：https://mirrors.tuna.tsinghua.edu.cn/help/debian/</p>
+</blockquote>
+<h2 id="step-1">Step 1
 </h2><p>新系统更新软件缓存包时会用到 <code>官方安全更新软件源</code>，国内网络问题，所以会直接卡住，所以先使用清华源更新，更新后再换回来</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -427,7 +448,7 @@
 </span></span><span class="line"><span class="cl">sudo apt install vim
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="step-2可选">step 2（可选）
+</div><h2 id="step-2可选">Step 2（可选）
 </h2><p>Debian Buster 以上版本默认支持 HTTPS 源，所以可选。</p>
 <p>安装：</p>
 <ul>
@@ -442,7 +463,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install apt-transport-https ca-certificates
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="step-3">step 3
+</div><h2 id="step-3">Step 3
 </h2><p>类似于step1，选择的内容则有所不同</p>
 <ul>
 <li>是否使用 HTTPS：<strong>==是==</strong></li>
@@ -518,7 +539,7 @@
 </h1><blockquote>
 <p>参考地址：https://developer.aliyun.com/mirror/debian?spm=a2c6h.13651102.0.0.7fb11b11uZIZXw</p>
 </blockquote>
-<h2 id="debian10">debian10
+<h2 id="debian10">Debian10
 </h2><p>此源为阿里云的云服务器默认配置，使用阿里云镜像站的源下载速度很慢，不知为何。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -647,7 +668,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">一条命令实现各个Linux发行版镜像源更换：LinuxMirrors</h2>
+            <h2 class="article-title">LinuxMirrors：一条命令实现各个Linux发行版软件镜像源更换</h2>
         </div>
     </a>
 </article>
@@ -770,7 +791,7 @@
         
             2023 - 
         
-        2024 Seektao | 寻道之旅
+        2024 寻道之旅
     </section>
     
     <section class="powerby">

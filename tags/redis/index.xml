@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Redis on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/redis/</link>
-        <description>Recent content in Redis on Seektao | 寻道之旅</description>
+        <title>Redis on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/redis/</link>
+        <description>Recent content in Redis on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Tue, 09 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/redis/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Tue, 09 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/redis/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>redis-windows安装</title>
-        <link>https://hublog.netlify.app/p/2404009/</link>
+        <link>https://blog.seektao.cc/p/2404009/</link>
         <pubDate>Tue, 09 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2404009/</guid>
+        <guid>https://blog.seektao.cc/p/2404009/</guid>
         <description>&lt;p&gt;GitHub项目：https://github.com/redis-windows/redis-windows&lt;/p&gt;
 &lt;p&gt;下载解压&lt;/p&gt;
 &lt;p&gt;安装服务&lt;/p&gt;
@@ -57,10 +57,10 @@
         </item>
         <item>
         <title>Redis初始配置</title>
-        <link>https://hublog.netlify.app/p/2312008/</link>
+        <link>https://blog.seektao.cc/p/2312008/</link>
         <pubDate>Fri, 08 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2312008/</guid>
+        <guid>https://blog.seektao.cc/p/2312008/</guid>
         <description>&lt;p&gt;在初次使用 Redis 时，以下是一些常见的需要修改的命令：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

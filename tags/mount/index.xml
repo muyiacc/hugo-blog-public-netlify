@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Mount on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/mount/</link>
-        <description>Recent content in Mount on Seektao | 寻道之旅</description>
+        <title>Mount on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/mount/</link>
+        <description>Recent content in Mount on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sun, 09 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/mount/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sun, 09 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/mount/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux开机自动挂载Windows磁盘</title>
-        <link>https://hublog.netlify.app/p/2406009/</link>
+        <link>https://blog.seektao.cc/p/2406009/</link>
         <pubDate>Sun, 09 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2406009/</guid>
+        <guid>https://blog.seektao.cc/p/2406009/</guid>
         <description>&lt;img src="https://s2.loli.net/2024/10/03/nEjbHgrFzmXRsc8.png" alt="Featured image of post Linux开机自动挂载Windows磁盘" /&gt;&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;以前写过一篇关于&lt;code&gt;archlinux&lt;/code&gt;开机自动挂载&lt;code&gt;windows&lt;/code&gt;磁盘的文章，这次教程和之前核心一样，都需要安装&lt;code&gt;ntfs-3g&lt;/code&gt;，但是&lt;code&gt;/etc/fstable&lt;/code&gt; 文件编写的内容不一样`&lt;/p&gt;
 &lt;p&gt;关于&lt;code&gt;/etc/fatable&lt;/code&gt; 文件各列的简单解释：&lt;/p&gt;
@@ -191,10 +191,10 @@
         </item>
         <item>
         <title>archlinux自动挂载windows的不同盘符（驱动器）</title>
-        <link>https://hublog.netlify.app/p/2310001/</link>
+        <link>https://blog.seektao.cc/p/2310001/</link>
         <pubDate>Sun, 01 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310001/</guid>
+        <guid>https://blog.seektao.cc/p/2310001/</guid>
         <description>&lt;p&gt;archlinux自动挂载windows的不同盘符（驱动器）&lt;/p&gt;
 &lt;h1 id=&#34;1-前言&#34;&gt;1. 前言
 &lt;/h1&gt;&lt;h2 id=&#34;11-需求&#34;&gt;1.1. 需求

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Log on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/log/</link>
-        <description>Recent content in Log on Seektao | 寻道之旅</description>
+        <title>Log on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/log/</link>
+        <description>Recent content in Log on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Mon, 16 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/log/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Mon, 16 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/log/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux下的日志太大，如何查看不卡顿</title>
-        <link>https://hublog.netlify.app/p/2310016/</link>
+        <link>https://blog.seektao.cc/p/2310016/</link>
         <pubDate>Mon, 16 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310016/</guid>
+        <guid>https://blog.seektao.cc/p/2310016/</guid>
         <description>&lt;p&gt;如果日志文件太大，使用一些工具来查看和分析日志内容，以便更方便地定位问题。以下是几种常用的方法：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

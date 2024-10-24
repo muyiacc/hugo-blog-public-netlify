@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Linux on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/linux/</link>
-        <description>Recent content in Linux on Seektao | 寻道之旅</description>
+        <title>Linux on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/linux/</link>
+        <description>Recent content in Linux on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Sat, 05 Oct 2024 16:34:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Sat, 05 Oct 2024 16:34:47 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows使用WSL安装Linux系统</title>
-        <link>https://hublog.netlify.app/p/240818210841/</link>
+        <link>https://blog.seektao.cc/p/240818210841/</link>
         <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/240818210841/</guid>
+        <guid>https://blog.seektao.cc/p/240818210841/</guid>
         <description>&lt;p&gt;参考文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&lt;/a&gt;&lt;/p&gt;
@@ -22,10 +22,10 @@
         </item>
         <item>
         <title>Linux使用APT仓库安装MySQL</title>
-        <link>https://hublog.netlify.app/p/2403001/</link>
+        <link>https://blog.seektao.cc/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403001/</guid>
+        <guid>https://blog.seektao.cc/p/2403001/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt仓库安装。&lt;/p&gt;
 &lt;h2 id=&#34;卸载&#34;&gt;卸载
@@ -125,10 +125,10 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
         </item>
         <item>
         <title>Linux下的 Typora 安装和激活</title>
-        <link>https://hublog.netlify.app/p/2310015/</link>
+        <link>https://blog.seektao.cc/p/2310015/</link>
         <pubDate>Sun, 15 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2310015/</guid>
+        <guid>https://blog.seektao.cc/p/2310015/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;title:  Linux下的 Typora 安装和激活
 author: taoone
@@ -329,10 +329,10 @@ create_date: 2023-10-19&lt;/p&gt;
         </item>
         <item>
         <title>Shell的基本语法-1-概述-解释器-入门</title>
-        <link>https://hublog.netlify.app/p/2309006/</link>
+        <link>https://blog.seektao.cc/p/2309006/</link>
         <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309006/</guid>
+        <guid>https://blog.seektao.cc/p/2309006/</guid>
         <description>&lt;h1 id=&#34;1-shell概述&#34;&gt;1. Shell概述
 &lt;/h1&gt;&lt;p&gt;作为一个开发人员，使用Linux实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开Shell，所以这篇文章总结一下Shell中常见的语法&lt;/p&gt;
 &lt;h1 id=&#34;2-解释器&#34;&gt;2. 解释器
@@ -423,10 +423,10 @@ create_date: 2023-10-19&lt;/p&gt;
         </item>
         <item>
         <title>Shell的基本语法-2-变量-运算符-条件判断</title>
-        <link>https://hublog.netlify.app/p/2309007/</link>
+        <link>https://blog.seektao.cc/p/2309007/</link>
         <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309007/</guid>
+        <guid>https://blog.seektao.cc/p/2309007/</guid>
         <description>&lt;h1 id=&#34;1-变量&#34;&gt;1. 变量
 &lt;/h1&gt;&lt;p&gt;Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等&lt;/p&gt;
 &lt;p&gt;查看这些变量的值只需要 &lt;code&gt;echo $变量名&lt;/code&gt;即可&lt;/p&gt;
@@ -529,10 +529,10 @@ create_date: 2023-10-19&lt;/p&gt;
         </item>
         <item>
         <title>Linux系统的系统变量合集</title>
-        <link>https://hublog.netlify.app/p/2309003/</link>
+        <link>https://blog.seektao.cc/p/2309003/</link>
         <pubDate>Tue, 05 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309003/</guid>
+        <guid>https://blog.seektao.cc/p/2309003/</guid>
         <description>&lt;pre&gt;&lt;code&gt;HOME：用户的主目录，通常是/home/用户名。
 USER：当前登录的用户名。
 PATH：环境变量，包含了可执行文件的搜索路径。
@@ -587,10 +587,10 @@ TMUX_CURRENT_COMMAND：当前活动的tmux当前命令。&lt;/code&gt;&lt;/pre&g
         </item>
         <item>
         <title>Linux下的解压命令unzip使用指南</title>
-        <link>https://hublog.netlify.app/p/2309002/</link>
+        <link>https://blog.seektao.cc/p/2309002/</link>
         <pubDate>Mon, 04 Sep 2023 14:07:09 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2309002/</guid>
+        <guid>https://blog.seektao.cc/p/2309002/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;unzip为linux上 解压 zip的命令&lt;/p&gt;
 &lt;p&gt;小提示：使用unzip解压时，先提前创建好解压的路径，再通过 &lt;code&gt;-d 解压路径&lt;/code&gt; 指定&lt;/p&gt;

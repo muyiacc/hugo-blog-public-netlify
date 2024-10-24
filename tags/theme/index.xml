@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Theme on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/theme/</link>
-        <description>Recent content in Theme on Seektao | 寻道之旅</description>
+        <title>Theme on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/theme/</link>
+        <description>Recent content in Theme on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 05 Sep 2024 21:17:06 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/theme/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Thu, 05 Sep 2024 21:17:06 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/theme/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>博客更新：新增模块 hugo-notice</title>
-        <link>https://hublog.netlify.app/p/240905211706/</link>
+        <link>https://blog.seektao.cc/p/240905211706/</link>
         <pubDate>Thu, 05 Sep 2024 21:17:06 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/240905211706/</guid>
+        <guid>https://blog.seektao.cc/p/240905211706/</guid>
         <description>&lt;style type=&#34;text/css&#34;&gt;
      
     .notice {

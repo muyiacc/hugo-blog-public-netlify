@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Alist on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/alist/</link>
-        <description>Recent content in Alist on Seektao | 寻道之旅</description>
+        <title>Alist on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/alist/</link>
+        <description>Recent content in Alist on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 05 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/alist/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 05 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/alist/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux下安装使用alist</title>
-        <link>https://hublog.netlify.app/p/2407005/</link>
+        <link>https://blog.seektao.cc/p/2407005/</link>
         <pubDate>Fri, 05 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407005/</guid>
+        <guid>https://blog.seektao.cc/p/2407005/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://alist.nn.ci/zh/guide&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://alist.nn.ci/zh/guide&lt;/a&gt;&lt;/p&gt;
@@ -127,10 +127,10 @@
         </item>
         <item>
         <title>Windows下安装Alist，并安装系统服务自启动</title>
-        <link>https://hublog.netlify.app/p/2311012/</link>
+        <link>https://blog.seektao.cc/p/2311012/</link>
         <pubDate>Sun, 12 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2311012/</guid>
+        <guid>https://blog.seektao.cc/p/2311012/</guid>
         <description>&lt;p&gt;Alist是一个网盘管理工作，可以挂在多个网盘，使用go编写，所以多平台支持，之前在服务器安装了alist，使用的Linux系统，这次在Windows下也安装一下&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;笔者Windows版本为 Windows10 专业工作站，我不确定家庭版是否有限制&lt;/p&gt;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Python on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/python/</link>
-        <description>Recent content in Python on Seektao | 寻道之旅</description>
+        <title>Python on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/python/</link>
+        <description>Recent content in Python on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Wed, 17 Jul 2024 15:07:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Wed, 17 Jul 2024 15:07:48 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>pyenv,python的版本管理工具</title>
-        <link>https://hublog.netlify.app/p/2407017/</link>
+        <link>https://blog.seektao.cc/p/2407017/</link>
         <pubDate>Wed, 17 Jul 2024 15:07:48 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407017/</guid>
+        <guid>https://blog.seektao.cc/p/2407017/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;Linux&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

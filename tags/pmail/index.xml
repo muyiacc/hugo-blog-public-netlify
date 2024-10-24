@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Pmail on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/pmail/</link>
-        <description>Recent content in Pmail on Seektao | 寻道之旅</description>
+        <title>Pmail on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/pmail/</link>
+        <description>Recent content in Pmail on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Tue, 16 Jul 2024 15:07:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/pmail/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Tue, 16 Jul 2024 15:07:47 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/pmail/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>PMail配置SMTP，POP客户端</title>
-        <link>https://hublog.netlify.app/p/2407016/</link>
+        <link>https://blog.seektao.cc/p/2407016/</link>
         <pubDate>Tue, 16 Jul 2024 15:07:47 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2407016/</guid>
+        <guid>https://blog.seektao.cc/p/2407016/</guid>
         <description>&lt;p&gt;先看看pmail服务器端口的配置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -50,10 +50,10 @@
         </item>
         <item>
         <title>强烈推荐，一个内存占用极低的自建域名邮箱Pmail</title>
-        <link>https://hublog.netlify.app/p/pmail/</link>
+        <link>https://blog.seektao.cc/p/pmail/</link>
         <pubDate>Mon, 23 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/pmail/</guid>
+        <guid>https://blog.seektao.cc/p/pmail/</guid>
         <description>&lt;hr&gt;
 &lt;p&gt;由于 PMail  后续更新，本文也将修改，适应最新版本&lt;/p&gt;
 &lt;hr&gt;

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Apt on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/apt/</link>
-        <description>Recent content in Apt on Seektao | 寻道之旅</description>
+        <title>Apt on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/apt/</link>
+        <description>Recent content in Apt on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Thu, 07 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/apt/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Thu, 07 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/apt/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Nginx篇：通过apt的nginx官方仓库安装</title>
-        <link>https://hublog.netlify.app/p/2403007/</link>
+        <link>https://blog.seektao.cc/p/2403007/</link>
         <pubDate>Thu, 07 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403007/</guid>
+        <guid>https://blog.seektao.cc/p/2403007/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;为什么需要通过官方仓库安装？
 答：系统默认的软件源版本太低&lt;/p&gt;
@@ -210,10 +210,10 @@ uid&lt;/p&gt;
         </item>
         <item>
         <title>Debian通过apt安装MySQL</title>
-        <link>https://hublog.netlify.app/p/2403001/</link>
+        <link>https://blog.seektao.cc/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403001/</guid>
+        <guid>https://blog.seektao.cc/p/2403001/</guid>
         <description>&lt;p&gt;之前一直使用 下载压缩包的方式，发现并不好用，因为每次新装还要下载指定的版本，而且版本还不一定好找，之前教程安装过程的命令复用性不高， 这次直接使用apt安装，添加MySQL的apt源即可，就算是其他人也可以直接复制&lt;/p&gt;
 &lt;h1 id=&#34;先卸载&#34;&gt;先卸载
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -296,10 +296,10 @@ uid&lt;/p&gt;
         </item>
         <item>
         <title>Linux使用APT仓库安装MySQL</title>
-        <link>https://hublog.netlify.app/p/2403001/</link>
+        <link>https://blog.seektao.cc/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/2403001/</guid>
+        <guid>https://blog.seektao.cc/p/2403001/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt仓库安装。&lt;/p&gt;
 &lt;h2 id=&#34;卸载&#34;&gt;卸载

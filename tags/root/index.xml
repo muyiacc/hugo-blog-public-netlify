@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Root on Seektao | 寻道之旅</title>
-        <link>https://hublog.netlify.app/tags/root/</link>
-        <description>Recent content in Root on Seektao | 寻道之旅</description>
+        <title>Root on 寻道之旅</title>
+        <link>https://blog.seektao.cc/tags/root/</link>
+        <description>Recent content in Root on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Seektao | 寻道之旅</copyright>
-        <lastBuildDate>Fri, 02 Aug 2024 15:08:25 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/root/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅</copyright>
+        <lastBuildDate>Fri, 02 Aug 2024 15:08:25 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/root/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux开启ssh密码登陆，root用户远程登陆</title>
-        <link>https://hublog.netlify.app/p/240802150825/</link>
+        <link>https://blog.seektao.cc/p/240802150825/</link>
         <pubDate>Fri, 02 Aug 2024 15:08:25 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/240802150825/</guid>
+        <guid>https://blog.seektao.cc/p/240802150825/</guid>
         <description>&lt;p&gt;&lt;strong&gt;开启ssh密码登陆&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
