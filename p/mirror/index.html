@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -299,6 +299,12 @@
         <li><a href="#阿里云">阿里云</a></li>
       </ol>
     </li>
+    <li><a href="#docker软件源">Docker软件源</a>
+      <ol>
+        <li><a href="#debianubunturaspbian-用户">Debian/Ubuntu/Raspbian 用户</a></li>
+      </ol>
+    </li>
+    <li><a href="#gradle">Gradle</a></li>
   </ol>
 </nav>
         </div>
@@ -662,6 +668,117 @@
 </span></span><span class="line"><span class="cl">		<span class="nt">&lt;/mirror&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="docker软件源">Docker软件源
+</h2><p>非 Docker Hub镜像源</p>
+<h3 id="debianubunturaspbian-用户">Debian/Ubuntu/Raspbian 用户
+</h3><p>以下内容根据 <a class="link" href="https://docs.docker.com/engine/install/debian/"  target="_blank" rel="noopener"
+    >官方文档</a> 修改而来。</p>
+<p>如果你过去安装过 docker，先删掉：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">for</span> pkg in docker.io docker-doc docker-compose podman-docker containerd runc<span class="p">;</span> <span class="k">do</span> sudo apt-get remove <span class="nv">$pkg</span><span class="p">;</span> <span class="k">done</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>首先安装依赖：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install ca-certificates curl gnupg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>信任 Docker 的 GPG 公钥并添加仓库：</p>
+<blockquote>
+<p>如果为Ubuntu、Raspbian，请查看 <a class="link" href="https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/"  target="_blank" rel="noopener"
+    >https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/</a></p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo install -m <span class="m">0755</span> -d /etc/apt/keyrings
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">curl -fsSL https://download.docker.com/linux/debian/gpg <span class="p">|</span> sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo chmod a+r /etc/apt/keyrings/docker.gpg
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  <span class="s2">&#34;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2"> signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
+</span></span></span><span class="line"><span class="cl"><span class="s2">  &#34;</span><span class="k">$(</span>. /etc/os-release <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$VERSION_CODENAME</span><span class="s2">&#34;</span><span class="k">)</span><span class="s2">&#34; stable&#34;</span> <span class="p">|</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果提示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">-bash: gpg: <span class="nb">command</span> not found
+</span></span><span class="line"><span class="cl">curl: <span class="o">(</span>23<span class="o">)</span> Failed writing body
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>请安装 gpg 之后，再次尝试上述的步骤： 信任 Docker 的 GPG 公钥并添加仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install gpg
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="gradle">Gradle
+</h2><p>腾讯云（推荐，版本全）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://mirrors.cloud.tencent.com/gradle
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>阿里云（有些小版本没有）</p>
+<ul>
+<li>gradele 4.1 之后</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://mirrors.aliyun.com/macports/distfiles/gradle/
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
 </section>
 
@@ -715,6 +832,32 @@
         <div class="flex article-list--tile">
             
                 
+<article class="">
+    <a href="/p/241030095809/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VSCode使用经验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241025162917/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LazyVim安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/241013175136/">
         
@@ -760,38 +903,6 @@
 
         <div class="article-details">
             <h2 class="article-title">指纹浏览器</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/241003151158/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png" loading="lazy" data-key="&#34;241003151158&#34;" data-hash="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/240905211706/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
         </div>
     </a>
 </article>

@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
-<title>go的安装和配置</title>
+<title>Go的安装和配置</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2406008/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="go的安装和配置">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Go的安装和配置">
 <meta property='og:description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
 <meta property='og:url' content='https://blog.seektao.cc/p/2406008/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go' /><meta property='article:published_time' content='2024-06-08T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-08T16:06:01&#43;08:00'/>
-<meta name="twitter:title" content="go的安装和配置">
+<meta name="twitter:title" content="Go的安装和配置">
 <meta name="twitter:description" content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
   
 
@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -302,7 +302,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2406008/">go的安装和配置</a>
+            <a href="/p/2406008/">Go的安装和配置</a>
         </h2>
     
         
@@ -574,30 +574,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">```</span><span class="n">shell</span>
-</span></span><span class="line"><span class="cl"><span class="k">export</span> <span class="n">GOPATH</span><span class="o">=~/</span><span class="n">codespace</span><span class="o">/</span><span class="n">goProjects</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>为了方便使用 Go 命令，建议将 <code>$GOPATH/bin</code> 加入到你的 <code>PATH</code> 中：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$GOPATH</span>/bin
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>持久化设置：<br>
-如果你希望每次打开终端时都自动设置，可以将上述命令添加到你的 shell 配置文件中（如 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>）：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export GOPATH=~/codespace/goProjects&#39;</span> &gt;&gt; ~/.bashrc 
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=$PATH:$GOPATH/bin&#39;</span> &gt;&gt; ~/.bashrc
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export GOPATH=~/codespace/goProjects&#39;</span> &gt;&gt; ~/.bashrc
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
 </span></span></code></pre></td></tr></table>
 </div>
@@ -605,7 +582,7 @@
 <ul>
 <li><code>src</code>: 存放源代码。</li>
 <li><code>pkg</code>: 存放编译后的包。</li>
-<li><code>bin</code>: 存放可执行文件。</li>
+<li><code>bin</code>: 存放go下载的可执行文件。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -616,7 +593,20 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>以后就可以把代码放在 <code>$GOPATH/src</code>下了。</p>
-<h2 id="go命令行">Go命令行
+<p>为了方便使用 Go 下载的包的可执行文件，将 <code>$GOPATH/bin</code> 加入到你的 <code>PATH</code> 中（如 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 适用于unix系统 bash环境</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=$PATH:$GOPATH/bin&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="go命令行">Go命令行
 </h2><p>自动解决依赖</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -679,6 +669,32 @@
         <div class="flex article-list--tile">
             
                 
+<article class="">
+    <a href="/p/241030095809/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VSCode使用经验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241025162917/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LazyVim安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/241013175136/">
         
@@ -724,38 +740,6 @@
 
         <div class="article-details">
             <h2 class="article-title">指纹浏览器</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/241003151158/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png" loading="lazy" data-key="&#34;241003151158&#34;" data-hash="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/240905211706/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">博客更新：新增模块 hugo-notice</h2>
         </div>
     </a>
 </article>

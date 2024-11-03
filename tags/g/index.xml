@@ -8,12 +8,12 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Sat, 03 Aug 2024 13:08:35 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/g/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Go的多版本管理工具：g</title>
+        <title>g，Go的多版本管理工具</title>
         <link>https://blog.seektao.cc/p/240803130835/</link>
         <pubDate>Sat, 03 Aug 2024 13:08:35 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/p/240803130835/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post Go的多版本管理工具：g" /&gt;&lt;h2 id=&#34;概述&#34;&gt;概述
+        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post g，Go的多版本管理工具" /&gt;&lt;h2 id=&#34;概述&#34;&gt;概述
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;g&lt;/code&gt; 是管理 go 版本的工具，可以简化 go 的版本管理。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

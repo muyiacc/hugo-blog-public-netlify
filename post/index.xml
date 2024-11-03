@@ -7,7 +7,190 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 13 Oct 2024 17:51:36 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 03 Nov 2024 08:35:19 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode使用经验</title>
+        <link>https://blog.seektao.cc/p/241030095809/</link>
+        <pubDate>Wed, 30 Oct 2024 09:58:09 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/241030095809/</guid>
+        <description>&lt;h2 id=&#34;快捷键&#34;&gt;快捷键
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;F12&lt;/code&gt; 跳转到方法定义
+&lt;code&gt;Alt + F12&lt;/code&gt; 跳转到方法定义
+&lt;code&gt;Alt + F12&lt;/code&gt; 向下复制一行&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>LazyVim安装配置</title>
+        <link>https://blog.seektao.cc/p/241025162917/</link>
+        <pubDate>Fri, 25 Oct 2024 16:29:17 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/241025162917/</guid>
+        <description>&lt;h2 id=&#34;简述&#34;&gt;简述
+&lt;/h2&gt;&lt;p&gt;LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;-features&#34;&gt;✨ Features
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;🔥 Transform your Neovim into a full-fledged IDE&lt;/li&gt;
+&lt;li&gt;💤 Easily customize and extend your config with &lt;a class=&#34;link&#34; href=&#34;https://github.com/folke/lazy.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;lazy.nvim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🚀 Blazingly fast&lt;/li&gt;
+&lt;li&gt;🧹 Sane default settings for options, autocmds, and keymaps&lt;/li&gt;
+&lt;li&gt;📦 Comes with a wealth of plugins pre-configured and ready to use&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-requirements&#34;&gt;⚡️ Requirements
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Neovim &amp;gt;= &lt;strong&gt;0.9.0&lt;/strong&gt; (needs to be built with &lt;strong&gt;LuaJIT&lt;/strong&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Git &amp;gt;= &lt;strong&gt;2.19.0&lt;/strong&gt; (for partial clones support)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a &lt;a class=&#34;link&#34; href=&#34;https://www.nerdfonts.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nerd Font&lt;/a&gt;(v3.0 or greater) *&lt;strong&gt;(optional, but needed to display some icons)*&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jesseduffield/lazygit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;lazygit&lt;/a&gt; *&lt;strong&gt;(optional)*&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a &lt;strong&gt;C&lt;/strong&gt; compiler for &lt;code&gt;nvim-treesitter&lt;/code&gt;. See &lt;a class=&#34;link&#34; href=&#34;https://github.com/nvim-treesitter/nvim-treesitter#requirements&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;for &lt;code&gt;telescope.nvim&lt;/code&gt;  &lt;em&gt;(optional)&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;live grep&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/BurntSushi/ripgrep&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ripgrep&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;find files&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/sharkdp/fd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;fd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;a terminal that support true color and  undercurl :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/kovidgoyal/kitty&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;kitty&lt;/a&gt; *&lt;strong&gt;(Linux &amp;amp; Macos)*&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/wez/wezterm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;wezterm&lt;/a&gt; *&lt;strong&gt;(Linux, Macos &amp;amp; Windows)*&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alacritty/alacritty&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;alacritty&lt;/a&gt; *&lt;strong&gt;(Linux, Macos &amp;amp; Windows)*&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://iterm2.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;iterm2&lt;/a&gt; *&lt;strong&gt;(Macos)*&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;linuxmacos&#34;&gt;Linux/MacOS
+&lt;/h3&gt;&lt;p&gt;Make a backup of your current Neovim files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# required&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv ~/.config/nvim&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;,.bak&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# optional but recommended&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv ~/.local/share/nvim&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;,.bak&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv ~/.local/state/nvim&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;,.bak&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv ~/.cache/nvim&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;,.bak&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Clone the starter&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/LazyVim/starter ~/.config/nvim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Remove the &lt;code&gt;.git&lt;/code&gt; folder, so you can add it to your own repo later&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm -rf ~/.config/nvim/.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Start Neovim!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nvim
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Refer to the comments in the files on how to customize &lt;strong&gt;LazyVim&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;windows&#34;&gt;Windows
+&lt;/h3&gt;&lt;p&gt;Install the &lt;a class=&#34;link&#34; href=&#34;https://github.com/LazyVim/starter&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LazyVim Starter&lt;/a&gt; with &lt;a class=&#34;link&#34; href=&#34;https://github.com/PowerShell/PowerShell&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PowerShell&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Make a backup of your current Neovim files:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# required&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Move-Item&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nvim&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nvim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;bak&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# optional but recommended&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Move-Item&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;nvim-data&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;nvim-data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;bak&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Clone the starter&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;clone&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;https&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;//&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;github&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;com&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LazyVim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;starter&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nvim&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Remove the &lt;code&gt;.git&lt;/code&gt; folder, so you can add it to your own repo later&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;Remove-Item&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$env:LOCALAPPDATA&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nvim&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;git&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Recurse&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Force&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Start Neovim!&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nvim&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Refer to the comments in the files on how to customize &lt;strong&gt;LazyVim&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;linuxmacos-1&#34;&gt;Linux/MacOS
+&lt;/h3&gt;</description>
+        </item>
+        <item>
         <title>MPV播放器入门指南-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</title>
         <link>https://blog.seektao.cc/p/241013175136/</link>
         <pubDate>Sun, 13 Oct 2024 17:51:36 +0800</pubDate>
@@ -24,28 +207,29 @@
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/p/241009155809/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-快捷键" /&gt;&lt;p&gt;本文档记录 mpv 播放器的所有快捷键&lt;/p&gt;
-&lt;p&gt;以下皆为内置快捷键&lt;/p&gt;
-&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
+        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;f&lt;/code&gt;   全屏&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出quan&amp;rsquo;pin&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出全屏&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;q&lt;/code&gt;   停止播放并退出&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Q&lt;/code&gt;   停止播放并退出，如果重新播放，尽可能恢复播放的文件的播放位置&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;9&lt;/code&gt; 调小音量&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0&lt;/code&gt; 调大音量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Q&lt;/code&gt;   保存当前播放信息，停止播放并退出，如果重新播放，尽可能恢复之前保存的播放信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;9&lt;/code&gt; 或 &lt;code&gt;/&lt;/code&gt; 调小音量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt; 或 &lt;code&gt;*&lt;/code&gt; 调大音量&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;m&lt;/code&gt;   静音，再按 取消静音&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;j&lt;/code&gt; 下一个字幕轨&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;J&lt;/code&gt; 上一个字幕轨&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;[&lt;/code&gt; 播放速度减小10%&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;]&lt;/code&gt; 播放速度增加10%&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;backspace&lt;/code&gt; 将速度重置为正常&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;space&lt;/code&gt; 或者 &lt;code&gt;p&lt;/code&gt; 暂停，再按取消暂停&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;P&lt;/code&gt; 播放进度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;space&lt;/code&gt; 或 &lt;code&gt;p&lt;/code&gt; 暂停，再按取消暂停&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;o&lt;/code&gt; 或 &lt;code&gt;P&lt;/code&gt; 显示OSD（屏幕显示），包括 当前播放时间，总时间，播放进度，进度条&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;O&lt;/code&gt; 持续显示当前播放时间，总时间，播放进度&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;.&lt;/code&gt; 点击逐帧播放下一帧，长按连续播放&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;,&lt;/code&gt; 点击逐帧播放上一帧，长按连续播放&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt; 设置循环段，第一次按下是循环开始点，第二次按下是循环结束点，第三次是清除循环&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;L&lt;/code&gt; 切换为全局循环&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;所有快捷键&#34;&gt;所有快捷键
+&lt;h2 id=&#34;快捷键及图示&#34;&gt;快捷键及图示
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/12/14/KtUzvg3OmJB89Rh.png&#34;
 	
 	
@@ -1061,7 +1245,101 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  -d &lt;span class=&#34;s2&#34;&gt;&amp;#34;*.youdomain.com&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;自动续期&#34;&gt;自动续期
+&lt;/div&gt;&lt;h3 id=&#34;certbot-dns-huawei待编辑&#34;&gt;certbot-dns-huawei（待编辑）
+&lt;/h3&gt;&lt;p&gt;此插件用于dns申请的，好处可以用于申请泛域名证书证书。也就是像 &lt;code&gt;*.seektao.cc&lt;/code&gt;这种，一次申请，到处使用，方便至极。&lt;/p&gt;
+&lt;p&gt;certbot-dns-dnspod 是dnspod的插件，默认的certbot是没有的，需要手动安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap install certbot-dns-dnspod
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; certbot trust-plugin-with-root&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;ok
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo snap connect certbot:plugin certbot-dns-dnspod
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装完成之后新建一个 .ini文件，比如 /etc/certbot/dnspod.ini&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir /etc/certbot
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo touch /etc/certbot/dnspod.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;编辑 dnspod.ini，填入下面的内容，&lt;a class=&#34;link&#34; href=&#34;https://console.dnspod.cn/account/token/token&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转到dnspod api 申请页面&lt;/a&gt;，注意申请的是dnspod token&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-vim&#34; data-lang=&#34;vim&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;dns_dnspod_api_id&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xxxxxxx&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;dns_dnspod_api_token&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;xxxxxxxxxxxxxbcdef&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt; /etc/certbot/dnspod.ini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;申请，替换为自己的域名&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo certbot certonly -a dns-dnspod &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    --dns-dnspod-credentials /etc/certbot/dnspod.ini &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    -d &lt;span class=&#34;s2&#34;&gt;&amp;#34;*.yourdomain.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;接着就是:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;输入邮箱，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;是否同意注册acme（选Y），
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;是否同意发送邮件。。。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;接着等待，等待。。就完成了
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;证书文件保存在  &lt;code&gt;/etc/letsencrypt/live&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 其中 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;cert name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/privkey.pem：证书的私钥。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;cert name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/fullchain.pem：在大多数服务器软件中使用的证书文件。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;cert name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/chain.pem：在Nginx &amp;gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1.3.7 中用于 OCSP stapling。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;cert name&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;/cert.pem：会破坏许多服务器配置，不应在未进一步阅读文档的情况下使用。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;我们用到  privkey.pem，fullchain.pem即可。&lt;/p&gt;
+&lt;p&gt;关于 dnspod 申请ssl证书就是如此。&lt;/p&gt;
+&lt;h2 id=&#34;自动续期&#34;&gt;自动续期
 &lt;/h2&gt;&lt;p&gt;自动续期添加一个定时任务即可&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1111,8 +1389,16 @@ sudo pip uninstall certbot&lt;/p&gt;
         
         <guid>https://blog.seektao.cc/p/241002065628/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;安装指南：&lt;a class=&#34;link&#34; href=&#34;https://www.rust-lang.org/zh-CN/tools/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;安装指南：&lt;a class=&#34;link&#34; href=&#34;https://www.rust-lang.org/zh-CN/tools/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.rust-lang.org/zh-CN/tools/install&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;On Unix, run &lt;code&gt;curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh&lt;/code&gt; in your shell. This downloads and runs &lt;a class=&#34;link&#34; href=&#34;https://static.rust-lang.org/rustup/rustup-init.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;rustup-init.sh&lt;/code&gt;&lt;/a&gt;, which in turn downloads and runs the correct version of the &lt;code&gt;rustup-init&lt;/code&gt; executable for your platform.&lt;/li&gt;
+&lt;li&gt;On Windows, download and run &lt;a class=&#34;link&#34; href=&#34;https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;rustup-init.exe&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>
@@ -2550,70 +2836,12 @@ sudo pip uninstall certbot&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>从远程 Git 仓库中删除已经上传但现在希望忽略的文件</title>
-        <link>https://blog.seektao.cc/p/240803170893/</link>
-        <pubDate>Sat, 03 Aug 2024 17:08:23 +0800</pubDate>
-        
-        <guid>https://blog.seektao.cc/p/240803170893/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/08/03/ToNWBn8SqeM7lkc.webp" alt="Featured image of post 从远程 Git 仓库中删除已经上传但现在希望忽略的文件" /&gt;&lt;h2 id=&#34;更新-gitignore-文件&#34;&gt;更新 &lt;code&gt;.gitignore&lt;/code&gt; 文件
-&lt;/h2&gt;&lt;p&gt;确保你已经在 &lt;code&gt;.gitignore&lt;/code&gt; 文件中添加了需要忽略的文件或文件夹。&lt;/p&gt;
-&lt;h2 id=&#34;从-git-追踪中移除文件&#34;&gt;从 Git 追踪中移除文件
-&lt;/h2&gt;&lt;p&gt;使用以下命令将文件从 Git 的追踪中移除，但保留本地文件：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git rm --cached &amp;lt;file_or_directory&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;如果你想要移除多个文件，可以使用通配符或列出多个文件。&lt;/p&gt;
-&lt;h2 id=&#34;提交更改&#34;&gt;提交更改
-&lt;/h2&gt;&lt;p&gt;提交你对 &lt;code&gt;.gitignore&lt;/code&gt; 文件和移除追踪的更改：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Remove ignored files from tracking&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;推送更改到远程仓库&#34;&gt;推送更改到远程仓库
-&lt;/h2&gt;&lt;p&gt;将更改推送到远程仓库：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin &amp;lt;branch_name&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;例子&#34;&gt;例子
-&lt;/h2&gt;&lt;p&gt;假设你要忽略名为 &lt;code&gt;config.json&lt;/code&gt; 的文件，操作如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;config.json&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; .gitignore
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git rm --cached config.json
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;Ignore config.json&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push origin main
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;完成这些步骤后，&lt;code&gt;config.json&lt;/code&gt; 文件将不再被 Git 跟踪，并且在之后的提交中将被忽略。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Go的多版本管理工具：g</title>
+        <title>g，Go的多版本管理工具</title>
         <link>https://blog.seektao.cc/p/240803130835/</link>
         <pubDate>Sat, 03 Aug 2024 13:08:35 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/p/240803130835/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post Go的多版本管理工具：g" /&gt;&lt;h2 id=&#34;概述&#34;&gt;概述
+        <description>&lt;img src="https://s2.loli.net/2024/08/03/Rmn1rsdL28pXM6t.jpg" alt="Featured image of post g，Go的多版本管理工具" /&gt;&lt;h2 id=&#34;概述&#34;&gt;概述
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;g&lt;/code&gt; 是管理 go 版本的工具，可以简化 go 的版本管理。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3717,7 +3945,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>neovim,vim的增强版，安装配置</title>
+        <title>Neovim安装配置</title>
         <link>https://blog.seektao.cc/p/2407012/</link>
         <pubDate>Fri, 12 Jul 2024 23:07:42 +0800</pubDate>
         
@@ -3726,15 +3954,22 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/neovim/neovim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/neovim/neovim&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;下载：https://github.com/neovim/neovim/releases/tag/v0.10.0&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;linuxmacos&#34;&gt;Linux/MacOS
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 最新版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 指定版本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;解压&lt;/p&gt;
@@ -3746,7 +3981,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tar -zxvf nvim-linux64.tar.gz -C /opt/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;创建软连接&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;创建软连接（可以跳过，使用环境变量的方式）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -3755,11 +3990,35 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ln -s /opt/nvim-linux64/bin/nvim /usr/bin/nvim
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;插件&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/wbthomason/packer.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;p&gt;配置环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export PATH=&amp;#34;$PATH:/opt/nvim-linux64/bin&amp;#34;&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;windows&#34;&gt;Windows
+&lt;/h3&gt;&lt;p&gt;Windows 8+ is required. Windows 7 or older is not supported.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载安装&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://github.com/neovim/neovim/releases/latest/download/nvim-win64.msi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/neovim/neovim/releases/latest/download/nvim-win64.msi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Winget&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Release&lt;/strong&gt;：winget install Neovim.Neovim&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Chocolatey&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Latest Release&lt;/strong&gt;: &lt;code&gt;choco install neovim &lt;/code&gt;(use -y for automatically skipping confirmation messages)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Development&lt;/strong&gt; (pre-release): &lt;code&gt;choco install neovim --pre&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;插件&#34;&gt;插件
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/wbthomason/packer.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/wbthomason/packer.nvim&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;主题
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/folke/tokyonight.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h2 id=&#34;主题&#34;&gt;主题
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/folke/tokyonight.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/folke/tokyonight.nvim&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nvim-lualine/lualine.nvim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/nvim-lualine/lualine.nvim&lt;/a&gt;&lt;/p&gt;
@@ -5699,7 +5958,7 @@ Region: &lt;img src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYC
 </description>
         </item>
         <item>
-        <title>windows下hosts目录</title>
+        <title>Windows下hosts所在目录</title>
         <link>https://blog.seektao.cc/p/2406016/</link>
         <pubDate>Sun, 16 Jun 2024 16:06:01 +0800</pubDate>
         
@@ -5710,7 +5969,7 @@ Region: &lt;img src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYC
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C:\Windows\System32\drivers\etc\hosts
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;\Windows\System32\drivers\etc&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;通过移动硬盘系统挂载后的位置（这个比较随机，看系统）&lt;/p&gt;
@@ -6345,7 +6604,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>go的安装和配置</title>
+        <title>Go的安装和配置</title>
         <link>https://blog.seektao.cc/p/2406008/</link>
         <pubDate>Sat, 08 Jun 2024 16:06:01 +0800</pubDate>
         
@@ -6584,30 +6843,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;```&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;shell&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GOPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=~/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;codespace&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;goProjects&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;为了方便使用 Go 命令，建议将 &lt;code&gt;$GOPATH/bin&lt;/code&gt; 加入到你的 &lt;code&gt;PATH&lt;/code&gt; 中：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$PATH&lt;/span&gt;:&lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/bin
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;持久化设置：&lt;br&gt;
-如果你希望每次打开终端时都自动设置，可以将上述命令添加到你的 shell 配置文件中（如 &lt;code&gt;~/.bashrc&lt;/code&gt; 或 &lt;code&gt;~/.zshrc&lt;/code&gt;）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export GOPATH=~/codespace/goProjects&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export PATH=$PATH:$GOPATH/bin&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export GOPATH=~/codespace/goProjects&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -6615,7 +6851,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;src&lt;/code&gt;: 存放源代码。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pkg&lt;/code&gt;: 存放编译后的包。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: 存放可执行文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: 存放go下载的可执行文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -6626,7 +6862,20 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;以后就可以把代码放在 &lt;code&gt;$GOPATH/src&lt;/code&gt;下了。&lt;/p&gt;
-&lt;h2 id=&#34;go命令行&#34;&gt;Go命令行
+&lt;p&gt;为了方便使用 Go 下载的包的可执行文件，将 &lt;code&gt;$GOPATH/bin&lt;/code&gt; 加入到你的 &lt;code&gt;PATH&lt;/code&gt; 中（如 &lt;code&gt;~/.bashrc&lt;/code&gt; 或 &lt;code&gt;~/.zshrc&lt;/code&gt;）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 适用于unix系统 bash环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export PATH=$PATH:$GOPATH/bin&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;go命令行&#34;&gt;Go命令行
 &lt;/h2&gt;&lt;p&gt;自动解决依赖&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -6680,7 +6929,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>免费自建Docker Hub镜像站，附Docker Hub镜像地址</title>
+        <title>部署自己的Docker Hub镜像站，附Docker Hub镜像地址</title>
         <link>https://blog.seektao.cc/p/2406005/</link>
         <pubDate>Wed, 05 Jun 2024 16:06:01 +0800</pubDate>
         
@@ -13407,14 +13656,25 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;wsl&#34;&gt;WSL
-&lt;/h2&gt;&lt;p&gt;下载 docker desktop即可&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;windows&#34;&gt;Windows
+&lt;/h2&gt;&lt;h3 id=&#34;使用-windows-安装-docker-desktop&#34;&gt;使用 Windows 安装 docker desktop
+&lt;/h3&gt;&lt;p&gt;下载 docker desktop 即可&lt;/p&gt;
 &lt;p&gt;如果下载速度慢，可以使用我分享的网络链接：&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.123684.com/s/4MOKVv-P02pd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.123684.com/s/4MOKVv-P02pd&lt;/a&gt;?提取码:love&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.123865.com/s/4MOKVv-P02pd&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.123865.com/s/4MOKVv-P02pd&lt;/a&gt;?提取码:love&lt;/p&gt;
-</description>
+&lt;h3 id=&#34;直接在-wsl中安装&#34;&gt;直接在 WSL中安装
+&lt;/h3&gt;&lt;p&gt;安装之前，下载你安装的wsl版本对应docker文件，比如我安装的系统是 debain 12&lt;/p&gt;
+&lt;p&gt;为什么下载 dcoker 安装文件安装,？因为 wsl 不是一个完整的系统，没有systemctl ，无法使用apt安装，所以需要手动下载文件安装&lt;/p&gt;
+&lt;p&gt;注意下载docker组件之间的版本适配，如何确定下载不同的版本呢，这里有个小技巧，&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Debian配置系统中文语言及环境</title>
@@ -13770,6 +14030,117 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Human Readable Name for this Mirror.&lt;span class=&#34;nt&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;http://repo2.maven.org/maven2/&lt;span class=&#34;nt&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;docker软件源&#34;&gt;Docker软件源
+&lt;/h2&gt;&lt;p&gt;非 Docker Hub镜像源&lt;/p&gt;
+&lt;h3 id=&#34;debianubunturaspbian-用户&#34;&gt;Debian/Ubuntu/Raspbian 用户
+&lt;/h3&gt;&lt;p&gt;以下内容根据 &lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/install/debian/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文档&lt;/a&gt; 修改而来。&lt;/p&gt;
+&lt;p&gt;如果你过去安装过 docker，先删掉：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; pkg in docker.io docker-doc docker-compose podman-docker containerd runc&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;do&lt;/span&gt; sudo apt-get remove &lt;span class=&#34;nv&#34;&gt;$pkg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;首先安装依赖：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install ca-certificates curl gnupg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;信任 Docker 的 GPG 公钥并添加仓库：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果为Ubuntu、Raspbian，请查看 &lt;a class=&#34;link&#34; href=&#34;https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo install -m &lt;span class=&#34;m&#34;&gt;0755&lt;/span&gt; -d /etc/apt/keyrings
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -fsSL https://download.docker.com/linux/debian/gpg &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod a+r /etc/apt/keyrings/docker.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [arch=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;dpkg --print-architecture&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; signed-by=/etc/apt/keyrings/docker.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;  &amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;. /etc/os-release &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$VERSION_CODENAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34; stable&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  sudo tee /etc/apt/sources.list.d/docker.list &amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果提示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-bash: gpg: &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; not found
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl: &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;23&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; Failed writing body
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;请安装 gpg 之后，再次尝试上述的步骤： 信任 Docker 的 GPG 公钥并添加仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;最后安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;gradle&#34;&gt;Gradle
+&lt;/h2&gt;&lt;p&gt;腾讯云（推荐，版本全）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://mirrors.cloud.tencent.com/gradle
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;阿里云（有些小版本没有）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;gradele 4.1 之后&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://mirrors.aliyun.com/macports/distfiles/gradle/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -14277,7 +14648,7 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>将vim的tab键改为4个空格</title>
+        <title>VIM的配置</title>
         <link>https://blog.seektao.cc/p/2310022/</link>
         <pubDate>Sun, 22 Oct 2023 14:07:10 +0800</pubDate>
         
@@ -18846,7 +19217,9 @@ lewis.ns.cloudflare.com&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;13-特殊变量&#34;&gt;1.3. 特殊变量
 &lt;/h2&gt;&lt;h3 id=&#34;131-n&#34;&gt;1.3.1 $n
-&lt;/h3&gt;</description>
+&lt;/h3&gt;&lt;p&gt;数字从 0-n，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$0&lt;/code&gt; 表示的是当前&lt;strong&gt;命令行&lt;/strong&gt;的&lt;strong&gt;第一个参数&lt;/strong&gt;，注意是&lt;strong&gt;命令行&lt;/strong&gt;的&lt;strong&gt;第一个参数&lt;/strong&gt;，而非指代脚本本身，&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>pandora-免翻访问gpt</title>
@@ -19028,6 +19401,14 @@ TMUX_CURRENT_COMMAND：当前活动的tmux当前命令。&lt;/code&gt;&lt;/pre&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启系统。&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://blog.seektao.cc/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/</guid>
+        <description></description>
         </item>
         
     </channel>

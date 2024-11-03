@@ -72,7 +72,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -275,6 +275,7 @@
         <li><a href="#nginx">nginx</a></li>
         <li><a href="#certbot-dns-dnspod">certbot-dns-dnspod</a></li>
         <li><a href="#certbot-dns-cloudflare">certbot-dns-cloudflare</a></li>
+        <li><a href="#certbot-dns-huawei待编辑">certbot-dns-huawei（待编辑）</a></li>
       </ol>
     </li>
     <li><a href="#自动续期">自动续期</a></li>
@@ -830,7 +831,101 @@ sudo pip uninstall certbot</p>
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  -d <span class="s2">&#34;*.youdomain.com&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="自动续期">自动续期
+</div><h3 id="certbot-dns-huawei待编辑">certbot-dns-huawei（待编辑）
+</h3><p>此插件用于dns申请的，好处可以用于申请泛域名证书证书。也就是像 <code>*.seektao.cc</code>这种，一次申请，到处使用，方便至极。</p>
+<p>certbot-dns-dnspod 是dnspod的插件，默认的certbot是没有的，需要手动安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo snap install certbot-dns-dnspod
+</span></span><span class="line"><span class="cl">sudo snap <span class="nb">set</span> certbot trust-plugin-with-root<span class="o">=</span>ok
+</span></span><span class="line"><span class="cl">sudo snap connect certbot:plugin certbot-dns-dnspod
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成之后新建一个 .ini文件，比如 /etc/certbot/dnspod.ini</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir /etc/certbot
+</span></span><span class="line"><span class="cl">sudo touch /etc/certbot/dnspod.ini
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编辑 dnspod.ini，填入下面的内容，<a class="link" href="https://console.dnspod.cn/account/token/token"  target="_blank" rel="noopener"
+    >点此跳转到dnspod api 申请页面</a>，注意申请的是dnspod token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_id</span> <span class="p">=</span> <span class="nx">xxxxxxx</span>
+</span></span><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_token</span> <span class="p">=</span> <span class="nx">xxxxxxxxxxxxxbcdef</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo chmod <span class="m">600</span> /etc/certbot/dnspod.ini
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>申请，替换为自己的域名</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot certonly -a dns-dnspod <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --dns-dnspod-credentials /etc/certbot/dnspod.ini <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d <span class="s2">&#34;*.yourdomain.com&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">接着就是:
+</span></span><span class="line"><span class="cl">输入邮箱，
+</span></span><span class="line"><span class="cl">是否同意注册acme（选Y），
+</span></span><span class="line"><span class="cl">是否同意发送邮件。。。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">接着等待，等待。。就完成了
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>证书文件保存在  <code>/etc/letsencrypt/live</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 其中 </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/privkey.pem：证书的私钥。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/fullchain.pem：在大多数服务器软件中使用的证书文件。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/chain.pem：在Nginx &gt;<span class="o">=</span>1.3.7 中用于 OCSP stapling。
+</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/cert.pem：会破坏许多服务器配置，不应在未进一步阅读文档的情况下使用。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们用到  privkey.pem，fullchain.pem即可。</p>
+<p>关于 dnspod 申请ssl证书就是如此。</p>
+<h2 id="自动续期">自动续期
 </h2><p>自动续期添加一个定时任务即可</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -977,38 +1072,26 @@ sudo pip uninstall certbot</p>
 
             
                 
-<article class="has-image">
-    <a href="/p/241013175136/">
+<article class="">
+    <a href="/p/241030095809/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" loading="lazy" data-key="&#34;241013175136&#34;" data-hash="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</h2>
+            <h2 class="article-title">VSCode使用经验</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/241009155809/">
+<article class="">
+    <a href="/p/241025162917/">
         
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" loading="lazy" data-key="&#34;241009155809&#34;" data-hash="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png"/>
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-快捷键</h2>
+            <h2 class="article-title">LazyVim安装配置</h2>
         </div>
     </a>
 </article>

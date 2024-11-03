@@ -13,28 +13,29 @@
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/p/241009155809/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-快捷键" /&gt;&lt;p&gt;本文档记录 mpv 播放器的所有快捷键&lt;/p&gt;
-&lt;p&gt;以下皆为内置快捷键&lt;/p&gt;
-&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
+        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;f&lt;/code&gt;   全屏&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出quan&amp;rsquo;pin&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出全屏&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;q&lt;/code&gt;   停止播放并退出&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Q&lt;/code&gt;   停止播放并退出，如果重新播放，尽可能恢复播放的文件的播放位置&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;9&lt;/code&gt; 调小音量&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0&lt;/code&gt; 调大音量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Q&lt;/code&gt;   保存当前播放信息，停止播放并退出，如果重新播放，尽可能恢复之前保存的播放信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;9&lt;/code&gt; 或 &lt;code&gt;/&lt;/code&gt; 调小音量&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;0&lt;/code&gt; 或 &lt;code&gt;*&lt;/code&gt; 调大音量&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;m&lt;/code&gt;   静音，再按 取消静音&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;j&lt;/code&gt; 下一个字幕轨&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;J&lt;/code&gt; 上一个字幕轨&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;[&lt;/code&gt; 播放速度减小10%&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;]&lt;/code&gt; 播放速度增加10%&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;backspace&lt;/code&gt; 将速度重置为正常&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;space&lt;/code&gt; 或者 &lt;code&gt;p&lt;/code&gt; 暂停，再按取消暂停&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;P&lt;/code&gt; 播放进度&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;space&lt;/code&gt; 或 &lt;code&gt;p&lt;/code&gt; 暂停，再按取消暂停&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;o&lt;/code&gt; 或 &lt;code&gt;P&lt;/code&gt; 显示OSD（屏幕显示），包括 当前播放时间，总时间，播放进度，进度条&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;O&lt;/code&gt; 持续显示当前播放时间，总时间，播放进度&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;.&lt;/code&gt; 点击逐帧播放下一帧，长按连续播放&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;,&lt;/code&gt; 点击逐帧播放上一帧，长按连续播放&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt; 设置循环段，第一次按下是循环开始点，第二次按下是循环结束点，第三次是清除循环&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;L&lt;/code&gt; 切换为全局循环&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;所有快捷键&#34;&gt;所有快捷键
+&lt;h2 id=&#34;快捷键及图示&#34;&gt;快捷键及图示
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/12/14/KtUzvg3OmJB89Rh.png&#34;
 	
 	

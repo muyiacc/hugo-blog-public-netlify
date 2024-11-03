@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -283,7 +283,12 @@
         <li><a href="#安装-1">安装</a></li>
       </ol>
     </li>
-    <li><a href="#wsl">WSL</a></li>
+    <li><a href="#windows">Windows</a>
+      <ol>
+        <li><a href="#使用-windows-安装-docker-desktop">使用 Windows 安装 docker desktop</a></li>
+        <li><a href="#直接在-wsl中安装">直接在 WSL中安装</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -466,14 +471,25 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="wsl">WSL
-</h2><p>下载 docker desktop即可</p>
+</div><h2 id="windows">Windows
+</h2><h3 id="使用-windows-安装-docker-desktop">使用 Windows 安装 docker desktop
+</h3><p>下载 docker desktop 即可</p>
 <p>如果下载速度慢，可以使用我分享的网络链接：</p>
 <p><a class="link" href="https://www.123684.com/s/4MOKVv-P02pd"  target="_blank" rel="noopener"
     >https://www.123684.com/s/4MOKVv-P02pd</a>?提取码:love</p>
 <p><a class="link" href="https://www.123865.com/s/4MOKVv-P02pd"  target="_blank" rel="noopener"
     >https://www.123865.com/s/4MOKVv-P02pd</a>?提取码:love</p>
-
+<h3 id="直接在-wsl中安装">直接在 WSL中安装
+</h3><p>安装之前，下载你安装的wsl版本对应docker文件，比如我安装的系统是 debain 12</p>
+<p>为什么下载 dcoker 安装文件安装,？因为 wsl 不是一个完整的系统，没有systemctl ，无法使用apt安装，所以需要手动下载文件安装</p>
+<p>注意下载docker组件之间的版本适配，如何确定下载不同的版本呢，这里有个小技巧，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -527,12 +543,25 @@
             
                 
 <article class="">
+    <a href="/p/2403002/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Docker容器和主机互相连接的三种情景</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/2406005/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">免费自建Docker Hub镜像站，附Docker Hub镜像地址</h2>
+            <h2 class="article-title">部署自己的Docker Hub镜像站，附Docker Hub镜像地址</h2>
         </div>
     </a>
 </article>
@@ -546,19 +575,6 @@
 
         <div class="article-details">
             <h2 class="article-title">dujiaoka独角卡安装，docker版本</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2403002/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Docker容器和主机互相连接的三种情景</h2>
         </div>
     </a>
 </article>

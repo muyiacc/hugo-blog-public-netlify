@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="本文持续更新 初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。">
-<title>Git命令详解</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。 添加远程仓库">
+<title>Git个人常见用法备忘录</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/git-command/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Git命令详解">
-<meta property='og:description' content="本文持续更新 初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Git个人常见用法备忘录">
+<meta property='og:description' content="初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。 添加远程仓库">
 <meta property='og:url' content='https://blog.seektao.cc/p/git-command/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
-<meta name="twitter:title" content="Git命令详解">
-<meta name="twitter:description" content="本文持续更新 初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。">
+<meta name="twitter:title" content="Git个人常见用法备忘录">
+<meta name="twitter:description" content="初始化仓库 本地没有项目，仓库有 git clone &lt;项目地址&gt; 本地有项目，仓库也有 确保本地已经初始化git init,先将本地提交了。 添加远程仓库">
   
 
 
@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -279,6 +279,16 @@
       <ol>
         <li><a href="#merge">merge</a></li>
         <li><a href="#cherry-pick">cherry-pick</a></li>
+        <li><a href="#reset">reset</a>
+          <ol>
+            <li><a href="#情景1">情景1</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#常见问题">常见问题</a>
+      <ol>
+        <li><a href="#从远程git仓库中删除已经上传但现在希望忽略的文件">从远程Git仓库中删除已经上传但现在希望忽略的文件</a></li>
       </ol>
     </li>
   </ol>
@@ -300,7 +310,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/git-command/">Git命令详解</a>
+            <a href="/p/git-command/">Git个人常见用法备忘录</a>
         </h2>
     
         
@@ -319,8 +329,7 @@
     <section class="article-content">
     
     
-    <p>本文持续更新</p>
-<h2 id="初始化仓库">初始化仓库
+    <h2 id="初始化仓库">初始化仓库
 </h2><h3 id="本地没有项目仓库有">本地没有项目，仓库有
 </h3><p><code>git clone &lt;项目地址&gt;</code></p>
 <h3 id="本地有项目仓库也有">本地有项目，仓库也有
@@ -429,6 +438,78 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>837fc5dedd1b8b2ab459041de179b4689587fd73</code>是提交的hash值，通过 <code>git log</code>查看。</p>
+<h3 id="reset">reset
+</h3><h4 id="情景1">情景1
+</h4><p>放弃当前内容，回到某个历史提交的commit ，并丢弃暂存区</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git reset --hard commit-id
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>同时删除未追踪的文件和目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git clean -fd
+</span></span><span class="line"><span class="cl"><span class="c1"># -f 是表示强制删除</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># -d 表示的目录，clean只会删除文件，加上表示把目录也删掉</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为什么有这个用法，主要是用来学习，删除了之后，自己再重新写一遍。不用关心需要删除哪些内容。</p>
+<h2 id="常见问题">常见问题
+</h2><h3 id="从远程git仓库中删除已经上传但现在希望忽略的文件">从远程Git仓库中删除已经上传但现在希望忽略的文件
+</h3><p>确保你已经在 <code>.gitignore</code> 文件中添加了需要忽略的文件或文件夹。</p>
+<p>使用以下命令将文件从 Git 的追踪中移除，但保留本地文件：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git rm --cached &lt;file_or_directory&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你想要移除多个文件，可以使用通配符或列出多个文件。</p>
+<p>提交对 <code>.gitignore</code> 文件和移除追踪的更改：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Remove ignored files from tracking&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将更改推送到远程仓库：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push origin &lt;branch_name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>假设要忽略名为 <code>config.json</code> 的文件，操作如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;config.json&#34;</span> &gt;&gt; .gitignore
+</span></span><span class="line"><span class="cl">git rm --cached config.json
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;Ignore config.json&#34;</span>
+</span></span><span class="line"><span class="cl">git push origin main
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完成这些步骤后，<code>config.json</code> 文件将不再被 Git 跟踪，并且在之后的提交中将被忽略。</p>
 
 </section>
 

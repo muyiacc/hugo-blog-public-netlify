@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘放来，这位菩萨，您好。</h2>
+            <h2 class="site-description">非缘无交，有缘方来，这位菩萨，您好。</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -488,6 +488,29 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rclone delete alist:/123pan/Music --include <span class="s2">&#34;*.lrc&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>删除 <code>alist:115/film</code> 所有以 <code>.nfo</code> 结尾的文件</p>
+<blockquote>
+<p>这个是使用第三方播放器刮削产生的文件，严重污染了我的目录纯净度，慎用第三方播放器刮削，比如 nova vodeo player</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 运行删除之前先尝试运行查看有哪些文件被删除</span>
+</span></span><span class="line"><span class="cl">rclone delete --dry-run alist:115/film/ --include <span class="s2">&#34;*.nfo&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>确认删除</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone delete alist:115/film/ --include <span class="s2">&#34;*.nfo&#34;</span> -P
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
 </section>
 
@@ -562,6 +585,32 @@
 
             
                 
+<article class="">
+    <a href="/p/241030095809/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VSCode使用经验</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241025162917/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LazyVim安装配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
 <article class="has-image">
     <a href="/p/241013175136/">
         
@@ -594,38 +643,6 @@
 
         <div class="article-details">
             <h2 class="article-title">MPV播放器入门指南-快捷键</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/241004155549/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">指纹浏览器</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/241003151158/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png" loading="lazy" data-key="&#34;241003151158&#34;" data-hash="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
         </div>
     </a>
 </article>
