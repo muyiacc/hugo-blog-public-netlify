@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="为了管理lx-music，也就是落雪音乐的">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 lx-music，也就是落雪音乐 之前多平台使用的时候，比如换设备，卸载后重装，数据都会丢失。 如果需要备份数据需要手动导出。在跨设备操作同">
 <title>lx-music落雪音乐同步服务部署</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/241103161054/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="lx-music落雪音乐同步服务部署">
-<meta property='og:description' content="为了管理lx-music，也就是落雪音乐的">
+<meta property='og:description' content="前言 lx-music，也就是落雪音乐 之前多平台使用的时候，比如换设备，卸载后重装，数据都会丢失。 如果需要备份数据需要手动导出。在跨设备操作同">
 <meta property='og:url' content='https://blog.seektao.cc/p/241103161054/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='music' /><meta property='article:tag' content='lx-music' /><meta property='article:published_time' content='2024-11-03T16:10:54&#43;08:00'/><meta property='article:modified_time' content='2024-11-03T17:28:43&#43;08:00'/>
 <meta name="twitter:title" content="lx-music落雪音乐同步服务部署">
-<meta name="twitter:description" content="为了管理lx-music，也就是落雪音乐的">
+<meta name="twitter:description" content="前言 lx-music，也就是落雪音乐 之前多平台使用的时候，比如换设备，卸载后重装，数据都会丢失。 如果需要备份数据需要手动导出。在跨设备操作同">
   
 
 
@@ -245,7 +245,55 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#docker-compose">docker-compose</a></li>
+      </ol>
+    </li>
+    <li><a href="#反向代理">反向代理</a>
+      <ol>
+        <li><a href="#nginx">Nginx</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用">使用</a>
+      <ol>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#linux">Linux</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -302,8 +350,173 @@
     <section class="article-content">
     
     
-    <p>为了管理lx-music，也就是落雪音乐的</p>
-
+    <h2 id="前言">前言
+</h2><p>lx-music，也就是落雪音乐</p>
+<p>之前多平台使用的时候，比如换设备，卸载后重装，数据都会丢失。</p>
+<p>如果需要备份数据需要手动导出。在跨设备操作同步，感觉比较麻烦。</p>
+<p>有没有一个像 网易云音乐，qq 音乐那种账号机制，自动同步歌单，收藏列表呢。跨设备也能自动执行。</p>
+<p>其实落雪音乐是拥有一个同步服务的，早期的时候部署方式不方便，自己尝试部署，最终还是没有解决问题，所以没有安装成功。</p>
+<p>今天突然想起来，然后再次尝试部署，成功了</p>
+<p>本文就带你来如何部署落雪音乐同步服务 lx-music-sync-server。</p>
+<h2 id="安装">安装
+</h2><h3 id="docker-compose">docker-compose
+</h3><p>使用之前需要进行一些准备操作</p>
+<p>创建文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir -p /opt/container/lx-music-sync-server
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/container/lx-music-sync-server-server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>新建 <code>config.js</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">serverName</span><span class="o">:</span> <span class="s1">&#39;My Sync Server&#39;</span><span class="p">,</span> <span class="c1">// 同步服务名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="s1">&#39;proxy.enabled&#39;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// 是否使用代理转发请求到本服务器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="s1">&#39;proxy.header&#39;</span><span class="o">:</span> <span class="s1">&#39;x-real-ip&#39;</span><span class="p">,</span> <span class="c1">// 代理转发的请求头 原始IP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nx">maxSnapshotNum</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span> <span class="c1">// 公共最大备份快照数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="s1">&#39;list.addMusicLocationType&#39;</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="c1">// 公共添加歌曲到我的列表时的方式 top | bottom，参考客户端的设置-列表设置-添加歌曲到我的列表时的方式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="nx">users</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 用户配置例子，有两种配置格式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//   name: &#39;user1&#39;, // 用户名，必须，不能与其他用户名重复
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//   password: &#39;123.def&#39;, // 连接密码，必须，不能与其他用户密码重复，若在外网，务必增加密码复杂度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//   maxSnapshotNum: 10, // 可选，最大备份快照数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//   &#39;list.addMusicLocationType&#39;: &#39;top&#39;, // 可选，添加歌曲到我的列表时的方式 top | bottom，参考客户端的设置-列表设置-添加歌曲到我的列表时的方式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// },
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 所有名称以 env. 开头的配置将解析成环境变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// &#39;env.PORT&#39;: &#39;9527&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// &#39;env.BIND_IP&#39;: &#39;0.0.0.0&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// ...其他环境变量看Readme.md可用环境变量附录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的文件是容器内部使用配置文件，自己先创建好，设置用户名和密码，在进行后面的操作之前，请先修改好。</p>
+<p>新建 <code>docker-compose.yml</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">lx-sync</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">lyswhut/lx-music-sync-server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">lx-sync</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">9527</span><span class="p">:</span><span class="m">9527</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./lx_sync_data:/server/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./config.js:/server/config.js</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>先启动查看是否有错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker compose up
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果没有错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker compose up -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="反向代理">反向代理
+</h2><h3 id="nginx">Nginx
+</h3><p>这里只列举 核心部分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ...</span>
+</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>  <span class="c1"># 该头部与config.js文件的 proxy.header 对应</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Host  <span class="nv">$http_host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:9527<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_http_version 1.1<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># websocket 必须要配置</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Upgrade <span class="nv">$http_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_set_header Connection <span class="nv">$connection_upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="使用">使用
+</h2><h3 id="windows">Windows
+</h3><p>具体的设置路径：设置 - 数据同步 - 客户端模式</p>
+<p>设置 服务地址后，启动同步功能即可</p>
+<p>就会在后面默默发光发热了</p>
+<h3 id="android">Android
+</h3><p>同 Windows 一样</p>
+<h3 id="linux">Linux
+</h3>
 </section>
 
 
