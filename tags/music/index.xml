@@ -7,6 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Nov 2024 16:10:54 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/music/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Sun, 03 Nov 2024 16:10:54 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/music/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>lx-music落雪音乐同步服务部署</title>
+        <link>https://blog.seektao.cc/p/241103161054/</link>
+        <pubDate>Sun, 03 Nov 2024 16:10:54 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/241103161054/</guid>
+        <description>&lt;p&gt;为了管理lx-music，也就是落雪音乐的&lt;/p&gt;
+</description>
+        </item>
+        
     </channel>
 </rss>

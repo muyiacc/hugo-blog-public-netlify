@@ -8,6 +8,23 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Fri, 05 Jul 2024 10:07:32 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux原生版微信在高分辨率屏幕字体小，分辨率异常</title>
+        <link>https://blog.seektao.cc/p/linux-wechat/</link>
+        <pubDate>Fri, 05 Jul 2024 10:07:32 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/linux-wechat/</guid>
+        <description>&lt;p&gt;在开始菜单搜索微信，编辑应用程序，添加环境变量&lt;code&gt;QT_SCALE_FACTOR=1.75&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/68B9maUQsHtODKX.png&#34; alt=&#34;image-20240705095556996&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;右击编辑应用程序，进入如下界面&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/3GzmPiBpHO4gJ6Z.png&#34; alt=&#34;image-20240705095805927&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;点击应用程序，在环境变量输入&lt;code&gt;QT_SCALE_FACTOR=1.75&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此处的1.75经我测试为缩放倍率，我的屏幕缩放为175%，根据自己情况进行更改&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/56JwYXnMtVaHzed.png&#34; alt=&#34;image-20240705100014160&#34; style=&#34;zoom:50%;&#34; /&gt;
+</description>
+        </item>
+        <item>
         <title>Debian安装微信</title>
         <link>https://blog.seektao.cc/p/2310011/</link>
         <pubDate>Wed, 11 Oct 2023 14:07:10 +0800</pubDate>

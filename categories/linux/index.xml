@@ -8,6 +8,21 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Sun, 06 Oct 2024 11:09:05 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux三剑客awk、sed、grep</title>
+        <link>https://blog.seektao.cc/p/241005163447/</link>
+        <pubDate>Sat, 05 Oct 2024 16:34:47 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/241005163447/</guid>
+        <description>&lt;p&gt;有时候需要在 Linux 处理数据，Linux上有三种命令行工具：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;awk&lt;/code&gt;&lt;/strong&gt;：一种强大的文本处理工具，常用于模式匹配和数据提取。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;sed&lt;/code&gt;&lt;/strong&gt;：流编辑器，用于对文本进行基本的编辑和转换，适合批量处理文件内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;grep&lt;/code&gt;&lt;/strong&gt;：用于搜索文本文件中匹配特定模式的行，支持正则表达式。
+这三者结合可以很方便的处理和分析数据，是 Linux 系统管理员和开发者的重要工具。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>LinuxMirrors：一条命令实现各个Linux发行版软件镜像源更换</title>
         <link>https://blog.seektao.cc/p/240818210871/</link>
         <pubDate>Sun, 18 Aug 2024 21:08:11 +0800</pubDate>
@@ -159,6 +174,22 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Linux配置开始菜单，全局搜索，桌面图标</title>
+        <link>https://blog.seektao.cc/p/linux-start-menu/</link>
+        <pubDate>Sat, 13 Jul 2024 19:07:28 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/linux-start-menu/</guid>
+        <description>&lt;p&gt;Linux发行版众多，而有些软件并没有提供对应发行版的扩展安装包，导致开始菜单图标/全局搜索/桌面图标需要手动配置，而这些配置文件需要用到的时候又容易忘记配置文件位置和手动编写配置文件繁琐。&lt;/p&gt;
+&lt;p&gt;本文就记录一下Linux下没有提供发行版对应的文件扩展名（&lt;code&gt;.deb&lt;/code&gt;，&lt;code&gt;.rpm&lt;/code&gt;）的安装包怎么配置开始菜单/全局搜索/桌面图标&lt;/p&gt;
+&lt;h1 id=&#34;debian&#34;&gt;Debian
+&lt;/h1&gt;&lt;p&gt;配置文件的位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;个人用户：&lt;code&gt;~/.local/share/applications&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;全局配置：&lt;code&gt;/usr/share/applications&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>Neovim安装配置</title>
@@ -661,6 +692,23 @@ tags:
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Linux原生版微信在高分辨率屏幕字体小，分辨率异常</title>
+        <link>https://blog.seektao.cc/p/linux-wechat/</link>
+        <pubDate>Fri, 05 Jul 2024 10:07:32 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/linux-wechat/</guid>
+        <description>&lt;p&gt;在开始菜单搜索微信，编辑应用程序，添加环境变量&lt;code&gt;QT_SCALE_FACTOR=1.75&lt;/code&gt;&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/68B9maUQsHtODKX.png&#34; alt=&#34;image-20240705095556996&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;右击编辑应用程序，进入如下界面&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/3GzmPiBpHO4gJ6Z.png&#34; alt=&#34;image-20240705095805927&#34; style=&#34;zoom: 50%;&#34; /&gt;
+&lt;p&gt;点击应用程序，在环境变量输入&lt;code&gt;QT_SCALE_FACTOR=1.75&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此处的1.75经我测试为缩放倍率，我的屏幕缩放为175%，根据自己情况进行更改&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;img src=&#34;https://s2.loli.net/2024/07/05/56JwYXnMtVaHzed.png&#34; alt=&#34;image-20240705100014160&#34; style=&#34;zoom:50%;&#34; /&gt;
+</description>
         </item>
         <item>
         <title>Debian，iptables防火墙规则</title>

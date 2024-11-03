@@ -289,6 +289,7 @@
     <li><a href="#常见问题">常见问题</a>
       <ol>
         <li><a href="#从远程git仓库中删除已经上传但现在希望忽略的文件">从远程Git仓库中删除已经上传但现在希望忽略的文件</a></li>
+        <li><a href="#error-bad-signature-0x00000000">error: bad signature 0x00000000</a></li>
       </ol>
     </li>
   </ol>
@@ -510,6 +511,34 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>完成这些步骤后，<code>config.json</code> 文件将不再被 Git 跟踪，并且在之后的提交中将被忽略。</p>
+<h3 id="error-bad-signature-0x00000000">error: bad signature 0x00000000
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">&gt; git status
+</span></span><span class="line"><span class="cl">error: bad signature 0x00000000
+</span></span><span class="line"><span class="cl">fatal: index file corrupt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这表示索引出现错误</p>
+<p><strong>备份索引文件</strong>：<br>
+在命令行中，进入你的 Git 仓库目录（你已经在 <code>E:\markstore\hugo-blog</code> 中），然后执行以下命令：</p>
+<pre><code>`cp .git/index .git/index.backup`
+
+（如果你在 Windows 上，可以使用 `copy .git\index .git\index.backup`）
+</code></pre>
+<p><strong>删除索引文件</strong>：</p>
+<pre><code>`rm .git/index`
+
+（在 Windows 上使用 `del .git\index`）
+</code></pre>
+<p><strong>重新构建索引</strong>：<br>
+运行以下命令来重新构建索引：</p>
+<pre><code>`git reset`</code></pre>
 
 </section>
 

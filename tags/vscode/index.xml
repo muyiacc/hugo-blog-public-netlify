@@ -19,6 +19,21 @@
 &lt;code&gt;Alt + F12&lt;/code&gt; 向下复制一行&lt;/p&gt;
 </description>
         </item>
+        <item>
+        <title>VS Code配置scala环境</title>
+        <link>https://blog.seektao.cc/p/241009213026/</link>
+        <pubDate>Wed, 09 Oct 2024 21:30:26 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/241009213026/</guid>
+        <description>&lt;p&gt;插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://marketplace.visualstudio.com/items?itemName=scala-lang.scala&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scala Syntax (official)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://marketplace.visualstudio.com/items?itemName=scalameta.metals&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scala (Metals)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
         
     </channel>
 </rss>
