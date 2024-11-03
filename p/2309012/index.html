@@ -267,7 +267,9 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#方法一-推荐">方法一 （推荐）</a></li>
     <li><a href="#激活office365">激活Office365</a></li>
+    <li><a href="#方法二">方法二</a></li>
   </ol>
 </nav>
         </div>
@@ -340,8 +342,18 @@
     >https://github.com/massgravel/Microsoft-Activation-Scripts</a></p>
 </blockquote>
 <p>有两种方法激活</p>
-<h1 id="方法一-推荐">方法一 （推荐）
-</h1><p>打开 powershell (win+x再按a)， 输入以下命令</p>
+<h2 id="方法一-推荐">方法一 （推荐）
+</h2><p>打开 powershell (win+x再按a)， 执行以下命令</p>
+<p>新命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">get</span><span class="p">.</span><span class="py">activated</span><span class="p">.</span><span class="py">win</span> <span class="p">|</span> <span class="nb">iex
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>旧命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -350,13 +362,22 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span> <span class="p">|</span> <span class="nb">iex
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>根据提示操作即可。以下给出激活office的示例过程</p>
-<h2 id="激活office365">激活Office365
+</div><h2 id="激活office365">激活Office365
 </h2><p>Office365需要先去下载，离线版下载地址：</p>
 <ul>
 <li>123：https://www.123pan.com/s/4MOKVv-NnPpd.html提取码:pole</li>
 </ul>
 <p>下载安装完成之后在 Powshell 运行</p>
+<p>新命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">get</span><span class="p">.</span><span class="py">activated</span><span class="p">.</span><span class="py">win</span> <span class="p">|</span> <span class="nb">iex
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>旧命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -365,52 +386,10 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">irm </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">massgrave</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">get</span> <span class="p">|</span> <span class="nb">iex
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>出现如下的画面</p>
-<p><img src="/_media-sync_resources/20231203T140334/20231203T140334_42660.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="20231130144148.png"
-	
-	
-></p>
-<p>选择2，接着出现</p>
-<p><img src="/_media-sync_resources/20231203T140334/20231203T140334_38989.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20231130145008173"
-	
-	
-></p>
-<p>等待完成即可，类似如下
-<img src="/_media-sync_resources/20231203T140334/20231203T140334_51757.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image.png"
-	
-	
-></p>
+</div><p>按照提示激活</p>
 <p>打开Office365的软件验证，比如Word，打开Word，选择账户，可以看到订阅的产品。</p>
-<p><img src="/_media-sync_resources/20231203T140334/20231203T140334_17003.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20231130145240349"
-	
-	
-></p>
-<h1 id="方法二">方法二
-</h1><p>下载 <a class="link" href="https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip"  target="_blank" rel="noopener"
+<h2 id="方法二">方法二
+</h2><p>下载 <a class="link" href="https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip"  target="_blank" rel="noopener"
     >激活脚本 </a> ， 并解压</p>
 <p>解压后找到 <code>All-In-One-Version</code> 文件夹</p>
 <p>执行 <code>MAS_AIO.cmd</code></p>
