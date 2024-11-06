@@ -7,13 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Nov 2024 19:24:25 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 12:02:22 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Default</title>
         <link>https://blog.seektao.cc/categories/default/</link>
-        <pubDate>Sun, 03 Nov 2024 19:24:25 +0800</pubDate>
+        <pubDate>Tue, 05 Nov 2024 12:02:22 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/default/</guid>
         <description>&lt;img src="https://blog.seektao.cc/categories/default/wallhaven-6dr5rl.jpg" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Windows</title>
+        <link>https://blog.seektao.cc/categories/windows/</link>
+        <pubDate>Sun, 03 Nov 2024 19:24:25 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/categories/windows/</guid>
+        <description>&lt;img src="https://blog.seektao.cc/categories/windows/windows-10-logo-1.webp" alt="Featured image of post Windows" /&gt;</description>
         </item>
         <item>
         <title>Project</title>
@@ -70,14 +78,6 @@
         
         <guid>https://blog.seektao.cc/categories/proxy/</guid>
         <description>&lt;img src="https://blog.seektao.cc/categories/proxy/what-is-a-proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
-        </item>
-        <item>
-        <title>Windows</title>
-        <link>https://blog.seektao.cc/categories/windows/</link>
-        <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
-        
-        <guid>https://blog.seektao.cc/categories/windows/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/windows/windows-10-logo-1.webp" alt="Featured image of post Windows" /&gt;</description>
         </item>
         <item>
         <title>Tao</title>
