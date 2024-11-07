@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="title: Linux使用autofs自动挂载分区 description: slug: &lsquo;&ldquo;240729150741&rdquo;&rsquo; image: math: true license: CC BY-NC-ND hidden: false comments: true draft: false date: 2024-07-29 15:07:41 +0800 updated: 2024-07-29 14:07:56 +0800 categories: tags: title: undefined 本次使用的工具：autofs Debian安装a">
-<title>Linux使用autofs自动挂载分区</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="卸载旧的安装包 1 dpkg -l | grep -E &#39;(mysql|maria)&#39; 根据上述命令的输出情况卸载 1 sudo apt purge 软件包 删除配置文件 1 sudo rm -rf /etc/mysql /var/lib/mysql 下载 压缩包 1 wget https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar 解压 1 2 3 mkdir mysql-server-8.4.x tar -xf mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar -C mysql-server-8.4.x/ cd mysql-server-8.4.x 安装">
+<title>Debian安装MySQL8.4.x</title>
 
-<link rel='canonical' href='https://blog.seektao.cc/p/2407006/'>
+<link rel='canonical' href='https://blog.seektao.cc/p/241107125040/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux使用autofs自动挂载分区">
-<meta property='og:description' content="title: Linux使用autofs自动挂载分区 description: slug: &lsquo;&ldquo;240729150741&rdquo;&rsquo; image: math: true license: CC BY-NC-ND hidden: false comments: true draft: false date: 2024-07-29 15:07:41 +0800 updated: 2024-07-29 14:07:56 +0800 categories: tags: title: undefined 本次使用的工具：autofs Debian安装a">
-<meta property='og:url' content='https://blog.seektao.cc/p/2407006/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Debian安装MySQL8.4.x">
+<meta property='og:description' content="卸载旧的安装包 1 dpkg -l | grep -E &#39;(mysql|maria)&#39; 根据上述命令的输出情况卸载 1 sudo apt purge 软件包 删除配置文件 1 sudo rm -rf /etc/mysql /var/lib/mysql 下载 压缩包 1 wget https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar 解压 1 2 3 mkdir mysql-server-8.4.x tar -xf mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar -C mysql-server-8.4.x/ cd mysql-server-8.4.x 安装">
+<meta property='og:url' content='https://blog.seektao.cc/p/241107125040/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='autofs' /><meta property='article:published_time' content='2024-07-06T23:07:42&#43;08:00'/><meta property='article:modified_time' content='2024-07-06T23:07:42&#43;08:00'/>
-<meta name="twitter:title" content="Linux使用autofs自动挂载分区">
-<meta name="twitter:description" content="title: Linux使用autofs自动挂载分区 description: slug: &lsquo;&ldquo;240729150741&rdquo;&rsquo; image: math: true license: CC BY-NC-ND hidden: false comments: true draft: false date: 2024-07-29 15:07:41 +0800 updated: 2024-07-29 14:07:56 +0800 categories: tags: title: undefined 本次使用的工具：autofs Debian安装a">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:published_time' content='2024-11-07T12:50:40&#43;08:00'/><meta property='article:modified_time' content='2024-11-07T12:50:40&#43;08:00'/>
+<meta name="twitter:title" content="Debian安装MySQL8.4.x">
+<meta name="twitter:description" content="卸载旧的安装包 1 dpkg -l | grep -E &#39;(mysql|maria)&#39; 根据上述命令的输出情况卸载 1 sudo apt purge 软件包 删除配置文件 1 sudo rm -rf /etc/mysql /var/lib/mysql 下载 压缩包 1 wget https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar 解压 1 2 3 mkdir mysql-server-8.4.x tar -xf mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar -C mysql-server-8.4.x/ cd mysql-server-8.4.x 安装">
   
 
 
@@ -245,50 +245,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#tags">title: Linux使用autofs自动挂载分区
-description:
-slug: &lsquo;&ldquo;240729150741&rdquo;&rsquo;
-image:
-math: true
-license: CC BY-NC-ND
-hidden: false
-comments: true
-draft: false
-date: 2024-07-29 15:07:41 +0800
-updated: 2024-07-29 14:07:56 +0800
-categories:
-tags:</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -298,8 +255,8 @@ tags:</a></li>
     
     <header class="article-category">
         
-            <a href="/categories/linux/" >
-                Linux
+            <a href="/categories/database/" >
+                Database
             </a>
         
     </header>
@@ -307,7 +264,7 @@ tags:</a></li>
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2407006/">Linux使用autofs自动挂载分区</a>
+            <a href="/p/241107125040/">Debian安装MySQL8.4.x</a>
         </h2>
     
         
@@ -329,7 +286,7 @@ tags:</a></li>
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jul 06, 2024</time>
+                <time class="article-time--published">Nov 07, 2024</time>
             </div>
         
 
@@ -345,34 +302,105 @@ tags:</a></li>
     <section class="article-content">
     
     
-    <hr>
-<h2 id="tags">title: Linux使用autofs自动挂载分区
-description:
-slug: &lsquo;&ldquo;240729150741&rdquo;&rsquo;
-image:
-math: true
-license: CC BY-NC-ND
-hidden: false
-comments: true
-draft: false
-date: 2024-07-29 15:07:41 +0800
-updated: 2024-07-29 14:07:56 +0800
-categories:
-tags:
-</h2><p>title: undefined</p>
-<p>本次使用的工具：autofs</p>
-<p>Debian安装autofs</p>
+    <p>卸载旧的安装包</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> sudo apt install autofs
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dpkg -l <span class="p">|</span> grep -E <span class="s1">&#39;(mysql|maria)&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>autofs挂载分区设置</p>
-<p>autofs的配置文件为 <code>/etc/auto.</code></p>
-
+</div><p>根据上述命令的输出情况卸载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt purge 软件包
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>删除配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rm -rf /etc/mysql /var/lib/mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载 压缩包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解压</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir mysql-server-8.4.x
+</span></span><span class="line"><span class="cl">tar -xf mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar -C mysql-server-8.4.x/
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> mysql-server-8.4.x
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install ./mysql-community-client-plugins_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-community-client-core_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-common_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-community-client_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-client_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-community-server-core_8.4.3-1debian12_amd64.deb
+</span></span><span class="line"><span class="cl">sudo apt install ./mysql-community-server_8.4.3-1debian12_amd64.deb
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后这一步会提示输入密码。</p>
+<p>查看状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl status mysql.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动 myql</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl start mysql.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>关闭mysql</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl stop mysql
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -380,7 +408,7 @@ tags:
     
     <section class="article-tags">
         
-            <a href="/tags/autofs/">Autofs</a>
+            <a href="/tags/mysql/">Mysql</a>
         
     </section>
 
@@ -426,12 +454,12 @@ tags:
             
                 
 <article class="">
-    <a href="/p/241005163447/">
+    <a href="/p/241011224204/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux三剑客awk、sed、grep</h2>
+            <h2 class="article-title">Postgres PSQL使用</h2>
         </div>
     </a>
 </article>
@@ -439,51 +467,12 @@ tags:
             
                 
 <article class="">
-    <a href="/p/240818210871/">
+    <a href="/p/241002080830/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">LinuxMirrors：一条命令实现各个Linux发行版软件镜像源更换</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/240802150825/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux开启ssh密码登陆，root用户远程登陆</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2407022/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">VMware在Linux运行出现VMWare Kernel Module Updater</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/linux-start-menu/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux配置开始菜单，全局搜索，桌面图标</h2>
+            <h2 class="article-title">sqlite3的一些基本操作</h2>
         </div>
     </a>
 </article>

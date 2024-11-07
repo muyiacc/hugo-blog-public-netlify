@@ -486,7 +486,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 创建挂载点，文件夹必须存在</span>
-</span></span><span class="line"><span class="cl">mkdir -p /home/taoone/c /home/taoone/d /home/taoone/e
+</span></span><span class="line"><span class="cl">sudo mkdir -p /mnt/c /mnt/d /mnt/e
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>编辑<code>/etc/fstab</code></p>
@@ -510,11 +510,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># windows c</span>
-</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>C0260DE6260DDDF2       /home/taoone/c            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>C0260DE6260DDDF2       /mnt/c            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># windows d</span>
-</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>72C2959BC29563DF       /home/taoone/d            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>72C2959BC29563DF       /mnt/d            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># windows e</span>
-</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>C6A4ED67A4ED5A87       /home/taoone/e            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
+</span></span><span class="line"><span class="cl"><span class="nv">UUID</span><span class="o">=</span>C6A4ED67A4ED5A87       /mnt/e            ntfs-3g            defaults        <span class="m">0</span> <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>重启系统，查看是否成功</p>

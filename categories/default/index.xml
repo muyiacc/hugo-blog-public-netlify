@@ -5887,7 +5887,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/h2&gt;</description>
         </item>
         <item>
-        <title>mysql备份数据库</title>
+        <title>MySQL备份数据库</title>
         <link>https://blog.seektao.cc/p/2404007/</link>
         <pubDate>Sun, 07 Apr 2024 15:07:04 +0800</pubDate>
         
@@ -6433,7 +6433,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Mysql内存优化</title>
+        <title>MySQL内存优化</title>
         <link>https://blog.seektao.cc/p/2403004/</link>
         <pubDate>Mon, 04 Mar 2024 00:03:15 +0800</pubDate>
         
@@ -8724,8 +8724,9 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;docker软件源&#34;&gt;Docker软件源
 &lt;/h2&gt;&lt;p&gt;非 Docker Hub镜像源&lt;/p&gt;
-&lt;h3 id=&#34;debianubunturaspbian-用户&#34;&gt;Debian/Ubuntu/Raspbian 用户
-&lt;/h3&gt;&lt;p&gt;以下内容根据 &lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/install/debian/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h3 id=&#34;清华-2&#34;&gt;清华
+&lt;/h3&gt;&lt;h4 id=&#34;debianubunturaspbian-用户&#34;&gt;Debian/Ubuntu/Raspbian 用户
+&lt;/h4&gt;&lt;p&gt;以下内容根据 &lt;a class=&#34;link&#34; href=&#34;https://docs.docker.com/engine/install/debian/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官方文档&lt;/a&gt; 修改而来。&lt;/p&gt;
 &lt;p&gt;如果你过去安装过 docker，先删掉：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

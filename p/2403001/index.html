@@ -2,7 +2,7 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt">
-<title>Debian通过apt安装MySQL</title>
+<title>Linux使用APT仓库安装MySQL</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2403001/'>
 
@@ -10,7 +10,7 @@
 <meta property='og:description' content="前言 之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt">
 <meta property='og:url' content='https://blog.seektao.cc/p/2403001/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='apt' /><meta property='article:published_time' content='2024-03-01T00:03:15&#43;08:00'/><meta property='article:modified_time' content='2024-03-01T00:03:15&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='debian' /><meta property='article:tag' content='mysql' /><meta property='article:tag' content='apt' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2024-03-01T00:03:15&#43;08:00'/><meta property='article:modified_time' content='2024-03-01T00:03:15&#43;08:00'/>
 <meta name="twitter:title" content="Linux使用APT仓库安装MySQL">
 <meta name="twitter:description" content="前言 之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt">
   
@@ -245,7 +245,41 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#卸载">卸载</a></li>
+    <li><a href="#安装-mysql-apt-config">安装 mysql-apt-config</a></li>
+    <li><a href="#安装mysql">安装MySQL</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -264,7 +298,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2403001/">Debian通过apt安装MySQL</a>
+            <a href="/p/2403001/">Linux使用APT仓库安装MySQL</a>
         </h2>
     
         
@@ -302,9 +336,11 @@
     <section class="article-content">
     
     
-    <p>之前一直使用 下载压缩包的方式，发现并不好用，因为每次新装还要下载指定的版本，而且版本还不一定好找，之前教程安装过程的命令复用性不高， 这次直接使用apt安装，添加MySQL的apt源即可，就算是其他人也可以直接复制</p>
-<h1 id="先卸载">先卸载
-</h1><div class="highlight"><div class="chroma">
+    <h2 id="前言">前言
+</h2><p>之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt仓库安装。</p>
+<h2 id="卸载">卸载
+</h2><p>卸载系统自带，删除残留的文件</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -315,38 +351,58 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dpkg -l <span class="p">|</span> grep -E <span class="s1">&#39;(mysql|maria)&#39;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo apt puege 软件包名字
+</span></span><span class="line"><span class="cl">sudo apt remote --purge 软件包名字
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">sudo rm -rf /etc/mysql /var/lib/mysql
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="添加apt源">添加apt源
-</h1><div class="highlight"><div class="chroma">
+</div><h2 id="安装-mysql-apt-config">安装 mysql-apt-config
+</h2><ol>
+<li>下载 mysql-apt-config</li>
+</ol>
+<blockquote>
+<p>下载地址：https://dev.mysql.com/downloads/repo/apt/</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载apt源</span>
-</span></span><span class="line"><span class="cl">wget https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb -O mysql-apt-config.deb
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 执行安装</span>
-</span></span><span class="line"><span class="cl">sudo dpkg -i mysql-apt-config.deb
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 弹出界面，如果需要配置，回车进入，一般默认即可，所以直接键盘上下键选择ok，即可添加成功</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo apt update
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 一键命令</span>
+</span></span><span class="line"><span class="cl">wget https://repo.mysql.com//mysql-apt-config_0.8.32-1_all.deb
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="安装顺序">安装顺序
-</h1><div class="highlight"><div class="chroma">
+</div><blockquote>
+<p>历史版本：
+wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb"  target="_blank" rel="noopener"
+    >https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb</a></p>
+</blockquote>
+<ol start="2">
+<li>安装 mysql-apt-config</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install  ./mysql-apt-config_0.8.32-1_all.deb
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>弹出配置界面，如果需要配置，回车进入，一般默认即可，所以直接键盘上下键选择ok，即可添加成功</p>
+<ol start="3">
+<li>更新软件仓库</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装mysql">安装MySQL
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -374,12 +430,7 @@
 </span></span><span class="line"><span class="cl">sudo apt install mysql-community-server
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>最后一步，图形界面设置密码。</p>
-<p>这个安装方式比起下载压缩包方便很多，并且复制性更强。</p>
-<blockquote>
-<p>参考地址 <a class="link" href="https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-setup"  target="_blank" rel="noopener"
-    >https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/#apt-repo-setup</a></p>
-</blockquote>
+</div><p>最后弹出图形界面，设置密码即可</p>
 
 </section>
 
@@ -393,6 +444,8 @@
             <a href="/tags/mysql/">Mysql</a>
         
             <a href="/tags/apt/">Apt</a>
+        
+            <a href="/tags/linux/">Linux</a>
         
     </section>
 
@@ -438,12 +491,12 @@
             
                 
 <article class="">
-    <a href="/p/2403001/">
+    <a href="/p/2310008/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux使用APT仓库安装MySQL</h2>
+            <h2 class="article-title">Linux安装和卸载MySQL8.0.x</h2>
         </div>
     </a>
 </article>
@@ -451,12 +504,12 @@
             
                 
 <article class="">
-    <a href="/p/2310008/">
+    <a href="/p/241005163447/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Debian12安装和卸载MySQL8.0</h2>
+            <h2 class="article-title">Linux三剑客awk、sed、grep</h2>
         </div>
     </a>
 </article>
