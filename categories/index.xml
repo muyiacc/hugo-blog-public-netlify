@@ -13,7 +13,7 @@
         <pubDate>Sun, 17 Nov 2024 15:15:16 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/default/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/default/wallhaven-6dr5rl.jpg" alt="Featured image of post Default" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/default/default.jpg" alt="Featured image of post Default" /&gt;</description>
         </item>
         <item>
         <title>Database</title>
@@ -29,7 +29,7 @@
         <pubDate>Sun, 03 Nov 2024 19:24:25 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/windows/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/windows/windows-10-logo-1.webp" alt="Featured image of post Windows" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/windows/img0-1024x768.webp" alt="Featured image of post Windows" /&gt;</description>
         </item>
         <item>
         <title>Project</title>
@@ -53,7 +53,7 @@
         <pubDate>Sat, 12 Oct 2024 08:51:29 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/vue/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/vue/dinh-nghia-ve-vuejs-1210x642.jpg" alt="Featured image of post Vue" /&gt;</description>
+        <description></description>
         </item>
         <item>
         <title>Golang</title>
@@ -69,7 +69,7 @@
         <pubDate>Sun, 06 Oct 2024 11:09:05 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/linux/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/linux/GNU_Linux_minimalism_blue_background_Tux_Nord_Theme-2285394.png" alt="Featured image of post Linux" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/linux/linux.png" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Proxy</title>
@@ -77,7 +77,7 @@
         <pubDate>Mon, 09 Sep 2024 02:41:37 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/proxy/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/proxy/what-is-a-proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/proxy/proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
         </item>
         <item>
         <title>Tao</title>
@@ -85,7 +85,7 @@
         <pubDate>Mon, 08 Jul 2024 16:07:59 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/tao/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/tao/893d4500a999e4ece77f84633c8e6410.jpg" alt="Featured image of post Tao" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/tao/dharma.jpg" alt="Featured image of post Tao" /&gt;</description>
         </item>
         <item>
         <title>Free</title>
@@ -101,7 +101,7 @@
         <pubDate>Wed, 05 Jun 2024 16:06:01 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/categories/docker/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/docker/docker_containers_minimalism_typography_artwork_simple_background-11098.png" alt="Featured image of post Docker" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/docker/docker.png" alt="Featured image of post Docker" /&gt;</description>
         </item>
         <item>
         <title>Go</title>
@@ -109,7 +109,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://blog.seektao.cc/categories/go/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/go/Golang-Programming-Language-1.jpg" alt="Featured image of post Go" /&gt;</description>
+        <description>&lt;img src="https://blog.seektao.cc/categories/go/go.jpg" alt="Featured image of post Go" /&gt;</description>
         </item>
         
     </channel>
