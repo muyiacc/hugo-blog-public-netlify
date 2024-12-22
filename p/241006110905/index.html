@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="更新语言环境 编辑 locale 文件： 打开 /etc/default/locale 文件： 1 sudo vi /etc/default/locale 添加或修改内容： 在文件中添加或修改以下内容： 1 2 3 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 保存并退出： 如果使用 nano，按 Ctrl + X，">
-<title>Linux初次安装后必须要做的步骤</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用户管理 新建用户 1 2 # -m 创建用户目录 useradd -m username 设置密码 1 passwd username 将用户添加到 sudo 组，使用 visudo 1 visudo 追加一行 username ALL=(ALL:ALL) NOPASSWD:ALL，NOPASSWD表">
+<title>Linux基础配置</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/241006110905/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux初次安装后必须要做的步骤">
-<meta property='og:description' content="更新语言环境 编辑 locale 文件： 打开 /etc/default/locale 文件： 1 sudo vi /etc/default/locale 添加或修改内容： 在文件中添加或修改以下内容： 1 2 3 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 保存并退出： 如果使用 nano，按 Ctrl + X，">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux基础配置">
+<meta property='og:description' content="用户管理 新建用户 1 2 # -m 创建用户目录 useradd -m username 设置密码 1 passwd username 将用户添加到 sudo 组，使用 visudo 1 visudo 追加一行 username ALL=(ALL:ALL) NOPASSWD:ALL，NOPASSWD表">
 <meta property='og:url' content='https://blog.seektao.cc/p/241006110905/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-06T11:09:05&#43;08:00'/><meta property='article:modified_time' content='2024-10-06T11:13:03&#43;08:00'/>
-<meta name="twitter:title" content="Linux初次安装后必须要做的步骤">
-<meta name="twitter:description" content="更新语言环境 编辑 locale 文件： 打开 /etc/default/locale 文件： 1 sudo vi /etc/default/locale 添加或修改内容： 在文件中添加或修改以下内容： 1 2 3 LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 保存并退出： 如果使用 nano，按 Ctrl + X，">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='config' /><meta property='article:published_time' content='2024-10-06T11:09:05&#43;08:00'/><meta property='article:modified_time' content='2024-10-06T11:13:03&#43;08:00'/>
+<meta name="twitter:title" content="Linux基础配置">
+<meta name="twitter:description" content="用户管理 新建用户 1 2 # -m 创建用户目录 useradd -m username 设置密码 1 passwd username 将用户添加到 sudo 组，使用 visudo 1 visudo 追加一行 username ALL=(ALL:ALL) NOPASSWD:ALL，NOPASSWD表">
   
 
 
@@ -267,15 +267,8 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
-      <ol>
-        <li>
-          <ol>
-            <li><a href="#更新语言环境"><strong>更新语言环境</strong></a></li>
-          </ol>
-        </li>
-      </ol>
-    </li>
+    <li><a href="#用户管理">用户管理</a></li>
+    <li><a href="#更新语言环境-locale">更新语言环境 locale</a></li>
   </ol>
 </nav>
         </div>
@@ -303,7 +296,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/241006110905/">Linux初次安装后必须要做的步骤</a>
+            <a href="/p/241006110905/">Linux基础配置</a>
         </h2>
     
         
@@ -341,23 +334,38 @@
     <section class="article-content">
     
     
-    <h4 id="更新语言环境"><strong>更新语言环境</strong>
-</h4><ol>
-<li>
-<p><strong>编辑 locale 文件</strong>：
-打开 <code>/etc/default/locale</code> 文件：</p>
+    <h2 id="用户管理">用户管理
+</h2><p>新建用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># -m 创建用户目录</span>
+</span></span><span class="line"><span class="cl">useradd -m username
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置密码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vi /etc/default/locale
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">passwd username
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><strong>添加或修改内容</strong>：
-在文件中添加或修改以下内容：</p>
+</div><p>将用户添加到 sudo 组，使用 <code>visudo</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">visudo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>追加一行 <code>username ALL=(ALL:ALL) NOPASSWD:ALL</code>，<code>NOPASSWD</code>表示使用 sudo 时不用输入密码，如果需要每次输入密码，可以改为 ALL</p>
+<p>如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -365,43 +373,32 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">LANG=en_US.UTF-8
-</span></span><span class="line"><span class="cl">LANGUAGE=en_US.UTF-8
-</span></span><span class="line"><span class="cl">LC_ALL=en_US.UTF-8
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl"># Allow members of group sudo to execute any command
+</span></span><span class="line"><span class="cl">%sudo   ALL=(ALL:ALL) ALL
+</span></span><span class="line"><span class="cl">username ALL=(ALL:ALL) NOPASSWD:ALL
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><strong>保存并退出</strong>：
-如果使用 <code>nano</code>，按 <code>Ctrl + X</code>，然后按 <code>Y</code> 保存更改，最后按 <code>Enter</code> 退出。</p>
-</li>
-<li>
-<p><strong>生成语言环境</strong>：
-运行以下命令以生成新的语言环境：</p>
+</div><p>切换默认 shell 为 bash</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo locale-gen en_US.UTF-8
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chsh -s /bin/bash
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><strong>更新当前会话</strong>：
-运行以下命令以更新当前会话的语言环境：</p>
+</div><p><strong>重新登录使shell切换生效！</strong></p>
+<p>安装 bash-it</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">source</span> /etc/default/locale
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone --depth<span class="o">=</span><span class="m">1</span> https://github.com/muyiacc/bash-it.git ~/.bash_it <span class="o">&amp;&amp;</span> ~/.bash_it/install.sh <span class="o">&amp;&amp;</span> <span class="nb">source</span> ~/.bashrc
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><strong>验证设置</strong>：
-再次运行 <code>locale</code> 命令以确认更改：</p>
+</div><h2 id="更新语言环境-locale">更新语言环境 locale
+</h2><p>查看当前的 locale 设置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -410,14 +407,79 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">locale
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-</ol>
+</div><p>列出系统上已经启用的所有 locale。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">locale -a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果没有想要的语言，需要编辑 <code>/etc/locale.gen</code>，启用新的 locale 支持</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/locale.gen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如取消 <code>en_US.UTF-8 UTF-8</code> 前的注释，保存退出</p>
+<p>重新生成配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo local-gen
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置默认的 locale，默认配置文件的位置在 <code>/etc/default/locale</code>，使用 <code>update-locale</code>配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo update-locale <span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8 <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新当前会话的 locale</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> /etc/default/locale
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再次检查 locale，如果没有更改，注销重新登录查看</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">locale
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>总结：</p>
+<ul>
+<li>local：查看当前 locale</li>
+<li>locale-gen：生成 locale 配置</li>
+<li>update-locale 是一个用于更新系统 locale 设置的命令行工具，通常在基于 Debian 的 Linux 发行版（如 Ubuntu）中使用。它可以简化 locale 的配置过程，自动更新相关的环境变量和配置文件。</li>
+</ul>
 
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/config/">Config</a>
+        
+    </section>
+
 
     <section class="article-lastmod">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
