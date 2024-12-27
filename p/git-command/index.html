@@ -290,6 +290,7 @@
       <ol>
         <li><a href="#从远程git仓库中删除已经上传但现在希望忽略的文件">从远程Git仓库中删除已经上传但现在希望忽略的文件</a></li>
         <li><a href="#error-bad-signature-0x00000000">error: bad signature 0x00000000</a></li>
+        <li><a href="#git-status-中文字符显示为-12341234">git status 中文字符显示为 \1234\1234</a></li>
       </ol>
     </li>
   </ol>
@@ -557,7 +558,27 @@
 </code></pre>
 <p><strong>重新构建索引</strong>：<br>
 运行以下命令来重新构建索引：</p>
-<pre><code>`git reset`</code></pre>
+<pre><code>`git reset`
+</code></pre>
+<h3 id="git-status-中文字符显示为-12341234">git status 中文字符显示为 \1234\1234
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config core.quotepath off
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>全局生效</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git config --global core.quotepath off
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>还原：<code>off</code> 改成 <code>on</code>。</p>
 
 </section>
 
