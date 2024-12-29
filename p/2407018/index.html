@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="官网：https://rclone.org/ 安装 Windows 新增配置 要实现后续操作，第一次使用rclone首先需要增加远程存储配置 新增一个远程配置，这">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Rclone 使用指南 介绍 Rclone 是一个命令行工具，用于管理和同步文件到各种云存储服务和本地文件系统。它支持多种云存储提供商，如 Google Drive、Dropbox、">
 <title>RClone-Windows篇，一个命令行程序，管理超过70个云存储产品，可帮助你实现文件备份，云数据镜像，数据迁移，本地存储，云储存合二为一</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2407018/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="RClone-Windows篇，一个命令行程序，管理超过70个云存储产品，可帮助你实现文件备份，云数据镜像，数据迁移，本地存储，云储存合二为一">
-<meta property='og:description' content="官网：https://rclone.org/ 安装 Windows 新增配置 要实现后续操作，第一次使用rclone首先需要增加远程存储配置 新增一个远程配置，这">
+<meta property='og:description' content="Rclone 使用指南 介绍 Rclone 是一个命令行工具，用于管理和同步文件到各种云存储服务和本地文件系统。它支持多种云存储提供商，如 Google Drive、Dropbox、">
 <meta property='og:url' content='https://blog.seektao.cc/p/2407018/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rclone' /><meta property='article:published_time' content='2024-07-17T15:07:48&#43;08:00'/><meta property='article:modified_time' content='2024-07-17T15:07:48&#43;08:00'/>
 <meta name="twitter:title" content="RClone-Windows篇，一个命令行程序，管理超过70个云存储产品，可帮助你实现文件备份，云数据镜像，数据迁移，本地存储，云储存合二为一">
-<meta name="twitter:description" content="官网：https://rclone.org/ 安装 Windows 新增配置 要实现后续操作，第一次使用rclone首先需要增加远程存储配置 新增一个远程配置，这">
+<meta name="twitter:description" content="Rclone 使用指南 介绍 Rclone 是一个命令行工具，用于管理和同步文件到各种云存储服务和本地文件系统。它支持多种云存储提供商，如 Google Drive、Dropbox、">
   
 
 
@@ -267,26 +267,42 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#安装">安装</a>
+    <li><a href="#介绍">介绍</a>
       <ol>
-        <li><a href="#windows">Windows</a></li>
+        <li><a href="#主要特点">主要特点</a></li>
       </ol>
     </li>
-    <li><a href="#新增配置">新增配置</a></li>
-    <li><a href="#挂载">挂载</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#下载链接">下载链接</a></li>
+      </ol>
+    </li>
+    <li><a href="#配置远程存储首次使用必须配置">配置远程存储（首次使用必须配置）</a>
+      <ol>
+        <li><a href="#配置文件位置">配置文件位置</a></li>
+      </ol>
+    </li>
+    <li><a href="#复制即是备份">复制（即是备份）</a>
+      <ol>
+        <li><a href="#案例-1">案例 1</a></li>
+        <li><a href="#提示">提示</a></li>
+      </ol>
+    </li>
+    <li><a href="#挂载作为本地文件系统">挂载（作为本地文件系统）</a>
+      <ol>
+        <li><a href="#案例-1-1">案例 1</a></li>
+        <li><a href="#案例-2">案例 2</a></li>
+        <li><a href="#定时任务">定时任务</a></li>
+      </ol>
+    </li>
     <li><a href="#同步谨慎使用">同步（谨慎使用）</a>
       <ol>
         <li><a href="#单向同步谨慎使用">单向同步（谨慎使用）</a></li>
         <li><a href="#双向同步谨慎使用">双向同步（谨慎使用）</a></li>
       </ol>
     </li>
-    <li><a href="#复制">复制</a></li>
-    <li><a href="#综合应用">综合应用</a>
-      <ol>
-        <li><a href="#备份">备份</a></li>
-      </ol>
-    </li>
-    <li><a href="#其他操作">其他操作</a></li>
+    <li><a href="#web-ui">Web UI</a></li>
+    <li><a href="#常用命令">常用命令</a></li>
   </ol>
 </nav>
         </div>
@@ -352,225 +368,309 @@
     <section class="article-content">
     
     
-    <p>官网：<a class="link" href="https://rclone.org/"  target="_blank" rel="noopener"
-    >https://rclone.org/</a></p>
+    <h1 id="rclone-使用指南">Rclone 使用指南
+</h1><h2 id="介绍">介绍
+</h2><p>Rclone 是一个命令行工具，用于管理和同步文件到各种云存储服务和本地文件系统。它支持多种云存储提供商，如 Google Drive、Dropbox、Amazon S3、OneDrive 等。</p>
+<h3 id="主要特点">主要特点
+</h3><ol>
+<li><strong>多种存储支持</strong>：支持超过 70 种不同的云存储服务。</li>
+<li><strong>文件同步</strong>：可以在本地和云之间同步文件或文件夹。</li>
+<li><strong>加密功能</strong>：支持文件加密，确保数据安全。</li>
+<li><strong>增量备份</strong>：只同步变化的文件，节省时间和带宽。</li>
+<li><strong>跨平台</strong>：可以在 Windows、macOS 和 Linux 上运行。</li>
+<li><strong>脚本自动化</strong>：可以通过脚本实现定期备份和同步。</li>
+</ol>
+<p><a class="link" href="https://rclone.org/"  target="_blank" rel="noopener"
+    >官网</a></p>
+<hr>
 <h2 id="安装">安装
-</h2><h3 id="windows">Windows
-</h3><h2 id="新增配置">新增配置
-</h2><p>要实现后续操作，第一次使用rclone首先需要增加远程存储配置</p>
-<p>新增一个远程配置，这是一个交互式的命令，执行后按照提示操作即可</p>
+</h2><h3 id="下载链接">下载链接
+</h3><ul>
+<li><a class="link" href="https://github.com/rclone/rclone/releases/download/v1.68.2/rclone-v1.68.2-windows-amd64.zip"  target="_blank" rel="noopener"
+    >Windows AMD64</a></li>
+</ul>
+<p>下载解压后，设置环境变量，终端运行 <code>rclone</code> 即可使用。</p>
+<hr>
+<h2 id="配置远程存储首次使用必须配置">配置远程存储（首次使用必须配置）
+</h2><p>首次使用 Rclone 时，需要配置远程存储。执行以下命令并根据提示操作：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">rclone config
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone config
 </span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>Windows平台的rclone配置文件夹位置：C:\Users&lt;your_user_name&gt;\AppData\Roaming\rclone</p>
-</blockquote>
-<h2 id="挂载">挂载
-</h2><p><strong>将远程存储挂载到本地文件夹</strong></p>
-<p><strong>案例1：将坚果云挂载 <code>E:\jianguoyun</code>（该目录需要不存在）</strong></p>
-<p><strong>前台挂载</strong></p>
+</div><h3 id="配置文件位置">配置文件位置
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-plaintext" data-lang="plaintext"><span class="line"><span class="cl">C:\Users\用户名\AppData\Roaming\rclone
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="复制即是备份">复制（即是备份）
+</h2><p>将文件从源位置复制到目标位置，跳过相同的文件（根据文件大小、修改时间或 MD5SUM 判断）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes jianguoyun: E:\jianguoyun
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone copy source:sourcepath dest:destpath
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>后台挂载</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">start</span> /B rclone mount --buffer-size 4M --vfs-cache-mode writes jianguoyun: E:\jianguoyun
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>开机自启动</strong></p>
-<p>新建文本文件 <code>rclone_mount_jianguoyun.bat</code>，输入以下内容</p>
+</div><h3 id="案例-1">案例 1
+</h3><p>将本地 <code>software</code> 文件夹复制到 <code>alist</code> 下的 <code>aliyunpan/software</code>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="p">@</span><span class="k">echo</span> off
-</span></span><span class="line"><span class="cl"><span class="k">start</span> /B rclone mount --buffer-size 4M --vfs-cache-mode writes jianguoyun: E:\jianguoyun
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 复制（复制到远程可能需要等待完成）-P 可查看具体信息</span>
+</span></span><span class="line"><span class="cl">rclone copy ~/software alist:/aliyunpan/software -P
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Win+R，输入<code>shell:startup</code>打开启动文件夹，将该文件放入此文件夹</p>
-<p><strong>取消挂载</strong></p>
-<p><strong>案例2：挂载alist到本地</strong></p>
-<p>前台挂载</p>
+</div><blockquote>
+<p>复制可作为备份使用，写为脚本文件，需要时运行即可。</p>
+</blockquote>
+<p>创建脚本文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes alist: E:\alist
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vim ~/bin/rclone_copy_local_software_to_alist_aliyunpan_software.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>后台挂载</p>
+</div><p>脚本内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>rclone copy ~/software alist:/aliyunpan/software
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改可执行权限：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">start</span> /B rclone mount --buffer-size 4M --vfs-cache-mode writes alist: E:\alist
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x ~/bin/rclone_copy_local_software_to_alist_aliyunpan_software.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="同步谨慎使用">同步（谨慎使用）
-</h2><h3 id="单向同步谨慎使用">单向同步（谨慎使用）
-</h3><p>注意：这可能导致数据丢失，首先使用 <code>--dry-run</code> or the <code>--interactive</code>/<code>-i</code>测试</p>
-<p>官方文档：<a class="link" href="https://rclone.org/commands/rclone_sync/"  target="_blank" rel="noopener"
-    >https://rclone.org/commands/rclone_sync/</a></p>
+</div><h3 id="提示">提示
+</h3><p>某些云盘支持秒传，可以快速将一个云盘文件内容复制到另一个云盘，Rclone 使用 <code>copy</code> 复制也是支持的。</p>
+<p><strong>额外说明</strong>：有些云盘上传单个文件大小有限制，例如 115 原石会员最大支持单个文件 5G，超过该大小即使支持秒传也无法使用。为了秒传的可用性，可以添加 <code>--max-size</code> 参数跳过超大的文件，例如 <code>--max-size 500M</code> 跳过超过 500M 的文件。</p>
+<p>例如，将 <code>alist</code> 挂载的 <code>aliyunpan/infotech</code> 复制到 <code>alist</code> 挂载的 <code>115/infotech</code>，并跳过超过 500M 的文件：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone sync --interactive SOURCE remote:DESTINATION
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone copy alist:aliyunpan/infotech/ alist:115/infotech/ --max-size 500M -P
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>案例1：从远程坚果云同步到本地</p>
+</div><hr>
+<h2 id="挂载作为本地文件系统">挂载（作为本地文件系统）
+</h2><p>挂载功能可以将远程存储挂载到本地，作为本地文件系统使用，支持本地播放视频、打开文件等操作。</p>
+<p>例如，使用 <code>alist</code> 在线播放 115 上的视频可能会失败，但挂载后即可播放。播放器推荐使用 <code>mpv</code>，了解更多可观看以下视频：<a class="link" href="https://www.bilibili.com/video/BV1uu4y1p7iS/?share_source=copy_web&amp;vd_source=2189262040010d0e0c521cbe8e51303e"  target="_blank" rel="noopener"
+    >mpv播放器，安装配置，脚本推荐</a>。</p>
+<h3 id="案例-1-1">案例 1
+</h3><p>将坚果云挂载到 <code>/home/taoone/jianguoyun</code>：</p>
+<p>创建挂载点：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone sync jianguoyun:/ /home/taoone/jianyunyun
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p /home/taoone/jianguoyun
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>案例2：从本地同步到远程坚果云（本地需要存在）</p>
+</div><p>前台挂载（退出终端挂载会取消）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone sync /home/taoone/jianyunyun jianguoyun:/
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes jianguoyun: /home/taoone/jianguoyun
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>后台挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes jianguoyun: /home/taoone/jianguoyun --daemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>手动取消挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fusermount -u /home/taoone/jianguoyun
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="案例-2">案例 2
+</h3><p>挂载 <code>alist</code> 到本地 <code>~/alist</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p ~/alist
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>前台挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes alist: ~/alist
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>后台挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes alist: ~/alist --daemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>手动取消挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fusermount -u ~/alist
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="定时任务">定时任务
+</h3><p>设置开机自动挂载：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">crontab -e
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 开机挂载 rclone alist</span>
+</span></span><span class="line"><span class="cl">@reboot rclone mount --buffer-size 4M --vfs-cache-mode writes alist: ~/alist --daemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="同步谨慎使用">同步（谨慎使用）
+</h2><p>同步功能将 <strong>源路径</strong> 文件同步到 <strong>目的路径</strong>，可能会 <strong>删除</strong> 目的路径文件，因此需要谨慎使用。如果只是需要备份文件，使用 <strong>复制</strong> 即可。</p>
+<h3 id="单向同步谨慎使用">单向同步（谨慎使用）
+</h3><blockquote>
+<p>注意：这可能导致数据丢失，首先使用 <code>--dry-run</code> 或 <code>--interactive</code>/<code>-i</code> 进行测试。</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone sync --interactive SOURCE remote:DESTINATION
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>案例 1</strong>：从远程坚果云同步到本地：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone sync jianguoyun:/ /home/taoone/jianguoyun
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>案例 2</strong>：从本地同步到远程坚果云（本地需要存在）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone sync /home/taoone/jianguoyun jianguoyun:/
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="双向同步谨慎使用">双向同步（谨慎使用）
 </h3><p>！！！暂处于测试阶段，谨慎使用！！！</p>
-<p>官方文档：<a class="link" href="https://rclone.org/commands/rclone_bisync/"  target="_blank" rel="noopener"
-    >https://rclone.org/commands/rclone_bisync/</a></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone bisync remote1:path1 remote2:path2 <span class="o">[</span>flags<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone bisync remote1:path1 remote2:path2 <span class="o">[</span>flags<span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="复制">复制
-</h2><p>将文件从源复制到目标位置，跳过相同的文件</p>
+</div><hr>
+<h2 id="web-ui">Web UI
+</h2><p>RClone 也提供了 Web UI 界面：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone copy source:sourcepath dest:destpath
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone rcd --rc-web-gui
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>官方文档：<a class="link" href="https://rclone.org/commands/rclone_copy/"  target="_blank" rel="noopener"
-    >https://rclone.org/commands/rclone_copy/</a></p>
-<p>案例1：将本地software文件夹复制到alist下aliyunpan/software</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 复制（复制到远程可能需要等待完成）-P可查看具体信息</span>
-</span></span><span class="line"><span class="cl">rclone copy ~/software alist:/aliyunpan/software -P
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>复制可当作备份使用，写为脚本文件，需要时就运行一下。</p>
+</div><p>此命令会从 GitHub 下载 UI 文件，因此需要能够访问 GitHub。</p>
+<hr>
+<h2 id="常用命令">常用命令
+</h2><ul>
+<li><strong>列出所有配置</strong>：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim ~/bin/rclone_copy_local_software_to_alist_aliyunpan_software.sh
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone listremotes
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>脚本的文件含义为：rclone从本地复制software文件夹到alist下的aliyunpan/software</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>rclone copy ~/software alist:/aliyunpan/software
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x ~/bin/rclone_copy_local_software_to_alist_aliyunpan_software.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>提示：</p>
-<p>alist有些盘可以秒传，但是超过一定大小将不可用，为了秒传的可用性，在备份时可以添加 <code>--max-size</code>参数跳过最大的文件，比如 <code>--max-size 500M</code>跳过超过500M的文件</p>
-<p>案例：</p>
+</div><ul>
+<li><strong>查看特定远程的配置</strong>：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone copy alist:aliyunpan/infotech/ alist:115/infotech/ --max-size 500M -P
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone config show &lt;remote_name&gt;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="综合应用">综合应用
-</h2><h3 id="备份">备份
-</h3><p>挂载和复制可以同时使用，就比如我挂载了alist到本地，我同样可以使用复制功能使用该挂载的文件夹</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 挂载</span>
-</span></span><span class="line"><span class="cl">rclone mount --buffer-size 1M --vfs-cache-mode full alist: ~/alist --daemon
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="其他操作">其他操作
-</h2><p><strong>列出所有配置</strong></p>
+</div><ul>
+<li><strong>查看所有配置的详细信息</strong>：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone listremotes
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone config dump
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>查看特定远程的配置</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone config show &lt;remote_name&gt;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>查看所有配置的详细信息</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone config dump
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+</div><hr>
+<p>希望这个指南能帮助你更好地使用 Rclone！</p>
+
 </section>
 
 
