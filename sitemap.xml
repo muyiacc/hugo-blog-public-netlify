@@ -3,16 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.seektao.cc/</loc>
-    <lastmod>2024-12-23T16:27:47+08:00</lastmod>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/categories/backend/</loc>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/categories/</loc>
-    <lastmod>2024-12-23T16:27:47+08:00</lastmod>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/post/</loc>
-    <lastmod>2024-12-23T16:27:47+08:00</lastmod>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/rust/</loc>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/241228140134/</loc>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/</loc>
-    <lastmod>2024-12-23T16:27:47+08:00</lastmod>
+    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/update/</loc>
     <lastmod>2024-12-23T16:27:47+08:00</lastmod>
@@ -554,7 +563,10 @@
     <loc>https://blog.seektao.cc/p/2406025/</loc>
     <lastmod>2024-06-24T16:06:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.seektao.cc/p/vim-keyworld/</loc>
+    <loc>https://blog.seektao.cc/tags/keyboard/</loc>
+    <lastmod>2024-06-23T13:06:24+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/vim-keyborad/</loc>
     <lastmod>2024-06-23T13:06:24+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/2406023/</loc>
