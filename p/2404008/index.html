@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="此前已经写过一篇关于 picgo的文章，使用picgo-core将markdown图片上传至smms图床 本次在这基础上更改一些内容。比如安装方">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
 <title>picgo自动上传图片到图床（优化版）</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2404008/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="picgo自动上传图片到图床（优化版）">
-<meta property='og:description' content="此前已经写过一篇关于 picgo的文章，使用picgo-core将markdown图片上传至smms图床 本次在这基础上更改一些内容。比如安装方">
+<meta property='og:description' content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
 <meta property='og:url' content='https://blog.seektao.cc/p/2404008/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='picgo' /><meta property='article:published_time' content='2024-04-08T15:07:04&#43;08:00'/><meta property='article:modified_time' content='2024-04-08T15:07:04&#43;08:00'/>
 <meta name="twitter:title" content="picgo自动上传图片到图床（优化版）">
-<meta name="twitter:description" content="此前已经写过一篇关于 picgo的文章，使用picgo-core将markdown图片上传至smms图床 本次在这基础上更改一些内容。比如安装方">
+<meta name="twitter:description" content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
   
 
 
@@ -245,7 +245,42 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#安装-yarn">安装 yarn</a></li>
+    <li><a href="#安装-picgo">安装 picgo</a></li>
+    <li><a href="#picgo配置">picgo配置</a></li>
+    <li><a href="#附录">附录</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -302,39 +337,53 @@
     <section class="article-content">
     
     
-    <p>此前已经写过一篇关于 picgo的文章，<a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
-    >使用picgo-core将markdown图片上传至smms图床</a>
-本次在这基础上更改一些内容。比如安装方式。</p>
-<p>本次采用yarn的方式安装picgo ，其他不变。</p>
-<p>为何要换安装方式？之前使用npm安装到全局，后来使用nvm管理node版本，在切换版本后，当前的版本是没有那个包的，比如我使用node 16安装picgo，在切换成node 18就没有了，当然解决办法有很多种。</p>
-<ul>
-<li>采用固定安装依赖位置，每安装切换一个新版本node，都重新设置全局依赖位置，麻烦。</li>
-<li>直接安装 picgo app。picgo-core可以解决的问题，何必使用app图形化一直常驻占内存。</li>
-</ul>
-<p>上面的方式都不该好管理，所以这次采用yarn来安装，yarn也是一个包管理工具，但是不用经常换版本，安装一次后，我们继续使用 nvm切换node版本，yarn也不受影响。</p>
-<p>好了，该下载 yarn了，<a class="link" href="https://classic.yarnpkg.com/latest.msi"  target="_blank" rel="noopener"
-    >Windows版点此下载</a></p>
-<p>其他版本下载地址：https://classic.yarnpkg.com/lang/en/docs/install</p>
+    <h2 id="前言">前言
+</h2><p>此前已经写过一篇关于 picgo 的文章，<a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
+    >使用 picgo-core 将 markdown 图片上传至 smms 图床</a></p>
+<p>本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。</p>
 <blockquote>
-<p>这里不要采用npm安装yarn，我这样使用出现过问题，建议使用 安装的方式。</p>
+<p>为何要切换安装方式？</p>
 </blockquote>
-<p>下载完成之后，安装，进入安装目录，地址栏打开cmd，输入 <code>yarn global add picgo</code> 安装picgo，接着将 picgo 路径添加到系统环境变量。</p>
+<p>之前使用 npm 安装到全局，后来使用 nvm 管理 node 版本，在切换版本后，当前的版本是没有 picgo 的，比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：</p>
+<ul>
+<li>固定安装依赖位置，每安装切换一个新版本 node，都重新设置全局依赖位置。</li>
+<li>直接安装 picgo app。 图形化一直常驻稍显占内存。</li>
+</ul>
+<h2 id="安装-yarn">安装 yarn
+</h2><p>上面的方式都不好管理，所以采用 yarn 来安装。</p>
+<p>yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 也不受影响。</p>
+<p>yarn 下载：<a class="link" href="https://classic.yarnpkg.com/latest.msi"  target="_blank" rel="noopener"
+    >Windows 版点此下载</a></p>
+<p>下载详情页：<a class="link" href="https://classic.yarnpkg.com/lang/en/docs/install"  target="_blank" rel="noopener"
+    >https://classic.yarnpkg.com/lang/en/docs/install</a></p>
+<blockquote>
+<p>不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。</p>
+</blockquote>
+<h2 id="安装-picgo">安装 picgo
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yarn global add picgo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将 yarn 全局的安装位置加入环境变量</p>
 <p>大多数情况下，全局安装目录位于以下位置：</p>
 <ul>
-<li><strong>Windows</strong>：<code>%LOCALAPPDATA%\Yarn\config\global\node_modules</code></li>
+<li><strong>Windows</strong>：<code>C:\Users\用户名\AppData\Local\Yarn\bin</code></li>
 <li><strong>Mac</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
 <li><strong>Linux</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
 </ul>
-<p>关于picgo安装配置信息可以参考之前的文章，<a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
-    >使用picgo-core将markdown图片上传至smms图床</a>，这里就不再赘述。</p>
-<p>还有关于使用 nvm ，可以看这里，<a class="link" href="https://www.seektao.cc/archives/nvmnode-duo-ban-ben-gong-cun-de-gong-ju"  target="_blank" rel="noopener"
+<h2 id="picgo配置">picgo配置
+</h2><p>关于 picgo 安装配置信息可以参考之前的文章，这里就不再赘述。</p>
+<p><a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
+    >使用 picgo-core 将 markdown 图片上传至 smms 图床</a></p>
+<h2 id="附录">附录
+</h2><p>关于 nvm ，可以看这里</p>
+<p><a class="link" href="https://www.seektao.cc/archives/nvmnode-duo-ban-ben-gong-cun-de-gong-ju"  target="_blank" rel="noopener"
     >nvm，Node 多版本共存的工具</a></p>
-<p>全文完。。。</p>
-<hr>
-<p>2024-04-30更新</p>
-<hr>
-<h2 id="heading">
-</h2>
+
 </section>
 
 
@@ -516,7 +565,7 @@
         
             2023 - 
         
-        2024 寻道之旅
+        2025 寻道之旅
     </section>
     
     <section class="powerby">

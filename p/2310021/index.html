@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 之前使用gitee当作图床，typora能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了smms图床，换了之后就可以了。 前置条件 NodeJs">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。 Picgo-Core 不推荐使用图形化的 pi">
 <title>使用picgo-core将markdown图片上传至smms图床</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2310021/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="使用picgo-core将markdown图片上传至smms图床">
-<meta property='og:description' content="前言 之前使用gitee当作图床，typora能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了smms图床，换了之后就可以了。 前置条件 NodeJs">
+<meta property='og:description' content="前言 之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。 Picgo-Core 不推荐使用图形化的 pi">
 <meta property='og:url' content='https://blog.seektao.cc/p/2310021/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='picgo' /><meta property='article:tag' content='smms' /><meta property='article:published_time' content='2023-10-21T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-21T14:07:10&#43;08:00'/>
 <meta name="twitter:title" content="使用picgo-core将markdown图片上传至smms图床">
-<meta name="twitter:description" content="前言 之前使用gitee当作图床，typora能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了smms图床，换了之后就可以了。 前置条件 NodeJs">
+<meta name="twitter:description" content="前言 之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。 Picgo-Core 不推荐使用图形化的 pi">
   
 
 
@@ -267,18 +267,22 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#nodejs">NodeJs</a></li>
+    <li><a href="#前言">前言</a></li>
     <li><a href="#picgo-core">Picgo-Core</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#smms">smms</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#picgo-plugin-smms-userhttpsgithubcomxlzy520picgo-plugin-smms-user"><a href="https://github.com/xlzy520/picgo-plugin-smms-user">picgo-plugin-smms-user</a></a></li>
-    <li><a href="#picgo-plugin-web-uploaderhttpsgithubcomyuki-xinpicgo-plugin-web-uploader"><a href="https://github.com/yuki-xin/picgo-plugin-web-uploader">picgo-plugin-web-uploader</a></a></li>
-    <li><a href="#picgo-plugin-telegraph-imagehttpsgithubcomsecflagpicgo-plugin-telegraph-image"><a href="https://github.com/secflag/picgo-plugin-telegraph-image">picgo-plugin-telegraph-image</a></a></li>
+    <li><a href="#图床服务">图床服务</a></li>
+    <li><a href="#smms">smms</a>
+      <ol>
+        <li><a href="#注册账号">注册账号</a></li>
+        <li><a href="#配置-picgo">配置 picgo</a></li>
+      </ol>
+    </li>
+    <li><a href="#插件">插件</a>
+      <ol>
+        <li><a href="#picgo-plugin-smms-userhttpsgithubcomxlzy520picgo-plugin-smms-usersmms必装"><a href="https://github.com/xlzy520/picgo-plugin-smms-user">picgo-plugin-smms-user</a>（smms必装）</a></li>
+        <li><a href="#picgo-plugin-web-uploaderhttpsgithubcomyuki-xinpicgo-plugin-web-uploader"><a href="https://github.com/yuki-xin/picgo-plugin-web-uploader">picgo-plugin-web-uploader</a></a></li>
+        <li><a href="#picgo-plugin-telegraph-imagehttpsgithubcomsecflagpicgo-plugin-telegraph-image"><a href="https://github.com/secflag/picgo-plugin-telegraph-image">picgo-plugin-telegraph-image</a></a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -344,14 +348,13 @@
     <section class="article-content">
     
     
-    <h1 id="前言">前言
-</h1><p>之前使用gitee当作图床，typora能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了smms图床，换了之后就可以了。</p>
-<h1 id="前置条件">前置条件
-</h1><h2 id="nodejs">NodeJs
-</h2><p><a class="link" href="https://nodejs.org/en"  target="_blank" rel="noopener"
-    >https://nodejs.org/en</a> 官网下载安装即可</p>
+    <h2 id="前言">前言
+</h2><p>之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。</p>
 <h2 id="picgo-core">Picgo-Core
-</h2><p>1）我这里不推荐使用图形化的picgo，占用内存。建议使用nodejs安装picgo，安装nodejs之后，再安装picgo。</p>
+</h2><p>不推荐使用图形化的 picgo，占用内存。建议使用 nodejs 安装 picgo，安装 nodejs 之后，再安装 picgo。</p>
+<p>NodeJs 官网：<a class="link" href="https://nodejs.org/en"  target="_blank" rel="noopener"
+    >https://nodejs.org/en</a></p>
+<p>NodeJs 安装之后使用 npm 安装 picgo</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -368,8 +371,8 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 用户家目录下的.picgo/config.json</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>2）把picgo所在的路径添加到系统环境变量，方便使用。</p>
-<p>3）在typora设置中，图像选择【上传图片】，上传服务选择 【costom command】,命令选择picgo所在的位置，不过需要在最后面加上 小写字母 u，如：</p>
+</div><p>把 picgo 所在的路径添加到系统环境变量，方便使用。</p>
+<p>在 typora 设置中，图像选择【上传图片】，上传服务选择 【costom command】,命令选择 picgo 所在的位置，不过需要在最后面加上 小写字母 u，如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -378,16 +381,18 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">picgo u
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>关于picgo的更多信息请参考：https://picgo.github.io/PicGo-Core-Doc/</p>
-<h1 id="图床服务">图床服务
-</h1><h2 id="smms">smms
-</h2><p>1）注册账号</p>
-<p>smms注册账户拥有5g的空间，对于文章上传图片来说，应该是够用了，如果不够大不了再注册个账户而已。</p>
-<p>官网：https://sm.ms/</p>
-<p>备用地址：https://smms.app</p>
-<p>注册账户之后，进入控制台查看api token，记下来，稍后使用。</p>
-<p>2）配置picgo</p>
-<p>首先确定好是否配置了环境变量，如果没有配置，请在picgo所在的路径打开终端。</p>
+</div><p>关于 picgo 的更多信息请参考：https://picgo.github.io/PicGo-Core-Doc/</p>
+<h2 id="图床服务">图床服务
+</h2><h2 id="smms">smms
+</h2><h3 id="注册账号">注册账号
+</h3><p>smms 注册账户拥有 5g 的空间，对于文章上传图片来说，应该是够用了，如果不够大不了再注册个账户而已。</p>
+<p>官网：<a class="link" href="https://sm.ms/"  target="_blank" rel="noopener"
+    >https://sm.ms/</a></p>
+<p>备用地址：<a class="link" href="https://smms.app"  target="_blank" rel="noopener"
+    >https://smms.app</a></p>
+<p>注册账户之后，进入控制台查看 api token，记下来，稍后使用。</p>
+<h3 id="配置-picgo">配置 picgo
+</h3><p>首先确定好是否配置了环境变量，如果没有配置，请在 picgo 所在的路径打开终端。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -418,24 +423,12 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 接着输入smms备用域名，如smms.app</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="/_media-sync_resources/20231203T140124/20231203T140124_32711.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20231129143737946"
-	
-	
-></p>
-<p>3）设置完成之后，随便截张图复制到typora中看它是否会自动上传。如果可以，则完成，失败，查看失败信息，进行排查。</p>
-<h1 id="插件">插件
-</h1><h2 id="picgo-plugin-smms-userhttpsgithubcomxlzy520picgo-plugin-smms-user"><a class="link" href="https://github.com/xlzy520/picgo-plugin-smms-user"  target="_blank" rel="noopener"
-    >picgo-plugin-smms-user</a>
-</h2><p>这个插件配置smms，可在typora中使用，返回链接自动更换typora默认的本地地址。</p>
-<ol>
-<li>安装</li>
-</ol>
+</div><p>设置完成之后，随便截张图复制到 typora 中看它是否会自动上传。如果可以，则完成，失败，查看失败信息，进行排查。</p>
+<h2 id="插件">插件
+</h2><h3 id="picgo-plugin-smms-userhttpsgithubcomxlzy520picgo-plugin-smms-usersmms必装"><a class="link" href="https://github.com/xlzy520/picgo-plugin-smms-user"  target="_blank" rel="noopener"
+    >picgo-plugin-smms-user</a>（smms必装）
+</h3><p>这个插件配置 smms，可在 typora 中使用，返回链接自动更换 typora 默认的本地地址。</p>
+<p>安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -444,9 +437,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo install picgo-plugin-smms-user
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>配置</li>
-</ol>
+</div><p>配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -455,9 +446,19 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo <span class="nb">set</span> uploader
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="picgo-plugin-web-uploaderhttpsgithubcomyuki-xinpicgo-plugin-web-uploader"><a class="link" href="https://github.com/yuki-xin/picgo-plugin-web-uploader"  target="_blank" rel="noopener"
+</div><p><img src="https://s2.loli.net/2025/01/05/ndHlxiw9T3jqaRp.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="图片.png"
+	
+	
+></p>
+<h3 id="picgo-plugin-web-uploaderhttpsgithubcomyuki-xinpicgo-plugin-web-uploader"><a class="link" href="https://github.com/yuki-xin/picgo-plugin-web-uploader"  target="_blank" rel="noopener"
     >picgo-plugin-web-uploader</a>
-</h2><div class="highlight"><div class="chroma">
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -467,13 +468,11 @@
 </span></span><span class="line"><span class="cl">picgo install picgo-plugin-web-uploader
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="picgo-plugin-telegraph-imagehttpsgithubcomsecflagpicgo-plugin-telegraph-image"><a class="link" href="https://github.com/secflag/picgo-plugin-telegraph-image"  target="_blank" rel="noopener"
+</div><h3 id="picgo-plugin-telegraph-imagehttpsgithubcomsecflagpicgo-plugin-telegraph-image"><a class="link" href="https://github.com/secflag/picgo-plugin-telegraph-image"  target="_blank" rel="noopener"
     >picgo-plugin-telegraph-image</a>
-</h2><p>这个插件用于开源的自建图床服务，<a class="link" href="https://github.com/cf-pages/Telegraph-Image"  target="_blank" rel="noopener"
+</h3><p>这个插件用于开源的自建图床服务，<a class="link" href="https://github.com/cf-pages/Telegraph-Image"  target="_blank" rel="noopener"
     >Telegraph-Image</a></p>
-<ol>
-<li>安装</li>
-</ol>
+<p>安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -482,9 +481,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo install picgo-plugin-telegraph-image
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>配置</li>
-</ol>
+</div><p>配置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -493,19 +490,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo <span class="nb">set</span> uploader
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="附件">附件
-</h1><p>配置文件示例</p>
-<p><img src="/_media-sync_resources/20231028T200908/20231028T200908_21858.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20231014000936532"
-	
-	
-></p>
-
+</div>
 </section>
 
 
@@ -689,7 +674,7 @@
         
             2023 - 
         
-        2024 寻道之旅
+        2025 寻道之旅
     </section>
     
     <section class="powerby">

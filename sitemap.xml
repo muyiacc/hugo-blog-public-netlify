@@ -3,24 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.seektao.cc/</loc>
-    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/categories/backend/</loc>
-    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/categories/</loc>
-    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/categories/frontend/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/lunarvim/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/npm/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/pnpm/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/post/</loc>
-    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/yarn/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/250105194638/</loc>
+    <lastmod>2025-01-05T19:47:01+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/categories/backend/</loc>
+    <lastmod>2024-12-30T14:32:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/241230143236/</loc>
+    <lastmod>2024-12-30T14:32:58+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/python/</loc>
+    <lastmod>2024-12-30T14:32:58+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/rust/</loc>
     <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/241228140134/</loc>
-    <lastmod>2024-12-28T14:01:34+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/tags/</loc>
     <lastmod>2024-12-28T14:01:34+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/update/</loc>
@@ -158,9 +182,6 @@
     <loc>https://blog.seektao.cc/p/241012111337/</loc>
     <lastmod>2024-10-12T11:13:37+08:00</lastmod>
   </url><url>
-    <loc>https://blog.seektao.cc/categories/frontend/</loc>
-    <lastmod>2024-10-12T11:13:37+08:00</lastmod>
-  </url><url>
     <loc>https://blog.seektao.cc/tags/vue/</loc>
     <lastmod>2024-10-12T08:51:29+08:00</lastmod>
   </url><url>
@@ -187,9 +208,6 @@
   </url><url>
     <loc>https://blog.seektao.cc/tags/video/</loc>
     <lastmod>2024-10-09T15:58:09+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/tags/yarn/</loc>
-    <lastmod>2024-10-08T08:29:30+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/241008082930/</loc>
     <lastmod>2024-10-08T08:29:30+08:00</lastmod>
@@ -434,9 +452,6 @@
     <loc>https://blog.seektao.cc/p/2407017/</loc>
     <lastmod>2024-07-17T15:07:48+08:00</lastmod>
   </url><url>
-    <loc>https://blog.seektao.cc/tags/python/</loc>
-    <lastmod>2024-07-17T15:07:48+08:00</lastmod>
-  </url><url>
     <loc>https://blog.seektao.cc/p/2407018/</loc>
     <lastmod>2024-07-17T15:07:48+08:00</lastmod>
   </url><url>
@@ -481,9 +496,6 @@
   </url><url>
     <loc>https://blog.seektao.cc/p/2407012/</loc>
     <lastmod>2024-07-12T23:07:42+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/tags/lunarvim/</loc>
-    <lastmod>2024-07-11T23:07:42+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/2407011/</loc>
     <lastmod>2024-07-11T23:07:42+08:00</lastmod>
