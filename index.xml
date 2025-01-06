@@ -4596,23 +4596,32 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;手动安装-windows&#34;&gt;手动安装-Windows
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;创建目录&lt;code&gt;~/.g/bin&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;release&lt;/a&gt;的 windows 版本的二进制压缩包, 解压之后放到&lt;code&gt;~/.g/bin&lt;/code&gt;目录下&lt;/li&gt;
-&lt;li&gt;默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe&lt;/li&gt;
-&lt;li&gt;将 &lt;code&gt;~/.g/bin&lt;/code&gt;添加到系统环境变量&lt;/li&gt;
-&lt;li&gt;添加&lt;code&gt;GOROOT&lt;/code&gt;环境变量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;使用&#34;&gt;使用
-&lt;/h2&gt;&lt;p&gt;如果需要修改 g 的安装目录，需要添加几个环境变量&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;G_EXPERIMENTAL=true，开启实验特性支持，请参考：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/blob/master/README_CN.md#faq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;G_HOME，指向g的安装目录&lt;/li&gt;
-&lt;li&gt;GOROOT，指向go的目录&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;查询当前可供安装的&lt;code&gt;stable&lt;/code&gt;状态的 go 版本&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;创建目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;/.g/bin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载 &lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;release&lt;/a&gt; 的 windows 版本的二进制压缩包&lt;/p&gt;
+&lt;p&gt;解压之后放到&lt;code&gt;%USERPROFILE%/.g/bin&lt;/code&gt;目录下&lt;/p&gt;
+&lt;p&gt;默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe&lt;/p&gt;
+&lt;p&gt;将 &lt;code&gt;%USERPROFILE%/.g/bin&lt;/code&gt;添加到系统环境变量&lt;/p&gt;
+&lt;p&gt;添加&lt;code&gt;GOROOT&lt;/code&gt;环境变量&lt;/p&gt;
+&lt;h2 id=&#34;命令介绍&#34;&gt;命令介绍
+&lt;/h2&gt;&lt;p&gt;查询当前可供安装的 go 版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g lsr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查询当前可供安装的&lt;code&gt;stable&lt;/code&gt;状态的 go 版本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4621,7 +4630,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls-remote stable
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;安装目标 go 版本&lt;code&gt;1.22.4&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;安装指定 go 版本&lt;code&gt;1.22.4&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4639,16 +4648,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;查询可供安装的所有 go 版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls-remote
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;切换到另一个已安装的 go 版本&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;使用已安装的 go 版本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -4702,10 +4702,10 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g self uninstall
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;环境变量&#34;&gt;环境变量
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
+&lt;/div&gt;&lt;h2 id=&#34;环境变量&#34;&gt;环境变量
+&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_MIRROR&lt;/code&gt;有什么作用？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;由于中国大陆无法自由访问 Golang 官网，导致查询及下载 go 版本都变得困难，因此可以通过该环境变量指定一个或多个镜像站点（多个镜像站点之间使用英文逗号分隔），g 将从该站点查询、下载可用的 go 版本。已知的可用镜像站点如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Go 官方镜像站：&lt;a class=&#34;link&#34; href=&#34;https://golang.google.cn/dl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4717,28 +4717,34 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;li&gt;华中科技大学开源镜像站：&lt;a class=&#34;link&#34; href=&#34;https://mirrors.hust.edu.cn/golang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mirrors.hust.edu.cn/golang/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中国科学技术大学开源镜像站：&lt;a class=&#34;link&#34; href=&#34;https://mirrors.ustc.edu.cn/golang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://mirrors.ustc.edu.cn/golang/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
+    &gt;https://mirrors.ustc.edu.cn/golang/&lt;/a&gt;
+&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_EXPERIMENTAL&lt;/code&gt;有什么作用？&lt;/p&gt;
-&lt;p&gt;当该环境变量的值为&lt;code&gt;true&lt;/code&gt;时，将&lt;strong&gt;开启所有的实验特性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当该环境变量的值为&lt;code&gt;true&lt;/code&gt;时，将&lt;strong&gt;开启所有的实验特性&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_HOME&lt;/code&gt;有什么作用？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;按照惯例，g 默认会将&lt;code&gt;~/.g&lt;/code&gt;目录作为其家目录。若想自定义家目录（Windows 用户需求强烈），可使用该环境变量切换到其他家目录。由于&lt;strong&gt;该特性还属于实验特性&lt;/strong&gt;，需要先开启实验特性开关&lt;code&gt;G_EXPERIMENTAL=true&lt;/code&gt;才能生效。特别注意，该方案并不十分完美，因此才将其归类为实验特性，详见&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/issues/18&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;#18&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;相似项目：&lt;/p&gt;
+&lt;h2 id=&#34;更多配置&#34;&gt;更多配置
+&lt;/h2&gt;&lt;h3 id=&#34;修改-g-的安装目录&#34;&gt;修改 g 的安装目录
+&lt;/h3&gt;&lt;p&gt;需要添加几个环境变量&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;gvm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;goenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;G_EXPERIMENTAL=true，开启实验特性支持，请参考：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/blob/master/README_CN.md#faq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;G_HOME，指向 g 的安装目录&lt;/li&gt;
+&lt;li&gt;GOROOT，指向 go 的目录&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;go的更多配置&#34;&gt;go的更多配置
-&lt;/h2&gt;&lt;p&gt;请查看 [[Go的安装和配置]]&lt;/p&gt;
+&lt;h2 id=&#34;相似项目&#34;&gt;相似项目
+&lt;/h2&gt;&lt;h3 id=&#34;gvm&#34;&gt;gvm
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/moovweb/gvm&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;goenv&#34;&gt;goenv
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/go-nv/goenv&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -9228,220 +9234,18 @@ debian：sudo apt install gcc&lt;/p&gt;
         
         <guid>https://blog.seektao.cc/p/2406008/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;style type=&#34;text/css&#34;&gt;
-     
-    .notice {
-        --title-color: #fff;
-        --title-background-color: #6be;
-        --content-color: #444;
-        --content-background-color: #e7f2fa;
-    }
-
-    .notice.info {
-        --title-background-color: #fb7;
-        --content-background-color: #fec;
-    }
-
-    .notice.tip {
-        --title-background-color: #5a5;
-        --content-background-color: #efe;
-    }
-
-    .notice.warning {
-        --title-background-color: #c33;
-        --content-background-color: #fee;
-    }
-
-     
-    @media (prefers-color-scheme:dark) {
-        .notice {
-            --title-color: #fff;
-            --title-background-color: #069;
-            --content-color: #ddd;
-            --content-background-color: #023;
-        }
-
-        .notice.info {
-            --title-background-color: #a50;
-            --content-background-color: #420;
-        }
-
-        .notice.tip {
-            --title-background-color: #363;
-            --content-background-color: #121;
-        }
-
-        .notice.warning {
-            --title-background-color: #800;
-            --content-background-color: #400;
-        }
-    }
-
-    body.dark .notice {
-        --title-color: #fff;
-        --title-background-color: #069;
-        --content-color: #ddd;
-        --content-background-color: #023;
-    }
-
-    body.dark .notice.info {
-        --title-background-color: #a50;
-        --content-background-color: #420;
-    }
-
-    body.dark .notice.tip {
-        --title-background-color: #363;
-        --content-background-color: #121;
-    }
-
-    body.dark .notice.warning {
-        --title-background-color: #800;
-        --content-background-color: #400;
-    }
-
-     
-    .notice {
-        padding: 18px;
-        line-height: 24px;
-        margin-bottom: 24px;
-        border-radius: 4px;
-        color: var(--content-color);
-        background: var(--content-background-color);
-    }
-
-    .notice p:last-child {
-        margin-bottom: 0
-    }
-
-     
-    .notice-title {
-        margin: -18px -18px 12px;
-        padding: 4px 18px;
-        border-radius: 4px 4px 0 0;
-        font-weight: 700;
-        color: var(--title-color);
-        background: var(--title-background-color);
-    }
-
-     
-    .icon-notice {
-        display: inline-flex;
-        align-self: center;
-        margin-right: 8px;
-    }
-
-    .icon-notice img,
-    .icon-notice svg {
-        height: 1em;
-        width: 1em;
-        fill: currentColor;
-    }
-
-    .icon-notice img,
-    .icon-notice.baseline svg {
-        top: .125em;
-        position: relative;
-    }
-&lt;/style&gt;&lt;div class=&#34;notice warning&#34; &gt;
-    &lt;p class=&#34;notice-title&#34;&gt;
-        &lt;span class=&#34;icon-notice baseline&#34;&gt;
-            &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;126 76.5 300 300&#34;&gt;
-  &lt;path d=&#34;M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z&#34;/&gt;
-&lt;/svg&gt;
-
-        &lt;/span&gt;警告&lt;/p&gt;&lt;p&gt;本篇安装过程不建议观看，请使用搜索并移步 &lt;code&gt;Go的多版本管理工具：g&lt;/code&gt;&lt;/p&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Debian&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;默认版本仓库可能比较旧，建议不用。&lt;/p&gt;
-&lt;p&gt;go 没有官方 apt 仓库，只有手动安装来获取所需版本，但是管理go版本比较麻烦，这里使用 gvm来管理Go版本&lt;/p&gt;
-&lt;p&gt;注意：gvm使用安装go过程并不简单，且容易出现问题。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;gvm源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/moovweb/gvm&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;安装 gvm&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;请使用搜索并移步&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install bison
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash &amp;lt; &amp;lt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;刷新环境变量，查看gvm版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gvm version
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;安装go，使用gvm安装go之前还需要安装go&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install golang
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;gvm安装新版本go还得安装一个低版本go为引导&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gvm install go1.20.6
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gvm use go1.20.6
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;再安装 go较高的版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gvm install go1.22.4
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gvm use go1.22.4
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go version
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g，Go的多版本管理工具
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置
 &lt;/h2&gt;&lt;h3 id=&#34;goproxy&#34;&gt;GOPROXY
-&lt;/h3&gt;&lt;p&gt;配置代理&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;设置代理，加快 go 相关包的下载&lt;/p&gt;
 &lt;p&gt;七牛云&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -9454,7 +9258,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;gopath&#34;&gt;GOPATH
-&lt;/h3&gt;&lt;p&gt;使用以下命令设置 &lt;code&gt;GOPATH&lt;/code&gt;（假设设置为 &lt;code&gt;~/codespace/goProjects&lt;/code&gt;）：&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;设置 go 的家目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -9469,18 +9273,19 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;src&lt;/code&gt;: 存放源代码。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;pkg&lt;/code&gt;: 存放编译后的包。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: 存放go下载的可执行文件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: 存放 go 下载的可执行文件。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/src &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/pkg &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/bin
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~/codespace/goProjects
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/src &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/pkg &lt;span class=&#34;nv&#34;&gt;$GOPATH&lt;/span&gt;/bin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;以后就可以把代码放在 &lt;code&gt;$GOPATH/src&lt;/code&gt;下了。&lt;/p&gt;
-&lt;p&gt;为了方便使用 Go 下载的包的可执行文件，将 &lt;code&gt;$GOPATH/bin&lt;/code&gt; 加入到你的 &lt;code&gt;PATH&lt;/code&gt; 中（如 &lt;code&gt;~/.bashrc&lt;/code&gt; 或 &lt;code&gt;~/.zshrc&lt;/code&gt;）：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;为了方便使用 Go 下载的可执行文件，将 &lt;code&gt;$GOPATH/bin&lt;/code&gt; 加入到&lt;code&gt;PATH&lt;/code&gt; 中（如 &lt;code&gt;~/.bashrc&lt;/code&gt; 或 &lt;code&gt;~/.zshrc&lt;/code&gt;）：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -9491,16 +9296,6 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 适用于unix系统 bash环境&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;export PATH=$PATH:$GOPATH/bin&amp;#39;&lt;/span&gt; &amp;gt;&amp;gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;go命令行&#34;&gt;Go命令行
-&lt;/h2&gt;&lt;p&gt;自动解决依赖&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;go mod tidy
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>

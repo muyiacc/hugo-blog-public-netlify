@@ -135,23 +135,32 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;手动安装-windows&#34;&gt;手动安装-Windows
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;创建目录&lt;code&gt;~/.g/bin&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;下载&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;release&lt;/a&gt;的 windows 版本的二进制压缩包, 解压之后放到&lt;code&gt;~/.g/bin&lt;/code&gt;目录下&lt;/li&gt;
-&lt;li&gt;默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe&lt;/li&gt;
-&lt;li&gt;将 &lt;code&gt;~/.g/bin&lt;/code&gt;添加到系统环境变量&lt;/li&gt;
-&lt;li&gt;添加&lt;code&gt;GOROOT&lt;/code&gt;环境变量&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;使用&#34;&gt;使用
-&lt;/h2&gt;&lt;p&gt;如果需要修改 g 的安装目录，需要添加几个环境变量&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;G_EXPERIMENTAL=true，开启实验特性支持，请参考：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/blob/master/README_CN.md#faq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;FAQ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;G_HOME，指向g的安装目录&lt;/li&gt;
-&lt;li&gt;GOROOT，指向go的目录&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;查询当前可供安装的&lt;code&gt;stable&lt;/code&gt;状态的 go 版本&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;创建目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;/.g/bin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载 &lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/releases&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;release&lt;/a&gt; 的 windows 版本的二进制压缩包&lt;/p&gt;
+&lt;p&gt;解压之后放到&lt;code&gt;%USERPROFILE%/.g/bin&lt;/code&gt;目录下&lt;/p&gt;
+&lt;p&gt;默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe&lt;/p&gt;
+&lt;p&gt;将 &lt;code&gt;%USERPROFILE%/.g/bin&lt;/code&gt;添加到系统环境变量&lt;/p&gt;
+&lt;p&gt;添加&lt;code&gt;GOROOT&lt;/code&gt;环境变量&lt;/p&gt;
+&lt;h2 id=&#34;命令介绍&#34;&gt;命令介绍
+&lt;/h2&gt;&lt;p&gt;查询当前可供安装的 go 版本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g lsr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查询当前可供安装的&lt;code&gt;stable&lt;/code&gt;状态的 go 版本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -160,7 +169,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls-remote stable
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;安装目标 go 版本&lt;code&gt;1.22.4&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;安装指定 go 版本&lt;code&gt;1.22.4&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -178,16 +187,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;查询可供安装的所有 go 版本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g ls-remote
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;切换到另一个已安装的 go 版本&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;使用已安装的 go 版本&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -241,10 +241,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g self uninstall
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;环境变量&#34;&gt;环境变量
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;
+&lt;/div&gt;&lt;h2 id=&#34;环境变量&#34;&gt;环境变量
+&lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_MIRROR&lt;/code&gt;有什么作用？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;由于中国大陆无法自由访问 Golang 官网，导致查询及下载 go 版本都变得困难，因此可以通过该环境变量指定一个或多个镜像站点（多个镜像站点之间使用英文逗号分隔），g 将从该站点查询、下载可用的 go 版本。已知的可用镜像站点如下：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Go 官方镜像站：&lt;a class=&#34;link&#34; href=&#34;https://golang.google.cn/dl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -256,28 +256,34 @@
 &lt;li&gt;华中科技大学开源镜像站：&lt;a class=&#34;link&#34; href=&#34;https://mirrors.hust.edu.cn/golang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mirrors.hust.edu.cn/golang/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;中国科学技术大学开源镜像站：&lt;a class=&#34;link&#34; href=&#34;https://mirrors.ustc.edu.cn/golang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://mirrors.ustc.edu.cn/golang/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
+    &gt;https://mirrors.ustc.edu.cn/golang/&lt;/a&gt;
+&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_EXPERIMENTAL&lt;/code&gt;有什么作用？&lt;/p&gt;
-&lt;p&gt;当该环境变量的值为&lt;code&gt;true&lt;/code&gt;时，将&lt;strong&gt;开启所有的实验特性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当该环境变量的值为&lt;code&gt;true&lt;/code&gt;时，将&lt;strong&gt;开启所有的实验特性&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;环境变量&lt;code&gt;G_HOME&lt;/code&gt;有什么作用？&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;按照惯例，g 默认会将&lt;code&gt;~/.g&lt;/code&gt;目录作为其家目录。若想自定义家目录（Windows 用户需求强烈），可使用该环境变量切换到其他家目录。由于&lt;strong&gt;该特性还属于实验特性&lt;/strong&gt;，需要先开启实验特性开关&lt;code&gt;G_EXPERIMENTAL=true&lt;/code&gt;才能生效。特别注意，该方案并不十分完美，因此才将其归类为实验特性，详见&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/issues/18&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;#18&lt;/a&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;相似项目：&lt;/p&gt;
+&lt;h2 id=&#34;更多配置&#34;&gt;更多配置
+&lt;/h2&gt;&lt;h3 id=&#34;修改-g-的安装目录&#34;&gt;修改 g 的安装目录
+&lt;/h3&gt;&lt;p&gt;需要添加几个环境变量&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;gvm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;goenv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;G_EXPERIMENTAL=true，开启实验特性支持，请参考：&lt;a class=&#34;link&#34; href=&#34;https://github.com/voidint/g/blob/master/README_CN.md#faq&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FAQ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;G_HOME，指向 g 的安装目录&lt;/li&gt;
+&lt;li&gt;GOROOT，指向 go 的目录&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;go的更多配置&#34;&gt;go的更多配置
-&lt;/h2&gt;&lt;p&gt;请查看 [[Go的安装和配置]]&lt;/p&gt;
+&lt;h2 id=&#34;相似项目&#34;&gt;相似项目
+&lt;/h2&gt;&lt;h3 id=&#34;gvm&#34;&gt;gvm
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/moovweb/gvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/moovweb/gvm&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;goenv&#34;&gt;goenv
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/go-nv/goenv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/go-nv/goenv&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         

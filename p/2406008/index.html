@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装 请使用搜索并移步 1 g，Go的多版本管理工具 配置 GOPROXY 设置代理，加快 go 相关包的下载 七牛云 1 2 go env -w GO111MODULE=on # 启用模块 go env -w GOPROXY=https://goproxy.cn,direct # 加快go模块下载速度 GOPATH">
 <title>Go的安装和配置</title>
 
 <link rel='canonical' href='https://blog.seektao.cc/p/2406008/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Go的安装和配置">
-<meta property='og:description' content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
+<meta property='og:description' content="安装 请使用搜索并移步 1 g，Go的多版本管理工具 配置 GOPROXY 设置代理，加快 go 相关包的下载 七牛云 1 2 go env -w GO111MODULE=on # 启用模块 go env -w GOPROXY=https://goproxy.cn,direct # 加快go模块下载速度 GOPATH">
 <meta property='og:url' content='https://blog.seektao.cc/p/2406008/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='go' /><meta property='article:published_time' content='2024-06-08T16:06:01&#43;08:00'/><meta property='article:modified_time' content='2024-06-08T16:06:01&#43;08:00'/>
 <meta name="twitter:title" content="Go的安装和配置">
-<meta name="twitter:description" content="安装 警告 本篇安装过程不建议观看，请使用搜索并移步 Go的多版本管理工具：g Linux Debian 默认版本仓库可能比较旧，建议不用。 go 没有官方 apt 仓库，只有手动安装">
+<meta name="twitter:description" content="安装 请使用搜索并移步 1 g，Go的多版本管理工具 配置 GOPROXY 设置代理，加快 go 相关包的下载 七牛云 1 2 go env -w GO111MODULE=on # 启用模块 go env -w GOPROXY=https://goproxy.cn,direct # 加快go模块下载速度 GOPATH">
   
 
 
@@ -274,7 +274,6 @@
         <li><a href="#gopath">GOPATH</a></li>
       </ol>
     </li>
-    <li><a href="#go命令行">Go命令行</a></li>
   </ol>
 </nav>
         </div>
@@ -341,220 +340,18 @@
     
     
     <h2 id="安装">安装
-</h2><style type="text/css">
-     
-    .notice {
-        --title-color: #fff;
-        --title-background-color: #6be;
-        --content-color: #444;
-        --content-background-color: #e7f2fa;
-    }
-
-    .notice.info {
-        --title-background-color: #fb7;
-        --content-background-color: #fec;
-    }
-
-    .notice.tip {
-        --title-background-color: #5a5;
-        --content-background-color: #efe;
-    }
-
-    .notice.warning {
-        --title-background-color: #c33;
-        --content-background-color: #fee;
-    }
-
-     
-    @media (prefers-color-scheme:dark) {
-        .notice {
-            --title-color: #fff;
-            --title-background-color: #069;
-            --content-color: #ddd;
-            --content-background-color: #023;
-        }
-
-        .notice.info {
-            --title-background-color: #a50;
-            --content-background-color: #420;
-        }
-
-        .notice.tip {
-            --title-background-color: #363;
-            --content-background-color: #121;
-        }
-
-        .notice.warning {
-            --title-background-color: #800;
-            --content-background-color: #400;
-        }
-    }
-
-    body.dark .notice {
-        --title-color: #fff;
-        --title-background-color: #069;
-        --content-color: #ddd;
-        --content-background-color: #023;
-    }
-
-    body.dark .notice.info {
-        --title-background-color: #a50;
-        --content-background-color: #420;
-    }
-
-    body.dark .notice.tip {
-        --title-background-color: #363;
-        --content-background-color: #121;
-    }
-
-    body.dark .notice.warning {
-        --title-background-color: #800;
-        --content-background-color: #400;
-    }
-
-     
-    .notice {
-        padding: 18px;
-        line-height: 24px;
-        margin-bottom: 24px;
-        border-radius: 4px;
-        color: var(--content-color);
-        background: var(--content-background-color);
-    }
-
-    .notice p:last-child {
-        margin-bottom: 0
-    }
-
-     
-    .notice-title {
-        margin: -18px -18px 12px;
-        padding: 4px 18px;
-        border-radius: 4px 4px 0 0;
-        font-weight: 700;
-        color: var(--title-color);
-        background: var(--title-background-color);
-    }
-
-     
-    .icon-notice {
-        display: inline-flex;
-        align-self: center;
-        margin-right: 8px;
-    }
-
-    .icon-notice img,
-    .icon-notice svg {
-        height: 1em;
-        width: 1em;
-        fill: currentColor;
-    }
-
-    .icon-notice img,
-    .icon-notice.baseline svg {
-        top: .125em;
-        position: relative;
-    }
-</style><div class="notice warning" >
-    <p class="notice-title">
-        <span class="icon-notice baseline">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300">
-  <path d="M297.431 324.397v-34.255c0-3.245-2.344-5.95-5.358-5.95h-32.146c-3.014 0-5.358 2.705-5.358 5.95v34.255c0 3.245 2.344 5.95 5.358 5.95h32.146c3.014 0 5.358-2.705 5.358-5.95Zm-.335-67.428 3.014-82.753c0-1.081-.502-2.524-1.674-3.425-1.005-.902-2.512-1.983-4.019-1.983h-36.834c-1.507 0-3.014 1.081-4.019 1.983-1.172.901-1.674 2.704-1.674 3.786l2.846 82.392c0 2.344 2.512 4.146 5.693 4.146h30.975c3.013 0 5.525-1.803 5.692-4.146Zm-2.344-168.39L423.34 342.425c3.683 7.032 3.516 15.686-.335 22.717-3.85 7.031-10.883 11.358-18.417 11.358H147.413c-7.534 0-14.566-4.327-18.417-11.358-3.85-7.031-4.018-15.685-.335-22.716L257.248 88.578C260.93 81.188 268.13 76.5 276 76.5c7.87 0 15.069 4.688 18.752 12.08Z"/>
-</svg>
-
-        </span>警告</p><p>本篇安装过程不建议观看，请使用搜索并移步 <code>Go的多版本管理工具：g</code></p></div>
-
-<p><strong>Linux</strong></p>
-<p><strong>Debian</strong></p>
-<p>默认版本仓库可能比较旧，建议不用。</p>
-<p>go 没有官方 apt 仓库，只有手动安装来获取所需版本，但是管理go版本比较麻烦，这里使用 gvm来管理Go版本</p>
-<p>注意：gvm使用安装go过程并不简单，且容易出现问题。</p>
-<blockquote>
-<p>gvm源码：<a class="link" href="https://github.com/moovweb/gvm"  target="_blank" rel="noopener"
-    >https://github.com/moovweb/gvm</a></p>
-</blockquote>
-<p>安装 gvm</p>
+</h2><p>请使用搜索并移步</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install bison
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt; &lt;<span class="o">(</span>curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>刷新环境变量，查看gvm版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
-</span></span><span class="line"><span class="cl">gvm version
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>安装go，使用gvm安装go之前还需要安装go</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install golang
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>gvm安装新版本go还得安装一个低版本go为引导</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gvm install go1.20.6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gvm use go1.20.6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再安装 go较高的版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gvm install go1.22.4
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gvm use go1.22.4
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go version
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">g，Go的多版本管理工具
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="配置">配置
 </h2><h3 id="goproxy">GOPROXY
-</h3><p>配置代理</p>
+</h3><p>设置代理，加快 go 相关包的下载</p>
 <p>七牛云</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -567,7 +364,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="gopath">GOPATH
-</h3><p>使用以下命令设置 <code>GOPATH</code>（假设设置为 <code>~/codespace/goProjects</code>）：</p>
+</h3><p>设置 go 的家目录</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -582,18 +379,19 @@
 <ul>
 <li><code>src</code>: 存放源代码。</li>
 <li><code>pkg</code>: 存放编译后的包。</li>
-<li><code>bin</code>: 存放go下载的可执行文件。</li>
+<li><code>bin</code>: 存放 go 下载的可执行文件。</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$GOPATH</span>/src <span class="nv">$GOPATH</span>/pkg <span class="nv">$GOPATH</span>/bin
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/codespace/goProjects
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$GOPATH</span>/src <span class="nv">$GOPATH</span>/pkg <span class="nv">$GOPATH</span>/bin
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>以后就可以把代码放在 <code>$GOPATH/src</code>下了。</p>
-<p>为了方便使用 Go 下载的包的可执行文件，将 <code>$GOPATH/bin</code> 加入到你的 <code>PATH</code> 中（如 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>）：</p>
+</div><p>为了方便使用 Go 下载的可执行文件，将 <code>$GOPATH/bin</code> 加入到<code>PATH</code> 中（如 <code>~/.bashrc</code> 或 <code>~/.zshrc</code>）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -604,16 +402,6 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 适用于unix系统 bash环境</span>
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=$PATH:$GOPATH/bin&#39;</span> &gt;&gt; ~/.bashrc
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="go命令行">Go命令行
-</h2><p>自动解决依赖</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go mod tidy
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

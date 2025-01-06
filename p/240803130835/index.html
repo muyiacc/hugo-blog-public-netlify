@@ -277,12 +277,19 @@
         <li><a href="#手动安装-windows">手动安装-Windows</a></li>
       </ol>
     </li>
-    <li><a href="#使用">使用</a>
+    <li><a href="#命令介绍">命令介绍</a></li>
+    <li><a href="#环境变量">环境变量</a></li>
+    <li><a href="#更多配置">更多配置</a>
       <ol>
-        <li><a href="#环境变量">环境变量</a></li>
+        <li><a href="#修改-g-的安装目录">修改 g 的安装目录</a></li>
       </ol>
     </li>
-    <li><a href="#go的更多配置">go的更多配置</a></li>
+    <li><a href="#相似项目">相似项目</a>
+      <ol>
+        <li><a href="#gvm">gvm</a></li>
+        <li><a href="#goenv">goenv</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -478,23 +485,32 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="手动安装-windows">手动安装-Windows
-</h3><ul>
-<li>创建目录<code>~/.g/bin</code></li>
-<li>下载<a class="link" href="https://github.com/voidint/g/releases"  target="_blank" rel="noopener"
-    >release</a>的 windows 版本的二进制压缩包, 解压之后放到<code>~/.g/bin</code>目录下</li>
-<li>默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe</li>
-<li>将 <code>~/.g/bin</code>添加到系统环境变量</li>
-<li>添加<code>GOROOT</code>环境变量</li>
-</ul>
-<h2 id="使用">使用
-</h2><p>如果需要修改 g 的安装目录，需要添加几个环境变量</p>
-<ul>
-<li>G_EXPERIMENTAL=true，开启实验特性支持，请参考：<a class="link" href="https://github.com/voidint/g/blob/master/README_CN.md#faq"  target="_blank" rel="noopener"
-    >FAQ</a></li>
-<li>G_HOME，指向g的安装目录</li>
-<li>GOROOT，指向go的目录</li>
-</ul>
-<p>查询当前可供安装的<code>stable</code>状态的 go 版本</p>
+</h3><p>创建目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="nv">%USERPROFILE%</span>/.g/bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载 <a class="link" href="https://github.com/voidint/g/releases"  target="_blank" rel="noopener"
+    >release</a> 的 windows 版本的二进制压缩包</p>
+<p>解压之后放到<code>%USERPROFILE%/.g/bin</code>目录下</p>
+<p>默认二进制文件名是 g.exe, 如果你已经用 g 这个命令已经用作为 git 的缩写，那么你可以把 g.exe 改为其他名字，如 gvm.exe</p>
+<p>将 <code>%USERPROFILE%/.g/bin</code>添加到系统环境变量</p>
+<p>添加<code>GOROOT</code>环境变量</p>
+<h2 id="命令介绍">命令介绍
+</h2><p>查询当前可供安装的 go 版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">g lsr
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查询当前可供安装的<code>stable</code>状态的 go 版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -503,7 +519,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">g ls-remote stable
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>安装目标 go 版本<code>1.22.4</code></p>
+</div><p>安装指定 go 版本<code>1.22.4</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -521,16 +537,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">g ls
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>查询可供安装的所有 go 版本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">g ls-remote
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>切换到另一个已安装的 go 版本</p>
+</div><p>使用已安装的 go 版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -584,10 +591,10 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">g self uninstall
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="环境变量">环境变量
-</h3><ul>
-<li>
+</div><h2 id="环境变量">环境变量
+</h2><blockquote>
 <p>环境变量<code>G_MIRROR</code>有什么作用？</p>
+</blockquote>
 <p>由于中国大陆无法自由访问 Golang 官网，导致查询及下载 go 版本都变得困难，因此可以通过该环境变量指定一个或多个镜像站点（多个镜像站点之间使用英文逗号分隔），g 将从该站点查询、下载可用的 go 版本。已知的可用镜像站点如下：</p>
 <ul>
 <li>Go 官方镜像站：<a class="link" href="https://golang.google.cn/dl/"  target="_blank" rel="noopener"
@@ -599,28 +606,34 @@
 <li>华中科技大学开源镜像站：<a class="link" href="https://mirrors.hust.edu.cn/golang/"  target="_blank" rel="noopener"
     >https://mirrors.hust.edu.cn/golang/</a></li>
 <li>中国科学技术大学开源镜像站：<a class="link" href="https://mirrors.ustc.edu.cn/golang/"  target="_blank" rel="noopener"
-    >https://mirrors.ustc.edu.cn/golang/</a></li>
-</ul>
-</li>
-<li>
+    >https://mirrors.ustc.edu.cn/golang/</a>
+<blockquote>
 <p>环境变量<code>G_EXPERIMENTAL</code>有什么作用？</p>
-<p>当该环境变量的值为<code>true</code>时，将<strong>开启所有的实验特性</strong>。</p>
+</blockquote>
 </li>
-<li>
+</ul>
+<p>当该环境变量的值为<code>true</code>时，将<strong>开启所有的实验特性</strong>。</p>
+<blockquote>
 <p>环境变量<code>G_HOME</code>有什么作用？</p>
+</blockquote>
 <p>按照惯例，g 默认会将<code>~/.g</code>目录作为其家目录。若想自定义家目录（Windows 用户需求强烈），可使用该环境变量切换到其他家目录。由于<strong>该特性还属于实验特性</strong>，需要先开启实验特性开关<code>G_EXPERIMENTAL=true</code>才能生效。特别注意，该方案并不十分完美，因此才将其归类为实验特性，详见<a class="link" href="https://github.com/voidint/g/issues/18"  target="_blank" rel="noopener"
     >#18</a>。</p>
-</li>
-</ul>
-<p>相似项目：</p>
+<h2 id="更多配置">更多配置
+</h2><h3 id="修改-g-的安装目录">修改 g 的安装目录
+</h3><p>需要添加几个环境变量</p>
 <ul>
-<li><a class="link" href="https://github.com/moovweb/gvm"  target="_blank" rel="noopener"
-    >gvm</a></li>
-<li><a class="link" href="https://github.com/go-nv/goenv"  target="_blank" rel="noopener"
-    >goenv</a></li>
+<li>G_EXPERIMENTAL=true，开启实验特性支持，请参考：<a class="link" href="https://github.com/voidint/g/blob/master/README_CN.md#faq"  target="_blank" rel="noopener"
+    >FAQ</a></li>
+<li>G_HOME，指向 g 的安装目录</li>
+<li>GOROOT，指向 go 的目录</li>
 </ul>
-<h2 id="go的更多配置">go的更多配置
-</h2><p>请查看 [[Go的安装和配置]]</p>
+<h2 id="相似项目">相似项目
+</h2><h3 id="gvm">gvm
+</h3><p><a class="link" href="https://github.com/moovweb/gvm"  target="_blank" rel="noopener"
+    >https://github.com/moovweb/gvm</a></p>
+<h3 id="goenv">goenv
+</h3><p><a class="link" href="https://github.com/go-nv/goenv"  target="_blank" rel="noopener"
+    >https://github.com/go-nv/goenv</a></p>
 
 </section>
 
