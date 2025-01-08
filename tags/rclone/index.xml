@@ -16,8 +16,8 @@
         <description>&lt;img src="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp" alt="Featured image of post RClone，一个命令行程序，管理超过70个云存储产品，可帮助你实现文件备份，云数据镜像，数据迁移，本地存储，云储存合二为一" /&gt;&lt;h1 id=&#34;rclone-使用指南&#34;&gt;Rclone 使用指南
 &lt;/h1&gt;&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;Rclone 是一个强大的命令行工具，旨在管理和同步文件到多种云存储服务及本地文件系统。它支持超过 70 种不同的云存储提供商，如 Google Drive、Dropbox、Amazon S3、OneDrive 等。&lt;/p&gt;
-&lt;h3 id=&#34;主要特点&#34;&gt;主要特点
-&lt;/h3&gt;&lt;ul&gt;
+&lt;p&gt;主要特点：&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;多种存储支持&lt;/strong&gt;：支持超过 70 种不同的云存储服务。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;文件同步&lt;/strong&gt;：可以在本地和云之间同步文件或文件夹。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;加密功能&lt;/strong&gt;：支持文件加密，确保数据安全。&lt;/li&gt;
@@ -25,8 +25,8 @@
 &lt;li&gt;&lt;strong&gt;跨平台&lt;/strong&gt;：可以在 Windows、macOS 和 Linux 上运行。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;脚本自动化&lt;/strong&gt;：可以通过脚本实现定期备份和同步。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://rclone.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://rclone.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://rclone.org&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;在 Linux/macOS/BSD 系统上安装 Rclone，可以运行以下命令：&lt;/p&gt;
