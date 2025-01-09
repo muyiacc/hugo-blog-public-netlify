@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 08 Jan 2025 20:31:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Jan 2025 22:37:00 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Aria2</title>
+        <link>https://blog.seektao.cc/tags/aria2/</link>
+        <pubDate>Wed, 08 Jan 2025 22:37:00 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/tags/aria2/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Qbittorrent</title>
         <link>https://blog.seektao.cc/tags/qbittorrent/</link>
         <pubDate>Wed, 08 Jan 2025 20:31:10 +0800</pubDate>
@@ -1029,14 +1037,6 @@
         <pubDate>Sat, 02 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://blog.seektao.cc/tags/static/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Aria2</title>
-        <link>https://blog.seektao.cc/tags/aria2/</link>
-        <pubDate>Fri, 01 Dec 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://blog.seektao.cc/tags/aria2/</guid>
         <description></description>
         </item>
         <item>
