@@ -275,11 +275,16 @@
             <li><a href="#清华">清华</a></li>
           </ol>
         </li>
+        <li><a href="#ubuntu">Ubuntu</a>
+          <ol>
+            <li><a href="#清华-1">清华</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
     <li><a href="#pypi">PyPI</a>
       <ol>
-        <li><a href="#清华-1">清华</a></li>
+        <li><a href="#清华-2">清华</a></li>
         <li><a href="#阿里">阿里</a></li>
       </ol>
     </li>
@@ -305,7 +310,7 @@
     </li>
     <li><a href="#docker软件源">Docker软件源</a>
       <ol>
-        <li><a href="#清华-2">清华</a>
+        <li><a href="#清华-3">清华</a>
           <ol>
             <li><a href="#debianubunturaspbian-用户">Debian/Ubuntu/Raspbian 用户</a></li>
           </ol>
@@ -475,8 +480,60 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># deb-src http://security.debian.org/debian-security buster/updates main contrib non-free</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="ubuntu">Ubuntu
+</h3><p>查看系统发行版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat /etc/issue
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="清华-1">清华
+</h4><p>Ubuntu 24.04：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat <span class="s">&lt;&lt; EOF | sudo tee /etc/apt/sources.list &gt; /dev/null
+</span></span></span><span class="line"><span class="cl"><span class="s"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+</span></span></span><span class="line"><span class="cl"><span class="s">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-updates main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-backports main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+</span></span></span><span class="line"><span class="cl"><span class="s">deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s"># deb-src http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s"># 预发布软件源，不建议启用
+</span></span></span><span class="line"><span class="cl"><span class="s"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s"># # deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ noble-proposed main restricted universe multiverse
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="pypi">PyPI
-</h2><h3 id="清华-1">清华
+</h2><h3 id="清华-2">清华
 </h3><p>临时使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -706,7 +763,7 @@
 </div>
 </div><h2 id="docker软件源">Docker软件源
 </h2><p>非 Docker Hub镜像源</p>
-<h3 id="清华-2">清华
+<h3 id="清华-3">清华
 </h3><h4 id="debianubunturaspbian-用户">Debian/Ubuntu/Raspbian 用户
 </h4><p>以下内容根据 <a class="link" href="https://docs.docker.com/engine/install/debian/"  target="_blank" rel="noopener"
     >官方文档</a> 修改而来。</p>
@@ -909,12 +966,12 @@
             
                 
 <article class="">
-    <a href="/p/250108223700/">
+    <a href="/p/250108203110/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">docker安装aria2-pro</h2>
+            <h2 class="article-title">Linux无图形化界面安装qBittorrent</h2>
         </div>
     </a>
 </article>
@@ -922,12 +979,12 @@
             
                 
 <article class="">
-    <a href="/p/250108203110/">
+    <a href="/p/241223133231/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux无图形化界面安装qBittorrent</h2>
+            <h2 class="article-title">Windows安装aria2</h2>
         </div>
     </a>
 </article>

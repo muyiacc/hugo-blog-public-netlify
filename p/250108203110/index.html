@@ -410,15 +410,25 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>qBittorrent Headless
-</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
+</span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>qBittorrent-nox service
+</span></span><span class="line"><span class="cl"><span class="nv">Documentation</span><span class="o">=</span>man:qbittorrent-nox<span class="o">(</span>1<span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">Wants</span><span class="o">=</span>network-online.target
+</span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>local-fs.target network-online.target nss-lookup.target
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
-</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/qbittorrent-nox --webui-port<span class="o">=</span><span class="m">8020</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>always
+</span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>simple
+</span></span><span class="line"><span class="cl"><span class="nv">PrivateTmp</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="cl"><span class="nv">User</span><span class="o">=</span>root
+</span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/qbittorrent-nox -config /root/.config/qBittorrent/qBittorrent.conf
+</span></span><span class="line"><span class="cl"><span class="nv">TimeoutStopSec</span><span class="o">=</span><span class="m">1800</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
@@ -553,12 +563,12 @@
             
                 
 <article class="">
-    <a href="/p/250108223700/">
+    <a href="/p/241223133231/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">docker安装aria2-pro</h2>
+            <h2 class="article-title">Windows安装aria2</h2>
         </div>
     </a>
 </article>
@@ -566,12 +576,12 @@
             
                 
 <article class="">
-    <a href="/p/241223133231/">
+    <a href="/p/241219111058/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Windows安装aria2</h2>
+            <h2 class="article-title">机场三字码</h2>
         </div>
     </a>
 </article>
