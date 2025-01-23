@@ -372,7 +372,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir -p /etc/docker
 </span></span><span class="line"><span class="cl">sudo tee /etc/docker/daemon.json <span class="s">&lt;&lt;-&#39;EOF&#39;
 </span></span></span><span class="line"><span class="cl"><span class="s">{  
-</span></span></span><span class="line"><span class="cl"><span class="s">  &#34;registry-mirrors&#34;: [&#34;https://docker.ksg.us.kg&#34;]
+</span></span></span><span class="line"><span class="cl"><span class="s">	  &#34;registry-mirrors&#34;: [&#34;https://docker.ksg.us.kg&#34;, &#34;https://docker.1panelproxy.com&#34;]
 </span></span></span><span class="line"><span class="cl"><span class="s">}  
 </span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
 </span></span><span class="line"><span class="cl">sudo systemctl daemon-reload
