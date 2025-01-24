@@ -269,26 +269,35 @@
   <ol>
     <li><a href="#前言">前言</a></li>
     <li><a href="#安装-acmesh">安装 acme.sh</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#http方式">http方式</a>
+    <li><a href="#生成证书">生成证书</a>
       <ol>
-        <li><a href="#apache">apache</a></li>
-        <li><a href="#nginx">nginx</a></li>
-        <li><a href="#no-web-server">no web server</a></li>
+        <li><a href="#http方式">http方式</a>
+          <ol>
+            <li><a href="#apache">apache</a></li>
+            <li><a href="#nginx">nginx</a></li>
+            <li><a href="#no-web-server">no web server</a></li>
+          </ol>
+        </li>
+        <li><a href="#dns方式">dns方式</a>
+          <ol>
+            <li><a href="#手动-dns-方式">手动 dns 方式</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
-    <li><a href="#dns方式">dns方式</a>
+    <li><a href="#修改-ca">修改 CA</a></li>
+    <li><a href="#安装copy-证书">安装/copy 证书</a>
       <ol>
-        <li><a href="#手动-dns-方式">手动 dns 方式</a></li>
+        <li><a href="#apache-example">Apache example:</a></li>
+        <li><a href="#nginx-example">Nginx example:</a></li>
       </ol>
     </li>
-  </ol>
-
-  <ol>
-    <li><a href="#apache-example">Apache example:</a></li>
-    <li><a href="#nginx-example">Nginx example:</a></li>
+    <li><a href="#查看已安装证书信息">查看已安装证书信息</a></li>
+    <li><a href="#更新证书">更新证书</a></li>
+    <li><a href="#关于修改reloadcmd">关于修改ReloadCmd</a></li>
+    <li><a href="#更新-acmesh">更新 acme.sh</a></li>
+    <li><a href="#出错怎么办">出错怎么办：</a></li>
+    <li><a href="#一键脚本适合初次申请">一键脚本（适合初次申请）</a></li>
   </ol>
 </nav>
         </div>
@@ -371,12 +380,12 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>my@example.com
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="生成证书">生成证书
-</h1><h2 id="http方式">http方式
-</h2><h3 id="apache">apache
-</h3><p>待续。。。</p>
-<h3 id="nginx">nginx
-</h3><p>先在 nginx配置文件夹新增conf文件，填好基础的模板，比如：</p>
+</div><h2 id="生成证书">生成证书
+</h2><h3 id="http方式">http方式
+</h3><h4 id="apache">apache
+</h4><p>待续。。。</p>
+<h4 id="nginx">nginx
+</h4><p>先在 nginx配置文件夹新增conf文件，填好基础的模板，比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -416,8 +425,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d mydomain.com --nginx
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="no-web-server">no web server
-</h3><p>如果你还没有运行任何 web 服务, <strong>80</strong> 端口是空闲的, 那么 <strong>acme.sh</strong> 还能假装自己是一个webserver, 临时听在<strong>80</strong> 端口, 完成验证:</p>
+</div><h4 id="no-web-server">no web server
+</h4><p>如果你还没有运行任何 web 服务, <strong>80</strong> 端口是空闲的, 那么 <strong>acme.sh</strong> 还能假装自己是一个webserver, 临时听在<strong>80</strong> 端口, 完成验证:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -428,9 +437,9 @@
 </div>
 </div><p>更高级的用法请参考: <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert</a></p>
-<h2 id="dns方式">dns方式
-</h2><h3 id="手动-dns-方式">手动 dns 方式
-</h3><p>手动在域名上添加一条 txt 解析记录, 验证域名所有权.</p>
+<h3 id="dns方式">dns方式
+</h3><h4 id="手动-dns-方式">手动 dns 方式
+</h4><p>手动在域名上添加一条 txt 解析记录, 验证域名所有权.</p>
 <p>这种方式的好处是, 你不需要任何服务器, 不需要任何公网 ip, 只需要 dns 的解析记录即可完成验证. 坏处是，如果不同时配置 Automatic DNS API，使用这种方式 acme.sh 将无法自动更新证书，每次都需要手动再次重新解析验证域名所有权。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -485,12 +494,21 @@
 </div>
 </div><p>更详细的 api 用法: <a class="link" href="https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md</a></p>
-<h1 id="安装copy-证书">安装/copy 证书
-</h1><p>前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.</p>
+<h2 id="修改-ca">修改 CA
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">acme.sh --set-default-ca --server letsencrypt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装copy-证书">安装/copy 证书
+</h2><p>前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.</p>
 <p>注意, 默认生成的证书都放在安装目录下: <code>~/.acme.sh/</code>, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx/apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.</p>
 <p>正确的使用方法是使用 <code>--install-cert</code> 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如:</p>
-<h2 id="apache-example">Apache example:
-</h2><div class="highlight"><div class="chroma">
+<h3 id="apache-example">Apache example:
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -506,8 +524,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--reloadcmd     <span class="s2">&#34;service apache2 force-reload&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="nginx-example">Nginx example:
-</h2><div class="highlight"><div class="chroma">
+</div><h3 id="nginx-example">Nginx example:
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -528,8 +546,8 @@
 <p>详细参数请参考: <a class="link" href="https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc</a></p>
 <p>值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用.</p>
-<h1 id="查看已安装证书信息">查看已安装证书信息
-</h1><div class="highlight"><div class="chroma">
+<h2 id="查看已安装证书信息">查看已安装证书信息
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -581,8 +599,8 @@
 </span></span><span class="line"><span class="cl"><span class="nv">Le_RealFullChainPath</span><span class="o">=</span>/etc/acme/example.com/chain.pem
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="更新证书">更新证书
-</h1><p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
+</div><h2 id="更新证书">更新证书
+</h2><p>目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.</p>
 <p>请确保 cronjob 正确安装, 看起来是类似这样的:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -596,12 +614,12 @@
 </span></span><span class="line"><span class="cl"><span class="m">56</span> * * * * <span class="s2">&#34;/root/.acme.sh&#34;</span>/acme.sh --cron --home <span class="s2">&#34;/root/.acme.sh&#34;</span> &gt; /dev/null
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="关于修改reloadcmd">关于修改ReloadCmd
-</h1><p><a class="link" href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E#6-%e5%85%b3%e4%ba%8e%e4%bf%ae%e6%94%b9reloadcmd"  target="_blank" rel="noopener"
+</div><h2 id="关于修改reloadcmd">关于修改ReloadCmd
+</h2><p><a class="link" href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E#6-%e5%85%b3%e4%ba%8e%e4%bf%ae%e6%94%b9reloadcmd"  target="_blank" rel="noopener"
     ></a></p>
 <p>目前修改<code>ReloadCmd</code>没有专门的命令，可以通过重新安装证书来实现修改<code>reloadCmd</code>的目的。 此外，安装证书后，相关信息是保存在<code>~/.acme.sh/example.com/example.conf</code>文件下的，内容就是<code>acme.sh --info -d example.com</code>输出的信息，不过<code>ReloadCmd</code>在文件中使用了Base64编码。理论上可以通过直接修改该文件来修改<code>ReloadCmd</code>，且修改时，无需Base64编码，直接写命令原文<code>acme.sh</code>也可以识别。 不过，<code>example.conf</code>文件的位置和内容格式以后可能会改变！<code>example.conf</code>一直都是内部使用, 后面有可能会改为用 sqlite 或者mysql 格式存储. 所以一般不建议自己修改。</p>
-<h1 id="更新-acmesh">更新 acme.sh
-</h1><p>目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.</p>
+<h2 id="更新-acmesh">更新 acme.sh
+</h2><p>目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.</p>
 <p>升级 acme.sh 到最新版 :</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -630,8 +648,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --upgrade --auto-upgrade  <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="出错怎么办">出错怎么办：
-</h1><p>如果出错, 请添加 debug log：</p>
+</div><h2 id="出错怎么办">出错怎么办：
+</h2><p>如果出错, 请添加 debug log：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -691,8 +709,8 @@
 <p>最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.</p>
 <p><a class="link" href="https://github.com/Neilpang/acme.sh/wiki"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh/wiki</a></p>
-<h1 id="一键脚本适合初次申请">一键脚本（适合初次申请）
-</h1><p>本脚本为了简化acme.sh申请证书过程，会修改配置，如已有的配置，请勿使用</p>
+<h2 id="一键脚本适合初次申请">一键脚本（适合初次申请）
+</h2><p>本脚本为了简化acme.sh申请证书过程，会修改配置，如已有的配置，请勿使用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -806,12 +824,12 @@
             
                 
 <article class="">
-    <a href="/p/250117155426/">
+    <a href="/p/250124002554/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rclone开启命令补全</h2>
+            <h2 class="article-title">acme.sh国内服务器安装</h2>
         </div>
     </a>
 </article>
@@ -819,12 +837,12 @@
             
                 
 <article class="">
-    <a href="/p/250109185027/">
+    <a href="/p/250117160936/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Windows安装qBittorrent(EE)，qBittorrent-ClientBlocker</h2>
+            <h2 class="article-title">ArchLinux使用Hyprland安装的软件</h2>
         </div>
     </a>
 </article>
