@@ -7,7 +7,133 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 24 Jan 2025 22:18:47 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 26 Jan 2025 10:26:12 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>影视刮削指南</title>
+        <link>https://blog.seektao.cc/p/250126102612/</link>
+        <pubDate>Sun, 26 Jan 2025 10:26:12 +0800</pubDate>
+        
+        <guid>https://blog.seektao.cc/p/250126102612/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;刮削 意为：为影视资源收集海报、简介信息，让第三方软件（Jellyfin、Emby、Infuse、Plex、VidHub、网易爆米花）识别生成资源库，拥有好看的海报，简介信息。&lt;/p&gt;
+&lt;p&gt;一般刮削信息包含 &lt;code&gt;.nfo&lt;/code&gt; , &lt;code&gt;.jpg&lt;/code&gt;等格式文件用于第三方软件识别。&lt;/p&gt;
+&lt;p&gt;影响刮削的关键部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件夹 名字&lt;/li&gt;
+&lt;li&gt;文件 名字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;按照我的经验，对刮削软件细分又可分为两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主要通过 &lt;code&gt;文件夹名字&lt;/code&gt; 获取刮削的信息
+&lt;ul&gt;
+&lt;li&gt;Jellyfin&lt;/li&gt;
+&lt;li&gt;Emby&lt;/li&gt;
+&lt;li&gt;Infuse&lt;/li&gt;
+&lt;li&gt;Plex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;主要通过 &lt;code&gt;文件名字&lt;/code&gt; 获取刮削的信息
+&lt;ul&gt;
+&lt;li&gt;VidHub&lt;/li&gt;
+&lt;li&gt;网易爆米花&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面分别选用两种作为介绍 &lt;code&gt;Jellyfin&lt;/code&gt;、&lt;code&gt;Vidhub&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;刮削带播放&#34;&gt;刮削带播放
+&lt;/h2&gt;&lt;h3 id=&#34;vidhub&#34;&gt;Vidhub
+&lt;/h3&gt;&lt;p&gt;VidHub 是一款 macOS/iOS/tvOS 全平台的影视资源管理和播放软件。支持本地文件，NAS，Samba/WebDav/AList，以及阿里云盘，百度网盘等各种网盘视频的整理和刮削，自动生成优雅的影视海报墙。同时支持 Emby/Plex/Jellyfin 服务器。所有的在线影视信息和图片均来自开源网站 TMDB。&lt;/p&gt;
+&lt;p&gt;TMDB 是一个拥有海量影视海报，简介的网站。&lt;/p&gt;
+&lt;p&gt;为了保证自动刮削搜索电影剧集的准确性，请按照下面的规则命名文件名。&lt;/p&gt;
+&lt;p&gt;1 - 自动刮削搜索电影剧集时&lt;strong&gt;唯一关联的是文件名，和文件夹名字以及文件夹的结构无关。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2 - 电影文件名以&lt;strong&gt;影片的完整名字开头 (中英文均可)&lt;/strong&gt;，后面带上其他相关的文件信息&lt;strong&gt;如有同名电影，请务必在文件名中带上电影发行日期。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The.Irishman. 爱尔兰人.2019.1080p.x264.mp4&lt;/p&gt;
+&lt;p&gt;3 - &lt;strong&gt;电视剧分集文件名以剧名开头&lt;/strong&gt; (同一部剧所有分集文件开头的剧名保持一致，中英文均可)，&lt;strong&gt;后面必须跟上季和集的信息 (S01E01&lt;/strong&gt; / 第一季第一集)。&lt;/p&gt;
+&lt;p&gt;Shameless. 无耻之徒.S01E01.1080p.AMZN.WEB-DL.mkv&lt;/p&gt;
+&lt;p&gt;Shameless. 无耻之徒.S03E03.720p.AMZN.WEB-DL.mkv&lt;/p&gt;
+&lt;p&gt;4 - 电视剧花絮、特别篇文件名以剧名开头，后面的季数信息必须设置为0，并指定集数 (S00E01)。&lt;/p&gt;
+&lt;p&gt;Shameless. 无耻之徒.S00E01.Sneak Peek.1080p.AMZN.mkv&lt;/p&gt;
+&lt;p&gt;5 - 当自动匹配的电影和剧集错误时，你可以通过修改文件名 (macOS/iOS 端均支持在 App 内直接重命名单个文件 / 批量重命名文件)，或者直接在 App 内长按 / 鼠标右键错误的项目，选择手动编辑信息来修改为正确的影视信息。&lt;/p&gt;
+&lt;p&gt;6 - tmdbid 相关支持情况&lt;/p&gt;
+&lt;p&gt;vidhub 安卓 1.1.2 版本以上和苹果 1.7.15 版本以上支持 tmdbid 刮削识别，以下格式都支持：&lt;/p&gt;
+&lt;p&gt;{tmdb-27205}&lt;/p&gt;
+&lt;p&gt;{tmdbid-27205}&lt;/p&gt;
+&lt;p&gt;{tmdb=27205}&lt;/p&gt;
+&lt;p&gt;{tmdbid=27205}&lt;/p&gt;
+&lt;p&gt;[tmdb-27205]&lt;/p&gt;
+&lt;p&gt;[tmdbid-27205]&lt;/p&gt;
+&lt;p&gt;[tmdb=27205]&lt;/p&gt;
+&lt;p&gt;[tmdbid=27205]&lt;/p&gt;
+&lt;p&gt;举例：[tmdbid=27205].mkv&lt;/p&gt;
+&lt;p&gt;备注：刮削会优先识别 tmdbid。&lt;/p&gt;
+&lt;h3 id=&#34;jellyfin&#34;&gt;Jellyfin
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jellyfin.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://jellyfin.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Jellyfin 是一套多媒体应用程序软件套装，旨在组织、管理和共享数字媒体文件。&lt;/p&gt;
+&lt;p&gt;Jellyfin 分为服务端和客户端应用程序，服务端应用程序安装在运行 Microsoft Windows、MacOS、Linux 等系统的服务器上或 Docker 上，客户端应用程序安装在智能手机、平板电脑、智能电视、网络机顶盒、电子游戏机或网页浏览器上[2]。支持 DLNA 以及插有 Chromecast 的设备也能接收 Jellyfin 服务端发来的文件[3]。&lt;/p&gt;
+&lt;p&gt;Jellyfin 是 Emby 的一个自由开源分叉。[4]&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以上内容来源于维基百科&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主要说说 Jellyfin 是如何识别文件信息的。&lt;/p&gt;
+&lt;p&gt;Jellyfin 媒体库常用主要分为电影和节目两个分类，这两个分类决定了文件的不同组织格式，其中&lt;/p&gt;
+&lt;p&gt;电影：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Movies/电影名/电影文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;电视剧：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tvplay/电视剧名/Season X/电视剧文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;Season X&lt;/code&gt; 一般表示第几季，例如 &lt;code&gt;Season 1&lt;/code&gt;表示第 1 季、&lt;code&gt;Season 2&lt;/code&gt; 表示第 2 季&lt;/p&gt;
+&lt;p&gt;如果某个电视剧没有分季，也不知道是否有第二季，那也要单独建立一个 &lt;code&gt;Season 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;同一个电视剧不同的季集应该放在同一个电视剧名目录下的不同季下，比如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Tvplay
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	爱情公寓 (2009)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		Season 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			爱情公寓第一季文件
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		Season 2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			爱情公寓第二季文件
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里可以看出电视剧名后面加了一个年份，这是发行年份，这是为了分辨如果出现相同名字，以便区分，大多数情况下，也推荐这么做。&lt;/p&gt;
+&lt;p&gt;额外的，年份和电视剧名中间有个空格，用的是英文下的括号。&lt;/p&gt;
+&lt;p&gt;对于规则的详细命名，可查看官网介绍&lt;/p&gt;
+&lt;p&gt;Jellyfin 命名规则和 Emby、Infuse、Plex有些细微区别，但大差不差。&lt;/p&gt;
+&lt;p&gt;说完这些自带播放的软件，下面介绍专门做刮削的软件&lt;/p&gt;
+&lt;h2 id=&#34;专门刮削&#34;&gt;专门刮削
+&lt;/h2&gt;&lt;p&gt;专门刮削软件存在的目的是为了补足上面软件刮削效果不好的问题，先刮削之后，再使用上述软件生成海报墙，跳过刮削的步骤。&lt;/p&gt;
+&lt;h3 id=&#34;tinymediamanager&#34;&gt;tinymediamanager
+&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.tinymediamanager.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.tinymediamanager.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;关于使用，网络上已经有很多资源&lt;/p&gt;
+&lt;p&gt;使用的时候，修改一下文件夹名可以确保更好的自动识别&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>acme.sh国内服务器安装</title>
         <link>https://blog.seektao.cc/p/250124002554/</link>
         <pubDate>Fri, 24 Jan 2025 00:25:54 +0800</pubDate>
