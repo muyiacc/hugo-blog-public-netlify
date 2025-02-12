@@ -3,16 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.seektao.cc/</loc>
-    <lastmod>2025-01-26T10:26:12+08:00</lastmod>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/categories/</loc>
-    <lastmod>2025-01-26T10:26:12+08:00</lastmod>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/categories/default/</loc>
-    <lastmod>2025-01-26T10:26:12+08:00</lastmod>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/llm/</loc>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/250212132719/</loc>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/post/</loc>
-    <lastmod>2025-01-26T10:26:12+08:00</lastmod>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/</loc>
+    <lastmod>2025-02-12T13:27:19+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/categories/backend/</loc>
+    <lastmod>2025-02-11T10:35:09+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/python/</loc>
+    <lastmod>2025-02-11T10:35:09+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/tags/uv/</loc>
+    <lastmod>2025-02-11T10:35:09+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.seektao.cc/p/250211103509/</loc>
+    <lastmod>2025-02-11T10:35:09+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/250126102612/</loc>
     <lastmod>2025-01-26T10:26:12+08:00</lastmod>
@@ -24,9 +45,6 @@
     <lastmod>2025-01-24T00:25:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/p/250124002554/</loc>
-    <lastmod>2025-01-24T00:25:54+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/tags/</loc>
     <lastmod>2025-01-24T00:25:54+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/archlinux/</loc>
@@ -86,13 +104,7 @@
     <loc>https://blog.seektao.cc/p/250105194638/</loc>
     <lastmod>2025-01-05T19:47:01+08:00</lastmod>
   </url><url>
-    <loc>https://blog.seektao.cc/categories/backend/</loc>
-    <lastmod>2024-12-30T14:32:58+08:00</lastmod>
-  </url><url>
     <loc>https://blog.seektao.cc/p/241230143236/</loc>
-    <lastmod>2024-12-30T14:32:58+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.seektao.cc/tags/python/</loc>
     <lastmod>2024-12-30T14:32:58+08:00</lastmod>
   </url><url>
     <loc>https://blog.seektao.cc/tags/rust/</loc>
