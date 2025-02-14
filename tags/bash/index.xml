@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Bash on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/bash/</link>
+        <link>https://hublog.netlify.app/tags/bash/</link>
         <description>Recent content in Bash on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 02 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/bash/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 02 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/bash/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>增强的bash命令行工具：bash-it</title>
-        <link>https://blog.seektao.cc/p/2310002/</link>
+        <link>https://hublog.netlify.app/p/2310002/</link>
         <pubDate>Mon, 02 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310002/</guid>
+        <guid>https://hublog.netlify.app/p/2310002/</guid>
         <description>&lt;h2 id=&#34;shell概述&#34;&gt;Shell概述
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;bash vs zsh&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;bash&lt;/code&gt;:&lt;/p&gt;

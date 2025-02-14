@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>V2raya on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/v2raya/</link>
+        <link>https://hublog.netlify.app/tags/v2raya/</link>
         <description>Recent content in V2raya on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 09 Sep 2024 02:41:37 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/v2raya/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Sep 2024 02:41:37 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/v2raya/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>【v2raya高级应用】指定 Docker 容器代理</title>
-        <link>https://blog.seektao.cc/p/240909024137/</link>
+        <link>https://hublog.netlify.app/p/240909024137/</link>
         <pubDate>Mon, 09 Sep 2024 02:41:37 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/240909024137/</guid>
+        <guid>https://hublog.netlify.app/p/240909024137/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;内容转自：https://v2raya.org/docs/advanced-application/specify-container-proxy/&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -50,10 +50,10 @@
         </item>
         <item>
         <title>web端的v2ray工具v2raya</title>
-        <link>https://blog.seektao.cc/p/2309009/</link>
+        <link>https://hublog.netlify.app/p/2309009/</link>
         <pubDate>Sun, 10 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309009/</guid>
+        <guid>https://hublog.netlify.app/p/2309009/</guid>
         <description>&lt;h2 id=&#34;概述&#34;&gt;概述
 &lt;/h2&gt;&lt;p&gt;V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。&lt;/p&gt;
 &lt;blockquote&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Software on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/software/</link>
+        <link>https://hublog.netlify.app/tags/software/</link>
         <description>Recent content in Software on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 15 Aug 2024 17:08:02 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/software/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 15 Aug 2024 17:08:02 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/software/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>手机软件清单-Mi11</title>
-        <link>https://blog.seektao.cc/p/240815170896/</link>
+        <link>https://hublog.netlify.app/p/240815170896/</link>
         <pubDate>Thu, 15 Aug 2024 17:08:02 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/240815170896/</guid>
+        <guid>https://hublog.netlify.app/p/240815170896/</guid>
         <description>&lt;h2 id=&#34;bitwarden&#34;&gt;Bitwarden
 &lt;/h2&gt;&lt;h2 id=&#34;gmail&#34;&gt;Gmail
 &lt;/h2&gt;&lt;h2 id=&#34;voice&#34;&gt;Voice
@@ -87,10 +87,10 @@
         </item>
         <item>
         <title>Windows软件清单</title>
-        <link>https://blog.seektao.cc/p/2406026/</link>
+        <link>https://hublog.netlify.app/p/2406026/</link>
         <pubDate>Tue, 25 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406026/</guid>
+        <guid>https://hublog.netlify.app/p/2406026/</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/08/17/nWP4hYF7iKcaS32.png&#34;
 	
 	
@@ -275,10 +275,10 @@
         </item>
         <item>
         <title>Debian清理无用的软件包和残留文件</title>
-        <link>https://blog.seektao.cc/p/2312003/</link>
+        <link>https://hublog.netlify.app/p/2312003/</link>
         <pubDate>Sun, 03 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312003/</guid>
+        <guid>https://hublog.netlify.app/p/2312003/</guid>
         <description>&lt;p&gt;在Debian系统上清理无用的软件包和残留文件，您可以执行以下步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -327,10 +327,10 @@
         </item>
         <item>
         <title>Debian12下的软件清单</title>
-        <link>https://blog.seektao.cc/p/2310006/</link>
+        <link>https://hublog.netlify.app/p/2310006/</link>
         <pubDate>Fri, 06 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310006/</guid>
+        <guid>https://hublog.netlify.app/p/2310006/</guid>
         <description>&lt;p&gt;本文列举安装并使用的的一些软件，基于debian12，debain12有很大的更新，使用wayland替代了x11，本文编辑时，可能好多软件没适配，体验感稍差。&lt;/p&gt;
 &lt;p&gt;本文将持续更新&lt;/p&gt;
 &lt;blockquote&gt;

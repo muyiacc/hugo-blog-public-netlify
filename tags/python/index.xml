@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Python on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/python/</link>
+        <link>https://hublog.netlify.app/tags/python/</link>
         <description>Recent content in Python on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 11 Feb 2025 10:35:09 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 11 Feb 2025 10:35:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>uv，Rust编写的Python包、项目管理工具</title>
-        <link>https://blog.seektao.cc/p/250211103509/</link>
+        <link>https://hublog.netlify.app/p/250211103509/</link>
         <pubDate>Tue, 11 Feb 2025 10:35:09 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/250211103509/</guid>
+        <guid>https://hublog.netlify.app/p/250211103509/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;Install uv with our standalone installers:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -70,10 +70,10 @@
         </item>
         <item>
         <title>pyenv,python的版本管理工具</title>
-        <link>https://blog.seektao.cc/p/2407017/</link>
+        <link>https://hublog.netlify.app/p/2407017/</link>
         <pubDate>Wed, 17 Jul 2024 15:07:48 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2407017/</guid>
+        <guid>https://hublog.netlify.app/p/2407017/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;Linux&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Config on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/config/</link>
+        <link>https://hublog.netlify.app/tags/config/</link>
         <description>Recent content in Config on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 06 Oct 2024 11:09:05 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/config/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Oct 2024 11:09:05 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/config/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux基础配置</title>
-        <link>https://blog.seektao.cc/p/241006110905/</link>
+        <link>https://hublog.netlify.app/p/241006110905/</link>
         <pubDate>Sun, 06 Oct 2024 11:09:05 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241006110905/</guid>
+        <guid>https://hublog.netlify.app/p/241006110905/</guid>
         <description>&lt;h2 id=&#34;用户管理&#34;&gt;用户管理
 &lt;/h2&gt;&lt;p&gt;新建用户&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Flatapk on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/flatapk/</link>
+        <link>https://hublog.netlify.app/tags/flatapk/</link>
         <description>Recent content in Flatapk on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 04 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/flatapk/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 04 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/flatapk/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Debian12通过flatapk安装</title>
-        <link>https://blog.seektao.cc/p/2406004/</link>
+        <link>https://hublog.netlify.app/p/2406004/</link>
         <pubDate>Tue, 04 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406004/</guid>
+        <guid>https://hublog.netlify.app/p/2406004/</guid>
         <description>&lt;p&gt;卸载apt安装的obs&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

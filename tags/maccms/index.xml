@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Maccms on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/maccms/</link>
+        <link>https://hublog.netlify.app/tags/maccms/</link>
         <description>Recent content in Maccms on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 15 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/maccms/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/maccms/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>影视站点maccms搭建教程</title>
-        <link>https://blog.seektao.cc/p/2404015/</link>
+        <link>https://hublog.netlify.app/p/2404015/</link>
         <pubDate>Mon, 15 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404015/</guid>
+        <guid>https://hublog.netlify.app/p/2404015/</guid>
         <description>&lt;h1 id=&#34;前言&#34;&gt;前言
 &lt;/h1&gt;&lt;p&gt;maccms的环境PHP，对于PHP配置太繁琐，且污染系统环境，所以采用docker的方式安装，docker镜像已经好心人帮忙构建了，用的最多是这个：esme518/docker-maccms10。&lt;/p&gt;
 &lt;h1 id=&#34;伪静态配置&#34;&gt;伪静态配置
@@ -250,10 +250,10 @@
         </item>
         <item>
         <title>maccms数据备份和恢复</title>
-        <link>https://blog.seektao.cc/p/2404006/</link>
+        <link>https://hublog.netlify.app/p/2404006/</link>
         <pubDate>Sat, 06 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404006/</guid>
+        <guid>https://hublog.netlify.app/p/2404006/</guid>
         <description>&lt;h1 id=&#34;数据库&#34;&gt;数据库
 &lt;/h1&gt;&lt;p&gt;后台有些数据不是以maccms配置文件存在的，而是在数据库中，这里列举出常见数据&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

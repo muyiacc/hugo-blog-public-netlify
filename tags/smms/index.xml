@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Smms on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/smms/</link>
+        <link>https://hublog.netlify.app/tags/smms/</link>
         <description>Recent content in Smms on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 21 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/smms/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/smms/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用picgo-core将markdown图片上传至smms图床</title>
-        <link>https://blog.seektao.cc/p/2310021/</link>
+        <link>https://hublog.netlify.app/p/2310021/</link>
         <pubDate>Sat, 21 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310021/</guid>
+        <guid>https://hublog.netlify.app/p/2310021/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。&lt;/p&gt;
 &lt;h2 id=&#34;picgo-core&#34;&gt;Picgo-Core

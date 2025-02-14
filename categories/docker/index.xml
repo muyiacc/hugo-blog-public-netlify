@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Docker on 寻道之旅</title>
-        <link>https://blog.seektao.cc/categories/docker/</link>
+        <link>https://hublog.netlify.app/categories/docker/</link>
         <description>Recent content in Docker on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 05 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/docker/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 05 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/docker/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>部署自己的Docker Hub镜像站，附Docker Hub镜像地址</title>
-        <link>https://blog.seektao.cc/p/2406005/</link>
+        <link>https://hublog.netlify.app/p/2406005/</link>
         <pubDate>Wed, 05 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406005/</guid>
+        <guid>https://hublog.netlify.app/p/2406005/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;2024-06-06，未知原因 docker.com 国内镜像全都被要求下架服务。&lt;/p&gt;
 &lt;p&gt;为了另求出路，采用 cloudflare wokers pages 搭建镜像服务。&lt;/p&gt;
@@ -83,18 +83,18 @@
         </item>
         <item>
         <title>dujiaoka独角卡安装，docker版本</title>
-        <link>https://blog.seektao.cc/p/2405005/</link>
+        <link>https://hublog.netlify.app/p/2405005/</link>
         <pubDate>Sun, 05 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2405005/</guid>
+        <guid>https://hublog.netlify.app/p/2405005/</guid>
         <description></description>
         </item>
         <item>
         <title>Docker常用命令</title>
-        <link>https://blog.seektao.cc/p/docker-command/</link>
+        <link>https://hublog.netlify.app/p/docker-command/</link>
         <pubDate>Wed, 01 May 2024 13:05:46 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/docker-command/</guid>
+        <guid>https://hublog.netlify.app/p/docker-command/</guid>
         <description>&lt;h3 id=&#34;获取所有容器id&#34;&gt;获取所有容器id
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -161,10 +161,10 @@
         </item>
         <item>
         <title>Docker容器和主机互相连接的三种情景</title>
-        <link>https://blog.seektao.cc/p/2403002/</link>
+        <link>https://hublog.netlify.app/p/2403002/</link>
         <pubDate>Sat, 02 Mar 2024 00:03:11 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2403002/</guid>
+        <guid>https://hublog.netlify.app/p/2403002/</guid>
         <description>&lt;h1 id=&#34;情景一主机连接容器&#34;&gt;情景一：主机连接容器
 &lt;/h1&gt;&lt;p&gt;需求：主机内的某个应用需要用到容器启动的数据库，主机的应用关于该容器数据库的host，port该如何填写？&lt;/p&gt;
 &lt;h1 id=&#34;情景二容器连接容器&#34;&gt;情景二：容器连接容器
@@ -296,10 +296,10 @@
         </item>
         <item>
         <title>Docker安装</title>
-        <link>https://blog.seektao.cc/p/2311003/</link>
+        <link>https://hublog.netlify.app/p/2311003/</link>
         <pubDate>Fri, 03 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311003/</guid>
+        <guid>https://hublog.netlify.app/p/2311003/</guid>
         <description>&lt;h2 id=&#34;debian&#34;&gt;Debian
 &lt;/h2&gt;&lt;h3 id=&#34;前置条件&#34;&gt;前置条件
 &lt;/h3&gt;&lt;ul&gt;
@@ -439,10 +439,10 @@
         </item>
         <item>
         <title>Docker部署ChatGPT-Next-Web</title>
-        <link>https://blog.seektao.cc/p/2310013/</link>
+        <link>https://hublog.netlify.app/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310013/</guid>
+        <guid>https://hublog.netlify.app/p/2310013/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用chatgpt接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。&lt;/p&gt;

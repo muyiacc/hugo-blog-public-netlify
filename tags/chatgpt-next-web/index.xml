@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Chatgpt-Next-Web on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/chatgpt-next-web/</link>
+        <link>https://hublog.netlify.app/tags/chatgpt-next-web/</link>
         <description>Recent content in Chatgpt-Next-Web on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 02 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/chatgpt-next-web/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 02 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/chatgpt-next-web/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ChatGPT-Next-Web 最新部署对接new-api部署方法</title>
-        <link>https://blog.seektao.cc/p/2407002/</link>
+        <link>https://hublog.netlify.app/p/2407002/</link>
         <pubDate>Tue, 02 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2407002/</guid>
+        <guid>https://hublog.netlify.app/p/2407002/</guid>
         <description>&lt;h2 id=&#34;new-api&#34;&gt;new-api
 &lt;/h2&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Calcium-Ion/new-api&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -181,10 +181,10 @@
         </item>
         <item>
         <title>Docker部署ChatGPT-Next-Web</title>
-        <link>https://blog.seektao.cc/p/2310013/</link>
+        <link>https://hublog.netlify.app/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310013/</guid>
+        <guid>https://hublog.netlify.app/p/2310013/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用chatgpt接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。&lt;/p&gt;

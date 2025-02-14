@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ddns on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/ddns/</link>
+        <link>https://hublog.netlify.app/tags/ddns/</link>
         <description>Recent content in Ddns on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 03 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/ddns/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/ddns/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ddns-go</title>
-        <link>https://blog.seektao.cc/p/2405003/</link>
+        <link>https://hublog.netlify.app/p/2405003/</link>
         <pubDate>Fri, 03 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2405003/</guid>
+        <guid>https://hublog.netlify.app/p/2405003/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jeessy2/ddns-go/releases/tag/v6.6.3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/jeessy2/ddns-go/releases/tag/v6.6.3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载解压&lt;/p&gt;
@@ -20,10 +20,10 @@
         </item>
         <item>
         <title>使用Windows10搭建DDNS服务和HTTP服务</title>
-        <link>https://blog.seektao.cc/p/2312013/</link>
+        <link>https://hublog.netlify.app/p/2312013/</link>
         <pubDate>Wed, 13 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312013/</guid>
+        <guid>https://hublog.netlify.app/p/2312013/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;本地的一些环境如何部署到公网访问，本地在有公网ip的情况下实现&lt;/p&gt;
 &lt;h1 id=&#34;2-准备工作&#34;&gt;2. 准备工作

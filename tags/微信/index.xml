@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>微信 on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/%E5%BE%AE%E4%BF%A1/</link>
+        <link>https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/</link>
         <description>Recent content in 微信 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 05 Jul 2024 10:07:32 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 05 Jul 2024 10:07:32 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux原生版微信在高分辨率屏幕字体小，分辨率异常</title>
-        <link>https://blog.seektao.cc/p/linux-wechat/</link>
+        <link>https://hublog.netlify.app/p/linux-wechat/</link>
         <pubDate>Fri, 05 Jul 2024 10:07:32 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/linux-wechat/</guid>
+        <guid>https://hublog.netlify.app/p/linux-wechat/</guid>
         <description>&lt;p&gt;在开始菜单搜索微信，编辑应用程序，添加环境变量&lt;code&gt;QT_SCALE_FACTOR=1.75&lt;/code&gt;&lt;/p&gt;
 &lt;img src=&#34;https://s2.loli.net/2024/07/05/68B9maUQsHtODKX.png&#34; alt=&#34;image-20240705095556996&#34; style=&#34;zoom:50%;&#34; /&gt;
 &lt;p&gt;右击编辑应用程序，进入如下界面&lt;/p&gt;
@@ -26,10 +26,10 @@
         </item>
         <item>
         <title>Debian安装微信</title>
-        <link>https://blog.seektao.cc/p/2310011/</link>
+        <link>https://hublog.netlify.app/p/2310011/</link>
         <pubDate>Wed, 11 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310011/</guid>
+        <guid>https://hublog.netlify.app/p/2310011/</guid>
         <description>&lt;h1 id=&#34;linux原生版微信&#34;&gt;linux原生版微信
 &lt;/h1&gt;&lt;p&gt;linux上的微信版本今天发现优麒麟的适配比较好&lt;/p&gt;
 &lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://www.ubuntukylin.com/applications/106-cn.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

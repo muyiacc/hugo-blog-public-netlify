@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Windows on 寻道之旅</title>
-        <link>https://blog.seektao.cc/categories/windows/</link>
+        <link>https://hublog.netlify.app/categories/windows/</link>
         <description>Recent content in Windows on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 23 Dec 2024 16:27:47 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Dec 2024 16:27:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/windows/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows延长更新时间，关闭更新</title>
-        <link>https://blog.seektao.cc/p/241223162747/</link>
+        <link>https://hublog.netlify.app/p/241223162747/</link>
         <pubDate>Mon, 23 Dec 2024 16:27:47 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241223162747/</guid>
+        <guid>https://hublog.netlify.app/p/241223162747/</guid>
         <description>&lt;p&gt;众所周知，Windows 的更新很频繁，有时候会在重要的时候更新导致系统卡顿，甚至打断当前的动作，很多介绍的关闭更新教程会导致 Windows 的 store 商店无法使用，并且我也不建议安装其他第三方软件对系统更改（你甚至不知道它会干什么）。&lt;/p&gt;
 &lt;p&gt;本次介绍的的方式为”曲线救国“，因为 &lt;strong&gt;Windows 本身支持延长时间&lt;/strong&gt;，但是只能延长5周，我们需要做的就是&lt;strong&gt;增加延长更新的时间&lt;/strong&gt;，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/12/23/DVPbYCTmt6LZWyj.png&#34;
@@ -61,10 +61,10 @@
         </item>
         <item>
         <title>Window11安装，跳过网络连接</title>
-        <link>https://blog.seektao.cc/p/241103192425/</link>
+        <link>https://hublog.netlify.app/p/241103192425/</link>
         <pubDate>Sun, 03 Nov 2024 19:24:25 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241103192425/</guid>
+        <guid>https://hublog.netlify.app/p/241103192425/</guid>
         <description>&lt;p&gt;下一步下一步&amp;hellip;&lt;/p&gt;
 &lt;p&gt;连接网络这里，跳过设置网络&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Shift + F10&lt;/code&gt; 打开命令行&lt;/p&gt;
@@ -83,10 +83,10 @@
         </item>
         <item>
         <title>Windows使用WSL安装Linux系统</title>
-        <link>https://blog.seektao.cc/p/240818210841/</link>
+        <link>https://hublog.netlify.app/p/240818210841/</link>
         <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/240818210841/</guid>
+        <guid>https://hublog.netlify.app/p/240818210841/</guid>
         <description>&lt;p&gt;参考文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&lt;/a&gt;&lt;/p&gt;
@@ -96,19 +96,19 @@
         </item>
         <item>
         <title>Windows创建系统服务的方式</title>
-        <link>https://blog.seektao.cc/p/240801170846/</link>
+        <link>https://hublog.netlify.app/p/240801170846/</link>
         <pubDate>Thu, 01 Aug 2024 17:08:46 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/240801170846/</guid>
+        <guid>https://hublog.netlify.app/p/240801170846/</guid>
         <description>&lt;h2 id=&#34;方式一sc&#34;&gt;方式一：SC
 &lt;/h2&gt;</description>
         </item>
         <item>
         <title>Windows软件清单</title>
-        <link>https://blog.seektao.cc/p/2406026/</link>
+        <link>https://hublog.netlify.app/p/2406026/</link>
         <pubDate>Tue, 25 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406026/</guid>
+        <guid>https://hublog.netlify.app/p/2406026/</guid>
         <description>&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/08/17/nWP4hYF7iKcaS32.png&#34;
 	
 	
@@ -293,10 +293,10 @@
         </item>
         <item>
         <title>Windows下hosts所在目录</title>
-        <link>https://blog.seektao.cc/p/2406016/</link>
+        <link>https://hublog.netlify.app/p/2406016/</link>
         <pubDate>Sun, 16 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406016/</guid>
+        <guid>https://hublog.netlify.app/p/2406016/</guid>
         <description>&lt;p&gt;有时候需要查看hosts，每次都是从网上查看，不如自己记录一下&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -319,10 +319,10 @@
         </item>
         <item>
         <title>Windows将程序设置开机自启</title>
-        <link>https://blog.seektao.cc/p/2404011/</link>
+        <link>https://hublog.netlify.app/p/2404011/</link>
         <pubDate>Thu, 11 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404011/</guid>
+        <guid>https://hublog.netlify.app/p/2404011/</guid>
         <description>&lt;p&gt;有些程序使用的频繁，为了免去手动运行，可以设置开机自启动。&lt;/p&gt;
 &lt;p&gt;但是有些程序自身没有开机自启的设置，此情况下，我们可以将&lt;strong&gt;程序的快捷方式&lt;/strong&gt;添加到Windows的【启动】文件夹，实现程序开机自启。&lt;/p&gt;
 &lt;p&gt;Windows程序自启动目录：&lt;/p&gt;
@@ -339,10 +339,10 @@
         </item>
         <item>
         <title>windows右键新增打开cmd</title>
-        <link>https://blog.seektao.cc/p/2404010/</link>
+        <link>https://hublog.netlify.app/p/2404010/</link>
         <pubDate>Wed, 10 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404010/</guid>
+        <guid>https://hublog.netlify.app/p/2404010/</guid>
         <description>&lt;h1 id=&#34;方式一手动修改注册表&#34;&gt;方式一：手动修改注册表
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;
@@ -415,10 +415,10 @@
         </item>
         <item>
         <title>redis-windows安装</title>
-        <link>https://blog.seektao.cc/p/2404009/</link>
+        <link>https://hublog.netlify.app/p/2404009/</link>
         <pubDate>Tue, 09 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404009/</guid>
+        <guid>https://hublog.netlify.app/p/2404009/</guid>
         <description>&lt;p&gt;GitHub项目：https://github.com/redis-windows/redis-windows&lt;/p&gt;
 &lt;p&gt;下载解压&lt;/p&gt;
 &lt;p&gt;安装服务&lt;/p&gt;
@@ -463,10 +463,10 @@
         </item>
         <item>
         <title>使用Windows10搭建DDNS服务和HTTP服务</title>
-        <link>https://blog.seektao.cc/p/2312013/</link>
+        <link>https://hublog.netlify.app/p/2312013/</link>
         <pubDate>Wed, 13 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312013/</guid>
+        <guid>https://hublog.netlify.app/p/2312013/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;本地的一些环境如何部署到公网访问，本地在有公网ip的情况下实现&lt;/p&gt;
 &lt;h1 id=&#34;2-准备工作&#34;&gt;2. 准备工作
@@ -478,10 +478,10 @@
         </item>
         <item>
         <title>Windows搭建RustDesk-Server并使用-1</title>
-        <link>https://blog.seektao.cc/p/2312011/</link>
+        <link>https://hublog.netlify.app/p/2312011/</link>
         <pubDate>Mon, 11 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312011/</guid>
+        <guid>https://hublog.netlify.app/p/2312011/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;Windows10专业工作站版本&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -516,7 +516,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;执行完成之后应该在 &lt;code&gt;服务&lt;/code&gt; 能够看到这个
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_65263.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_65263.png&#34;
 	
 	
 	
@@ -549,7 +549,7 @@
     &gt;点此下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;安装到本地，安装过程不做介绍。&lt;/p&gt;
 &lt;p&gt;安装完成应该如下
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_15584.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_15584.png&#34;
 	
 	
 	
@@ -561,7 +561,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;点击我所标记的地方，进入设置
 接着点击网络，解锁网络设置
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_76236.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_76236.png&#34;
 	
 	
 	
@@ -572,7 +572,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;填如id服务器，和Key。等等，我发现了个问题，web端官方给出的文档是 21114端口，好像无法访问，先打开打开cmd，查看监听的端口，
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_32623.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_32623.png&#34;
 	
 	
 	
@@ -583,7 +583,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;果然没有21114端口，然后我去github官方找doc了， 搜索 21114，有一个相关的回答，官方说web端被移除了，合着我白忙活了？？&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_00329.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_00329.png&#34;
 	
 	
 	
@@ -594,7 +594,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;不过别慌，不就是没有web客户端嘛，先填写本机ip试试先，至于这个 key嘛，如果你留意文件夹还记得是否还记得有个 &lt;code&gt;.pub&lt;/code&gt;结尾的。熟悉证书的都有点灵感了，这个一般都是公钥，使用记事本打开复制到key中试试，结果如下&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_48300.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_48300.png&#34;
 	
 	
 	
@@ -605,7 +605,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;返回主页，看中间的底部，有个 &lt;code&gt;就绪&lt;/code&gt;字样
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_30016.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_30016.png&#34;
 	
 	
 	
@@ -616,7 +616,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;可以了？？为了确定到底是不是，然后我就把那个id服务器随便填了一个ip，发现还真就不行了，多试了几次也还是这样，填回自己的就好了，为了给你们看看还是截图为证&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_03986.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_03986.png&#34;
 	
 	
 	
@@ -626,7 +626,7 @@
 	
 	
 &gt;
-&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20240320T122933/20240320T122933_41679.png&#34;
+&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20240320T122933/20240320T122933_41679.png&#34;
 	
 	
 	
@@ -644,10 +644,10 @@
         </item>
         <item>
         <title>Windows搭建Jupyter-lab服务，加入系统服务，开机自启。指定端口和默认路径，开启远程访问，配合公网ip，可远程工作。(未完成)</title>
-        <link>https://blog.seektao.cc/p/2312010/</link>
+        <link>https://hublog.netlify.app/p/2312010/</link>
         <pubDate>Sun, 10 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312010/</guid>
+        <guid>https://hublog.netlify.app/p/2312010/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;想在 Windows上搭建 Jupyter-lab服务，开启自启，有公网ip的同学还可以远程访问，实现远程办公。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -704,19 +704,19 @@
         </item>
         <item>
         <title>删除windows的defender误报</title>
-        <link>https://blog.seektao.cc/p/2311017/</link>
+        <link>https://hublog.netlify.app/p/2311017/</link>
         <pubDate>Fri, 17 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311017/</guid>
+        <guid>https://hublog.netlify.app/p/2311017/</guid>
         <description>&lt;p&gt;打开 C:\ProgramData\Microsoft\Windows Defender\Scans\History，然后删除里面的一个叫 “Service” 的文件夹。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>修复Windows的Defender脱机版扫描点击无反应</title>
-        <link>https://blog.seektao.cc/p/2311015/</link>
+        <link>https://hublog.netlify.app/p/2311015/</link>
         <pubDate>Wed, 15 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311015/</guid>
+        <guid>https://hublog.netlify.app/p/2311015/</guid>
         <description>&lt;p&gt;win+s 搜索cmd，使用管理员打开，依此执行以下的命令&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -760,10 +760,10 @@
         </item>
         <item>
         <title>Windows启用Administrator</title>
-        <link>https://blog.seektao.cc/p/2311013/</link>
+        <link>https://hublog.netlify.app/p/2311013/</link>
         <pubDate>Mon, 13 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311013/</guid>
+        <guid>https://hublog.netlify.app/p/2311013/</guid>
         <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -776,10 +776,10 @@
         </item>
         <item>
         <title>Windows下安装Alist，并安装系统服务自启动</title>
-        <link>https://blog.seektao.cc/p/2311012/</link>
+        <link>https://hublog.netlify.app/p/2311012/</link>
         <pubDate>Sun, 12 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311012/</guid>
+        <guid>https://hublog.netlify.app/p/2311012/</guid>
         <description>&lt;p&gt;Alist是一个网盘管理工作，可以挂在多个网盘，使用go编写，所以多平台支持，之前在服务器安装了alist，使用的Linux系统，这次在Windows下也安装一下&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;笔者Windows版本为 Windows10 专业工作站，我不确定家庭版是否有限制&lt;/p&gt;
@@ -962,10 +962,10 @@
         </item>
         <item>
         <title>Windows10沙盒无法运行解决办法参考</title>
-        <link>https://blog.seektao.cc/p/2311011/</link>
+        <link>https://hublog.netlify.app/p/2311011/</link>
         <pubDate>Sat, 11 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311011/</guid>
+        <guid>https://hublog.netlify.app/p/2311011/</guid>
         <description>&lt;h3 id=&#34;win10系统windows-沙盒无法启动0x80070005错误解决方法&#34;&gt;win10系统Windows 沙盒无法启动0x80070005错误解决方法
 &lt;/h3&gt;&lt;p&gt;1、在开始菜单中搜索cmd ，以管理员身份运行【命令提示符】；&lt;/p&gt;
 &lt;p&gt;2、请您启动管理员模式的命令提示符，依次输入以下命令并回车 &lt;br&gt;
@@ -981,10 +981,10 @@ gpupdate /force 回车 &lt;br&gt;
         </item>
         <item>
         <title>一条命令激活Windows和Office</title>
-        <link>https://blog.seektao.cc/p/2309012/</link>
+        <link>https://hublog.netlify.app/p/2309012/</link>
         <pubDate>Wed, 13 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309012/</guid>
+        <guid>https://hublog.netlify.app/p/2309012/</guid>
         <description>&lt;p&gt;本次介绍 github上面一个激活 Windows和Office（支持Office365） 的脚本，拥有 &lt;strong&gt;stat 41.1k&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;支持 Windows 8.1/10/11&lt;/p&gt;
 &lt;blockquote&gt;
@@ -1047,10 +1047,10 @@ gpupdate /force 回车 &lt;br&gt;
         </item>
         <item>
         <title>Windows命令行下对文件做MD5校验</title>
-        <link>https://blog.seektao.cc/p/2309011/</link>
+        <link>https://hublog.netlify.app/p/2309011/</link>
         <pubDate>Tue, 12 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309011/</guid>
+        <guid>https://hublog.netlify.app/p/2309011/</guid>
         <description>&lt;p&gt;Windows命令行下对文件做MD5校验&lt;/p&gt;
 &lt;p&gt;按【win】+R键来打开运行cmd命令行窗口&lt;/p&gt;
 &lt;p&gt;进入cmd命令行界面，使用如下命令做MD5校验：&lt;/p&gt;

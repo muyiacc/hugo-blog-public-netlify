@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Picgo on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/picgo/</link>
+        <link>https://hublog.netlify.app/tags/picgo/</link>
         <description>Recent content in Picgo on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 08 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/picgo/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 08 Apr 2024 15:07:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/picgo/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>picgo自动上传图片到图床（优化版）</title>
-        <link>https://blog.seektao.cc/p/2404008/</link>
+        <link>https://hublog.netlify.app/p/2404008/</link>
         <pubDate>Mon, 08 Apr 2024 15:07:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2404008/</guid>
+        <guid>https://hublog.netlify.app/p/2404008/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;此前已经写过一篇关于 picgo 的文章，&lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;使用 picgo-core 将 markdown 图片上传至 smms 图床&lt;/a&gt;&lt;/p&gt;
@@ -63,10 +63,10 @@
         </item>
         <item>
         <title>使用picgo-core将markdown图片上传至smms图床</title>
-        <link>https://blog.seektao.cc/p/2310021/</link>
+        <link>https://hublog.netlify.app/p/2310021/</link>
         <pubDate>Sat, 21 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310021/</guid>
+        <guid>https://hublog.netlify.app/p/2310021/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;之前使用 gitee 当作图床，typora 能渲染，但是博客里无法渲染，可能是有防盗链，所以换成了 smms 图床，换了之后就可以了。&lt;/p&gt;
 &lt;h2 id=&#34;picgo-core&#34;&gt;Picgo-Core

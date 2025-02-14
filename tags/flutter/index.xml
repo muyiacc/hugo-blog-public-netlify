@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Flutter on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/flutter/</link>
+        <link>https://hublog.netlify.app/tags/flutter/</link>
         <description>Recent content in Flutter on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 05 Nov 2024 12:02:22 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 05 Nov 2024 12:02:22 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VSCode调试控制台隐藏Flutter使用模拟器输出的大量日志</title>
-        <link>https://blog.seektao.cc/p/241105120222/</link>
+        <link>https://hublog.netlify.app/p/241105120222/</link>
         <pubDate>Tue, 05 Nov 2024 12:02:22 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241105120222/</guid>
+        <guid>https://hublog.netlify.app/p/241105120222/</guid>
         <description>&lt;p&gt;在使用 vscode debug 启动模拟器的时候，debug console 隔 1 秒就会输出大量的模拟器日志信息，多数都是像下面的内容，键入内容则会生成其他的。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -46,10 +46,10 @@
         </item>
         <item>
         <title>FVM，Flutter的多版本管理工具</title>
-        <link>https://blog.seektao.cc/p/2403003/</link>
+        <link>https://hublog.netlify.app/p/2403003/</link>
         <pubDate>Sun, 03 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2403003/</guid>
+        <guid>https://hublog.netlify.app/p/2403003/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;Flutter version manager flutter版本管理工具&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://fvm.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -134,10 +134,10 @@
         </item>
         <item>
         <title>Flutter安装配置</title>
-        <link>https://blog.seektao.cc/p/2312005/</link>
+        <link>https://hublog.netlify.app/p/2312005/</link>
         <pubDate>Tue, 05 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312005/</guid>
+        <guid>https://hublog.netlify.app/p/2312005/</guid>
         <description>&lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;h3 id=&#34;linux&#34;&gt;Linux
 &lt;/h3&gt;&lt;p&gt;官方教程：&lt;a class=&#34;link&#34; href=&#34;https://docs.flutter.cn/get-started/install/linux&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

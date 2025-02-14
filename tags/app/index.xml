@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>App on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/app/</link>
+        <link>https://hublog.netlify.app/tags/app/</link>
         <description>Recent content in App on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 10 Nov 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 10 Nov 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/app/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Waydroid：在x86_64上运行arm架构的app</title>
-        <link>https://blog.seektao.cc/p/2311010/</link>
+        <link>https://hublog.netlify.app/p/2311010/</link>
         <pubDate>Fri, 10 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311010/</guid>
+        <guid>https://hublog.netlify.app/p/2311010/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;系统：Debian12
 显示服务器：Wayland&lt;/p&gt;
@@ -20,7 +20,7 @@
 &lt;p&gt;关于waydroid的安装本篇不再介绍，至于如何安装可以观看 &lt;a class=&#34;link&#34; href=&#34;https://docs.waydro.id/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;官网教程&lt;/a&gt;也可以查看 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/516256&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Linux 下安装使用 Waydrioid&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;今天的主角是：&lt;img src=&#34;https://blog.seektao.cc/_media-sync_resources/20231203T140026/20231203T140026_33825.png&#34;
+&lt;p&gt;今天的主角是：&lt;img src=&#34;https://hublog.netlify.app/_media-sync_resources/20231203T140026/20231203T140026_33825.png&#34;
 	
 	
 	

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Sonic on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/sonic/</link>
+        <link>https://hublog.netlify.app/tags/sonic/</link>
         <description>Recent content in Sonic on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 14 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/sonic/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 14 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/sonic/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>基于Golang编写的开源博客系统sonic，内存占用极低！！替代halo</title>
-        <link>https://blog.seektao.cc/p/2309013/</link>
+        <link>https://hublog.netlify.app/p/2309013/</link>
         <pubDate>Thu, 14 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309013/</guid>
+        <guid>https://hublog.netlify.app/p/2309013/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;本文编辑于 2023-09-15&lt;/p&gt;
 &lt;p&gt;作者：muyiacc&lt;/p&gt;

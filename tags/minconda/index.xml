@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Minconda on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/minconda/</link>
+        <link>https://hublog.netlify.app/tags/minconda/</link>
         <description>Recent content in Minconda on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 06 Dec 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/minconda/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Dec 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/minconda/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Minconda迁移已经存在的环境</title>
-        <link>https://blog.seektao.cc/p/2312006/</link>
+        <link>https://hublog.netlify.app/p/2312006/</link>
         <pubDate>Wed, 06 Dec 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2312006/</guid>
+        <guid>https://hublog.netlify.app/p/2312006/</guid>
         <description>&lt;p&gt;Windows下默认安装的环境在 &lt;code&gt;家目录\.conda\envs&lt;/code&gt;我想把它换到安装目录去&lt;/p&gt;
 &lt;p&gt;先备份环境信息，进入激活的环境&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

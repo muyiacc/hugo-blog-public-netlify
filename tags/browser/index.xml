@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Browser on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/browser/</link>
+        <link>https://hublog.netlify.app/tags/browser/</link>
         <description>Recent content in Browser on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 04 Oct 2024 15:55:49 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/browser/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 04 Oct 2024 15:55:49 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/browser/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>指纹浏览器</title>
-        <link>https://blog.seektao.cc/p/241004155549/</link>
+        <link>https://hublog.netlify.app/p/241004155549/</link>
         <pubDate>Fri, 04 Oct 2024 15:55:49 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241004155549/</guid>
+        <guid>https://hublog.netlify.app/p/241004155549/</guid>
         <description>&lt;h3 id=&#34;undetectable&#34;&gt;Undetectable
 &lt;/h3&gt;&lt;p&gt;推荐&lt;/p&gt;
 &lt;h3 id=&#34;dolphin-anty&#34;&gt;Dolphin Anty

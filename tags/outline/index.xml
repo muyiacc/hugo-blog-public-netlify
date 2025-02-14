@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Outline on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/outline/</link>
+        <link>https://hublog.netlify.app/tags/outline/</link>
         <description>Recent content in Outline on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 04 Sep 2024 15:09:28 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/outline/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Wed, 04 Sep 2024 15:09:28 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/outline/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

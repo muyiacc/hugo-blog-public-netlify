@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>解压缩 on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/</link>
+        <link>https://hublog.netlify.app/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/</link>
         <description>Recent content in 解压缩 on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 04 Sep 2023 14:07:09 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 04 Sep 2023 14:07:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E8%A7%A3%E5%8E%8B%E7%BC%A9/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux下的解压命令unzip使用指南</title>
-        <link>https://blog.seektao.cc/p/2309002/</link>
+        <link>https://hublog.netlify.app/p/2309002/</link>
         <pubDate>Mon, 04 Sep 2023 14:07:09 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309002/</guid>
+        <guid>https://hublog.netlify.app/p/2309002/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;&lt;p&gt;unzip为linux上 解压 zip的命令&lt;/p&gt;
 &lt;p&gt;小提示：使用unzip解压时，先提前创建好解压的路径，再通过 &lt;code&gt;-d 解压路径&lt;/code&gt; 指定&lt;/p&gt;

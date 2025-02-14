@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Jdk on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/jdk/</link>
+        <link>https://hublog.netlify.app/tags/jdk/</link>
         <description>Recent content in Jdk on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 09 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/jdk/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/jdk/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Debian12或者Linux安装JDK17和JDK8</title>
-        <link>https://blog.seektao.cc/p/2310009/</link>
+        <link>https://hublog.netlify.app/p/2310009/</link>
         <pubDate>Mon, 09 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310009/</guid>
+        <guid>https://hublog.netlify.app/p/2310009/</guid>
         <description>&lt;p&gt;apt默认只有jdk17版本了,安装了jdk17之后，再安装jdk8&lt;/p&gt;
 &lt;h1 id=&#34;jdk17&#34;&gt;jdk17
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

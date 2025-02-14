@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Music on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/music/</link>
+        <link>https://hublog.netlify.app/tags/music/</link>
         <description>Recent content in Music on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 03 Nov 2024 16:10:54 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/music/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 03 Nov 2024 16:10:54 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/music/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>lx-music落雪音乐同步服务部署</title>
-        <link>https://blog.seektao.cc/p/241103161054/</link>
+        <link>https://hublog.netlify.app/p/241103161054/</link>
         <pubDate>Sun, 03 Nov 2024 16:10:54 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241103161054/</guid>
+        <guid>https://hublog.netlify.app/p/241103161054/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
 &lt;/h2&gt;&lt;p&gt;lx-music，也就是落雪音乐&lt;/p&gt;
 &lt;p&gt;之前多平台使用的时候，比如换设备，卸载后重装，数据都会丢失。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Ddns-Go on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/ddns-go/</link>
+        <link>https://hublog.netlify.app/tags/ddns-go/</link>
         <description>Recent content in Ddns-Go on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 03 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/ddns-go/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/ddns-go/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ddns-go</title>
-        <link>https://blog.seektao.cc/p/2405003/</link>
+        <link>https://hublog.netlify.app/p/2405003/</link>
         <pubDate>Fri, 03 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2405003/</guid>
+        <guid>https://hublog.netlify.app/p/2405003/</guid>
         <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jeessy2/ddns-go/releases/tag/v6.6.3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/jeessy2/ddns-go/releases/tag/v6.6.3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载解压&lt;/p&gt;

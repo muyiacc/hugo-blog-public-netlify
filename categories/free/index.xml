@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Free on 寻道之旅</title>
-        <link>https://blog.seektao.cc/categories/free/</link>
+        <link>https://hublog.netlify.app/categories/free/</link>
         <description>Recent content in Free on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 22 Jun 2024 00:06:14 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/free/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 22 Jun 2024 00:06:14 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/free/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>免费虚拟主机Serv00，使用部署各种服务教程</title>
-        <link>https://blog.seektao.cc/p/free-virtual-host-serv00-1/</link>
+        <link>https://hublog.netlify.app/p/free-virtual-host-serv00-1/</link>
         <pubDate>Sat, 22 Jun 2024 00:06:14 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/free-virtual-host-serv00-1/</guid>
+        <guid>https://hublog.netlify.app/p/free-virtual-host-serv00-1/</guid>
         <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍
 &lt;/h1&gt;&lt;p&gt;支持的服务众多，可选择php版本，有多款数据库，MySQL，postgresql，mongdodb，支持ssh连接，没有广告，3G空间。&lt;/p&gt;
 &lt;p&gt;地址：https://www.serv00.com/&lt;/p&gt;
@@ -175,10 +175,10 @@
         </item>
         <item>
         <title>com.mp免费域名注册</title>
-        <link>https://blog.seektao.cc/p/2406001/</link>
+        <link>https://hublog.netlify.app/p/2406001/</link>
         <pubDate>Sat, 01 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406001/</guid>
+        <guid>https://hublog.netlify.app/p/2406001/</guid>
         <description>&lt;p&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://www.registry.com.mp/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.registry.com.mp/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;dns解析：&lt;a class=&#34;link&#34; href=&#34;https://hostry.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;

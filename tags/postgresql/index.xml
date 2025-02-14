@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Postgresql on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/postgresql/</link>
+        <link>https://hublog.netlify.app/tags/postgresql/</link>
         <description>Recent content in Postgresql on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 11 Oct 2024 22:42:04 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 11 Oct 2024 22:42:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Postgres之PSQL使用</title>
-        <link>https://blog.seektao.cc/p/241011224204/</link>
+        <link>https://hublog.netlify.app/p/241011224204/</link>
         <pubDate>Fri, 11 Oct 2024 22:42:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241011224204/</guid>
+        <guid>https://hublog.netlify.app/p/241011224204/</guid>
         <description>&lt;h2 id=&#34;数据库&#34;&gt;数据库
 &lt;/h2&gt;&lt;p&gt;查看所有数据库&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -100,10 +100,10 @@
         </item>
         <item>
         <title>PostgreSQL备份数据库</title>
-        <link>https://blog.seektao.cc/p/2403009/</link>
+        <link>https://hublog.netlify.app/p/2403009/</link>
         <pubDate>Sat, 09 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2403009/</guid>
+        <guid>https://hublog.netlify.app/p/2403009/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;使用 &lt;code&gt;pg_dump&lt;/code&gt; 命令备份整个数据库&lt;/strong&gt;：&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tab on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/tab/</link>
+        <link>https://hublog.netlify.app/tags/tab/</link>
         <description>Recent content in Tab on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 22 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/tab/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 22 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/tab/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VIM的配置</title>
-        <link>https://blog.seektao.cc/p/2310022/</link>
+        <link>https://hublog.netlify.app/p/2310022/</link>
         <pubDate>Sun, 22 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310022/</guid>
+        <guid>https://hublog.netlify.app/p/2310022/</guid>
         <description>&lt;p&gt;要将 Vim 的 Tab 键设置为四个空格，请按照以下步骤进行操作：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;

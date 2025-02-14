@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Database on 寻道之旅</title>
-        <link>https://blog.seektao.cc/categories/database/</link>
+        <link>https://hublog.netlify.app/categories/database/</link>
         <description>Recent content in Database on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 07 Nov 2024 12:50:40 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/database/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 07 Nov 2024 12:50:40 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/database/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Postgres之PSQL使用</title>
-        <link>https://blog.seektao.cc/p/241011224204/</link>
+        <link>https://hublog.netlify.app/p/241011224204/</link>
         <pubDate>Fri, 11 Oct 2024 22:42:04 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241011224204/</guid>
+        <guid>https://hublog.netlify.app/p/241011224204/</guid>
         <description>&lt;h2 id=&#34;数据库&#34;&gt;数据库
 &lt;/h2&gt;&lt;p&gt;查看所有数据库&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -100,10 +100,10 @@
         </item>
         <item>
         <title>sqlite3的一些基本操作</title>
-        <link>https://blog.seektao.cc/p/241002080830/</link>
+        <link>https://hublog.netlify.app/p/241002080830/</link>
         <pubDate>Wed, 02 Oct 2024 08:08:30 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241002080830/</guid>
+        <guid>https://hublog.netlify.app/p/241002080830/</guid>
         <description>&lt;p&gt;&lt;code&gt;sqlite3 dbfile&lt;/code&gt; 进入sqlite3终端&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;.table&lt;/code&gt; 查看表&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;DELETE FROM table_name;&lt;/code&gt; 清空表数据&lt;/p&gt;

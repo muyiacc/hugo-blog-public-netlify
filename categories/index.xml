@@ -2,122 +2,122 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on 寻道之旅</title>
-        <link>https://blog.seektao.cc/categories/</link>
+        <link>https://hublog.netlify.app/categories/</link>
         <description>Recent content in Categories on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 12 Feb 2025 13:27:19 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 13 Feb 2025 15:29:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Default</title>
-        <link>https://blog.seektao.cc/categories/default/</link>
-        <pubDate>Wed, 12 Feb 2025 13:27:19 +0800</pubDate>
+        <link>https://hublog.netlify.app/categories/default/</link>
+        <pubDate>Thu, 13 Feb 2025 15:29:41 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/default/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/default/default.jpg" alt="Featured image of post Default" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/default/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.jpg" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Proxy</title>
+        <link>https://hublog.netlify.app/categories/proxy/</link>
+        <pubDate>Thu, 13 Feb 2025 11:33:55 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/proxy/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/proxy/proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
         </item>
         <item>
         <title>Backend</title>
-        <link>https://blog.seektao.cc/categories/backend/</link>
+        <link>https://hublog.netlify.app/categories/backend/</link>
         <pubDate>Tue, 11 Feb 2025 10:35:09 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/backend/</guid>
+        <guid>https://hublog.netlify.app/categories/backend/</guid>
         <description></description>
         </item>
         <item>
         <title>Frontend</title>
-        <link>https://blog.seektao.cc/categories/frontend/</link>
+        <link>https://hublog.netlify.app/categories/frontend/</link>
         <pubDate>Sun, 05 Jan 2025 19:46:38 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/frontend/</guid>
+        <guid>https://hublog.netlify.app/categories/frontend/</guid>
         <description></description>
         </item>
         <item>
         <title>Windows</title>
-        <link>https://blog.seektao.cc/categories/windows/</link>
+        <link>https://hublog.netlify.app/categories/windows/</link>
         <pubDate>Mon, 23 Dec 2024 16:27:47 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/windows/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/windows/img0-1024x768.webp" alt="Featured image of post Windows" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/windows/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/windows/img0-1024x768.webp" alt="Featured image of post Windows" /&gt;</description>
         </item>
         <item>
         <title>Database</title>
-        <link>https://blog.seektao.cc/categories/database/</link>
+        <link>https://hublog.netlify.app/categories/database/</link>
         <pubDate>Thu, 07 Nov 2024 12:50:40 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/database/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/database/3a34b22f901c4a55dcfbb35c717f6564.png" alt="Featured image of post Database" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/database/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/database/3a34b22f901c4a55dcfbb35c717f6564.png" alt="Featured image of post Database" /&gt;</description>
         </item>
         <item>
         <title>Project</title>
-        <link>https://blog.seektao.cc/categories/project/</link>
+        <link>https://hublog.netlify.app/categories/project/</link>
         <pubDate>Sat, 12 Oct 2024 19:05:21 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/project/</guid>
+        <guid>https://hublog.netlify.app/categories/project/</guid>
         <description></description>
         </item>
         <item>
         <title>Vue</title>
-        <link>https://blog.seektao.cc/categories/vue/</link>
+        <link>https://hublog.netlify.app/categories/vue/</link>
         <pubDate>Sat, 12 Oct 2024 08:51:29 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/vue/</guid>
+        <guid>https://hublog.netlify.app/categories/vue/</guid>
         <description></description>
         </item>
         <item>
         <title>Golang</title>
-        <link>https://blog.seektao.cc/categories/golang/</link>
+        <link>https://hublog.netlify.app/categories/golang/</link>
         <pubDate>Mon, 07 Oct 2024 12:57:53 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/golang/</guid>
+        <guid>https://hublog.netlify.app/categories/golang/</guid>
         <description></description>
         </item>
         <item>
         <title>Linux</title>
-        <link>https://blog.seektao.cc/categories/linux/</link>
+        <link>https://hublog.netlify.app/categories/linux/</link>
         <pubDate>Sun, 06 Oct 2024 11:09:05 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/linux/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/linux/linux.png" alt="Featured image of post Linux" /&gt;</description>
-        </item>
-        <item>
-        <title>Proxy</title>
-        <link>https://blog.seektao.cc/categories/proxy/</link>
-        <pubDate>Mon, 09 Sep 2024 02:41:37 +0800</pubDate>
-        
-        <guid>https://blog.seektao.cc/categories/proxy/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/proxy/proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/linux/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.png" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Tao</title>
-        <link>https://blog.seektao.cc/categories/tao/</link>
+        <link>https://hublog.netlify.app/categories/tao/</link>
         <pubDate>Mon, 08 Jul 2024 16:07:59 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/tao/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/tao/dharma.jpg" alt="Featured image of post Tao" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/tao/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/tao/dharma.jpg" alt="Featured image of post Tao" /&gt;</description>
         </item>
         <item>
         <title>Free</title>
-        <link>https://blog.seektao.cc/categories/free/</link>
+        <link>https://hublog.netlify.app/categories/free/</link>
         <pubDate>Sat, 22 Jun 2024 00:06:14 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/free/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/free/wallhaven-7p53ve.png" alt="Featured image of post Free" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/free/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/free/wallhaven-7p53ve.png" alt="Featured image of post Free" /&gt;</description>
         </item>
         <item>
         <title>Docker</title>
-        <link>https://blog.seektao.cc/categories/docker/</link>
+        <link>https://hublog.netlify.app/categories/docker/</link>
         <pubDate>Wed, 05 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/docker/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/docker/docker.png" alt="Featured image of post Docker" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/docker/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/docker/docker.png" alt="Featured image of post Docker" /&gt;</description>
         </item>
         <item>
         <title>Go</title>
-        <link>https://blog.seektao.cc/categories/go/</link>
+        <link>https://hublog.netlify.app/categories/go/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.seektao.cc/categories/go/</guid>
-        <description>&lt;img src="https://blog.seektao.cc/categories/go/go.jpg" alt="Featured image of post Go" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/go/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/go/go.jpg" alt="Featured image of post Go" /&gt;</description>
         </item>
         
     </channel>

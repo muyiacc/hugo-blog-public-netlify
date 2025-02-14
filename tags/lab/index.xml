@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Lab on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/lab/</link>
+        <link>https://hublog.netlify.app/tags/lab/</link>
         <description>Recent content in Lab on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 06 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/lab/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 06 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/lab/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux（Debian）安装jupyter lab，实现远程登录访问</title>
-        <link>https://blog.seektao.cc/p/2405006/</link>
+        <link>https://hublog.netlify.app/p/2405006/</link>
         <pubDate>Mon, 06 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2405006/</guid>
+        <guid>https://hublog.netlify.app/p/2405006/</guid>
         <description>&lt;h1 id=&#34;最开始的话&#34;&gt;最开始的话
 &lt;/h1&gt;&lt;p&gt;在写这篇文章时，我可是广搜资料，尝试了太多方式，都不能远程访问，jupyter官方网站也没找到教程，尝试了一个下午和一个晚上也没整好，导致瞌睡都没睡好，第二天早上，突然灵光乍现，改变了修改的配置文件，然后就成了！！这其中的辛酸，不足道也。&lt;/p&gt;
 &lt;h1 id=&#34;起因&#34;&gt;起因

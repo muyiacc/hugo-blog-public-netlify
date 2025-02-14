@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Qbittorrent on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/qbittorrent/</link>
+        <link>https://hublog.netlify.app/tags/qbittorrent/</link>
         <description>Recent content in Qbittorrent on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 09 Jan 2025 18:50:27 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/qbittorrent/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 09 Jan 2025 18:50:27 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/qbittorrent/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows安装qBittorrent(EE)，qBittorrent-ClientBlocker</title>
-        <link>https://blog.seektao.cc/p/250109185027/</link>
+        <link>https://hublog.netlify.app/p/250109185027/</link>
         <pubDate>Thu, 09 Jan 2025 18:50:27 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/250109185027/</guid>
+        <guid>https://hublog.netlify.app/p/250109185027/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;h2 id=&#34;安装-qbittorrentqbittorrentee&#34;&gt;安装 qBittorrent/qBittorrentEE
 &lt;/h2&gt;&lt;p&gt;qBittorrentEE 全称为 qBittorrent-Enhanced-Edition，是 qBittorrent 的增强版，自带防止迅雷吸血&lt;/p&gt;
@@ -692,10 +692,10 @@
         </item>
         <item>
         <title>Linux安装qBittorrent-ClientBlocker</title>
-        <link>https://blog.seektao.cc/p/250109140203/</link>
+        <link>https://hublog.netlify.app/p/250109140203/</link>
         <pubDate>Thu, 09 Jan 2025 14:02:03 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/250109140203/</guid>
+        <guid>https://hublog.netlify.app/p/250109140203/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
@@ -830,10 +830,10 @@
         </item>
         <item>
         <title>Linux无图形化界面安装qBittorrent</title>
-        <link>https://blog.seektao.cc/p/250108203110/</link>
+        <link>https://hublog.netlify.app/p/250108203110/</link>
         <pubDate>Wed, 08 Jan 2025 20:31:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/250108203110/</guid>
+        <guid>https://hublog.netlify.app/p/250108203110/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;家用 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装

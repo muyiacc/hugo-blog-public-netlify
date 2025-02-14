@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Nginx on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/nginx/</link>
+        <link>https://hublog.netlify.app/tags/nginx/</link>
         <description>Recent content in Nginx on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 03 Oct 2024 15:11:58 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 03 Oct 2024 15:11:58 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/nginx/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>SSL证书申请，Nginx配置一条龙服务</title>
-        <link>https://blog.seektao.cc/p/241003151158/</link>
+        <link>https://hublog.netlify.app/p/241003151158/</link>
         <pubDate>Thu, 03 Oct 2024 15:11:58 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241003151158/</guid>
+        <guid>https://hublog.netlify.app/p/241003151158/</guid>
         <description>&lt;img src="https://s2.loli.net/2024/10/03/maziQBGhWpPJyVD.png" alt="Featured image of post SSL证书申请，Nginx配置一条龙服务" /&gt;&lt;h2 id=&#34;nginx-安装和配置&#34;&gt;Nginx 安装和配置
 &lt;/h2&gt;&lt;style type=&#34;text/css&#34;&gt;
      
@@ -630,10 +630,10 @@ sudo pip uninstall certbot&lt;/p&gt;
         </item>
         <item>
         <title>Debian下的Certbot安装使用，附nginx使用</title>
-        <link>https://blog.seektao.cc/p/2405004/</link>
+        <link>https://hublog.netlify.app/p/2405004/</link>
         <pubDate>Sat, 04 May 2024 16:05:43 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2405004/</guid>
+        <guid>https://hublog.netlify.app/p/2405004/</guid>
         <description>&lt;h1 id=&#34;介绍&#34;&gt;介绍
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Certbot&lt;/strong&gt; 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数据传输的安全性和隐私性。&lt;/p&gt;
 &lt;p&gt;Certbot 支持大多数常见的 Web 服务器，包括 Apache、Nginx、IIS 等。&lt;/p&gt;
@@ -976,10 +976,10 @@ sudo pip uninstall certbot&lt;/p&gt;
         </item>
         <item>
         <title>Nginx篇：通过apt的nginx官方仓库安装</title>
-        <link>https://blog.seektao.cc/p/2403007/</link>
+        <link>https://hublog.netlify.app/p/2403007/</link>
         <pubDate>Thu, 07 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2403007/</guid>
+        <guid>https://hublog.netlify.app/p/2403007/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
 &lt;/h2&gt;&lt;p&gt;为什么需要通过官方仓库安装？
 答：系统默认的软件源版本太低&lt;/p&gt;
@@ -1177,10 +1177,10 @@ uid&lt;/p&gt;
         </item>
         <item>
         <title>nginx-proxy-manager申请证书失败之缺乏zope模块【已解决】</title>
-        <link>https://blog.seektao.cc/p/2403005/</link>
+        <link>https://hublog.netlify.app/p/2403005/</link>
         <pubDate>Tue, 05 Mar 2024 00:03:15 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2403005/</guid>
+        <guid>https://hublog.netlify.app/p/2403005/</guid>
         <description>&lt;p&gt;nginx-proxy-manager 可以自动续期ssl证书，使用docker搭建也比较方便。&lt;/p&gt;
 &lt;p&gt;今天我的网站出现证书过期，然后我去管理端手动续期也出现了失败，但是没有报具体的错误，接着升级了镜像，新开容器也没有解决。&lt;/p&gt;
 &lt;p&gt;还好这个问题之前我也遇见过，可以通过重新申请域名ssl证书复现，让其给出真正的报错，结果和之前一样，缺乏 “zope”模块。&lt;/p&gt;

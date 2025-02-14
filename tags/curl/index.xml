@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Curl on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/curl/</link>
+        <link>https://hublog.netlify.app/tags/curl/</link>
         <description>Recent content in Curl on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 19 Aug 2024 11:08:08 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/curl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 19 Aug 2024 11:08:08 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/curl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>curl，命令行或脚本中与 URL 进行交互的工具</title>
-        <link>https://blog.seektao.cc/p/240819110878/</link>
+        <link>https://hublog.netlify.app/p/240819110878/</link>
         <pubDate>Mon, 19 Aug 2024 11:08:08 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/240819110878/</guid>
+        <guid>https://hublog.netlify.app/p/240819110878/</guid>
         <description>&lt;h3 id=&#34;什么是-curl&#34;&gt;什么是 &lt;code&gt;curl&lt;/code&gt;？
 &lt;/h3&gt;&lt;p&gt;&lt;code&gt;curl&lt;/code&gt; 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求。&lt;/p&gt;
 &lt;h3 id=&#34;安装-curl&#34;&gt;安装 &lt;code&gt;curl&lt;/code&gt;

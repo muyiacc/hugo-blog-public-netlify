@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Books on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/books/</link>
+        <link>https://hublog.netlify.app/tags/books/</link>
         <description>Recent content in Books on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 17 Nov 2024 15:15:16 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/books/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 17 Nov 2024 15:15:16 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/books/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Z-library访问方法总结</title>
-        <link>https://blog.seektao.cc/p/241117151516/</link>
+        <link>https://hublog.netlify.app/p/241117151516/</link>
         <pubDate>Sun, 17 Nov 2024 15:15:16 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241117151516/</guid>
+        <guid>https://hublog.netlify.app/p/241117151516/</guid>
         <description>&lt;p&gt;众所周知，Z-library 由于性质的原因，访问地址经常失效，有什么好办法可以获取访问地址呢，根据我的经验，有两种比较好的方式。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;客户端&lt;/li&gt;

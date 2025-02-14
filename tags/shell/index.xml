@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shell on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/shell/</link>
+        <link>https://hublog.netlify.app/tags/shell/</link>
         <description>Recent content in Shell on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 08 Nov 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 08 Nov 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/shell/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Shell脚本：快速比对文件的SHA256哈希值，判断文件是否被篡改</title>
-        <link>https://blog.seektao.cc/p/2311008/</link>
+        <link>https://hublog.netlify.app/p/2311008/</link>
         <pubDate>Wed, 08 Nov 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2311008/</guid>
+        <guid>https://hublog.netlify.app/p/2311008/</guid>
         <description>&lt;p&gt;有时候下载的文件想要比对官方给出的 SHA256 值比较麻烦，这个脚本可以快速判断文件是否被篡改&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -157,10 +157,10 @@
         </item>
         <item>
         <title>Shell的基本语法-1-概述-解释器-入门</title>
-        <link>https://blog.seektao.cc/p/2309006/</link>
+        <link>https://hublog.netlify.app/p/2309006/</link>
         <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309006/</guid>
+        <guid>https://hublog.netlify.app/p/2309006/</guid>
         <description>&lt;h1 id=&#34;1-shell概述&#34;&gt;1. Shell概述
 &lt;/h1&gt;&lt;p&gt;作为一个开发人员，使用Linux实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开Shell，所以这篇文章总结一下Shell中常见的语法&lt;/p&gt;
 &lt;h1 id=&#34;2-解释器&#34;&gt;2. 解释器
@@ -251,10 +251,10 @@
         </item>
         <item>
         <title>Shell的基本语法-2-变量-运算符-条件判断</title>
-        <link>https://blog.seektao.cc/p/2309007/</link>
+        <link>https://hublog.netlify.app/p/2309007/</link>
         <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309007/</guid>
+        <guid>https://hublog.netlify.app/p/2309007/</guid>
         <description>&lt;h1 id=&#34;1-变量&#34;&gt;1. 变量
 &lt;/h1&gt;&lt;p&gt;Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等&lt;/p&gt;
 &lt;p&gt;查看这些变量的值只需要 &lt;code&gt;echo $变量名&lt;/code&gt;即可&lt;/p&gt;

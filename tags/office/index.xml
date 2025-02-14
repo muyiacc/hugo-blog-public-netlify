@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Office on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/office/</link>
+        <link>https://hublog.netlify.app/tags/office/</link>
         <description>Recent content in Office on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 13 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/office/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 13 Sep 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/office/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>一条命令激活Windows和Office</title>
-        <link>https://blog.seektao.cc/p/2309012/</link>
+        <link>https://hublog.netlify.app/p/2309012/</link>
         <pubDate>Wed, 13 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2309012/</guid>
+        <guid>https://hublog.netlify.app/p/2309012/</guid>
         <description>&lt;p&gt;本次介绍 github上面一个激活 Windows和Office（支持Office365） 的脚本，拥有 &lt;strong&gt;stat 41.1k&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;支持 Windows 8.1/10/11&lt;/p&gt;
 &lt;blockquote&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Typora on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/typora/</link>
+        <link>https://hublog.netlify.app/tags/typora/</link>
         <description>Recent content in Typora on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 15 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/typora/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 15 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/typora/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Typora安装，激活</title>
-        <link>https://blog.seektao.cc/p/2406015/</link>
+        <link>https://hublog.netlify.app/p/2406015/</link>
         <pubDate>Sat, 15 Jun 2024 16:06:01 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2406015/</guid>
+        <guid>https://hublog.netlify.app/p/2406015/</guid>
         <description>&lt;p&gt;原文链接：https://www.seektao.cc/archives/typora-install-activation&lt;/p&gt;
 &lt;p&gt;！！！2024-06-15更新全文内容和排版，包括标题！！！&lt;/p&gt;
 &lt;p&gt;今天（2024-06-15）新装了一个debian12系统，根据本教程安装了最新版typora并激活，发现竟然失效了，截止今天typora的最新版是 &lt;code&gt;1.8.10&lt;/code&gt;，看来是typora修复了，于是我去下载本教程编写时候对应的最新版&lt;code&gt;1.7.5&lt;/code&gt;，官网竟然关闭了下载通道，提供离&lt;code&gt;1.7.5&lt;/code&gt;的最近的是&lt;code&gt;1.7,6&lt;/code&gt;，于是我又下载&lt;code&gt;1.7.6&lt;/code&gt;，激活也失败告终，看来只能使用&lt;code&gt;1.7.5&lt;/code&gt;了，还好我有备份，不过存在阿里云盘，要登陆，不方便下载，当时本想着这法子是不会失效的，结果。。&lt;/p&gt;
@@ -261,10 +261,10 @@ debian：sudo apt install gcc&lt;/p&gt;
         </item>
         <item>
         <title>Linux下的 Typora 安装和激活</title>
-        <link>https://blog.seektao.cc/p/2310015/</link>
+        <link>https://hublog.netlify.app/p/2310015/</link>
         <pubDate>Sun, 15 Oct 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2310015/</guid>
+        <guid>https://hublog.netlify.app/p/2310015/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;title:  Linux下的 Typora 安装和激活
 author: taoone

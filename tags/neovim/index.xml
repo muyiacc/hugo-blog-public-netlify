@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Neovim on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/neovim/</link>
+        <link>https://hublog.netlify.app/tags/neovim/</link>
         <description>Recent content in Neovim on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 25 Oct 2024 16:29:17 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/neovim/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 25 Oct 2024 16:29:17 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/neovim/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>LazyVim安装配置</title>
-        <link>https://blog.seektao.cc/p/241025162917/</link>
+        <link>https://hublog.netlify.app/p/241025162917/</link>
         <pubDate>Fri, 25 Oct 2024 16:29:17 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241025162917/</guid>
+        <guid>https://hublog.netlify.app/p/241025162917/</guid>
         <description>&lt;h2 id=&#34;简述&#34;&gt;简述
 &lt;/h2&gt;&lt;p&gt;LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png&#34;
@@ -180,10 +180,10 @@
         </item>
         <item>
         <title>Neovim安装配置</title>
-        <link>https://blog.seektao.cc/p/2407012/</link>
+        <link>https://hublog.netlify.app/p/2407012/</link>
         <pubDate>Fri, 12 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2407012/</guid>
+        <guid>https://hublog.netlify.app/p/2407012/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/neovim/neovim&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/neovim/neovim&lt;/a&gt;&lt;/p&gt;
@@ -260,10 +260,10 @@
         </item>
         <item>
         <title>lunarvim，开箱即用的neovim</title>
-        <link>https://blog.seektao.cc/p/2407011/</link>
+        <link>https://hublog.netlify.app/p/2407011/</link>
         <pubDate>Thu, 11 Jul 2024 23:07:42 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/2407011/</guid>
+        <guid>https://hublog.netlify.app/p/2407011/</guid>
         <description>&lt;blockquote&gt;
 &lt;p&gt;官方文档：https://www.lunarvim.org/docs/installation&lt;/p&gt;
 &lt;/blockquote&gt;

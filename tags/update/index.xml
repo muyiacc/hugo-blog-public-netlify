@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Update on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/update/</link>
+        <link>https://hublog.netlify.app/tags/update/</link>
         <description>Recent content in Update on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Mon, 23 Dec 2024 16:27:47 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/update/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Dec 2024 16:27:47 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/update/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows延长更新时间，关闭更新</title>
-        <link>https://blog.seektao.cc/p/241223162747/</link>
+        <link>https://hublog.netlify.app/p/241223162747/</link>
         <pubDate>Mon, 23 Dec 2024 16:27:47 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241223162747/</guid>
+        <guid>https://hublog.netlify.app/p/241223162747/</guid>
         <description>&lt;p&gt;众所周知，Windows 的更新很频繁，有时候会在重要的时候更新导致系统卡顿，甚至打断当前的动作，很多介绍的关闭更新教程会导致 Windows 的 store 商店无法使用，并且我也不建议安装其他第三方软件对系统更改（你甚至不知道它会干什么）。&lt;/p&gt;
 &lt;p&gt;本次介绍的的方式为”曲线救国“，因为 &lt;strong&gt;Windows 本身支持延长时间&lt;/strong&gt;，但是只能延长5周，我们需要做的就是&lt;strong&gt;增加延长更新的时间&lt;/strong&gt;，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/12/23/DVPbYCTmt6LZWyj.png&#34;

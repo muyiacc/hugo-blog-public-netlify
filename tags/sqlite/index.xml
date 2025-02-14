@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Sqlite on 寻道之旅</title>
-        <link>https://blog.seektao.cc/tags/sqlite/</link>
+        <link>https://hublog.netlify.app/tags/sqlite/</link>
         <description>Recent content in Sqlite on 寻道之旅</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 02 Oct 2024 08:08:30 +0800</lastBuildDate><atom:link href="https://blog.seektao.cc/tags/sqlite/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 02 Oct 2024 08:08:30 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/sqlite/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>sqlite3的一些基本操作</title>
-        <link>https://blog.seektao.cc/p/241002080830/</link>
+        <link>https://hublog.netlify.app/p/241002080830/</link>
         <pubDate>Wed, 02 Oct 2024 08:08:30 +0800</pubDate>
         
-        <guid>https://blog.seektao.cc/p/241002080830/</guid>
+        <guid>https://hublog.netlify.app/p/241002080830/</guid>
         <description>&lt;p&gt;&lt;code&gt;sqlite3 dbfile&lt;/code&gt; 进入sqlite3终端&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;.table&lt;/code&gt; 查看表&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;DELETE FROM table_name;&lt;/code&gt; 清空表数据&lt;/p&gt;
