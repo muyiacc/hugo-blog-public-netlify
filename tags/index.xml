@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 13 Feb 2025 15:29:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 15 Feb 2025 17:51:05 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Node</title>
+        <link>https://hublog.netlify.app/tags/node/</link>
+        <pubDate>Sat, 15 Feb 2025 17:51:05 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/node/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nvm</title>
+        <link>https://hublog.netlify.app/tags/nvm/</link>
+        <pubDate>Sat, 15 Feb 2025 17:51:05 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/nvm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://hublog.netlify.app/tags/python/</link>
+        <pubDate>Sat, 15 Feb 2025 17:21:03 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/python/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Llm</title>
         <link>https://hublog.netlify.app/tags/llm/</link>
         <pubDate>Thu, 13 Feb 2025 15:29:41 +0800</pubDate>
@@ -29,14 +53,6 @@
         <pubDate>Thu, 13 Feb 2025 11:33:55 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/serv00/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Python</title>
-        <link>https://hublog.netlify.app/tags/python/</link>
-        <pubDate>Tue, 11 Feb 2025 10:35:09 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/python/</guid>
         <description></description>
         </item>
         <item>
@@ -1221,22 +1237,6 @@
         <pubDate>Sat, 21 Oct 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/smms/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Node</title>
-        <link>https://hublog.netlify.app/tags/node/</link>
-        <pubDate>Tue, 17 Oct 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/node/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Nvm</title>
-        <link>https://hublog.netlify.app/tags/nvm/</link>
-        <pubDate>Tue, 17 Oct 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/nvm/</guid>
         <description></description>
         </item>
         <item>
