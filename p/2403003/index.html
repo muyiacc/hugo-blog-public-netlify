@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Flutter version manager flutter版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Flutter version manager flutter 版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手动安装 1 Set-ExecutionPolicy Bypass">
 <title>FVM，Flutter的多版本管理工具</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2403003/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="FVM，Flutter的多版本管理工具">
-<meta property='og:description' content="简介 Flutter version manager flutter版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手">
+<meta property='og:description' content="简介 Flutter version manager flutter 版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手动安装 1 Set-ExecutionPolicy Bypass">
 <meta property='og:url' content='https://hublog.netlify.app/p/2403003/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='fvm' /><meta property='article:tag' content='flutter' /><meta property='article:published_time' content='2024-03-03T00:03:15&#43;08:00'/><meta property='article:modified_time' content='2024-03-03T00:03:15&#43;08:00'/>
 <meta name="twitter:title" content="FVM，Flutter的多版本管理工具">
-<meta name="twitter:description" content="简介 Flutter version manager flutter版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手">
+<meta name="twitter:description" content="简介 Flutter version manager flutter 版本管理工具 官网：https://fvm.app/ 安装 Windows-自动安装 1 choco install fvm 如果没有安装 choco，需要手动安装 1 Set-ExecutionPolicy Bypass">
   
 
 
@@ -344,7 +344,7 @@
     
     
     <h2 id="简介">简介
-</h2><p>Flutter version manager flutter版本管理工具</p>
+</h2><p>Flutter version manager flutter 版本管理工具</p>
 <p>官网：<a class="link" href="https://fvm.app/"  target="_blank" rel="noopener"
     >https://fvm.app/</a></p>
 <h2 id="安装">安装
@@ -384,10 +384,69 @@
 </div>
 </div><h2 id="配置">配置
 </h2><p>环境变量</p>
-<p><code>FVM_CACHE_PATH</code>：flutter缓存路径，默认 <code>~/fvm</code></p>
-<p><code>FVM_FLUTTER_URL</code>：flutter git地址，可以配置加速地址，比如<code>https://ghproxy.net/https://github.com/flutter/flutter.git</code></p>
-<h2 id="使用">使用
-</h2><p>查看 flutter 可下载的版本</p>
+<p><code>FVM_CACHE_PATH</code>：Flutter 缓存路径，默认 <code>~/fvm</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:FVM_CACHE_PATH</span> <span class="p">=</span> <span class="s2">&#34;D:\develop\fvm&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>FVM_FLUTTER_URL</code>：Flutter 仓库 Git URL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:FVM_FLUTTER_URL</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/flutter-sdk.git&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>FLUTTER_GIT_URL</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:FLUTTER_GIT_URL</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/flutter-sdk.git&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>FLUTTER_STORAGE_BASE_URL</code>：Flutter SDK 镜像站点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 官方推荐</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:FLUTTER_STORAGE_BASE_URL</span> <span class="p">=</span> <span class="s2">&#34;https://storage.flutter-io.cn&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 清华</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:FLUTTER_STORAGE_BASE_URL</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/flutter&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>PUB_HOSTED_URL</code>：PUB 镜像站点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># 官方推荐</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:PUB_HOSTED_URL</span> <span class="p">=</span> <span class="s2">&#34;https://pub.flutter-io.cn&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c"># 清华</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:PUB_HOSTED_URL</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/dart-pub&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="使用">使用
+</h2><p>查看 Flutter 可下载的版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -396,25 +455,26 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm releases
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>下载 flutter</p>
+</div><p>下载 Flutter</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm install 3.27.0
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm install 3.24.5
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>设置为全局版本（管理员模式）</p>
+</div><p>设置为全局版本</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm global 3.27.0
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm global 3.24.5
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="检查-doctor-必做">检查 doctor （必做）
+</div><p>为了使用 flutter 命令，建议将 <code>fvm安装位置/default</code>加入环境变量</p>
+<h2 id="检查-doctor-必做">检查 doctor （必做）
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -423,7 +483,54 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">fvm flutter doctor
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>根据提示信息安装缺少的组件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">C:</span><span class="p">\</span><span class="n">Users</span><span class="p">\</span><span class="n">taoone</span><span class="p">&gt;</span> <span class="n">fvm</span> <span class="n">flutter</span> <span class="n">doctor</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="err">┌─────────────────────────────────────────────────────────┐</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span> <span class="n">A</span> <span class="n">new</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Flutter</span> <span class="n">is</span> <span class="n">available</span><span class="p">!</span>                  <span class="err">│</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span>                                                         <span class="err">│</span>
+</span></span><span class="line"><span class="cl"><span class="err">│</span> <span class="n">To</span> <span class="n">update</span> <span class="n">to</span> <span class="n">the</span> <span class="n">latest</span> <span class="n">version</span><span class="p">,</span> <span class="n">run</span> <span class="s2">&#34;flutter upgrade&#34;</span><span class="p">.</span> <span class="err">│</span>
+</span></span><span class="line"><span class="cl"><span class="err">└─────────────────────────────────────────────────────────┘</span>
+</span></span><span class="line"><span class="cl"><span class="n">Flutter</span> <span class="n">assets</span> <span class="n">will</span> <span class="n">be</span> <span class="n">downloaded</span> <span class="n">from</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">mirrors</span><span class="p">.</span><span class="py">tuna</span><span class="p">.</span><span class="py">tsinghua</span><span class="p">.</span><span class="py">edu</span><span class="p">.</span><span class="n">cn</span><span class="p">/</span><span class="n">git</span><span class="p">/</span><span class="n">flutter</span><span class="p">.</span> <span class="n">Make</span> <span class="n">sure</span> <span class="n">you</span> <span class="n">trust</span> <span class="n">this</span>
+</span></span><span class="line"><span class="cl"><span class="n">source</span><span class="p">!</span>
+</span></span><span class="line"><span class="cl"><span class="n">Doctor</span> <span class="n">summary</span> <span class="p">(</span><span class="n">to</span> <span class="n">see</span> <span class="n">all</span> <span class="n">details</span><span class="p">,</span> <span class="n">run</span> <span class="n">flutter</span> <span class="n">doctor</span> <span class="n">-v</span><span class="p">)</span><span class="err">:</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Flutter</span> <span class="p">(</span><span class="n">Channel</span> <span class="n">stable</span><span class="p">,</span> <span class="mf">3.24</span><span class="p">.</span><span class="mf">5</span><span class="p">,</span> <span class="n">on</span> <span class="n">Microsoft</span> <span class="n">Windows</span> <span class="p">[</span><span class="n">版本</span> <span class="mf">10.0</span><span class="p">.</span><span class="py">19045</span><span class="p">.</span><span class="mf">5247</span><span class="p">],</span> <span class="n">locale</span> <span class="nb">zh-CN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Windows</span> <span class="n">Version</span> <span class="p">(</span><span class="n">Installed</span> <span class="n">version</span> <span class="n">of</span> <span class="n">Windows</span> <span class="n">is</span> <span class="n">version</span> <span class="mf">10</span> <span class="n">or</span> <span class="n">higher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Android</span> <span class="n">toolchain</span> <span class="p">-</span> <span class="n">develop</span> <span class="k">for</span> <span class="n">Android</span> <span class="n">devices</span> <span class="p">(</span><span class="n">Android</span> <span class="n">SDK</span> <span class="n">version</span> <span class="mf">35.0</span><span class="p">.</span><span class="mf">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Chrome</span> <span class="p">-</span> <span class="n">develop</span> <span class="k">for</span> <span class="n">the</span> <span class="n">web</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Visual</span> <span class="n">Studio</span> <span class="p">-</span> <span class="n">develop</span> <span class="n">Windows</span> <span class="n">apps</span> <span class="p">(</span><span class="n">Visual</span> <span class="n">Studio</span> <span class="n">Community</span> <span class="mf">2022</span> <span class="mf">17.12</span><span class="p">.</span><span class="mf">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Android</span> <span class="n">Studio</span> <span class="p">(</span><span class="n">version</span> <span class="mf">2024.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="err">√</span><span class="p">]</span> <span class="n">Connected</span> <span class="n">device</span> <span class="p">(</span><span class="mf">4</span> <span class="n">available</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">[!]</span> <span class="n">Network</span> <span class="n">resources</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X</span> <span class="n">A</span> <span class="n">network</span> <span class="n">error</span> <span class="n">occurred</span> <span class="k">while</span> <span class="n">checking</span> <span class="s2">&#34;https://github.com/&#34;</span><span class="err">:</span> <span class="n">信号灯超时时间已到</span>
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>对于 Flutter 具体版本的选择和配置可以按照参考这里：<a class="link" href="https://blog.csdn.net/weixin_54494060/article/details/144602908"  target="_blank" rel="noopener"
+    >CSDN</a></p>
+
 </section>
 
 
@@ -505,6 +612,19 @@
             
                 
 <article class="">
+    <a href="/p/250217210505/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">解决cursor安装后code默认打开为cursor</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250216162555/">
         
         
@@ -524,19 +644,6 @@
 
         <div class="article-details">
             <h2 class="article-title">ollama本地部署大模型</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250212132719/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">llm-models，语言大模型服务提供商支持的模型列表</h2>
         </div>
     </a>
 </article>
