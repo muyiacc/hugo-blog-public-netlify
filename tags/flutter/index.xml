@@ -235,8 +235,11 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;network&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;occurred&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;checking&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;信号灯超时时间已到&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;对于 Flutter 具体版本的选择和配置可以按照参考这里：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_54494060/article/details/144602908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h2 id=&#34;附录&#34;&gt;附录
+&lt;/h2&gt;&lt;p&gt;对于 Flutter 具体版本的选择和配置可以按照参考这里：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_54494060/article/details/144602908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;CSDN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;也可以参考我的另一篇文章：&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/2312005/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Flutter安装配置&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
