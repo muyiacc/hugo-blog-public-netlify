@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 如果出现权限问题，使用管理员打开">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 这个安装会家目录添加 .pyenv 文件夹，会">
 <title>pyenv-win，Windows下的Python环境，项目管理工具</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250215140444/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="pyenv-win，Windows下的Python环境，项目管理工具">
-<meta property='og:description' content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 如果出现权限问题，使用管理员打开">
+<meta property='og:description' content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 这个安装会家目录添加 .pyenv 文件夹，会">
 <meta property='og:url' content='https://hublog.netlify.app/p/250215140444/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='python' /><meta property='article:published_time' content='2025-02-15T14:04:44&#43;08:00'/><meta property='article:modified_time' content='2025-02-15T14:12:37&#43;08:00'/>
 <meta name="twitter:title" content="pyenv-win，Windows下的Python环境，项目管理工具">
-<meta name="twitter:description" content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 如果出现权限问题，使用管理员打开">
+<meta name="twitter:description" content="简介 官网：https://github.com/pyenv-win/pyenv-win 安装 Powershell 1 Invoke-WebRequest -UseBasicParsing -Uri &#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34; -OutFile &#34;./install-pyenv-win.ps1&#34;; &amp;&#34;./install-pyenv-win.ps1&#34; 这个安装会家目录添加 .pyenv 文件夹，会">
   
 
 
@@ -358,7 +358,19 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Invoke-WebRequest</span> <span class="n">-UseBasicParsing</span> <span class="n">-Uri</span> <span class="s2">&#34;https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1&#34;</span> <span class="n">-OutFile</span> <span class="s2">&#34;./install-pyenv-win.ps1&#34;</span><span class="p">;</span> <span class="p">&amp;</span><span class="s2">&#34;./install-pyenv-win.ps1&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>如果出现权限问题，使用管理员打开 powershell，运行下面的命令之后重新安装</p>
+</div><p>这个安装会家目录添加 <code>.pyenv</code> 文件夹，会在当前用户添加如下环境变量</p>
+<ul>
+<li><code>PYENV</code></li>
+<li><code>PYENV_HOME</code></li>
+<li><code>PYENV_ROOT</code></li>
+</ul>
+<p>PATH下</p>
+<ul>
+<li><code>C:\Users\用户名\.pyenv\pyenv-win\bin</code></li>
+<li><code>C:\Users\用户名\.pyenv\pyenv-win\shims</code></li>
+</ul>
+<p>重新打开终端运行 <code>pyenv</code>即可</p>
+<p>如果出现权限问题，使用管理员打开 powershell，运行下面的命令之后重新安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -403,7 +415,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pyenv</span> <span class="n">install</span> <span class="mf">3.12</span><span class="p">.</span><span class="py">0</span>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pyenv</span> <span class="n">install</span> <span class="mf">3.12</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>设置全局版本</p>
@@ -412,7 +424,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pyenv</span> <span class="n">global</span> <span class="mf">3.12</span><span class="p">.</span><span class="py">0</span>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pyenv</span> <span class="n">global</span> <span class="mf">3.12</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>查看所有可用的python</p>

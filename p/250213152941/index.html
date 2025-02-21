@@ -282,6 +282,11 @@
         <li><a href="#embedding">Embedding</a></li>
       </ol>
     </li>
+    <li><a href="#实际案例">实际案例</a>
+      <ol>
+        <li><a href="#qwenqwen25-coder-3b-instruct-gguf">Qwen/Qwen2.5-Coder-3B-Instruct-GGUF</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -403,11 +408,55 @@
 </div><p>运行 <code>ollama list</code> 可以看到刚才的模型</p>
 <h2 id="模型">模型
 </h2><h3 id="模型库">模型库
-</h3><p>网站1：<a class="link" href="https://modelscope.cn"  target="_blank" rel="noopener"
+</h3><p>如下模型库收集了超级多的模型，都可以直接下载</p>
+<p>modelscope：<a class="link" href="https://modelscope.cn"  target="_blank" rel="noopener"
     >https://modelscope.cn</a>（国内）</p>
-<p>网站2：<a class="link" href="https://huggingface.co"  target="_blank" rel="noopener"
+<p>huggingface：<a class="link" href="https://huggingface.co"  target="_blank" rel="noopener"
     >https://huggingface.co</a>（国外）</p>
-<h3 id="chat">Chat
+<p>这些模型也提供了对应的下载工具</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># modelscope 提供 modelscope
+</span></span><span class="line"><span class="cl">pip install modelscope
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># huggingface 提供 huggingface-cli</span>
+</span></span><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="n">-U</span> <span class="n">huggingface_hub</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用方法</p>
+<p>简单示例</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># modelscope</span>
+</span></span><span class="line"><span class="cl"><span class="n">modelscope</span> <span class="n">download</span> <span class="p">-</span><span class="n">-model</span><span class="p">=</span><span class="n">Qwen</span><span class="p">/</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-Coder</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span> <span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-coder</span><span class="p">-</span><span class="n">3b-instruct-q5_k_m</span><span class="p">.</span><span class="py">gguf</span> <span class="p">-</span><span class="n">-local_dir</span> <span class="p">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># huggingface-cli</span>
+</span></span><span class="line"><span class="cl"><span class="nb">huggingface-cli</span> <span class="n">download</span> <span class="n">Qwen</span><span class="p">/</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span> <span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="p">-</span><span class="n">3b-instruct-q5_k_m</span><span class="p">.</span><span class="py">gguf</span> <span class="p">-</span><span class="n">-local-dir</span> <span class="p">.</span> <span class="p">-</span><span class="n">-local-dir-use-symlinks</span> <span class="n">False</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="chat">Chat
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -423,6 +472,94 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ollama pull bge-m3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="实际案例">实际案例
+</h2><h3 id="qwenqwen25-coder-3b-instruct-gguf">Qwen/Qwen2.5-Coder-3B-Instruct-GGUF
+</h3><p>创建文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="n">-p</span> <span class="n">d:</span><span class="p">/</span><span class="n">llm</span><span class="p">/</span><span class="n">models</span><span class="p">/</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">d:</span><span class="p">/</span><span class="n">llm</span><span class="p">/</span><span class="n">models</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">mkdir</span> <span class="n">-p</span> <span class="n">Qwen</span><span class="p">/</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-Coder</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">Qwen</span><span class="p">/</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-Coder</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 modelscope 下载模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">modelscope</span> <span class="n">download</span> <span class="p">-</span><span class="n">-model</span><span class="p">=</span><span class="n">Qwen</span><span class="p">/</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-Coder</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span> <span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-coder</span><span class="p">-</span><span class="n">3b-instruct-q5_k_m</span><span class="p">.</span><span class="py">gguf</span> <span class="p">-</span><span class="n">-local_dir</span> <span class="p">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>windows 下在 powershell 中可以这样打开文件管理器 ：<code>explorer.exe .</code></p>
+</blockquote>
+<p>新建一个 Modelfile 文件，名字就叫 <code>qwen2.5-coder-3b-instruct-q5_k_m.Modelfile</code></p>
+<p>打开填入以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">FROM ./qwen2.5-coder-3b-instruct-q5_k_m.gguf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 ollama 加载模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">ollama</span> <span class="n">create</span> <span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-coder</span><span class="p">-</span><span class="n">3b-instruct:q5km</span> <span class="o">-f</span> <span class="p">./</span><span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-coder</span><span class="p">-</span><span class="n">3b-instruct-q5_k_m</span><span class="p">.</span><span class="py">Modelfile</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ollama 查看模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ollama list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>结果如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">PS </span><span class="n">D:</span><span class="p">\</span><span class="n">llm</span><span class="p">\</span><span class="n">models</span><span class="p">\</span><span class="n">Qwen</span><span class="p">\</span><span class="n">Qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-Coder</span><span class="p">-</span><span class="n">3B-Instruct-GGUF</span><span class="p">&gt;</span> <span class="n">ollama</span> <span class="n">list</span>
+</span></span><span class="line"><span class="cl"><span class="n">NAME</span>                              <span class="n">ID</span>              <span class="n">SIZE</span>      <span class="n">MODIFIED</span>
+</span></span><span class="line"><span class="cl"><span class="n">qwen2</span><span class="p">.</span><span class="mf">5</span><span class="n">-coder</span><span class="p">-</span><span class="n">3b-instruct:q5km</span>    <span class="n">3c865efbc32c</span>    <span class="mf">2.4</span> <span class="n">GB</span>    <span class="mf">16</span> <span class="n">seconds</span> <span class="n">ago</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -483,38 +620,38 @@
             
                 
 <article class="">
+    <a href="/p/250221150444/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Firefox自定义搜索引擎，屏蔽csdn，zhihu等网站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250218224247/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows安装gcc环境，mingw-builds-binaries</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250218170659/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">nssm，创建Windows系统服务的工具</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250218145618/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">syncthing，跨平台远程自动同步工具</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250217210505/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">解决cursor安装后code默认打开为cursor</h2>
         </div>
     </a>
 </article>

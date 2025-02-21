@@ -14,7 +14,7 @@
         
         <guid>https://hublog.netlify.app/p/250218145618/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;Syncthing 是一个跨平台的同步工具，支持 Windows、MacOS、Linux、FreeBSD、Android等等平台。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;Syncthing 是一个跨平台的同步工具，支持 Windows、MacOS、Linux、FreeBSD、Android 等等平台。&lt;/p&gt;
 &lt;p&gt;特点：易于使用，界面简单，支持版本管理&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/02/18/miteD716WBUugKN.png&#34;
 	
@@ -110,7 +110,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启服务&lt;/p&gt;
 &lt;h3 id=&#34;android&#34;&gt;Android
-&lt;/h3&gt;&lt;p&gt;寻找名为  Syncthing-Fork 的软件，&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;寻找名为 Syncthing-Fork 的软件，&lt;/p&gt;
 &lt;p&gt;下载方式：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;谷歌商店&lt;/li&gt;
@@ -124,7 +124,7 @@
 &lt;/h2&gt;&lt;p&gt;配对设备&lt;/p&gt;
 &lt;p&gt;找到每个设备的 ID，添加即可，注意的是，需要相互添加才可以连接&lt;/p&gt;
 &lt;p&gt;添加文件夹跟着操作即可&lt;/p&gt;
-&lt;h2 id=&#34;syncthing数据备份&#34;&gt;syncthing数据备份
+&lt;h2 id=&#34;syncthing-数据备份&#34;&gt;syncthing 数据备份
 &lt;/h2&gt;&lt;h3 id=&#34;windows-1&#34;&gt;Windows
 &lt;/h3&gt;&lt;p&gt;配置文件所在位置：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -151,8 +151,8 @@
 &lt;/h2&gt;&lt;h3 id=&#34;windows-2&#34;&gt;Windows
 &lt;/h3&gt;&lt;p&gt;直接运行 &lt;code&gt;syncthing&lt;/code&gt; 会有一个前台的窗口，关掉就会退出运行，解决方法是安装为系统服务，让系统开机自动启动&lt;/p&gt;
 &lt;p&gt;要想实现这个功能，需要借助第三方工具，&lt;code&gt;NSSM&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;关于 NSSM介绍和安装可查看这篇文章：&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/250218170659&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;nssm，创建Windows系统服务的工具&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于 NSSM 介绍和安装可查看这篇文章：&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/250218170659&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nssm，创建 Windows 系统服务的工具&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;创建 syncthing 服务&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -199,7 +199,40 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove syncthing
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;添加文件夹详细介绍&#34;&gt;添加文件夹详细介绍
+&lt;/h2&gt;&lt;p&gt;关于&lt;code&gt;添加文件夹&lt;/code&gt;每个按钮，选项的详细介绍&lt;/p&gt;
+&lt;h3 id=&#34;常规&#34;&gt;常规
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;文件夹标签：描述性标识，可随意定制，不过建议使用 &lt;code&gt;文件夹/文件夹&lt;/code&gt;这种命名，这样做的好处一是识别性，二是在其他设备可自动作为文件夹目录，同步到 Android 设备尤为有用&lt;/li&gt;
+&lt;li&gt;文件夹 ID：文件夹的唯一标识，不需要更改，也没必要更改&lt;/li&gt;
+&lt;li&gt;文件夹路径：要想分享的文件夹的路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;共享&#34;&gt;共享
+&lt;/h3&gt;&lt;p&gt;选择共享设备，以及密码设置，中转设备加密设置技巧：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;密码不为空：强制要求目标设备加密，可以用在中转设备上，这样中转设备上的文件将会加密，再从中转设备上添加的文件夹分享给第三个设备，第三个设备填入第一个设备设置的密码，就可以解密。&lt;/li&gt;
+&lt;li&gt;密码为空：目标设备不加密&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件版本控制&#34;&gt;文件版本控制
+&lt;/h3&gt;&lt;p&gt;根据字面意思和页面提示即可&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不启用文件版本控制&lt;/li&gt;
+&lt;li&gt;回收站版本控制&lt;/li&gt;
+&lt;li&gt;简单文件版本控制&lt;/li&gt;
+&lt;li&gt;阶段文件版本控制&lt;/li&gt;
+&lt;li&gt;外部文件版本控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;忽略模式&#34;&gt;忽略模式
+&lt;/h3&gt;&lt;p&gt;这个忽略模式用在本地设备&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;Windows 上想同步某个文件夹，但是某些文件夹不想同步，就可以设置&lt;/p&gt;
+&lt;p&gt;Android 上会产生一些 &lt;code&gt;.&lt;/code&gt;开头的文件夹，同步到其他设备会污染文件夹&lt;/p&gt;
+&lt;h3 id=&#34;高级&#34;&gt;高级
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;文件夹类型：可以选择发送接收，只发送，只接受，加密接收&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他暂略，&lt;/p&gt;
+</description>
         </item>
         
     </channel>

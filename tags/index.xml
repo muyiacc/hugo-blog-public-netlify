@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 18 Feb 2025 14:56:18 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 21 Feb 2025 15:04:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Firefox</title>
+        <link>https://hublog.netlify.app/tags/firefox/</link>
+        <pubDate>Fri, 21 Feb 2025 15:04:44 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/firefox/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Gcc</title>
+        <link>https://hublog.netlify.app/tags/gcc/</link>
+        <pubDate>Tue, 18 Feb 2025 22:42:47 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/gcc/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Sync</title>
         <link>https://hublog.netlify.app/tags/sync/</link>
         <pubDate>Tue, 18 Feb 2025 14:56:18 +0800</pubDate>
@@ -245,14 +261,6 @@
         <pubDate>Sun, 03 Nov 2024 08:35:19 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/api/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Gcc</title>
-        <link>https://hublog.netlify.app/tags/gcc/</link>
-        <pubDate>Fri, 01 Nov 2024 16:39:39 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/gcc/</guid>
         <description></description>
         </item>
         <item>
@@ -501,14 +509,6 @@
         <pubDate>Sun, 01 Sep 2024 10:09:09 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/obs/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Firefox</title>
-        <link>https://hublog.netlify.app/tags/firefox/</link>
-        <pubDate>Mon, 26 Aug 2024 19:08:28 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/firefox/</guid>
         <description></description>
         </item>
         <item>
