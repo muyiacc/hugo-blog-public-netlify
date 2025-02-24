@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 一键脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
 <title>Linux下安装使用alist</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2407005/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux下安装使用alist">
-<meta property='og:description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 一键脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash">
+<meta property='og:description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
 <meta property='og:url' content='https://hublog.netlify.app/p/2407005/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='alist' /><meta property='article:published_time' content='2024-07-05T23:07:42&#43;08:00'/><meta property='article:modified_time' content='2024-07-05T23:07:42&#43;08:00'/>
 <meta name="twitter:title" content="Linux下安装使用alist">
-<meta name="twitter:description" content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 一键脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash">
+<meta name="twitter:description" content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
   
 
 
@@ -270,8 +270,8 @@
     <li><a href="#介绍">介绍</a></li>
     <li><a href="#安装">安装</a>
       <ol>
-        <li><a href="#一键脚本">一键脚本</a></li>
-        <li><a href="#docker">docker</a></li>
+        <li><a href="#脚本">脚本</a></li>
+        <li><a href="#docker">Docker</a></li>
       </ol>
     </li>
   </ol>
@@ -343,7 +343,7 @@
 </h2><p>官方文档：<a class="link" href="https://alist.nn.ci/zh/guide"  target="_blank" rel="noopener"
     >https://alist.nn.ci/zh/guide</a></p>
 <h2 id="安装">安装
-</h2><h3 id="一键脚本">一键脚本
+</h2><h3 id="脚本">脚本
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -364,6 +364,15 @@
 </span></span><span class="line"><span class="cl">curl -fsSL <span class="s2">&#34;https://alist.nn.ci/v3.sh&#34;</span> <span class="p">|</span> bash -s install
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>新脚本（新增）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -fsSL <span class="s2">&#34;https://alist.nn.ci/v3.sh&#34;</span> -o alist_v3.sh <span class="o">&amp;&amp;</span> bash alist_v3.sh
+</span></span></code></pre></td></tr></table>
+</div>
 </div><p>设置密码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -376,7 +385,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>访问地址：ip:5244</p>
-<h3 id="docker">docker
+<h3 id="docker">Docker
 </h3><p><strong>docker-compose</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -385,8 +394,8 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mkdir -p /opt/docker-alist
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/docker-alist
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mkdir -p /opt/container/alist
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/container/alist
 </span></span><span class="line"><span class="cl">sudo vim docker-compose.yml
 </span></span></code></pre></td></tr></table>
 </div>
@@ -421,7 +430,7 @@
 </span></span><span class="line"><span class="cl">    alist:
 </span></span><span class="line"><span class="cl">        image: <span class="s1">&#39;xhofe/alist-aria2:latest&#39;</span>
 </span></span><span class="line"><span class="cl">        volumes:
-</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;./data:/opt/alist/data&#39;</span>
+</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;./alist_data:/opt/alist/data&#39;</span>
 </span></span><span class="line"><span class="cl">            - <span class="s1">&#39;/home:/home&#39;</span>
 </span></span><span class="line"><span class="cl">            - <span class="s1">&#39;/root:/root&#39;</span>
 </span></span><span class="line"><span class="cl">        ports:
@@ -438,6 +447,24 @@
 </span></span><span class="line"><span class="cl">networks:
 </span></span><span class="line"><span class="cl">    alist_network:
 </span></span><span class="line"><span class="cl">        external: <span class="nb">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建 docker 网络</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker network create alist_network
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动容器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dco up -d
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>重置密码</p>
