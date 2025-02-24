@@ -3,16 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://hublog.netlify.app/</loc>
-    <lastmod>2025-02-21T18:24:33+08:00</lastmod>
+    <lastmod>2025-02-24T14:48:05+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/categories/</loc>
-    <lastmod>2025-02-21T18:24:33+08:00</lastmod>
+    <lastmod>2025-02-24T14:48:05+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/categories/default/</loc>
-    <lastmod>2025-02-21T18:24:33+08:00</lastmod>
+    <lastmod>2025-02-24T14:48:05+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/post/</loc>
-    <lastmod>2025-02-21T18:24:33+08:00</lastmod>
+    <lastmod>2025-02-24T14:48:05+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250224144752/</loc>
+    <lastmod>2025-02-24T14:48:05+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250221182433/</loc>
     <lastmod>2025-02-21T18:24:33+08:00</lastmod>
@@ -1384,6 +1387,8 @@
   </url><url>
     <loc>https://hublog.netlify.app/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2023-09-03T14:12:15+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/</loc>
   </url><url>
     <loc>https://hublog.netlify.app/categories/go/</loc>
   </url><url>

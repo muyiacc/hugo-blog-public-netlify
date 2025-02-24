@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
 <title>picgo自动上传图片到图床（优化版）</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2404008/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="picgo自动上传图片到图床（优化版）">
-<meta property='og:description' content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
+<meta property='og:description' content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
 <meta property='og:url' content='https://hublog.netlify.app/p/2404008/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='picgo' /><meta property='article:published_time' content='2024-04-08T15:07:04&#43;08:00'/><meta property='article:modified_time' content='2024-04-08T15:07:04&#43;08:00'/>
 <meta name="twitter:title" content="picgo自动上传图片到图床（优化版）">
-<meta name="twitter:description" content="前言 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影">
+<meta name="twitter:description" content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
   
 
 
@@ -267,11 +267,10 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#前言">前言</a></li>
+    <li><a href="#简介">简介</a></li>
     <li><a href="#安装-yarn">安装 yarn</a></li>
     <li><a href="#安装-picgo">安装 picgo</a></li>
-    <li><a href="#picgo配置">picgo配置</a></li>
-    <li><a href="#附录">附录</a></li>
+    <li><a href="#picgo-配置">picgo 配置</a></li>
   </ol>
 </nav>
         </div>
@@ -337,27 +336,35 @@
     <section class="article-content">
     
     
-    <h2 id="前言">前言
+    <h2 id="简介">简介
 </h2><p>此前已经写过一篇关于 picgo 的文章，<a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
     >使用 picgo-core 将 markdown 图片上传至 smms 图床</a></p>
-<p>本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。</p>
+<p>本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。</p>
 <blockquote>
 <p>为何要切换安装方式？</p>
 </blockquote>
-<p>之前使用 npm 安装到全局，后来使用 nvm 管理 node 版本，在切换版本后，当前的版本是没有 picgo 的，比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：</p>
+<p>之前使用 npm 安装到当前 node 版本的全局，后来使用 nvm 管理 node 版本，在切换版本后，切换的版本还是没有 picgo 的，</p>
+<p>比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：</p>
 <ul>
-<li>固定安装依赖位置，每安装切换一个新版本 node，都重新设置全局依赖位置。</li>
-<li>直接安装 picgo app。 图形化一直常驻稍显占内存。</li>
+<li>固定安装依赖位置，每安装切换一个新版本 node，对当前的 node 都重新设置全局依赖位置到之前固定的依赖位置。缺点：每次切换很麻烦</li>
+<li>直接安装 picgo app。 缺点：图形化一直常驻占内存。</li>
 </ul>
+<p>所以有了如下的优化版</p>
 <h2 id="安装-yarn">安装 yarn
-</h2><p>上面的方式都不好管理，所以采用 yarn 来安装。</p>
-<p>yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 也不受影响。</p>
-<p>yarn 下载：<a class="link" href="https://classic.yarnpkg.com/latest.msi"  target="_blank" rel="noopener"
-    >Windows 版点此下载</a></p>
-<p>下载详情页：<a class="link" href="https://classic.yarnpkg.com/lang/en/docs/install"  target="_blank" rel="noopener"
-    >https://classic.yarnpkg.com/lang/en/docs/install</a></p>
+</h2><p>采用 yarn 来安装 picgo。</p>
+<p>yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 安装 picgo 到全局，就是一个固定的位置</p>
+<p>yarn 下载：</p>
+<ul>
+<li><a class="link" href="https://classic.yarnpkg.com/latest.msi"  target="_blank" rel="noopener"
+    >Windows 版点此下载</a></li>
+</ul>
+<p>详情页：</p>
+<ul>
+<li><a class="link" href="https://classic.yarnpkg.com/lang/en/docs/install"  target="_blank" rel="noopener"
+    >https://classic.yarnpkg.com/lang/en/docs/install</a></li>
+</ul>
 <blockquote>
-<p>不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。</p>
+<p>注意：不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。</p>
 </blockquote>
 <h2 id="安装-picgo">安装 picgo
 </h2><div class="highlight"><div class="chroma">
@@ -375,14 +382,53 @@
 <li><strong>Mac</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
 <li><strong>Linux</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
 </ul>
-<h2 id="picgo配置">picgo配置
-</h2><p>关于 picgo 安装配置信息可以参考之前的文章，这里就不再赘述。</p>
-<p><a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
-    >使用 picgo-core 将 markdown 图片上传至 smms 图床</a></p>
-<h2 id="附录">附录
-</h2><p>关于 nvm ，可以看这里</p>
-<p><a class="link" href="https://www.seektao.cc/archives/nvmnode-duo-ban-ben-gong-cun-de-gong-ju"  target="_blank" rel="noopener"
-    >nvm，Node 多版本共存的工具</a></p>
+<h2 id="picgo-配置">picgo 配置
+</h2><p>安装插件 smms-user</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">picgo install smms-user
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 smms-user</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pcigo use
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>出现如下信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ picgo use
+</span></span><span class="line"><span class="cl">? Use an uploader <span class="o">(</span>Use arrow keys<span class="o">)</span>
+</span></span><span class="line"><span class="cl">&gt; smms-user
+</span></span><span class="line"><span class="cl">  aliyun
+</span></span><span class="line"><span class="cl">  tcyun
+</span></span><span class="line"><span class="cl">  smms
+</span></span><span class="line"><span class="cl">  github
+</span></span><span class="line"><span class="cl">  qiniu
+</span></span><span class="line"><span class="cl">  imgur
+</span></span><span class="line"><span class="cl"><span class="o">(</span>Move up and down to reveal more choices<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>选择 smms-user，回车，下一步，跟着操作即可</p>
 
 </section>
 
@@ -450,6 +496,19 @@
             
                 
 <article class="">
+    <a href="/p/250224144752/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu24.04静态ip配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250221182433/">
         
         
@@ -482,19 +541,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Windows安装gcc环境，mingw-builds-binaries</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250218170659/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">nssm，创建Windows系统服务的工具</h2>
         </div>
     </a>
 </article>

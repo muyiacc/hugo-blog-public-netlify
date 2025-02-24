@@ -7,7 +7,81 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 21 Feb 2025 18:24:33 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 24 Feb 2025 14:47:52 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ubuntu24.04静态ip配置</title>
+        <link>https://hublog.netlify.app/p/250224144752/</link>
+        <pubDate>Mon, 24 Feb 2025 14:47:52 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250224144752/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Ubuntu24.04 的网络配置是通过 netplan 配置的，&lt;/p&gt;
+&lt;p&gt;配置文件在&lt;code&gt;/etc/netplan&lt;/code&gt;下，格式为 &lt;code&gt;yaml&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置静态-ip&#34;&gt;配置静态 ip
+&lt;/h2&gt;&lt;p&gt;首先查看网络接口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下所示&lt;/p&gt;
+&lt;img src=&#34;https://s2.loli.net/2025/02/24/tz5TcfrlvyP9Zm4.png&#34; alt=&#34;image-20250224151328643&#34; style=&#34;zoom: 67%;&#34; /&gt;
+&lt;p&gt;配置 enp0s8 接口&lt;/p&gt;
+&lt;p&gt;编辑 &lt;code&gt;/etc/netplan/&lt;/code&gt; 的文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim /etc/netplan/50-cloud-init.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如下所示&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;network:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  version: &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  ethernets:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    enp0s3:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      dhcp4: &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    enp0s8:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      addresses:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        - 192.168.56.100/24
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      nameservers:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          addresses:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - 192.168.56.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - 223.5.5.5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;保存退出&lt;/p&gt;
+&lt;p&gt;netplan 命令应用配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo netplan apply
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>xiao-tvbox安装</title>
         <link>https://hublog.netlify.app/p/250221182433/</link>
         <pubDate>Fri, 21 Feb 2025 18:24:33 +0800</pubDate>
@@ -379,6 +453,41 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install syncthing
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;如果觉得自带的包管理器版本低，可以添加 syncthing 的仓库&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Add the release PGP keys:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo mkdir -p /etc/apt/keyrings
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Add the &amp;#34;stable&amp;#34; channel to your APT sources:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/syncthing.list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Update and install syncthing:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt-get install syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;启动&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -458,31 +567,46 @@
 &lt;/h2&gt;&lt;p&gt;配对设备&lt;/p&gt;
 &lt;p&gt;找到每个设备的 ID，添加即可，注意的是，需要相互添加才可以连接&lt;/p&gt;
 &lt;p&gt;添加文件夹跟着操作即可&lt;/p&gt;
-&lt;h2 id=&#34;syncthing-数据备份&#34;&gt;syncthing 数据备份
-&lt;/h2&gt;&lt;h3 id=&#34;windows-1&#34;&gt;Windows
-&lt;/h3&gt;&lt;p&gt;配置文件所在位置：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;\AppData\Local\Syncthing
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
-&lt;h3 id=&#34;linux-1&#34;&gt;Linux
-&lt;/h3&gt;&lt;p&gt;配置文件所在位置：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.config/syncthing
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
+&lt;h2 id=&#34;添加文件夹详细介绍&#34;&gt;添加文件夹详细介绍
+&lt;/h2&gt;&lt;p&gt;关于&lt;code&gt;添加文件夹&lt;/code&gt;每个按钮，选项的详细介绍&lt;/p&gt;
+&lt;h3 id=&#34;常规&#34;&gt;常规
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;文件夹标签：描述性标识，可随意定制，不过建议使用 &lt;code&gt;文件夹/文件夹&lt;/code&gt;这种命名，这样做的好处一是识别性，二是在其他设备可自动作为文件夹目录，同步到 Android 设备尤为有用&lt;/li&gt;
+&lt;li&gt;文件夹 ID：文件夹的唯一标识，不需要更改，也没必要更改&lt;/li&gt;
+&lt;li&gt;文件夹路径：要想分享的文件夹的路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;共享&#34;&gt;共享
+&lt;/h3&gt;&lt;p&gt;选择共享设备，以及密码设置，中转设备加密设置技巧：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;密码不为空：强制要求目标设备加密，可以用在中转设备上，这样中转设备上的文件将会加密，再从中转设备上添加的文件夹分享给第三个设备，第三个设备填入第一个设备设置的密码，就可以解密。&lt;/li&gt;
+&lt;li&gt;密码为空：目标设备不加密&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;文件版本控制&#34;&gt;文件版本控制
+&lt;/h3&gt;&lt;p&gt;根据字面意思和页面提示即可&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不启用文件版本控制&lt;/li&gt;
+&lt;li&gt;回收站版本控制&lt;/li&gt;
+&lt;li&gt;简单文件版本控制&lt;/li&gt;
+&lt;li&gt;阶段文件版本控制&lt;/li&gt;
+&lt;li&gt;外部文件版本控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;忽略模式&#34;&gt;忽略模式
+&lt;/h3&gt;&lt;p&gt;这个忽略模式用在本地设备&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;Windows 上想同步某个文件夹，但是某些文件夹不想同步，就可以设置&lt;/p&gt;
+&lt;p&gt;Android 上会产生一些 &lt;code&gt;.&lt;/code&gt;开头的文件夹，同步到其他设备会污染文件夹&lt;/p&gt;
+&lt;h3 id=&#34;高级&#34;&gt;高级
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;文件夹类型：可以选择发送接收，只发送，只接受，加密接收&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他暂略，&lt;/p&gt;
+&lt;h2 id=&#34;备份模式&#34;&gt;备份模式
+&lt;/h2&gt;&lt;p&gt;如果想要达到备份效果，即是在某一端设备不会自动删除文件，可以在&lt;/p&gt;
+&lt;p&gt;操作-高级-文件夹，选中某一个共享的文件夹，找到&lt;code&gt;Ignore Delete&lt;/code&gt;，选中。&lt;/p&gt;
+&lt;p&gt;这样就不会在同步时，如果某一方设备删除了文件，本地设备不会跟着删除，达到备份效果。&lt;/p&gt;
+&lt;p&gt;常见用途：备份照片，视频等。&lt;/p&gt;
 &lt;h2 id=&#34;系统服务&#34;&gt;系统服务
-&lt;/h2&gt;&lt;h3 id=&#34;windows-2&#34;&gt;Windows
+&lt;/h2&gt;&lt;h3 id=&#34;windows-1&#34;&gt;Windows
 &lt;/h3&gt;&lt;p&gt;直接运行 &lt;code&gt;syncthing&lt;/code&gt; 会有一个前台的窗口，关掉就会退出运行，解决方法是安装为系统服务，让系统开机自动启动&lt;/p&gt;
 &lt;p&gt;要想实现这个功能，需要借助第三方工具，&lt;code&gt;NSSM&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;关于 NSSM 介绍和安装可查看这篇文章：&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/250218170659&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -533,39 +657,29 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove syncthing
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;添加文件夹详细介绍&#34;&gt;添加文件夹详细介绍
-&lt;/h2&gt;&lt;p&gt;关于&lt;code&gt;添加文件夹&lt;/code&gt;每个按钮，选项的详细介绍&lt;/p&gt;
-&lt;h3 id=&#34;常规&#34;&gt;常规
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;文件夹标签：描述性标识，可随意定制，不过建议使用 &lt;code&gt;文件夹/文件夹&lt;/code&gt;这种命名，这样做的好处一是识别性，二是在其他设备可自动作为文件夹目录，同步到 Android 设备尤为有用&lt;/li&gt;
-&lt;li&gt;文件夹 ID：文件夹的唯一标识，不需要更改，也没必要更改&lt;/li&gt;
-&lt;li&gt;文件夹路径：要想分享的文件夹的路径&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;共享&#34;&gt;共享
-&lt;/h3&gt;&lt;p&gt;选择共享设备，以及密码设置，中转设备加密设置技巧：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;密码不为空：强制要求目标设备加密，可以用在中转设备上，这样中转设备上的文件将会加密，再从中转设备上添加的文件夹分享给第三个设备，第三个设备填入第一个设备设置的密码，就可以解密。&lt;/li&gt;
-&lt;li&gt;密码为空：目标设备不加密&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;文件版本控制&#34;&gt;文件版本控制
-&lt;/h3&gt;&lt;p&gt;根据字面意思和页面提示即可&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;不启用文件版本控制&lt;/li&gt;
-&lt;li&gt;回收站版本控制&lt;/li&gt;
-&lt;li&gt;简单文件版本控制&lt;/li&gt;
-&lt;li&gt;阶段文件版本控制&lt;/li&gt;
-&lt;li&gt;外部文件版本控制&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;忽略模式&#34;&gt;忽略模式
-&lt;/h3&gt;&lt;p&gt;这个忽略模式用在本地设备&lt;/p&gt;
-&lt;p&gt;例如：&lt;/p&gt;
-&lt;p&gt;Windows 上想同步某个文件夹，但是某些文件夹不想同步，就可以设置&lt;/p&gt;
-&lt;p&gt;Android 上会产生一些 &lt;code&gt;.&lt;/code&gt;开头的文件夹，同步到其他设备会污染文件夹&lt;/p&gt;
-&lt;h3 id=&#34;高级&#34;&gt;高级
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;文件夹类型：可以选择发送接收，只发送，只接受，加密接收&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其他暂略，&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;syncthing-数据备份&#34;&gt;syncthing 数据备份
+&lt;/h2&gt;&lt;h3 id=&#34;windows-2&#34;&gt;Windows
+&lt;/h3&gt;&lt;p&gt;配置文件所在位置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;\AppData\Local\Syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
+&lt;h3 id=&#34;linux-1&#34;&gt;Linux
+&lt;/h3&gt;&lt;p&gt;配置文件所在位置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.config/syncthing
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -16134,27 +16248,35 @@ debian：sudo apt install gcc&lt;/p&gt;
         <pubDate>Mon, 08 Apr 2024 15:07:04 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2404008/</guid>
-        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;此前已经写过一篇关于 picgo 的文章，&lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;使用 picgo-core 将 markdown 图片上传至 smms 图床&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本次在此基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。&lt;/p&gt;
+&lt;p&gt;本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;为何要切换安装方式？&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;之前使用 npm 安装到全局，后来使用 nvm 管理 node 版本，在切换版本后，当前的版本是没有 picgo 的，比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：&lt;/p&gt;
+&lt;p&gt;之前使用 npm 安装到当前 node 版本的全局，后来使用 nvm 管理 node 版本，在切换版本后，切换的版本还是没有 picgo 的，&lt;/p&gt;
+&lt;p&gt;比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;固定安装依赖位置，每安装切换一个新版本 node，都重新设置全局依赖位置。&lt;/li&gt;
-&lt;li&gt;直接安装 picgo app。 图形化一直常驻稍显占内存。&lt;/li&gt;
+&lt;li&gt;固定安装依赖位置，每安装切换一个新版本 node，对当前的 node 都重新设置全局依赖位置到之前固定的依赖位置。缺点：每次切换很麻烦&lt;/li&gt;
+&lt;li&gt;直接安装 picgo app。 缺点：图形化一直常驻占内存。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;所以有了如下的优化版&lt;/p&gt;
 &lt;h2 id=&#34;安装-yarn&#34;&gt;安装 yarn
-&lt;/h2&gt;&lt;p&gt;上面的方式都不好管理，所以采用 yarn 来安装。&lt;/p&gt;
-&lt;p&gt;yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 也不受影响。&lt;/p&gt;
-&lt;p&gt;yarn 下载：&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/latest.msi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Windows 版点此下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下载详情页：&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/lang/en/docs/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://classic.yarnpkg.com/lang/en/docs/install&lt;/a&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;采用 yarn 来安装 picgo。&lt;/p&gt;
+&lt;p&gt;yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 安装 picgo 到全局，就是一个固定的位置&lt;/p&gt;
+&lt;p&gt;yarn 下载：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/latest.msi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows 版点此下载&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;详情页：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/lang/en/docs/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://classic.yarnpkg.com/lang/en/docs/install&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。&lt;/p&gt;
+&lt;p&gt;注意：不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;安装-picgo&#34;&gt;安装 picgo
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -16172,14 +16294,53 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;：&lt;code&gt;/usr/local/share/.config/yarn/global/node_modules&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：&lt;code&gt;/usr/local/share/.config/yarn/global/node_modules&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;picgo配置&#34;&gt;picgo配置
-&lt;/h2&gt;&lt;p&gt;关于 picgo 安装配置信息可以参考之前的文章，这里就不再赘述。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;使用 picgo-core 将 markdown 图片上传至 smms 图床&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;&lt;p&gt;关于 nvm ，可以看这里&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/nvmnode-duo-ban-ben-gong-cun-de-gong-ju&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;nvm，Node 多版本共存的工具&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;picgo-配置&#34;&gt;picgo 配置
+&lt;/h2&gt;&lt;p&gt;安装插件 smms-user&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo install smms-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置 smms-user&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pcigo use
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;出现如下信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ picgo use
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;? Use an uploader &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Use arrow keys&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt; smms-user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  aliyun
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  tcyun
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  smms
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  github
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  qiniu
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  imgur
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Move up and down to reveal more choices&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;选择 smms-user，回车，下一步，跟着操作即可&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -26363,6 +26524,14 @@ TMUX_CURRENT_COMMAND：当前活动的tmux当前命令。&lt;/code&gt;&lt;/pre&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启系统。&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://hublog.netlify.app/p/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/</guid>
+        <description></description>
         </item>
         
     </channel>
