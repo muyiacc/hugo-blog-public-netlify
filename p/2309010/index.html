@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 需求 现在MySQL5.7和8.0版本用的人和需求都有，为了能让电脑上同时安装MySQL5.7 和MySQL8.0版本，也就有了这篇文章，更准">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="需求 现在 MySQL5.7 和 8.0 版本用的人和需求都有，为了能让电脑上同时安装 MySQL5.7 和 MySQL8.0 版本 准备 MySQL 可选择版本的下载地址：https://downloads.mysq">
 <title>Windows10安装多版本MySQL</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2309010/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Windows10安装多版本MySQL">
-<meta property='og:description' content="1. 需求 现在MySQL5.7和8.0版本用的人和需求都有，为了能让电脑上同时安装MySQL5.7 和MySQL8.0版本，也就有了这篇文章，更准">
+<meta property='og:description' content="需求 现在 MySQL5.7 和 8.0 版本用的人和需求都有，为了能让电脑上同时安装 MySQL5.7 和 MySQL8.0 版本 准备 MySQL 可选择版本的下载地址：https://downloads.mysq">
 <meta property='og:url' content='https://hublog.netlify.app/p/2309010/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='windows' /><meta property='article:tag' content='mysql' /><meta property='article:published_time' content='2023-09-11T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-09-11T14:07:10&#43;08:00'/>
 <meta name="twitter:title" content="Windows10安装多版本MySQL">
-<meta name="twitter:description" content="1. 需求 现在MySQL5.7和8.0版本用的人和需求都有，为了能让电脑上同时安装MySQL5.7 和MySQL8.0版本，也就有了这篇文章，更准">
+<meta name="twitter:description" content="需求 现在 MySQL5.7 和 8.0 版本用的人和需求都有，为了能让电脑上同时安装 MySQL5.7 和 MySQL8.0 版本 准备 MySQL 可选择版本的下载地址：https://downloads.mysq">
   
 
 
@@ -267,27 +267,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#21-下载">2.1 下载</a></li>
-    <li><a href="#22-卸载非必须">2.2 卸载（非必须）</a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#31-解压安装包">3.1 解压安装包</a></li>
-    <li><a href="#32-新建-myini-文件">3.2 新建 my.ini 文件</a></li>
-    <li><a href="#33-初始化mysql">3.3 初始化MySQL</a></li>
-    <li><a href="#34-安装mysql服务">3.4 安装MySQL服务</a></li>
-    <li><a href="#35-修改密码">3.5 修改密码</a></li>
-    <li><a href="#36-配置环境变量非必须">3.6 配置环境变量（非必须）</a></li>
-    <li><a href="#heading"></a></li>
-  </ol>
-
-  <ol>
-    <li><a href="#41-解压安装包">4.1 解压安装包</a></li>
-    <li><a href="#42-新建-myini-文件">4.2 新建 my.ini 文件</a></li>
-    <li><a href="#43-初始化mysql">4.3 初始化MySQL</a></li>
-    <li><a href="#44-安装mysql服务">4.4 安装MySQL服务</a></li>
-    <li><a href="#45-修改密码">4.5 修改密码</a></li>
-    <li><a href="#46-配置环境变量非必须">4.6 配置环境变量（非必须）</a></li>
+    <li><a href="#需求">需求</a></li>
+    <li><a href="#准备">准备</a></li>
+    <li><a href="#mysql57-安装">MySQL5.7 安装</a>
+      <ol>
+        <li><a href="#解压安装包">解压安装包</a></li>
+        <li><a href="#初始化-mysql">初始化 MySQL</a></li>
+        <li><a href="#安装-mysql-服务">安装 MySQL 服务</a></li>
+        <li><a href="#修改密码">修改密码</a></li>
+        <li><a href="#配置环境变量">配置环境变量</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -306,8 +296,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/default/" >
-                Default
+            <a href="/categories/database/" >
+                Database
             </a>
         
     </header>
@@ -353,31 +343,28 @@
     <section class="article-content">
     
     
-    <h1 id="1-需求">1. 需求
-</h1><p>现在MySQL5.7和8.0版本用的人和需求都有，为了能让电脑上同时安装MySQL5.7 和MySQL8.0版本，也就有了这篇文章，更准确的叫法可以说是笔记，以便日后回顾。</p>
-<p>本次通过下载zip安装包进行安装</p>
-<h1 id="2-准备">2. 准备
-</h1><h2 id="21-下载">2.1 下载
-</h2><p>MySQL可选择版本的下载地址：<a class="link" href="https://downloads.mysql.com/archives/community/"  target="_blank" rel="noopener"
+    <h2 id="需求">需求
+</h2><p>现在 MySQL5.7 和 8.0 版本用的人和需求都有，为了能让电脑上同时安装 MySQL5.7 和 MySQL8.0 版本</p>
+<h2 id="准备">准备
+</h2><p>MySQL 可选择版本的下载地址：<a class="link" href="https://downloads.mysql.com/archives/community/"  target="_blank" rel="noopener"
     >https://downloads.mysql.com/archives/community/</a></p>
-<blockquote>
-<p>PS： 也可通过以下链接直接下载zip安装包</p>
-<p>MySQL5.7
-<a class="link" href="https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.41-winx64.zip"  target="_blank" rel="noopener"
+<p>也可通过以下链接直接下载 zip 安装包</p>
+<ul>
+<li>
+<p>MySQL5.7：<a class="link" href="https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.41-winx64.zip"  target="_blank" rel="noopener"
     >https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.41-winx64.zip</a></p>
-</blockquote>
-<blockquote>
-<p>MySQL8.0
-<a class="link" href="https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64.zip"  target="_blank" rel="noopener"
+</li>
+<li>
+<p>MySQL8.0：<a class="link" href="https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64.zip"  target="_blank" rel="noopener"
     >https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.33-winx64.zip</a></p>
-</blockquote>
-<h2 id="22-卸载非必须">2.2 卸载（非必须）
-</h2><p>安装之前请确保环境的干净，如果需要卸载请网上搜索教程</p>
-<h1 id="3-mysql57-安装优先看">3. MySQL5.7 安装（优先看）
-</h1><h2 id="31-解压安装包">3.1 解压安装包
-</h2><p>解压下载好的安装包，建议不要使用中文路径</p>
-<h2 id="32-新建-myini-文件">3.2 新建 my.ini 文件
-</h2><p>在解压的目录新建 my.ini 文件，这是MySQL的配置文件，通过zip安装需要手动指定数据存储的路径</p>
+</li>
+</ul>
+<p>安装之前请确保环境的干净，如果需要卸载请网上搜索教程</p>
+<h2 id="mysql57-安装">MySQL5.7 安装
+</h2><h3 id="解压安装包">解压安装包
+</h3><p>解压下载好的安装包，建议不要使用中文路径</p>
+<p>新建 my.ini 文件</p>
+<p>在解压的目录新建 my.ini 文件，这是 MySQL 的配置文件，通过 zip 安装需要手动指定数据存储的路径</p>
 <p>my.ini 的配置内容：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -408,7 +395,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="err">[client]</span>
 </span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="o">=</span> <span class="s">3306</span>
-</span></span><span class="line"><span class="cl"><span class="err"> </span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="err">[mysqld]</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#设置3306端口</span>
 </span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="o">=</span> <span class="s">3306</span>
@@ -425,15 +412,15 @@
 </span></span><span class="line"><span class="cl"><span class="c1">#这个需要注意一下，不然报错</span>
 </span></span><span class="line"><span class="cl"><span class="c1">#其原因是从 5.6开始，timestamp 的默认行为已经是 deprecated 了。</span>
 </span></span><span class="line"><span class="cl"><span class="na">explicit_defaults_for_timestamp</span><span class="o">=</span><span class="s">true</span>
-</span></span><span class="line"><span class="cl"><span class="err"> </span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="err">[mysql]</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 设置mysql客户端默认字符集</span>
 </span></span><span class="line"><span class="cl"><span class="na">default-character-set</span><span class="o">=</span><span class="s">utf8mb4</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="33-初始化mysql">3.3 初始化MySQL
-</h2><p>首次使用，初始化MySQL<br />如果你使用的文件管理器的方式打开的安装目录，可通过shift+右键 选择 在此处打开 Powershell 窗口，切换到命令行操作<br />![图片.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1689838258352-23245c62-73e5-4f38-a3a3-d9db635fc77e.png)<br />假使现在你已经切换到了powershell，先切换到bin目录，再执行以下命令进行初始化<br />注意：一定要切换到bin目录</p>
+</div><h3 id="初始化-mysql">初始化 MySQL
+</h3><p>文件管理器打开安装目录， <code>shift+右键</code> ，选择 <code>在此处打开 Powershell 窗口</code></p>
+<p>现在已经切换到了 <code>powershell</code>，先切换到 <code>bin</code> 目录，再执行以下命令进行初始化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -442,20 +429,21 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysqld</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-initialize</span> <span class="p">-</span><span class="n">-user</span><span class="p">=</span><span class="n">mysql</span> <span class="p">-</span><span class="n">-console</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>你会得到类似的结果，如图<img src="/_media-sync_resources/20231203T140411/20231203T140411_21497.png#averageHue=%23062a5c&amp;clientId=ucce33620-9683-4&amp;from=paste&amp;height=215&amp;id=u7dbc51ec&amp;originHeight=379&amp;originWidth=1690&amp;originalType=binary&amp;ratio=1.7647058823529411&amp;rotation=0&amp;showTitle=false&amp;size=123487&amp;status=done&amp;style=none&amp;taskId=ubc9bdb9f-7d1f-4794-9367-16ab7f0d93b&amp;title=&amp;width=957.6666666666667"
-	
-	
-	
-	loading="lazy"
-	
-		alt="图片.png"
-	
-	
->请记住初始化密码，后续登录MySQL会用到，你可以新建一个记事本复制粘贴过去</p>
-<h2 id="34-安装mysql服务">3.4 安装MySQL服务
-</h2><p>通过以下命令安装MySQL服务，这个命令需要管理员权限<br />你可以通过win+x 选择用管理员权限打开powershell，再切换到MySQL目录<br />在原来的powershell窗口下，输入 pwd ，控制台就会输出 当前所在的路径<br />如图所示：<br />![图片.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1689838967633-e9401e62-75c0-42d0-99cc-467287300878.png)<br />然后在管理员权限下的powershell切换过去，使用 cd 路径<br />例如：cd D:\Development\DB\mysql-5.7.41-winx64\bin<br />如图：<br />![图片.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1689839057201-6a7a0027-d378-4b55-9925-63f9ba2c1529.png)<br />接着执行以下命令</p>
+</div><p>记住初始化密码，后续登录 MySQL 会用到</p>
+<h3 id="安装-mysql-服务">安装 MySQL 服务
+</h3><p>通过以下命令安装 MySQL 服务，这个命令需要管理员权限</p>
+<p>通过 win+x 选择用管理员权限打开 powershell，再切换到 MySQL 目录</p>
+<p>在原来的 powershell 窗口下，输入 pwd ，控制台就会输出 当前所在的路径</p>
+<p>然后在管理员权限下的 powershell 切换过去，使用<code>cd 路径</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">D:</span><span class="p">\</span><span class="n">Development</span><span class="p">\</span><span class="n">DB</span><span class="p">\</span><span class="n">mysql</span><span class="p">-</span><span class="mf">5.7</span><span class="p">.</span><span class="mf">41</span><span class="n">-winx64</span><span class="p">\</span><span class="n">bin</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接着执行以下命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -464,20 +452,10 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysqld</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-install</span> <span class="n">MySQL57</span> <span class="p">-</span><span class="n">-defaults</span><span class="o">-file</span><span class="p">=</span><span class="s2">&#34;D:\\Development\\DB\\mysql-5.7.41-winx64\\my.ini&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>执行成功，你会得到类似的结果：<br /><img src="/_media-sync_resources/20231203T140411/20231203T140411_65301.png#averageHue=%23032758&amp;clientId=ucce33620-9683-4&amp;from=paste&amp;height=53&amp;id=u05a544d9&amp;originHeight=93&amp;originWidth=1680&amp;originalType=binary&amp;ratio=1.7647058823529411&amp;rotation=0&amp;showTitle=false&amp;size=24184&amp;status=done&amp;style=none&amp;taskId=u6d9de297-3f32-4ba9-b7ce-426495f088d&amp;title=&amp;width=952"
-	
-	
-	
-	loading="lazy"
-	
-		alt="图片.png"
-	
-	
-><br />解释说明：<br />.\mysqld.exe 			mysqld命令<br />&ndash;install 	MySQL57 		安装服务，服务名可以自定义，为了区别MySQL8.0 ，所以采用MySQL57 见名知意<br />&ndash;defaults-file=&ldquo;D:\Development\DB\mysql-5.7.41-winx64\my.ini&rdquo;  	指定MySQL服务所使用的配置文件</p>
-<p>注意：你需要修改为你自己的路径，除非和我一样。</p>
-<h2 id="35-修改密码">3.5 修改密码
-</h2><p>在保证前面步骤没有出错的情况下，启动MySQL服务，登录MySQL，修改密码，然后就大功告成</p>
-<p>1） 启动MySQL服务（需要管理员权限）</p>
+</div><p>注意：你需要修改为你自己的路径，除非和我一样。</p>
+<h3 id="修改密码">修改密码
+</h3><p>在保证前面步骤没有出错的情况下，启动 MySQL 服务，登录 MySQL，修改密码，然后就大功告成</p>
+<p>启动 MySQL 服务（需要管理员权限）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -486,265 +464,46 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">net</span> <span class="nb">start </span><span class="n">MYSQL57</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>2）登录MySQL</p>
+</div><p>登录 MySQL，回车输入密码，密码是前面生成的随机密码，已经提醒过保存下来</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysql</span><span class="p">.</span><span class="py">exe</span> <span class="n">-u</span> <span class="n">root</span> <span class="n">-p</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">回车输入密码</span><span class="err">，</span><span class="n">密码是前面生成的随机密码</span><span class="err">，</span><span class="n">已经提醒过保存下来</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>3）修改密码</p>
+</div><p>修改密码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set </span><span class="n">password</span><span class="p">=</span><span class="s1">&#39;新密码&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">如</span>
-</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">password</span><span class="p">=</span><span class="s1">&#39;root&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="36-配置环境变量非必须">3.6 配置环境变量（非必须）
-</h2><p>1）复制安装路径，<strong>windows+R</strong> 打开运行，输入 <strong>sysdm.cpl</strong> 回车，选择 <strong>高级</strong><br />![image.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1611160475021-7136cdf9-9675-4d92-a7aa-c2d0712c9701.png)<br />打开 <strong>环境变量 <strong>，在</strong>系统环境变量</strong>中新建：<br /><img src="/_media-sync_resources/20231203T140411/20231203T140411_84456.png#averageHue=%23efefee&amp;clientId=ucce33620-9683-4&amp;from=paste&amp;height=171&amp;id=ua251d55d&amp;originHeight=302&amp;originWidth=1211&amp;originalType=binary&amp;ratio=1.7647058823529411&amp;rotation=0&amp;showTitle=false&amp;size=20565&amp;status=done&amp;style=none&amp;taskId=u121cc083-6dba-485e-9235-1e0d4670506&amp;title=&amp;width=686.2333333333333"
-	
-	
-	
-	loading="lazy"
-	
-		alt="图片.png"
-	
-	
-><br />选中 <strong>系统变量-Path</strong>，点击 <strong>编辑</strong>，再点击 <strong>新建</strong>，输入：**%MYSQL_HOME%\bin **，再点击 **确定 **保存（注意返回上一级也要保存，否则可能保存不成功）<br /><img src="/_media-sync_resources/20231203T140411/20231203T140411_61721.png#averageHue=%23efeeed&amp;height=242&amp;id=pSBEI&amp;originHeight=484&amp;originWidth=1183&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=60196&amp;status=done&amp;style=none&amp;title=&amp;width=591.5"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image.png"
-	
-	
-></p>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">password</span><span class="o">=</span><span class="s1">&#39;root&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="配置环境变量">配置环境变量
+</h3><p>复制安装路径，<strong>windows+R</strong> 打开运行，输入 <strong>sysdm.cpl</strong> 回车，</p>
+<p>选择 <code>高级</code>打开 <code>环境变量</code>，</p>
+<p>选中 <code>系统变量</code> <code>Path</code>，点击 <code>编辑</code>，再点击 <code>新建</code>，输入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">%MYSQL_HOME%<span class="se">\b</span>in
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再点击 确定 保存（注意返回上一级也要保存，否则可能保存不成功）</p>
 <p>至此结束。。</p>
-<h2 id="heading">
-</h2><ol>
-<li>使用管理员权限打开 cmd 命令行运行工具，进行 <strong>初始化</strong>：</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysqld --initialize --console
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>![image.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1611197580728-72cc64e5-ccea-4aa7-b279-2660487c42d8.png)<br />记住初始化密码，稍后重置密码会用到</p>
-<ol start="2">
-<li>安装服务</li>
-</ol>
-<hr>
-<p><strong><em>20201018 更</em></strong></p>
-<p>注：安装服务 此部分为后期更新，与前后文的路径可能不同，请根据实际路径进行更改</p>
-<p>命令为：<br />mysqld命令所在的位置 install 服务名 &ndash;defaults-file=my.ini所在的位置<br />例如：<br />D:\Development_Tools\mysql-5.7.40-winx64\bin\mysqld install MySQL57 &ndash;defaults-file=&ldquo;D:\Development_Tools\mysql-5.7.40-winx64\my.ini&rdquo;</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">D:\Development_Tools\mysql-5.7.40-winx64\bin\mysqld install MySQL57 --defaults-file=&#34;D:\Development_Tools\mysql-5.7.40-winx64\my.ini&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<ol start="3">
-<li>启动mysql:</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">net start mysql57
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="4">
-<li>登录mysql，修改密码:</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#登录本机的 MySQL 数据库，只需要输入以下命令即可：
-</span></span><span class="line"><span class="cl">mysql -u root -p
-</span></span><span class="line"><span class="cl">#注意：在输入密码密码时，手动输入 或者 鼠标右键粘贴
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>![image.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1611199716700-88c13baf-f1f5-4417-8b5c-30c9e2240aaf.png)<br />5)修改密码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">#使用下述命令可以为’root’@’localhost‘修改连接MySQL服务的密码:
-</span></span><span class="line"><span class="cl">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;新密码&#39;;
-</span></span><span class="line"><span class="cl">#退出mysql： 
-</span></span><span class="line"><span class="cl">quit；
-</span></span><span class="line"><span class="cl">#关闭服务： 
-</span></span><span class="line"><span class="cl">net stop mysql57
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="4-mysql80-安装类同mysql57">4. MySQL8.0 安装（类同MySQL5.7）
-</h1><p>因为安装步骤类似MySQL5.7 ，所有有些部分不再解释说明</p>
-<h2 id="41-解压安装包">4.1 解压安装包
-</h2><p>解压下载好的安装包，建议不要使用中文路径</p>
-<h2 id="42-新建-myini-文件">4.2 新建 my.ini 文件
-</h2><p>在解压的目录新建 my.ini 文件，这是MySQL的配置文件，通过zip安装需要手动指定数据存储的路径</p>
-<p>my.ini 的配置内容：<br /><strong>注意</strong>：端口号和路径不一样</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-properties" data-lang="properties"><span class="line"><span class="cl"><span class="err">[client]</span>
-</span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="o">=</span> <span class="s">3307</span>
-</span></span><span class="line"><span class="cl"><span class="err"> </span>
-</span></span><span class="line"><span class="cl"><span class="err">[mysqld]</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#设置3306端口</span>
-</span></span><span class="line"><span class="cl"><span class="na">port</span> <span class="o">=</span> <span class="s">3307</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置mysql的安装目录 tips:这里的目录是你自己的安装目录，这个是我的安装目录，你不能用的哦</span>
-</span></span><span class="line"><span class="cl"><span class="na">basedir</span><span class="o">=</span><span class="s">D:\\Development\\DB\\mysql-8.0.33-winx64</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置mysql数据库的数据的存放目录 tips:同上一条</span>
-</span></span><span class="line"><span class="cl"><span class="na">datadir</span><span class="o">=</span><span class="s">D:\\Development\\DB\\mysql-8.0.33-winx64\\data</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 允许最大连接数</span>
-</span></span><span class="line"><span class="cl"><span class="na">max_connections</span><span class="o">=</span><span class="s">200</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 服务端使用的字符集默认为8比特编码的latin1字符集</span>
-</span></span><span class="line"><span class="cl"><span class="na">character-set-server</span><span class="o">=</span><span class="s">utf8mb4</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 创建新表时将使用的默认存储引擎</span>
-</span></span><span class="line"><span class="cl"><span class="na">default-storage-engine</span><span class="o">=</span><span class="s">INNODB</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#这个需要注意一下，不然报错</span>
-</span></span><span class="line"><span class="cl"><span class="c1">#其原因是从 5.6开始，timestamp 的默认行为已经是 deprecated 了。</span>
-</span></span><span class="line"><span class="cl"><span class="na">explicit_defaults_for_timestamp</span><span class="o">=</span><span class="s">true</span>
-</span></span><span class="line"><span class="cl"><span class="err"> </span>
-</span></span><span class="line"><span class="cl"><span class="err">[mysql]</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 设置mysql客户端默认字符集</span>
-</span></span><span class="line"><span class="cl"><span class="na">default-character-set</span><span class="o">=</span><span class="s">utf8mb4</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="43-初始化mysql">4.3 初始化MySQL
-</h2><p>首次使用，初始化MySQL<br />如果你使用的文件管理器的方式打开的安装目录，可通过shift+右键 选择 在此处打开 Powershell 窗口，切换到命令行操作</p>
-<p>假使现在你已经切换到了powershell，先切换到bin目录，再执行以下命令进行初始化<br />注意：一定要切换到bin目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysqld</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-initialize</span> <span class="p">-</span><span class="n">-user</span><span class="p">=</span><span class="n">mysql</span> <span class="p">-</span><span class="n">-console</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>请记住初始化密码，后续登录MySQL会用到，你可以新建一个记事本复制粘贴过去</p>
-<h2 id="44-安装mysql服务">4.4 安装MySQL服务
-</h2><p>管理员打开powershell，进入安装路径的bin目录，执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysqld</span><span class="p">.</span><span class="py">exe</span> <span class="p">-</span><span class="n">-install</span> <span class="n">MySQL80</span> <span class="p">-</span><span class="n">-defaults</span><span class="o">-file</span><span class="p">=</span><span class="s2">&#34;D:\\Development\\DB\\mysql-8.0.33-winx64\\my.ini&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="45-修改密码">4.5 修改密码
-</h2><p>在保证前面步骤没有出错的情况下，启动MySQL服务，登录MySQL，修改密码，然后就大功告成</p>
-<p>1） 启动MySQL服务（需要管理员权限）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">net</span> <span class="nb">start </span><span class="n">MYSQL80</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>2）登录MySQL</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">.\</span><span class="n">mysql</span><span class="p">.</span><span class="py">exe</span> <span class="n">-u</span> <span class="n">root</span> <span class="n">-p</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">回车输入密码</span><span class="err">，</span><span class="n">密码是前面生成的随机密码</span><span class="err">，</span><span class="n">已经提醒过保存下来</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>3）修改密码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set </span><span class="n">password</span><span class="p">=</span><span class="s1">&#39;新密码&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">如</span>
-</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">password</span><span class="p">=</span><span class="s1">&#39;root&#39;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="46-配置环境变量非必须">4.6 配置环境变量（非必须）
-</h2><p>1）复制安装路径，<strong>windows+R</strong> 打开运行，输入 <strong>sysdm.cpl</strong> 回车，选择 <strong>高级</strong><br /><img src="/_media-sync_resources/20231203T140411/20231203T140411_14833.png#averageHue=%23f6f6f5&amp;height=547&amp;id=lVKJB&amp;originHeight=1094&amp;originWidth=958&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=75109&amp;status=done&amp;style=none&amp;title=&amp;width=479"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image.png"
-	
-	
-><br />打开 <strong>环境变量 <strong>，在</strong>系统环境变量</strong>中，选择 <strong>PATH</strong> ，新建<br />把MySQL8.0 的安装路径带bin目录输入进去即可<br />如图：<br />![图片.png](<a class="link" href="https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15"  target="_blank" rel="noopener"
-    >https://gitee.com/muyiacc/typora-img/raw/master/2023/2023-09-15</a> 09-31-38_1689840952462-ea695e16-e76c-4566-a552-7b49b04e58e2.png)</p>
-<p>完结撒花。。。。。</p>
 
 </section>
 
@@ -814,12 +573,12 @@
             
                 
 <article class="">
-    <a href="/p/2403004/">
+    <a href="/p/241011224204/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MySQL内存优化</h2>
+            <h2 class="article-title">Postgres之PSQL使用</h2>
         </div>
     </a>
 </article>
@@ -827,38 +586,12 @@
             
                 
 <article class="">
-    <a href="/p/2310025/">
+    <a href="/p/241002080830/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">自己搭建kms实现Windows激活</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250228175305/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">VMware Workstation 17 Pro许可证</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250228151107/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">zookeeper进程启动成功，查看状态却显示不在运行</h2>
+            <h2 class="article-title">sqlite3的一些基本操作</h2>
         </div>
     </a>
 </article>

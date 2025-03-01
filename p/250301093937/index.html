@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用户与权限管理">
-<title>MySQL一文全通</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Linux 下负责配置 DNS 服务器是在/etc/resolv.conf文件中，但是修改它重启就会失效 Ubuntu 使用 netplan 配置 DNS 也是无法生效 查看 /etc/resolv.conf 文件，它是一个软链">
+<title>Ubuntu22.04修改DNS</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/241011030140/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250301093937/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MySQL一文全通">
-<meta property='og:description' content="用户与权限管理">
-<meta property='og:url' content='https://hublog.netlify.app/p/241011030140/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Ubuntu22.04修改DNS">
+<meta property='og:description' content="简介 Linux 下负责配置 DNS 服务器是在/etc/resolv.conf文件中，但是修改它重启就会失效 Ubuntu 使用 netplan 配置 DNS 也是无法生效 查看 /etc/resolv.conf 文件，它是一个软链">
+<meta property='og:url' content='https://hublog.netlify.app/p/250301093937/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:published_time' content='2024-10-11T03:01:40&#43;08:00'/><meta property='article:modified_time' content='2024-10-11T03:01:40&#43;08:00'/>
-<meta name="twitter:title" content="MySQL一文全通">
-<meta name="twitter:description" content="用户与权限管理">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-01T09:39:37&#43;08:00'/><meta property='article:modified_time' content='2025-03-01T09:39:37&#43;08:00'/>
+<meta name="twitter:title" content="Ubuntu22.04修改DNS">
+<meta name="twitter:description" content="简介 Linux 下负责配置 DNS 服务器是在/etc/resolv.conf文件中，但是修改它重启就会失效 Ubuntu 使用 netplan 配置 DNS 也是无法生效 查看 /etc/resolv.conf 文件，它是一个软链">
   
 
 
@@ -267,7 +267,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#用户与权限管理">用户与权限管理</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#dns-配置">DNS 配置</a>
+      <ol>
+        <li><a href="#方式一">方式一</a></li>
+        <li><a href="#方式二">方式二</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -286,8 +292,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/database/" >
-                Database
+            <a href="/categories/linux/" >
+                Linux
             </a>
         
     </header>
@@ -295,7 +301,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/241011030140/">MySQL一文全通</a>
+            <a href="/p/250301093937/">Ubuntu22.04修改DNS</a>
         </h2>
     
         
@@ -317,7 +323,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Oct 11, 2024</time>
+                <time class="article-time--published">Mar 01, 2025</time>
             </div>
         
 
@@ -333,47 +339,191 @@
     <section class="article-content">
     
     
-    <h2 id="用户与权限管理">用户与权限管理
-</h2>
+    <h2 id="简介">简介
+</h2><p>Linux 下负责配置 DNS 服务器是在<code>/etc/resolv.conf</code>文件中，但是修改它重启就会失效</p>
+<p>Ubuntu 使用 netplan 配置 DNS 也是无法生效</p>
+<p>查看 <code>/etc/resolv.conf</code> 文件，它是一个软链接，指向 <code>/run/systemd/resolve/resolv.conf</code></p>
+<p>原因是它是由 <code>systemd-resoved</code> 服务接管自动配置</p>
+<p>按理说 netplan 设置也会生效，为何不生效？</p>
+<p>经我测试，netplan 设置后确实生效，<code>/run/systemd/resolve/resolv.conf</code>的内容被修改了，但是，<code>/etc/resolv.conf</code>虽然是一个软链接到 <code>/run/systemd/resolve/resolv.conf</code>，但还是原来的内容。说明这个软链接是个假的软链接。</p>
+<p>解决办法就是删除 <code>/etc/resolv.conf</code> ，重新创建它，指向<code>/run/systemd/resolve/resolv.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo rm -rf /etc/resolv.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo ln -s /run/systemd/resolve/resolv.conf /etc/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dns-配置">DNS 配置
+</h2><p>根据前文所说，有两种方式配置 DNS，</p>
+<ul>
+<li>一种是修改 netplan 配置</li>
+<li>一种是修改 <code>/etc/systemd/resolved.conf</code></li>
+</ul>
+<p>二选其一即可，推荐修改 netplan 配置</p>
+<h3 id="方式一">方式一
+</h3><p>修改 netplan 配置，50-cloud-init.yaml 为配置文件，你的可能不一样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/netplan/50-cloud-init.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 配置文件中指定 DNS 服务器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">ethernets</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enp0s3</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">nameservers</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">223.5.5.5</span><span class="p">,</span><span class="m">8.8.8.8</span><span class="p">]</span><span class="w"> </span><span class="c">#dns</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enp0s8</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dhcp4</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">addresses</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="m">192.168.56.102</span><span class="l">/24]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>应用配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo netplan apply
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看 <code>/run/systemd/resolve/resolv.conf</code> 中的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo cat /run/systemd/resolve/resolv.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nameserver 223.5.5.5
+</span></span><span class="line"><span class="cl">nameserver 8.8.8.8
+</span></span><span class="line"><span class="cl">nameserver 10.0.2.3
+</span></span><span class="line"><span class="cl"><span class="c1"># Too many DNS servers configured, the following entries may be ignored.</span>
+</span></span><span class="line"><span class="cl">nameserver fd00::3
+</span></span><span class="line"><span class="cl">nameserver 192.168.56.1
+</span></span><span class="line"><span class="cl">search lan
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="方式二">方式二
+</h3><p>修改 <code>/etc/systemd/resolved.conf</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/systemd/resolved.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 配置文件中指定 DNS 服务器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>Resolve<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Some examples of DNS servers which may be used for DNS= and FallbackDNS=:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Cloudflare: 1.1.1.1#cloudflare-dns.com 1.0.0.1#cloudflare-dns.com 2606:4700:4700::1111#cloudflare-dns.com 2606:4700:4700::1001#cloudflare-dns.com</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Google:     8.8.8.8#dns.google 8.8.4.4#dns.google 2001:4860:4860::8888#dns.google 2001:4860:4860::8844#dns.google</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Quad9:      9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DNS</span><span class="o">=</span>223.5.5.5 8.8.8.8
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存退出，重启 systemd-resolved，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart systemd-resolved
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看 <code>/run/systemd/resolve/resolv.conf</code> 中的内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo cat /run/systemd/resolve/resolv.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nameserver 223.5.5.5
+</span></span><span class="line"><span class="cl">nameserver 8.8.8.8
+</span></span><span class="line"><span class="cl">nameserver 10.0.2.3
+</span></span><span class="line"><span class="cl"><span class="c1"># Too many DNS servers configured, the following entries may be ignored.</span>
+</span></span><span class="line"><span class="cl">nameserver fd00::3
+</span></span><span class="line"><span class="cl">nameserver 192.168.56.1
+</span></span><span class="line"><span class="cl">search lan
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/mysql/">Mysql</a>
-        
-    </section>
-
 
     </footer>
 
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -388,12 +538,12 @@
             
                 
 <article class="">
-    <a href="/p/241011224204/">
+    <a href="/p/250301182905/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Postgres之PSQL使用</h2>
+            <h2 class="article-title">SHELL三剑客grep，sed，awk使用教程</h2>
         </div>
     </a>
 </article>
@@ -401,12 +551,51 @@
             
                 
 <article class="">
-    <a href="/p/241002080830/">
+    <a href="/p/250301101134/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">sqlite3的一些基本操作</h2>
+            <h2 class="article-title">Linux查看当前系统发行版本</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250228141642/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu使用ssh连接执行命令找不到环境变量</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250224144752/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ubuntu24.04静态ip配置，重启虚拟机网络被重置解决办法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241006110905/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux基础配置</h2>
         </div>
     </a>
 </article>
