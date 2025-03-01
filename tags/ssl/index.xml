@@ -640,7 +640,6 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Github地址：https://github.com/acmesh-official/acme.sh&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;关于更多信息请查看官方教程。。。&lt;/p&gt;
 &lt;h2 id=&#34;安装-acmesh&#34;&gt;安装 acme.sh
 &lt;/h2&gt;&lt;p&gt;一条命令解决&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

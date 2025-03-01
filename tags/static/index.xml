@@ -13,8 +13,7 @@
         <pubDate>Sat, 02 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2312002/</guid>
-        <description>&lt;p&gt;这玩意折腾我好久&lt;/p&gt;
-&lt;p&gt;最小化安装配置，如果安装图形化，可能是NetworkManager，这部分不适用&lt;/p&gt;
+        <description>&lt;p&gt;最小化安装配置，如果安装图形化，可能是NetworkManager，这部分不适用&lt;/p&gt;
 &lt;p&gt;编辑配置文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

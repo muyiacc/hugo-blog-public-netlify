@@ -390,8 +390,7 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
         <pubDate>Sat, 02 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2312002/</guid>
-        <description>&lt;p&gt;这玩意折腾我好久&lt;/p&gt;
-&lt;p&gt;最小化安装配置，如果安装图形化，可能是NetworkManager，这部分不适用&lt;/p&gt;
+        <description>&lt;p&gt;最小化安装配置，如果安装图形化，可能是NetworkManager，这部分不适用&lt;/p&gt;
 &lt;p&gt;编辑配置文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -825,7 +824,7 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 </description>
         </item>
         <item>
-        <title>Debian12或者Linux安装JDK17和JDK8</title>
+        <title>Debian12安装JDK17和JDK8</title>
         <link>https://hublog.netlify.app/p/2310009/</link>
         <pubDate>Mon, 09 Oct 2023 14:07:10 +0800</pubDate>
         
@@ -1097,7 +1096,7 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>debian12安装中文输入法</title>
+        <title>Debian12安装中文输入法</title>
         <link>https://hublog.netlify.app/p/2310007/</link>
         <pubDate>Sat, 07 Oct 2023 14:07:10 +0800</pubDate>
         
