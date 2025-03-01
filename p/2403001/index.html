@@ -2,7 +2,7 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 之前一直使用压缩包的方式安装 MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用 apt 仓库">
-<title>Debian使用apt安装MySQL</title>
+<title>Linux使用APT仓库安装MySQL</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2403001/'>
 
@@ -270,7 +270,7 @@
     <li><a href="#前言">前言</a></li>
     <li><a href="#卸载">卸载</a></li>
     <li><a href="#安装-mysql-apt-config">安装 mysql-apt-config</a></li>
-    <li><a href="#安装-mysql">安装 MySQL</a></li>
+    <li><a href="#安装mysql">安装MySQL</a></li>
   </ol>
 </nav>
         </div>
@@ -337,7 +337,7 @@
     
     
     <h2 id="前言">前言
-</h2><p>之前一直使用压缩包的方式安装 MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用 apt 仓库安装。</p>
+</h2><p>之前一直使用压缩包的方式安装MySQL，后来发现新装系统要下载指定版本，版本不一定好找，安装过程的命令复用性不高，并不好用， 遂采用apt仓库安装。</p>
 <h2 id="卸载">卸载
 </h2><p>卸载系统自带，删除残留的文件</p>
 <div class="highlight"><div class="chroma">
@@ -378,7 +378,7 @@
 wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb"  target="_blank" rel="noopener"
     >https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_all.deb</a></p>
 </blockquote>
-<ol>
+<ol start="2">
 <li>安装 mysql-apt-config</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -389,8 +389,8 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install  ./mysql-apt-config_0.8.32-1_all.deb
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>弹出配置界面，如果需要配置，回车进入，一般默认即可，所以直接键盘上下键选择 ok，即可添加成功</p>
-<ol>
+</div><p>弹出配置界面，如果需要配置，回车进入，一般默认即可，所以直接键盘上下键选择ok，即可添加成功</p>
+<ol start="3">
 <li>更新软件仓库</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -401,7 +401,7 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt update
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="安装-mysql">安装 MySQL
+</div><h2 id="安装mysql">安装MySQL
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -450,8 +450,10 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
     </section>
 
 
-    </footer>
-
+    <section>
+        页面浏览量<span id="vercount_value_page_pv">Loading</span>
+    </section>
+</footer>
 
     
         <link 
@@ -491,12 +493,38 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
             
                 
 <article class="">
+    <a href="/p/2403001/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Debian使用apt安装MySQL</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/2310008/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">Debian12安装和卸载MySQL8.0.x</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2310008/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Linux安装和卸载MySQL8.0.x</h2>
         </div>
     </a>
 </article>
@@ -523,32 +551,6 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
 
         <div class="article-details">
             <h2 class="article-title">Debian，iptables防火墙规则</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2406003/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Debian12安装新的桌面环境</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2404005/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux，Debian安装Java17</h2>
         </div>
     </a>
 </article>
@@ -725,6 +727,6 @@ wget <a class="link" href="https://dev.mysql.com/get/mysql-apt-config_0.8.29-1_a
         document.head.appendChild(customFont);
     }());
 </script>
-
+<script defer src="https://cn.vercount.one/js"></script>
     </body>
 </html>

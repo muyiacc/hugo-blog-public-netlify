@@ -283,6 +283,7 @@
         </li>
       </ol>
     </li>
+    <li><a href="#子模块-submodule">子模块 submodule</a></li>
     <li><a href="#常见问题">常见问题</a>
       <ol>
         <li><a href="#从远程-git-仓库中删除已经上传但现在希望忽略的文件">从远程 Git 仓库中删除已经上传但现在希望忽略的文件</a></li>
@@ -517,7 +518,27 @@
 </div><p>为什么有这个用法，主要是用来学习，删除了之后，自己再重新写一遍。不用关心需要删除哪些内容。</p>
 <h4 id="--soft">&ndash;soft
 </h4><h4 id="--mixed-默认">&ndash;mixed （默认）
-</h4><h2 id="常见问题">常见问题
+</h4><h2 id="子模块-submodule">子模块 submodule
+</h2><p>子模块是用在项目中将其他项目作为子项目使用</p>
+<p>初始化子模块配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新子模块内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git submodule update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常见问题">常见问题
 </h2><h3 id="从远程-git-仓库中删除已经上传但现在希望忽略的文件">从远程 Git 仓库中删除已经上传但现在希望忽略的文件
 </h3><p>确保你已经在 <code>.gitignore</code> 文件中添加了需要忽略的文件或文件夹。</p>
 <p>使用以下命令将文件从 Git 的追踪中移除，但保留本地文件：</p>
@@ -619,8 +640,10 @@
     <footer class="article-footer">
     
 
-    </footer>
-
+    <section>
+        页面浏览量<span id="vercount_value_page_pv">Loading</span>
+    </section>
+</footer>
 
     
         <link 
@@ -820,6 +843,6 @@
         document.head.appendChild(customFont);
     }());
 </script>
-
+<script defer src="https://cn.vercount.one/js"></script>
     </body>
 </html>
