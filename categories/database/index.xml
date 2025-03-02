@@ -110,17 +110,6 @@
 </description>
         </item>
         <item>
-        <title>sqlite3的一些基本操作</title>
-        <link>https://hublog.netlify.app/p/241002080830/</link>
-        <pubDate>Wed, 02 Oct 2024 08:08:30 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/241002080830/</guid>
-        <description>&lt;p&gt;&lt;code&gt;sqlite3 dbfile&lt;/code&gt; 进入sqlite3终端&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;.table&lt;/code&gt; 查看表&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;DELETE FROM table_name;&lt;/code&gt; 清空表数据&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>MySQL备份数据库</title>
         <link>https://hublog.netlify.app/p/2404007/</link>
         <pubDate>Sun, 07 Apr 2024 15:07:04 +0800</pubDate>
