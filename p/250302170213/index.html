@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 变量 Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等 查看这些">
-<title>Shell的基本语法-2-变量-运算符-条件判断</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 这篇讲解 shell 中运算符和条件判断 运算符 shell 中有运算表达式，可以进行运算 语法： $((运算表达式)) $[ 运算表达式 ]：注意左右空格 例1： shell03_01.sh 1 2 #!/bin/bash echo $((1+1))">
+<title>Shell教程03-运算符</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/2309007/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250302170213/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Shell的基本语法-2-变量-运算符-条件判断">
-<meta property='og:description' content="1. 变量 Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等 查看这些">
-<meta property='og:url' content='https://hublog.netlify.app/p/2309007/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Shell教程03-运算符">
+<meta property='og:description' content="简介 这篇讲解 shell 中运算符和条件判断 运算符 shell 中有运算表达式，可以进行运算 语法： $((运算表达式)) $[ 运算表达式 ]：注意左右空格 例1： shell03_01.sh 1 2 #!/bin/bash echo $((1+1))">
+<meta property='og:url' content='https://hublog.netlify.app/p/250302170213/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='shell' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2023-09-08T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-09-08T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="Shell的基本语法-2-变量-运算符-条件判断">
-<meta name="twitter:description" content="1. 变量 Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等 查看这些">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-02T17:02:13&#43;08:00'/><meta property='article:modified_time' content='2025-03-02T17:02:13&#43;08:00'/>
+<meta name="twitter:title" content="Shell教程03-运算符">
+<meta name="twitter:description" content="简介 这篇讲解 shell 中运算符和条件判断 运算符 shell 中有运算表达式，可以进行运算 语法： $((运算表达式)) $[ 运算表达式 ]：注意左右空格 例1： shell03_01.sh 1 2 #!/bin/bash echo $((1+1))">
   
 
 
@@ -267,13 +267,8 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#11-系统变量">1.1. 系统变量</a></li>
-    <li><a href="#12-自定义变量">1.2. 自定义变量</a></li>
-    <li><a href="#13-特殊变量">1.3. 特殊变量</a>
-      <ol>
-        <li><a href="#131-n">1.3.1 $n</a></li>
-      </ol>
-    </li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#运算符">运算符</a></li>
   </ol>
 </nav>
         </div>
@@ -301,7 +296,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2309007/">Shell的基本语法-2-变量-运算符-条件判断</a>
+            <a href="/p/250302170213/">Shell教程03-运算符</a>
         </h2>
     
         
@@ -323,7 +318,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Sep 08, 2023</time>
+                <time class="article-time--published">Mar 02, 2025</time>
             </div>
         
 
@@ -339,150 +334,87 @@
     <section class="article-content">
     
     
-    <h1 id="1-变量">1. 变量
-</h1><p>Shell也可以设置变量，如系统默认的变量 SHELL（当前用户的解释器）、USER（当前用户）、HOME（当前用户的加目录）等</p>
-<p>查看这些变量的值只需要 <code>echo $变量名</code>即可</p>
-<p>例如：</p>
+    <h2 id="简介">简介
+</h2><p>这篇讲解 shell 中运算符和条件判断</p>
+<h2 id="运算符">运算符
+</h2><p>shell 中有运算表达式，可以进行运算</p>
+<p>语法：</p>
+<ul>
+<li><code>$((运算表达式))</code></li>
+<li><code>$[ 运算表达式 ]</code>：注意左右空格</li>
+</ul>
+<p>例1：</p>
+<p>shell03_01.sh</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$SHELL</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$USER</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$HOME</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="k">$((</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上述输出结果根据笔者所在的环境分别为</p>
+</div><p>运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh shell03_01.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>例2：</p>
+<p>shell03_02.sh</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">/bin/zsh
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ecs-user
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">/home/ecs-user
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> $<span class="o">[</span> 1+1 <span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>下面开始更加详细的说明</p>
-<h2 id="11-系统变量">1.1. 系统变量
-</h2><p>系统变量，顾名思义，就是系统自带的变量</p>
-<p>除了已经介绍过的<code>SHELL、USER、HOME</code>等外，还有如</p>
+</div><p>运行，注意是 bash</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    PATH：环境变量，包含了可执行文件的搜索路径。
-</span></span><span class="line"><span class="cl">    BASH_VERSION：Bash shell的版本信息。
-</span></span><span class="line"><span class="cl">    PWD：当前工作目录的绝对路径。
-</span></span><span class="line"><span class="cl">    LANG：系统的语言和字符集设置。
-</span></span><span class="line"><span class="cl">    TERM：终端类型。
-</span></span><span class="line"><span class="cl">    LOGNAME：当前登录的用户名。
-</span></span><span class="line"><span class="cl">    HISTSIZE：命令历史记录的数量。
-</span></span><span class="line"><span class="cl">    LINES：终端的行数。
-</span></span><span class="line"><span class="cl">    USER：非root用户的用户名。
-</span></span><span class="line"><span class="cl">    UID：用户ID（root用户为0）。
-</span></span><span class="line"><span class="cl">    GID：组ID（root用户为0）。
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash shell03_02.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>额外的：</p>
-<ul>
-<li>使用<code>env</code>命令查看当前系统定义的所有环境变量</li>
-<li>使用<code>set</code>命令显示所有本地定义的Shell变量</li>
-</ul>
-<h2 id="12-自定义变量">1.2. 自定义变量
-</h2><p>除了系统自带的系统变量以外，用户还可以自定义属于自己的变量</p>
-<p>1） 基本语法</p>
-<ul>
-<li>定义变量 <code>变量名=变量值</code>  <strong>等号两边不能有空格</strong></li>
-<li>撤销变量 <code>unset 变量名</code></li>
-<li>静态变量 <code>readonly 变量名</code>    <strong>静态变量不可撤销</strong></li>
-<li>全局变量 <code>export 变量名</code></li>
-</ul>
-<p>2）变量命名规则</p>
-<ul>
-<li>变量名必须以字母（a-z、A-Z）或下划线（_）开头</li>
-<li>变量名区分大小写，<strong>环境变量命名建议大写</strong></li>
-<li>变量名不能是bash的内置命令或关键字</li>
-<li>变量名长度不能超过99个字符</li>
-<li>变量名不能包含空格或其他特殊字符</li>
-</ul>
-<p>3）变量使用技巧</p>
-<ul>
-<li>变量默认类型都是字符串类型，无法直接进行数值运算</li>
-<li>变量的值如果有空格，需要使用双引号或单引号括起来</li>
-</ul>
-<h2 id="13-特殊变量">1.3. 特殊变量
-</h2><h3 id="131-n">1.3.1 $n
-</h3><p>数字从 0-n，</p>
-<p><code>$0</code> 表示的是当前<strong>命令行</strong>的<strong>第一个参数</strong>，注意是<strong>命令行</strong>的<strong>第一个参数</strong>，而非指代脚本本身，</p>
-
+</div><p>运行结果</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="m">2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/shell/">Shell</a>
-        
-            <a href="/tags/linux/">Linux</a>
-        
-    </section>
-
 
     <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -497,12 +429,12 @@
             
                 
 <article class="">
-    <a href="/p/2309006/">
+    <a href="/p/250301182905/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Shell的基本语法-1-概述-解释器-入门</h2>
+            <h2 class="article-title">SHELL三剑客grep，sed，awk使用教程</h2>
         </div>
     </a>
 </article>
@@ -510,12 +442,12 @@
             
                 
 <article class="">
-    <a href="/p/241005163447/">
+    <a href="/p/250301101134/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux三剑客awk、sed、grep</h2>
+            <h2 class="article-title">Linux查看当前系统发行版本</h2>
         </div>
     </a>
 </article>
@@ -523,12 +455,12 @@
             
                 
 <article class="">
-    <a href="/p/2403001/">
+    <a href="/p/250301093937/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Debian使用apt安装MySQL</h2>
+            <h2 class="article-title">Ubuntu22.04修改DNS</h2>
         </div>
     </a>
 </article>
@@ -536,12 +468,12 @@
             
                 
 <article class="">
-    <a href="/p/2403001/">
+    <a href="/p/250228141642/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux使用APT仓库安装MySQL</h2>
+            <h2 class="article-title">Ubuntu使用ssh连接执行命令找不到环境变量</h2>
         </div>
     </a>
 </article>
@@ -549,12 +481,12 @@
             
                 
 <article class="">
-    <a href="/p/2311008/">
+    <a href="/p/250224144752/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Shell脚本：快速比对文件的SHA256哈希值，判断文件是否被篡改</h2>
+            <h2 class="article-title">Ubuntu24.04静态ip配置，重启虚拟机网络被重置解决办法</h2>
         </div>
     </a>
 </article>

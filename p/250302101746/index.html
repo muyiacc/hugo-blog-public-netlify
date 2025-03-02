@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 go">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 go 可以在一个平台上编译其他平台的可执行文件，称为交叉编译 交叉编译 使用交叉编译只需要设置以下几步 设置 CGO_ENABLED 为 0 设置 GOOS 环境变量，选择你的目标操作">
 <title>Go语言交叉编译</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250302101746/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Go语言交叉编译">
-<meta property='og:description' content="简介 go">
+<meta property='og:description' content="简介 go 可以在一个平台上编译其他平台的可执行文件，称为交叉编译 交叉编译 使用交叉编译只需要设置以下几步 设置 CGO_ENABLED 为 0 设置 GOOS 环境变量，选择你的目标操作">
 <meta property='og:url' content='https://hublog.netlify.app/p/250302101746/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-02T10:17:46&#43;08:00'/><meta property='article:modified_time' content='2025-03-02T10:17:46&#43;08:00'/>
 <meta name="twitter:title" content="Go语言交叉编译">
-<meta name="twitter:description" content="简介 go">
+<meta name="twitter:description" content="简介 go 可以在一个平台上编译其他平台的可执行文件，称为交叉编译 交叉编译 使用交叉编译只需要设置以下几步 设置 CGO_ENABLED 为 0 设置 GOOS 环境变量，选择你的目标操作">
   
 
 
@@ -245,7 +245,45 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#交叉编译">交叉编译</a></li>
+    <li><a href="#案例">案例</a></li>
+    <li><a href="#附录">附录</a>
+      <ol>
+        <li><a href="#goos-和-goarch-可选值对应表">GOOS 和 GOARCH 可选值对应表</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -303,7 +341,334 @@
     
     
     <h2 id="简介">简介
-</h2><p>go</p>
+</h2><p>go 可以在一个平台上编译其他平台的可执行文件，称为交叉编译</p>
+<h2 id="交叉编译">交叉编译
+</h2><p>使用交叉编译只需要设置以下几步</p>
+<ul>
+<li>设置 CGO_ENABLED 为 0</li>
+<li>设置 GOOS 环境变量，选择你的目标操作系统</li>
+<li>设置 GOARCH 环境变量，选择你的目标 CPU 架构</li>
+</ul>
+<p>Windows 下编译</p>
+<p>编译为 windows amd64</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set </span><span class="n">CGO_ENABLED</span><span class="p">=</span><span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOOS</span><span class="p">=</span><span class="n">windows</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOARCH</span><span class="p">=</span><span class="n">amd64</span>
+</span></span><span class="line"><span class="cl"><span class="n">go</span> <span class="n">build</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译为 windows arm64</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set </span><span class="n">CGO_ENABLED</span><span class="p">=</span><span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOOS</span><span class="p">=</span><span class="n">windows</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOARCH</span><span class="p">=</span><span class="n">arm64</span>
+</span></span><span class="line"><span class="cl"><span class="n">go</span> <span class="n">build</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译为 linux amd64</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">set </span><span class="n">CGO_ENABLED</span><span class="p">=</span><span class="mf">0</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOOS</span><span class="p">=</span><span class="n">linux</span>
+</span></span><span class="line"><span class="cl"><span class="nb">set </span><span class="n">GOARCH</span><span class="p">=</span><span class="n">amd64</span>
+</span></span><span class="line"><span class="cl"><span class="n">go</span> <span class="n">build</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="案例">案例
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Define configuration file and extract app name/version</span>
+</span></span><span class="line"><span class="cl">APP_CONFIG_FILE :<span class="o">=</span> ./config/config.toml
+</span></span><span class="line"><span class="cl">APP_NAME :<span class="o">=</span> <span class="k">$(</span>shell sed -n <span class="s1">&#39;s/^name = &#34;\(.*\)&#34;/\1/p&#39;</span> &lt; <span class="k">$(</span>APP_CONFIG_FILE<span class="k">))</span>
+</span></span><span class="line"><span class="cl">APP_VERSION :<span class="o">=</span> <span class="k">$(</span>shell sed -n <span class="s1">&#39;s/^version = &#34;\(.*\)&#34;/\1/p&#39;</span> &lt; <span class="k">$(</span>APP_CONFIG_FILE<span class="k">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Build directory</span>
+</span></span><span class="line"><span class="cl">BUILD_DIR :<span class="o">=</span> ./build
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Supported platforms</span>
+</span></span><span class="line"><span class="cl">PLATFORMS :<span class="o">=</span> windows-amd64 linux-amd64 darwin-amd64
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Platform-specific suffixes</span>
+</span></span><span class="line"><span class="cl">WINDOWS_SUFFIX :<span class="o">=</span> .exe
+</span></span><span class="line"><span class="cl">DEFAULT_SUFFIX :<span class="o">=</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clean build artifacts</span>
+</span></span><span class="line"><span class="cl">clean:
+</span></span><span class="line"><span class="cl">	go clean
+</span></span><span class="line"><span class="cl">	rm -rf <span class="k">$(</span>BUILD_DIR<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Build for all platforms</span>
+</span></span><span class="line"><span class="cl">build:
+</span></span><span class="line"><span class="cl">	@mkdir -p <span class="k">$(</span>BUILD_DIR<span class="k">)</span>
+</span></span><span class="line"><span class="cl">	@for platform in <span class="k">$(</span>PLATFORMS<span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="nv">os</span><span class="o">=</span><span class="nv">$$</span><span class="o">(</span><span class="nb">echo</span> <span class="nv">$$</span>platform <span class="p">|</span> cut -d <span class="s1">&#39;-&#39;</span> -f 1<span class="o">)</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="nv">arch</span><span class="o">=</span><span class="nv">$$</span><span class="o">(</span><span class="nb">echo</span> <span class="nv">$$</span>platform <span class="p">|</span> cut -d <span class="s1">&#39;-&#39;</span> -f 2<span class="o">)</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="nv">suffix</span><span class="o">=</span><span class="nv">$$</span>DEFAULT_SUFFIX<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$$</span><span class="s2">os&#34;</span> <span class="o">=</span> <span class="s2">&#34;windows&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>			<span class="nv">suffix</span><span class="o">=</span><span class="k">$(</span>WINDOWS_SUFFIX<span class="k">)</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="k">fi</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="nb">echo</span> <span class="s2">&#34;Building for GOOS=</span><span class="nv">$$</span><span class="s2">os GOARCH=</span><span class="nv">$$</span><span class="s2">arch platform=</span><span class="nv">$$</span><span class="s2">platform with suffix </span><span class="nv">$$</span><span class="s2">suffix&#34;</span><span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>		<span class="nv">GOOS</span><span class="o">=</span><span class="nv">$$</span>os <span class="nv">GOARCH</span><span class="o">=</span><span class="nv">$$</span>arch go build -o <span class="k">$(</span>BUILD_DIR<span class="k">)</span>/<span class="k">$(</span>APP_NAME<span class="k">)</span>-<span class="k">$(</span>APP_VERSION<span class="k">)</span>-<span class="nv">$$</span>platform<span class="nv">$$</span>suffix main.go<span class="p">;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>	<span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Default target</span>
+</span></span><span class="line"><span class="cl">all: clean build
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行如下命令编译</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make all
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="附录">附录
+</h2><h3 id="goos-和-goarch-可选值对应表">GOOS 和 GOARCH 可选值对应表
+</h3><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>$GOOS</th>
+<th>$GOARCH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aix</td>
+<td>ppc64</td>
+</tr>
+<tr>
+<td>android</td>
+<td>386</td>
+</tr>
+<tr>
+<td>android</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>android</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>android</td>
+<td>arm64</td>
+</tr>
+<tr>
+<td>darwin</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>darwin</td>
+<td>arm64</td>
+</tr>
+<tr>
+<td>dragonfly</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>freebsd</td>
+<td>386</td>
+</tr>
+<tr>
+<td>freebsd</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>freebsd</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>illumos</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>ios</td>
+<td>arm64</td>
+</tr>
+<tr>
+<td>js</td>
+<td>wasm</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>386</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>arm64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>loong64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>mips</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>mipsle</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>mips64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>mips64le</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>ppc64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>ppc64le</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>riscv64</td>
+</tr>
+<tr>
+<td>linux</td>
+<td>s390x</td>
+</tr>
+<tr>
+<td>netbsd</td>
+<td>386</td>
+</tr>
+<tr>
+<td>netbsd</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>netbsd</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>openbsd</td>
+<td>386</td>
+</tr>
+<tr>
+<td>openbsd</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>openbsd</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>openbsd</td>
+<td>arm64</td>
+</tr>
+<tr>
+<td>plan9</td>
+<td>386</td>
+</tr>
+<tr>
+<td>plan9</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>plan9</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>solaris</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>wasip1</td>
+<td>wasm</td>
+</tr>
+<tr>
+<td>windows</td>
+<td>386</td>
+</tr>
+<tr>
+<td>windows</td>
+<td>amd64</td>
+</tr>
+<tr>
+<td>windows</td>
+<td>arm</td>
+</tr>
+<tr>
+<td>windows</td>
+<td>arm64</td>
+</tr>
+</tbody>
+</table></div>
+<p>参考：<a class="link" href="https://go.dev/doc/install/source#environment"  target="_blank" rel="noopener"
+    >https://go.dev/doc/install/source#environment</a></p>
 
 </section>
 
