@@ -7,7 +7,35 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 01 Mar 2025 22:09:46 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 02 Mar 2025 10:17:46 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Go语言交叉编译</title>
+        <link>https://hublog.netlify.app/p/250302101746/</link>
+        <pubDate>Sun, 02 Mar 2025 10:17:46 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250302101746/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;</description>
+        </item>
+        <item>
+        <title>Windows安装gcc环境第二种选择，w64devkit</title>
+        <link>https://hublog.netlify.app/p/250302100916/</link>
+        <pubDate>Sun, 02 Mar 2025 10:09:16 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250302100916/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;之前介绍了一片 Windows 安装 gcc 环境，今天介绍第二种选择&lt;/p&gt;
+&lt;p&gt;w64devkit&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/skeeto/w64devkit&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/skeeto/w64devkit&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;p&gt;直接下载：&lt;a class=&#34;link&#34; href=&#34;https://github.com/skeeto/w64devkit/releases/download/v2.1.0/w64devkit-x64-2.1.0.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/skeeto/w64devkit/releases/download/v2.1.0/w64devkit-x64-2.1.0.exe&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载之后，Windows 10 上报毒，我查看了 issuse，这是一个误报，所以在 Windows 安全中心信任它&lt;/p&gt;
+&lt;p&gt;安装下载的可执行文件&lt;/p&gt;
+&lt;p&gt;将解压的文件夹目录下 &lt;code&gt;bin&lt;/code&gt; 文件夹所在的路径添加到环境变量&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>2025-03-01开启站点统计</title>
         <link>https://hublog.netlify.app/p/250301220946/</link>
         <pubDate>Sat, 01 Mar 2025 22:09:46 +0800</pubDate>
