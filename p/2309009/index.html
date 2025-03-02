@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。 官网：https://v2raya.org/ 安装">
-<title>web端的v2ray工具v2raya</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
+<title>V2rayA，跨平台的V2Ray客户端，网页端控制</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2309009/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="web端的v2ray工具v2raya">
-<meta property='og:description' content="概述 V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。 官网：https://v2raya.org/ 安装">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="V2rayA，跨平台的V2Ray客户端，网页端控制">
+<meta property='og:description' content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
 <meta property='og:url' content='https://hublog.netlify.app/p/2309009/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='v2raya' /><meta property='article:tag' content='v2ray' /><meta property='article:tag' content='proxy' /><meta property='article:published_time' content='2023-09-10T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-09-10T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="web端的v2ray工具v2raya">
-<meta name="twitter:description" content="概述 V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。 官网：https://v2raya.org/ 安装">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='v2raya' /><meta property='article:tag' content='v2ray' /><meta property='article:tag' content='proxy' /><meta property='article:published_time' content='2023-09-10T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2025-03-02T22:12:49&#43;08:00'/>
+<meta name="twitter:title" content="V2rayA，跨平台的V2Ray客户端，网页端控制">
+<meta name="twitter:description" content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
   
 
 
@@ -274,7 +274,7 @@
           <ol>
             <li><a href="#方法一通过软件源安装">方法一：通过软件源安装</a></li>
             <li><a href="#方法二手动安装-deb-包">方法二：手动安装 deb 包</a></li>
-            <li><a href="#启动v2raya">启动v2raya</a></li>
+            <li><a href="#启动-v2raya">启动 v2raya</a></li>
           </ol>
         </li>
         <li><a href="#docker">Docker</a>
@@ -320,7 +320,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2309009/">web端的v2ray工具v2raya</a>
+            <a href="/p/2309009/">V2rayA，跨平台的V2Ray客户端，网页端控制</a>
         </h2>
     
         
@@ -359,10 +359,9 @@
     
     
     <h2 id="概述">概述
-</h2><p>V2rayA是一个跨平台的 V2Ray 客户端，关于v2ray的内容不再过多介绍，下面介绍安装过程。</p>
-<blockquote>
-<p>官网：https://v2raya.org/</p>
-</blockquote>
+</h2><p>V2rayA 是一个跨平台的 V2Ray 客户端</p>
+<p>官网：<a class="link" href="https://v2raya.org/"  target="_blank" rel="noopener"
+    >https://v2raya.org/</a></p>
 <h2 id="安装">安装
 </h2><h3 id="debianubuntu">Debian/Ubuntu
 </h3><h4 id="方法一通过软件源安装">方法一：通过软件源安装
@@ -402,8 +401,8 @@
     >https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2ray</a></p>
 <p>v2ray: <a class="link" href="https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2raya"  target="_blank" rel="noopener"
     >https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2raya</a></p>
-<p>使用国内网盘：
-123: <a class="link" href="https://www.123pan.com/s/4MOKVv-52Ppd.html"  target="_blank" rel="noopener"
+<p>使用国内网盘：</p>
+<p>123: <a class="link" href="https://www.123pan.com/s/4MOKVv-52Ppd.html"  target="_blank" rel="noopener"
     >https://www.123pan.com/s/4MOKVv-52Ppd.html</a>提取码:7F4p</p>
 <p>下载之后可以使用 Gdebi、QApt 等图形化工具来安装，也可以使用命令行：</p>
 <div class="highlight"><div class="chroma">
@@ -415,7 +414,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>安装完成之后请看 <code>启动v2raya</code></p>
-<h4 id="启动v2raya">启动v2raya
+<h4 id="启动-v2raya">启动 v2raya
 </h4><blockquote>
 <p>从 1.5 版开始将不再默认为用户启动 v2rayA 及设置开机自动。</p>
 </blockquote>
@@ -437,7 +436,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> v2raya.service v2ray.service
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>web访问</p>
+</div><p>web 访问</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -572,7 +571,7 @@
 
 <p>Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。</p>
 <h4 id="docker-1">docker
-</h4><p>1）拉取镜像</p>
+</h4><p>拉取镜像</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -581,7 +580,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull mzz2017/v2raya
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>2）启动容器</p>
+</div><p>启动容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -636,7 +635,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="docker-compose">docker-compose
-</h4><p>1）新建目录</p>
+</h4><p>新建目录</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -647,7 +646,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt/v2raya
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>2）在新建的目录下继续新建 <code>docker-compose.yml</code>文件，粘贴以下内容</p>
+</div><p>在新建的目录下继续新建 <code>docker-compose.yml</code>文件，粘贴以下内容</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -689,7 +688,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>保存退出 <code>:wq</code></p>
-<p>启动 容器（在docker-compose.yml所在的目录运行）</p>
+<p>启动 容器（在 docker-compose.yml 所在的目录运行）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -722,7 +721,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker stats -a
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>web访问</p>
+</div><p>web 访问</p>
 <blockquote>
 <p>localhost:2017</p>
 </blockquote>
@@ -807,7 +806,19 @@
     </section>
 
 
-    <section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Mar 02, 2025 22:12 &#43;0800
+        </span>
+    </section><section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
@@ -855,7 +866,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">【v2raya高级应用】指定 Docker 容器代理</h2>
+            <h2 class="article-title">v2raya-高级应用：指定 Docker 容器代理</h2>
         </div>
     </a>
 </article>
