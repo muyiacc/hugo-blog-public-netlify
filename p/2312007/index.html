@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. MPV播放器 1.1. 概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 托管地址：https://git">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 官方地址：https://github.com/">
 <title>MPV播放器入门指南-第一期-带你走进命令行播放器的世界</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2312007/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MPV播放器入门指南-第一期-带你走进命令行播放器的世界">
-<meta property='og:description' content="1. MPV播放器 1.1. 概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 托管地址：https://git">
+<meta property='og:description' content="概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 官方地址：https://github.com/">
 <meta property='og:url' content='https://hublog.netlify.app/p/2312007/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mpv' /><meta property='article:published_time' content='2023-12-07T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-12-07T14:07:10&#43;08:00'/>
 <meta name="twitter:title" content="MPV播放器入门指南-第一期-带你走进命令行播放器的世界">
-<meta name="twitter:description" content="1. MPV播放器 1.1. 概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 托管地址：https://git">
+<meta name="twitter:description" content="概述 a free, open source, and cross-platform media player 简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。 官方地址：https://github.com/">
   
 
 
@@ -267,25 +267,31 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-mpv播放器">1. MPV播放器</a>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#安装">安装</a>
       <ol>
-        <li><a href="#11-概述">1.1. 概述</a></li>
-        <li><a href="#12-下载安装">1.2. 下载安装</a></li>
+        <li><a href="#windows">Windows</a></li>
       </ol>
     </li>
-    <li><a href="#2-脚本">2. 脚本</a>
+    <li><a href="#配置">配置</a>
       <ol>
-        <li><a href="#21-杜比视界">2.1. 杜比视界</a></li>
-        <li><a href="#22-缩略图">2.2. 缩略图</a></li>
-        <li><a href="#23-文件浏览器">2.3 文件浏览器</a></li>
-        <li><a href="#24-最近播放">2.4 最近播放</a></li>
+        <li><a href="#关联格式">关联格式</a></li>
+        <li><a href="#配置文件夹">配置文件夹</a></li>
       </ol>
     </li>
-    <li><a href="#3-mpvconf">3. mpv.conf</a></li>
-    <li><a href="#4-常用快捷键">4. 常用快捷键</a></li>
+    <li><a href="#脚本">脚本</a>
+      <ol>
+        <li><a href="#缩略图">缩略图</a></li>
+        <li><a href="#文件浏览器">文件浏览器</a></li>
+        <li><a href="#最近播放列表">最近播放列表</a></li>
+      </ol>
+    </li>
+    <li><a href="#杜比视界">杜比视界</a></li>
+    <li><a href="#mpvconf">mpv.conf</a></li>
+    <li><a href="#快捷键">快捷键</a></li>
     <li><a href="#附录">附录</a>
       <ol>
-        <li><a href="#快捷键">快捷键</a></li>
+        <li><a href="#快捷键-1">快捷键</a></li>
       </ol>
     </li>
   </ol>
@@ -353,11 +359,10 @@
     <section class="article-content">
     
     
-    <h2 id="1-mpv播放器">1. MPV播放器
-</h2><h3 id="11-概述">1.1. 概述
-</h3><p>a free, open source, and cross-platform media player</p>
+    <h2 id="概述">概述
+</h2><p>a free, open source, and cross-platform media player</p>
 <p>简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。</p>
-<p>托管地址：<a class="link" href="https://github.com/mpv-player/mpv"  target="_blank" rel="noopener"
+<p>官方地址：<a class="link" href="https://github.com/mpv-player/mpv"  target="_blank" rel="noopener"
     >https://github.com/mpv-player/mpv</a></p>
 <p>官网：<a class="link" href="https://mpv.io/"  target="_blank" rel="noopener"
     >https://mpv.io/</a></p>
@@ -365,86 +370,60 @@
     >https://mpv.io/installation/</a></p>
 <p>文档：<a class="link" href="https://mpv.io/manual/stable/"  target="_blank" rel="noopener"
     >https://mpv.io/manual/stable/</a></p>
-<h3 id="12-下载安装">1.2. 下载安装
-</h3><p>本次以Win10平台为例，下载最新稳定版：<a class="link" href="https://sourceforge.net/projects/mpv-player-windows/files/64bit-v3/mpv-x86_64-v3-20231210-git-443c248.7z/download"  target="_blank" rel="noopener"
+<h2 id="安装">安装
+</h2><h3 id="windows">Windows
+</h3><p>mpv-x86_64-v3-20231210：<a class="link" href="https://sourceforge.net/projects/mpv-player-windows/files/64bit-v3/mpv-x86_64-v3-20231210-git-443c248.7z/download"  target="_blank" rel="noopener"
     >点击开始下载</a>。</p>
-<p>下载完成之后解压，不要解压到C盘下（权限太高），建议放到其他盘符，比如我的是解压路径是 <code>D:\Program Files\mpv-x86_64-v3-20231210-git-443c248\</code>，双击 <code>mpv.exe</code> 即可运行mpv播放器。</p>
-<blockquote>
-<p>关联格式：快速打开mpv</p>
-</blockquote>
-<p>进入解压目录下的 <code>installer</code> 文件夹，有个 <code>mpv-install.bat</code> 管理员权限 运行，等待完成，按任意键退出。</p>
-<blockquote>
-<p>创建属于自己配置文件夹，用于自定义配置，安装插件等</p>
-</blockquote>
-<ol>
-<li>进入解压的目录，新建 <code>portable_config</code>文件夹，以后配置就放在这个文件夹下，</li>
-<li>进入 <code>portable_config</code>文件夹，</li>
-<li>新建 <code>mpv.conf</code>文件，这代表了mpv的配置文件，</li>
-<li>新建 <code>input.conf</code>文件，存放自定义的快捷键配置，</li>
-<li>新建 <code>scripts</code>文件夹，以后安装第三方脚本就放在这个目录下，</li>
-<li>新建 <code>script-opts</code>文件夹，存放第三方脚本配置。</li>
-</ol>
-<p>到此安装基本完成。</p>
-<h2 id="2-脚本">2. 脚本
-</h2><p>为了更好的体验，自定义配置。</p>
-<p>为了避免冗余，以下所有脚本都遵循上述规范的配置，即：</p>
+<p>注意：下载之后，不要解压到 C 盘，放到其他盘符</p>
+<p>比如 <code>D:\player\mpv</code></p>
+<p>双击 <code>mpv.exe</code> 即可运行 mpv 播放器。</p>
+<h2 id="配置">配置
+</h2><h3 id="关联格式">关联格式
+</h3><p>进入解压目录下的 <code>installer</code> 文件夹，有个 <code>mpv-install.bat</code> 管理员权限运行，等待完成，按任意键退出。</p>
+<h3 id="配置文件夹">配置文件夹
+</h3><p>配置文件夹用于自定义配置，安装插件</p>
+<p>进入解压的目录，新建 <code>portable_config</code>文件夹</p>
+<p>进入 <code>portable_config</code></p>
+<p>新建文件：</p>
 <ul>
-<li>scripts : 脚本文件</li>
-<li>input.conf : 自定义快捷键</li>
-<li>mpv.conf : mpv配置</li>
+<li><code>mpv.conf</code>：mpv 配置文件</li>
+<li><code>input.conf</code>：存放自定义的快捷键配置</li>
 </ul>
-<h3 id="21-杜比视界">2.1. 杜比视界
-</h3><p>杜比视界 DV HDR 常见的播放器都不支持，mpv只需要在 <code>mpv.conf</code> 中添加两行代码即可让颜色正常化</p>
-<p>不过加上之后内存占用变高，看情况开吧。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vo=gpu-next     # 杜比视界颜色正常化
-</span></span><span class="line"><span class="cl">gpu-context=win # 杜比视界颜色正常化
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="22-缩略图">2.2. 缩略图
-</h3><p>需要第三方脚本支持：https://github.com/po5/thumbfast</p>
-<ol>
-<li>
+<p>新建文件夹：</p>
+<ul>
+<li><code>scripts</code>：存放第三方脚本</li>
+<li><code>script-opts</code>：存放第三方脚本配置</li>
+</ul>
+<h2 id="脚本">脚本
+</h2><p>所有脚本都遵循上述规范的配置</p>
+<h3 id="缩略图">缩略图
+</h3><p>项目地址：<a class="link" href="https://github.com/po5/thumbfast"  target="_blank" rel="noopener"
+    >https://github.com/po5/thumbfast</a></p>
 <p>下载项目下的 <a class="link" href="https://github.com/po5/thumbfast/blob/master/thumbfast.lua"  target="_blank" rel="noopener"
     >thumbfast.lua</a>，<a class="link" href="https://github.com/po5/thumbfast/blob/vanilla-osc/player/lua/osc.lua"  target="_blank" rel="noopener"
-    >osc.lua</a>，提示：点击可直接下载。</p>
-</li>
-<li>
-<p>下载之后把 <a class="link" href="https://github.com/po5/thumbfast/blob/master/thumbfast.lua"  target="_blank" rel="noopener"
-    >thumbfast.lua</a> 放入 <code>mpv目录/portable_config\</code>，也就是 mpv.conf 同目录。</p>
-</li>
-<li>
-<p><a class="link" href="https://github.com/po5/thumbfast/blob/vanilla-osc/player/lua/osc.lua"  target="_blank" rel="noopener"
-    >osc.lua</a> 放入 <code>mpv目录/portable_config\scripts</code>。</p>
-</li>
-<li>
+    >osc.lua</a></p>
+<p>下载之后把 <code>thumbfast.lua</code> 放入 <code>mpv目录/portable_config/</code>，也就是 mpv.conf 同目录。</p>
+<p><code>osc.lua</code> 放入 <code>mpv目录/portable_config/scripts</code>。</p>
 <p>在 <code>input.conf</code> 加入一行</p>
-</li>
-</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Ctrl</span><span class="o">+</span><span class="n">r</span> 	<span class="nb">load</span><span class="o">-</span><span class="n">script</span> <span class="s2">&#34;~~home/thumbfast.lua&#34;</span><span class="p">;</span><span class="n">show</span><span class="o">-</span><span class="n">text</span> <span class="s2">&#34;载入略缩图脚本&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">a 	load-script &#34;~~home/thumbfast.lua&#34;;show-text &#34;载入略缩图脚本&#34;
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>重启mpv，即可生效，需要启用时， 按 <code>ctrl+r</code>即可加载缩略图。</p>
+</div><p>重启 mpv，即可生效</p>
+<p>手动启用， 按 <code>a</code>即可加载缩略图。</p>
 <blockquote>
-<p>如果需要默认加载，把 thumbfast.lua 放入 scripts 中即可。不过占内存，不建议。</p>
+<p>如果需要默认加载，把 thumbfast.lua 放入 scripts 中即可</p>
 </blockquote>
-<h3 id="23-文件浏览器">2.3 文件浏览器
-</h3><p><strong>功能</strong>：在 mpv 中浏览和打开文件和文件夹。</p>
-<blockquote>
+<h3 id="文件浏览器">文件浏览器
+</h3><p>功能：在 mpv 中浏览和打开文件和文件夹。</p>
 <p>该脚本在 mpv API 之外不使用任何东西，因此在所有平台上都应该是相同的。浏览器可以上下移动目录，开始播放文件和文件夹，或者将它们添加到队列中。</p>
-</blockquote>
-<p><strong>地址</strong>：https://github.com/CogentRedTester/mpv-file-browser</p>
-<p><strong>快捷键</strong></p>
+<p>项目地址：<a class="link" href="https://github.com/CogentRedTester/mpv-file-browser"  target="_blank" rel="noopener"
+    >https://github.com/CogentRedTester/mpv-file-browser</a></p>
+<p>快捷键：</p>
 <div class="table-wrapper"><table>
 <thead>
 <tr>
@@ -471,8 +450,8 @@
 </tr>
 </tbody>
 </table></div>
-<p><strong>脚本配置</strong></p>
-<p><code>mpv目录\portable_config\script-opts\file_browser.conf</code></p>
+<p>脚本配置：</p>
+<p><code>mpv目录/portable_config/script-opts/file_browser.conf</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -480,16 +459,20 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 注意使用英文 , 隔开
-</span></span><span class="line"><span class="cl">root=~/,C:/,D:/,E:/
+</span></span><span class="line"><span class="cl">root=~/Videos,~/Music,~/Pictures,~/,C:/,D:/,E:/
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="24-最近播放">2.4 最近播放
-</h3><p><a class="link" href="https://github.com/hacel/recent"  target="_blank" rel="noopener"
+</div><h3 id="最近播放列表">最近播放列表
+</h3><p>功能：查看最近播放的列表</p>
+<p>项目地址：<a class="link" href="https://github.com/hacel/recent"  target="_blank" rel="noopener"
     >https://github.com/hacel/recent</a></p>
-<p><strong>快捷键</strong>  `  ： 打开最近播放</p>
-<p><strong>配置</strong></p>
+<p>快捷键：</p>
+<ul>
+<li><code>`</code>：打开最近播放</li>
+</ul>
+<p>脚本配置：</p>
 <p><code>mpv目录\portable_config\script-opts\recent.conf</code></p>
-<p>auto_run_idle=no	关闭mpv打开时显示最近播放，默认为yes</p>
+<p><code>auto_run_idle=no</code>：关闭 mpv 打开时显示最近播放，默认为 yes</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -526,21 +509,81 @@
 </span></span><span class="line"><span class="cl">ellipsis=no
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="3-mpvconf">3. mpv.conf
-</h2><div class="highlight"><div class="chroma">
+</div><h2 id="杜比视界">杜比视界
+</h2><p>杜比视界 DV HDR 常见的播放器都不支持，mpv 只需要在 <code>mpv.conf</code> 中添加两行代码即可让颜色正常化</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vo=gpu-next     # 杜比视界颜色正常化
 </span></span><span class="line"><span class="cl">gpu-context=win # 杜比视界颜色正常化
-</span></span><span class="line"><span class="cl">volume=70		# 默认音量设为70
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="4-常用快捷键">4. 常用快捷键
-</h2><p>以下皆为内置快捷键</p>
+</div><h2 id="mpvconf">mpv.conf
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">##### 视频输出 #####
+</span></span><span class="line"><span class="cl">## 设置视频输出驱动为 gpu-next，通常用于更好的视频渲染和支持杜比视界等高级视频特性。
+</span></span><span class="line"><span class="cl">vo=gpu-next     # 杜比视界颜色正常化
+</span></span><span class="line"><span class="cl">## 指定 GPU 上下文为 Windows，确保在 Windows 平台上使用正确的图形上下文，以实现颜色正常化。
+</span></span><span class="line"><span class="cl"># gpu-context=win # 杜比视界颜色正常化
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">##### 音量 #####
+</span></span><span class="line"><span class="cl"># 默认音量
+</span></span><span class="line"><span class="cl">volume=80		
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">##### 窗口配置 #####
+</span></span><span class="line"><span class="cl">## 如果启用则视频不会超过屏幕大小。
+</span></span><span class="line"><span class="cl">autofit-larger=100%x100%
+</span></span><span class="line"><span class="cl">## 如果启用则默认启动时最大化窗口。
+</span></span><span class="line"><span class="cl"># window-maximized=yes
+</span></span><span class="line"><span class="cl">## 设置窗口缩放比例为 1，表示窗口大小为默认大小。
+</span></span><span class="line"><span class="cl">window-scale=2
+</span></span><span class="line"><span class="cl"># 设置窗口的初始大小为 1500x1200 像素。
+</span></span><span class="line"><span class="cl">#--geometry=1500x1200
+</span></span><span class="line"><span class="cl">## 如果启用则 MPV 启动时会全屏。
+</span></span><span class="line"><span class="cl"># fullscreen=yes
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">##### 其他 #####
+</span></span><span class="line"><span class="cl">## 退出自动保存进度
+</span></span><span class="line"><span class="cl">save-position-on-quit=yes
+</span></span><span class="line"><span class="cl"># 保存音量
+</span></span><span class="line"><span class="cl">volume-save=yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="快捷键">快捷键
+</h2><p>皆为内置快捷键</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -567,7 +610,7 @@
 </div>
 </div><p>关于快捷键可查看 <strong>附录-快捷键</strong></p>
 <h2 id="附录">附录
-</h2><h3 id="快捷键">快捷键
+</h2><h3 id="快捷键-1">快捷键
 </h3><p>图示：</p>
 <p>英文版</p>
 <p><img src="https://s2.loli.net/2023/12/14/KtUzvg3OmJB89Rh.png"
@@ -602,17 +645,17 @@
 <tbody>
 <tr>
 <td>LEFT and RIGHT</td>
-<td>向后/向前跳转5秒。Shift+箭头进行1秒精确跳转（见&ndash;hr-seek）。</td>
+<td>向后/向前跳转 5 秒。Shift+箭头进行 1 秒精确跳转（见&ndash;hr-seek）。</td>
 <td>Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see &ndash;hr-seek).</td>
 </tr>
 <tr>
 <td>UP and DOWN</td>
-<td>向前/向后跳转1分钟。Shift+箭头进行5秒精确跳转（见&ndash;hr-seek）。</td>
+<td>向前/向后跳转 1 分钟。Shift+箭头进行 5 秒精确跳转（见&ndash;hr-seek）。</td>
 <td>Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see &ndash;hr-seek).</td>
 </tr>
 <tr>
 <td>Ctrl+LEFT and Ctrl+RIGHT</td>
-<td>跳转到上一个/下一个字幕。受一些限制，可能并不总是有效；参见sub-seek命令。</td>
+<td>跳转到上一个/下一个字幕。受一些限制，可能并不总是有效；参见 sub-seek 命令。</td>
 <td>Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see sub-seek command.</td>
 </tr>
 <tr>
@@ -622,7 +665,7 @@
 </tr>
 <tr>
 <td>[ and ]</td>
-<td>将当前播放速度减小/增加10%。</td>
+<td>将当前播放速度减小/增加 10%。</td>
 <td>Decrease/increase current playback speed by 10%.</td>
 </tr>
 <tr>
@@ -637,12 +680,12 @@
 </tr>
 <tr>
 <td>Shift+BACKSPACE</td>
-<td>撤销上次跳转。仅当播放列表条目未更改时有效。再次按下将返回到原始位置。有关详细信息，请参阅revert-seek命令。</td>
+<td>撤销上次跳转。仅当播放列表条目未更改时有效。再次按下将返回到原始位置。有关详细信息，请参阅 revert-seek 命令。</td>
 <td>Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.</td>
 </tr>
 <tr>
 <td>Shift+Ctrl+BACKSPACE</td>
-<td>标记当前位置。然后Shift+BACKSPACE将使用该标记位置作为还原位置（一旦您跳回，标记将被重置）。您可以使用此功能在文件中进行跳转，然后返回到您离开的确切位置。</td>
+<td>标记当前位置。然后 Shift+BACKSPACE 将使用该标记位置作为还原位置（一旦您跳回，标记将被重置）。您可以使用此功能在文件中进行跳转，然后返回到您离开的确切位置。</td>
 <td>Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.</td>
 </tr>
 <tr>
@@ -677,7 +720,7 @@
 </tr>
 <tr>
 <td>Q</td>
-<td>类似于q，但存储当前播放位置。如果可能的话，稍后再次播放相同的文件将在旧的播放位置继续播放。请参阅RESUMING PLAYBACK。</td>
+<td>类似于 q，但存储当前播放位置。如果可能的话，稍后再次播放相同的文件将在旧的播放位置继续播放。请参阅 RESUMING PLAYBACK。</td>
 <td>Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible. See RESUMING PLAYBACK.</td>
 </tr>
 <tr>
@@ -727,17 +770,17 @@
 </tr>
 <tr>
 <td>w and W</td>
-<td>减小/增大平移和扫描范围。当前e键目前执行相同操作，但不建议使用。</td>
+<td>减小/增大平移和扫描范围。当前 e 键目前执行相同操作，但不建议使用。</td>
 <td>Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.</td>
 </tr>
 <tr>
 <td>o and P</td>
-<td>在OSD上显示进度条、已用时间和总持续时间。</td>
+<td>在 OSD 上显示进度条、已用时间和总持续时间。</td>
 <td>Show progression bar, elapsed time and total duration on the OSD.</td>
 </tr>
 <tr>
 <td>O</td>
-<td>在OSD状态之间切换正常和播放时间/持续时间。</td>
+<td>在 OSD 状态之间切换正常和播放时间/持续时间。</td>
 <td>Toggle OSD states between normal and playback time/duration.</td>
 </tr>
 <tr>
@@ -752,12 +795,12 @@
 </tr>
 <tr>
 <td>z and Z</td>
-<td>通过+/- 0.1秒调整字幕延迟。当前x键执行相同操作，但不建议使用。</td>
+<td>通过+/- 0.1 秒调整字幕延迟。当前 x 键执行相同操作，但不建议使用。</td>
 <td>Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.</td>
 </tr>
 <tr>
 <td>l</td>
-<td>设置/清除A-B循环点。有关详细信息，请参阅ab-loop命令。</td>
+<td>设置/清除 A-B 循环点。有关详细信息，请参阅 ab-loop 命令。</td>
 <td>Set/clear A-B loop points. See ab-loop command for details.</td>
 </tr>
 <tr>
@@ -767,7 +810,7 @@
 </tr>
 <tr>
 <td>Ctrl++ and Ctrl+-</td>
-<td>通过+/- 0.1秒调整音频延迟（A/V同步）。</td>
+<td>通过+/- 0.1 秒调整音频延迟（A/V 同步）。</td>
 <td>Adjust audio delay (A/V sync) by +/- 0.1 seconds.</td>
 </tr>
 <tr>
@@ -777,17 +820,17 @@
 </tr>
 <tr>
 <td>u</td>
-<td>在SSA/ASS字幕中切换仅应用&ndash;sub-ass-*覆盖（默认）和几乎完全覆盖它们的常规字幕样式。有关更多信息，请参阅&ndash;sub-ass-override。</td>
+<td>在 SSA/ASS 字幕中切换仅应用&ndash;sub-ass-*覆盖（默认）和几乎完全覆盖它们的常规字幕样式。有关更多信息，请参阅&ndash;sub-ass-override。</td>
 <td>Switch between applying only &ndash;sub-ass-* overrides (default) to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See &ndash;sub-ass-override for more info.</td>
 </tr>
 <tr>
 <td>V</td>
-<td>切换字幕VSFilter纵横比兼容模式。有关更多信息，请参阅&ndash;sub-ass-vsfilter-aspect-compat。</td>
+<td>切换字幕 VSFilter 纵横比兼容模式。有关更多信息，请参阅&ndash;sub-ass-vsfilter-aspect-compat。</td>
 <td>Toggle subtitle VSFilter aspect compatibility mode. See &ndash;sub-ass-vsfilter-aspect-compat for more info.</td>
 </tr>
 <tr>
 <td>r and R</td>
-<td>上/下移动字幕。当前t键执行相同操作，但不建议使用。</td>
+<td>上/下移动字幕。当前 t 键执行相同操作，但不建议使用。</td>
 <td>Move subtitles up/down. The t key does the same as R currently, but use is discouraged.</td>
 </tr>
 <tr>
@@ -797,12 +840,12 @@
 </tr>
 <tr>
 <td>S</td>
-<td>拍摄截图，不带字幕。（这取决于VO驱动程序支持与否。）</td>
+<td>拍摄截图，不带字幕。（这取决于 VO 驱动程序支持与否。）</td>
 <td>Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)</td>
 </tr>
 <tr>
 <td>Ctrl+s</td>
-<td>拍摄截图，如窗口显示（带字幕、OSD和缩放视频）。</td>
+<td>拍摄截图，如窗口显示（带字幕、OSD 和缩放视频）。</td>
 <td>Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).</td>
 </tr>
 <tr>
@@ -812,7 +855,7 @@
 </tr>
 <tr>
 <td>Shift+PGUP and Shift+PGDWN</td>
-<td>向后或向前跳转10分钟。（这曾经映射到不带Shift的PGUP/PGDWN。）</td>
+<td>向后或向前跳转 10 分钟。（这曾经映射到不带 Shift 的 PGUP/PGDWN。）</td>
 <td>Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)</td>
 </tr>
 <tr>
@@ -837,7 +880,7 @@
 </tr>
 <tr>
 <td>Alt++ and Alt+-</td>
-<td>将Alt与+或-键组合可更改视频缩放。</td>
+<td>将 Alt 与+或-键组合可更改视频缩放。</td>
 <td>Combining Alt with the + or - keys changes video zoom.</td>
 </tr>
 <tr>
@@ -847,27 +890,27 @@
 </tr>
 <tr>
 <td>F8</td>
-<td>显示播放列表和其中的当前位置（仅在使用UI窗口时有用，在终端上损坏）。</td>
+<td>显示播放列表和其中的当前位置（仅在使用 UI 窗口时有用，在终端上损坏）。</td>
 <td>Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).</td>
 </tr>
 <tr>
 <td>F9</td>
-<td>显示音频和字幕流列表（仅在使用UI窗口时有用，在终端上损坏）。</td>
+<td>显示音频和字幕流列表（仅在使用 UI 窗口时有用，在终端上损坏）。</td>
 <td>Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).</td>
 </tr>
 <tr>
 <td>i and I</td>
-<td>显示/切换显示有关当前播放文件的统计信息的叠加层，例如编解码器、帧速率、丢帧数等。有关更多信息，请参阅STATS。</td>
+<td>显示/切换显示有关当前播放文件的统计信息的叠加层，例如编解码器、帧速率、丢帧数等。有关更多信息，请参阅 STATS。</td>
 <td>Show/toggle an overlay displaying statistics about the currently playing file such as codec, framerate, number of dropped frames and so on. See STATS for more information.</td>
 </tr>
 <tr>
 <td>DEL</td>
-<td>在OSC之间循环显示可见性：从不/自动（鼠标移动）/始终</td>
+<td>在 OSC 之间循环显示可见性：从不/自动（鼠标移动）/始终</td>
 <td>Cycle OSC visibility between never / auto (mouse-move) / always</td>
 </tr>
 <tr>
 <td>`</td>
-<td>显示控制台。（ESC关闭它。有关CONSOLE的详细信息，请参阅CONSOLE。）</td>
+<td>显示控制台。（ESC 关闭它。有关 CONSOLE 的详细信息，请参阅 CONSOLE。）</td>
 <td>Show the console. (ESC closes it again. See CONSOLE.)</td>
 </tr>
 <tr>
@@ -922,7 +965,7 @@
 </tr>
 <tr>
 <td>PREVIOUS and NEXT</td>
-<td>向后/向前跳转1分钟。</td>
+<td>向后/向前跳转 1 分钟。</td>
 <td>Seek backward/forward 1 minute.</td>
 </tr>
 <tr>
@@ -999,7 +1042,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</h2>
+            <h2 class="article-title">MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</h2>
         </div>
     </a>
 </article>
@@ -1018,7 +1061,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-快捷键</h2>
+            <h2 class="article-title">MPV播放器入门指南-第三期-快捷键</h2>
         </div>
     </a>
 </article>

@@ -6112,12 +6112,12 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</title>
+        <title>MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</title>
         <link>https://hublog.netlify.app/p/241013175136/</link>
         <pubDate>Sun, 13 Oct 2024 17:51:36 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241013175136/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" alt="Featured image of post MPV播放器入门指南-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频" /&gt;&lt;p&gt;本期脚本：&lt;a class=&#34;link&#34; href=&#34;https://github.com/elhirchek/copy-paste-url&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" alt="Featured image of post MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频" /&gt;&lt;p&gt;本期脚本：&lt;a class=&#34;link&#34; href=&#34;https://github.com/elhirchek/copy-paste-url&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;copy-paste-url&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;顾名思义——用 ctrl + v 将链接复制粘贴到 mpv 中，开始播放视频。这需要一个打开的 mpv 窗口，比如 mpv ——怠速——强制窗口或者已经在播放视频的窗口。此外，这个脚本还使用了 powershell (用于 windows)或 xlip (用于 linux) ，因此也需要安装这个脚本。&lt;/p&gt;
 </description>
@@ -6652,12 +6652,12 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-快捷键</title>
+        <title>MPV播放器入门指南-第三期-快捷键</title>
         <link>https://hublog.netlify.app/p/241009155809/</link>
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241009155809/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
+        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-第三期-快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;f&lt;/code&gt;   全屏&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出全屏&lt;/li&gt;
@@ -19657,14 +19657,12 @@ wget &lt;a class=&#34;link&#34; href=&#34;https://dev.mysql.com/get/mysql-apt-co
         <pubDate>Tue, 12 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2312012/</guid>
-        <description>&lt;ul&gt;
-&lt;li&gt;视频讲解：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1JQ4y137Q4/?share_source=copy_web&amp;amp;vd_source=2189262040010d0e0c521cbe8e51303e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Bilibili/B站&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;功能：实现 mpv 播放器 自动播放 下一个视频&lt;/li&gt;
-&lt;li&gt;脚本名称：autoload.lua&lt;/li&gt;
-&lt;li&gt;脚本地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        <description>&lt;p&gt;视频讲解：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1JQ4y137Q4/?share_source=copy_web&amp;amp;vd_source=2189262040010d0e0c521cbe8e51303e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Bilibili/B站&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;脚本名称：autoload.lua&lt;/p&gt;
+&lt;p&gt;功能：实现 mpv 播放器 自动播放 下一个视频&lt;/p&gt;
+&lt;p&gt;脚本地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv/blob/master/TOOLS/lua/autoload.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -20076,11 +20074,10 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
         <pubDate>Thu, 07 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2312007/</guid>
-        <description>&lt;h2 id=&#34;1-mpv播放器&#34;&gt;1. MPV播放器
-&lt;/h2&gt;&lt;h3 id=&#34;11-概述&#34;&gt;1.1. 概述
-&lt;/h3&gt;&lt;p&gt;a free, open source, and cross-platform media player&lt;/p&gt;
+        <description>&lt;h2 id=&#34;概述&#34;&gt;概述
+&lt;/h2&gt;&lt;p&gt;a free, open source, and cross-platform media player&lt;/p&gt;
 &lt;p&gt;简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。&lt;/p&gt;
-&lt;p&gt;托管地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;p&gt;官方地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/mpv-player/mpv&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mpv.io/&lt;/a&gt;&lt;/p&gt;
@@ -20088,86 +20085,60 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
     &gt;https://mpv.io/installation/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;文档：&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/manual/stable/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mpv.io/manual/stable/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;12-下载安装&#34;&gt;1.2. 下载安装
-&lt;/h3&gt;&lt;p&gt;本次以Win10平台为例，下载最新稳定版：&lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/mpv-player-windows/files/64bit-v3/mpv-x86_64-v3-20231210-git-443c248.7z/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;windows&#34;&gt;Windows
+&lt;/h3&gt;&lt;p&gt;mpv-x86_64-v3-20231210：&lt;a class=&#34;link&#34; href=&#34;https://sourceforge.net/projects/mpv-player-windows/files/64bit-v3/mpv-x86_64-v3-20231210-git-443c248.7z/download&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击开始下载&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;下载完成之后解压，不要解压到C盘下（权限太高），建议放到其他盘符，比如我的是解压路径是 &lt;code&gt;D:\Program Files\mpv-x86_64-v3-20231210-git-443c248\&lt;/code&gt;，双击 &lt;code&gt;mpv.exe&lt;/code&gt; 即可运行mpv播放器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;关联格式：快速打开mpv&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;进入解压目录下的 &lt;code&gt;installer&lt;/code&gt; 文件夹，有个 &lt;code&gt;mpv-install.bat&lt;/code&gt; 管理员权限 运行，等待完成，按任意键退出。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建属于自己配置文件夹，用于自定义配置，安装插件等&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;进入解压的目录，新建 &lt;code&gt;portable_config&lt;/code&gt;文件夹，以后配置就放在这个文件夹下，&lt;/li&gt;
-&lt;li&gt;进入 &lt;code&gt;portable_config&lt;/code&gt;文件夹，&lt;/li&gt;
-&lt;li&gt;新建 &lt;code&gt;mpv.conf&lt;/code&gt;文件，这代表了mpv的配置文件，&lt;/li&gt;
-&lt;li&gt;新建 &lt;code&gt;input.conf&lt;/code&gt;文件，存放自定义的快捷键配置，&lt;/li&gt;
-&lt;li&gt;新建 &lt;code&gt;scripts&lt;/code&gt;文件夹，以后安装第三方脚本就放在这个目录下，&lt;/li&gt;
-&lt;li&gt;新建 &lt;code&gt;script-opts&lt;/code&gt;文件夹，存放第三方脚本配置。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;到此安装基本完成。&lt;/p&gt;
-&lt;h2 id=&#34;2-脚本&#34;&gt;2. 脚本
-&lt;/h2&gt;&lt;p&gt;为了更好的体验，自定义配置。&lt;/p&gt;
-&lt;p&gt;为了避免冗余，以下所有脚本都遵循上述规范的配置，即：&lt;/p&gt;
+&lt;p&gt;注意：下载之后，不要解压到 C 盘，放到其他盘符&lt;/p&gt;
+&lt;p&gt;比如 &lt;code&gt;D:\player\mpv&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;双击 &lt;code&gt;mpv.exe&lt;/code&gt; 即可运行 mpv 播放器。&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置
+&lt;/h2&gt;&lt;h3 id=&#34;关联格式&#34;&gt;关联格式
+&lt;/h3&gt;&lt;p&gt;进入解压目录下的 &lt;code&gt;installer&lt;/code&gt; 文件夹，有个 &lt;code&gt;mpv-install.bat&lt;/code&gt; 管理员权限运行，等待完成，按任意键退出。&lt;/p&gt;
+&lt;h3 id=&#34;配置文件夹&#34;&gt;配置文件夹
+&lt;/h3&gt;&lt;p&gt;配置文件夹用于自定义配置，安装插件&lt;/p&gt;
+&lt;p&gt;进入解压的目录，新建 &lt;code&gt;portable_config&lt;/code&gt;文件夹&lt;/p&gt;
+&lt;p&gt;进入 &lt;code&gt;portable_config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;新建文件：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;scripts : 脚本文件&lt;/li&gt;
-&lt;li&gt;input.conf : 自定义快捷键&lt;/li&gt;
-&lt;li&gt;mpv.conf : mpv配置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mpv.conf&lt;/code&gt;：mpv 配置文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;input.conf&lt;/code&gt;：存放自定义的快捷键配置&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;21-杜比视界&#34;&gt;2.1. 杜比视界
-&lt;/h3&gt;&lt;p&gt;杜比视界 DV HDR 常见的播放器都不支持，mpv只需要在 &lt;code&gt;mpv.conf&lt;/code&gt; 中添加两行代码即可让颜色正常化&lt;/p&gt;
-&lt;p&gt;不过加上之后内存占用变高，看情况开吧。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vo=gpu-next     # 杜比视界颜色正常化
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpu-context=win # 杜比视界颜色正常化
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;22-缩略图&#34;&gt;2.2. 缩略图
-&lt;/h3&gt;&lt;p&gt;需要第三方脚本支持：https://github.com/po5/thumbfast&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
+&lt;p&gt;新建文件夹：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;scripts&lt;/code&gt;：存放第三方脚本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;script-opts&lt;/code&gt;：存放第三方脚本配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;脚本&#34;&gt;脚本
+&lt;/h2&gt;&lt;p&gt;所有脚本都遵循上述规范的配置&lt;/p&gt;
+&lt;h3 id=&#34;缩略图&#34;&gt;缩略图
+&lt;/h3&gt;&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/po5/thumbfast&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/po5/thumbfast&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载项目下的 &lt;a class=&#34;link&#34; href=&#34;https://github.com/po5/thumbfast/blob/master/thumbfast.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;thumbfast.lua&lt;/a&gt;，&lt;a class=&#34;link&#34; href=&#34;https://github.com/po5/thumbfast/blob/vanilla-osc/player/lua/osc.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;osc.lua&lt;/a&gt;，提示：点击可直接下载。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;下载之后把 &lt;a class=&#34;link&#34; href=&#34;https://github.com/po5/thumbfast/blob/master/thumbfast.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;thumbfast.lua&lt;/a&gt; 放入 &lt;code&gt;mpv目录/portable_config\&lt;/code&gt;，也就是 mpv.conf 同目录。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/po5/thumbfast/blob/vanilla-osc/player/lua/osc.lua&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;osc.lua&lt;/a&gt; 放入 &lt;code&gt;mpv目录/portable_config\scripts&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
+    &gt;osc.lua&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载之后把 &lt;code&gt;thumbfast.lua&lt;/code&gt; 放入 &lt;code&gt;mpv目录/portable_config/&lt;/code&gt;，也就是 mpv.conf 同目录。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;osc.lua&lt;/code&gt; 放入 &lt;code&gt;mpv目录/portable_config/scripts&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;在 &lt;code&gt;input.conf&lt;/code&gt; 加入一行&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Ctrl&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; 	&lt;span class=&#34;nb&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;~~home/thumbfast.lua&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;text&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;载入略缩图脚本&amp;#34;&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;a 	load-script &amp;#34;~~home/thumbfast.lua&amp;#34;;show-text &amp;#34;载入略缩图脚本&amp;#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;重启mpv，即可生效，需要启用时， 按 &lt;code&gt;ctrl+r&lt;/code&gt;即可加载缩略图。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;重启 mpv，即可生效&lt;/p&gt;
+&lt;p&gt;手动启用， 按 &lt;code&gt;a&lt;/code&gt;即可加载缩略图。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;如果需要默认加载，把 thumbfast.lua 放入 scripts 中即可。不过占内存，不建议。&lt;/p&gt;
+&lt;p&gt;如果需要默认加载，把 thumbfast.lua 放入 scripts 中即可&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;23-文件浏览器&#34;&gt;2.3 文件浏览器
-&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;功能&lt;/strong&gt;：在 mpv 中浏览和打开文件和文件夹。&lt;/p&gt;
-&lt;blockquote&gt;
+&lt;h3 id=&#34;文件浏览器&#34;&gt;文件浏览器
+&lt;/h3&gt;&lt;p&gt;功能：在 mpv 中浏览和打开文件和文件夹。&lt;/p&gt;
 &lt;p&gt;该脚本在 mpv API 之外不使用任何东西，因此在所有平台上都应该是相同的。浏览器可以上下移动目录，开始播放文件和文件夹，或者将它们添加到队列中。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;地址&lt;/strong&gt;：https://github.com/CogentRedTester/mpv-file-browser&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;快捷键&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/CogentRedTester/mpv-file-browser&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/CogentRedTester/mpv-file-browser&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;快捷键：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -20194,8 +20165,8 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;脚本配置&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;mpv目录\portable_config\script-opts\file_browser.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;脚本配置：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mpv目录/portable_config/script-opts/file_browser.conf&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -20203,16 +20174,20 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 注意使用英文 , 隔开
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;root=~/,C:/,D:/,E:/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;root=~/Videos,~/Music,~/Pictures,~/,C:/,D:/,E:/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;24-最近播放&#34;&gt;2.4 最近播放
-&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/hacel/recent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;h3 id=&#34;最近播放列表&#34;&gt;最近播放列表
+&lt;/h3&gt;&lt;p&gt;功能：查看最近播放的列表&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/hacel/recent&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/hacel/recent&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;快捷键&lt;/strong&gt;  `  ： 打开最近播放&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;快捷键：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;`&lt;/code&gt;：打开最近播放&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;脚本配置：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;mpv目录\portable_config\script-opts\recent.conf&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;auto_run_idle=no	关闭mpv打开时显示最近播放，默认为yes&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;auto_run_idle=no&lt;/code&gt;：关闭 mpv 打开时显示最近播放，默认为 yes&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -20249,21 +20224,81 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ellipsis=no
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;3-mpvconf&#34;&gt;3. mpv.conf
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h2 id=&#34;杜比视界&#34;&gt;杜比视界
+&lt;/h2&gt;&lt;p&gt;杜比视界 DV HDR 常见的播放器都不支持，mpv 只需要在 &lt;code&gt;mpv.conf&lt;/code&gt; 中添加两行代码即可让颜色正常化&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vo=gpu-next     # 杜比视界颜色正常化
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpu-context=win # 杜比视界颜色正常化
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume=70		# 默认音量设为70
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;4-常用快捷键&#34;&gt;4. 常用快捷键
-&lt;/h2&gt;&lt;p&gt;以下皆为内置快捷键&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;mpvconf&#34;&gt;mpv.conf
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 视频输出 #####
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 设置视频输出驱动为 gpu-next，通常用于更好的视频渲染和支持杜比视界等高级视频特性。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vo=gpu-next     # 杜比视界颜色正常化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 指定 GPU 上下文为 Windows，确保在 Windows 平台上使用正确的图形上下文，以实现颜色正常化。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# gpu-context=win # 杜比视界颜色正常化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 音量 #####
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 默认音量
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume=80		
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 窗口配置 #####
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 如果启用则视频不会超过屏幕大小。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;autofit-larger=100%x100%
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 如果启用则默认启动时最大化窗口。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# window-maximized=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 设置窗口缩放比例为 1，表示窗口大小为默认大小。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;window-scale=2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 设置窗口的初始大小为 1500x1200 像素。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;#--geometry=1500x1200
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 如果启用则 MPV 启动时会全屏。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# fullscreen=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 其他 #####
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 退出自动保存进度
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;save-position-on-quit=yes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 保存音量
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume-save=yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;快捷键&#34;&gt;快捷键
+&lt;/h2&gt;&lt;p&gt;皆为内置快捷键&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -20290,7 +20325,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;关于快捷键可查看 &lt;strong&gt;附录-快捷键&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;附录&#34;&gt;附录
-&lt;/h2&gt;&lt;h3 id=&#34;快捷键&#34;&gt;快捷键
+&lt;/h2&gt;&lt;h3 id=&#34;快捷键-1&#34;&gt;快捷键
 &lt;/h3&gt;&lt;p&gt;图示：&lt;/p&gt;
 &lt;p&gt;英文版&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/12/14/KtUzvg3OmJB89Rh.png&#34;
@@ -20325,17 +20360,17 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;LEFT and RIGHT&lt;/td&gt;
-&lt;td&gt;向后/向前跳转5秒。Shift+箭头进行1秒精确跳转（见&amp;ndash;hr-seek）。&lt;/td&gt;
+&lt;td&gt;向后/向前跳转 5 秒。Shift+箭头进行 1 秒精确跳转（见&amp;ndash;hr-seek）。&lt;/td&gt;
 &lt;td&gt;Seek backward/forward 5 seconds. Shift+arrow does a 1 second exact seek (see &amp;ndash;hr-seek).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;UP and DOWN&lt;/td&gt;
-&lt;td&gt;向前/向后跳转1分钟。Shift+箭头进行5秒精确跳转（见&amp;ndash;hr-seek）。&lt;/td&gt;
+&lt;td&gt;向前/向后跳转 1 分钟。Shift+箭头进行 5 秒精确跳转（见&amp;ndash;hr-seek）。&lt;/td&gt;
 &lt;td&gt;Seek forward/backward 1 minute. Shift+arrow does a 5 second exact seek (see &amp;ndash;hr-seek).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Ctrl+LEFT and Ctrl+RIGHT&lt;/td&gt;
-&lt;td&gt;跳转到上一个/下一个字幕。受一些限制，可能并不总是有效；参见sub-seek命令。&lt;/td&gt;
+&lt;td&gt;跳转到上一个/下一个字幕。受一些限制，可能并不总是有效；参见 sub-seek 命令。&lt;/td&gt;
 &lt;td&gt;Seek to the previous/next subtitle. Subject to some restrictions and might not always work; see sub-seek command.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20345,7 +20380,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;[ and ]&lt;/td&gt;
-&lt;td&gt;将当前播放速度减小/增加10%。&lt;/td&gt;
+&lt;td&gt;将当前播放速度减小/增加 10%。&lt;/td&gt;
 &lt;td&gt;Decrease/increase current playback speed by 10%.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20360,12 +20395,12 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Shift+BACKSPACE&lt;/td&gt;
-&lt;td&gt;撤销上次跳转。仅当播放列表条目未更改时有效。再次按下将返回到原始位置。有关详细信息，请参阅revert-seek命令。&lt;/td&gt;
+&lt;td&gt;撤销上次跳转。仅当播放列表条目未更改时有效。再次按下将返回到原始位置。有关详细信息，请参阅 revert-seek 命令。&lt;/td&gt;
 &lt;td&gt;Undo the last seek. This works only if the playlist entry was not changed. Hitting it a second time will go back to the original position. See revert-seek command for details.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Shift+Ctrl+BACKSPACE&lt;/td&gt;
-&lt;td&gt;标记当前位置。然后Shift+BACKSPACE将使用该标记位置作为还原位置（一旦您跳回，标记将被重置）。您可以使用此功能在文件中进行跳转，然后返回到您离开的确切位置。&lt;/td&gt;
+&lt;td&gt;标记当前位置。然后 Shift+BACKSPACE 将使用该标记位置作为还原位置（一旦您跳回，标记将被重置）。您可以使用此功能在文件中进行跳转，然后返回到您离开的确切位置。&lt;/td&gt;
 &lt;td&gt;Mark the current position. This will then be used by Shift+BACKSPACE as revert position (once you seek back, the marker will be reset). You can use this to seek around in the file and then return to the exact position where you left off.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20400,7 +20435,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Q&lt;/td&gt;
-&lt;td&gt;类似于q，但存储当前播放位置。如果可能的话，稍后再次播放相同的文件将在旧的播放位置继续播放。请参阅RESUMING PLAYBACK。&lt;/td&gt;
+&lt;td&gt;类似于 q，但存储当前播放位置。如果可能的话，稍后再次播放相同的文件将在旧的播放位置继续播放。请参阅 RESUMING PLAYBACK。&lt;/td&gt;
 &lt;td&gt;Like q, but store the current playback position. Playing the same file later will resume at the old playback position if possible. See RESUMING PLAYBACK.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20450,17 +20485,17 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;w and W&lt;/td&gt;
-&lt;td&gt;减小/增大平移和扫描范围。当前e键目前执行相同操作，但不建议使用。&lt;/td&gt;
+&lt;td&gt;减小/增大平移和扫描范围。当前 e 键目前执行相同操作，但不建议使用。&lt;/td&gt;
 &lt;td&gt;Decrease/increase pan-and-scan range. The e key does the same as W currently, but use is discouraged.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;o and P&lt;/td&gt;
-&lt;td&gt;在OSD上显示进度条、已用时间和总持续时间。&lt;/td&gt;
+&lt;td&gt;在 OSD 上显示进度条、已用时间和总持续时间。&lt;/td&gt;
 &lt;td&gt;Show progression bar, elapsed time and total duration on the OSD.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;O&lt;/td&gt;
-&lt;td&gt;在OSD状态之间切换正常和播放时间/持续时间。&lt;/td&gt;
+&lt;td&gt;在 OSD 状态之间切换正常和播放时间/持续时间。&lt;/td&gt;
 &lt;td&gt;Toggle OSD states between normal and playback time/duration.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20475,12 +20510,12 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;z and Z&lt;/td&gt;
-&lt;td&gt;通过+/- 0.1秒调整字幕延迟。当前x键执行相同操作，但不建议使用。&lt;/td&gt;
+&lt;td&gt;通过+/- 0.1 秒调整字幕延迟。当前 x 键执行相同操作，但不建议使用。&lt;/td&gt;
 &lt;td&gt;Adjust subtitle delay by +/- 0.1 seconds. The x key does the same as Z currently, but use is discouraged.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;l&lt;/td&gt;
-&lt;td&gt;设置/清除A-B循环点。有关详细信息，请参阅ab-loop命令。&lt;/td&gt;
+&lt;td&gt;设置/清除 A-B 循环点。有关详细信息，请参阅 ab-loop 命令。&lt;/td&gt;
 &lt;td&gt;Set/clear A-B loop points. See ab-loop command for details.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20490,7 +20525,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Ctrl++ and Ctrl+-&lt;/td&gt;
-&lt;td&gt;通过+/- 0.1秒调整音频延迟（A/V同步）。&lt;/td&gt;
+&lt;td&gt;通过+/- 0.1 秒调整音频延迟（A/V 同步）。&lt;/td&gt;
 &lt;td&gt;Adjust audio delay (A/V sync) by +/- 0.1 seconds.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20500,17 +20535,17 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;u&lt;/td&gt;
-&lt;td&gt;在SSA/ASS字幕中切换仅应用&amp;ndash;sub-ass-*覆盖（默认）和几乎完全覆盖它们的常规字幕样式。有关更多信息，请参阅&amp;ndash;sub-ass-override。&lt;/td&gt;
+&lt;td&gt;在 SSA/ASS 字幕中切换仅应用&amp;ndash;sub-ass-*覆盖（默认）和几乎完全覆盖它们的常规字幕样式。有关更多信息，请参阅&amp;ndash;sub-ass-override。&lt;/td&gt;
 &lt;td&gt;Switch between applying only &amp;ndash;sub-ass-* overrides (default) to SSA/ASS subtitles, and overriding them almost completely with the normal subtitle style. See &amp;ndash;sub-ass-override for more info.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;V&lt;/td&gt;
-&lt;td&gt;切换字幕VSFilter纵横比兼容模式。有关更多信息，请参阅&amp;ndash;sub-ass-vsfilter-aspect-compat。&lt;/td&gt;
+&lt;td&gt;切换字幕 VSFilter 纵横比兼容模式。有关更多信息，请参阅&amp;ndash;sub-ass-vsfilter-aspect-compat。&lt;/td&gt;
 &lt;td&gt;Toggle subtitle VSFilter aspect compatibility mode. See &amp;ndash;sub-ass-vsfilter-aspect-compat for more info.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;r and R&lt;/td&gt;
-&lt;td&gt;上/下移动字幕。当前t键执行相同操作，但不建议使用。&lt;/td&gt;
+&lt;td&gt;上/下移动字幕。当前 t 键执行相同操作，但不建议使用。&lt;/td&gt;
 &lt;td&gt;Move subtitles up/down. The t key does the same as R currently, but use is discouraged.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20520,12 +20555,12 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;S&lt;/td&gt;
-&lt;td&gt;拍摄截图，不带字幕。（这取决于VO驱动程序支持与否。）&lt;/td&gt;
+&lt;td&gt;拍摄截图，不带字幕。（这取决于 VO 驱动程序支持与否。）&lt;/td&gt;
 &lt;td&gt;Take a screenshot, without subtitles. (Whether this works depends on VO driver support.)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Ctrl+s&lt;/td&gt;
-&lt;td&gt;拍摄截图，如窗口显示（带字幕、OSD和缩放视频）。&lt;/td&gt;
+&lt;td&gt;拍摄截图，如窗口显示（带字幕、OSD 和缩放视频）。&lt;/td&gt;
 &lt;td&gt;Take a screenshot, as the window shows it (with subtitles, OSD, and scaled video).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20535,7 +20570,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Shift+PGUP and Shift+PGDWN&lt;/td&gt;
-&lt;td&gt;向后或向前跳转10分钟。（这曾经映射到不带Shift的PGUP/PGDWN。）&lt;/td&gt;
+&lt;td&gt;向后或向前跳转 10 分钟。（这曾经映射到不带 Shift 的 PGUP/PGDWN。）&lt;/td&gt;
 &lt;td&gt;Seek backward or forward by 10 minutes. (This used to be mapped to PGUP/PGDWN without Shift.)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20560,7 +20595,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Alt++ and Alt+-&lt;/td&gt;
-&lt;td&gt;将Alt与+或-键组合可更改视频缩放。&lt;/td&gt;
+&lt;td&gt;将 Alt 与+或-键组合可更改视频缩放。&lt;/td&gt;
 &lt;td&gt;Combining Alt with the + or - keys changes video zoom.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20570,27 +20605,27 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;F8&lt;/td&gt;
-&lt;td&gt;显示播放列表和其中的当前位置（仅在使用UI窗口时有用，在终端上损坏）。&lt;/td&gt;
+&lt;td&gt;显示播放列表和其中的当前位置（仅在使用 UI 窗口时有用，在终端上损坏）。&lt;/td&gt;
 &lt;td&gt;Show the playlist and the current position in it (useful only if a UI window is used, broken on the terminal).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;F9&lt;/td&gt;
-&lt;td&gt;显示音频和字幕流列表（仅在使用UI窗口时有用，在终端上损坏）。&lt;/td&gt;
+&lt;td&gt;显示音频和字幕流列表（仅在使用 UI 窗口时有用，在终端上损坏）。&lt;/td&gt;
 &lt;td&gt;Show the list of audio and subtitle streams (useful only if a UI window is used, broken on the terminal).&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;i and I&lt;/td&gt;
-&lt;td&gt;显示/切换显示有关当前播放文件的统计信息的叠加层，例如编解码器、帧速率、丢帧数等。有关更多信息，请参阅STATS。&lt;/td&gt;
+&lt;td&gt;显示/切换显示有关当前播放文件的统计信息的叠加层，例如编解码器、帧速率、丢帧数等。有关更多信息，请参阅 STATS。&lt;/td&gt;
 &lt;td&gt;Show/toggle an overlay displaying statistics about the currently playing file such as codec, framerate, number of dropped frames and so on. See STATS for more information.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;DEL&lt;/td&gt;
-&lt;td&gt;在OSC之间循环显示可见性：从不/自动（鼠标移动）/始终&lt;/td&gt;
+&lt;td&gt;在 OSC 之间循环显示可见性：从不/自动（鼠标移动）/始终&lt;/td&gt;
 &lt;td&gt;Cycle OSC visibility between never / auto (mouse-move) / always&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;`&lt;/td&gt;
-&lt;td&gt;显示控制台。（ESC关闭它。有关CONSOLE的详细信息，请参阅CONSOLE。）&lt;/td&gt;
+&lt;td&gt;显示控制台。（ESC 关闭它。有关 CONSOLE 的详细信息，请参阅 CONSOLE。）&lt;/td&gt;
 &lt;td&gt;Show the console. (ESC closes it again. See CONSOLE.)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -20645,7 +20680,7 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;PREVIOUS and NEXT&lt;/td&gt;
-&lt;td&gt;向后/向前跳转1分钟。&lt;/td&gt;
+&lt;td&gt;向后/向前跳转 1 分钟。&lt;/td&gt;
 &lt;td&gt;Seek backward/forward 1 minute.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
