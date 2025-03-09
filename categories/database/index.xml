@@ -171,11 +171,11 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>MySQL使用技巧</title>
-        <link>https://hublog.netlify.app/p/mysql-tech/</link>
+        <title>MySQL技巧</title>
+        <link>https://hublog.netlify.app/p/mysql-tip/</link>
         <pubDate>Wed, 20 Mar 2024 12:03:16 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/mysql-tech/</guid>
+        <guid>https://hublog.netlify.app/p/mysql-tip/</guid>
         <description>&lt;h3 id=&#34;mysql客户端执行sql文件&#34;&gt;MySQL客户端执行SQL文件
 &lt;/h3&gt;&lt;h3 id=&#34;不登录mysql客户端执行sql文件&#34;&gt;不登录MySQL客户端执行SQL文件
 &lt;/h3&gt;&lt;p&gt;有时候不想登录 MySQL 客户端执行 SQL 文件，也不想使用第三方的 gui 工具，可以如下命令&lt;/p&gt;

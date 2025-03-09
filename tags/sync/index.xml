@@ -272,6 +272,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
+&lt;h2 id=&#34;问题汇总&#34;&gt;问题汇总
+&lt;/h2&gt;&lt;h3 id=&#34;问题1&#34;&gt;问题1
+&lt;/h3&gt;&lt;p&gt;Documents/school&amp;quot; (l9jth-kpuji): folder marker missing (this indicates potential data loss, search docs/forum to get information about how to proceed&lt;/p&gt;
+&lt;p&gt;出现这样的错误，需要在分享的文件下新建 &lt;code&gt;.stfolder&lt;/code&gt; 文件夹，重新确认&lt;/p&gt;
 </description>
         </item>
         

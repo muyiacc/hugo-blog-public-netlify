@@ -2087,6 +2087,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;备份该文件夹的内容即可&lt;/p&gt;
+&lt;h2 id=&#34;问题汇总&#34;&gt;问题汇总
+&lt;/h2&gt;&lt;h3 id=&#34;问题1&#34;&gt;问题1
+&lt;/h3&gt;&lt;p&gt;Documents/school&amp;quot; (l9jth-kpuji): folder marker missing (this indicates potential data loss, search docs/forum to get information about how to proceed&lt;/p&gt;
+&lt;p&gt;出现这样的错误，需要在分享的文件下新建 &lt;code&gt;.stfolder&lt;/code&gt; 文件夹，重新确认&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2615,6 +2619,17 @@
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;/.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pyenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;pyenv-win&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.\&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;install-pyenv&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-win&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;py&#34;&gt;ps1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-Uninstall&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置
+&lt;/h2&gt;&lt;p&gt;设置加速镜像源&lt;/p&gt;
+&lt;p&gt;添加环境变量 &lt;code&gt;PYTHON_BUILD_MIRROR_URL&lt;/code&gt;，值为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://jedore.netlify.app/tools/python-mirrors/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;使用&#34;&gt;使用
@@ -18361,11 +18376,11 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>MySQL使用技巧</title>
-        <link>https://hublog.netlify.app/p/mysql-tech/</link>
+        <title>MySQL技巧</title>
+        <link>https://hublog.netlify.app/p/mysql-tip/</link>
         <pubDate>Wed, 20 Mar 2024 12:03:16 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/mysql-tech/</guid>
+        <guid>https://hublog.netlify.app/p/mysql-tip/</guid>
         <description>&lt;h3 id=&#34;mysql客户端执行sql文件&#34;&gt;MySQL客户端执行SQL文件
 &lt;/h3&gt;&lt;h3 id=&#34;不登录mysql客户端执行sql文件&#34;&gt;不登录MySQL客户端执行SQL文件
 &lt;/h3&gt;&lt;p&gt;有时候不想登录 MySQL 客户端执行 SQL 文件，也不想使用第三方的 gui 工具，可以如下命令&lt;/p&gt;
@@ -18891,15 +18906,6 @@ uid&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>MySQL内存优化</title>
-        <link>https://hublog.netlify.app/p/2403004/</link>
-        <pubDate>Mon, 04 Mar 2024 00:03:15 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/2403004/</guid>
-        <description>&lt;p&gt;暂无&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>FVM，Flutter的多版本管理工具</title>
         <link>https://hublog.netlify.app/p/2403003/</link>
         <pubDate>Sun, 03 Mar 2024 00:03:15 +0800</pubDate>
@@ -19233,7 +19239,7 @@ uid&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Linux使用APT仓库安装MySQL</title>
+        <title>Debian使用APT仓库安装MySQL</title>
         <link>https://hublog.netlify.app/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
