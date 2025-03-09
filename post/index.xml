@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 08 Mar 2025 11:34:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hadoop高可用配置</title>
+        <link>https://hublog.netlify.app/p/250309192241/</link>
+        <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250309192241/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;</description>
+        </item>
+        <item>
         <title>Linux忘记root账户密码恢复办法</title>
         <link>https://hublog.netlify.app/p/250308113448/</link>
         <pubDate>Sat, 08 Mar 2025 11:34:48 +0800</pubDate>

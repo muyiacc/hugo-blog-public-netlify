@@ -7,13 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 08 Mar 2025 11:34:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Bigdata</title>
+        <link>https://hublog.netlify.app/categories/bigdata/</link>
+        <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/bigdata/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/bigdata/bigdata.webp" alt="Featured image of post Bigdata" /&gt;</description>
+        </item>
+        <item>
         <title>Linux</title>
         <link>https://hublog.netlify.app/categories/linux/</link>
         <pubDate>Sat, 08 Mar 2025 11:34:48 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/linux/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.png" alt="Featured image of post Linux" /&gt;</description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Backend</title>
@@ -21,7 +29,7 @@
         <pubDate>Wed, 05 Mar 2025 22:30:57 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/backend/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/backend/backend.png" alt="Featured image of post Backend" /&gt;</description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/backend/backend.webp" alt="Featured image of post Backend" /&gt;</description>
         </item>
         <item>
         <title>Database</title>
@@ -29,7 +37,7 @@
         <pubDate>Tue, 04 Mar 2025 17:21:36 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/database/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/database/3a34b22f901c4a55dcfbb35c717f6564.png" alt="Featured image of post Database" /&gt;</description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/database/database.webp" alt="Featured image of post Database" /&gt;</description>
         </item>
         <item>
         <title>Default</title>
@@ -37,7 +45,7 @@
         <pubDate>Sun, 02 Mar 2025 23:46:45 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/default/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.jpg" alt="Featured image of post Default" /&gt;</description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
         </item>
         <item>
         <title>Windows</title>
@@ -45,7 +53,7 @@
         <pubDate>Sun, 02 Mar 2025 10:09:16 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/windows/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/windows/img0-1024x768.webp" alt="Featured image of post Windows" /&gt;</description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/windows/windows.webp" alt="Featured image of post Windows" /&gt;</description>
         </item>
         <item>
         <title>Frontend</title>
@@ -53,31 +61,39 @@
         <pubDate>Sat, 15 Feb 2025 17:51:05 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/frontend/</guid>
-        <description></description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/frontend/frontend.webp" alt="Featured image of post Frontend" /&gt;</description>
+        </item>
+        <item>
+        <title>Free</title>
+        <link>https://hublog.netlify.app/categories/free/</link>
+        <pubDate>Thu, 13 Feb 2025 11:33:55 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/free/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/free/free.webp" alt="Featured image of post Free" /&gt;</description>
+        </item>
+        <item>
+        <title>Devops</title>
+        <link>https://hublog.netlify.app/categories/devops/</link>
+        <pubDate>Wed, 08 Jan 2025 22:37:00 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/devops/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
+        </item>
+        <item>
+        <title>Mobiledev</title>
+        <link>https://hublog.netlify.app/categories/mobiledev/</link>
+        <pubDate>Tue, 05 Nov 2024 12:02:22 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/mobiledev/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/mobiledev/mobiledev.webp" alt="Featured image of post Mobiledev" /&gt;</description>
         </item>
         <item>
         <title>Proxy</title>
         <link>https://hublog.netlify.app/categories/proxy/</link>
-        <pubDate>Thu, 13 Feb 2025 11:33:55 +0800</pubDate>
+        <pubDate>Mon, 09 Sep 2024 02:41:37 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/proxy/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/proxy/proxy.jpg" alt="Featured image of post Proxy" /&gt;</description>
-        </item>
-        <item>
-        <title>Vue</title>
-        <link>https://hublog.netlify.app/categories/vue/</link>
-        <pubDate>Sat, 12 Oct 2024 08:51:29 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/vue/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Golang</title>
-        <link>https://hublog.netlify.app/categories/golang/</link>
-        <pubDate>Mon, 07 Oct 2024 12:57:53 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/golang/</guid>
-        <description></description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/proxy/proxy.webp" alt="Featured image of post Proxy" /&gt;</description>
         </item>
         <item>
         <title>Tao</title>
@@ -85,23 +101,7 @@
         <pubDate>Mon, 08 Jul 2024 16:07:59 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/tao/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/tao/dharma.jpg" alt="Featured image of post Tao" /&gt;</description>
-        </item>
-        <item>
-        <title>Free</title>
-        <link>https://hublog.netlify.app/categories/free/</link>
-        <pubDate>Sat, 22 Jun 2024 00:06:14 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/free/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/free/wallhaven-7p53ve.png" alt="Featured image of post Free" /&gt;</description>
-        </item>
-        <item>
-        <title>Docker</title>
-        <link>https://hublog.netlify.app/categories/docker/</link>
-        <pubDate>Wed, 05 Jun 2024 16:06:01 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/docker/</guid>
-        <description></description>
+        <description>&lt;img src="https://hublog.netlify.app/categories/tao/tao.webp" alt="Featured image of post Tao" /&gt;</description>
         </item>
         
     </channel>

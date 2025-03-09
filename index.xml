@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 08 Mar 2025 11:34:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hadoop高可用配置</title>
+        <link>https://hublog.netlify.app/p/250309192241/</link>
+        <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250309192241/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;</description>
+        </item>
+        <item>
         <title>Linux忘记root账户密码恢复办法</title>
         <link>https://hublog.netlify.app/p/250308113448/</link>
         <pubDate>Sat, 08 Mar 2025 11:34:48 +0800</pubDate>
@@ -28004,14 +28013,6 @@ TMUX_CURRENT_COMMAND：当前活动的tmux当前命令。&lt;/code&gt;&lt;/pre&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;重启系统。&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title>Fronted</title>
-        <link>https://hublog.netlify.app/categories/fronted/fronted/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/fronted/fronted/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/fronted.png" alt="Featured image of post Fronted" /&gt;</description>
         </item>
         
     </channel>
