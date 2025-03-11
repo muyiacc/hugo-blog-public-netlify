@@ -7,21 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Bigdata</title>
-        <link>https://hublog.netlify.app/categories/bigdata/</link>
-        <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
+        <lastBuildDate>Tue, 11 Mar 2025 10:28:21 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Default</title>
+        <link>https://hublog.netlify.app/categories/default/</link>
+        <pubDate>Tue, 11 Mar 2025 10:28:21 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/categories/bigdata/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/bigdata/bigdata.webp" alt="Featured image of post Bigdata" /&gt;</description>
+        <guid>https://hublog.netlify.app/categories/default/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Llm</title>
+        <link>https://hublog.netlify.app/categories/llm/</link>
+        <pubDate>Mon, 10 Mar 2025 18:54:32 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/llm/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/llm/llm.webp" alt="Featured image of post Llm" /&gt;</description>
         </item>
         <item>
         <title>Linux</title>
         <link>https://hublog.netlify.app/categories/linux/</link>
-        <pubDate>Sat, 08 Mar 2025 11:34:48 +0800</pubDate>
+        <pubDate>Mon, 10 Mar 2025 18:45:01 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/linux/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
+        </item>
+        <item>
+        <title>Bigdata</title>
+        <link>https://hublog.netlify.app/categories/bigdata/</link>
+        <pubDate>Mon, 10 Mar 2025 00:52:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/bigdata/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/bigdata/bigdata.webp" alt="Featured image of post Bigdata" /&gt;</description>
         </item>
         <item>
         <title>Backend</title>
@@ -38,22 +54,6 @@
         
         <guid>https://hublog.netlify.app/categories/database/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/database/database.webp" alt="Featured image of post Database" /&gt;</description>
-        </item>
-        <item>
-        <title>Llm</title>
-        <link>https://hublog.netlify.app/categories/llm/</link>
-        <pubDate>Sun, 02 Mar 2025 23:46:45 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/llm/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/llm/llm.webp" alt="Featured image of post Llm" /&gt;</description>
-        </item>
-        <item>
-        <title>Default</title>
-        <link>https://hublog.netlify.app/categories/default/</link>
-        <pubDate>Sun, 02 Mar 2025 23:01:44 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/default/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
         </item>
         <item>
         <title>Windows</title>

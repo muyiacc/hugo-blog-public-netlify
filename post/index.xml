@@ -7,7 +7,273 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 11 Mar 2025 10:28:21 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VSCode美化终端显示，第一行显示路径，第二行输入命令</title>
+        <link>https://hublog.netlify.app/p/250311102821/</link>
+        <pubDate>Tue, 11 Mar 2025 10:28:21 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250311102821/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;VSCode使用终端的时候，有时候路径太长，比如像这样&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/03/11/E3x9ka4wbMmVUYy.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图片.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;路径后面输入的命令不好查看，最好的办法就是第一行显示路径，换行之后输入执行的命令&lt;/p&gt;
+&lt;h2 id=&#34;解决办法&#34;&gt;解决办法
+&lt;/h2&gt;&lt;p&gt;这个问题归根在于使用什么终端模拟器，一般情况下，VSCode的默认终端使用的 &lt;code&gt;Powerrshell&lt;/code&gt;,实际上是修改 &lt;code&gt;Powerrshell&lt;/code&gt;终端提示。&lt;/p&gt;
+&lt;p&gt;在VSCode终端输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;notepad&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PROFILE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;最后一行加入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;function prompt {
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    # 显示当前路径
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Write-Host &amp;#34;$PWD&amp;#34; -ForegroundColor Green
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    # 提供第二行输入命令
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return &amp;#34;&amp;gt; &amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;刷新&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PROFILE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;最终样式&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/03/11/Hdx1gyIfwqRJlFN.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;图片.png&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>cloudflare_temp_email，自建域名临时邮箱</title>
+        <link>https://hublog.netlify.app/p/250310190914/</link>
+        <pubDate>Mon, 10 Mar 2025 19:09:14 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310190914/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱&lt;/p&gt;
+&lt;p&gt;项目：&lt;a class=&#34;link&#34; href=&#34;https://github.com/dreamhunter2333/cloudflare_temp_email&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cloudflare_temp_email&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://temp-mail-docs.awsl.uk/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;github-action部署&#34;&gt;GitHub Action部署
+&lt;/h2&gt;&lt;h3 id=&#34;创建d1数据库&#34;&gt;创建D1数据库
+&lt;/h3&gt;&lt;p&gt;打开 cloudflare 控制台，选择 &lt;code&gt;Storage &amp;amp; Databases&lt;/code&gt; -&amp;gt; &lt;code&gt;# D1 SQL Database&lt;/code&gt; -&amp;gt; &lt;code&gt;Create&lt;/code&gt;，点击创建数据库&lt;/p&gt;
+&lt;p&gt;打开 &lt;code&gt;Console&lt;/code&gt; 标签页，输入 &lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/dreamhunter2333/cloudflare_temp_email/refs/heads/main/db/schema.sql&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;schema.sql&lt;/a&gt; 的内容，点击 &lt;code&gt;Execute&lt;/code&gt; 执行&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可在这里查看全部的数据库文件 &lt;a class=&#34;link&#34; href=&#34;https://github.com/dreamhunter2333/cloudflare_temp_email/tree/main/db&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;db&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;github-actions-配置&#34;&gt;Github Actions 配置
+&lt;/h3&gt;&lt;p&gt;首先 &lt;a class=&#34;link&#34; href=&#34;https://github.com/dreamhunter2333/cloudflare_temp_email/fork&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fork&lt;/a&gt; 项目&lt;/p&gt;
+&lt;p&gt;打开仓库的 &lt;code&gt;Actions&lt;/code&gt; 页面，找到 &lt;code&gt;Deploy Backend&lt;/code&gt; 和 &lt;code&gt;Deploy Frontend&lt;/code&gt;，点击 &lt;code&gt;enable workflow&lt;/code&gt; 启用 &lt;code&gt;workflow&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后在仓库页面 &lt;code&gt;Settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Secrets and variables&lt;/code&gt; -&amp;gt; &lt;code&gt;Actions&lt;/code&gt; -&amp;gt; &lt;code&gt;Repository secrets&lt;/code&gt;, 添加以下 &lt;code&gt;secrets&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CLOUDFLARE_ACCOUNT_ID&lt;/code&gt;: Cloudflare 账户 ID, &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CLOUDFLARE_API_TOKEN&lt;/code&gt;: Cloudflare API Token, &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/workers/wrangler/ci-cd/#api-token&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BACKEND_TOML&lt;/code&gt;: 后端配置文件，&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/worker.html#%e4%bf%ae%e6%94%b9-wrangler-toml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;参考此处&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FRONTEND_ENV&lt;/code&gt;: 前端配置文件，请复制 &lt;code&gt;frontend/.env.example&lt;/code&gt; 的内容，&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;并参考此处修改&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FRONTEND_NAME&lt;/code&gt;: 你在 Cloudflare Pages 创建的项目名称，可通过 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/ui/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;用户界面&lt;/a&gt; 或者 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;命令行&lt;/a&gt; 创建&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FRONTEND_BRANCH&lt;/code&gt;: (可选) pages 部署的分支，可不配置，默认 &lt;code&gt;production&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TG_FRONTEND_NAME&lt;/code&gt;: (可选) 你在 Cloudflare Pages 创建的项目名称，同 &lt;code&gt;FRONTEND_NAME&lt;/code&gt;，如果需要 Telegram Mini App 功能，请填写&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DEBUG_MODE&lt;/code&gt;: (可选) 是否开启调试模式，配置为 &lt;code&gt;true&lt;/code&gt; 开启, 默认 worker 部署日志不会输出到 Github Actions 页面，开启后会输出&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BACKEND_USE_MAIL_WASM_PARSER&lt;/code&gt;: (可选) 是否使用 wasm 解析邮件，配置为 &lt;code&gt;true&lt;/code&gt; 开启, 功能参考 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/feature/mail_parser_wasm_worker.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;配置 worker 使用 wasm 解析邮件&lt;/a&gt;
+打开仓库的 &lt;code&gt;Actions&lt;/code&gt; 页面，找到 &lt;code&gt;Deploy Backend&lt;/code&gt; 和 &lt;code&gt;Deploy Frontend&lt;/code&gt;，点击 &lt;code&gt;Run workflow&lt;/code&gt; 选择分支手动部署&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>open-webui安装</title>
+        <link>https://hublog.netlify.app/p/250310185432/</link>
+        <pubDate>Mon, 10 Mar 2025 18:54:32 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310185432/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;pip&#34;&gt;pip
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install open-webui
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;open-webui serve
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;访问：&lt;a class=&#34;link&#34; href=&#34;http://localhost:8080&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;http://localhost:8080&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Linux设置时间，时区</title>
+        <link>https://hublog.netlify.app/p/250310184501/</link>
+        <pubDate>Mon, 10 Mar 2025 18:45:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310184501/</guid>
+        <description>&lt;p&gt;查看当前时区&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;timedatectl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看所有可用时区&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;timedatectl list-timezones
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;设置新时区&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo timedatectl set-timezone Asia/Shanghai
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看硬件时钟&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo hwclock --show
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;同步硬件时钟到系统时间&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo hwclock --systohc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;同步系统时间到硬件时钟&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo hwclock --hctosys
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Ubuntu设置sudo无须密码</title>
+        <link>https://hublog.netlify.app/p/250310143156/</link>
+        <pubDate>Mon, 10 Mar 2025 14:31:56 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310143156/</guid>
+        <description>&lt;p&gt;在多级器批量操作的时候，使用脚本需要用到sudo权限，如果需要输入密码会导致脚本执行失败，所以需要配置&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo visudo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在最后面新增一行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用户名 &lt;span class=&#34;nv&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=(&lt;/span&gt;ALL&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; NOPASSWD:ALL
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;保存退出&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Ubuntu修改默认编辑器</title>
+        <link>https://hublog.netlify.app/p/250310142923/</link>
+        <pubDate>Mon, 10 Mar 2025 14:29:23 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310142923/</guid>
+        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo update-alternatives --config editor
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;选择对应的编辑器&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Hadoop之yarn</title>
+        <link>https://hublog.netlify.app/p/250310005241/</link>
+        <pubDate>Mon, 10 Mar 2025 00:52:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310005241/</guid>
+        <description>&lt;p&gt;yarn 默认端口&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;8088&lt;/code&gt;：http服务&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Hadoop高可用配置</title>
         <link>https://hublog.netlify.app/p/250309192241/</link>
         <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
@@ -366,7 +632,13 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;条件判断&#34;&gt;条件判断
+&lt;/h2&gt;&lt;p&gt;shell 支持多种条件判断的方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if&amp;hellip;else&lt;/li&gt;
+&lt;li&gt;case..when&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         </item>
         <item>
         <title>Go语言交叉编译</title>
@@ -22375,7 +22647,7 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;trusted-host=mirrors.aliyun.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;ECS内网配置方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;ECS 内网配置方法：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;找到下列文件&lt;/li&gt;
 &lt;/ol&gt;
@@ -22501,7 +22773,7 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;maven&#34;&gt;Maven
 &lt;/h2&gt;&lt;h3 id=&#34;阿里云&#34;&gt;阿里云
-&lt;/h3&gt;&lt;p&gt;打开 Maven 的配置文件(windows机器一般在maven安装目录的conf/settings.xml)，在&lt;code&gt;&amp;lt;mirrors&amp;gt;&amp;lt;/mirrors&amp;gt;&lt;/code&gt;标签中添加 mirror 子节点:&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;打开 Maven 的配置文件(windows 机器一般在 maven 安装目录的 conf/settings.xml)，在&lt;code&gt;&amp;lt;mirrors&amp;gt;&amp;lt;/mirrors&amp;gt;&lt;/code&gt;标签中添加 mirror 子节点:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -22533,14 +22805,14 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;mirrorOf&amp;gt;&lt;/span&gt;central&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirrorOf&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;aliyun maven&lt;span class=&#34;nt&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;http://maven.aliyun.com/nexus/content/repositories/central/&lt;span class=&#34;nt&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;	 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 中央仓库1 --&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;mirror&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;repo1&lt;span class=&#34;nt&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;mirrorOf&amp;gt;&lt;/span&gt;central&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirrorOf&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;name&amp;gt;&lt;/span&gt;Human Readable Name for this Mirror.&lt;span class=&#34;nt&#34;&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;url&amp;gt;&lt;/span&gt;http://repo1.maven.org/maven2/&lt;span class=&#34;nt&#34;&gt;&amp;lt;/url&amp;gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;c&#34;&gt;&amp;lt;!-- 中央仓库2 --&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;mirror&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nt&#34;&gt;&amp;lt;id&amp;gt;&lt;/span&gt;repo2&lt;span class=&#34;nt&#34;&gt;&amp;lt;/id&amp;gt;&lt;/span&gt;
@@ -22550,8 +22822,8 @@ Python Script to add OpenGapps, Magisk, libhoudini translation library and libnd
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nt&#34;&gt;&amp;lt;/mirror&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;docker软件源&#34;&gt;Docker软件源
-&lt;/h2&gt;&lt;p&gt;非 Docker Hub镜像源&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;docker-软件源&#34;&gt;Docker 软件源
+&lt;/h2&gt;&lt;p&gt;非 Docker Hub 镜像源&lt;/p&gt;
 &lt;h3 id=&#34;清华-3&#34;&gt;清华
 &lt;/h3&gt;&lt;h4 id=&#34;debianubunturaspbian-用户&#34;&gt;Debian/Ubuntu/Raspbian 用户
 &lt;/h4&gt;&lt;p&gt;如果你过去安装过 docker，先删掉：&lt;/p&gt;

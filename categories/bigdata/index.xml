@@ -7,7 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 09 Mar 2025 19:22:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/bigdata/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 10 Mar 2025 00:52:41 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/bigdata/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Hadoop之yarn</title>
+        <link>https://hublog.netlify.app/p/250310005241/</link>
+        <pubDate>Mon, 10 Mar 2025 00:52:41 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250310005241/</guid>
+        <description>&lt;p&gt;yarn 默认端口&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;8088&lt;/code&gt;：http服务&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Hadoop高可用配置</title>
         <link>https://hublog.netlify.app/p/250309192241/</link>
         <pubDate>Sun, 09 Mar 2025 19:22:41 +0800</pubDate>
