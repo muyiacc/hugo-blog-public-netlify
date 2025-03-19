@@ -7,7 +7,39 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 05 Mar 2025 22:30:57 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Mar 2025 08:48:54 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Nginx</title>
+        <link>https://hublog.netlify.app/tags/nginx/</link>
+        <pubDate>Wed, 19 Mar 2025 08:48:54 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/nginx/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Acme</title>
+        <link>https://hublog.netlify.app/tags/acme/</link>
+        <pubDate>Wed, 19 Mar 2025 08:20:32 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/acme/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Domain</title>
+        <link>https://hublog.netlify.app/tags/domain/</link>
+        <pubDate>Sun, 16 Mar 2025 21:18:37 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/domain/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Postgresql</title>
+        <link>https://hublog.netlify.app/tags/postgresql/</link>
+        <pubDate>Sat, 15 Mar 2025 20:18:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/postgresql/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Pandads</title>
         <link>https://hublog.netlify.app/tags/pandads/</link>
         <pubDate>Wed, 05 Mar 2025 22:30:57 +0800</pubDate>
@@ -101,14 +133,6 @@
         <pubDate>Tue, 11 Feb 2025 10:35:09 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/uv/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Acme</title>
-        <link>https://hublog.netlify.app/tags/acme/</link>
-        <pubDate>Fri, 24 Jan 2025 00:25:54 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/acme/</guid>
         <description></description>
         </item>
         <item>
@@ -344,14 +368,6 @@
         <description></description>
         </item>
         <item>
-        <title>Postgresql</title>
-        <link>https://hublog.netlify.app/tags/postgresql/</link>
-        <pubDate>Fri, 11 Oct 2024 22:42:04 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/postgresql/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Video</title>
         <link>https://hublog.netlify.app/tags/video/</link>
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
@@ -397,14 +413,6 @@
         <pubDate>Fri, 04 Oct 2024 15:55:49 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/browser/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Nginx</title>
-        <link>https://hublog.netlify.app/tags/nginx/</link>
-        <pubDate>Thu, 03 Oct 2024 15:11:58 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/nginx/</guid>
         <description></description>
         </item>
         <item>
@@ -840,14 +848,6 @@
         <description></description>
         </item>
         <item>
-        <title>Domain</title>
-        <link>https://hublog.netlify.app/tags/domain/</link>
-        <pubDate>Sat, 01 Jun 2024 16:06:01 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/domain/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Test</title>
         <link>https://hublog.netlify.app/tags/test/</link>
         <pubDate>Sat, 11 May 2024 16:05:43 +0800</pubDate>
@@ -920,14 +920,6 @@
         <description></description>
         </item>
         <item>
-        <title>Certbot</title>
-        <link>https://hublog.netlify.app/tags/certbot/</link>
-        <pubDate>Sat, 04 May 2024 16:05:43 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/certbot/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Ddns</title>
         <link>https://hublog.netlify.app/tags/ddns/</link>
         <pubDate>Fri, 03 May 2024 16:05:43 +0800</pubDate>
@@ -941,6 +933,14 @@
         <pubDate>Fri, 03 May 2024 16:05:43 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/ddns-go/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Apache</title>
+        <link>https://hublog.netlify.app/tags/apache/</link>
+        <pubDate>Thu, 02 May 2024 16:05:43 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/apache/</guid>
         <description></description>
         </item>
         <item>
@@ -1013,6 +1013,14 @@
         <pubDate>Thu, 07 Mar 2024 00:03:15 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/apt/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Certbot</title>
+        <link>https://hublog.netlify.app/tags/certbot/</link>
+        <pubDate>Wed, 06 Mar 2024 00:03:15 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/certbot/</guid>
         <description></description>
         </item>
         <item>

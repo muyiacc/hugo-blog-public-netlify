@@ -8,21 +8,15 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Thu, 07 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/apt/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Nginx篇：通过apt的nginx官方仓库安装</title>
+        <title>Nginx通过apt的Nginx官方仓库安装</title>
         <link>https://hublog.netlify.app/p/2403007/</link>
         <pubDate>Thu, 07 Mar 2024 00:03:15 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2403007/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;为什么需要通过官方仓库安装？
-答：系统默认的软件源版本太低&lt;/p&gt;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;系统默认的软件源版本太低，故通过官方仓库安装&lt;/p&gt;
 &lt;h2 id=&#34;debian&#34;&gt;Debian
-&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;参考教程
-&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/linux_packages.html#Debian&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://nginx.org/en/linux_packages.html#Debian&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;前提条件：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;前提条件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -111,13 +105,13 @@ uid                      nginx signing key &lt;a class=&#34;link&#34; href=&#34;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu
-&lt;/h2&gt;&lt;blockquote&gt;
+&lt;/div&gt;&lt;blockquote&gt;
 &lt;p&gt;参考教程
-&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/linux_packages.html#Ubuntu&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://nginx.org/en/linux_packages.html#Ubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/linux_packages.html#Debian&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://nginx.org/en/linux_packages.html#Debian&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;前提条件：&lt;/p&gt;
+&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu
+&lt;/h2&gt;&lt;p&gt;前提条件：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -206,7 +200,12 @@ uid&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;参考教程
+&lt;a class=&#34;link&#34; href=&#34;https://nginx.org/en/linux_packages.html#Ubuntu&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://nginx.org/en/linux_packages.html#Ubuntu&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
         </item>
         <item>
         <title>Debian使用APT仓库安装MySQL</title>

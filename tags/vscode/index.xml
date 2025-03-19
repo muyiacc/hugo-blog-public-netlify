@@ -8,17 +8,30 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Wed, 30 Oct 2024 09:58:09 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/vscode/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>VSCode使用经验</title>
+        <title>VSCode快捷键</title>
         <link>https://hublog.netlify.app/p/241030095809/</link>
         <pubDate>Wed, 30 Oct 2024 09:58:09 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241030095809/</guid>
-        <description>&lt;h2 id=&#34;快捷键&#34;&gt;快捷键
-&lt;/h2&gt;&lt;p&gt;&lt;code&gt;F12&lt;/code&gt; 跳转到方法定义&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Alt + F12&lt;/code&gt; 跳转到方法定义&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Alt + F12&lt;/code&gt; 向下复制一行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Alt + F12&lt;/code&gt; 向下复制一行&lt;/p&gt;
-&lt;p&gt;折叠全部 Ctrl&lt;/p&gt;
+        <description>&lt;p&gt;方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跳转到方法定义：&lt;code&gt;f12&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;查看方法定义：&lt;code&gt;alt+f12&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;跳转到下一个方法：``&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;行操作&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;向下复制一行：&lt;code&gt;ctrl+c ctrl+v&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向上移动一行：&lt;code&gt;alt+up&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;向下移动一行：&lt;code&gt;alt+down&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;折叠展开&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;折叠当前区域：&lt;code&gt;ctrl+shift+[&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;展开当前区域：&lt;code&gt;ctrl+shift+]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;折叠所有区域：&lt;code&gt;ctrl+k ctrl+0&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;展开所有区域：&lt;code&gt;ctrl+k ctrl+j&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         </item>
         <item>

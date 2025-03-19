@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 Certbot 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数">
-<title>Debian下的Certbot安装使用，附nginx使用</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 本文将介绍常见系统的环境变量设置 Linux Bash 配置环境变量的文件 .bashrc .bash_profile .profile /etc/profile /etc/profile.d/* Zsh 配置环境变量的文件 .zshrc .zsh_profile /etc/profile /etc/profile.d/* Windows 界面编辑 打开环境变量设置界面的几种方式 win+s 搜">
+<title>系统环境变量设置</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/2405004/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250311124850/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Debian下的Certbot安装使用，附nginx使用">
-<meta property='og:description' content="介绍 Certbot 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数">
-<meta property='og:url' content='https://hublog.netlify.app/p/2405004/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="系统环境变量设置">
+<meta property='og:description' content="简介 本文将介绍常见系统的环境变量设置 Linux Bash 配置环境变量的文件 .bashrc .bash_profile .profile /etc/profile /etc/profile.d/* Zsh 配置环境变量的文件 .zshrc .zsh_profile /etc/profile /etc/profile.d/* Windows 界面编辑 打开环境变量设置界面的几种方式 win+s 搜">
+<meta property='og:url' content='https://hublog.netlify.app/p/250311124850/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='certbot' /><meta property='article:tag' content='nginx' /><meta property='article:published_time' content='2024-05-04T16:05:43&#43;08:00'/><meta property='article:modified_time' content='2024-05-04T16:05:43&#43;08:00'/>
-<meta name="twitter:title" content="Debian下的Certbot安装使用，附nginx使用">
-<meta name="twitter:description" content="介绍 Certbot 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-11T12:48:50&#43;08:00'/><meta property='article:modified_time' content='2025-03-11T12:48:50&#43;08:00'/>
+<meta name="twitter:title" content="系统环境变量设置">
+<meta name="twitter:description" content="简介 本文将介绍常见系统的环境变量设置 Linux Bash 配置环境变量的文件 .bashrc .bash_profile .profile /etc/profile /etc/profile.d/* Zsh 配置环境变量的文件 .zshrc .zsh_profile /etc/profile /etc/profile.d/* Windows 界面编辑 打开环境变量设置界面的几种方式 win+s 搜">
   
 
 
@@ -267,9 +267,20 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#nginx">nginx</a></li>
-    <li><a href="#certbot-dns-dnspod">certbot-dns-dnspod</a></li>
-    <li><a href="#certbot-dns-cloudflare">certbot-dns-cloudflare</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#linux">Linux</a>
+      <ol>
+        <li><a href="#bash">Bash</a></li>
+        <li><a href="#zsh">Zsh</a></li>
+      </ol>
+    </li>
+    <li><a href="#windows">Windows</a>
+      <ol>
+        <li><a href="#界面编辑">界面编辑</a></li>
+        <li><a href="#cmd">CMD</a></li>
+        <li><a href="#powershell">PowerShell</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -288,8 +299,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" >
-                Linux
+            <a href="/categories/default/" >
+                Default
             </a>
         
     </header>
@@ -297,7 +308,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2405004/">Debian下的Certbot安装使用，附nginx使用</a>
+            <a href="/p/250311124850/">系统环境变量设置</a>
         </h2>
     
         
@@ -319,7 +330,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 04, 2024</time>
+                <time class="article-time--published">Mar 11, 2025</time>
             </div>
         
 
@@ -335,388 +346,225 @@
     <section class="article-content">
     
     
-    <h1 id="介绍">介绍
-</h1><p><strong>Certbot</strong> 是一个由 Electronic Frontier Foundation (EFF) 开发的免费、开源的工具，用于自动化在 Web 服务器上部署 SSL/TLS 证书。SSL/TLS 证书是用于加密网站与用户之间传输的数据，确保数据传输的安全性和隐私性。</p>
-<p>Certbot 支持大多数常见的 Web 服务器，包括 Apache、Nginx、IIS 等。</p>
-<h1 id="安装-certbot">安装 certbot
-</h1><p>（1）安装snap</p>
-<p>certbot官方已经说了，各个发行版安装的certbot版本落后，功能不全，推荐我们使用snap安装，我之前就是用的是apt安装，后来一堆问题，血的教训！！</p>
-<blockquote>
-<p>参考文档：https://snapcraft.io/docs/installing-snap-on-debian</p>
-</blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 安装snap</span>
-</span></span><span class="line"><span class="cl">sudo apt update
-</span></span><span class="line"><span class="cl">sudo apt install snapd
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 重启系统</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装core</span>
-</span></span><span class="line"><span class="cl">sudo snap install core
-</span></span><span class="line"><span class="cl">sudo snap refresh core
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>（2）安装certbot</p>
-<blockquote>
-<p>安装之前确保没有其他方式安装的certbot</p>
-<p>如：apt，pip</p>
-<p>可通过这条命令查看 whereis certbot</p>
-<p>如果有，卸载它们</p>
-<p>sudo apt remove certbot</p>
-<p>sudo pip uninstall certbot</p>
-</blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo snap install --classic certbot
-</span></span><span class="line"><span class="cl">sudo ln -s /snap/bin/certbot /usr/bin/certbot
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>（3）查看版本</p>
+    <h2 id="简介">简介
+</h2><p>本文将介绍常见系统的环境变量设置</p>
+<h2 id="linux">Linux
+</h2><h3 id="bash">Bash
+</h3><p>配置环境变量的文件</p>
+<ul>
+<li><code>.bashrc</code></li>
+<li><code>.bash_profile</code></li>
+<li><code>.profile</code></li>
+<li><code>/etc/profile</code></li>
+<li><code>/etc/profile.d/*</code></li>
+</ul>
+<h3 id="zsh">Zsh
+</h3><p>配置环境变量的文件</p>
+<ul>
+<li><code>.zshrc</code></li>
+<li><code>.zsh_profile</code></li>
+<li><code>/etc/profile</code></li>
+<li><code>/etc/profile.d/*</code></li>
+</ul>
+<h2 id="windows">Windows
+</h2><h3 id="界面编辑">界面编辑
+</h3><p>打开<code>环境变量</code>设置界面的几种方式</p>
+<ul>
+<li><code>win+s</code> 搜索 <code>环境变量</code>，点击 <code>编辑系统环境变量</code>，<code>高级</code> -&gt; <code>环境变量</code></li>
+<li>如果桌面有 <code>此电脑</code>，右键 <code>此电脑</code>，点击<code>属性</code>，打开<code>关于</code>，右侧找到并点击 <code>高级系统设置</code> ，点击<code>环境变量</code></li>
+<li><code>win+i</code>打开设置，点击 <code>系统</code>，左侧下滑点击 <code>关于</code> ，右侧找到并点击 <code>高级系统设置</code> ，点击<code>环境变量</code></li>
+<li>&hellip;</li>
+</ul>
+<p>方式很多，还有控制面板也可以打开</p>
+<p>打开<code>环境变量</code>设置界面之后，就可以新建了。</p>
+<p>如果要让 <code>cmd</code>或者<code>powershell</code> 中任何位置可以执行程序，需要在 <code>Path</code> 增加指定的程序所在路径</p>
+<h3 id="cmd">CMD
+</h3><p><strong>查看所有的环境变量</strong></p>
+<p>它会混合显示用户环境变量、系统环境变量和当前会话中临时设置的变量</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot --version
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">set</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="插件">插件
-</h1><p>查看已经安装的插件</p>
+</div><p><strong>查看指定的环境变量</strong></p>
+<p>例如：查看 path 环境变量值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot plugins
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">path</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="nginx">nginx
-</h2><p>使用snap安装的版本是已经有的，申请方法为：</p>
-<p>（1）先新建一个 nginx的配置文件，如 <code>/etc/nginx/conf.d/abc.conf</code></p>
-<p>（2）编辑 <code>abc.conf</code>，填入以下模板，<strong>根据自己实际情况修改</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    server_name domain.com<span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:80<span class="p">;</span>  <span class="c1"># 替换为你的应用程序地址</span>
-</span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-Proto <span class="nv">$scheme</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>（3）使用 certbot 的nginx插件申请</p>
+</div><p><strong>设置当前会话环境变量</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 可以先查看哪些可以申请，是否列出了需要的域名</span>
-</span></span><span class="line"><span class="cl">sudo certbot --nginx
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">MYENV</span><span class="p">=</span>myenv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>取消当前会话环境变量</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">MYENV</span><span class="p">=</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>设置永久用户环境变量</strong></p>
+<p>例如：设置一个名为 <code>MY_USER_ENV</code>，变量值为 <code>my_user_env</code>的系统环境变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">setx MY_USER_ENV <span class="s2">&#34;my_user_env&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>额外的，申请前保证域名解析到当前的ip</p>
+<p>查看刚才设置的环境变量，需要新开会话才会生效。
+set MY_USER_ENV</p>
 </blockquote>
-<h2 id="certbot-dns-dnspod">certbot-dns-dnspod
-</h2><p>此插件用于dns申请的，好处可以用于申请泛域名证书证书。也就是像 <code>*.seektao.cc</code>这种，一次申请，到处使用，方便至极。</p>
-<p>certbot-dns-dnspod 是dnspod的插件，默认的certbot是没有的，需要手动安装</p>
+<p><strong>取消永久用户环境变量</strong></p>
 <blockquote>
-<p>Github地址</p>
-<p><a class="link" href="https://github.com/tengattack/certbot-dns-dnspod"  target="_blank" rel="noopener"
-    >https://github.com/tengattack/certbot-dns-dnspod</a></p>
+<p>这样做只是修改变量为空值，没有真正删除变量</p>
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo snap install certbot-dns-dnspod
-</span></span><span class="line"><span class="cl">sudo snap <span class="nb">set</span> certbot trust-plugin-with-root<span class="o">=</span>ok
-</span></span><span class="line"><span class="cl">sudo snap connect certbot:plugin certbot-dns-dnspod
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">setx MY_USER_ENV <span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>设置永久系统环境变量（管理员权限）</strong></p>
+<ul>
+<li>需要加一个参数 <code>/m</code>，</li>
+<li>需要用管理员权限打开 CMD</li>
+</ul>
+<p>例如：设置一个名为 <code>SYSMYENV</code>，变量值为 <code>sysmyenv</code>的系统环境变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">setx /m MY_SYS_ENV <span class="s2">&#34;my_sys_env&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>取消永久系统环境变量（管理员权限）</strong></p>
+<blockquote>
+<p>这样做只是修改变量为空值，没有真正删除变量</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">setx /m MY_SYS_ENV <span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="powershell">PowerShell
+</h3><p><strong>查看所有的环境变量</strong></p>
+<p>它会混合显示用户环境变量、系统环境变量和当前会话中临时设置的变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-ChildItem</span> <span class="n">Env</span><span class="err">:</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>查看指定的环境变量</strong></p>
+<p>例如：查看 path 环境变量值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:Path</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>设置当前会话环境变量</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">$env:MYENV</span> <span class="p">=</span> <span class="s2">&#34;myenv&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>取消当前会话环境变量</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Remove-Item</span> <span class="n">Env</span><span class="err">:</span><span class="n">MYENV</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>设置永久用户环境变量</strong></p>
+<p>例如：设置一个名为 <code>MY_USER_ENV</code>，变量值为 <code>my_user_env</code>的系统环境变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&#34;MY_USER_ENV&#34;</span><span class="p">,</span> <span class="s2">&#34;my_user_env&#34;</span><span class="p">,</span> <span class="s2">&#34;User&#34;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>pip</p>
-<p>sudo pip install git+https://github.com/tengattack/certbot-dns-dnspod.git</p>
+<p>查看刚才设置的环境变量，需要新开会话才会生效。
+$env:MY_USER_ENV</p>
 </blockquote>
-<p>安装完成之后新建一个 .ini文件，比如 /etc/certbot/dnspod.ini</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir /etc/certbot
-</span></span><span class="line"><span class="cl">sudo touch /etc/certbot/dnspod.ini
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>编辑 dnspod.ini，填入下面的内容，<a class="link" href="https://console.dnspod.cn/account/token/token"  target="_blank" rel="noopener"
-    >点此跳转到dnspod api 申请页面</a>，注意申请的是dnspod token</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-vim" data-lang="vim"><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_id</span> <span class="p">=</span> <span class="m">12345</span>
-</span></span><span class="line"><span class="cl"><span class="nx">dns_dnspod_api_token</span> <span class="p">=</span> <span class="m">1234567890</span>abcdef<span class="m">1234567890</span>abcdef
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo chmod <span class="m">600</span> /etc/certbot/dnspod.ini
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>申请，替换为自己的域名</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot certonly -a dns-dnspod <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --dns-dnspod-credentials /etc/certbot/dnspod.ini <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d seektao.cc <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    -d <span class="s2">&#34;*.seektao.cc&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">接着就是:
-</span></span><span class="line"><span class="cl">输入邮箱，
-</span></span><span class="line"><span class="cl">是否同意注册acme（选Y），
-</span></span><span class="line"><span class="cl">是否同意发送邮件。。。看自己吧
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">接着等待，等待。。就完成了
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>通过日志可以看到证书文件保存在  <code>/etc/letsencrypt/live</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 其中 </span>
-</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/privkey.pem：证书的私钥。
-</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/fullchain.pem：在大多数服务器软件中使用的证书文件。
-</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/chain.pem：在Nginx &gt;<span class="o">=</span>1.3.7 中用于 OCSP stapling。
-</span></span><span class="line"><span class="cl"><span class="o">[</span>cert name<span class="o">]</span>/cert.pem：会破坏许多服务器配置，不应在未进一步阅读文档的情况下使用。
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>我们用到  privkey.pem，fullchain.pem即可。</p>
-<p>此节关于 dnspod 申请ssl证书就是如此。</p>
-<h2 id="certbot-dns-cloudflare">certbot-dns-cloudflare
-</h2><blockquote>
-<p>帮助文档：https://certbot-dns-cloudflare.readthedocs.io/en/stable/</p>
-</blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo snap install certbot-dns-cloudflare
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 如果提示如下信息，输入：sudo snap set certbot trust-plugin-with-root=ok</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 接着重新执行 sudo snap install certbot-dns-cloudflare</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">error: cannot perform the following tasks:
-</span></span><span class="line"><span class="cl">- Run hook prepare-plug-plugin of snap <span class="s2">&#34;certbot&#34;</span> <span class="o">(</span>run hook <span class="s2">&#34;prepare-plug-plugin&#34;</span>: 
-</span></span><span class="line"><span class="cl">-----
-</span></span><span class="line"><span class="cl">Only connect this interface <span class="k">if</span> you trust the plugin author to have root on the system.
-</span></span><span class="line"><span class="cl">Run <span class="sb">`</span>snap <span class="nb">set</span> certbot trust-plugin-with-root<span class="o">=</span>ok<span class="sb">`</span> to acknowledge this and <span class="k">then</span> run this <span class="nb">command</span> again to perform the connection.
-</span></span><span class="line"><span class="cl">If that doesn<span class="err">&#39;</span>t work, you may need to remove all certbot-dns-* plugins from the system, <span class="k">then</span> try installing the certbot snap again.
-</span></span><span class="line"><span class="cl">-----<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>申请api token，<a class="link" href="https://dash.cloudflare.com/?to=/:account/profile/api-tokens"  target="_blank" rel="noopener"
-    >点此跳转</a></p>
-<p>新建 cloudflare.ini，将下面的值替换为刚才自己申请的</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Cloudflare API token used by Certbot</span>
-</span></span><span class="line"><span class="cl"><span class="nv">dns_cloudflare_api_token</span> <span class="o">=</span> 0123456789abcdef0123456789abcdef01234567
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>建议修改权限</p>
+<p><strong>取消永久用户环境变量</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo chmod <span class="m">600</span> cloudflare.ini
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&#34;MY_USER_ENV&#34;</span><span class="p">,</span> <span class="vm">$null</span><span class="p">,</span> <span class="s2">&#34;User&#34;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>申请方式：将以下的文件和域名替换为自己的
-（1）</p>
+</div><p><strong>设置永久系统环境变量（管理员权限）</strong></p>
+<ul>
+<li>需要用管理员权限打开 PowerShell</li>
+</ul>
+<p>例如：设置一个名为 <code>MY_SYS_ENV</code>，变量值为 <code>my_sys_env</code>的系统环境变量</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot certonly <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --dns-cloudflare <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -d example.com
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&#34;MY_SYS_ENV&#34;</span><span class="p">,</span> <span class="s2">&#34;my_sys_env&#34;</span><span class="p">,</span> <span class="s2">&#34;Machine&#34;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>（2）</p>
+</div><p><strong>取消永久系统环境变量（管理员权限）</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo certbot certonly <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --dns-cloudflare <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --dns-cloudflare-credentials ~/.secrets/certbot/cloudflare.ini <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -d example.com <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -d www.example.com
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">[</span><span class="no">Environment</span><span class="p">]::</span><span class="n">SetEnvironmentVariable</span><span class="p">(</span><span class="s2">&#34;MY_SYS_ENV&#34;</span><span class="p">,</span> <span class="vm">$null</span><span class="p">,</span> <span class="s2">&#34;Machine&#34;</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="自动续期">自动续期
-</h1><p>自动续期添加一个定时任务即可</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 设置定时任务</span>
-</span></span><span class="line"><span class="cl">sudo crontab -e
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 每月1号的午夜执行 certbot renew 命令来续订证书</span>
-</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">0</span> <span class="m">1</span> * * /usr/local/bin/certbot renew
-</span></span></code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>需要注意自己的certbot执行路径是否正确</p>
-<p><code>which certbot</code> 可以看到certbot执行路径</p>
-</blockquote>
-<blockquote>
-<p>关于续期的更多文档可以观看</p>
-<p><a class="link" href="https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal"  target="_blank" rel="noopener"
-    >https://eff-certbot.readthedocs.io/en/latest/using.html#setting-up-automated-renewal</a></p>
-</blockquote>
-
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/certbot/">Certbot</a>
-        
-            <a href="/tags/nginx/">Nginx</a>
-        
-    </section>
-
 
     <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -731,12 +579,12 @@
             
                 
 <article class="">
-    <a href="/p/2403007/">
+    <a href="/p/250319084854/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Nginx篇：通过apt的nginx官方仓库安装</h2>
+            <h2 class="article-title">Nginx安装，配置</h2>
         </div>
     </a>
 </article>
@@ -744,12 +592,12 @@
             
                 
 <article class="">
-    <a href="/p/250310184501/">
+    <a href="/p/250319082032/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux设置时间，时区</h2>
+            <h2 class="article-title">acme.sh命令</h2>
         </div>
     </a>
 </article>
@@ -757,12 +605,12 @@
             
                 
 <article class="">
-    <a href="/p/250310143156/">
+    <a href="/p/250317101543/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Ubuntu设置sudo无须密码</h2>
+            <h2 class="article-title">nezha-agent安装</h2>
         </div>
     </a>
 </article>
@@ -770,12 +618,12 @@
             
                 
 <article class="">
-    <a href="/p/250310142923/">
+    <a href="/p/250316222249/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Ubuntu修改默认编辑器</h2>
+            <h2 class="article-title">cloudflare域名大全</h2>
         </div>
     </a>
 </article>
@@ -783,12 +631,12 @@
             
                 
 <article class="">
-    <a href="/p/250308113448/">
+    <a href="/p/250314134058/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux忘记root账户密码恢复办法</h2>
+            <h2 class="article-title">Obsidian设置图片为markdown标准格式</h2>
         </div>
     </a>
 </article>
