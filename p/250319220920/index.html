@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简述 LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。 ✨ Features 🔥 Transform your Neovim into a full-fledged IDE 💤 Easily customize and extend your config with lazy.nvim 🚀 Blazingly fast 🧹 Sane default settings for options, autocmds, and keymaps 📦 Comes with a wealth of plugins">
-<title>LazyVim安装配置</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="External Player 使用外部播放器播放网页中的视频 支持的网站 yt-dlp 支持的网站 B 站 B 站直播 樱花动漫 Girigiri 爱动漫 / Girigiri 爱动漫 LIBVIO 吐槽弹幕网 萌番动漫馆 巴哈姆特 官方 GitHub 仓库：ht">
+<title>MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/241025162917/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250319220920/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="LazyVim安装配置">
-<meta property='og:description' content="简述 LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。 ✨ Features 🔥 Transform your Neovim into a full-fledged IDE 💤 Easily customize and extend your config with lazy.nvim 🚀 Blazingly fast 🧹 Sane default settings for options, autocmds, and keymaps 📦 Comes with a wealth of plugins">
-<meta property='og:url' content='https://hublog.netlify.app/p/241025162917/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA">
+<meta property='og:description' content="External Player 使用外部播放器播放网页中的视频 支持的网站 yt-dlp 支持的网站 B 站 B 站直播 樱花动漫 Girigiri 爱动漫 / Girigiri 爱动漫 LIBVIO 吐槽弹幕网 萌番动漫馆 巴哈姆特 官方 GitHub 仓库：ht">
+<meta property='og:url' content='https://hublog.netlify.app/p/250319220920/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vim' /><meta property='article:tag' content='neovim' /><meta property='article:published_time' content='2024-10-25T16:29:17&#43;08:00'/><meta property='article:modified_time' content='2024-10-25T16:34:31&#43;08:00'/>
-<meta name="twitter:title" content="LazyVim安装配置">
-<meta name="twitter:description" content="简述 LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。 ✨ Features 🔥 Transform your Neovim into a full-fledged IDE 💤 Easily customize and extend your config with lazy.nvim 🚀 Blazingly fast 🧹 Sane default settings for options, autocmds, and keymaps 📦 Comes with a wealth of plugins">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mpv' /><meta property='article:published_time' content='2025-03-19T22:09:20&#43;08:00'/><meta property='article:modified_time' content='2025-03-19T22:09:20&#43;08:00'/>
+<meta name="twitter:title" content="MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA">
+<meta name="twitter:description" content="External Player 使用外部播放器播放网页中的视频 支持的网站 yt-dlp 支持的网站 B 站 B 站直播 樱花动漫 Girigiri 爱动漫 / Girigiri 爱动漫 LIBVIO 吐槽弹幕网 萌番动漫馆 巴哈姆特 官方 GitHub 仓库：ht">
   
 
 
@@ -267,19 +267,13 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简述">简述</a>
+    <li><a href="#external-player">External Player</a>
       <ol>
-        <li><a href="#-features">✨ Features</a></li>
-        <li><a href="#-requirements">⚡️ Requirements</a></li>
+        <li><a href="#安装">安装</a></li>
       </ol>
     </li>
-    <li><a href="#安装">安装</a>
-      <ol>
-        <li><a href="#linuxmacos">Linux/MacOS</a></li>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#linuxmacos-1">Linux/MacOS</a></li>
-      </ol>
-    </li>
+    <li><a href="#url-scheme-handler">URL Scheme Handler</a></li>
+    <li><a href="#油猴插件">油猴插件</a></li>
   </ol>
 </nav>
         </div>
@@ -307,7 +301,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/241025162917/">LazyVim安装配置</a>
+            <a href="/p/250319220920/">MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA</a>
         </h2>
     
         
@@ -329,7 +323,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Oct 25, 2024</time>
+                <time class="article-time--published">Mar 19, 2025</time>
             </div>
         
 
@@ -345,170 +339,53 @@
     <section class="article-content">
     
     
-    <h2 id="简述">简述
-</h2><p>LazyVim 是一个由 lazy.nvim 支持的 Neovim 安装程序，可以方便地定制和扩展您的配置。</p>
-<p><img src="https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-<h3 id="-features">✨ Features
-</h3><ul>
-<li>🔥 Transform your Neovim into a full-fledged IDE</li>
-<li>💤 Easily customize and extend your config with <a class="link" href="https://github.com/folke/lazy.nvim"  target="_blank" rel="noopener"
-    >lazy.nvim</a></li>
-<li>🚀 Blazingly fast</li>
-<li>🧹 Sane default settings for options, autocmds, and keymaps</li>
-<li>📦 Comes with a wealth of plugins pre-configured and ready to use</li>
-</ul>
-<h3 id="-requirements">⚡️ Requirements
-</h3><ul>
-<li>
-<p>Neovim &gt;= <strong>0.9.0</strong> (needs to be built with <strong>LuaJIT</strong>)</p>
-</li>
-<li>
-<p>Git &gt;= <strong>2.19.0</strong> (for partial clones support)</p>
-</li>
-<li>
-<p>a <a class="link" href="https://www.nerdfonts.com/"  target="_blank" rel="noopener"
-    >Nerd Font</a>(v3.0 or greater) *<strong>(optional, but needed to display some icons)*</strong></p>
-</li>
-<li>
-<p><a class="link" href="https://github.com/jesseduffield/lazygit"  target="_blank" rel="noopener"
-    >lazygit</a> *<strong>(optional)*</strong></p>
-</li>
-<li>
-<p>a <strong>C</strong> compiler for <code>nvim-treesitter</code>. See <a class="link" href="https://github.com/nvim-treesitter/nvim-treesitter#requirements"  target="_blank" rel="noopener"
-    >here</a></p>
-</li>
-<li>
-<p>for <code>telescope.nvim</code>  <em>(optional)</em></p>
+    <h2 id="external-player">External Player
+</h2><p>使用外部播放器播放网页中的视频</p>
+<p>支持的网站</p>
 <ul>
-<li><strong>live grep</strong>: <a class="link" href="https://github.com/BurntSushi/ripgrep"  target="_blank" rel="noopener"
-    >ripgrep</a></li>
-<li><strong>find files</strong>: <a class="link" href="https://github.com/sharkdp/fd"  target="_blank" rel="noopener"
-    >fd</a></li>
+<li><a class="link" href="https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md"  target="_blank" rel="noopener"
+    >yt-dlp 支持的网站</a></li>
+<li><a class="link" href="https://www.bilibili.com"  target="_blank" rel="noopener"
+    >B 站</a></li>
+<li><a class="link" href="https://live.bilibili.com"  target="_blank" rel="noopener"
+    >B 站直播</a></li>
+<li><a class="link" href="https://916dm.fans"  target="_blank" rel="noopener"
+    >樱花动漫</a></li>
+<li><a class="link" href="https://anime.girigirilove.com"  target="_blank" rel="noopener"
+    >Girigiri 爱动漫</a> / <a class="link" href="https://anime.girigirilove.icu"  target="_blank" rel="noopener"
+    >Girigiri 爱动漫</a></li>
+<li><a class="link" href="https://www.libvio.app"  target="_blank" rel="noopener"
+    >LIBVIO</a></li>
+<li><a class="link" href="https://www.tucao.my"  target="_blank" rel="noopener"
+    >吐槽弹幕网</a></li>
+<li><a class="link" href="https://www.moepoi.net"  target="_blank" rel="noopener"
+    >萌番动漫馆</a></li>
+<li><a class="link" href="https://ani.gamer.com.tw"  target="_blank" rel="noopener"
+    >巴哈姆特</a></li>
 </ul>
-</li>
-<li>
-<p>a terminal that support true color and  undercurl :</p>
+<p>官方 GitHub 仓库：<a class="link" href="https://github.com/LuckyPuppy514/external-player"  target="_blank" rel="noopener"
+    >https://github.com/LuckyPuppy514/external-player</a></p>
+<h3 id="安装">安装
+</h3><ol>
+<li>安装油猴插件：<a class="link" href="https://www.tampermonkey.net/index.php"  target="_blank" rel="noopener"
+    >https://www.tampermonkey.net/index.php</a></li>
+<li>安装脚本：<a class="link" href="https://greasyfork.org/zh-CN/scripts/518677-external-player"  target="_blank" rel="noopener"
+    >https://greasyfork.org/zh-CN/scripts/518677-external-player</a></li>
+<li>安装 URL Scheme Handler</li>
+</ol>
+<h2 id="url-scheme-handler">URL Scheme Handler
+</h2><p>为 Windows 应用添加自定义 URL Scheme 以便从浏览器调用</p>
+<p>项目地址：<a class="link" href="https://github.com/LuckyPuppy514/url-scheme-handler"  target="_blank" rel="noopener"
+    >https://github.com/LuckyPuppy514/url-scheme-handler</a></p>
+<p>下载地址：</p>
 <ul>
-<li><a class="link" href="https://github.com/kovidgoyal/kitty"  target="_blank" rel="noopener"
-    >kitty</a> *<strong>(Linux &amp; Macos)*</strong></li>
-<li><a class="link" href="https://github.com/wez/wezterm"  target="_blank" rel="noopener"
-    >wezterm</a> *<strong>(Linux, Macos &amp; Windows)*</strong></li>
-<li><a class="link" href="https://github.com/alacritty/alacritty"  target="_blank" rel="noopener"
-    >alacritty</a> *<strong>(Linux, Macos &amp; Windows)*</strong></li>
-<li><a class="link" href="https://iterm2.com/"  target="_blank" rel="noopener"
-    >iterm2</a> *<strong>(Macos)*</strong></li>
+<li>scheme-handler.exe：<a class="link" href="https://github.com/LuckyPuppy514/url-scheme-handler/releases/download/v1.0.4/url-scheme-handler.exe"  target="_blank" rel="noopener"
+    >v1.0.4</a></li>
 </ul>
-</li>
-</ul>
-<h2 id="安装">安装
-</h2><h3 id="linuxmacos">Linux/MacOS
-</h3><p>Make a backup of your current Neovim files:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># required</span>
-</span></span><span class="line"><span class="cl">mv ~/.config/nvim<span class="o">{</span>,.bak<span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># optional but recommended</span>
-</span></span><span class="line"><span class="cl">mv ~/.local/share/nvim<span class="o">{</span>,.bak<span class="o">}</span>
-</span></span><span class="line"><span class="cl">mv ~/.local/state/nvim<span class="o">{</span>,.bak<span class="o">}</span>
-</span></span><span class="line"><span class="cl">mv ~/.cache/nvim<span class="o">{</span>,.bak<span class="o">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Clone the starter</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://github.com/LazyVim/starter ~/.config/nvim
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Remove the <code>.git</code> folder, so you can add it to your own repo later</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rm -rf ~/.config/nvim/.git
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Start Neovim!</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">nvim
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Refer to the comments in the files on how to customize <strong>LazyVim</strong>.</p>
-<h3 id="windows">Windows
-</h3><p>Install the <a class="link" href="https://github.com/LazyVim/starter"  target="_blank" rel="noopener"
-    >LazyVim Starter</a> with <a class="link" href="https://github.com/PowerShell/PowerShell"  target="_blank" rel="noopener"
-    >PowerShell</a></p>
-<p>Make a backup of your current Neovim files:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># required</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Move-Item</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="n">nvim</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="n">nvim</span><span class="p">.</span><span class="py">bak</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># optional but recommended</span>
-</span></span><span class="line"><span class="cl"><span class="nb">Move-Item</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="nb">nvim-data</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="nb">nvim-data</span><span class="p">.</span><span class="py">bak</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Clone the starter</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">LazyVim</span><span class="p">/</span><span class="n">starter</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="n">nvim</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Remove the <code>.git</code> folder, so you can add it to your own repo later</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Remove-Item</span> <span class="nv">$env:LOCALAPPDATA</span><span class="p">\</span><span class="n">nvim</span><span class="p">\.</span><span class="py">git</span> <span class="n">-Recurse</span> <span class="n">-Force</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Start Neovim!</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nvim</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Refer to the comments in the files on how to customize <strong>LazyVim</strong>.</p>
-<h3 id="linuxmacos-1">Linux/MacOS
-</h3>
+<h2 id="油猴插件">油猴插件
+</h2><p>地址：<a class="link" href="https://www.tampermonkey.net/index.php"  target="_blank" rel="noopener"
+    >https://www.tampermonkey.net/index.php</a></p>
+
 </section>
 
 
@@ -516,54 +393,16 @@
     
     <section class="article-tags">
         
-            <a href="/tags/vim/">Vim</a>
-        
-            <a href="/tags/neovim/">Neovim</a>
+            <a href="/tags/mpv/">Mpv</a>
         
     </section>
 
 
-    <section class="article-lastmod">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <span>
-            最后更新于 Oct 25, 2024 16:34 &#43;0800
-        </span>
-    </section><section>
+    <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -577,13 +416,38 @@
         <div class="flex article-list--tile">
             
                 
-<article class="">
-    <a href="/p/vim-keyborad/">
+<article class="has-image">
+    <a href="/p/241013175136/">
         
+        
+            <div class="article-image">
+                
+                    <img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" loading="lazy" data-key="&#34;241013175136&#34;" data-hash="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png"/>
+                
+            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">VIM的快捷键</h2>
+            <h2 class="article-title">MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/241009155809/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" loading="lazy" data-key="&#34;241009155809&#34;" data-hash="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MPV播放器入门指南-第三期-快捷键</h2>
         </div>
     </a>
 </article>
@@ -591,12 +455,12 @@
             
                 
 <article class="">
-    <a href="/p/2310022/">
+    <a href="/p/2312012/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">VIM的配置</h2>
+            <h2 class="article-title">MPV播放器入门指南-第二期-脚本-第一期：自动连播</h2>
         </div>
     </a>
 </article>
@@ -604,12 +468,12 @@
             
                 
 <article class="">
-    <a href="/p/250319220920/">
+    <a href="/p/2312007/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA</h2>
+            <h2 class="article-title">MPV播放器入门指南-第一期-带你走进命令行播放器的世界</h2>
         </div>
     </a>
 </article>
@@ -623,19 +487,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Nginx安装，配置</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250319082032/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">acme.sh命令</h2>
         </div>
     </a>
 </article>

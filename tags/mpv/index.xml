@@ -7,7 +7,61 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 13 Oct 2024 17:51:36 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/mpv/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 19 Mar 2025 22:09:20 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/mpv/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA</title>
+        <link>https://hublog.netlify.app/p/250319220920/</link>
+        <pubDate>Wed, 19 Mar 2025 22:09:20 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250319220920/</guid>
+        <description>&lt;h2 id=&#34;external-player&#34;&gt;External Player
+&lt;/h2&gt;&lt;p&gt;使用外部播放器播放网页中的视频&lt;/p&gt;
+&lt;p&gt;支持的网站&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;yt-dlp 支持的网站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B 站&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://live.bilibili.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;B 站直播&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://916dm.fans&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;樱花动漫&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://anime.girigirilove.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Girigiri 爱动漫&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;https://anime.girigirilove.icu&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Girigiri 爱动漫&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.libvio.app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LIBVIO&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.tucao.my&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;吐槽弹幕网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.moepoi.net&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;萌番动漫馆&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://ani.gamer.com.tw&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;巴哈姆特&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;官方 GitHub 仓库：&lt;a class=&#34;link&#34; href=&#34;https://github.com/LuckyPuppy514/external-player&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/LuckyPuppy514/external-player&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;安装油猴插件：&lt;a class=&#34;link&#34; href=&#34;https://www.tampermonkey.net/index.php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.tampermonkey.net/index.php&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装脚本：&lt;a class=&#34;link&#34; href=&#34;https://greasyfork.org/zh-CN/scripts/518677-external-player&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://greasyfork.org/zh-CN/scripts/518677-external-player&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;安装 URL Scheme Handler&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;url-scheme-handler&#34;&gt;URL Scheme Handler
+&lt;/h2&gt;&lt;p&gt;为 Windows 应用添加自定义 URL Scheme 以便从浏览器调用&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/LuckyPuppy514/url-scheme-handler&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/LuckyPuppy514/url-scheme-handler&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;scheme-handler.exe：&lt;a class=&#34;link&#34; href=&#34;https://github.com/LuckyPuppy514/url-scheme-handler/releases/download/v1.0.4/url-scheme-handler.exe&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;v1.0.4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;油猴插件&#34;&gt;油猴插件
+&lt;/h2&gt;&lt;p&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://www.tampermonkey.net/index.php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.tampermonkey.net/index.php&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</title>
         <link>https://hublog.netlify.app/p/241013175136/</link>
         <pubDate>Sun, 13 Oct 2024 17:51:36 +0800</pubDate>
