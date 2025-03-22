@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
-<title>V2rayA，跨平台的V2Ray客户端，网页端控制</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 v2rayA 是一款使用 Golang 和 Vue.js 编写的轻量级代理工具，旨在为几乎所有应用程序提供代理服务，无需考虑应用程序本身是否支持代理。 核心特性： 全局透明代理： 在">
+<title>v2rayA，跨平台的V2Ray客户端，网页端控制</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2309009/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="V2rayA，跨平台的V2Ray客户端，网页端控制">
-<meta property='og:description' content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="v2rayA，跨平台的V2Ray客户端，网页端控制">
+<meta property='og:description' content="概述 v2rayA 是一款使用 Golang 和 Vue.js 编写的轻量级代理工具，旨在为几乎所有应用程序提供代理服务，无需考虑应用程序本身是否支持代理。 核心特性： 全局透明代理： 在">
 <meta property='og:url' content='https://hublog.netlify.app/p/2309009/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='v2raya' /><meta property='article:tag' content='v2ray' /><meta property='article:tag' content='proxy' /><meta property='article:published_time' content='2023-09-10T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2025-03-02T22:12:49&#43;08:00'/>
-<meta name="twitter:title" content="V2rayA，跨平台的V2Ray客户端，网页端控制">
-<meta name="twitter:description" content="概述 V2rayA 是一个跨平台的 V2Ray 客户端 官网：https://v2raya.org/ 安装 Debian/Ubuntu 方法一：通过软件源安装 添加公钥 1 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc 添加 V2RayA 软件源 1">
+<meta name="twitter:title" content="v2rayA，跨平台的V2Ray客户端，网页端控制">
+<meta name="twitter:description" content="概述 v2rayA 是一款使用 Golang 和 Vue.js 编写的轻量级代理工具，旨在为几乎所有应用程序提供代理服务，无需考虑应用程序本身是否支持代理。 核心特性： 全局透明代理： 在">
   
 
 
@@ -274,24 +274,25 @@
           <ol>
             <li><a href="#方法一通过软件源安装">方法一：通过软件源安装</a></li>
             <li><a href="#方法二手动安装-deb-包">方法二：手动安装 deb 包</a></li>
-            <li><a href="#启动-v2raya">启动 v2raya</a></li>
+            <li><a href="#启动-v2raya--设置-v2raya-自动启动">启动 v2raya / 设置 v2rayA 自动启动</a></li>
           </ol>
         </li>
         <li><a href="#docker">Docker</a>
           <ol>
-            <li><a href="#docker-1">docker</a></li>
-            <li><a href="#docker-compose">docker-compose</a></li>
+            <li><a href="#方式一始终使用最新版">方式一：始终使用最新版</a></li>
+            <li><a href="#方式二获取指定版本">方式二：获取指定版本</a></li>
+            <li><a href="#更新-v2raya">更新 v2rayA</a></li>
           </ol>
         </li>
         <li><a href="#windows">Windows</a>
           <ol>
             <li><a href="#通过-winget-自动安装">通过 WinGet 自动安装</a></li>
             <li><a href="#手动运行安装包">手动运行安装包</a></li>
-            <li><a href="#使用方式">使用方式</a></li>
           </ol>
         </li>
       </ol>
     </li>
+    <li><a href="#使用方式">使用方式</a></li>
     <li><a href="#免费节点">免费节点</a></li>
   </ol>
 </nav>
@@ -320,7 +321,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2309009/">V2rayA，跨平台的V2Ray客户端，网页端控制</a>
+            <a href="/p/2309009/">v2rayA，跨平台的V2Ray客户端，网页端控制</a>
         </h2>
     
         
@@ -359,7 +360,45 @@
     
     
     <h2 id="概述">概述
-</h2><p>V2rayA 是一个跨平台的 V2Ray 客户端</p>
+</h2><p>v2rayA 是一款使用 Golang 和 Vue.js 编写的轻量级代理工具，旨在为几乎所有应用程序提供代理服务，无需考虑应用程序本身是否支持代理。</p>
+<p><strong>核心特性：</strong></p>
+<ul>
+<li><strong>全局透明代理：</strong>
+<ul>
+<li>在 Linux 系统，v2rayA 支持一键开启透明代理，省去了繁琐的配置操作。</li>
+<li>在 Windows 和 MacOS 支持一键配置系统代理。</li>
+</ul>
+</li>
+<li><strong>强大而轻便 ⚡️：</strong>
+<ul>
+<li>运行时没有任何外部依赖库，可跨平台运行。</li>
+<li>借助任意一款浏览器均可操作。</li>
+</ul>
+</li>
+<li><strong>外部访问：</strong>
+<ul>
+<li>对于无图形界面的操作系统，安装 v2rayA 后，借助另一台 PC 或移动设备即可完成对其的操作。</li>
+<li>这对于远程服务器、路由器是极其方便的。</li>
+</ul>
+</li>
+<li><strong>多出站负载均衡和分流：</strong>
+<ul>
+<li>v2rayA 允许用户创建和连接多个出站节点，以实现负载均衡及分流。</li>
+</ul>
+</li>
+<li><strong>RoutingA 自定义路由：</strong>
+<ul>
+<li>RoutingA 是 v2rayA 专为 V2Ray 设计的一种路由语言。</li>
+<li>为分流提供强大而便捷的支持。</li>
+</ul>
+</li>
+<li><strong>多种策略应对 DNS 污染：</strong>
+<ul>
+<li>v2rayA 提供多种策略应对 DNS 污染。</li>
+<li>高级设置可为用户提供更多的客制化定义。</li>
+</ul>
+</li>
+</ul>
 <p>官网：<a class="link" href="https://v2raya.org/"  target="_blank" rel="noopener"
     >https://v2raya.org/</a></p>
 <h2 id="安装">安装
@@ -394,9 +433,10 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install v2raya v2ray <span class="c1">## 也可以使用 xray 包</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>安装完成之后请看 <code>启动v2raya</code></p>
-<h4 id="方法二手动安装-deb-包">方法二：手动安装 deb 包
-</h4><p>下载地址：</p>
+</div><h4 id="方法二手动安装-deb-包">方法二：手动安装 deb 包
+</h4><p><a class="link" href="https://github.com/v2rayA/v2rayA/releases"  target="_blank" rel="noopener"
+    >从 Release 下载 v2rayA 的 deb 包</a> 后可以使用 Gdebi、QApt 等图形化工具来安装，也可以使用命令行：</p>
+<p>下载地址：</p>
 <p>v2raya: <a class="link" href="https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2ray"  target="_blank" rel="noopener"
     >https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2ray</a></p>
 <p>v2ray: <a class="link" href="https://github.com/v2rayA/v2raya-apt/tree/master/pool/main/v/v2raya"  target="_blank" rel="noopener"
@@ -404,7 +444,6 @@
 <p>使用国内网盘：</p>
 <p>123: <a class="link" href="https://www.123pan.com/s/4MOKVv-52Ppd.html"  target="_blank" rel="noopener"
     >https://www.123pan.com/s/4MOKVv-52Ppd.html</a>提取码:7F4p</p>
-<p>下载之后可以使用 Gdebi、QApt 等图形化工具来安装，也可以使用命令行：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -413,8 +452,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install ****.deb <span class="c1">### 自行替换 deb 包所在的实际路径</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>安装完成之后请看 <code>启动v2raya</code></p>
-<h4 id="启动-v2raya">启动 v2raya
+</div><h4 id="启动-v2raya--设置-v2raya-自动启动">启动 v2raya / 设置 v2rayA 自动启动
 </h4><blockquote>
 <p>从 1.5 版开始将不再默认为用户启动 v2rayA 及设置开机自动。</p>
 </blockquote>
@@ -424,7 +462,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start v2raya.service v2ray.service
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start v2raya.service
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>设置开机自动启动</p>
@@ -433,20 +471,234 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> v2raya.service v2ray.service
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> v2raya.service
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>web 访问</p>
+</div><h3 id="docker">Docker
+</h3><p>Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。</p>
+<h4 id="方式一始终使用最新版">方式一：始终使用最新版
+</h4><p>获取镜像</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">localhost:2017
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull mzz2017/v2raya
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="docker">Docker
-</h3><style type="text/css">
+</div><p>运行 v2rayA</p>
+<p>停止正在运行的版本（如果存在）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker container stop v2raya
+</span></span><span class="line"><span class="cl">docker container rm v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<ol>
+<li><code>V2RAYA_V2RAY_BIN</code> 的值应当是 <code>/usr/local/bin/v2ray</code> 或 <code>/usr/local/bin/xray</code>，默认的核心是 xray。</li>
+<li>如果你的宿主系统使用原生的 nftables，那么就把 <code>V2RAYA_NFTABLES_SUPPORT</code> 设置为 <code>on</code>。 3.你的宿主系统使用 iptables，那么可以通过 <code>IPTABLES_MODE</code> 变量来指定后端，将该变量的值设置为 <code>nftables</code> 将使用 nft 后端，设置为 <code>legacy</code> 将使用传统后端。</li>
+</ol>
+</blockquote>
+<p>以下是一个使用传统后端的示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network<span class="o">=</span>host <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_V2RAY_BIN</span><span class="o">=</span>/usr/local/bin/v2ray <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_NFTABLES_SUPPORT</span><span class="o">=</span>off <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">IPTABLES_MODE</span><span class="o">=</span>legacy <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /lib/modules:/lib/modules:ro <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/resolv.conf:/etc/resolv.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你使用 macOS 或其他不支持 host 模式的环境，在该情况下<strong>无法使用全局透明代理</strong>，或者你不希望使用全局透明代理，docker 命令会略有不同：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 2017:2017 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 20170-20172:20170-20172 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_V2RAY_BIN</span><span class="o">=</span>/usr/local/bin/v2ray <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker container stats v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="方式二获取指定版本">方式二：获取指定版本
+</h4><p>Docker 允许用户同时下载不同版本的 v2rayA。通过错开端口等操作，用户还可以运行多个不同版本的 v2rayA。</p>
+<p>获取镜像</p>
+<p>获取最新的版本号：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">Latest_version</span><span class="o">=</span><span class="k">$(</span>curl -L <span class="s2">&#34;https://api.github.com/repos/v2rayA/v2rayA/releases/latest&#34;</span> <span class="p">|</span> grep <span class="s1">&#39;tag_name&#39;</span> <span class="p">|</span> awk -F <span class="s1">&#39;&#34;&#39;</span> <span class="s1">&#39;{print $4}&#39;</span> <span class="p">|</span> awk -F <span class="s1">&#39;v&#39;</span> <span class="s1">&#39;{print $2}&#39;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$Latest_version</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你不需要最新的版本，你也可以访问 <a class="link" href="https://hub.docker.com/r/mzz2017/v2raya/tags"  target="_blank" rel="noopener"
+    >Docker 镜像仓库</a></p>
+<p>查找所需的版本。比如，你需要 1.5.8 版本，那么将 <code>$Latest_version</code> 替换为你所需的版本即可。</p>
+<p>获取 Docker 镜像：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull mzz2017/v2raya:<span class="nv">$Latest_version</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行 v2rayA</p>
+<p>使用 docker 运行 v2rayA:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network<span class="o">=</span>host <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_V2RAY_BIN</span><span class="o">=</span>/usr/local/bin/v2ray <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_NFTABLES_SUPPORT</span><span class="o">=</span>off <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">IPTABLES_MODE</span><span class="o">=</span>legacy <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /lib/modules:/lib/modules:ro <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/resolv.conf:/etc/resolv.conf <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya:<span class="nv">$Latest_version</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下<strong>无法使用全局透明代理</strong>，或者你不希望使用全局透明代理，docker 命令会略有不同：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 2017:2017 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 20170-20172:20170-20172 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya:<span class="nv">$Latest_version</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看状态：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker container stats v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="更新-v2raya">更新 v2rayA
+</h4><p>使用 <a class="link" href="https://v2raya.org/docs/prologue/installation/docker/#%e8%8e%b7%e5%8f%96%e9%95%9c%e5%83%8f"  target="_blank" rel="noopener"
+    >获取镜像</a> 中所提到的命令获取最新版本的镜像，然后停止当前容器：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker container stop v2raya
+</span></span><span class="line"><span class="cl">docker container rm v2raya
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后使用 <a class="link" href="https://v2raya.org/docs/prologue/installation/docker/#%e8%bf%90%e8%a1%8c-v2raya"  target="_blank" rel="noopener"
+    >运行 v2rayA</a> 里面所提到的命令运行新版本 v2rayA。更新 v2rayA 之后，你可以考虑删除旧版本镜像。</p>
+<h3 id="windows">Windows
+</h3><p>目前在 Windows 上仅支持一键配置系统代理而非透明代理</p>
+<h4 id="通过-winget-自动安装">通过 WinGet 自动安装
+</h4><p><a class="link" href="https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1"  target="_blank" rel="noopener"
+    >WinGet</a> 是微软推出的软件包管理器，适用于 Windows 10 以及更新版本的操作系统。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">winget install --id v2rayA.v2rayA
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="手动运行安装包">手动运行安装包
+</h4><p>从 <a class="link" href="https://github.com/v2rayA/v2rayA/releases"  target="_blank" rel="noopener"
+    >GitHub Releases</a> 下载适用于 Windows 的安装包，例如</p>
+<p><code>installer_windows_inno_x64_2.0.1.exe</code>，按照指示安装完毕即可。</p>
+<h2 id="使用方式">使用方式
+</h2><p>安装 v2rayA 后，访问 http://127.0.0.1:2017 打开管理页面。</p>
+<h2 id="免费节点">免费节点
+</h2><style type="text/css">
      
     .notice {
         --title-color: #fff;
@@ -560,193 +812,7 @@
         top: .125em;
         position: relative;
     }
-</style><div class="notice tip" >
-    <p class="notice-title">
-        <span class="icon-notice baseline">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="300.5 134 300 300">
-  <path d="M551.281 252.36c0-3.32-1.172-6.641-3.515-8.985l-17.774-17.578c-2.344-2.344-5.469-3.711-8.789-3.711-3.32 0-6.445 1.367-8.789 3.71l-79.687 79.493-44.141-44.14c-2.344-2.344-5.469-3.712-8.79-3.712-3.32 0-6.444 1.368-8.788 3.711l-17.774 17.579c-2.343 2.343-3.515 5.664-3.515 8.984 0 3.32 1.172 6.445 3.515 8.789l70.704 70.703c2.343 2.344 5.664 3.711 8.789 3.711 3.32 0 6.64-1.367 8.984-3.71l106.055-106.056c2.343-2.343 3.515-5.468 3.515-8.789ZM600.5 284c0 82.813-67.188 150-150 150-82.813 0-150-67.188-150-150 0-82.813 67.188-150 150-150 82.813 0 150 67.188 150 150Z"/>
-</svg>
-
-        </span>提示</p><p>此部分取自官网，未曾用这种方式安装使用过</p></div>
-
-<p>Docker 镜像内集成了 V2Ray 内核，因此内核无需额外被安装。</p>
-<h4 id="docker-1">docker
-</h4><p>拉取镜像</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull mzz2017/v2raya
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启动容器</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># run v2raya</span>
-</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --privileged <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network<span class="o">=</span>host <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /lib/modules:/lib/modules:ro <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/resolv.conf:/etc/resolv.conf <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下<strong>无法使用全局透明代理</strong>，或者你不希望使用全局透明代理，docker 命令会略有不同：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># run v2raya</span>
-</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 2017:2017 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 20170-20172:20170-20172 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>always <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name v2raya <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">V2RAYA_LOG_FILE</span><span class="o">=</span>/tmp/v2raya.log <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /etc/v2raya:/etc/v2raya <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  mzz2017/v2raya
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="docker-compose">docker-compose
-</h4><p>新建目录</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p ~/opt/v2raya
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt/v2raya
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在新建的目录下继续新建 <code>docker-compose.yml</code>文件，粘贴以下内容</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.9&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">v2raya</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">mzz2017/v2raya</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="s1">&#39;/etc/v2raya:/etc/v2raya&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="s1">&#39;/etc/resolv.conf:/etc/resolv.conf&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="s1">&#39;/lib/modules:/lib/modules:ro&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">V2RAYA_LOG_FILE=/tmp/v2raya.log</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">v2raya</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">privileged</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span>{}<span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>保存退出 <code>:wq</code></p>
-<p>启动 容器（在 docker-compose.yml 所在的目录运行）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker compose up
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 后台启动</span>
-</span></span><span class="line"><span class="cl">sudo docker compose up -d
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>停止容器</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker up v2raya
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>查看 容器</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker stats -a
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>web 访问</p>
-<blockquote>
-<p>localhost:2017</p>
-</blockquote>
-<h3 id="windows">Windows
-</h3><p>目前在 Windows 上仅支持一键配置系统代理而非透明代理</p>
-<h4 id="通过-winget-自动安装">通过 WinGet 自动安装
-</h4><p><a class="link" href="https://www.microsoft.com/en-us/p/app-installer/9nblggh4nns1"  target="_blank" rel="noopener"
-    >WinGet</a> 是微软推出的软件包管理器，适用于 Windows 10 以及更新版本的操作系统。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">winget install --id v2rayA.v2rayA
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="手动运行安装包">手动运行安装包
-</h4><p>从 <a class="link" href="https://github.com/v2rayA/v2rayA/releases"  target="_blank" rel="noopener"
-    >GitHub Releases</a> 下载适用于 Windows 的安装包，例如</p>
-<p><code>installer_windows_inno_x64_2.0.1.exe</code>，按照指示安装完毕即可。</p>
-<h4 id="使用方式">使用方式
-</h4><p>通过安装包安装 v2rayA 后，v2rayA 将以服务的形式运行，默认情况下将开机自启，你也可以在任务管理器中的“服务”选项卡管理 v2rayA 的启动与停止。</p>
-<p>通过运行桌面快捷方式或直接访问 http://127.0.0.1:2017 打开管理页面。</p>
-<h2 id="免费节点">免费节点
-</h2><div class="notice warning" >
+</style><div class="notice warning" >
     <p class="notice-title">
         <span class="icon-notice baseline">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="126 76.5 300 300">

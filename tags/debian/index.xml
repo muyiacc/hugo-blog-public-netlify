@@ -230,7 +230,7 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Debian使用APT仓库安装MySQL</title>
+        <title>Debian使用APT安装，卸载MySQL</title>
         <link>https://hublog.netlify.app/p/2403001/</link>
         <pubDate>Fri, 01 Mar 2024 00:03:15 +0800</pubDate>
         
@@ -1005,7 +1005,7 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Debian12安装和卸载MySQL8.0.x</title>
+        <title>Debian安装，卸载MySQL8.0.x</title>
         <link>https://hublog.netlify.app/p/2310008/</link>
         <pubDate>Sun, 08 Oct 2023 14:07:10 +0800</pubDate>
         
@@ -1039,22 +1039,20 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;下载 mysql&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;官网下载地址：https://downloads.mysql.com/archives/community/&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/h2&gt;&lt;p&gt;官网下载地址：&lt;a class=&#34;link&#34; href=&#34;https://downloads.mysql.com/archives/community/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://downloads.mysql.com/archives/community/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;选择与系统最接近的版本&lt;/p&gt;
-&lt;p&gt;Debian 11:&lt;/p&gt;
+&lt;p&gt;Debian 11&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;V8.0.x: &lt;a class=&#34;link&#34; href=&#34;https://downloads.mysql.com/archives/get/p/23/file/mysql-server_8.0.33-1debian11_amd64.deb-bundle.tar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://downloads.mysql.com/archives/get/p/23/file/mysql-server_8.0.33-1debian11_amd64.deb-bundle.tar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Debain12:&lt;/p&gt;
+&lt;p&gt;Debain12&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;V8.4.x: &lt;a class=&#34;link&#34; href=&#34;https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://cdn.mysql.com//Downloads/MySQL-8.4/mysql-server_8.4.3-1debian12_amd64.deb-bundle.tar&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;命令行下载：&lt;/p&gt;
+&lt;p&gt;命令行下载&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -1078,7 +1076,7 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;安装 mysql&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;!!! 由于每个人的环境都不一样，关于 mysql 的依赖需求，下面的教程不一定包含全部，如果没有涉及到，请自行上网搜索解决。&lt;/p&gt;
+&lt;p&gt;由于每个人的环境都不一样，关于 mysql 的依赖需求，下面的教程不一定包含全部，如果没有涉及到，请自行上网搜索解决&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1152,8 +1150,7 @@ sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install cloudflare-warp&lt;/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;卸载&#34;&gt;卸载
-&lt;/h2&gt;&lt;p&gt;如果需要卸载 mysql&lt;/p&gt;
-&lt;p&gt;先停止 MySQL 服务&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;停止 MySQL 服务&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

@@ -339,12 +339,12 @@
     
     
     <hr>
-<p>由于 PMail  后续更新，本文也将修改，适应最新版本</p>
+<p>由于 PMail 后续更新，本文也将修改，适应最新版本</p>
 <hr>
 <h2 id="前言">前言
-</h2><p>最近想自建一个域名邮箱，开源的邮箱服务内存占用太高，对于个人使用不太友好，接着找到一个由 Golang 编写的域名邮箱Pmail。</p>
-<p>官方介绍：PMail是一个追求极简部署流程、极致资源占用的个人域名邮箱服务器。单文件运行，包含完整的收发邮件服务和Web端邮件管理功能。只需一台服务器、一个域名、一行代码、一分钟部署时间，你就能够搭建出一个自己的域名邮箱。</p>
-<p>GitHub地址：https://github.com/Jinnrry/PMail/</p>
+</h2><p>最近想自建一个域名邮箱，开源的邮箱服务内存占用太高，对于个人使用不太友好，接着找到一个由 Golang 编写的域名邮箱 Pmail。</p>
+<p>官方介绍：PMail 是一个追求极简部署流程、极致资源占用的个人域名邮箱服务器。单文件运行，包含完整的收发邮件服务和 Web 端邮件管理功能。只需一台服务器、一个域名、一行代码、一分钟部署时间，你就能够搭建出一个自己的域名邮箱。</p>
+<p>GitHub 地址：https://github.com/Jinnrry/PMail/</p>
 <p>以下为界面截图：</p>
 <p><img src="https://s2.loli.net/2024/07/27/xAFLG3DrST2VBJw.png"
 	
@@ -358,22 +358,22 @@
 ></p>
 <h2 id="准备工作">准备工作
 </h2><ul>
-<li>服务器，开放了25号端口的服务器，没有开放则无法发信。</li>
+<li>服务器，开放了 25 号端口的服务器，没有开放则无法发信。</li>
 <li>域名</li>
 <li>nginx 反代服务器</li>
-<li>nginx proxy manager（<del>可选，但建议</del>），与nginx二选一</li>
-<li>docker或者docker-compose</li>
+<li>nginx proxy manager（<del>可选，但建议</del>），与 nginx 二选一</li>
+<li>docker 或者 docker-compose</li>
 </ul>
 <h2 id="部署">部署
 </h2><p><font color=red>提示：文章篇幅较长</font></p>
 <p><strong>docker-compose</strong></p>
 <blockquote>
-<p><font color=red>如果服务器80，443端口没有被占用，搭建过程则较为简单。如果80，443端口被其他应用占用，搭建过程则较为繁琐。</font></p>
-<p><font color=red>本次80，443端口被nginx proxy manager占用，所以采用映射其他端口搭建</font></p>
+<p><font color=red>如果服务器 80，443 端口没有被占用，搭建过程则较为简单。如果 80，443 端口被其他应用占用，搭建过程则较为繁琐。</font></p>
+<p><font color=red>本次 80，443 端口被 nginx proxy manager 占用，所以采用映射其他端口搭建</font></p>
 </blockquote>
-<p>本次教程采用docker-compose方式安装，方便管理配置文件和升级。其余方式请参考<a class="link" href="https://github.com/Jinnrry/PMail#how-to-run"  target="_blank" rel="noopener"
+<p>本次教程采用 docker-compose 方式安装，方便管理配置文件和升级。其余方式请参考<a class="link" href="https://github.com/Jinnrry/PMail#how-to-run"  target="_blank" rel="noopener"
     >官方教程</a></p>
-<p>在你喜欢的目录下，新建 pamail 文件夹，在 pamil文件夹下，新建 docker-compose.yml文件，如：</p>
+<p>在你喜欢的目录下，新建 pamail 文件夹，在 pamil 文件夹下，新建 docker-compose.yml 文件，如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -453,7 +453,7 @@
 </div><p>接着会开启一个阻塞的前台进程，会打印日志信息，没有报错的话，服务则已经启动。</p>
 <p>开放端口，因为使用的云服务器，所以需要在云服务器管理面板，开放安全组，也就是端口，笔者使用的阿里云。</p>
 <p>进入 <a class="link" href="https://ecs.console.aliyun.com/home"  target="_blank" rel="noopener"
-    >ecs管理面板</a>，在左侧选择 【安全组】，选择服务器对应的安全组。</p>
+    >ecs 管理面板</a>，在左侧选择 【安全组】，选择服务器对应的安全组。</p>
 <p><img src="https://s2.loli.net/2024/07/27/btJ2XBz3OCE9PSr.png"
 	
 	
@@ -475,10 +475,10 @@
 	
 	
 ></p>
-<p>填写端口范围和授权对象，端口即为配置文件开放的端口，授权对象为0.0.0.0，表示所有ip都可访问，描述为备注信息。</p>
+<p>填写端口范围和授权对象，端口即为配置文件开放的端口，授权对象为 0.0.0.0，表示所有 ip 都可访问，描述为备注信息。</p>
 <p>保存后，安全组配置完成。</p>
-<p>配置pmail</p>
-<p>暂停pamil的启动，修改配置文件</p>
+<p>配置 pmail</p>
+<p>暂停 pamil 的启动，修改配置文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -496,8 +496,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="s2">&#34;sslType&#34;</span>:<span class="s2">&#34;1&#34;</span>,<span class="s2">&#34;httpPort&#34;</span>:0,<span class="s2">&#34;httpsPort&#34;</span>:0
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>网页访问服务器的公网ip+端口，如本次教程为 http://ip:8780，ip为服务器的公网ip，在<a class="link" href="https://ecs.console.aliyun.com/home"  target="_blank" rel="noopener"
-    >ecs管理面板</a> 可以看到。</p>
+</div><p>网页访问服务器的公网 ip+端口，如本次教程为 http://ip:8780，ip 为服务器的公网 ip，在<a class="link" href="https://ecs.console.aliyun.com/home"  target="_blank" rel="noopener"
+    >ecs 管理面板</a> 可以看到。</p>
 <p>欢迎界面，初次进入的页面如下：</p>
 <p><img src="https://s2.loli.net/2024/07/27/OdVwphuEvUKJ6r4.png"
 	
@@ -520,7 +520,7 @@
 	
 	
 ></p>
-<p>继续下一步，设置pmail管理员密码</p>
+<p>继续下一步，设置 pmail 管理员密码</p>
 <p><img src="https://s2.loli.net/2024/07/27/IoaL9Ne4vr7Ucsw.png"
 	
 	
@@ -542,7 +542,7 @@
 	
 	
 ></p>
-<p>下一步，设置DNS，将以下信息添加到dns解析处，</p>
+<p>下一步，设置 DNS，将以下信息添加到 dns 解析处，</p>
 <p><img src="https://s2.loli.net/2024/07/27/BFtdPhRxICbM263.png"
 	
 	
@@ -553,8 +553,8 @@
 	
 	
 ></p>
-<p>DNS记录配置，在上一步，需要将DNS记录添加到对应的域名，我使用的DNSPOD，<a class="link" href="https://console.dnspod.cn/dns/"  target="_blank" rel="noopener"
-    >点此跳转DNSPOD</a> ，进入之后，按照提示添加记录即可</p>
+<p>DNS 记录配置，在上一步，需要将 DNS 记录添加到对应的域名，我使用的 DNSPOD，<a class="link" href="https://console.dnspod.cn/dns/"  target="_blank" rel="noopener"
+    >点此跳转 DNSPOD</a> ，进入之后，按照提示添加记录即可</p>
 <p><img src="https://s2.loli.net/2024/07/27/LB35m6HGQaPiZlh.png"
 	
 	
@@ -565,7 +565,7 @@
 	
 	
 ></p>
-<p>配置ssl，dns记录添加完成之后，回到pmail配置页面，继续配置证书。</p>
+<p>配置 ssl，dns 记录添加完成之后，回到 pmail 配置页面，继续配置证书。</p>
 <p><img src="https://s2.loli.net/2024/07/27/jKQFyxDga9X86N4.png"
 	
 	
@@ -576,20 +576,20 @@
 	
 	
 ></p>
-<p>这里选择手动配置ssl证书，如果服务器的80端口没有被占用，可以选择自动配置，当然，前面的docker-compose.yml端口信息也需要改成80，443。</p>
+<p>这里选择手动配置 ssl 证书，如果服务器的 80 端口没有被占用，可以选择自动配置，当然，前面的 docker-compose.yml 端口信息也需要改成 80，443。</p>
 <blockquote>
-<p>为什么选择不用80，443端口呢？？</p>
-<p>自动配置ssl需要用到80端口来验证服务器的所有权，所以自动配置ssl必须使用80端口。但是我的服务器安装了nginx proxy manger（简称npm） ，反代服务，一个web端的nginx工具，简化nginx配置，还可以一键生成ssl证书，我的服务器应用比较多，其他应用采用的都是子域名的方式访问。通过这种方式，简化的自己的工作、但是npm已经占用了80，443端口，所以80，443端口不可用。总不可能为了一个域名服务，让其他域名都不可用域名访问了吧。所以，将容器的80，443端口映射到了其他端口。</p>
+<p>为什么选择不用 80，443 端口呢？？</p>
+<p>自动配置 ssl 需要用到 80 端口来验证服务器的所有权，所以自动配置 ssl 必须使用 80 端口。但是我的服务器安装了 nginx proxy manger（简称 npm） ，反代服务，一个 web 端的 nginx 工具，简化 nginx 配置，还可以一键生成 ssl 证书，我的服务器应用比较多，其他应用采用的都是子域名的方式访问。通过这种方式，简化的自己的工作、但是 npm 已经占用了 80，443 端口，所以 80，443 端口不可用。总不可能为了一个域名服务，让其他域名都不可用域名访问了吧。所以，将容器的 80，443 端口映射到了其他端口。</p>
 </blockquote>
-<p>默认的证书位置在 <code>./config/ssl/private.key、./config/ssl/public.crt</code>下，我们就把自己的ssl证书上传到 <code>./config/ssl</code>下。</p>
-<p>如果继续介绍npm申请ssl证书，这篇文章的篇幅就会过长。如果需要，到时候会另开文章介绍，这里就不多介绍了。也可自行搜索相关教程。</p>
-<p>关于ssl配置可以参考这篇博文：<a class="link" href="https://www.seektao.cc/archives/202407272022"  target="_blank" rel="noopener"
-    ><strong>Debian下的Certbot安装使用，附nginx使用</strong></a></p>
+<p>默认的证书位置在 <code>./config/ssl/private.key、./config/ssl/public.crt</code>下，我们就把自己的 ssl 证书上传到 <code>./config/ssl</code>下。</p>
+<p>如果继续介绍 npm 申请 ssl 证书，这篇文章的篇幅就会过长。如果需要，到时候会另开文章介绍，这里就不多介绍了。也可自行搜索相关教程。</p>
+<p>关于 ssl 配置可以参考这篇博文：<a class="link" href="https://www.seektao.cc/archives/202407272022"  target="_blank" rel="noopener"
+    ><strong>Debian 下的 Certbot 安装使用，附 nginx 使用</strong></a></p>
 <p>完成了这一步后，就基本完成了，不过还需要配置反向代理。</p>
 <h2 id="反向代理">反向代理
-</h2><p>dns记录</p>
+</h2><p>dns 记录</p>
 <p><a class="link" href="https://console.dnspod.cn/dns"  target="_blank" rel="noopener"
-    >进入 dnspod管理页面</a>，新增dns记录，如下</p>
+    >进入 dnspod 管理页面</a>，新增 dns 记录，如下</p>
 <p><img src="https://s2.loli.net/2024/07/27/g7G4RQXpA56UbO3.png"
 	
 	
@@ -601,7 +601,7 @@
 	
 ></p>
 <p>新增代理</p>
-<p>进入npm管理页面，新增代理</p>
+<p>进入 npm 管理页面，新增代理</p>
 <p><img src="https://s2.loli.net/2024/07/27/XSkRx6IndV5Ms24.png"
 	
 	
@@ -623,7 +623,7 @@
 	
 	
 ></p>
-<p>编辑新增内容，按照如图所示编辑，打码的部分为服务的ip或者域名。</p>
+<p>编辑新增内容，按照如图所示编辑，打码的部分为服务的 ip 或者域名。</p>
 <p><img src="https://s2.loli.net/2024/07/27/qoPrGLyxH7JTjB8.png"
 	
 	
@@ -634,8 +634,8 @@
 	
 	
 ></p>
-<p>开启ssl，点击ssl，ssl证书选择已经申请的，如果没有，这里不做介绍。</p>
-<p>强制ssl开启，http2开启，如图：</p>
+<p>开启 ssl，点击 ssl，ssl 证书选择已经申请的，如果没有，这里不做介绍。</p>
+<p>强制 ssl 开启，http2 开启，如图：</p>
 <p><img src="https://s2.loli.net/2024/07/27/ePgLFRu2xK13OET.png"
 	
 	
@@ -646,7 +646,7 @@
 	
 	
 ></p>
-<p>最后点击save保存。到这反向代理也配置完成。</p>
+<p>最后点击 save 保存。到这反向代理也配置完成。</p>
 <p>但是访问会出现</p>
 <p><img src="https://s2.loli.net/2024/07/27/aXC3oudfiBrUKp7.png"
 	
@@ -658,9 +658,9 @@
 	
 	
 ></p>
-<p>修改pmail配置文件，关闭前台进程，ctrl+c，关闭。</p>
-<p>pmail的配置文件已经挂载到本地了，在 <code>config/config.json</code>下，</p>
-<p>进入pmail文件夹，编辑 <code>config.json</code></p>
+<p>修改 pmail 配置文件，关闭前台进程，ctrl+c，关闭。</p>
+<p>pmail 的配置文件已经挂载到本地了，在 <code>config/config.json</code>下，</p>
+<p>进入 pmail 文件夹，编辑 <code>config.json</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -670,15 +670,15 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/opt/pmail
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo vim config/config.json 
+</span></span><span class="line"><span class="cl">sudo vim config/config.json
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>httpsEnabled 配置改成2</li>
-<li>sslType	改成1</li>
+<li>httpsEnabled 配置改成 2</li>
+<li>sslType 改成 1</li>
 </ul>
 <h2 id="启动测试">启动测试
-</h2><p>修改配置后，重新启动docker容器。</p>
+</h2><p>修改配置后，重新启动 docker 容器。</p>
 <p>在 docker-compose.yml 所在目录下，运行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -692,7 +692,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># -d 表示后台运行</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>浏览器通过域名访问或者ip+端口访问即可</p>
+</div><p>浏览器通过域名访问或者 ip+端口访问即可</p>
 <p>最终效果如下，</p>
 <p><img src="https://s2.loli.net/2024/07/28/cxjysFS8BVGMCH2.png"
 	
@@ -704,7 +704,7 @@
 	
 	
 ></p>
-<p>测试，发送测试邮件给163邮箱</p>
+<p>测试，发送测试邮件给 163 邮箱</p>
 <p><img src="https://s2.loli.net/2024/07/28/wLYUkH9QZXWhI8B.png"
 	
 	
@@ -715,7 +715,7 @@
 	
 	
 ></p>
-<p>163邮箱 接收</p>
+<p>163 邮箱 接收</p>
 <p><img src="https://s2.loli.net/2024/07/28/F2a3MLlGDnZKV9B.png"
 	
 	
@@ -728,9 +728,9 @@
 ></p>
 <p><strong>总结：</strong></p>
 <p>搭建过程较为繁琐，需要的前置条件较多.</p>
-<p>pmail界面相较于其他邮箱要差一些，<del>没有多用户功能</del>，最新版已增加，实现了基本的收发功能。基本满足个人使用。</p>
+<p>pmail 界面相较于其他邮箱要差一些，<del>没有多用户功能</del>，最新版已增加，实现了基本的收发功能。基本满足个人使用。</p>
 <p>感谢作者的开源精神。</p>
-<p>最后继续附上pmail的GitHub地址：https://github.com/Jinnrry/PMail/</p>
+<p>最后继续附上 pmail 的 GitHub 地址：https://github.com/Jinnrry/PMail/</p>
 <h2 id="附录">附录
 </h2><p>配置信息详解</p>
 <div class="highlight"><div class="chroma">
@@ -867,12 +867,12 @@
             
                 
 <article class="">
-    <a href="/p/250319220920/">
+    <a href="/p/250321175125/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MPV播放器入门指南-第五期：B站视频播放利器，兼顾PotPlayer，IINA</h2>
+            <h2 class="article-title">公共DNS列表</h2>
         </div>
     </a>
 </article>
@@ -880,12 +880,12 @@
             
                 
 <article class="">
-    <a href="/p/250319084854/">
+    <a href="/p/250320161205/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Nginx安装，配置</h2>
+            <h2 class="article-title">哪吒探针配置</h2>
         </div>
     </a>
 </article>
@@ -893,12 +893,12 @@
             
                 
 <article class="">
-    <a href="/p/250319082032/">
+    <a href="/p/250320123513/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">acme.sh命令</h2>
+            <h2 class="article-title">哪吒探针v1版之serv00安装</h2>
         </div>
     </a>
 </article>

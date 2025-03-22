@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 19 Mar 2025 22:09:20 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 21 Mar 2025 23:26:07 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Postgresql</title>
+        <link>https://hublog.netlify.app/tags/postgresql/</link>
+        <pubDate>Fri, 21 Mar 2025 23:26:07 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/postgresql/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Nezha</title>
+        <link>https://hublog.netlify.app/tags/nezha/</link>
+        <pubDate>Thu, 20 Mar 2025 16:12:05 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/nezha/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Serv00</title>
+        <link>https://hublog.netlify.app/tags/serv00/</link>
+        <pubDate>Thu, 20 Mar 2025 12:35:13 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/serv00/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Mpv</title>
         <link>https://hublog.netlify.app/tags/mpv/</link>
         <pubDate>Wed, 19 Mar 2025 22:09:20 +0800</pubDate>
@@ -37,14 +61,6 @@
         <pubDate>Sun, 16 Mar 2025 21:18:37 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/domain/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Postgresql</title>
-        <link>https://hublog.netlify.app/tags/postgresql/</link>
-        <pubDate>Sat, 15 Mar 2025 20:18:01 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/postgresql/</guid>
         <description></description>
         </item>
         <item>
@@ -125,14 +141,6 @@
         <pubDate>Thu, 13 Feb 2025 15:29:41 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/ollama/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Serv00</title>
-        <link>https://hublog.netlify.app/tags/serv00/</link>
-        <pubDate>Thu, 13 Feb 2025 11:33:55 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/serv00/</guid>
         <description></description>
         </item>
         <item>

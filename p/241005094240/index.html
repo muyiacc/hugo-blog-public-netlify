@@ -10,7 +10,7 @@
 <meta property='og:description' content="安装 Linux Debian / Ubuntu 1 2 3 4 5 6 7 8 9 10 11 # Create the file repository configuration: sudo sh -c &#39;echo &#34;deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&#34; &gt; /etc/apt/sources.list.d/pgdg.list&#39; # Import the repository signing key: wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - # Update the package lists: sudo apt-get update # Install the latest version of PostgreSQL. # If you want a">
 <meta property='og:url' content='https://hublog.netlify.app/p/241005094240/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-05T09:42:40&#43;08:00'/><meta property='article:modified_time' content='2024-10-05T09:43:20&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='postgresql' /><meta property='article:published_time' content='2024-10-05T09:42:40&#43;08:00'/><meta property='article:modified_time' content='2024-10-05T09:43:20&#43;08:00'/>
 <meta name="twitter:title" content="PostgreSQL安装，配置">
 <meta name="twitter:description" content="安装 Linux Debian / Ubuntu 1 2 3 4 5 6 7 8 9 10 11 # Create the file repository configuration: sudo sh -c &#39;echo &#34;deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&#34; &gt; /etc/apt/sources.list.d/pgdg.list&#39; # Import the repository signing key: wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - # Update the package lists: sudo apt-get update # Install the latest version of PostgreSQL. # If you want a">
   
@@ -271,7 +271,7 @@
       <ol>
         <li><a href="#linux">Linux</a></li>
         <li><a href="#windows">Windows</a></li>
-        <li><a href="#docker">docker</a></li>
+        <li><a href="#docker">Docker</a></li>
       </ol>
     </li>
     <li><a href="#目录结构">目录结构</a>
@@ -388,7 +388,7 @@
 </h3><p>下载地址：<a class="link" href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads"  target="_blank" rel="noopener"
     >https://www.enterprisedb.com/downloads/postgres-postgresql-downloads</a></p>
 <p>略</p>
-<h3 id="docker">docker
+<h3 id="docker">Docker
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -498,6 +498,15 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo pg_ctlcluster &lt;version&gt; main reload
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>如何不生效，重启 postgresl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart postgresql
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="psql-客户端">psql 客户端
 </h2><p>安装完成之后，如何进入像 MySQL 那样的命令行，和数据库交互？</p>
 <p>Postgres 提供了一个终端工具 psql ，在终端输入</p>
@@ -537,6 +546,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/postgresql/">Postgresql</a>
+        
+    </section>
+
 
     <section class="article-lastmod">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -593,12 +608,51 @@
             
                 
 <article class="">
+    <a href="/p/pg-chapter05/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PostgreSQL教程第5章：数据定义</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/pg-chapter08/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">PostgreSQL教程第8章</h2>
+            <h2 class="article-title">PostgreSQL教程第8章：数据类型</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/241011224204/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PostgreSQL客户端PSQL使用</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/2403009/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PostgreSQL备份，恢复数据库</h2>
         </div>
     </a>
 </article>
@@ -612,45 +666,6 @@
 
         <div class="article-details">
             <h2 class="article-title">MySQL基础知识</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/241011224204/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">PostgreSQL之PSQL使用</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/241002080830/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">sqlite3的一些基本操作</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/2404007/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">MySQL数据库备份</h2>
         </div>
     </a>
 </article>
