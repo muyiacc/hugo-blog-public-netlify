@@ -71,7 +71,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">寻道之旅</a></h1>
-            <h2 class="site-description">非缘无交，有缘方来，这位行者，您好。</h2>
+            <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -268,6 +268,12 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
+    <li><a href="#一键脚本-agent">一键脚本-agent</a>
+      <ol>
+        <li><a href="#交互安装">交互安装</a></li>
+        <li><a href="#无交互安装">无交互安装</a></li>
+      </ol>
+    </li>
     <li><a href="#agent">Agent</a>
       <ol>
         <li><a href="#安装">安装</a></li>
@@ -275,7 +281,6 @@
         <li><a href="#卸载">卸载</a></li>
       </ol>
     </li>
-    <li><a href="#一键脚本">一键脚本</a></li>
   </ol>
 </nav>
         </div>
@@ -346,168 +351,55 @@
     >https://github.com/nezhahq/nezha</a></p>
 <p>Agent 地址：<a class="link" href="https://github.com/nezhahq/agent"  target="_blank" rel="noopener"
     >https://github.com/nezhahq/agent</a></p>
-<h2 id="agent">Agent
-</h2><h3 id="安装">安装
-</h3><p>下载解压</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/.nezha/tmp <span class="nv">$HOME</span>/.nezha/agent
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -sL https://github.com/nezhahq/agent/releases/download/v1.9.6/nezha-agent_freebsd_amd64.zip -o <span class="nv">$HOME</span>/.nezha/tmp/nezha-agent_freebsd_amd64.zip
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">unzip <span class="nv">$HOME</span>/.nezha/tmp/nezha-agent_freebsd_amd64.zip -d <span class="nv">$HOME</span>/.nezha/agent
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>赋予运行权限</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/.nezha/agent/nezha-agent
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>创建配置文件</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/.nezha/agent/config.yml
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>填入以下内容</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">client_secret: 安全密钥
-</span></span><span class="line"><span class="cl">debug: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">disable_auto_update: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">disable_command_execute: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">disable_force_update: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">disable_nat: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">disable_send_query: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">gpu: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">insecure_tls: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">ip_report_period: <span class="m">0</span>
-</span></span><span class="line"><span class="cl">report_delay: <span class="m">0</span>
-</span></span><span class="line"><span class="cl">self_update_period: <span class="m">0</span>
-</span></span><span class="line"><span class="cl">server: 服务地址
-</span></span><span class="line"><span class="cl">skip_connection_count: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">skip_procs_count: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">temperature: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">tls: 服务是否使用tls连接
-</span></span><span class="line"><span class="cl">use_gitee_to_upgrade: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">use_ipv6_country_code: <span class="nb">false</span>
-</span></span><span class="line"><span class="cl">uuid: 随机uuid
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>client_secret：安全密钥</li>
-<li>server：面板设置的连接地址</li>
-<li>tls：面板设置的连接是否启用 tls</li>
-<li>uuid：随机的 UUID</li>
-</ul>
-<h3 id="启动">启动
+<h2 id="一键脚本-agent">一键脚本-agent
+</h2><h3 id="交互安装">交互安装
 </h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/nezha-agent -c <span class="nv">$HOME</span>/.nezha/agent/config.yml
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>编写启动脚本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/.nezha/agent/start.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改下面的内容后保存</p>
-<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>nohup <span class="nv">$HOME</span>/.nezha/agent/nezha-agent -c <span class="nv">$HOME</span>/.nezha/agent/config.yml &gt; <span class="nv">$HOME</span>/.nezha/agent/nezha-agent.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -sL https://raw.githubusercontent.com/muyiacc/serv00-nezha/main/nezha-agent.sh<span class="k">)</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-- install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><h3 id="无交互安装">无交互安装
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/.nezha/agent/start.sh
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">PANEL_ADDRESS</span><span class="o">=</span><span class="s2">&#34;example:8008&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">SERVER_KEY</span><span class="o">=</span><span class="s2">&#34;iK3Snw4Ev78MzM&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">ENABLE_TLS</span><span class="o">=</span><span class="nb">false</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -sL https://raw.githubusercontent.com/muyiacc/serv00-nezha/main/nezha-agent.sh<span class="k">)</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-- install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/start.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="卸载">卸载
-</h3><p>卸载单个服务</p>
+</div><p>指定 UUID</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">## 停止并卸载服务</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/nezha-agent service uninstall
-</span></span><span class="line"><span class="cl"><span class="c1">## 删除 Agent 文件夹</span>
-</span></span><span class="line"><span class="cl">rm -rf /opt/nezha/agent/
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">PANEL_ADDRESS</span><span class="o">=</span><span class="s2">&#34;example:8008&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">SERVER_KEY</span><span class="o">=</span><span class="s2">&#34;iK3Snw4Ev78MzM&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">ENABLE_TLS</span><span class="o">=</span><span class="nb">false</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="nv">UUID</span><span class="o">=</span><span class="s2">&#34;6c3fe883-055b-11f0-8047-3cecef19f58c&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>bash -c <span class="s2">&#34;</span><span class="k">$(</span>curl -sL https://raw.githubusercontent.com/muyiacc/serv00-nezha/main/nezha-agent.sh<span class="k">)</span><span class="s2">&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>-- install
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="一键脚本">一键脚本
-</h2><div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
@@ -777,6 +669,166 @@
 </span></span><span class="line"><span class="cl"><span class="nb">exit</span> <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="agent">Agent
+</h2><h3 id="安装">安装
+</h3><p>下载解压</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/.nezha/tmp <span class="nv">$HOME</span>/.nezha/agent
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -sL https://github.com/nezhahq/agent/releases/download/v1.9.6/nezha-agent_freebsd_amd64.zip -o <span class="nv">$HOME</span>/.nezha/tmp/nezha-agent_freebsd_amd64.zip
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">unzip <span class="nv">$HOME</span>/.nezha/tmp/nezha-agent_freebsd_amd64.zip -d <span class="nv">$HOME</span>/.nezha/agent
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>赋予运行权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/.nezha/agent/nezha-agent
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/.nezha/agent/config.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>填入以下内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">client_secret: 安全密钥
+</span></span><span class="line"><span class="cl">debug: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">disable_auto_update: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">disable_command_execute: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">disable_force_update: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">disable_nat: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">disable_send_query: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">gpu: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">insecure_tls: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">ip_report_period: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">report_delay: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">self_update_period: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">server: 服务地址
+</span></span><span class="line"><span class="cl">skip_connection_count: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">skip_procs_count: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">temperature: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">tls: 服务是否使用tls连接
+</span></span><span class="line"><span class="cl">use_gitee_to_upgrade: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">use_ipv6_country_code: <span class="nb">false</span>
+</span></span><span class="line"><span class="cl">uuid: 随机uuid
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>client_secret：安全密钥</li>
+<li>server：面板设置的连接地址</li>
+<li>tls：面板设置的连接是否启用 tls</li>
+<li>uuid：随机的 UUID</li>
+</ul>
+<h3 id="启动">启动
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/nezha-agent -c <span class="nv">$HOME</span>/.nezha/agent/config.yml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编写启动脚本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/.nezha/agent/start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改下面的内容后保存</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>nohup <span class="nv">$HOME</span>/.nezha/agent/nezha-agent -c <span class="nv">$HOME</span>/.nezha/agent/config.yml &gt; <span class="nv">$HOME</span>/.nezha/agent/nezha-agent.log 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/.nezha/agent/start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/start.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="卸载">卸载
+</h3><p>卸载单个服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">## 停止并卸载服务</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$HOME</span>/.nezha/agent/nezha-agent service uninstall
+</span></span><span class="line"><span class="cl"><span class="c1">## 删除 Agent 文件夹</span>
+</span></span><span class="line"><span class="cl">rm -rf /opt/nezha/agent/
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
 </section>
 
@@ -875,12 +927,12 @@
             
                 
 <article class="">
-    <a href="/p/250321175125/">
+    <a href="/p/250323154952/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">公共DNS列表</h2>
+            <h2 class="article-title">GitHub520，加速访问GitHub的神器</h2>
         </div>
     </a>
 </article>
