@@ -7,7 +7,211 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 23 Mar 2025 15:49:52 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 30 Mar 2025 13:07:00 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SSH，安全远程连接的强大工具</title>
+        <link>https://hublog.netlify.app/p/250330130700/</link>
+        <pubDate>Sun, 30 Mar 2025 13:07:00 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250330130700/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;SSH（Secure Shell）是一种广泛使用的网络协议，用于在不安全的网络上安全地访问和管理远程服务器或其他设备。 它通过加密网络连接来保护数据传输，防止窃听、中间人攻击和其他安全威胁。 简而言之，SSH 提供了一种安全的远程登录方式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SSH 的主要功能：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;远程登录:&lt;/strong&gt;  允许用户从本地计算机安全地连接到远程服务器，并像直接在服务器上操作一样执行命令。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全文件传输:&lt;/strong&gt;  提供  &lt;code&gt;scp&lt;/code&gt; (secure copy) 和  &lt;code&gt;sftp&lt;/code&gt; (secure FTP) 等工具，用于安全地在本地计算机和远程服务器之间传输文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;端口转发 (Tunneling):&lt;/strong&gt;  允许用户将本地端口转发到远程服务器上的端口，或者将远程服务器上的端口转发到本地端口。 这可以用于创建安全的隧道来访问受防火墙保护的应用程序或服务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;X11 转发:&lt;/strong&gt;  允许用户在远程服务器上运行图形化应用程序，并将它们显示在本地计算机上。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SSH 的工作原理：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SSH 使用客户端-服务器模型。 SSH 客户端运行在用户的本地计算机上，而 SSH 服务器运行在远程服务器上。 连接过程如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;连接请求:&lt;/strong&gt; SSH 客户端发起与 SSH 服务器的连接请求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;密钥交换 (Key Exchange):&lt;/strong&gt;  客户端和服务器协商一个用于加密连接的密钥。 SSH 协议支持多种密钥交换算法，如 Diffie-Hellman 和椭圆曲线 Diffie-Hellman。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;身份验证 (Authentication):&lt;/strong&gt;  客户端需要验证其身份才能访问服务器。 SSH 支持多种身份验证方法，包括：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;密码验证:&lt;/strong&gt;  客户端提供用户名和密码进行验证。 这是一种简单的验证方法，但安全性较低，容易受到暴力破解攻击。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;公钥验证:&lt;/strong&gt;  客户端使用私钥对连接进行签名，服务器使用相应的公钥验证签名。 这是一种更安全的验证方法，也是推荐的方法。 需要事先将公钥添加到服务器的  &lt;code&gt;authorized_keys&lt;/code&gt;  文件中。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;键盘交互验证 (Keyboard-Interactive Authentication):&lt;/strong&gt;  一种基于 Challenge-Response 的验证方式，服务器可能会询问多个问题来验证用户身份。 通常用于支持双因素身份验证 (2FA)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;加密通信:&lt;/strong&gt;  身份验证成功后，客户端和服务器之间的所有通信都将使用协商好的密钥进行加密。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;会话管理:&lt;/strong&gt;  客户端和服务器建立一个 SSH 会话，用户可以在会话中执行命令、传输文件等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;SSH 的优势：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;安全性:&lt;/strong&gt; SSH 使用强大的加密算法来保护数据传输，防止窃听和中间人攻击。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可靠性:&lt;/strong&gt; SSH 提供了可靠的连接，即使在不稳定的网络环境下也能正常工作。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活性:&lt;/strong&gt; SSH 提供了多种功能，如端口转发和 X11 转发，可以满足各种不同的需求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准化:&lt;/strong&gt; SSH 是一种标准协议，在各种操作系统和平台上都有广泛的支持。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;广泛应用:&lt;/strong&gt;  被广泛用于服务器管理，代码部署，远程协作等场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;SSH 的常用命令：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ssh &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 连接到远程服务器。 例如，&lt;code&gt;ssh user@example.com&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh -p &amp;lt;port&amp;gt; &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 连接到远程服务器，指定端口。例如，&lt;code&gt;ssh -p 2222 user@example.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scp &amp;lt;source&amp;gt; &amp;lt;destination&amp;gt;&lt;/code&gt;: 安全地复制文件。 例如，&lt;code&gt;scp file.txt user@example.com:/home/user/&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sftp &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 使用安全的 FTP 协议连接到远程服务器。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh-keygen&lt;/code&gt;: 生成 SSH 密钥对。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ssh-copy-id &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 将本地公钥复制到远程服务器的  &lt;code&gt;authorized_keys&lt;/code&gt;  文件中，以便进行公钥验证。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;安全性建议：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;使用公钥验证而不是密码验证。&lt;/strong&gt;  密码验证容易受到暴力破解攻击，而公钥验证更安全。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;禁用 root 用户直接登录。&lt;/strong&gt;  这可以防止攻击者通过暴力破解 root 用户的密码来获取服务器的完全控制权。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用强密码。&lt;/strong&gt;  如果必须使用密码验证，请使用包含大小写字母、数字和特殊字符的强密码。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定期更新 SSH 软件。&lt;/strong&gt;  软件更新通常包含安全修复，可以防止已知漏洞被利用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;配置防火墙。&lt;/strong&gt;  限制对 SSH 端口的访问，只允许来自可信 IP 地址的连接。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用双因素身份验证 (2FA)。&lt;/strong&gt;  增加额外的安全层，即使密码泄露，攻击者也无法登录。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;监控 SSH 日志。&lt;/strong&gt;  定期检查 SSH 日志，以便及时发现可疑活动。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;总结：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;SSH 是一种必不可少的工具，用于安全地访问和管理远程服务器。 通过了解 SSH 的工作原理和遵循安全建议，可以确保远程连接的安全性，防止未经授权的访问和数据泄露。 它是一个强大、灵活和安全的工具，广泛应用于各种场景。&lt;/p&gt;
+&lt;h2 id=&#34;常见命令&#34;&gt;常见命令
+&lt;/h2&gt;&lt;p&gt;连接主机&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh username@host
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;指定使用具体的 key 连接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh username@host -u /path/to/your/key
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;指定端口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh username@host -p &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>英语中的日期</title>
+        <link>https://hublog.netlify.app/p/250327233239/</link>
+        <pubDate>Thu, 27 Mar 2025 23:32:39 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250327233239/</guid>
+        <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;1月&lt;/th&gt;
+&lt;th&gt;January&lt;/th&gt;
+&lt;th&gt;Jan&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;2月&lt;/td&gt;
+&lt;td&gt;February&lt;/td&gt;
+&lt;td&gt;Feb&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3月&lt;/td&gt;
+&lt;td&gt;March&lt;/td&gt;
+&lt;td&gt;Mar&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4月&lt;/td&gt;
+&lt;td&gt;Apirl&lt;/td&gt;
+&lt;td&gt;Api&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5月&lt;/td&gt;
+&lt;td&gt;May&lt;/td&gt;
+&lt;td&gt;May&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;6月&lt;/td&gt;
+&lt;td&gt;June&lt;/td&gt;
+&lt;td&gt;Jun&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7月&lt;/td&gt;
+&lt;td&gt;July&lt;/td&gt;
+&lt;td&gt;Jul&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8月&lt;/td&gt;
+&lt;td&gt;August&lt;/td&gt;
+&lt;td&gt;Aug&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;9月&lt;/td&gt;
+&lt;td&gt;Settember&lt;/td&gt;
+&lt;td&gt;Set&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;10月&lt;/td&gt;
+&lt;td&gt;October&lt;/td&gt;
+&lt;td&gt;Oct&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;11月&lt;/td&gt;
+&lt;td&gt;November&lt;/td&gt;
+&lt;td&gt;Nov&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;12月&lt;/td&gt;
+&lt;td&gt;December&lt;/td&gt;
+&lt;td&gt;Dec&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;星期日&lt;/th&gt;
+&lt;th&gt;Sunday&lt;/th&gt;
+&lt;th&gt;Sun&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;星期一&lt;/td&gt;
+&lt;td&gt;Monday&lt;/td&gt;
+&lt;td&gt;Mon&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星期二&lt;/td&gt;
+&lt;td&gt;Tuesday&lt;/td&gt;
+&lt;td&gt;Tue&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星期三&lt;/td&gt;
+&lt;td&gt;Wednesday&lt;/td&gt;
+&lt;td&gt;Wed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星期四&lt;/td&gt;
+&lt;td&gt;Thursday&lt;/td&gt;
+&lt;td&gt;Thu&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星期五&lt;/td&gt;
+&lt;td&gt;Friday&lt;/td&gt;
+&lt;td&gt;Fri&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;星期六&lt;/td&gt;
+&lt;td&gt;Saturday&lt;/td&gt;
+&lt;td&gt;Sat&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        <item>
         <title>GitHub520，加速访问GitHub的神器</title>
         <link>https://hublog.netlify.app/p/250323154952/</link>
         <pubDate>Sun, 23 Mar 2025 15:49:52 +0800</pubDate>
@@ -3810,9 +4014,9 @@ $env:MY_USER_ENV&lt;/p&gt;
         
         <guid>https://hublog.netlify.app/p/241025192545/</guid>
         <description>&lt;h2 id=&#34;原因&#34;&gt;原因
-&lt;/h2&gt;&lt;p&gt;在OpenSSH的sshd服务配置中，UseDNS 参数用于指定是否在用户登录时进行反向DNS查找。具体而言，当 UseDNS 设置为 no 时，sshd服务在用户登录时不会进行反向DNS查找，而设置为 yes 时，sshd服务会尝试进行反向DNS查找。&lt;/p&gt;
-&lt;p&gt;反向DNS查找是通过IP地址查找对应的域名的过程。在某些情况下，启用反向DNS查找可能会导致登录延迟，特别是当DNS服务器响应较慢或不可用时。因此，将 UseDNS 设置为 no 可以在一定程度上提高SSH登录的速度，尤其是在网络环境不稳定或DNS配置不正确的情况下。&lt;/p&gt;
-&lt;p&gt;在一些安全意识较高的环境中，管理员可能会选择禁用反向DNS查找，以减少潜在的登录延迟，并确保登录过程更加可控。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;在 OpenSSH 的 sshd 服务配置中，UseDNS 参数用于指定是否在用户登录时进行反向 DNS 查找。具体而言，当 UseDNS 设置为 no 时，sshd 服务在用户登录时不会进行反向 DNS 查找，而设置为 yes 时，sshd 服务会尝试进行反向 DNS 查找。&lt;/p&gt;
+&lt;p&gt;反向 DNS 查找是通过 IP 地址查找对应的域名的过程。在某些情况下，启用反向 DNS 查找可能会导致登录延迟，特别是当 DNS 服务器响应较慢或不可用时。因此，将 UseDNS 设置为 no 可以在一定程度上提高 SSH 登录的速度，尤其是在网络环境不稳定或 DNS 配置不正确的情况下。&lt;/p&gt;
+&lt;p&gt;在一些安全意识较高的环境中，管理员可能会选择禁用反向 DNS 查找，以减少潜在的登录延迟，并确保登录过程更加可控。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;GSSAPIAuthentication&lt;/code&gt; 是 SSH 服务器配置中的一个参数，用于控制是否启用 GSSAPI（Generic Security Services Application Program Interface）身份验证。GSSAPI 是一种用于网络身份验证的标准接口，通常与 Kerberos 结合使用。&lt;/p&gt;
 &lt;h2 id=&#34;实战&#34;&gt;实战
 &lt;/h2&gt;&lt;p&gt;修改 &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;&lt;/p&gt;
@@ -3852,7 +4056,7 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo sed -i &lt;span class=&#34;s1&#34;&gt;&amp;#39;s/GSSAPIAuthentication yes/GSSAPIAuthentication no/&amp;#39;&lt;/span&gt; /etc/ssh/sshd_config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;重启sshd服务&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;重启 sshd 服务&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -5498,7 +5702,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --restart&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;unless-stopped -v /opt/alist:/opt/alist/data -p 5244:5244 -e &lt;span class=&#34;nv&#34;&gt;PUID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -e &lt;span class=&#34;nv&#34;&gt;PGID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -e &lt;span class=&#34;nv&#34;&gt;UMASK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;022&lt;/span&gt; --name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;alist&amp;#34;&lt;/span&gt; xhofe/alist-aria2:main
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -d --restart&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;unless-stopped -v /opt/alist:/opt/alist/data -p 5245:5244 -e &lt;span class=&#34;nv&#34;&gt;PUID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -e &lt;span class=&#34;nv&#34;&gt;PGID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -e &lt;span class=&#34;nv&#34;&gt;UMASK&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;022&lt;/span&gt; --name&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;alist&amp;#34;&lt;/span&gt; xhofe/alist-aria2:main
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;docker-compose安装&lt;/p&gt;
@@ -5543,7 +5747,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - &lt;span class=&#34;s1&#34;&gt;&amp;#39;/home:/home&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - &lt;span class=&#34;s1&#34;&gt;&amp;#39;/root:/root&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        ports:
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - &lt;span class=&#34;s1&#34;&gt;&amp;#39;5244:5244&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            - &lt;span class=&#34;s1&#34;&gt;&amp;#39;5245:5244&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;#environment:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;#- PUID=0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;c1&#34;&gt;#- PGID=0&lt;/span&gt;
@@ -7809,7 +8013,7 @@ software
 </description>
         </item>
         <item>
-        <title>本机生成多个ssh公钥管理多个GitHub账户</title>
+        <title>本地生成多个SSH公钥管理多个GitHub账户</title>
         <link>https://hublog.netlify.app/p/2406027/</link>
         <pubDate>Wed, 26 Jun 2024 16:06:01 +0800</pubDate>
         

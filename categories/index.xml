@@ -7,13 +7,21 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 23 Mar 2025 15:49:52 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 30 Mar 2025 13:07:00 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Default</title>
         <link>https://hublog.netlify.app/categories/default/</link>
-        <pubDate>Sun, 23 Mar 2025 15:49:52 +0800</pubDate>
+        <pubDate>Sun, 30 Mar 2025 13:07:00 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/default/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://hublog.netlify.app/categories/linux/</link>
+        <pubDate>Thu, 27 Mar 2025 11:01:45 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/linux/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Database</title>
@@ -46,14 +54,6 @@
         
         <guid>https://hublog.netlify.app/categories/llm/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/llm/llm.webp" alt="Featured image of post Llm" /&gt;</description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://hublog.netlify.app/categories/linux/</link>
-        <pubDate>Mon, 10 Mar 2025 18:45:01 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/linux/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Backend</title>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="开启ssh密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd root用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
 <title>Linux开启ssh密码登陆，root用户远程登陆</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240802150825/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux开启ssh密码登陆，root用户远程登陆">
-<meta property='og:description' content="开启ssh密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd root用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd">
+<meta property='og:description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
 <meta property='og:url' content='https://hublog.netlify.app/p/240802150825/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssh' /><meta property='article:tag' content='root' /><meta property='article:tag' content='remote' /><meta property='article:tag' content='login' /><meta property='article:published_time' content='2024-08-02T15:08:25&#43;08:00'/><meta property='article:modified_time' content='2024-08-02T15:08:25&#43;08:00'/>
 <meta name="twitter:title" content="Linux开启ssh密码登陆，root用户远程登陆">
-<meta name="twitter:description" content="开启ssh密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd root用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启ssh 1 sudo systemctl restart sshd">
+<meta name="twitter:description" content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
   
 
 
@@ -302,7 +302,7 @@
     <section class="article-content">
     
     
-    <p><strong>开启ssh密码登陆</strong></p>
+    <p><strong>开启 ssh 密码登陆</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -311,7 +311,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo sed -i <span class="s1">&#39;s/^#\?PasswordAuthentication no/PasswordAuthentication yes/&#39;</span> /etc/ssh/sshd_config
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>重启ssh</p>
+</div><p>重启 ssh</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -320,7 +320,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl restart sshd
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>root用户远程登陆</strong></p>
+</div><p><strong>root 用户远程登陆</strong></p>
 <p>找到 <code>PermitRootLogin</code> ,修改为 <code>PermitRootLogin yes</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -330,7 +330,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo vim /etc/ssh/sshd_config
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>重启ssh</p>
+</div><p>重启 ssh</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -401,6 +401,32 @@
             
                 
 <article class="">
+    <a href="/p/250327110145/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">tmux，终端复用神器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250326202040/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">nixos命令行安装</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250310184501/">
         
         
@@ -433,32 +459,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Linux修改默认编辑器</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250308113448/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux忘记root账户密码恢复办法</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/shell03/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Shell教程03-运算符</h2>
         </div>
     </a>
 </article>
