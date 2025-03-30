@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 本次介绍的项目是通过 cloudflare workers 部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目：cloudflare_tem">
 <title>cloudflare_temp_email，自建域名临时邮箱</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250310190914/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="cloudflare_temp_email，自建域名临时邮箱">
-<meta property='og:description' content="简介 本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目">
+<meta property='og:description' content="简介 本次介绍的项目是通过 cloudflare workers 部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目：cloudflare_tem">
 <meta property='og:url' content='https://hublog.netlify.app/p/250310190914/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-10T19:09:14&#43;08:00'/><meta property='article:modified_time' content='2025-03-10T19:09:14&#43;08:00'/>
 <meta name="twitter:title" content="cloudflare_temp_email，自建域名临时邮箱">
-<meta name="twitter:description" content="简介 本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目">
+<meta name="twitter:description" content="简介 本次介绍的项目是通过 cloudflare workers 部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱 项目：cloudflare_tem">
   
 
 
@@ -268,9 +268,9 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#github-action部署">GitHub Action部署</a>
+    <li><a href="#github-action-部署">GitHub Action 部署</a>
       <ol>
-        <li><a href="#创建d1数据库">创建D1数据库</a></li>
+        <li><a href="#创建-d1-数据库">创建 D1 数据库</a></li>
         <li><a href="#github-actions-配置">Github Actions 配置</a></li>
       </ol>
     </li>
@@ -340,13 +340,13 @@
     
     
     <h2 id="简介">简介
-</h2><p>本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱</p>
+</h2><p>本次介绍的项目是通过 cloudflare workers 部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱</p>
 <p>项目：<a class="link" href="https://github.com/dreamhunter2333/cloudflare_temp_email"  target="_blank" rel="noopener"
     >cloudflare_temp_email</a></p>
 <p>官网：<a class="link" href="https://temp-mail-docs.awsl.uk/"  target="_blank" rel="noopener"
     >https://temp-mail-docs.awsl.uk/</a></p>
-<h2 id="github-action部署">GitHub Action部署
-</h2><h3 id="创建d1数据库">创建D1数据库
+<h2 id="github-action-部署">GitHub Action 部署
+</h2><h3 id="创建-d1-数据库">创建 D1 数据库
 </h3><p>打开 cloudflare 控制台，选择 <code>Storage &amp; Databases</code> -&gt; <code># D1 SQL Database</code> -&gt; <code>Create</code>，点击创建数据库</p>
 <p>打开 <code>Console</code> 标签页，输入 <a class="link" href="https://raw.githubusercontent.com/dreamhunter2333/cloudflare_temp_email/refs/heads/main/db/schema.sql"  target="_blank" rel="noopener"
     >schema.sql</a> 的内容，点击 <code>Execute</code> 执行</p>
@@ -366,8 +366,9 @@
     >参考文档</a></li>
 <li><code>BACKEND_TOML</code>: 后端配置文件，<a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/cli/worker.html#%e4%bf%ae%e6%94%b9-wrangler-toml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6"  target="_blank" rel="noopener"
     >参考此处</a></li>
-<li><code>FRONTEND_ENV</code>: 前端配置文件，请复制 <code>frontend/.env.example</code> 的内容，<a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html"  target="_blank" rel="noopener"
-    >并参考此处修改</a></li>
+<li><code>FRONTEND_ENV</code>: 前端配置文件，请复制 <a class="link" href="https://raw.githubusercontent.com/dreamhunter2333/cloudflare_temp_email/refs/heads/main/frontend/.env.example"  target="_blank" rel="noopener"
+    >frontend/.env.example</a>的内容，并将 <code>VITE_API_BASE</code>的地址修改为上一步后端的地址。 <a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html"  target="_blank" rel="noopener"
+    >可参考此处修改</a></li>
 <li><code>FRONTEND_NAME</code>: 你在 Cloudflare Pages 创建的项目名称，可通过 <a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/ui/pages.html"  target="_blank" rel="noopener"
     >用户界面</a> 或者 <a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html"  target="_blank" rel="noopener"
     >命令行</a> 创建</li>
@@ -375,9 +376,9 @@
 <li><code>TG_FRONTEND_NAME</code>: (可选) 你在 Cloudflare Pages 创建的项目名称，同 <code>FRONTEND_NAME</code>，如果需要 Telegram Mini App 功能，请填写</li>
 <li><code>DEBUG_MODE</code>: (可选) 是否开启调试模式，配置为 <code>true</code> 开启, 默认 worker 部署日志不会输出到 Github Actions 页面，开启后会输出</li>
 <li><code>BACKEND_USE_MAIL_WASM_PARSER</code>: (可选) 是否使用 wasm 解析邮件，配置为 <code>true</code> 开启, 功能参考 <a class="link" href="https://temp-mail-docs.awsl.uk/zh/guide/feature/mail_parser_wasm_worker.html"  target="_blank" rel="noopener"
-    >配置 worker 使用 wasm 解析邮件</a>
-打开仓库的 <code>Actions</code> 页面，找到 <code>Deploy Backend</code> 和 <code>Deploy Frontend</code>，点击 <code>Run workflow</code> 选择分支手动部署</li>
+    >配置 worker 使用 wasm 解析邮件</a></li>
 </ul>
+<p>打开仓库的 <code>Actions</code> 页面，找到 <code>Deploy Backend</code> 和 <code>Deploy Frontend</code>，点击 <code>Run workflow</code> 选择分支手动部署</p>
 
 </section>
 

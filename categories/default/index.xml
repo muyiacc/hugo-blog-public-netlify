@@ -2730,13 +2730,13 @@ $env:MY_USER_ENV&lt;/p&gt;
         
         <guid>https://hublog.netlify.app/p/250310190914/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;本次介绍的项目是通过cloudflare workers部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;本次介绍的项目是通过 cloudflare workers 部署的临时域名邮箱网站，可生成随机前缀，用于注册不知名的小众网站，保护个人邮箱&lt;/p&gt;
 &lt;p&gt;项目：&lt;a class=&#34;link&#34; href=&#34;https://github.com/dreamhunter2333/cloudflare_temp_email&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;cloudflare_temp_email&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://temp-mail-docs.awsl.uk/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;github-action部署&#34;&gt;GitHub Action部署
-&lt;/h2&gt;&lt;h3 id=&#34;创建d1数据库&#34;&gt;创建D1数据库
+&lt;h2 id=&#34;github-action-部署&#34;&gt;GitHub Action 部署
+&lt;/h2&gt;&lt;h3 id=&#34;创建-d1-数据库&#34;&gt;创建 D1 数据库
 &lt;/h3&gt;&lt;p&gt;打开 cloudflare 控制台，选择 &lt;code&gt;Storage &amp;amp; Databases&lt;/code&gt; -&amp;gt; &lt;code&gt;# D1 SQL Database&lt;/code&gt; -&amp;gt; &lt;code&gt;Create&lt;/code&gt;，点击创建数据库&lt;/p&gt;
 &lt;p&gt;打开 &lt;code&gt;Console&lt;/code&gt; 标签页，输入 &lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/dreamhunter2333/cloudflare_temp_email/refs/heads/main/db/schema.sql&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;schema.sql&lt;/a&gt; 的内容，点击 &lt;code&gt;Execute&lt;/code&gt; 执行&lt;/p&gt;
@@ -2756,8 +2756,9 @@ $env:MY_USER_ENV&lt;/p&gt;
     &gt;参考文档&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;BACKEND_TOML&lt;/code&gt;: 后端配置文件，&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/worker.html#%e4%bf%ae%e6%94%b9-wrangler-toml-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;参考此处&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;FRONTEND_ENV&lt;/code&gt;: 前端配置文件，请复制 &lt;code&gt;frontend/.env.example&lt;/code&gt; 的内容，&lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;并参考此处修改&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FRONTEND_ENV&lt;/code&gt;: 前端配置文件，请复制 &lt;a class=&#34;link&#34; href=&#34;https://raw.githubusercontent.com/dreamhunter2333/cloudflare_temp_email/refs/heads/main/frontend/.env.example&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;frontend/.env.example&lt;/a&gt;的内容，并将 &lt;code&gt;VITE_API_BASE&lt;/code&gt;的地址修改为上一步后端的地址。 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;可参考此处修改&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;FRONTEND_NAME&lt;/code&gt;: 你在 Cloudflare Pages 创建的项目名称，可通过 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/ui/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;用户界面&lt;/a&gt; 或者 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/cli/pages.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;命令行&lt;/a&gt; 创建&lt;/li&gt;
@@ -2765,9 +2766,9 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;TG_FRONTEND_NAME&lt;/code&gt;: (可选) 你在 Cloudflare Pages 创建的项目名称，同 &lt;code&gt;FRONTEND_NAME&lt;/code&gt;，如果需要 Telegram Mini App 功能，请填写&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;DEBUG_MODE&lt;/code&gt;: (可选) 是否开启调试模式，配置为 &lt;code&gt;true&lt;/code&gt; 开启, 默认 worker 部署日志不会输出到 Github Actions 页面，开启后会输出&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;BACKEND_USE_MAIL_WASM_PARSER&lt;/code&gt;: (可选) 是否使用 wasm 解析邮件，配置为 &lt;code&gt;true&lt;/code&gt; 开启, 功能参考 &lt;a class=&#34;link&#34; href=&#34;https://temp-mail-docs.awsl.uk/zh/guide/feature/mail_parser_wasm_worker.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;配置 worker 使用 wasm 解析邮件&lt;/a&gt;
-打开仓库的 &lt;code&gt;Actions&lt;/code&gt; 页面，找到 &lt;code&gt;Deploy Backend&lt;/code&gt; 和 &lt;code&gt;Deploy Frontend&lt;/code&gt;，点击 &lt;code&gt;Run workflow&lt;/code&gt; 选择分支手动部署&lt;/li&gt;
+    &gt;配置 worker 使用 wasm 解析邮件&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;打开仓库的 &lt;code&gt;Actions&lt;/code&gt; 页面，找到 &lt;code&gt;Deploy Backend&lt;/code&gt; 和 &lt;code&gt;Deploy Frontend&lt;/code&gt;，点击 &lt;code&gt;Run workflow&lt;/code&gt; 选择分支手动部署&lt;/p&gt;
 </description>
         </item>
         <item>
