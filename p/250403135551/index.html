@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 特性 🚀 像 Windows 体验般的私有云盘/企业网盘 🌟 完全支持私有化部署，安全可控的存储 👁️\u200d🗨️ 在线预览、编辑和播放数百种文件格式，办公娱乐两不误 🚀 多">
+<title>kodbox，新一代企业私有云存储，协同办公平台</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/250403135551/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="kodbox，新一代企业私有云存储，协同办公平台">
+<meta property='og:description' content="简介 特性 🚀 像 Windows 体验般的私有云盘/企业网盘 🌟 完全支持私有化部署，安全可控的存储 👁️\u200d🗨️ 在线预览、编辑和播放数百种文件格式，办公娱乐两不误 🚀 多">
+<meta property='og:url' content='https://hublog.netlify.app/p/250403135551/'>
+<meta property='og:site_name' content='寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='kodbox' /><meta property='article:tag' content='php' /><meta property='article:published_time' content='2025-04-03T13:55:51&#43;08:00'/><meta property='article:modified_time' content='2025-04-03T13:55:51&#43;08:00'/>
+<meta name="twitter:title" content="kodbox，新一代企业私有云存储，协同办公平台">
+<meta name="twitter:description" content="简介 特性 🚀 像 Windows 体验般的私有云盘/企业网盘 🌟 完全支持私有化部署，安全可控的存储 👁️\u200d🗨️ 在线预览、编辑和播放数百种文件格式，办公娱乐两不误 🚀 多">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/481543302'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z"></path>
+    <path d="M8 3l2 3"></path>
+    <path d="M16 3l-2 3"></path>
+    <path d="M9 13v-2"></path>
+    <path d="M15 11v2"></path>
+  </svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#特性">特性</a></li>
+        <li><a href="#详细功能">详细功能</a></li>
+        <li><a href="#官网介绍">官网介绍</a></li>
+      </ol>
+    </li>
+    <li><a href="#颜值担当webos-级别操作体验">颜值担当，WebOS 级别操作体验</a></li>
+    <li><a href="#随时随地文档随心查看">随时随地，文档随心查看</a></li>
+    <li><a href="#影音娱乐趣味盎然">影音娱乐，趣味盎然</a></li>
+    <li><a href="#图片相册轻松预览和管理">图片相册，轻松预览和管理</a></li>
+    <li><a href="#强大的在线解压压缩和预览">强大的在线解压、压缩和预览</a></li>
+    <li><a href="#组织架构集成多元化的权限策略">组织架构集成，多元化的权限策略</a></li>
+    <li><a href="#强大简单易用的上传下载">强大、简单易用的上传下载</a></li>
+    <li><a href="#主题随心定义更多的生产力">主题随心定义，更多的生产力</a></li>
+    <li><a href="#多语言支持">多语言支持</a></li>
+    <li><a href="#轻量易部署跨平台支持">轻量易部署，跨平台支持</a></li>
+    <li><a href="#丰富多彩生态轻松开发拓展">丰富多彩生态，轻松开发拓展</a>
+      <ol>
+        <li><a href="#地址">地址</a></li>
+      </ol>
+    </li>
+    <li><a href="#部署">部署</a>
+      <ol>
+        <li><a href="#serv00">serv00</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/250403135551/">kodbox，新一代企业私有云存储，协同办公平台</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 03, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="简介">简介
+</h2><h3 id="特性">特性
+</h3><ul>
+<li>🚀 <strong>像 Windows 体验般的私有云盘/企业网盘</strong></li>
+<li>🌟 <strong>完全支持私有化部署，安全可控的存储</strong></li>
+<li>👁️‍🗨️ <strong>在线预览、编辑和播放数百种文件格式，办公娱乐两不误</strong></li>
+<li>🚀 <strong>多存储融合：支持本地磁盘、FTP、WebDAV、阿里云 OSS、腾讯云 COS、七牛云、MinIO、S3 兼容协议等</strong></li>
+<li>🔗 <strong>轻松分享，高效协作，细粒度权限控制</strong></li>
+<li>💻 <strong>全平台客户端覆盖，随时随地访问，轻松同步挂载；支持 Web、H5、iOS、Android、PC、WebDAV 挂载</strong></li>
+</ul>
+<h3 id="详细功能">详细功能
+</h3><ul>
+<li><strong>文件操作</strong>: 与 Windows 高度一致的操作体验，包括新建、复制、移动、粘贴、上传、下载、删除、解压、打开方式、文件排序、查看等。</li>
+<li><strong>文档选择</strong>: 框选、拖拽、快捷键，云文档管理如同本地操作般熟悉高效；文件勾选、ctrl 点击、shift 连续选择、快捷键选择 (ctrl/shift+a/up/down/left/right/home/end&hellip;)、首字母快速定位、拼音模糊搜索快速过滤&hellip;</li>
+<li><strong>全局拖拽</strong>: 拖拽文件和文件夹进行移动和复制；拖拽本地文件/文件夹进行上传；拖拽到桌面自动下载；拖拽到文件夹自动进入，拖拽多个文件管理窗口之间互相操作&hellip;</li>
+<li><strong>高效快捷键</strong>: ctrl+c 复制，ctrl+x 剪切，ctrl+v 粘贴，ctrl+z 撤销，f2 重命名，ctrl+shift+z 反撤销，文件视图切换&hellip;</li>
+<li><strong>右键菜单</strong>: 文件夹、文件以及不同类型的文件拥有完全自适应的右键菜单</li>
+<li><strong>文件查看模式</strong>: 结合 Windows 和 Mac 的优点，支持“图标模式/列表模式/列模式”文件管理，图标模式支持自定义图标大小，列表模式文件夹支持树状目录展开；自动记录每个文件夹的查看模式；采用虚拟列表，快速高效管理大量文件文件夹。</li>
+<li><strong>多维度文档管理</strong>: 收藏夹；文档标签；文件分类；最近文档；相册；回收站；部门文档公共标签；个人文件私有保险箱&hellip;;</li>
+<li><strong>便捷属性面板</strong>: 各种文档属性信息、共享状态、图片 exif 信息、音乐和视频等类型的文件信息一目了然；文件夹包含文件文件夹数量、大小统计、设置备注、编辑锁定/置顶；可以讨论文件文件夹；</li>
+<li><strong>文件历史版本</strong>: 文件在线编辑保存，自动生成历史版本，无需担心内容丢失；</li>
+<li><strong>文件去重/秒传</strong>: 采用 COW 机制，文件元数据记录双哈希校验，自动全量去重，上传时，已存在的文件自动秒传，节省存储空间，提高上传效率；文件夹移动和复制快速完成；</li>
+<li><strong>高级搜索</strong>: 支持按类型、文件大小、最后修改时间等维度过滤或搜索，支持中文拼音首字母搜索，支持文档标签、备注搜索；支持批量搜索多个文件名，并按搜索顺序呈现搜索结果</li>
+<li><strong>文档动态</strong>: 文件文件夹的所有操作变更一目了然，追踪文档的整个生命周期；</li>
+<li><strong>在线解压</strong>: 支持在线解压 zip、tar、gz、7z、rar 等文件，支持快速创建文件夹的压缩包，支持在线预览压缩包</li>
+<li><strong>文件在线预览</strong>: 随时随地，通过浏览器即可轻松查看数百种常用格式文档，无需下载到本地或在终端安装软件；图片、音乐、视频等媒体文件；在线预览和编辑 Office 文档；PDF、OFD、XPS 等版本文档；在线预览和编辑 PhotoShop 和 Illustrator；AutoCAD 工程图纸</li>
+<li><strong>文本编辑器</strong>: 提供强大的在线文本文件编辑功能；支持 120 种代码语言高亮；自适应文本编码，告别文件乱码；多标签支持；支持 js/json/php/css 等语言方法快速查看和文件格式化；html 文件支持实时安全预览；支持分片加载，轻松在线打开大文件；支持 hex 模式，方便查看二进制文件；</li>
+<li><strong>markdown 编辑</strong>: 编辑器提供强大而完整的 markdown 编辑功能，支持实时预览；快捷键支持；支持插入公式、流程图、时序图、uml 图，支持提示引用，支持 html 语法；支持图片相对路径引用；支持直接粘贴从剪贴板复制的图像；链接跳转支持其他 md 文件具有相对路径；</li>
+<li><strong>流程图/思维导图</strong>: 在线绘制 Visio 流程图和思维导图，并快速与他人分享；</li>
+<li><strong>细粒度权限控制</strong>: 部门文件、文件夹，每个文件可以为不同的人或群组设置不同的权限，千人千面；</li>
+<li><strong>外部链接分享</strong>: 一键与客户或外部合作伙伴分享文件（文件夹），支持设置访问密码、有效期和多种权限；接收者可以通过链接轻松预览多种格式的文档；启用编辑后，接收者可以在线编辑、上传和协作处理 Office 文件；文件夹支持文档模式的默认设置，方便发布用户手册、开发文档等；</li>
+<li><strong>内部协作</strong>: 您可以发起协作并向系统内的成员、部门或任何组合授予不同的权限。</li>
+<li><strong>协作增强</strong>: 提供部门标签、文档讨论、文件动态、历史版本、编辑锁定等组件，以收集多人的工作成果。</li>
+</ul>
+<hr>
+<ul>
+<li><strong>登录控制</strong>: 登录设备控制、双重验证、登录 IP 过滤、登录验证码、复杂密码策略、防暴力破解；扫码登录（App 扫码登录 Web 端；扫描已登录的 Web 端登录 App）</li>
+<li><strong>权限控制</strong>: 角色权限、部门权限、细粒度文档权限、共享控制、内容/授权审批、多级管理员</li>
+<li><strong>行为审计</strong>: 登录日志、操作日志、共享内容控制、动态安全水印、敏感词过滤、文件保密管理、系统回收站</li>
+<li><strong>数据安全</strong>: 数据备份、系统恢复、多云融合存储、csrf 保护、集群部署支持</li>
+<li><strong>多存储融合</strong>: 本地磁盘、ftp、webdav、阿里云 OSS、腾讯云 COS、七牛云、minio、S3 等多种云融合挂载，轻松处理跨云文件管理、备份传输、弹性扩展</li>
+<li><strong>插件中心</strong>: AD 域/企业微信/钉钉等 30+ 企业级应用插件可自由扩展；文件格式编辑和预览可轻松扩展；开放插件开发文档，企业可根据需要在插件中灵活扩展功能；提供 SDK，将企业的云文件功能无缝嵌入到 ERP、OA、邮箱等 IT 系统中</li>
+<li><strong>App</strong>: Android、iOS 全端支持；自动相册备份；</li>
+<li><strong>PC 客户端</strong>: Windows、Mac 版本支持；支持文件夹备份到云端；自动挂载到本地磁盘，无感操作，本地体验；支持调用 PC 软件预览和编辑在线文件</li>
+</ul>
+<h3 id="官网介绍">官网介绍
+</h3><blockquote>
+<h2 id="颜值担当webos-级别操作体验">颜值担当，WebOS 级别操作体验
+</h2></blockquote>
+<p>KodBox 沿用了 Windows 用户界面、操作逻辑和用户习惯，支持拖拽、框选和快捷键操作，使得用户可以在熟悉的桌面工作环境中，以舒适直观的方式轻松管理服务器中的文件，最大程度地减少学习成本和进入障碍。</p>
+<p>一切都是那么优美和流畅。提供图标、列表、分栏三种布局方式，缩略图展示，随心切换大小，还有熟悉的右键菜单，PC 上操作的习惯通通可以实现，彻底摆脱传统网盘使用中的不适，</p>
+<p>更有熟悉的桌面可以添加各种喜欢的小应用，是在在线文档管理器，更是随时随地都可以访问的私有的 WebOS。</p>
+<blockquote>
+<h2 id="随时随地文档随心查看">随时随地，文档随心查看
+</h2></blockquote>
+<p>每种文档格式均提供了丰富的插件支持，可根据不同软件的环境要求、显示效果、偏好自由选择打开的方式，或者设置默认打开方式。</p>
+<pre><code>Microsoft Office系列（Word、Excel、PowerPoint）
+WPS 格式
+OpenDocument 格式
+AutoCAD
+PDF
+XPS
+Flash
+编程语言，电子书等
+</code></pre>
+<p>无需在计算机上安装应用程序即可查看这些文档。</p>
+<p>提供多元化的打开方式，更多预览程序选择。</p>
+<p>高分辨率和高保真，放大查看也不会丢失细节。</p>
+<blockquote>
+<h2 id="影音娱乐趣味盎然">影音娱乐，趣味盎然
+</h2></blockquote>
+<p>媒体播放器可以打开和播放所有常见的视频格式：MP4，M4V，F4V，MOV，FLV，WEBM，OGV</p>
+<p>所有常见的音频格式：MP3，AAC，M4A，F4A，OGG，OGA，VORBIS</p>
+<p>支持通过轻应用及插件的方式添加游戏，私有云也可以轻松有趣</p>
+<p>离线下载支持，优质资源想存就存</p>
+<blockquote>
+<h2 id="图片相册轻松预览和管理">图片相册，轻松预览和管理
+</h2></blockquote>
+<p>可以在线预览所有常见的图像格式，包括 Photoshop 图片：</p>
+<ul>
+<li>Jpeg</li>
+<li>Png</li>
+<li>Gif</li>
+<li>WebP</li>
+<li>Bmp</li>
+<li>Tiff*</li>
+<li>Psd,Psb,Eps*</li>
+<li>Raw (Digital Camera Image) Formats*</li>
+</ul>
+<p>图像查看器支持图片的缩放，平移，旋转和翻转。</p>
+<p>提供外链地址，私有云轻松作为图床使用，分享给用户和伙伴。</p>
+<blockquote>
+<h2 id="强大的在线解压压缩和预览">强大的在线解压、压缩和预览
+</h2></blockquote>
+<p>全格式支持的在线解压与查看，无需下载到本地也可以轻松查看</p>
+<ul>
+<li>ZIP</li>
+<li>7Z</li>
+<li>Gif</li>
+<li>RAR</li>
+<li>TAR</li>
+<li>GZ*</li>
+<li>TAR.GZ (TGZ)</li>
+<li>TAR.BZ2 (TBZ, TBZ2)</li>
+</ul>
+<p>无需全部解压，直接点击，即可轻松预览压缩包中的单文件</p>
+<p>多种编码格式支持</p>
+<p>多重压缩嵌套的情况下，同样支持打开和查看</p>
+<blockquote>
+<h2 id="组织架构集成多元化的权限策略">组织架构集成，多元化的权限策略
+</h2></blockquote>
+<p>管理员可以对设置多种用户角色身份并对其角色权限进行限制；支持自定义群组和用户目录，以及其空间大小的配置。</p>
+<p>企业可以按照组织架构建立各部门的共享文件夹，并通过群组权限对部门成员实现进行权限分配。群组支持多层级关系中上级对下级文件的查看和管理，群组还设定对外部分享的文件以实现外部协作需求。</p>
+<p>支持共享登录，用户单点集成、用户组织结构集成，用户可以根据需要深度整合企业微信、钉钉等其他平台的用户和组织结构数据，实现组织结构与文档的无缝对接。</p>
+<p>管理员可完全自定义版权信息、公司名称，企业 Logo 等信息。</p>
+<blockquote>
+<h2 id="强大简单易用的上传下载">强大、简单易用的上传下载
+</h2></blockquote>
+<p>拖拽文件到浏览器窗口即可轻松上传文档；采用分片上传，断点续传技术。多文件批量上传，文件夹直接上传等，尽在一拖一放之间。</p>
+<p>下载支持断点续传，多线程下载提速。文件夹、多文件自动打包压缩下载。</p>
+<p>支持离线下载，通过远程增加下载任务，使用文档时无需等待。</p>
+<blockquote>
+<h2 id="主题随心定义更多的生产力">主题随心定义，更多的生产力
+</h2></blockquote>
+<p>KodBox 始终把用户体验放在产品设计首要考虑的因素，倾心构造无障碍的在线私有文档管理体验。</p>
+<p>你的私有云，由你定义。</p>
+<p>主题自由切换，壁纸轻松选择，用更舒服的姿势进入状态。</p>
+<blockquote>
+<h2 id="多语言支持">多语言支持
+</h2></blockquote>
+<p>提供超过 20 种语言，国际访问也能轻松应对不同语言环境。哪怕朋友、同事和客户身在国外，也不惧地域和语言限制，轻松查看分享。</p>
+<blockquote>
+<h2 id="轻量易部署跨平台支持">轻量易部署，跨平台支持
+</h2></blockquote>
+<p>全平台兼容性：Win、Linux、Mac (Apache、Nginx、IIS)。从百元级别的智能路由器和盒子产品，到 NAS 网络存储设备，到服务器面板，服务器，硬件集成，ERP 集成，私有云、公有云、SaaS 服务搭建等各种场景都可自如适用。</p>
+<p>支持跨平台浏览器的无缝访问。仅需一个浏览器即在 web 端完成文档的上传下载、管理查看，不需要安装任何类似 ftp 客户端的软件。</p>
+<p>提供多客户端支持。</p>
+<p>支持企业微信、钉钉等常用企业工具的集成登录和访问。</p>
+<blockquote>
+<h2 id="丰富多彩生态轻松开发拓展">丰富多彩生态，轻松开发拓展
+</h2></blockquote>
+<p>内置轻应用和插件市场，数百种插件和拓展支持，从办公环境到个人娱乐，几乎覆盖日常使用所有需求。用户可以通过链接、Js 代码的方式方便地添加各种轻应用。</p>
+<p>正如在 Windows 中可以原则文档的打开方式一样，KodBox 也提供了多种插件打开方式；用户可以根据偏好通过喜欢的插件来查看文档。管理员可根据需要安装插件，设置用户和群组对插件的使用权限，拥有多元化的管理方式。</p>
+<p>完备开放的 API 接口，可以通过插件的方式方便地对系统进行二次开发、功能拓展，方便地集成到 SaaS 服务、企业邮箱、OA、ERP 等 IT 系统中，与企业自身的 IT 系统进行对接。且二次开发后，产品仍可以无缝升级。</p>
+<h3 id="地址">地址
+</h3><p>官网：<a class="link" href="https://kodcloud.com"  target="_blank" rel="noopener"
+    >https://kodcloud.com</a></p>
+<p>体验地址：<a class="link" href="https://demo.kodcloud.com/#user/login"  target="_blank" rel="noopener"
+    >https://demo.kodcloud.com/#user/login</a></p>
+<p>社区版源码：<a class="link" href="https://github.com/kalcaddle/kodbox"  target="_blank" rel="noopener"
+    >https://github.com/kalcaddle/kodbox</a></p>
+<h2 id="部署">部署
+</h2><h3 id="serv00">serv00
+</h3><p>登录后台</p>
+<p><img src="https://s2.loli.net/2025/04/03/1Zo9HFSJj5mrIGW.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403144314509"
+	
+	
+></p>
+<p>选择 WWW websites 创建网站（如果直接使用serv00提供的域名可以跳过）</p>
+<p><img src="https://s2.loli.net/2025/04/03/d3PFQLpU9yRebKz.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403144440028"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/O7bhgRlL3XPxS4a.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403144557680"
+	
+	
+></p>
+<p>添加DNS解析，将域名指向serv00的分配的ip</p>
+<p><img src="https://s2.loli.net/2025/04/03/3PalEWwzJMxt8im.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403144755258"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/fdXJLt15EqH3oeZ.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403144852313"
+	
+	
+></p>
+<p>以dnspod为例</p>
+<p><img src="https://s2.loli.net/2025/04/03/jQ8EuPgsJbp4S72.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403145210310"
+	
+	
+></p>
+<p>ssh登录服务器</p>
+<p>进入设置对应的网站目录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$HOME</span>/domains/你添加的域名/public_html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://s2.loli.net/2025/04/03/LRxDzwd9jhNbIf2.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403145452305"
+	
+	
+></p>
+<p>下载源码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+</div>
+</div><h1 id="install-from-source">Install from source
+</h1><p>git clone <a class="link" href="https://github.com/kalcaddle/kodbox.git"  target="_blank" rel="noopener"
+    >https://github.com/kalcaddle/kodbox.git</a>
+chmod -Rf 777 ./kodbox/*</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/kodbox/">Kodbox</a>
+        
+            <a href="/tags/php/">Php</a>
+        
+    </section>
+
+
+    <section>
+        页面浏览量<span id="vercount_value_page_pv">Loading</span>
+    </section>
+</footer>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250403100524/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP开源项目收集</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250401163700/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">部署的服务汇总</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250330130700/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">SSH，安全远程连接的强大工具</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250327233239/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">英语中的日期</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250323154952/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">GitHub520，加速访问GitHub的神器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2025 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        
+            网站总访客数：<span id='vercount_value_site_uv'>Loading</span><br/>网站总访问量：<span id='vercount_value_site_pv'>Loading</span> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script> -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3LPlvzNZdFeUNaJ3",ck:"3LPlvzNZdFeUNaJ3",autoTrack:true,hashMode:true,screenRecord:true})</script>
+    </body>
+</html>

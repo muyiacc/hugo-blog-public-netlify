@@ -7,7 +7,66 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Thu, 27 Mar 2025 11:01:45 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 01 Apr 2025 17:55:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>starship，跨 shell 的极简、速度极快的提示符</title>
+        <link>https://hublog.netlify.app/p/250401175501/</link>
+        <pubDate>Tue, 01 Apr 2025 17:55:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250401175501/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Starship 是一个跨 shell 的极简、速度极快的提示符。 它的目标是为所有 shell 提供一致、美观且可定制的提示符体验。 简单来说，它让你的命令行提示符变得更漂亮、更有用。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主要特点:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;跨 Shell 兼容:&lt;/strong&gt; 支持 Bash, Zsh, Fish, PowerShell, Ion, Elvish, Nushell, Xonsh 等多种 shell。这意味着你可以在不同的 shell 环境中使用相同的提示符配置。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;速度快:&lt;/strong&gt; 用 Rust 编写，性能极佳。即使在大型项目或慢速文件系统中，也能保持快速响应。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高度可定制:&lt;/strong&gt; 通过简单的配置文件，你可以完全控制提示符的外观和行为。 可以自定义显示哪些信息、使用什么颜色、图标等等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;信息丰富:&lt;/strong&gt; 可以显示各种有用的信息，例如：
+&lt;ul&gt;
+&lt;li&gt;当前目录&lt;/li&gt;
+&lt;li&gt;Git 分支和状态&lt;/li&gt;
+&lt;li&gt;当前使用的编程语言版本 (例如 Python, Node.js, Go, Rust 等)&lt;/li&gt;
+&lt;li&gt;电池状态&lt;/li&gt;
+&lt;li&gt;操作系统&lt;/li&gt;
+&lt;li&gt;Docker 状态&lt;/li&gt;
+&lt;li&gt;虚拟机状态&lt;/li&gt;
+&lt;li&gt;执行时间&lt;/li&gt;
+&lt;li&gt;错误码&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;易于安装和配置:&lt;/strong&gt; 提供了简单的安装脚本和清晰的文档，方便用户快速上手。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主题支持:&lt;/strong&gt; 可以轻松切换不同的主题，或者创建自己的主题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;插件支持:&lt;/strong&gt; 虽然 Starship 本身已经很强大，但它也支持插件，可以进一步扩展其功能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Unicode 支持:&lt;/strong&gt; 支持 Unicode 字符，可以显示各种图标和符号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;为什么使用 Starship?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;提升效率:&lt;/strong&gt; 通过显示有用的信息，可以帮助你更快地了解当前环境的状态，从而提高工作效率。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;美化命令行:&lt;/strong&gt; 让你的命令行界面更加美观，提升使用体验。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;个性化定制:&lt;/strong&gt; 可以根据自己的喜好定制提示符，打造独一无二的命令行体验。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨平台一致性:&lt;/strong&gt; 在不同的操作系统和 shell 环境中使用相同的提示符，保持一致性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;linux&#34;&gt;Linux
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# general&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -sS https://starship.rs/install.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# debian 13&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install starship
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>tmux，终端复用神器</title>
         <link>https://hublog.netlify.app/p/250327110145/</link>
         <pubDate>Thu, 27 Mar 2025 11:01:45 +0800</pubDate>
@@ -5879,7 +5938,19 @@ sudo apt install fcitx5-pinyin&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果不是纯净的系统，环境中已经有一些软件的配置，选择 &lt;code&gt;是&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;安装之后，新开一个终端查看是否生效&lt;/p&gt;
-&lt;h2 id=&#34;主题&#34;&gt;主题
+&lt;h2 id=&#34;卸载&#34;&gt;卸载
+&lt;/h2&gt;&lt;p&gt;如果不想要了，跟着如下步骤卸载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$BASH_IT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;./uninstall.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;主题&#34;&gt;主题
 &lt;/h2&gt;&lt;p&gt;默认主题是 &lt;code&gt;bobby&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;默认主题比较花哨，包含的信息容易影响注意力，所以我换成了内置的主题 &lt;code&gt;bakke&lt;/code&gt;，看着简洁很多又不失美感&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;每次安装更换主题已经厌烦了，已经习惯了默认配置，果然默认就是最好的！&lt;/p&gt;

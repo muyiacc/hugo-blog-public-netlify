@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 本文将介绍 MySQL 基础知识 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data">
-<title>MySQL基础知识</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介">
+<title>部署的服务汇总</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/mysql01/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250401163700/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MySQL基础知识">
-<meta property='og:description' content="简介 本文将介绍 MySQL 基础知识 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data">
-<meta property='og:url' content='https://hublog.netlify.app/p/mysql01/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="部署的服务汇总">
+<meta property='og:description' content="简介">
+<meta property='og:url' content='https://hublog.netlify.app/p/250401163700/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-04T17:21:36&#43;08:00'/><meta property='article:modified_time' content='2025-03-04T17:21:36&#43;08:00'/>
-<meta name="twitter:title" content="MySQL基础知识">
-<meta name="twitter:description" content="简介 本文将介绍 MySQL 基础知识 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-01T16:37:00&#43;08:00'/><meta property='article:modified_time' content='2025-04-01T16:37:00&#43;08:00'/>
+<meta name="twitter:title" content="部署的服务汇总">
+<meta name="twitter:description" content="简介">
   
 
 
@@ -245,42 +245,7 @@
     </ol>
 </aside>
 
-    <aside class="sidebar right-sidebar sticky">
-        
-            
-                
-    <section class="widget archives">
-        <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <line x1="5" y1="9" x2="19" y2="9" />
-  <line x1="5" y1="15" x2="19" y2="15" />
-  <line x1="11" y1="4" x2="7" y2="20" />
-  <line x1="17" y1="4" x2="13" y2="20" />
-</svg>
-
-
-
-        </div>
-        <h2 class="widget-title section-title">目录</h2>
-        
-        <div class="widget--toc">
-            <nav id="TableOfContents">
-  <ol>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#ddl">DDL</a></li>
-    <li><a href="#dml">DML</a></li>
-    <li><a href="#dcl">DCL</a></li>
-    <li><a href="#dql">DQL</a></li>
-  </ol>
-</nav>
-        </div>
-    </section>
-
-            
-        
-    </aside>
-
+    
 
             <main class="main full-width">
     <article class="main-article">
@@ -290,8 +255,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/database/" >
-                Database
+            <a href="/categories/default/" >
+                Default
             </a>
         
     </header>
@@ -299,7 +264,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/mysql01/">MySQL基础知识</a>
+            <a href="/p/250401163700/">部署的服务汇总</a>
         </h2>
     
         
@@ -321,7 +286,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Mar 04, 2025</time>
+                <time class="article-time--published">Apr 01, 2025</time>
             </div>
         
 
@@ -338,28 +303,6 @@
     
     
     <h2 id="简介">简介
-</h2><p>本文将介绍 MySQL 基础知识</p>
-<p>SQL 语句根据功能分为四种：</p>
-<ul>
-<li>数据定义语言 DDL：Data Definition Language</li>
-<li>数据操纵语言 DML：Data Maniplation Language</li>
-<li>数据控制语言 DCL：Data Control Language</li>
-<li>数据查询语言 DQL：Data Query Language</li>
-</ul>
-<h2 id="ddl">DDL
-</h2><p>数据定义语言</p>
-<p>作用：用于定义数据库的结构，例如数据库对象（表、索引、视图、存储过程）的创建、修改和删除</p>
-<p>主要语句：</p>
-<ul>
-<li><code>CREATE</code>：创建数据库对象，例如：<code>CREATE TABLE</code>，<code>CREATE INDEX</code>，<code>CREATE INDEX</code></li>
-<li><code>ALTER</code>：修改数据库对象，例如 <code>ALTER TABLE</code></li>
-<li><code>DROP</code>：删除数据库对象，例如 <code>DROP TABLE</code>，<code>DROP INDEX</code>，<code>DROP VIEW</code></li>
-<li><code>TRUNCATE</code>：清空表中数据，但保留表结构，例如 <code>TRUNCATE TABLE</code></li>
-<li><code>RENAME</code>：重命名数据库对象，例如 <code>REANME TABLE</code></li>
-</ul>
-<h2 id="dml">DML
-</h2><h2 id="dcl">DCL
-</h2><h2 id="dql">DQL
 </h2>
 </section>
 
@@ -386,12 +329,12 @@
             
                 
 <article class="">
-    <a href="/p/pg-chapter05/">
+    <a href="/p/250403135551/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">PostgreSQL教程第5章：数据定义</h2>
+            <h2 class="article-title">kodbox，新一代企业私有云存储，协同办公平台</h2>
         </div>
     </a>
 </article>
@@ -399,12 +342,12 @@
             
                 
 <article class="">
-    <a href="/p/pg-chapter08/">
+    <a href="/p/250403100524/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">PostgreSQL教程第8章：数据类型</h2>
+            <h2 class="article-title">PHP开源项目收集</h2>
         </div>
     </a>
 </article>
@@ -412,12 +355,12 @@
             
                 
 <article class="">
-    <a href="/p/241011224204/">
+    <a href="/p/250330130700/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">PostgreSQL客户端PSQL使用</h2>
+            <h2 class="article-title">SSH，安全远程连接的强大工具</h2>
         </div>
     </a>
 </article>
@@ -425,12 +368,12 @@
             
                 
 <article class="">
-    <a href="/p/241005094240/">
+    <a href="/p/250327233239/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">PostgreSQL安装，配置</h2>
+            <h2 class="article-title">英语中的日期</h2>
         </div>
     </a>
 </article>
@@ -438,12 +381,12 @@
             
                 
 <article class="">
-    <a href="/p/241002080830/">
+    <a href="/p/250323154952/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">sqlite3的一些基本操作</h2>
+            <h2 class="article-title">GitHub520，加速访问GitHub的神器</h2>
         </div>
     </a>
 </article>
