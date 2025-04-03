@@ -166,7 +166,8 @@ Flash
     &gt;https://github.com/kalcaddle/kodbox&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;h3 id=&#34;serv00&#34;&gt;serv00
-&lt;/h3&gt;&lt;p&gt;登录后台&lt;/p&gt;
+&lt;/h3&gt;&lt;h4 id=&#34;准备&#34;&gt;准备
+&lt;/h4&gt;&lt;p&gt;登录后台&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/1Zo9HFSJj5mrIGW.png&#34;
 	
 	
@@ -230,7 +231,30 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;ssh登录服务器&lt;/p&gt;
+&lt;p&gt;创建数据库&lt;/p&gt;
+&lt;p&gt;在serv00面板，MySQL，添加数据库&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/OTvb1QuqIhxYfP5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150128247&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/SQFTktNdLeRUBDx.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150238064&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;安装&#34;&gt;安装
+&lt;/h4&gt;&lt;p&gt;ssh登录服务器&lt;/p&gt;
 &lt;p&gt;进入设置对应的网站目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -250,24 +274,160 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;下载源码&lt;/p&gt;
+&lt;p&gt;从源码安装&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Install from source&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/kalcaddle/kodbox.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod -Rf &lt;span class=&#34;m&#34;&gt;777&lt;/span&gt; ./kodbox/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv kodbox/* .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;install-from-source&#34;&gt;Install from source
-&lt;/h1&gt;&lt;p&gt;git clone &lt;a class=&#34;link&#34; href=&#34;https://github.com/kalcaddle/kodbox.git&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/kalcaddle/kodbox.git&lt;/a&gt;
-chmod -Rf 777 ./kodbox/*&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h4 id=&#34;网站设置&#34;&gt;网站设置
+&lt;/h4&gt;&lt;p&gt;访问创建的网站，完成设置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/b1rfPRAVBLGmo8z.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403145928353&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;跳过，进入数据库设置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/rU3NPEubML9fOQG.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150029671&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;填入之前的数据库信息，数据库选择MySQL，填好后确定进入下一步&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/cKN3GwudZCfMmPk.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150530896&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;设置账户和密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/Nz6g9dSMxwuipPs.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150712963&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;登录&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/uQd1FVfzHZMY5Jv.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150758096&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;申请ssl证书&#34;&gt;申请SSL证书
+&lt;/h4&gt;&lt;p&gt;如果有需要，serv00可供免费的ssl证书&lt;/p&gt;
+&lt;p&gt;回到面板，选择 &lt;code&gt;WWW websites&lt;/code&gt;，点击&lt;code&gt;Manage SSL certficates&lt;/code&gt;，跟着图示进行操作&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/dQCObntxaLMkj8Z.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403151419953&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/GqW8f5spmjduVbU.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403151801174&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/7GPVSAn3LYTfcrK.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403151734858&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/tv2DJFerzphsPC5.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403151631443&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;成功如下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/2S7nXxuFeVRiKbh.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403151914032&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;域名加上 &lt;code&gt;https://&lt;/code&gt; 即可&lt;/p&gt;
+&lt;p&gt;需要说明的是：serv00不能强制跳转，需要手动在地址添加https&lt;/p&gt;
+&lt;h2 id=&#34;整体界面&#34;&gt;整体界面
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/lQ5DobBPwKg1aNO.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150825266&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/kMz8NrSH2OnVpxj.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250403150843082&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在线体验&#34;&gt;在线体验
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://kodbox.seektao.cc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击跳转&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;账户：kodboxguest&lt;/p&gt;
+&lt;p&gt;密码：kodboxguest&lt;/p&gt;
+</description>
         </item>
         
     </channel>

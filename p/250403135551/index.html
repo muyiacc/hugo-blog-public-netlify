@@ -291,9 +291,18 @@
     </li>
     <li><a href="#部署">部署</a>
       <ol>
-        <li><a href="#serv00">serv00</a></li>
+        <li><a href="#serv00">serv00</a>
+          <ol>
+            <li><a href="#准备">准备</a></li>
+            <li><a href="#安装">安装</a></li>
+            <li><a href="#网站设置">网站设置</a></li>
+            <li><a href="#申请ssl证书">申请SSL证书</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
+    <li><a href="#整体界面">整体界面</a></li>
+    <li><a href="#在线体验">在线体验</a></li>
   </ol>
 </nav>
         </div>
@@ -512,7 +521,8 @@ Flash
     >https://github.com/kalcaddle/kodbox</a></p>
 <h2 id="部署">部署
 </h2><h3 id="serv00">serv00
-</h3><p>登录后台</p>
+</h3><h4 id="准备">准备
+</h4><p>登录后台</p>
 <p><img src="https://s2.loli.net/2025/04/03/1Zo9HFSJj5mrIGW.png"
 	
 	
@@ -576,7 +586,30 @@ Flash
 	
 	
 ></p>
-<p>ssh登录服务器</p>
+<p>创建数据库</p>
+<p>在serv00面板，MySQL，添加数据库</p>
+<p><img src="https://s2.loli.net/2025/04/03/OTvb1QuqIhxYfP5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150128247"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/SQFTktNdLeRUBDx.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150238064"
+	
+	
+></p>
+<h4 id="安装">安装
+</h4><p>ssh登录服务器</p>
 <p>进入设置对应的网站目录</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -596,24 +629,160 @@ Flash
 	
 	
 ></p>
-<p>下载源码</p>
+<p>从源码安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Install from source</span>
+</span></span><span class="line"><span class="cl">git clone https://github.com/kalcaddle/kodbox.git
+</span></span><span class="line"><span class="cl">chmod -Rf <span class="m">777</span> ./kodbox/*
+</span></span><span class="line"><span class="cl">mv kodbox/* .
+</span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="install-from-source">Install from source
-</h1><p>git clone <a class="link" href="https://github.com/kalcaddle/kodbox.git"  target="_blank" rel="noopener"
-    >https://github.com/kalcaddle/kodbox.git</a>
-chmod -Rf 777 ./kodbox/*</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
-</div>
-</div>
+</div><h4 id="网站设置">网站设置
+</h4><p>访问创建的网站，完成设置</p>
+<p><img src="https://s2.loli.net/2025/04/03/b1rfPRAVBLGmo8z.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403145928353"
+	
+	
+></p>
+<p>跳过，进入数据库设置</p>
+<p><img src="https://s2.loli.net/2025/04/03/rU3NPEubML9fOQG.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150029671"
+	
+	
+></p>
+<p>填入之前的数据库信息，数据库选择MySQL，填好后确定进入下一步</p>
+<p><img src="https://s2.loli.net/2025/04/03/cKN3GwudZCfMmPk.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150530896"
+	
+	
+></p>
+<p>设置账户和密码</p>
+<p><img src="https://s2.loli.net/2025/04/03/Nz6g9dSMxwuipPs.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150712963"
+	
+	
+></p>
+<p>登录</p>
+<p><img src="https://s2.loli.net/2025/04/03/uQd1FVfzHZMY5Jv.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150758096"
+	
+	
+></p>
+<h4 id="申请ssl证书">申请SSL证书
+</h4><p>如果有需要，serv00可供免费的ssl证书</p>
+<p>回到面板，选择 <code>WWW websites</code>，点击<code>Manage SSL certficates</code>，跟着图示进行操作</p>
+<p><img src="https://s2.loli.net/2025/04/03/dQCObntxaLMkj8Z.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403151419953"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/GqW8f5spmjduVbU.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403151801174"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/7GPVSAn3LYTfcrK.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403151734858"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/tv2DJFerzphsPC5.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403151631443"
+	
+	
+></p>
+<p>成功如下</p>
+<p><img src="https://s2.loli.net/2025/04/03/2S7nXxuFeVRiKbh.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403151914032"
+	
+	
+></p>
+<p>域名加上 <code>https://</code> 即可</p>
+<p>需要说明的是：serv00不能强制跳转，需要手动在地址添加https</p>
+<h2 id="整体界面">整体界面
+</h2><p><img src="https://s2.loli.net/2025/04/03/lQ5DobBPwKg1aNO.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150825266"
+	
+	
+></p>
+<p><img src="https://s2.loli.net/2025/04/03/kMz8NrSH2OnVpxj.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20250403150843082"
+	
+	
+></p>
+<h2 id="在线体验">在线体验
+</h2><p><a class="link" href="https://kodbox.seektao.cc"  target="_blank" rel="noopener"
+    >点击跳转</a></p>
+<p>账户：kodboxguest</p>
+<p>密码：kodboxguest</p>
+
 </section>
 
 
