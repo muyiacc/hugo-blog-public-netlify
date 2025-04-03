@@ -60,14 +60,14 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;官网介绍&#34;&gt;官网介绍
 &lt;/h3&gt;&lt;blockquote&gt;
-&lt;h2 id=&#34;颜值担当webos-级别操作体验&#34;&gt;颜值担当，WebOS 级别操作体验
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;颜值担当，WebOS 级别操作体验&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;KodBox 沿用了 Windows 用户界面、操作逻辑和用户习惯，支持拖拽、框选和快捷键操作，使得用户可以在熟悉的桌面工作环境中，以舒适直观的方式轻松管理服务器中的文件，最大程度地减少学习成本和进入障碍。&lt;/p&gt;
 &lt;p&gt;一切都是那么优美和流畅。提供图标、列表、分栏三种布局方式，缩略图展示，随心切换大小，还有熟悉的右键菜单，PC 上操作的习惯通通可以实现，彻底摆脱传统网盘使用中的不适，&lt;/p&gt;
 &lt;p&gt;更有熟悉的桌面可以添加各种喜欢的小应用，是在在线文档管理器，更是随时随地都可以访问的私有的 WebOS。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;随时随地文档随心查看&#34;&gt;随时随地，文档随心查看
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;随时随地，文档随心查看&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;每种文档格式均提供了丰富的插件支持，可根据不同软件的环境要求、显示效果、偏好自由选择打开的方式，或者设置默认打开方式。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;Microsoft Office系列（Word、Excel、PowerPoint）
 WPS 格式
@@ -82,15 +82,15 @@ Flash
 &lt;p&gt;提供多元化的打开方式，更多预览程序选择。&lt;/p&gt;
 &lt;p&gt;高分辨率和高保真，放大查看也不会丢失细节。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;影音娱乐趣味盎然&#34;&gt;影音娱乐，趣味盎然
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;影音娱乐，趣味盎然&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;媒体播放器可以打开和播放所有常见的视频格式：MP4，M4V，F4V，MOV，FLV，WEBM，OGV&lt;/p&gt;
 &lt;p&gt;所有常见的音频格式：MP3，AAC，M4A，F4A，OGG，OGA，VORBIS&lt;/p&gt;
 &lt;p&gt;支持通过轻应用及插件的方式添加游戏，私有云也可以轻松有趣&lt;/p&gt;
 &lt;p&gt;离线下载支持，优质资源想存就存&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;图片相册轻松预览和管理&#34;&gt;图片相册，轻松预览和管理
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;图片相册，轻松预览和管理&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;可以在线预览所有常见的图像格式，包括 Photoshop 图片：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Jpeg&lt;/li&gt;
@@ -105,8 +105,8 @@ Flash
 &lt;p&gt;图像查看器支持图片的缩放，平移，旋转和翻转。&lt;/p&gt;
 &lt;p&gt;提供外链地址，私有云轻松作为图床使用，分享给用户和伙伴。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;强大的在线解压压缩和预览&#34;&gt;强大的在线解压、压缩和预览
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;强大的在线解压、压缩和预览&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;全格式支持的在线解压与查看，无需下载到本地也可以轻松查看&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ZIP&lt;/li&gt;
@@ -122,38 +122,38 @@ Flash
 &lt;p&gt;多种编码格式支持&lt;/p&gt;
 &lt;p&gt;多重压缩嵌套的情况下，同样支持打开和查看&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;组织架构集成多元化的权限策略&#34;&gt;组织架构集成，多元化的权限策略
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;组织架构集成，多元化的权限策略&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;管理员可以对设置多种用户角色身份并对其角色权限进行限制；支持自定义群组和用户目录，以及其空间大小的配置。&lt;/p&gt;
 &lt;p&gt;企业可以按照组织架构建立各部门的共享文件夹，并通过群组权限对部门成员实现进行权限分配。群组支持多层级关系中上级对下级文件的查看和管理，群组还设定对外部分享的文件以实现外部协作需求。&lt;/p&gt;
 &lt;p&gt;支持共享登录，用户单点集成、用户组织结构集成，用户可以根据需要深度整合企业微信、钉钉等其他平台的用户和组织结构数据，实现组织结构与文档的无缝对接。&lt;/p&gt;
 &lt;p&gt;管理员可完全自定义版权信息、公司名称，企业 Logo 等信息。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;强大简单易用的上传下载&#34;&gt;强大、简单易用的上传下载
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;强大、简单易用的上传下载&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;拖拽文件到浏览器窗口即可轻松上传文档；采用分片上传，断点续传技术。多文件批量上传，文件夹直接上传等，尽在一拖一放之间。&lt;/p&gt;
 &lt;p&gt;下载支持断点续传，多线程下载提速。文件夹、多文件自动打包压缩下载。&lt;/p&gt;
 &lt;p&gt;支持离线下载，通过远程增加下载任务，使用文档时无需等待。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;主题随心定义更多的生产力&#34;&gt;主题随心定义，更多的生产力
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;主题随心定义，更多的生产力&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;KodBox 始终把用户体验放在产品设计首要考虑的因素，倾心构造无障碍的在线私有文档管理体验。&lt;/p&gt;
 &lt;p&gt;你的私有云，由你定义。&lt;/p&gt;
 &lt;p&gt;主题自由切换，壁纸轻松选择，用更舒服的姿势进入状态。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;多语言支持&#34;&gt;多语言支持
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;多语言支持&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;提供超过 20 种语言，国际访问也能轻松应对不同语言环境。哪怕朋友、同事和客户身在国外，也不惧地域和语言限制，轻松查看分享。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;轻量易部署跨平台支持&#34;&gt;轻量易部署，跨平台支持
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;轻量易部署，跨平台支持&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;全平台兼容性：Win、Linux、Mac (Apache、Nginx、IIS)。从百元级别的智能路由器和盒子产品，到 NAS 网络存储设备，到服务器面板，服务器，硬件集成，ERP 集成，私有云、公有云、SaaS 服务搭建等各种场景都可自如适用。&lt;/p&gt;
 &lt;p&gt;支持跨平台浏览器的无缝访问。仅需一个浏览器即在 web 端完成文档的上传下载、管理查看，不需要安装任何类似 ftp 客户端的软件。&lt;/p&gt;
 &lt;p&gt;提供多客户端支持。&lt;/p&gt;
 &lt;p&gt;支持企业微信、钉钉等常用企业工具的集成登录和访问。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;h2 id=&#34;丰富多彩生态轻松开发拓展&#34;&gt;丰富多彩生态，轻松开发拓展
-&lt;/h2&gt;&lt;/blockquote&gt;
+&lt;p&gt;丰富多彩生态，轻松开发拓展&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;内置轻应用和插件市场，数百种插件和拓展支持，从办公环境到个人娱乐，几乎覆盖日常使用所有需求。用户可以通过链接、Js 代码的方式方便地添加各种轻应用。&lt;/p&gt;
 &lt;p&gt;正如在 Windows 中可以原则文档的打开方式一样，KodBox 也提供了多种插件打开方式；用户可以根据偏好通过喜欢的插件来查看文档。管理员可根据需要安装插件，设置用户和群组对插件的使用权限，拥有多元化的管理方式。&lt;/p&gt;
 &lt;p&gt;完备开放的 API 接口，可以通过插件的方式方便地对系统进行二次开发、功能拓展，方便地集成到 SaaS 服务、企业邮箱、OA、ERP 等 IT 系统中，与企业自身的 IT 系统进行对接。且二次开发后，产品仍可以无缝升级。&lt;/p&gt;
