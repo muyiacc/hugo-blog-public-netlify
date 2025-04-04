@@ -178,7 +178,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;选择 WWW websites 创建网站（如果直接使用serv00提供的域名可以跳过）&lt;/p&gt;
+&lt;p&gt;选择 WWW websites 创建网站（如果直接使用 serv00 提供的域名可以跳过）&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/d3PFQLpU9yRebKz.png&#34;
 	
 	
@@ -199,7 +199,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;添加DNS解析，将域名指向serv00的分配的ip&lt;/p&gt;
+&lt;p&gt;添加 DNS 解析，将域名指向 serv00 的分配的 ip&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/3PalEWwzJMxt8im.png&#34;
 	
 	
@@ -220,7 +220,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;以dnspod为例&lt;/p&gt;
+&lt;p&gt;以 dnspod 为例&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/jQ8EuPgsJbp4S72.png&#34;
 	
 	
@@ -232,7 +232,7 @@ Flash
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;创建数据库&lt;/p&gt;
-&lt;p&gt;在serv00面板，MySQL，添加数据库&lt;/p&gt;
+&lt;p&gt;在 serv00 面板，MySQL，添加数据库&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/OTvb1QuqIhxYfP5.png&#34;
 	
 	
@@ -254,7 +254,7 @@ Flash
 	
 &gt;&lt;/p&gt;
 &lt;h4 id=&#34;安装&#34;&gt;安装
-&lt;/h4&gt;&lt;p&gt;ssh登录服务器&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;ssh 登录服务器&lt;/p&gt;
 &lt;p&gt;进入设置对应的网站目录&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -290,7 +290,7 @@ Flash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h4 id=&#34;网站设置&#34;&gt;网站设置
-&lt;/h4&gt;&lt;p&gt;访问创建的网站，完成设置&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;访问在 seer00 创建的网站（也就是你的域名），完成网站设置，点击跳过，进入数据库设置&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/b1rfPRAVBLGmo8z.png&#34;
 	
 	
@@ -301,7 +301,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;跳过，进入数据库设置&lt;/p&gt;
+&lt;p&gt;数据库选择 MySQL，数据库信息填入之前的在 serv00 创建的数据库信息&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/rU3NPEubML9fOQG.png&#34;
 	
 	
@@ -312,7 +312,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;填入之前的数据库信息，数据库选择MySQL，填好后确定进入下一步&lt;/p&gt;
+&lt;p&gt;内容大致如下，填好后点击确定，进入下一步&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/cKN3GwudZCfMmPk.png&#34;
 	
 	
@@ -323,7 +323,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;设置账户和密码&lt;/p&gt;
+&lt;p&gt;设置 kodbox 的账户和密码，用于后续登录，点击确定完成网站设置&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/Nz6g9dSMxwuipPs.png&#34;
 	
 	
@@ -334,7 +334,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;登录&lt;/p&gt;
+&lt;p&gt;网站设置完成之后，再次访问即可进入登录界面&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/uQd1FVfzHZMY5Jv.png&#34;
 	
 	
@@ -345,9 +345,9 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;h4 id=&#34;申请ssl证书&#34;&gt;申请SSL证书
-&lt;/h4&gt;&lt;p&gt;如果有需要，serv00可供免费的ssl证书&lt;/p&gt;
-&lt;p&gt;回到面板，选择 &lt;code&gt;WWW websites&lt;/code&gt;，点击&lt;code&gt;Manage SSL certficates&lt;/code&gt;，跟着图示进行操作&lt;/p&gt;
+&lt;h4 id=&#34;申请-ssl-证书&#34;&gt;申请 SSL 证书
+&lt;/h4&gt;&lt;p&gt;如果有需要，serv00 提供免费的 ssl 证书&lt;/p&gt;
+&lt;p&gt;回到 serv00 面板，选择 &lt;code&gt;WWW websites&lt;/code&gt;，点击&lt;code&gt;Manage SSL certficates&lt;/code&gt;，跟着图示进行操作&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/dQCObntxaLMkj8Z.png&#34;
 	
 	
@@ -388,7 +388,7 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;成功如下&lt;/p&gt;
+&lt;p&gt;成功申请之后显示如下&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/2S7nXxuFeVRiKbh.png&#34;
 	
 	
@@ -399,8 +399,48 @@ Flash
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;域名加上 &lt;code&gt;https://&lt;/code&gt; 即可&lt;/p&gt;
-&lt;p&gt;需要说明的是：serv00不能强制跳转，需要手动在地址添加https&lt;/p&gt;
+&lt;p&gt;再次访问域名，在最开始加上 &lt;code&gt;https://&lt;/code&gt; 即可&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;举例：
+无 ssl：http://kodbox.seektao.cc
+有 ssl: &lt;a class=&#34;link&#34; href=&#34;https://kodbox.seektao.cc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://kodbox.seektao.cc&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;del&gt;特别需要说明的是：serv00 没有地方可以设置 http 重定向到 https，也就是不能强制使用 ssl，所以访问的时候需要手动在域名千添加 &lt;code&gt;https://&lt;/code&gt;，不过浏览器都有历史功能，访问后，下次会提示。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;回到 ssh 连接的 serv00&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/domains/你的网站/public_html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;新建 &lt;code&gt;.htaccess&lt;/code&gt;文件，开启重定向 http 到 https&lt;/p&gt;
+&lt;p&gt;如果你不懂 &lt;code&gt;vim&lt;/code&gt;，请找一个你熟悉的编辑软件上传，这里简要介绍一下&lt;/p&gt;
+&lt;p&gt;编辑 &lt;code&gt;.htaccess&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim .htaccess
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;复制下面的内容，粘贴进去&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-apache&#34; data-lang=&#34;apache&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;RewriteEngine&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;On&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;RewriteCond&lt;/span&gt; %{HTTPS} &lt;span class=&#34;k&#34;&gt;off&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;RewriteRule&lt;/span&gt; ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;英文输入法下 &lt;code&gt;:wq&lt;/code&gt; 退出保存&lt;/p&gt;
 &lt;h2 id=&#34;整体界面&#34;&gt;整体界面
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/03/lQ5DobBPwKg1aNO.png&#34;
 	
@@ -14578,7 +14618,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>sqlite3的一些基本操作</title>
+        <title>sqlite基础</title>
         <link>https://hublog.netlify.app/p/241002080830/</link>
         <pubDate>Wed, 02 Oct 2024 08:08:30 +0800</pubDate>
         
@@ -14589,7 +14629,17 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;.table&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;清空表数据&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;DELETE FROM table_name;&lt;/code&gt;&lt;/p&gt;
-</description>
+&lt;h2 id=&#34;备份&#34;&gt;备份
+&lt;/h2&gt;&lt;p&gt;导出数据库到sql文件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;sqlite3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;your_database_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;db&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;your_output_file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;sql&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>cargo安装</title>

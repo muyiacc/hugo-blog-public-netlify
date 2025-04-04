@@ -282,7 +282,7 @@
             <li><a href="#准备">准备</a></li>
             <li><a href="#安装">安装</a></li>
             <li><a href="#网站设置">网站设置</a></li>
-            <li><a href="#申请ssl证书">申请SSL证书</a></li>
+            <li><a href="#申请-ssl-证书">申请 SSL 证书</a></li>
           </ol>
         </li>
       </ol>
@@ -519,7 +519,7 @@ Flash
 	
 	
 ></p>
-<p>选择 WWW websites 创建网站（如果直接使用serv00提供的域名可以跳过）</p>
+<p>选择 WWW websites 创建网站（如果直接使用 serv00 提供的域名可以跳过）</p>
 <p><img src="https://s2.loli.net/2025/04/03/d3PFQLpU9yRebKz.png"
 	
 	
@@ -540,7 +540,7 @@ Flash
 	
 	
 ></p>
-<p>添加DNS解析，将域名指向serv00的分配的ip</p>
+<p>添加 DNS 解析，将域名指向 serv00 的分配的 ip</p>
 <p><img src="https://s2.loli.net/2025/04/03/3PalEWwzJMxt8im.png"
 	
 	
@@ -561,7 +561,7 @@ Flash
 	
 	
 ></p>
-<p>以dnspod为例</p>
+<p>以 dnspod 为例</p>
 <p><img src="https://s2.loli.net/2025/04/03/jQ8EuPgsJbp4S72.png"
 	
 	
@@ -573,7 +573,7 @@ Flash
 	
 ></p>
 <p>创建数据库</p>
-<p>在serv00面板，MySQL，添加数据库</p>
+<p>在 serv00 面板，MySQL，添加数据库</p>
 <p><img src="https://s2.loli.net/2025/04/03/OTvb1QuqIhxYfP5.png"
 	
 	
@@ -595,7 +595,7 @@ Flash
 	
 ></p>
 <h4 id="安装">安装
-</h4><p>ssh登录服务器</p>
+</h4><p>ssh 登录服务器</p>
 <p>进入设置对应的网站目录</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -631,7 +631,7 @@ Flash
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="网站设置">网站设置
-</h4><p>访问创建的网站，完成设置</p>
+</h4><p>访问在 seer00 创建的网站（也就是你的域名），完成网站设置，点击跳过，进入数据库设置</p>
 <p><img src="https://s2.loli.net/2025/04/03/b1rfPRAVBLGmo8z.png"
 	
 	
@@ -642,7 +642,7 @@ Flash
 	
 	
 ></p>
-<p>跳过，进入数据库设置</p>
+<p>数据库选择 MySQL，数据库信息填入之前的在 serv00 创建的数据库信息</p>
 <p><img src="https://s2.loli.net/2025/04/03/rU3NPEubML9fOQG.png"
 	
 	
@@ -653,7 +653,7 @@ Flash
 	
 	
 ></p>
-<p>填入之前的数据库信息，数据库选择MySQL，填好后确定进入下一步</p>
+<p>内容大致如下，填好后点击确定，进入下一步</p>
 <p><img src="https://s2.loli.net/2025/04/03/cKN3GwudZCfMmPk.png"
 	
 	
@@ -664,7 +664,7 @@ Flash
 	
 	
 ></p>
-<p>设置账户和密码</p>
+<p>设置 kodbox 的账户和密码，用于后续登录，点击确定完成网站设置</p>
 <p><img src="https://s2.loli.net/2025/04/03/Nz6g9dSMxwuipPs.png"
 	
 	
@@ -675,7 +675,7 @@ Flash
 	
 	
 ></p>
-<p>登录</p>
+<p>网站设置完成之后，再次访问即可进入登录界面</p>
 <p><img src="https://s2.loli.net/2025/04/03/uQd1FVfzHZMY5Jv.png"
 	
 	
@@ -686,9 +686,9 @@ Flash
 	
 	
 ></p>
-<h4 id="申请ssl证书">申请SSL证书
-</h4><p>如果有需要，serv00可供免费的ssl证书</p>
-<p>回到面板，选择 <code>WWW websites</code>，点击<code>Manage SSL certficates</code>，跟着图示进行操作</p>
+<h4 id="申请-ssl-证书">申请 SSL 证书
+</h4><p>如果有需要，serv00 提供免费的 ssl 证书</p>
+<p>回到 serv00 面板，选择 <code>WWW websites</code>，点击<code>Manage SSL certficates</code>，跟着图示进行操作</p>
 <p><img src="https://s2.loli.net/2025/04/03/dQCObntxaLMkj8Z.png"
 	
 	
@@ -729,7 +729,7 @@ Flash
 	
 	
 ></p>
-<p>成功如下</p>
+<p>成功申请之后显示如下</p>
 <p><img src="https://s2.loli.net/2025/04/03/2S7nXxuFeVRiKbh.png"
 	
 	
@@ -740,8 +740,48 @@ Flash
 	
 	
 ></p>
-<p>域名加上 <code>https://</code> 即可</p>
-<p>需要说明的是：serv00不能强制跳转，需要手动在地址添加https</p>
+<p>再次访问域名，在最开始加上 <code>https://</code> 即可</p>
+<blockquote>
+<p>举例：
+无 ssl：http://kodbox.seektao.cc
+有 ssl: <a class="link" href="https://kodbox.seektao.cc"  target="_blank" rel="noopener"
+    >https://kodbox.seektao.cc</a></p>
+</blockquote>
+<p><del>特别需要说明的是：serv00 没有地方可以设置 http 重定向到 https，也就是不能强制使用 ssl，所以访问的时候需要手动在域名千添加 <code>https://</code>，不过浏览器都有历史功能，访问后，下次会提示。</del></p>
+<p>回到 ssh 连接的 serv00</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$HOME</span>/domains/你的网站/public_html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>新建 <code>.htaccess</code>文件，开启重定向 http 到 https</p>
+<p>如果你不懂 <code>vim</code>，请找一个你熟悉的编辑软件上传，这里简要介绍一下</p>
+<p>编辑 <code>.htaccess</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim .htaccess
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>复制下面的内容，粘贴进去</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-apache" data-lang="apache"><span class="line"><span class="cl"><span class="nb">RewriteEngine</span> <span class="k">On</span>
+</span></span><span class="line"><span class="cl"><span class="nb">RewriteCond</span> %{HTTPS} <span class="k">off</span>
+</span></span><span class="line"><span class="cl"><span class="nb">RewriteRule</span> ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>英文输入法下 <code>:wq</code> 退出保存</p>
 <h2 id="整体界面">整体界面
 </h2><p><img src="https://s2.loli.net/2025/04/03/lQ5DobBPwKg1aNO.png"
 	
