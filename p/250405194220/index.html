@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+<title>服务器自动化打包备份，rclone自动备份脚本分享</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/250405194220/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="服务器自动化打包备份，rclone自动备份脚本分享">
+<meta property='og:description' content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+<meta property='og:url' content='https://hublog.netlify.app/p/250405194220/'>
+<meta property='og:site_name' content='寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rclone' /><meta property='article:published_time' content='2025-04-05T19:42:20&#43;08:00'/><meta property='article:modified_time' content='2025-04-05T19:42:20&#43;08:00'/>
+<meta name="twitter:title" content="服务器自动化打包备份，rclone自动备份脚本分享">
+<meta name="twitter:description" content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/481543302'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z"></path>
+    <path d="M8 3l2 3"></path>
+    <path d="M16 3l-2 3"></path>
+    <path d="M9 13v-2"></path>
+    <path d="M15 11v2"></path>
+  </svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#脚本">脚本</a>
+      <ol>
+        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#创建">创建</a></li>
+        <li><a href="#修改">修改</a></li>
+        <li><a href="#使用">使用</a></li>
+        <li><a href="#定时任务">定时任务</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/250405194220/">服务器自动化打包备份，rclone自动备份脚本分享</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 05, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="简介">简介
+</h2><p>养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储</p>
+<p>如</p>
+<ul>
+<li>WebDAV</li>
+<li>谷歌云</li>
+<li>S3</li>
+<li>OneDrive</li>
+</ul>
+<p>远程备份使用 rclone 完成，只要是 rclone 支持的存储，就可以备份上传，如果你不知道 rclone 是什么，这里给出两个 rclone 的学习资源</p>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV19Z421K7Nh/?spm_id_from=333.1387.search.video_card.click&amp;vd_source=7e075eba86b5352c86e1151e34fa9327"  target="_blank" rel="noopener"
+    >视频讲解</a></li>
+<li><a class="link" href="https://blog.seektao.cc/p/2407020/"  target="_blank" rel="noopener"
+    >文字教程</a></li>
+</ul>
+<p>下面是备份的脚本</p>
+<h2 id="脚本">脚本
+</h2><h3 id="简介-1">简介
+</h3><p>这个脚本将指定的目录备份打包成 <code>tar.gz</code>文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储</p>
+<h3 id="创建">创建
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/bin
+</span></span><span class="line"><span class="cl">touch <span class="nv">$HOME</span>/bin/backup_and_upload.sh
+</span></span><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/bin/backup_and_upload.sh
+</span></span><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/bin/backup_and_upload.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改">修改
+</h3><p>使用前需要修改中文注释提示的部分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">source_dir</span><span class="o">=(</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># 你的备份目录，一行一个，例如</span>
+</span></span><span class="line"><span class="cl">	/opt/container/server1
+</span></span><span class="line"><span class="cl">	/opt/container/server2
+</span></span><span class="line"><span class="cl"><span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">date_format</span><span class="o">=</span><span class="k">$(</span><span class="nv">TZ</span><span class="o">=</span><span class="s2">&#34;UTC&#34;</span> date +%Y%m%d<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 备份文件的存放位置（可选）</span>
+</span></span><span class="line"><span class="cl"><span class="nv">backup_base_dir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/backup/application&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">force_repack</span><span class="o">=</span><span class="m">0</span>  <span class="c1"># Default: do not force repack</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Define backup functions</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 函数名为你的rclone配置的远程存储名，仿照下面的添加即可</span>
+</span></span><span class="line"><span class="cl">b2<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">remote_dir</span><span class="o">=</span><span class="s2">&#34;rclone远程存储名:远程备份路径&#34;</span>
+</span></span><span class="line"><span class="cl">    backup_to_remote <span class="s2">&#34;</span><span class="nv">$remote_dir</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Generic backup function</span>
+</span></span><span class="line"><span class="cl">backup_to_remote<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">remote_dir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">source_full_path</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">local</span> <span class="nv">source_name</span><span class="o">=</span><span class="k">$(</span>basename <span class="s2">&#34;</span><span class="nv">$source_full_path</span><span class="s2">&#34;</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># check output directory</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">target_dir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$backup_base_dir</span><span class="s2">/</span><span class="nv">$source_name</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&#34;</span><span class="nv">$target_dir</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$target_dir</span><span class="s2"> directory not exists, creating...&#34;</span>
+</span></span><span class="line"><span class="cl">        mkdir -p <span class="s2">&#34;</span><span class="nv">$target_dir</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># archive directory</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">target_full_path</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$target_dir</span><span class="s2">/</span><span class="si">${</span><span class="nv">source_name</span><span class="si">}</span><span class="s2">_backup_</span><span class="si">${</span><span class="nv">date_format</span><span class="si">}</span><span class="s2">.tar.gz&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> ! -f <span class="s2">&#34;</span><span class="nv">$target_full_path</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">||</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$force_repack</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$force_repack</span><span class="s2">&#34;</span> -eq <span class="m">1</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Force repack is enabled. Recreating archive: </span><span class="nv">$target_full_path</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">echo</span> <span class="s2">&#34;Creating archive: </span><span class="nv">$target_full_path</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">        tar -zcf <span class="s2">&#34;</span><span class="nv">$target_full_path</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$source_full_path</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># backup archive file</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Starting backup to </span><span class="nv">$remote_dir</span><span class="s2">: </span><span class="si">${</span><span class="nv">target_full_path</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    rclone copy <span class="s2">&#34;</span><span class="nv">$target_full_path</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$remote_dir</span><span class="s2">/</span><span class="si">${</span><span class="nv">source_name</span><span class="si">}</span><span class="s2">&#34;</span> -P
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Process each source directory</span>
+</span></span><span class="line"><span class="cl">process_directory<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">dir</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">local</span> <span class="nv">backup_targets</span><span class="o">=(</span><span class="s2">&#34;</span><span class="si">${</span><span class="p">@:</span><span class="nv">2</span><span class="si">}</span><span class="s2">&#34;</span><span class="o">)</span> <span class="c1"># Get all arguments after the directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="nv">$backup_targets</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;No backup targets specified for </span><span class="nv">$dir</span><span class="s2">. Skipping.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> target in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">backup_targets</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">type</span> <span class="s2">&#34;</span><span class="nv">$target</span><span class="s2">&#34;</span> &gt; /dev/null 2&gt;<span class="p">&amp;</span>1<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;Backing up </span><span class="nv">$dir</span><span class="s2"> to </span><span class="nv">$target</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;</span><span class="nv">$target</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$dir</span><span class="s2">&#34;</span> <span class="c1"># Call the backup function with the directory</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;Error: Backup target &#39;</span><span class="nv">$target</span><span class="s2">&#39; not found.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="k">done</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Main script logic</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Parse command line arguments</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&#34;f&#34;</span> opt<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="k">case</span> <span class="nv">$opt</span> in
+</span></span><span class="line"><span class="cl">    f<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nv">force_repack</span><span class="o">=</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">      <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    <span class="se">\?</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;Invalid option: -</span><span class="nv">$OPTARG</span><span class="s2">&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    :<span class="o">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">echo</span> <span class="s2">&#34;Option -</span><span class="nv">$OPTARG</span><span class="s2"> requires an argument.&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">      <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">esac</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">shift</span> <span class="k">$((</span>OPTIND <span class="o">-</span><span class="m">1</span><span class="k">))</span> <span class="c1"># Shift off the options, leaving only backup targets</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Usage: </span><span class="nv">$0</span><span class="s2"> [-f] &lt;backup_target&gt; [backup_target2 ...] &#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;  -f: Force re-packaging the local archive file.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Available backup targets: b2&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop through each source directory and apply the specified backups</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> source_dir_item in <span class="s2">&#34;</span><span class="si">${</span><span class="nv">source_dir</span><span class="p">[@]</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    process_directory <span class="s2">&#34;</span><span class="nv">$source_dir_item</span><span class="s2">&#34;</span> <span class="s2">&#34;</span><span class="nv">$@</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Backup process completed.&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="使用">使用
+</h3><p>添加到环境变量（可选）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;export PATH=$PATH:$HOME/bin&#39;</span> &gt;&gt; <span class="nv">$HOME</span>/.bashrc
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$HOME</span>/.bashrc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">backup_and_upload.sh rclone配置的远程存储名
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>参数</p>
+<ul>
+<li><code>-f</code>：强制重新打包</li>
+</ul>
+<p>示例</p>
+<blockquote>
+<p>备份到 b2</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">backup_and_upload.sh b2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行后将会自动打包备份到家目录的 <code>backup/application</code>下，然后上传到 b2</p>
+<h3 id="定时任务">定时任务
+</h3><p>为了实现定期备份，可以添加定时任务</p>
+<p>这个表示每天 0 点 30 分备份上传</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;30 0 * * * </span><span class="nv">$HOME</span><span class="s2">/bin/backup_and_upload.sh &gt; /dev/null&#34;</span> &gt;&gt; /var/spool/cron/crontabs/root
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/rclone/">Rclone</a>
+        
+    </section>
+
+
+    <section>
+        页面浏览量<span id="vercount_value_page_pv">Loading</span>
+    </section>
+</footer>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250117155426/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rclone开启命令补全</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/p/2407020/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp" loading="lazy" data-key="2407020" data-hash="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">rclone，统一管理、备份同步多云存储</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250403135551/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">kodbox，新一代企业私有云存储，协同办公平台</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250403100524/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP开源项目收集</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250401163700/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">部署的服务汇总</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2025 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        
+            网站总访客数：<span id='vercount_value_site_uv'>Loading</span><br/>网站总访问量：<span id='vercount_value_site_pv'>Loading</span> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script> -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3LPlvzNZdFeUNaJ3",ck:"3LPlvzNZdFeUNaJ3",autoTrack:true,hashMode:true,screenRecord:true})</script>
+    </body>
+</html>
