@@ -743,12 +743,6 @@
     <loc>https://hublog.netlify.app/p/2407020/</loc>
     <lastmod>2024-07-20T15:07:50+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/tags/command/</loc>
-    <lastmod>2024-07-19T15:07:49+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/p/2407019/</loc>
-    <lastmod>2024-07-19T15:07:49+08:00</lastmod>
-  </url><url>
     <loc>https://hublog.netlify.app/p/2407018/</loc>
     <lastmod>2024-07-17T15:07:48+08:00</lastmod>
   </url><url>
@@ -1057,6 +1051,9 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/2405001/</loc>
     <lastmod>2024-05-01T16:05:43+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/command/</loc>
+    <lastmod>2024-05-01T13:05:46+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/docker-command/</loc>
     <lastmod>2024-05-01T13:05:46+08:00</lastmod>

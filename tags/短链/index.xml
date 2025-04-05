@@ -8,15 +8,17 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Tue, 23 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E7%9F%AD%E9%93%BE/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>短链系统yourls安装使用</title>
+        <title>yourls，行业标准自托管的 PHP 网址缩短程序</title>
         <link>https://hublog.netlify.app/p/2407027/</link>
         <pubDate>Sun, 07 Jul 2024 15:07:53 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2407027/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;YOURLS 是一个强大的 PHP 脚本集，可以让您在服务器上运行自己的 URL 缩短程序。有了 YOURLS，你可以完全控制你的链接、详细的统计数据、插件支持等等，所有这些都包装在一个免费的开源软件包中。&lt;/p&gt;
-&lt;p&gt;官网：https://yourls.org&lt;/p&gt;
-&lt;p&gt;源码：https://github.com/YOURLS/YOURLS&lt;/p&gt;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;YOURLS 是一套 PHP 脚本，它能让你在自己的服务器上运行属于你自己的 URL 缩短服务。 你将完全掌控你的数据，还能获得详细的统计信息、分析报告、插件等等。 它是免费且开源的。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://yourls.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://yourls.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/YOURLS/YOURLS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/YOURLS/YOURLS&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;预览：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/07/15/hwqLOfRBcymG2ae.png&#34;
 	
@@ -38,8 +40,9 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;本次以serv00为例，教学安装&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署
+&lt;/h2&gt;&lt;h3 id=&#34;serv00&#34;&gt;serv00
+&lt;/h3&gt;&lt;p&gt;以serv00为例，教学安装&lt;/p&gt;
 &lt;p&gt;下载&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
