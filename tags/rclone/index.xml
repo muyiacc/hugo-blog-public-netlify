@@ -14,22 +14,7 @@
         
         <guid>https://hublog.netlify.app/p/250405194220/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储&lt;/p&gt;
-&lt;p&gt;如&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;WebDAV&lt;/li&gt;
-&lt;li&gt;谷歌云&lt;/li&gt;
-&lt;li&gt;S3&lt;/li&gt;
-&lt;li&gt;OneDrive&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;远程备份使用 rclone 完成，只要是 rclone 支持的存储，就可以备份上传，如果你不知道 rclone 是什么，这里给出两个 rclone 的学习资源&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV19Z421K7Nh/?spm_id_from=333.1387.search.video_card.click&amp;amp;vd_source=7e075eba86b5352c86e1151e34fa9327&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;视频讲解&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/2407020/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;文字教程&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下面是备份的脚本&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;下面是备份的脚本&lt;/p&gt;
 &lt;h2 id=&#34;脚本&#34;&gt;脚本
 &lt;/h2&gt;&lt;h3 id=&#34;简介-1&#34;&gt;简介
 &lt;/h3&gt;&lt;p&gt;这个脚本将指定的目录备份打包成 &lt;code&gt;tar.gz&lt;/code&gt;文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储&lt;/p&gt;
@@ -276,8 +261,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Backup process completed.&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;使用&#34;&gt;使用
-&lt;/h3&gt;&lt;p&gt;添加到环境变量（可选）&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;添加到环境变量（可选）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -288,7 +272,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;运行&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;使用&#34;&gt;使用
+&lt;/h3&gt;&lt;p&gt;运行&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

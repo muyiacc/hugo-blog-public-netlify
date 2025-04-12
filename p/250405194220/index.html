@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
 <title>服务器自动化打包备份，rclone自动备份脚本分享</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250405194220/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="服务器自动化打包备份，rclone自动备份脚本分享">
-<meta property='og:description' content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+<meta property='og:description' content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
 <meta property='og:url' content='https://hublog.netlify.app/p/250405194220/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rclone' /><meta property='article:published_time' content='2025-04-05T19:42:20&#43;08:00'/><meta property='article:modified_time' content='2025-04-05T19:42:20&#43;08:00'/>
 <meta name="twitter:title" content="服务器自动化打包备份，rclone自动备份脚本分享">
-<meta name="twitter:description" content="简介 养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储 如 WebDAV 谷歌云 S3 OneDrive 远程备份使用 rclone 完成，只要是 rclone">
+<meta name="twitter:description" content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
   
 
 
@@ -343,22 +343,7 @@
     
     
     <h2 id="简介">简介
-</h2><p>养成备份的习惯很重要，为了实现自动化备份和上传，这里给出一个方法，支持备份到超过 70 种的远程存储</p>
-<p>如</p>
-<ul>
-<li>WebDAV</li>
-<li>谷歌云</li>
-<li>S3</li>
-<li>OneDrive</li>
-</ul>
-<p>远程备份使用 rclone 完成，只要是 rclone 支持的存储，就可以备份上传，如果你不知道 rclone 是什么，这里给出两个 rclone 的学习资源</p>
-<ul>
-<li><a class="link" href="https://www.bilibili.com/video/BV19Z421K7Nh/?spm_id_from=333.1387.search.video_card.click&amp;vd_source=7e075eba86b5352c86e1151e34fa9327"  target="_blank" rel="noopener"
-    >视频讲解</a></li>
-<li><a class="link" href="https://blog.seektao.cc/p/2407020/"  target="_blank" rel="noopener"
-    >文字教程</a></li>
-</ul>
-<p>下面是备份的脚本</p>
+</h2><p>下面是备份的脚本</p>
 <h2 id="脚本">脚本
 </h2><h3 id="简介-1">简介
 </h3><p>这个脚本将指定的目录备份打包成 <code>tar.gz</code>文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储</p>
@@ -605,8 +590,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;Backup process completed.&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="使用">使用
-</h3><p>添加到环境变量（可选）</p>
+</div><p>添加到环境变量（可选）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -617,7 +601,8 @@
 </span></span><span class="line"><span class="cl"><span class="nb">source</span> <span class="nv">$HOME</span>/.bashrc
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>运行</p>
+</div><h3 id="使用">使用
+</h3><p>运行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -718,6 +703,19 @@
             
                 
 <article class="">
+    <a href="/p/250406183212/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">serv00用途收集</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250403135551/">
         
         
@@ -737,19 +735,6 @@
 
         <div class="article-details">
             <h2 class="article-title">PHP开源项目收集</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250401163700/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">部署的服务汇总</h2>
         </div>
     </a>
 </article>

@@ -62,12 +62,12 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频</title>
+        <title>MPV播放器入门指南-第四期：脚本：粘贴URL播放，利用MPV播放第三方视频平台的视频</title>
         <link>https://hublog.netlify.app/p/241013175136/</link>
         <pubDate>Sun, 13 Oct 2024 17:51:36 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241013175136/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" alt="Featured image of post MPV播放器入门指南-第四期-脚本-第二期：粘贴播放&#43;MPV播放视频平台的视频" /&gt;&lt;p&gt;本期脚本：copy-paste-url&lt;/p&gt;
+        <description>&lt;img src="https://s2.loli.net/2024/10/13/r4LPeIDqyvtOFUS.png" alt="Featured image of post MPV播放器入门指南-第四期：脚本：粘贴URL播放，利用MPV播放第三方视频平台的视频" /&gt;&lt;p&gt;本期脚本：copy-paste-url&lt;/p&gt;
 &lt;p&gt;官方地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/elhirchek/copy-paste-url&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/elhirchek/copy-paste-url&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;功能：用 ctrl + v 将链接复制粘贴到 mpv 中，开始播放视频。&lt;/p&gt;
@@ -456,7 +456,7 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-第二期-脚本-第一期：自动连播</title>
+        <title>MPV播放器入门指南-第二期：脚本：自动连播</title>
         <link>https://hublog.netlify.app/p/2312012/</link>
         <pubDate>Tue, 12 Dec 2023 14:07:10 +0800</pubDate>
         

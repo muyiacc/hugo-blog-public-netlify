@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Nginx（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。 Nginx">
-<title>Nginx安装，配置</title>
+<title>Nginx配置</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250319084854/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Nginx安装，配置">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Nginx配置">
 <meta property='og:description' content="简介 Nginx（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。 Nginx">
 <meta property='og:url' content='https://hublog.netlify.app/p/250319084854/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nginx' /><meta property='article:published_time' content='2025-03-19T08:48:54&#43;08:00'/><meta property='article:modified_time' content='2025-03-19T08:50:02&#43;08:00'/>
-<meta name="twitter:title" content="Nginx安装，配置">
+<meta name="twitter:title" content="Nginx配置">
 <meta name="twitter:description" content="简介 Nginx（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。 Nginx">
   
 
@@ -271,12 +271,17 @@
     <li><a href="#安装">安装</a>
       <ol>
         <li><a href="#包管理器">包管理器</a></li>
+        <li><a href="#官方仓库">官方仓库</a></li>
       </ol>
     </li>
-    <li><a href="#配置">配置</a>
+    <li><a href="#配置简介">配置简介</a>
       <ol>
         <li><a href="#配置文件">配置文件</a></li>
         <li><a href="#配置件的结构">配置⽂件的结构</a></li>
+      </ol>
+    </li>
+    <li><a href="#模块">模块</a>
+      <ol>
         <li><a href="#全局块">全局块</a></li>
         <li><a href="#events-块">events 块</a></li>
         <li><a href="#http-块">http 块</a></li>
@@ -284,7 +289,7 @@
       </ol>
     </li>
     <li><a href="#nginx-常用命令">Nginx 常用命令</a></li>
-    <li><a href="#ssl-配置">ssl 配置</a></li>
+    <li><a href="#ssltls-配置">SSL/TLS 配置</a></li>
   </ol>
 </nav>
         </div>
@@ -312,7 +317,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250319084854/">Nginx安装，配置</a>
+            <a href="/p/250319084854/">Nginx配置</a>
         </h2>
     
         
@@ -367,7 +372,7 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># debian</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># debian/ubuntu</span>
 </span></span><span class="line"><span class="cl">sudo apt update
 </span></span><span class="line"><span class="cl">sudo apt install nginx
 </span></span><span class="line"><span class="cl">
@@ -376,15 +381,14 @@
 </span></span><span class="line"><span class="cl">sudo yum install nginx
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>使用官方仓库</p>
-<p>请移步：<a class="link" href="https://blog.seektao.cc/p/2403007/"  target="_blank" rel="noopener"
+</div><h3 id="官方仓库">官方仓库
+</h3><p>请移步此教程：<a class="link" href="https://blog.seektao.cc/p/2403007/"  target="_blank" rel="noopener"
     >点我跳转</a></p>
-<h2 id="配置">配置
+<h2 id="配置简介">配置简介
 </h2><h3 id="配置文件">配置文件
 </h3><p>通过包管理工具安装的 Nginx 一般在 <code>/etc/nginx</code>下</p>
 <p>其中有一个 <code>nginx.conf</code> 文件，它就是 Nginx 的配置文件，但是为了方便管理，所以我一般不直接修改该文件，而是在 <code>/etc/nginx/conf.d/</code> 下新建文件。</p>
 <p>在默认的 <code>nginx.conf</code>中 <code>http</code>模块下，有这样一条命令 <code>include /etc/nginx/conf.d/*.conf;</code> 它表示包含了 <code>/etc/nginx/conf.d/</code>下所有文件，所以我们在<code>/etc/nginx/conf.d/</code>直接添加新文件即可，如果没有该命令需要手动把文件的路径添加到 <code>nginx.conf</code>中</p>
-<p>关于 Nginx 配置文件模块该如何书写，以下做一些简单介绍。</p>
 <h3 id="配置件的结构">配置⽂件的结构
 </h3><p>Nginx 的配置⽂件是由⼀系列的指令组成的，每个指令都是由⼀个指令名和⼀个或者多个参数组成的。</p>
 <p>指令和参数之间使⽤空格来分隔，指令以分号 ; 结尾，参数可以使⽤单引号或者双引号来包裹。</p>
@@ -409,22 +413,22 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 全局块</span>
-</span></span><span class="line"><span class="cl">worker_processes 1<span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># 全局块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">worker_processes</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">events <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1"># events块</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">events</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># events块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">http <span class="o">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1"># http块</span>
-</span></span><span class="line"><span class="cl">	server <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1"># server块</span>
-</span></span><span class="line"><span class="cl">		location / <span class="o">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1"># location块</span>
-</span></span><span class="line"><span class="cl">		<span class="o">}</span>
-</span></span><span class="line"><span class="cl">	<span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">http</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># http块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kn">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># server块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		    <span class="c1"># location块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>例如：</p>
@@ -448,22 +452,22 @@
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">server {
-</span></span><span class="line"><span class="cl">    listen 80;
-</span></span><span class="line"><span class="cl">    server_name seektao.cc;
-</span></span><span class="line"><span class="cl">    return 301 https://www.seektao.cc$request_uri;
-</span></span><span class="line"><span class="cl">}
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://www.seektao.cc</span><span class="nv">$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">server {
-</span></span><span class="line"><span class="cl">    listen 80;
-</span></span><span class="line"><span class="cl">    server_name www.seektao.cc;
-</span></span><span class="line"><span class="cl">    return 301 https://$host$request_uri;
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">server {
-</span></span><span class="line"><span class="cl">    listen 443 ssl http2;
-</span></span><span class="line"><span class="cl">    server_name www.seektao.cc;
-</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>这个 Nginx 配置文件包含了三个 server 块，每个块定义了不同的虚拟主机配置。</p>
@@ -492,10 +496,11 @@
 <p>这个配置文件的作用是：</p>
 <ul>
 <li>当有 HTTP 请求访问<code>seektao.cc</code>或<code>www.seektao.cc</code>时，会将请求重定向到相应的 HTTPS 地址。</li>
-<li>对于 HTTPS 请求，只有<code>www.seektao.cc</code>会被处理，而其他域名或路径则没有配置处理规则，可能会返回默认的 Nginx 页面或 404 错误。</li>
+<li>对于 HTTPS 请求，只有<code>www.seektao.cc</code>会被处理</li>
 </ul>
-<p>这只是一个简单的配置示例，实际生产环境中还需要根据具体需求进行进一步配置，例如配置 SSL 证书、代理、缓存等功能。</p>
-<h3 id="全局块">全局块
+<p>这是一个简单的配置示例，实际环境中还需要根据具体需求进行进一步配置，例如配置 SSL 证书、代理、缓存等功能。</p>
+<h2 id="模块">模块
+</h2><h3 id="全局块">全局块
 </h3><p>全局块是配置⽂件的第⼀个块，也是配置⽂件的主体部分，主要⽤来设置⼀些影响 Nginx 服务器整体运⾏的配置指令，主要包括配置运⾏ Nginx 服务器的⽤户（组）、允许⽣成的 workerprocess 数、进程 PID 存放路径、⽇志存放路径和类型以及配置⽂件引⼊等。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -837,24 +842,26 @@
 </span></span><span class="line"><span class="cl">sudo nginx -s reopen 	<span class="c1"># 重新打开⽇志⽂件</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="ssl-配置">ssl 配置
+</div><h2 id="ssltls-配置">SSL/TLS 配置
 </h2><p>在 server 块增加</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">ssl_certificate</span> <span class="s">/etc/nginx/ssl/yourdomain.com.crt</span><span class="p">;</span>  <span class="c1"># 替换为你的证书文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/yourdomain.com.key</span><span class="p">;</span>  <span class="c1"># 替换为你的私钥文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl">	<span class="c1"># 证书文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate</span> <span class="s">/path/to/your_domain/cert.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 私钥文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate_key</span> <span class="s">/path/to/your_domain/key.pem</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># SSL 配置 (推荐的配置)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
@@ -909,16 +916,14 @@
 </span><span class="lnt">41
 </span><span class="lnt">42
 </span><span class="lnt">43
-</span><span class="lnt">44
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">yourdomain.com</span> <span class="s">www.yourdomain.com</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/etc/nginx/ssl/yourdomain.com.crt</span><span class="p">;</span>  <span class="c1"># 替换为你的证书文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/yourdomain.com.key</span><span class="p">;</span>  <span class="c1"># 替换为你的私钥文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate</span> <span class="s">/etc/nginx/ssl/yourdomain.com.crt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/yourdomain.com.key</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="c1"># SSL 配置 (推荐的配置)
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
@@ -1013,7 +1018,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">SSL证书申请，Nginx配置一条龙服务</h2>
+            <h2 class="article-title">certbot申请SSL证书，自动续期，Nginx配置</h2>
         </div>
     </a>
 </article>
@@ -1052,7 +1057,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">nginx-proxy-manager申请证书失败之缺乏zope模块</h2>
+            <h2 class="article-title">nginx-proxy-manager申请证书失败，缺乏zope模块(已解决)</h2>
         </div>
     </a>
 </article>
@@ -1060,12 +1065,12 @@
             
                 
 <article class="">
-    <a href="/p/250405194220/">
+    <a href="/p/250406183212/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">服务器自动化打包备份，rclone自动备份脚本分享</h2>
+            <h2 class="article-title">serv00用途收集</h2>
         </div>
     </a>
 </article>

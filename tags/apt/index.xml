@@ -8,7 +8,7 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Thu, 07 Mar 2024 00:03:15 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/apt/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Nginx通过apt的Nginx官方仓库安装</title>
+        <title>Nginx使用官方仓库通过apt安装</title>
         <link>https://hublog.netlify.app/p/2403007/</link>
         <pubDate>Thu, 07 Mar 2024 00:03:15 +0800</pubDate>
         
