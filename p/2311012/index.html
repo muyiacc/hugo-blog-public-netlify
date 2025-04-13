@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Alist 是一个网盘管理工作，可以挂在多个网盘，使用 go 编写，所以多平台支持，之前在服务器安装了 alist，使用的 Linux 系统，这次在 Windows 下也安装一下 笔者 Windows 版">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
 <title>Windows下安装Alist，并安装系统服务自启动</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2311012/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Windows下安装Alist，并安装系统服务自启动">
-<meta property='og:description' content="Alist 是一个网盘管理工作，可以挂在多个网盘，使用 go 编写，所以多平台支持，之前在服务器安装了 alist，使用的 Linux 系统，这次在 Windows 下也安装一下 笔者 Windows 版">
+<meta property='og:description' content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
 <meta property='og:url' content='https://hublog.netlify.app/p/2311012/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='alist' /><meta property='article:published_time' content='2023-11-12T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-11-12T14:07:10&#43;08:00'/>
 <meta name="twitter:title" content="Windows下安装Alist，并安装系统服务自启动">
-<meta name="twitter:description" content="Alist 是一个网盘管理工作，可以挂在多个网盘，使用 go 编写，所以多平台支持，之前在服务器安装了 alist，使用的 Linux 系统，这次在 Windows 下也安装一下 笔者 Windows 版">
+<meta name="twitter:description" content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
   
 
 
@@ -267,10 +267,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#1-下载">1. 下载</a></li>
-    <li><a href="#2-运行">2. 运行</a></li>
-    <li><a href="#3-系统服务">3. 系统服务</a></li>
-    <li><a href="#4-附录">4. 附录</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#运行">运行</a></li>
+    <li><a href="#系统服务">系统服务</a></li>
+    <li><a href="#附录">附录</a></li>
   </ol>
 </nav>
         </div>
@@ -336,17 +337,17 @@
     <section class="article-content">
     
     
-    <p>Alist 是一个网盘管理工作，可以挂在多个网盘，使用 go 编写，所以多平台支持，之前在服务器安装了 alist，使用的 Linux 系统，这次在 Windows 下也安装一下</p>
-<blockquote>
-<p>笔者 Windows 版本为 Windows10 专业工作站，我不确定家庭版是否有限制</p>
-</blockquote>
-<h2 id="1-下载">1. 下载
+    <h2 id="简介">简介
+</h2><p>AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提供保险箱加密和更多高级功能。</p>
+<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>
+<p>官方文档：<a class="link" href="https://alist.nn.ci/zh/guide"  target="_blank" rel="noopener"
+    >https://alist.nn.ci/zh/guide</a></p>
+<h2 id="安装">安装
 </h2><p>下载地址： <a class="link" href="https://github.com/alist-org/alist/releases/"  target="_blank" rel="noopener"
     >https://github.com/alist-org/alist/releases/</a></p>
 <p><a class="link" href="https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip"  target="_blank" rel="noopener"
-    >点我可直接下载</a></p>
-<p>下载的文件解压到一个目录，最好先手动创建一个文件夹，比如 <code>D:\Program Files\alist</code></p>
-<p>完整的路径如下</p>
+    >点击下载 v3.29.1</a></p>
+<p>下载的文件解压到一个目录，最好先手动创建一个文件夹，比如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -355,7 +356,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\P</span>rogram Files<span class="se">\a</span>list<span class="se">\a</span>list.exe
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="2-运行">2. 运行
+</div><h2 id="运行">运行
 </h2><p>启动服务，在地址栏输入 cmd 快速进入当前目录，输入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -366,7 +367,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>就会在当前目录下生成 data 文件夹。包含了程序的数据。</p>
-<p>打开浏览器：localhost:5244 即可访问，终端出现了随机密码，但是默认密码太麻烦了，建议直接重置密码。</p>
+<p>打开浏览器：<code>localhost:5244</code> 即可访问，终端出现了随机密码，但是默认密码太麻烦了，建议直接重置密码。</p>
 <p>回到 alist 所在目录，看到 第一次运行的时候生成的 data 文件夹，这个是存放数据的文件夹。</p>
 <p>生成（重置）密码：回到 <code>alist.exe</code>所在目录，重新打开一个 cmd 窗口</p>
 <div class="highlight"><div class="chroma">
@@ -417,7 +418,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>现在打开浏览器：输入 localhost:5245 即可打开 alist</p>
-<h2 id="3-系统服务">3. 系统服务
+<h2 id="系统服务">系统服务
 </h2><p>还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。</p>
 <p>下载 nssm： <a class="link" href="https://nssm.cc/release/nssm-2.24.zip"  target="_blank" rel="noopener"
     >点击下载</a></p>
@@ -490,7 +491,7 @@
 </span></span><span class="line"><span class="cl">......
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="4-附录">4. 附录
+</div><h2 id="附录">附录
 </h2><p>关于 帮助命令</p>
 <p>alist</p>
 <div class="highlight"><div class="chroma">

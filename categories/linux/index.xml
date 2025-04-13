@@ -1880,9 +1880,62 @@ tags:
         <pubDate>Fri, 05 Jul 2024 23:07:42 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2407005/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://alist.nn.ci/zh/guide&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提供保险箱加密和更多高级功能。&lt;/p&gt;
+&lt;p&gt;🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。&lt;/p&gt;
+&lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://alist.nn.ci/zh/guide&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://alist.nn.ci/zh/guide&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;⚡ 使用简单&lt;/strong&gt;
+AList 从一开始就设计为易于安装, 并且可以在所有平台上使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;☰ 多种存储&lt;/strong&gt;
+AList 支持多个存储提供商, 包括本地存储、阿里云盘、OneDrive、Google Drive 等, 且易于拓展。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;W 支持 WebDAV&lt;/strong&gt;
+AList 支持所有 WebDAV 存储, 这是一种用于访问文件的标准。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;🌑 黑暗模式&lt;/strong&gt;
+自由切换明暗模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;♀ 受保护的路由&lt;/strong&gt;
+为特定路径添加密码保护和身份验证&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;◎ 文件预览&lt;/strong&gt;
+支持视频、音频、文档、PDF、图片预览等, 甚至支持 ipa 安装&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;⬇ 打包下载/批量下载&lt;/strong&gt;
+使用浏览器的 stream api 支持打包下载, 无需使用服务器 / 使用 Aria2 进行批量下载支持文件夹&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;♺ 单点登录&lt;/strong&gt;
+使用单点登录快速登录 AList&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;▤ 自动注册 AList 帐号&lt;/strong&gt;
+使用单点登录自动注册为 AList 帐号快速注册&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;⤓ 离线下载&lt;/strong&gt;
+将种子内容离线下载到指定的目录内, 需要苛刻的网络环境&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;01 保险箱加密/解密 文件&lt;/strong&gt;
+任何人都可以安全地将加密数据存储在远程存储提供商上。数据存储在保险箱中, 提供商只能看到保险箱, 看不到您的数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;••• 更多新功能&lt;/strong&gt;
+包括文本编辑器、README/HTML 渲染、文件永久链接、Cloudflare Workers 代理等&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;h3 id=&#34;脚本&#34;&gt;脚本
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;

@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="此篇文档书写不易，搭建过程中出现了众多错误，配置文件过于复杂，由我踩坑，望帮助到你。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28">
-<title>开源的文档知识库outline</title>
+<title>outline，一款开源的文档知识库</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240904150928/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="开源的文档知识库outline">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="outline，一款开源的文档知识库">
 <meta property='og:description' content="此篇文档书写不易，搭建过程中出现了众多错误，配置文件过于复杂，由我踩坑，望帮助到你。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28">
 <meta property='og:url' content='https://hublog.netlify.app/p/240904150928/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='docs' /><meta property='article:tag' content='outline' /><meta property='article:published_time' content='2024-09-04T15:09:28&#43;08:00'/><meta property='article:modified_time' content='2024-09-04T15:09:28&#43;08:00'/>
-<meta name="twitter:title" content="开源的文档知识库outline">
+<meta name="twitter:title" content="outline，一款开源的文档知识库">
 <meta name="twitter:description" content="此篇文档书写不易，搭建过程中出现了众多错误，配置文件过于复杂，由我踩坑，望帮助到你。 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28">
   
 
@@ -264,7 +264,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/240904150928/">开源的文档知识库outline</a>
+            <a href="/p/240904150928/">outline，一款开源的文档知识库</a>
         </h2>
     
         
@@ -827,375 +827,375 @@
 </span><span class="lnt">371
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># –––––––––––––––– REQUIRED ––––––––––––––––                                                                                                </span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># –––––––––––––––– REQUIRED ––––––––––––––––</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">NODE_ENV</span><span class="o">=</span>production                                                                                                                         
+</span></span><span class="line"><span class="cl"><span class="nv">NODE_ENV</span><span class="o">=</span>production
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Generate a hex-encoded 32-byte random key. You should use `openssl rand -hex 32`                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Generate a hex-encoded 32-byte random key. You should use `openssl rand -hex 32`</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># in your terminal to generate a random value.                                                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># in your terminal to generate a random value.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SECRET_KEY</span><span class="o">=</span>a5a8564663263819b472876321f5a505782004ea0e2fae704312fae53a77fe1f                                                                 
+</span></span><span class="line"><span class="cl"><span class="nv">SECRET_KEY</span><span class="o">=</span>a5a8564663263819b472876321f5a505782004ea0e2fae704312fae53a77fe1f
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Generate a unique random key. The format is not important but you could still use                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Generate a unique random key. The format is not important but you could still use</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># `openssl rand -hex 32` in your terminal to produce this.                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># `openssl rand -hex 32` in your terminal to produce this.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">UTILS_SECRET</span><span class="o">=</span>generate_a_new_key                                                                                                             
+</span></span><span class="line"><span class="cl"><span class="nv">UTILS_SECRET</span><span class="o">=</span>generate_a_new_key
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For production point these at your databases, in development the default                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># For production point these at your databases, in development the default</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># should work out of the box.                                                                                                               </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># should work out of the box.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://user:pass@outline_postgres:5432/outline                                                                             
+</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_URL</span><span class="o">=</span>postgres://user:pass@outline_postgres:5432/outline
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_CONNECTION_POOL_MIN</span><span class="o">=</span>                                                                                                               
+</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_CONNECTION_POOL_MIN</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_CONNECTION_POOL_MAX</span><span class="o">=</span>                                                                                                               
+</span></span><span class="line"><span class="cl"><span class="nv">DATABASE_CONNECTION_POOL_MAX</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment this to disable SSL for connecting to Postgres                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Uncomment this to disable SSL for connecting to Postgres</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">PGSSLMODE</span><span class="o">=</span>disable                                                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">PGSSLMODE</span><span class="o">=</span>disable
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For redis you can either specify an ioredis compatible url like this                                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># For redis you can either specify an ioredis compatible url like this</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">REDIS_URL</span><span class="o">=</span>redis://outline_redis:6379                                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">REDIS_URL</span><span class="o">=</span>redis://outline_redis:6379
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># or alternatively, if you would like to provide additional connection options,                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or alternatively, if you would like to provide additional connection options,</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># use a base64 encoded JSON connection option object. Refer to the ioredis documentation                                                    </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># use a base64 encoded JSON connection option object. Refer to the ioredis documentation</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># for a list of available options.                                                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for a list of available options.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Example: Use Redis Sentinel for high availability                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Example: Use Redis Sentinel for high availability</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># {&#34;sentinels&#34;:[{&#34;host&#34;:&#34;sentinel-0&#34;,&#34;port&#34;:26379},{&#34;host&#34;:&#34;sentinel-1&#34;,&#34;port&#34;:26379}],&#34;name&#34;:&#34;mymaster&#34;}                                   </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># {&#34;sentinels&#34;:[{&#34;host&#34;:&#34;sentinel-0&#34;,&#34;port&#34;:26379},{&#34;host&#34;:&#34;sentinel-1&#34;,&#34;port&#34;:26379}],&#34;name&#34;:&#34;mymaster&#34;}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># REDIS_URL=ioredis://eyJzZW50aW5lbHMiOlt7Imhvc3QiOiJzZW50aW5lbC0wIiwicG9ydCI6MjYzNzl9LHsiaG9zdCI6InNlbnRpbmVsLTEiLCJwb3J0IjoyNjM3OX1dLCJuYW</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">1lIjoibXltYXN0ZXIifQ</span><span class="o">==</span>                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">1lIjoibXltYXN0ZXIifQ</span><span class="o">==</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># URL should point to the fully qualified, publicly accessible URL. If using a                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># URL should point to the fully qualified, publicly accessible URL. If using a</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># proxy the port in URL and PORT may be different.                                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># proxy the port in URL and PORT may be different.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">URL</span><span class="o">=</span>https://docs.seektao.cc                                                                                                                 
+</span></span><span class="line"><span class="cl"><span class="nv">URL</span><span class="o">=</span>https://docs.seektao.cc
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">PORT</span><span class="o">=</span><span class="m">3000</span>                                                                                                                                   
+</span></span><span class="line"><span class="cl"><span class="nv">PORT</span><span class="o">=</span><span class="m">3000</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># See [documentation](docs/SERVICES.md) on running a separate collaboration                                                                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See [documentation](docs/SERVICES.md) on running a separate collaboration</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># server, for normal operation this does not need to be set.                                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># server, for normal operation this does not need to be set.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">COLLABORATION_URL</span><span class="o">=</span>                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">COLLABORATION_URL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Specify what storage system to use. Possible value is one of &#34;s3&#34; or &#34;local&#34;.                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Specify what storage system to use. Possible value is one of &#34;s3&#34; or &#34;local&#34;.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For &#34;local&#34;, the avatar images and document attachments will be saved on local disk.                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># For &#34;local&#34;, the avatar images and document attachments will be saved on local disk.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE</span><span class="o">=</span><span class="nb">local</span>                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE</span><span class="o">=</span><span class="nb">local</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># If &#34;local&#34; is configured for FILE_STORAGE above, then this sets the parent directory under                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If &#34;local&#34; is configured for FILE_STORAGE above, then this sets the parent directory under</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># which all attachments/images go. Make sure that the process has permissions to create                                                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># which all attachments/images go. Make sure that the process has permissions to create</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># this path and also to write files to it.                                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this path and also to write files to it.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_LOCAL_ROOT_DIR</span><span class="o">=</span>/var/lib/outline/data                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_LOCAL_ROOT_DIR</span><span class="o">=</span>/var/lib/outline/data
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Maximum allowed size for the uploaded attachment.                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Maximum allowed size for the uploaded attachment.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_UPLOAD_MAX_SIZE</span><span class="o">=</span><span class="m">262144000</span>                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_UPLOAD_MAX_SIZE</span><span class="o">=</span><span class="m">262144000</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Override the maximum size of document imports, generally this should be lower                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Override the maximum size of document imports, generally this should be lower</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># than the document attachment maximum size.                                                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># than the document attachment maximum size.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_IMPORT_MAX_SIZE</span><span class="o">=</span>                                                                                                               
+</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_IMPORT_MAX_SIZE</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Override the maximum size of workspace imports, these can be especially large                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Override the maximum size of workspace imports, these can be especially large</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># and the files are temporary being automatically deleted after a period of time.                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># and the files are temporary being automatically deleted after a period of time.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_WORKSPACE_IMPORT_MAX_SIZE</span><span class="o">=</span>                                                                                                     
+</span></span><span class="line"><span class="cl"><span class="nv">FILE_STORAGE_WORKSPACE_IMPORT_MAX_SIZE</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To support uploading of images for avatars and document attachments in a distributed                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To support uploading of images for avatars and document attachments in a distributed</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># architecture an s3-compatible storage can be configured if FILE_STORAGE=s3 above.                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># architecture an s3-compatible storage can be configured if FILE_STORAGE=s3 above.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>get_a_key_from_aws                                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>get_a_key_from_aws
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>get_the_secret_of_above_key                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>get_the_secret_of_above_key
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_REGION</span><span class="o">=</span>xx-xxxx-x                                                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_REGION</span><span class="o">=</span>xx-xxxx-x
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_ACCELERATE_URL</span><span class="o">=</span>                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_ACCELERATE_URL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_UPLOAD_BUCKET_URL</span><span class="o">=</span>http://s3:4569                                                                                                     
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_UPLOAD_BUCKET_URL</span><span class="o">=</span>http://s3:4569
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_UPLOAD_BUCKET_NAME</span><span class="o">=</span>bucket_name_here                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_UPLOAD_BUCKET_NAME</span><span class="o">=</span>bucket_name_here
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_FORCE_PATH_STYLE</span><span class="o">=</span><span class="nb">true</span>                                                                                                                
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_FORCE_PATH_STYLE</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_ACL</span><span class="o">=</span>private                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">AWS_S3_ACL</span><span class="o">=</span>private
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># –––––––––––––– AUTHENTICATION ––––––––––––––                                                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># –––––––––––––– AUTHENTICATION ––––––––––––––</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Third party signin credentials, at least ONE OF EITHER Google, Slack,                                                                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Third party signin credentials, at least ONE OF EITHER Google, Slack,</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># or Microsoft is required for a working installation or you&#39;ll have no sign-in                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># or Microsoft is required for a working installation or you&#39;ll have no sign-in</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># options.                                                                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># options.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure Slack auth, you&#39;ll need to create an Application at                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure Slack auth, you&#39;ll need to create an Application at</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://api.slack.com/apps                                                                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://api.slack.com/apps</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#                                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;OAuth &amp; Permissions&#34;:                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;OAuth &amp; Permissions&#34;:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/slack.callback                                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/slack.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https://docs.seektao.cc/auth/slack.callback                                                                                               </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https://docs.seektao.cc/auth/slack.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SLACK_CLIENT_ID</span><span class="o">=</span>7687326676465.7671810207669                                                                                                 
+</span></span><span class="line"><span class="cl"><span class="nv">SLACK_CLIENT_ID</span><span class="o">=</span>7687326676465.7671810207669
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SLACK_CLIENT_SECRET</span><span class="o">=</span>432ad37fe62d5ff357dc807c13fd64b9                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">SLACK_CLIENT_SECRET</span><span class="o">=</span>432ad37fe62d5ff357dc807c13fd64b9
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure Google auth, you&#39;ll need to create an OAuth Client ID at                                                                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure Google auth, you&#39;ll need to create an OAuth Client ID at</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://console.cloud.google.com/apis/credentials                                                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://console.cloud.google.com/apis/credentials</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#                                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add an Authorized redirect URI:                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add an Authorized redirect URI:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/google.callback                                                                                                        </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/google.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_ID</span><span class="o">=</span>                                                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_SECRET</span><span class="o">=</span>                                                                                                                       
+</span></span><span class="line"><span class="cl"><span class="nv">GOOGLE_CLIENT_SECRET</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure Microsoft/Azure auth, you&#39;ll need to create an OAuth Client. See                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure Microsoft/Azure auth, you&#39;ll need to create an OAuth Client. See</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># the guide for details on setting up your Azure App:                                                                                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the guide for details on setting up your Azure App:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://wiki.generaloutline.com/share/dfa77e56-d4d2-4b51-8ff8-84ea6608faa4                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://wiki.generaloutline.com/share/dfa77e56-d4d2-4b51-8ff8-84ea6608faa4</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">AZURE_CLIENT_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AZURE_CLIENT_SECRET</span><span class="o">=</span>                                                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">AZURE_CLIENT_SECRET</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">AZURE_RESOURCE_APP_ID</span><span class="o">=</span>                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">AZURE_RESOURCE_APP_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure generic OIDC auth, you&#39;ll need some kind of identity provider.                                                               </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure generic OIDC auth, you&#39;ll need some kind of identity provider.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># See documentation for whichever IdP you use to acquire the following info:                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See documentation for whichever IdP you use to acquire the following info:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Redirect URI is https:///auth/oidc.callback                                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Redirect URI is https:///auth/oidc.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_CLIENT_ID</span><span class="o">=</span>                                                                                                                             
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_CLIENT_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_CLIENT_SECRET</span><span class="o">=</span>                                                                                                                         
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_CLIENT_SECRET</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_AUTH_URI</span><span class="o">=</span>                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_AUTH_URI</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_TOKEN_URI</span><span class="o">=</span>                                                                                                                             
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_TOKEN_URI</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_USERINFO_URI</span><span class="o">=</span>                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_USERINFO_URI</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_LOGOUT_URI</span><span class="o">=</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_LOGOUT_URI</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Specify which claims to derive user information from                                                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Specify which claims to derive user information from</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Supports any valid JSON path with the JWT payload                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Supports any valid JSON path with the JWT payload</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_USERNAME_CLAIM</span><span class="o">=</span>preferred_username                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_USERNAME_CLAIM</span><span class="o">=</span>preferred_username
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Display name for OIDC authentication                                                                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Display name for OIDC authentication</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_DISPLAY_NAME</span><span class="o">=</span>OpenID Connect                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_DISPLAY_NAME</span><span class="o">=</span>OpenID Connect
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Space separated auth scopes.                                                                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Space separated auth scopes.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">OIDC_SCOPES</span><span class="o">=</span>openid profile email                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">OIDC_SCOPES</span><span class="o">=</span>openid profile email
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure the GitHub integration, you&#39;ll need to create a GitHub App at                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure the GitHub integration, you&#39;ll need to create a GitHub App at</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://github.com/settings/apps                                                                                                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://github.com/settings/apps</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#                                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;Permissions &amp; events&#34;:                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;Permissions &amp; events&#34;:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https:///api/github.callback                                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https:///api/github.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span>Ov23liFFJo2SJ5bdvaiO                                                                                                       
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_ID</span><span class="o">=</span>Ov23liFFJo2SJ5bdvaiO
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span>304221a41c3ab12854076c617bf9762823741f99                                                                               
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_CLIENT_SECRET</span><span class="o">=</span>304221a41c3ab12854076c617bf9762823741f99
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_NAME</span><span class="o">=</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_NAME</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_ID</span><span class="o">=</span>                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_PRIVATE_KEY</span><span class="o">=</span>                                                                                                                     
+</span></span><span class="line"><span class="cl"><span class="nv">GITHUB_APP_PRIVATE_KEY</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To configure Discord auth, you&#39;ll need to create a Discord Application at                                                                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To configure Discord auth, you&#39;ll need to create a Discord Application at</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://discord.com/developers/applications/                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://discord.com/developers/applications/</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#                                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;OAuth2&#34;:                                                                        </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># When configuring the Client ID, add a redirect URL under &#34;OAuth2&#34;:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/discord.callback                                                                                                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https:///auth/discord.callback</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_CLIENT_ID</span><span class="o">=</span>                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_CLIENT_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_CLIENT_SECRET</span><span class="o">=</span>                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_CLIENT_SECRET</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ID should be the ID of the Discord server that Outline is                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ID should be the ID of the Discord server that Outline is</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># integrated with.                                                                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># integrated with.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Used to verify that the user is a member of the server as well as server                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Used to verify that the user is a member of the server as well as server</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># metadata such as nicknames, server icon and name.                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># metadata such as nicknames, server icon and name.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_SERVER_ID</span><span class="o">=</span>                                                                                                                          
+</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_SERVER_ID</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ROLES should be a comma separated list of role IDs that are                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ROLES should be a comma separated list of role IDs that are</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># allowed to access Outline. If this is not set, all members of the server                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># allowed to access Outline. If this is not set, all members of the server</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># will be allowed to access Outline.                                                                                                        </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># will be allowed to access Outline.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ID and DISCORD_SERVER_ROLES must be set together.                                                                          </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># DISCORD_SERVER_ID and DISCORD_SERVER_ROLES must be set together.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_SERVER_ROLES</span><span class="o">=</span>                                                                                                                       
+</span></span><span class="line"><span class="cl"><span class="nv">DISCORD_SERVER_ROLES</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># –––––––––––––––– OPTIONAL ––––––––––––––––                                                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># –––––––––––––––– OPTIONAL ––––––––––––––––</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Base64 encoded private key and certificate for HTTPS termination. This is only                                                            </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Base64 encoded private key and certificate for HTTPS termination. This is only</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># required if you do not use an external reverse proxy. See documentation:                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># required if you do not use an external reverse proxy. See documentation:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https://wiki.generaloutline.com/share/1c922644-40d8-41fe-98f9-df2b67239d45                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https://wiki.generaloutline.com/share/1c922644-40d8-41fe-98f9-df2b67239d45</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SSL_KEY</span><span class="o">=</span>                                                                                                                                    
+</span></span><span class="line"><span class="cl"><span class="nv">SSL_KEY</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SSL_CERT</span><span class="o">=</span>                                                                                                                                   
+</span></span><span class="line"><span class="cl"><span class="nv">SSL_CERT</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># If using a Cloudfront/Cloudflare distribution or similar it can be set below.                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># If using a Cloudfront/Cloudflare distribution or similar it can be set below.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># This will cause paths to javascript, stylesheets, and images to be updated to                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># This will cause paths to javascript, stylesheets, and images to be updated to</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># the hostname defined in CDN_URL. In your CDN configuration the origin server                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the hostname defined in CDN_URL. In your CDN configuration the origin server</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># should be set to the same as URL.                                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># should be set to the same as URL.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">CDN_URL</span><span class="o">=</span>                                                                                                                                    
+</span></span><span class="line"><span class="cl"><span class="nv">CDN_URL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Auto-redirect to https in production. The default is true but you may set to                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Auto-redirect to https in production. The default is true but you may set to</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># false if you can be sure that SSL is terminated at an external loadbalancer.                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># false if you can be sure that SSL is terminated at an external loadbalancer.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">FORCE_HTTPS</span><span class="o">=</span><span class="nb">true</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">FORCE_HTTPS</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Have the installation check for updates by sending anonymized statistics to                                                               </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Have the installation check for updates by sending anonymized statistics to</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># the maintainers                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># the maintainers</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">ENABLE_UPDATES</span><span class="o">=</span><span class="nb">true</span>                                                                                                                         
+</span></span><span class="line"><span class="cl"><span class="nv">ENABLE_UPDATES</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># How many processes should be spawned. As a reasonable rule divide your servers                                                            </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># How many processes should be spawned. As a reasonable rule divide your servers</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># available memory by 512 for a rough estimate                                                                                              </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># available memory by 512 for a rough estimate</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">WEB_CONCURRENCY</span><span class="o">=</span><span class="m">1</span>                                                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">WEB_CONCURRENCY</span><span class="o">=</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># You can remove this line if your reverse proxy already logs incoming http                                                                 </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># You can remove this line if your reverse proxy already logs incoming http</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># requests and this ends up being duplicative                                                                                               </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># requests and this ends up being duplicative</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DEBUG</span><span class="o">=</span>http                                                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">DEBUG</span><span class="o">=</span>http
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Configure lowest severity level for server logs. Should be one of                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Configure lowest severity level for server logs. Should be one of</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># error, warn, info, http, verbose, debug and silly                                                                                         </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># error, warn, info, http, verbose, debug and silly</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">LOG_LEVEL</span><span class="o">=</span>info                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">LOG_LEVEL</span><span class="o">=</span>info
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For a complete Slack integration with search and posting to channels the                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># For a complete Slack integration with search and posting to channels the</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># following configs are also needed, some more details                                                                                      </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># following configs are also needed, some more details</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://wiki.generaloutline.com/share/be25efd1-b3ef-4450-b8e5-c4a4fc11e02a                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; https://wiki.generaloutline.com/share/be25efd1-b3ef-4450-b8e5-c4a4fc11e02a</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">#                                                                                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SLACK_VERIFICATION_TOKEN</span><span class="o">=</span>your_token                                                                                                         
+</span></span><span class="line"><span class="cl"><span class="nv">SLACK_VERIFICATION_TOKEN</span><span class="o">=</span>your_token
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SLACK_APP_ID</span><span class="o">=</span>A0XXXXXXX                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">SLACK_APP_ID</span><span class="o">=</span>A0XXXXXXX
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SLACK_MESSAGE_ACTIONS</span><span class="o">=</span><span class="nb">true</span>                                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">SLACK_MESSAGE_ACTIONS</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For Dropbox integration, follow these instructions to get the key https://www.dropbox.com/developers/embedder#setup                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># For Dropbox integration, follow these instructions to get the key https://www.dropbox.com/developers/embedder#setup</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># and do not forget to whitelist your domain name in the app settings                                                                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># and do not forget to whitelist your domain name in the app settings</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DROPBOX_APP_KEY</span><span class="o">=</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">DROPBOX_APP_KEY</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Optionally enable Sentry (sentry.io) to track errors and performance,                                                                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Optionally enable Sentry (sentry.io) to track errors and performance,</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># and optionally add a Sentry proxy tunnel for bypassing ad blockers in the UI:                                                             </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># and optionally add a Sentry proxy tunnel for bypassing ad blockers in the UI:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># https://docs.sentry.io/platforms/javascript/troubleshooting/#using-the-tunnel-option)                                                     </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># https://docs.sentry.io/platforms/javascript/troubleshooting/#using-the-tunnel-option)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SENTRY_DSN</span><span class="o">=</span>                                                                                                                                 
+</span></span><span class="line"><span class="cl"><span class="nv">SENTRY_DSN</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SENTRY_TUNNEL</span><span class="o">=</span>                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">SENTRY_TUNNEL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># To support sending outgoing transactional emails such as &#34;document updated&#34; or                                                            </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># To support sending outgoing transactional emails such as &#34;document updated&#34; or</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># &#34;you&#39;ve been invited&#34; you&#39;ll need to provide authentication for an SMTP server                                                            </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &#34;you&#39;ve been invited&#34; you&#39;ll need to provide authentication for an SMTP server</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_HOST</span><span class="o">=</span>                                                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_HOST</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_PORT</span><span class="o">=</span>                                                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_PORT</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_USERNAME</span><span class="o">=</span>                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_USERNAME</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_PASSWORD</span><span class="o">=</span>                                                                                                                              
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_PASSWORD</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_FROM_EMAIL</span><span class="o">=</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_FROM_EMAIL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_REPLY_EMAIL</span><span class="o">=</span>                                                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_REPLY_EMAIL</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_TLS_CIPHERS</span><span class="o">=</span>                                                                                                                           
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_TLS_CIPHERS</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">SMTP_SECURE</span><span class="o">=</span><span class="nb">true</span>                                                                                                                            
+</span></span><span class="line"><span class="cl"><span class="nv">SMTP_SECURE</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># The default interface language. See translate.getoutline.com for a list of                                                                </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># The default interface language. See translate.getoutline.com for a list of</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># available language codes and their rough percentage translated.                                                                           </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># available language codes and their rough percentage translated.</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">DEFAULT_LANGUAGE</span><span class="o">=</span>en_US                                                                                                                      
+</span></span><span class="line"><span class="cl"><span class="nv">DEFAULT_LANGUAGE</span><span class="o">=</span>en_US
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Optionally enable rate limiter at application web server                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Optionally enable rate limiter at application web server</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_ENABLED</span><span class="o">=</span><span class="nb">true</span>                                                                                                                   
+</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_ENABLED</span><span class="o">=</span><span class="nb">true</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Configure default throttling parameters for rate limiter                                                                                  </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Configure default throttling parameters for rate limiter</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_REQUESTS</span><span class="o">=</span><span class="m">1000</span>                                                                                                                  
+</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_REQUESTS</span><span class="o">=</span><span class="m">1000</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_DURATION_WINDOW</span><span class="o">=</span><span class="m">60</span>                                                                                                             
+</span></span><span class="line"><span class="cl"><span class="nv">RATE_LIMITER_DURATION_WINDOW</span><span class="o">=</span><span class="m">60</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Iframely API config                                                                                                                       </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iframely API config</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nv">IFRAMELY_URL</span><span class="o">=</span>https://docs.seektao.cc                                                                                                        
+</span></span><span class="line"><span class="cl"><span class="nv">IFRAMELY_URL</span><span class="o">=</span>https://docs.seektao.cc
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">IFRAMELY_API_KEY</span><span class="o">=</span>9fabb0c3c7fad08a16fcf3
 </span></span></code></pre></td></tr></table>

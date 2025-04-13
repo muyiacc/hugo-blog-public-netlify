@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
 <title>Linux下安装使用alist</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2407005/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux下安装使用alist">
-<meta property='og:description' content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
+<meta property='og:description' content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
 <meta property='og:url' content='https://hublog.netlify.app/p/2407005/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='alist' /><meta property='article:published_time' content='2024-07-05T23:07:42&#43;08:00'/><meta property='article:modified_time' content='2024-07-05T23:07:42&#43;08:00'/>
 <meta name="twitter:title" content="Linux下安装使用alist">
-<meta name="twitter:description" content="介绍 官方文档：https://alist.nn.ci/zh/guide 安装 脚本 1 2 # 切换到root用户 sudo su - 1 2 # 一键脚本安装 curl -fsSL &#34;https://alist.nn.ci/v3.sh&#34; | bash -s install">
+<meta name="twitter:description" content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
   
 
 
@@ -267,7 +267,8 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#介绍">介绍</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#特性">特性</a></li>
     <li><a href="#安装">安装</a>
       <ol>
         <li><a href="#脚本">脚本</a></li>
@@ -339,9 +340,62 @@
     <section class="article-content">
     
     
-    <h2 id="介绍">介绍
-</h2><p>官方文档：<a class="link" href="https://alist.nn.ci/zh/guide"  target="_blank" rel="noopener"
+    <h2 id="简介">简介
+</h2><p>AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提供保险箱加密和更多高级功能。</p>
+<p>🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。</p>
+<p>官方文档：<a class="link" href="https://alist.nn.ci/zh/guide"  target="_blank" rel="noopener"
     >https://alist.nn.ci/zh/guide</a></p>
+<h2 id="特性">特性
+</h2><ul>
+<li>
+<p><strong>⚡ 使用简单</strong>
+AList 从一开始就设计为易于安装, 并且可以在所有平台上使用。</p>
+</li>
+<li>
+<p><strong>☰ 多种存储</strong>
+AList 支持多个存储提供商, 包括本地存储、阿里云盘、OneDrive、Google Drive 等, 且易于拓展。</p>
+</li>
+<li>
+<p><strong>W 支持 WebDAV</strong>
+AList 支持所有 WebDAV 存储, 这是一种用于访问文件的标准。</p>
+</li>
+<li>
+<p><strong>🌑 黑暗模式</strong>
+自由切换明暗模式</p>
+</li>
+<li>
+<p><strong>♀ 受保护的路由</strong>
+为特定路径添加密码保护和身份验证</p>
+</li>
+<li>
+<p><strong>◎ 文件预览</strong>
+支持视频、音频、文档、PDF、图片预览等, 甚至支持 ipa 安装</p>
+</li>
+<li>
+<p><strong>⬇ 打包下载/批量下载</strong>
+使用浏览器的 stream api 支持打包下载, 无需使用服务器 / 使用 Aria2 进行批量下载支持文件夹</p>
+</li>
+<li>
+<p><strong>♺ 单点登录</strong>
+使用单点登录快速登录 AList</p>
+</li>
+<li>
+<p><strong>▤ 自动注册 AList 帐号</strong>
+使用单点登录自动注册为 AList 帐号快速注册</p>
+</li>
+<li>
+<p><strong>⤓ 离线下载</strong>
+将种子内容离线下载到指定的目录内, 需要苛刻的网络环境</p>
+</li>
+<li>
+<p><strong>01 保险箱加密/解密 文件</strong>
+任何人都可以安全地将加密数据存储在远程存储提供商上。数据存储在保险箱中, 提供商只能看到保险箱, 看不到您的数据。</p>
+</li>
+<li>
+<p><strong>••• 更多新功能</strong>
+包括文本编辑器、README/HTML 渲染、文件永久链接、Cloudflare Workers 代理等</p>
+</li>
+</ul>
 <h2 id="安装">安装
 </h2><h3 id="脚本">脚本
 </h3><div class="highlight"><div class="chroma">

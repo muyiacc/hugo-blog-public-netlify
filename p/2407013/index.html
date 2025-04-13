@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="部署 docker 1 docker run --name new-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/new-api:/data calciumion/new-api:latest docker-compose 1 sudo mkdir -p /opt/new-api 1 2 cd /opt/new-api sudo vim /opt/new-api/docker-compose.yml 1 2 3 4 5 6 7 8 9 10 11 12 version: &#39;3.9&#39; services: new-api: image: &#39;calciumion/new-api:latest&#39; volumes: - &#39;./data:/data&#39; environment: - TZ=Asia/Shanghai ports: - &#39;3000:3000&#39; restart: unless-stopped container_name: new-api 启动 1 sudo docker compose up 反">
-<title>new-api，基于one-api</title>
+<title>new-api，基于one-api修改的LLM接口管理和分发系统</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2407013/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="new-api，基于one-api">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="new-api，基于one-api修改的LLM接口管理和分发系统">
 <meta property='og:description' content="部署 docker 1 docker run --name new-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/new-api:/data calciumion/new-api:latest docker-compose 1 sudo mkdir -p /opt/new-api 1 2 cd /opt/new-api sudo vim /opt/new-api/docker-compose.yml 1 2 3 4 5 6 7 8 9 10 11 12 version: &#39;3.9&#39; services: new-api: image: &#39;calciumion/new-api:latest&#39; volumes: - &#39;./data:/data&#39; environment: - TZ=Asia/Shanghai ports: - &#39;3000:3000&#39; restart: unless-stopped container_name: new-api 启动 1 sudo docker compose up 反">
 <meta property='og:url' content='https://hublog.netlify.app/p/2407013/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='new-api' /><meta property='article:tag' content='one-api' /><meta property='article:published_time' content='2024-07-13T23:07:42&#43;08:00'/><meta property='article:modified_time' content='2024-07-13T23:07:42&#43;08:00'/>
-<meta name="twitter:title" content="new-api，基于one-api">
+<meta name="twitter:title" content="new-api，基于one-api修改的LLM接口管理和分发系统">
 <meta name="twitter:description" content="部署 docker 1 docker run --name new-api -d --restart always -p 3000:3000 -e TZ=Asia/Shanghai -v /home/ubuntu/data/new-api:/data calciumion/new-api:latest docker-compose 1 sudo mkdir -p /opt/new-api 1 2 cd /opt/new-api sudo vim /opt/new-api/docker-compose.yml 1 2 3 4 5 6 7 8 9 10 11 12 version: &#39;3.9&#39; services: new-api: image: &#39;calciumion/new-api:latest&#39; volumes: - &#39;./data:/data&#39; environment: - TZ=Asia/Shanghai ports: - &#39;3000:3000&#39; restart: unless-stopped container_name: new-api 启动 1 sudo docker compose up 反">
   
 
@@ -305,7 +305,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2407013/">new-api，基于one-api</a>
+            <a href="/p/2407013/">new-api，基于one-api修改的LLM接口管理和分发系统</a>
         </h2>
     
         
@@ -506,7 +506,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">one-api</h2>
+            <h2 class="article-title">one-api，一个 LLM API 接口管理和分发系统，可以帮助您更好地管理和使用各大厂商的 LLM API</h2>
         </div>
     </a>
 </article>

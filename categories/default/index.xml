@@ -867,15 +867,6 @@ Flash
 </description>
         </item>
         <item>
-        <title>部署的服务汇总</title>
-        <link>https://hublog.netlify.app/p/250401163700/</link>
-        <pubDate>Tue, 01 Apr 2025 16:37:00 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/250401163700/</guid>
-        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;</description>
-        </item>
-        <item>
         <title>SSH，安全远程连接的强大工具</title>
         <link>https://hublog.netlify.app/p/250330130700/</link>
         <pubDate>Sun, 30 Mar 2025 13:07:00 +0800</pubDate>
@@ -3985,22 +3976,24 @@ $env:MY_USER_ENV&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>xiao-tvbox安装</title>
+        <title>alist-tvbox，AList代理，支持xiaoya版AList界面管理</title>
         <link>https://hublog.netlify.app/p/250221182433/</link>
         <pubDate>Fri, 21 Feb 2025 18:24:33 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/250221182433/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;p&gt;alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;h3 id=&#34;native-版本&#34;&gt;native 版本
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/h3&gt;&lt;p&gt;native 版本内存占用更少&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /opt/container/xiaoya-tvbox
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/container/xiao-tvbox
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /opt/container/alist-tvbox
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/container/alist-tvbox
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -4048,7 +4041,7 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;xiaoya-tvbox&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;unless-stopped&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s1&#34;&gt;&amp;#39;./xiaoya-tvbox_data:/data&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s1&#34;&gt;&amp;#39;./alist-tvbox_data:/data&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;ALIST_PORT=5344&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -4071,7 +4064,7 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dco up -d
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker compose up -d
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -4740,14 +4733,13 @@ $env:MY_USER_ENV&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>超级强大的嗅探工具！！！</title>
+        <title>猫抓，嗅探工具，浏览器插件</title>
         <link>https://hublog.netlify.app/p/241103233225/</link>
         <pubDate>Sun, 03 Nov 2024 23:32:25 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241103233225/</guid>
-        <description>&lt;p&gt;今天介绍的一款浏览器插件，作用时嗅探，下载&lt;/p&gt;
-&lt;p&gt;超级好用。&lt;/p&gt;
-&lt;p&gt;名字叫 猫抓&lt;/p&gt;
+        <description>&lt;p&gt;猫抓&lt;/p&gt;
+&lt;p&gt;浏览器插件，可嗅探网页上的视频资源，提供下载&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -8142,13 +8134,14 @@ sudo pip uninstall certbot&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>one-api</title>
+        <title>one-api，一个 LLM API 接口管理和分发系统，可以帮助您更好地管理和使用各大厂商的 LLM API</title>
         <link>https://hublog.netlify.app/p/2407015/</link>
         <pubDate>Mon, 15 Jul 2024 23:07:42 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2407015/</guid>
         <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;通过标准的 OpenAI API 格式访问所有的大模型，开箱即用&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;One API 是一个 LLM API 接口管理和分发系统，可以帮助您更好地管理和使用各大厂商的 LLM API。&lt;/p&gt;
+&lt;p&gt;通过标准的 OpenAI API 格式访问所有的大模型，开箱即用&lt;/p&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/songquanpeng/one-api&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/songquanpeng/one-api&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;部署&#34;&gt;部署
@@ -8258,7 +8251,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>new-api，基于one-api</title>
+        <title>new-api，基于one-api修改的LLM接口管理和分发系统</title>
         <link>https://hublog.netlify.app/p/2407013/</link>
         <pubDate>Sat, 13 Jul 2024 23:07:42 +0800</pubDate>
         
@@ -9485,28 +9478,35 @@ software
 </description>
         </item>
         <item>
-        <title>分享在线可用的webssh</title>
+        <title>huashengdun-webssh，一款在线的webssh</title>
         <link>https://hublog.netlify.app/p/2406023/</link>
         <pubDate>Sat, 22 Jun 2024 16:06:01 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2406023/</guid>
-        <description>&lt;ul&gt;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;一个简单的 web 应用程序，用作 ssh 客户端连接到 ssh 服务器。它是用 Python 编写的，基于 tornado，paramiko 和 xterm.js。&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/crazypeace/huashengdun-webssh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/crazypeace/huashengdun-webssh&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;支持 SSH 密码认证，包括空密码。&lt;/li&gt;
+&lt;li&gt;支持 SSH 公钥认证，包括 DSA RSA ECDSA Ed25519 密钥。&lt;/li&gt;
+&lt;li&gt;支持加密密钥。&lt;/li&gt;
+&lt;li&gt;支持双因素认证（基于时间的一次性密码）。&lt;/li&gt;
+&lt;li&gt;支持全屏终端。&lt;/li&gt;
+&lt;li&gt;终端窗口可调整大小。&lt;/li&gt;
+&lt;li&gt;自动检测 SSH 服务器的默认编码。&lt;/li&gt;
+&lt;li&gt;支持现代浏览器，包括 Chrome、Firefox、Safari、Edge、Opera。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;在线体验&#34;&gt;在线体验
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://resulting-maridel-budd-86b51dd4.koyeb.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://resulting-maridel-budd-86b51dd4.koyeb.app/&lt;/a&gt;
 Region: Oregon (US West)&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://ssh.ksg.us.kg/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://ssh.ksg.us.kg/&lt;/a&gt; , &lt;a class=&#34;link&#34; href=&#34;https://ssh.seektao.cc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://ssh.seektao.cc&lt;/a&gt;
-Region: &lt;img src=&#34;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFVSURBVHgBtZUxTsNAEEX/mIiKwpR0mwIEXW5AihR0yQ1QunTkBsY3yA1CTwNUSCCF3IAOCQq7oURJg4QUnGHWXkeEgImd3Sd92bJX/&amp;#43;/O7thAMb4oEI1EkYiNJuZZX6RQAWUMeE0NUSLozMyQS2piVlRIUMH4p4KimbMlraxEoVpZisqlvgcMLZrnGmlj6sNXl3iP4IBXzHZrPex1epjDBSzz94B5G44g8LFHQAPuUB5nnwN3AXCMBFAMR0j5pxLAMRwhp&amp;#43;hR9oDGcAZfE0dNfxalrW2dt5uPOqU5zy3d1k1YhS7o4K6bnaKk1pUdmcIW2ivZCvVtGkBHt7FcQtgiQWg8segD2r8fyLZvHiIedCheue/K&amp;#43;5eW/lkEMrBch6dlWTbPHv82iacTBS85B/Ep1uNB72Neln8DloJqnx1ZTVtGNharYul&amp;#43;kgZljLG9M6D61Z8H5AvceL9xI9jwZwAAAABJRU5ErkJggg==&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;Frankfurt&lt;/li&gt;
+    &gt;https://ssh.ksg.us.kg/&lt;/a&gt;
+Region: Frankfurt （DE）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;项目地址：https://github.com/crazypeace/huashengdun-webssh&lt;/p&gt;
 </description>
         </item>
         <item>
