@@ -8,7 +8,7 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Sat, 12 Apr 2025 20:02:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/free/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>claw免费容器，每月赠送5$，部署服务教程</title>
+        <title>claw免费容器，部署服务教程</title>
         <link>https://hublog.netlify.app/p/250412200248/</link>
         <pubDate>Sat, 12 Apr 2025 20:02:48 +0800</pubDate>
         
@@ -21,13 +21,13 @@
 &lt;li&gt;无 AFF 注册链接：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;目前注册可获赠&lt;code&gt;5$&lt;/code&gt;，注册方式只支持 GitHub、Google&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;获取 &lt;code&gt;5$&lt;/code&gt;条件&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;首次注册赠送&lt;code&gt;5$&lt;/code&gt;：有效期一个月&lt;/li&gt;
 &lt;li&gt;每个月赠送&lt;code&gt;5$&lt;/code&gt;：注册账号后一个月内绑定 GitHub 账户，同时要求绑定的 GitHub 账户注册时间超过 180 天&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;建议&lt;strong&gt;直接使用 GitHub 注册&lt;/strong&gt;，免去绑定的步骤，当然也可以用其他邮箱注册再绑定 github&lt;/p&gt;
-&lt;p&gt;目前注册方式只支持 GitHub、Google&lt;/p&gt;
 &lt;h2 id=&#34;计划&#34;&gt;计划
 &lt;/h2&gt;&lt;h3 id=&#34;free-plan-免费计划&#34;&gt;Free Plan 免费计划
 &lt;/h3&gt;&lt;p&gt;For every newly registered user, ClawCloud Run will offer a benefit of $5. The validity period of this complimentary amount is one month. If you bind your GitHub account within one month after registration, you will receive an additional $5 every month thereafter, and the validity period of this subsequent gift is also one month.
@@ -190,7 +190,8 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;new-api&#34;&gt;new-api
-&lt;/h3&gt;&lt;p&gt;点击 &lt;code&gt;App Launchpad&lt;/code&gt;，点击 &lt;code&gt;Create App&lt;/code&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;AI 模型接口管理与分发系统，支持将多种大模型转为统一格式调用，支持 OpenAI、Claude 等格式，可供个人或者企业内部管理与分发渠道使用，基于 One API 二次开发。&lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;App Launchpad&lt;/code&gt;，点击 &lt;code&gt;Create App&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;容器信息如下：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Application Nmae&lt;/code&gt;：&lt;code&gt;new-api&lt;/code&gt;
 &lt;code&gt;Image Name&lt;/code&gt;: &lt;code&gt;calciumion/new-api:latest&lt;/code&gt;
@@ -255,8 +256,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h3 id=&#34;qinglong&#34;&gt;qinglong
-&lt;/h3&gt;&lt;p&gt;青龙面板：&lt;/p&gt;
-&lt;p&gt;支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台&lt;/p&gt;
 &lt;p&gt;特性：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持多种脚本语言（python3、javaScript、shell、typescript）&lt;/li&gt;
@@ -283,6 +283,8 @@
 	
 	
 	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-2025041307265412&#34;
 	
 	
 &gt;&lt;/p&gt;
@@ -357,6 +359,64 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/RayWangQvQ/BiliBiliToolPro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;BiliBiliToolPro&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;open-webui&#34;&gt;Open WebUI
+&lt;/h3&gt;&lt;p&gt;Open WebUI 是一个可扩展的、功能丰富的、用户友好的自托管 AI 平台，旨在完全离线操作。它支持各种 LLM 跑步者，比如奥拉马和 OpenAI 兼容的 API，内置 RAG 推理机，使它成为一个强大的 AI 部署解决方案。&lt;/p&gt;
+&lt;p&gt;进入 claw 控制台&lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;App Launchpad&lt;/code&gt;，点击 &lt;code&gt;Create App&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;容器信息如下：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Application Nmae&lt;/code&gt;：&lt;code&gt;open-webui&lt;/code&gt;
+&lt;code&gt;Image Name&lt;/code&gt;: &lt;code&gt;ghcr.io/open-webui/open-webui:main&lt;/code&gt;
+&lt;code&gt;Usage&lt;/code&gt;：&lt;code&gt;Fixed，0.5C512M&lt;/code&gt;
+&lt;code&gt;Network&lt;/code&gt;：&lt;code&gt;8080&lt;/code&gt;，启用网络访问，&lt;strong&gt;设置自定义域名&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Environment Variables&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;OLLAMA_BASE_URL=
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;ollama 请使用自己资源或寻找其他资源&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Local Storage&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Capacity&lt;/code&gt;：&lt;code&gt;10&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Mount Path&lt;/code&gt;：&lt;code&gt;/app/backend/data&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;总费用：&lt;code&gt;0.14$/day*31day=4.34$&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参数大小作为参考，根据自己情况调整&lt;/p&gt;
+&lt;p&gt;确认无误，点击 &lt;code&gt;Deploy Application&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;图示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/nzSEfAyUoICa7q2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413174353187&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/FvAE68uPLxCfU5o.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-2025041307265412&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/Ri3Sn1sYNhUPI7m.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413174303386&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
