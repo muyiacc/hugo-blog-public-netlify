@@ -7,7 +7,316 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sat, 12 Apr 2025 10:19:23 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Apr 2025 20:02:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>claw免费容器，每月赠送5$，部署服务教程</title>
+        <link>https://hublog.netlify.app/p/250412200248/</link>
+        <pubDate>Sat, 12 Apr 2025 20:02:48 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250412200248/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;ClawCloud Run 是一个集成在线开发、测试和生产环境的云开发平台。只需单击几下，即可设置开发环境和数据库依赖项，从而显著降低复杂性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带 AFF 注册链接（你我都有利）：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin?link=QKOTH00U6P8V&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;无 AFF 注册链接：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;获取 5$条件&lt;/strong&gt;：绑定 GitHub 账户超过 180 天，建议&lt;strong&gt;直接使用 GitHub 注册&lt;/strong&gt;，免去绑定的步骤，当然也可以用其他邮箱注册再绑定 github&lt;/p&gt;
+&lt;h2 id=&#34;计划&#34;&gt;计划
+&lt;/h2&gt;&lt;h3 id=&#34;free-plan-免费计划&#34;&gt;Free Plan 免费计划
+&lt;/h3&gt;&lt;p&gt;For every newly registered user, ClawCloud Run will offer a benefit of $5. The validity period of this complimentary amount is one month. If you bind your GitHub account within one month after registration, you will receive an additional $5 every month thereafter, and the validity period of this subsequent gift is also one month.
+对于每一个新注册的用户，ClawCloud Run 将提供 5 美元的优惠。此赠品的有效期为一个月。如果您在注册后一个月内绑定 GitHub 账户，则此后每个月都会额外获得 5 美元，而这份后续礼物的有效期也是一个月。&lt;/p&gt;
+&lt;p&gt;To prevent resource wastage, ClawCloud Run reserves the right to manage resource allocation for users of the free plan.
+为防止资源浪费，ClawCloud Run 保留为免费计划的用户管理资源分配的权利。&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;预览
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/zduplVUAwGjaP1X.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Image description&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://s2.loli.net/2025/04/12/8ANaKDZOHEdUVk9.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Image description&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;继续附上注册链接&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带 AFF 注册链接（你我都有利）：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin?link=QKOTH00U6P8V&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;无 AFF 注册链接：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;服务&#34;&gt;服务
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;App Store&lt;/code&gt;提供常见应用启动模板&lt;/p&gt;
+&lt;h3 id=&#34;alist&#34;&gt;alist
+&lt;/h3&gt;&lt;p&gt;部署 alist 的成本比较低，一个月只需&lt;code&gt;0.04$/day*30day=1.2$&lt;/code&gt;，完全可以使用赠送的 5$，alist 服务不会关机。&lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;App Store&lt;/code&gt;，选择 &lt;code&gt;Alist&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/z8Yh5bJqOnAaWKX.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412200932614&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;选择用户名和填入密码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/v8qrHUFWA6J1gmY.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201005058&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;Deploy App&lt;/code&gt;，确认部署&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/eaGy6jwC8UOsI3b.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201111201&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/HZfqV4oYOz2iMFX.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201154107&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;返回，点击&lt;code&gt;My Apps&lt;/code&gt;可以看到已经部署的应用&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/XVUbjqE5SgxTeo2.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201223837&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击进去，可以看到应用已经启动&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/9GsPLdAxEk5iaCM.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201302124&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击 &lt;code&gt;Detail&lt;/code&gt;查看详细信息，下滑找到&lt;code&gt;Network&lt;/code&gt;，即可看到公共访问的 ip 地址&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/bYN8Q9ZPLcIfynm.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201601794&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;code&gt;Manage Network&lt;/code&gt;下滑找到&lt;code&gt;Network&lt;/code&gt;模块可以修改端口，设置自定义域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/QgOCPkxdoIutjiA.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201802461&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/SdLCjvFzkHc1nBM.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201743215&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/OQ4xK37zajygCXH.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412201954702&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;new-api&#34;&gt;new-api
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/EKiHfwsJcMr3boL.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412220043361&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;如下配置可以最大化利用，且不超过 5$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/3qQpsElj5URCJyu.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412220127576&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;开放 3000 端口，自定义域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/bJUGREOHjiWzwLu.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412220245267&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;增加磁盘，并挂载到 &lt;code&gt;/data&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/12/gvUO7MH4Wnt1hrb.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250412220323336&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;qinglong&#34;&gt;qinglong
+&lt;/h3&gt;&lt;p&gt;青龙面板：&lt;/p&gt;
+&lt;p&gt;支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台&lt;/p&gt;
+&lt;p&gt;特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持多种脚本语言（python3、javaScript、shell、typescript）&lt;/li&gt;
+&lt;li&gt;支持在线管理脚本、环境变量、配置文件&lt;/li&gt;
+&lt;li&gt;支持在线查看任务日志&lt;/li&gt;
+&lt;li&gt;支持秒级任务设置&lt;/li&gt;
+&lt;li&gt;支持系统级通知&lt;/li&gt;
+&lt;li&gt;支持暗黑模式&lt;/li&gt;
+&lt;li&gt;支持手机端操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;创建服务&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/Ip2VZDHraYEJiqX.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413072654464&#34;
+	
+	
+&gt;
+&lt;img src=&#34;https://s2.loli.net/2025/04/13/FvAE68uPLxCfU5o.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;填入如下信息，最大化利用资源&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/bvQTSHYmXyiLWze.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413094546873&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;开启外部网络访问，端口为 5700，后面的是服务域名，可以公开访问&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/NXEOfwmkdSeq2JZ.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413073042628&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;设置环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;QlBaseUrl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;QlPort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5700&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/oTqmNRVKiJcpwX3.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413073129679&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;填入如下信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/CkYwplZDHaqgNyz.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413073144393&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;挂载外部存储，不挂载重启容器会丢失数据&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/04/13/rzsmuaqZWO8fLU7.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250413095148043&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;确认无误，点击&lt;code&gt;Deploy Application&lt;/code&gt;部署，接下来访问域名设置用户密码即可&lt;/p&gt;
+&lt;p&gt;支持青龙面板的服务&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/RayWangQvQ/BiliBiliToolPro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BiliBiliToolPro&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>iptv-api，一个可高度自定义的IPTV接口更新项目</title>
         <link>https://hublog.netlify.app/p/250412101923/</link>
         <pubDate>Sat, 12 Apr 2025 10:19:23 +0800</pubDate>
@@ -2971,7 +3280,40 @@ Flash
         
         <guid>https://hublog.netlify.app/p/250320101709/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;h2 id=&#34;agent&#34;&gt;Agent
+&lt;/h2&gt;&lt;h2 id=&#34;dashboard&#34;&gt;Dashboard
+&lt;/h2&gt;&lt;p&gt;最后一个 v0 版本截止到 &lt;code&gt;v0.20.13&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/nezhahq/nezha/releases/tag/v0.20.13&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/nezhahq/nezha/releases/tag/v0.20.13&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装&#34;&gt;安装
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /opt/nezha/dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /opt/nezha/dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -OL https://github.com/nezhahq/nezha/releases/download/v0.20.13/dashboard-linux-amd64.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unzip dashboard-linux-amd64.zip -d .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x dashboard-linux-amd64
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;agent&#34;&gt;Agent
 &lt;/h2&gt;&lt;h3 id=&#34;准备&#34;&gt;准备
 &lt;/h3&gt;&lt;p&gt;准备一个带有 root 用户权限的用户操作&lt;/p&gt;
 &lt;p&gt;下载&lt;/p&gt;
@@ -18063,7 +18405,7 @@ tags:
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>yourls，行业标准自托管的 PHP 网址缩短程序</title>
+        <title>yourls，行业标准自托管的PHP网址缩短程序</title>
         <link>https://hublog.netlify.app/p/2407027/</link>
         <pubDate>Sun, 07 Jul 2024 15:07:53 +0800</pubDate>
         

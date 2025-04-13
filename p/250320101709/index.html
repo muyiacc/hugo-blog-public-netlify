@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Agent 准备 准备一个带有 root 用户权限的用户操作 下载 1 wget -O nezha-agent.zip https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 中国镜像加速 1 wget -O nezha-agent.zip http://gh.ggf.ip-ddns.com/https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 解压文件 1 2 sudo mkdir -p /opt/nezha/agent sudo unzip nezha-agent.zip -d /opt/nezha/agent 赋予运行权限 1 sudo chmod +x /opt/nezha/agent/nezha-agent 系统服务 1">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Dashboard 最后一个 v0 版本截止到 v0.20.13 地址：https://github.com/nezhahq/nezha/releases/tag/v0.20.1">
 <title>nezha，哪吒探针v0版安装</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250320101709/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="nezha，哪吒探针v0版安装">
-<meta property='og:description' content="简介 Agent 准备 准备一个带有 root 用户权限的用户操作 下载 1 wget -O nezha-agent.zip https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 中国镜像加速 1 wget -O nezha-agent.zip http://gh.ggf.ip-ddns.com/https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 解压文件 1 2 sudo mkdir -p /opt/nezha/agent sudo unzip nezha-agent.zip -d /opt/nezha/agent 赋予运行权限 1 sudo chmod +x /opt/nezha/agent/nezha-agent 系统服务 1">
+<meta property='og:description' content="简介 Dashboard 最后一个 v0 版本截止到 v0.20.13 地址：https://github.com/nezhahq/nezha/releases/tag/v0.20.1">
 <meta property='og:url' content='https://hublog.netlify.app/p/250320101709/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nezha' /><meta property='article:published_time' content='2025-03-20T10:17:09&#43;08:00'/><meta property='article:modified_time' content='2025-03-20T10:17:09&#43;08:00'/>
 <meta name="twitter:title" content="nezha，哪吒探针v0版安装">
-<meta name="twitter:description" content="简介 Agent 准备 准备一个带有 root 用户权限的用户操作 下载 1 wget -O nezha-agent.zip https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 中国镜像加速 1 wget -O nezha-agent.zip http://gh.ggf.ip-ddns.com/https://github.com/nezhahq/agent/releases/download/v0.20.5/nezha-agent_linux_amd64.zip 解压文件 1 2 sudo mkdir -p /opt/nezha/agent sudo unzip nezha-agent.zip -d /opt/nezha/agent 赋予运行权限 1 sudo chmod +x /opt/nezha/agent/nezha-agent 系统服务 1">
+<meta name="twitter:description" content="简介 Dashboard 最后一个 v0 版本截止到 v0.20.13 地址：https://github.com/nezhahq/nezha/releases/tag/v0.20.1">
   
 
 
@@ -268,6 +268,11 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
+    <li><a href="#dashboard">Dashboard</a>
+      <ol>
+        <li><a href="#安装">安装</a></li>
+      </ol>
+    </li>
     <li><a href="#agent">Agent</a>
       <ol>
         <li><a href="#准备">准备</a></li>
@@ -341,7 +346,40 @@
     
     
     <h2 id="简介">简介
-</h2><h2 id="agent">Agent
+</h2><h2 id="dashboard">Dashboard
+</h2><p>最后一个 v0 版本截止到 <code>v0.20.13</code></p>
+<p>地址：<a class="link" href="https://github.com/nezhahq/nezha/releases/tag/v0.20.13"  target="_blank" rel="noopener"
+    >https://github.com/nezhahq/nezha/releases/tag/v0.20.13</a></p>
+<h3 id="安装">安装
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p /opt/nezha/dashboard
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/nezha/dashboard
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl -OL https://github.com/nezhahq/nezha/releases/download/v0.20.13/dashboard-linux-amd64.zip
+</span></span><span class="line"><span class="cl">unzip dashboard-linux-amd64.zip -d .
+</span></span><span class="line"><span class="cl">chmod +x dashboard-linux-amd64
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+</div>
+</div><h2 id="agent">Agent
 </h2><h3 id="准备">准备
 </h3><p>准备一个带有 root 用户权限的用户操作</p>
 <p>下载</p>
