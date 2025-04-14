@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 这篇文章将介绍 Obsidian 下实用的插件，在精不在多 Hidden Folder 隐藏文件夹 Git 对当前的仓库实行 Git 管理，不再需要打开终端执行 Git 命令 File Hider 隐藏文件 Templater 模板，可快速创建">
-<title>Obsidian插件</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Bitwarden 客户端 API 的替代服务器实现，用 Rust 编写，与官方 Bitwarden 客户端兼容[ 免责声明 ]，非常适合自托管部署，其中运行官方资源密集型服务可能不理想。 部署 docker 1">
+<title>vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/250226125346/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250413190738/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Obsidian插件">
-<meta property='og:description' content="简介 这篇文章将介绍 Obsidian 下实用的插件，在精不在多 Hidden Folder 隐藏文件夹 Git 对当前的仓库实行 Git 管理，不再需要打开终端执行 Git 命令 File Hider 隐藏文件 Templater 模板，可快速创建">
-<meta property='og:url' content='https://hublog.netlify.app/p/250226125346/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器">
+<meta property='og:description' content="简介 Bitwarden 客户端 API 的替代服务器实现，用 Rust 编写，与官方 Bitwarden 客户端兼容[ 免责声明 ]，非常适合自托管部署，其中运行官方资源密集型服务可能不理想。 部署 docker 1">
+<meta property='og:url' content='https://hublog.netlify.app/p/250413190738/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-26T12:53:46&#43;08:00'/><meta property='article:modified_time' content='2025-02-26T12:53:46&#43;08:00'/>
-<meta name="twitter:title" content="Obsidian插件">
-<meta name="twitter:description" content="简介 这篇文章将介绍 Obsidian 下实用的插件，在精不在多 Hidden Folder 隐藏文件夹 Git 对当前的仓库实行 Git 管理，不再需要打开终端执行 Git 命令 File Hider 隐藏文件 Templater 模板，可快速创建">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-04-13T19:07:38&#43;08:00'/><meta property='article:modified_time' content='2025-04-13T19:07:38&#43;08:00'/>
+<meta name="twitter:title" content="vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器">
+<meta name="twitter:description" content="简介 Bitwarden 客户端 API 的替代服务器实现，用 Rust 编写，与官方 Bitwarden 客户端兼容[ 免责声明 ]，非常适合自托管部署，其中运行官方资源密集型服务可能不理想。 部署 docker 1">
   
 
 
@@ -268,13 +268,12 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#hidden-folder">Hidden Folder</a></li>
-    <li><a href="#git">Git</a></li>
-    <li><a href="#file-hider">File Hider</a></li>
-    <li><a href="#templater">Templater</a></li>
-    <li><a href="#pangu">PanGu</a></li>
-    <li><a href="#remotely-save">Remotely Save</a></li>
-    <li><a href="#image-auto-upload">Image Auto Upload</a></li>
+    <li><a href="#部署">部署</a>
+      <ol>
+        <li><a href="#docker">docker</a></li>
+        <li><a href="#docker-compose">docker compose</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -302,7 +301,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250226125346/">Obsidian插件</a>
+            <a href="/p/250413190738/">vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器</a>
         </h2>
     
         
@@ -324,7 +323,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Feb 26, 2025</time>
+                <time class="article-time--published">Apr 13, 2025</time>
             </div>
         
 
@@ -341,23 +340,67 @@
     
     
     <h2 id="简介">简介
-</h2><p>这篇文章将介绍 Obsidian 下实用的插件，在精不在多</p>
-<h2 id="hidden-folder">Hidden Folder
-</h2><p>隐藏文件夹</p>
-<h2 id="git">Git
-</h2><p>对当前的仓库实行 Git 管理，不再需要打开终端执行 Git 命令</p>
-<h2 id="file-hider">File Hider
-</h2><p>隐藏文件</p>
-<h2 id="templater">Templater
-</h2><p>模板，可快速创建对应模板的新文件</p>
-<h2 id="pangu">PanGu
-</h2><p>格式化文档，中英文中间自动加空格</p>
-<p>快捷键：<code>ctrl+shift+s</code></p>
-<h2 id="remotely-save">Remotely Save
-</h2><p>远程备份，支持多种方式的备份，也支持 Webdav</p>
-<h2 id="image-auto-upload">Image Auto Upload
-</h2><p>使用 Picgo 或者 picgo-core 自动上传图片</p>
-
+</h2><p>Bitwarden 客户端 API 的替代服务器实现，用 Rust 编写，与<a class="link" href="https://bitwarden.com/download/"  target="_blank" rel="noopener"
+    >官方 Bitwarden 客户端</a>兼容[ <a class="link" href="https://github.com/dani-garcia/vaultwarden#disclaimer"  target="_blank" rel="noopener"
+    >免责声明</a> ]，非常适合自托管部署，其中运行官方资源密集型服务可能不理想。</p>
+<h2 id="部署">部署
+</h2><h3 id="docker">docker
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker pull vaultwarden/server:latest
+</span></span><span class="line"><span class="cl">docker run --detach --name vaultwarden <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --env <span class="nv">DOMAIN</span><span class="o">=</span><span class="s2">&#34;https://vw.domain.tld&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --volume /vw-data/:/data/ <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart unless-stopped <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --publish 80:80 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  vaultwarden/server:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="docker-compose">docker compose
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3.9&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">vaultwarden</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">vaultwarden</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">vaultwarden/server:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span>- <span class="l">SIGNUPS_ALLOWED=false</span><span class="w"> </span><span class="c"># 禁用新用户注册</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span>- <span class="l">ADMIN_TOKEN=some_random_token_as_per_above_explanation</span><span class="w"> </span><span class="c"># 启用管理页面</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	  </span>- <span class="l">SIGNUPS_ALLOWED=false</span><span class="w"> </span><span class="c"># 禁用组织邀请</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./vaultwarden_data/:/data/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">3035</span><span class="p">:</span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -380,19 +423,6 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
-            
-                
-<article class="">
-    <a href="/p/250413190738/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器</h2>
-        </div>
-    </a>
-</article>
-
             
                 
 <article class="">
@@ -441,6 +471,19 @@
 
         <div class="article-details">
             <h2 class="article-title">kodbox，新一代企业私有云存储，协同办公平台</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250403100524/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PHP开源项目收集</h2>
         </div>
     </a>
 </article>

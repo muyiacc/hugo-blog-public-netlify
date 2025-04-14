@@ -65,16 +65,8 @@
 &lt;h2 id=&#34;服务&#34;&gt;服务
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;App Launchpad&lt;/code&gt;：创建容器，可以设置比较小的资源占用，所需费用也比较小，最低&lt;code&gt;0.1C64M 0.01$/day&lt;/code&gt;，最高&lt;code&gt;8C16G 2.14$/day&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Database&lt;/code&gt;：支持&lt;code&gt;PostgreSQL&lt;/code&gt;、&lt;code&gt;MongoDB&lt;/code&gt;、&lt;code&gt;MySQL&lt;/code&gt;、&lt;code&gt;Redis&lt;/code&gt;、&lt;code&gt;Kafka&lt;/code&gt;、&lt;code&gt;Milvus&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;Devbox&lt;/code&gt;：开发容器，可以选择特定语言的运行环境，框架，系统。最低支持&lt;code&gt;1C2G&lt;/code&gt;，最高支持&lt;code&gt;16C32G&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Object Storage&lt;/code&gt;：对象存储&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;App Store&lt;/code&gt;：应用商店，提供常见应用启动模板，如 alist，fastgpt，chat-next-web，dify 等等&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Termiinal&lt;/code&gt;：终端模拟器&lt;/li&gt;

@@ -74,12 +74,12 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-第三期-快捷键</title>
+        <title>MPV播放器入门指南-第三期：快捷键</title>
         <link>https://hublog.netlify.app/p/241009155809/</link>
         <pubDate>Wed, 09 Oct 2024 15:58:09 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/241009155809/</guid>
-        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-第三期-快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
+        <description>&lt;img src="https://s2.loli.net/2024/10/09/wezYV4D5Q8J36HT.png" alt="Featured image of post MPV播放器入门指南-第三期：快捷键" /&gt;&lt;h2 id=&#34;常用快捷键&#34;&gt;常用快捷键
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;code&gt;f&lt;/code&gt;   全屏&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;ecs&lt;/code&gt; 关闭控制台，退出全屏&lt;/li&gt;
@@ -470,18 +470,17 @@
 </description>
         </item>
         <item>
-        <title>MPV播放器入门指南-第一期-带你走进命令行播放器的世界</title>
+        <title>MPV播放器入门指南-第一期：带你走进命令行播放器的世界</title>
         <link>https://hublog.netlify.app/p/2312007/</link>
         <pubDate>Thu, 07 Dec 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2312007/</guid>
         <description>&lt;h2 id=&#34;概述&#34;&gt;概述
-&lt;/h2&gt;&lt;p&gt;a free, open source, and cross-platform media player&lt;/p&gt;
-&lt;p&gt;简单来说，就是一个开源的，多平台的媒体播放器，支持视频，音频，图片等等。&lt;/p&gt;
-&lt;p&gt;官方地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/mpv-player/mpv&lt;/a&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;mpv&lt;/strong&gt; 是一个免费的（在自由）媒体播放器的命令行。它支持多种媒体文件格式、音频和视频编解码器以及字幕类型。&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mpv.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/mpv-player/mpv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/mpv-player/mpv&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/installation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://mpv.io/installation/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;文档：&lt;a class=&#34;link&#34; href=&#34;https://mpv.io/manual/stable/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -495,7 +494,7 @@
 &lt;p&gt;双击 &lt;code&gt;mpv.exe&lt;/code&gt; 即可运行 mpv 播放器。&lt;/p&gt;
 &lt;h2 id=&#34;配置&#34;&gt;配置
 &lt;/h2&gt;&lt;h3 id=&#34;关联格式&#34;&gt;关联格式
-&lt;/h3&gt;&lt;p&gt;进入解压目录下的 &lt;code&gt;installer&lt;/code&gt; 文件夹，有个 &lt;code&gt;mpv-install.bat&lt;/code&gt; 管理员权限运行，等待完成，按任意键退出。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;进入解压目录下的 &lt;code&gt;installer&lt;/code&gt; 文件夹，有个 &lt;code&gt;mpv-install.bat&lt;/code&gt;脚本，管理员权限运行它，等待完成，按任意键退出。&lt;/p&gt;
 &lt;h3 id=&#34;配置文件夹&#34;&gt;配置文件夹
 &lt;/h3&gt;&lt;p&gt;配置文件夹用于自定义配置，安装插件&lt;/p&gt;
 &lt;p&gt;进入解压的目录，新建 &lt;code&gt;portable_config&lt;/code&gt;文件夹&lt;/p&gt;
@@ -677,7 +676,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 音量 #####
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 默认音量
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume=80		
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume=80
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;##### 窗口配置 #####
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;## 如果启用则视频不会超过屏幕大小。
