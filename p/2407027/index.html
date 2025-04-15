@@ -272,6 +272,7 @@
     <li><a href="#部署">部署</a>
       <ol>
         <li><a href="#serv00">serv00</a></li>
+        <li><a href="#docker-compose">docker compose</a></li>
       </ol>
     </li>
     <li><a href="#主题">主题</a>
@@ -279,7 +280,11 @@
         <li><a href="#sleeky">Sleeky</a></li>
       </ol>
     </li>
-    <li><a href="#浏览器插件">浏览器插件</a></li>
+    <li><a href="#插件">插件</a>
+      <ol>
+        <li><a href="#浏览器">浏览器</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -423,12 +428,28 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim user/config.php
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>serv00后台创建数据库，将数据库信息填写到 <code>user/config.php</code>，除了数据库外，还需要修改其他信息，按需填写</p>
-<blockquote>
-<p>这里需要注意的是，如果你想让多个短链指向同一个站点，需要做如下操作
-<code>define( 'YOURLS_UNIQUE_URLS', 'false' );</code></p>
-</blockquote>
-<p>修改完成之后访问：域名/admin</p>
+</div><p>serv00 控制台创建 MySQL 数据库，将数据库信息填写到 <code>user/config.php</code></p>
+<p>除了数据库外，还需要修改其他信息，按需填写</p>
+<p>大致需要修改的如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_DB_USER&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_DB_PASS&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_DB_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_DB_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_DB_PREFIX&#39;</span><span class="p">,</span> <span class="s1">&#39;yourls_&#39;</span> <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">define</span><span class="p">(</span> <span class="s1">&#39;YOURLS_SITE&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span> <span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改完成之后访问：<code>域名/admin</code></p>
 <p>进入到这个界面，点击 <code>Install YOURLS</code></p>
 <p><img src="https://s2.loli.net/2024/07/15/RwMSbTGBiFqvZpA.png"
 	
@@ -451,28 +472,22 @@
 	
 	
 ></p>
-<h2 id="主题">主题
-</h2><h3 id="sleeky">Sleeky
-</h3><p><a class="link" href="https://github.com/Flynntes/Sleeky/releases/tag/v2.5.0"  target="_blank" rel="noopener"
-    >https://github.com/Flynntes/Sleeky/releases/tag/v2.5.0</a></p>
+<h3 id="docker-compose">docker compose
+</h3><p>待续</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
+<pre tabindex="0" class="chroma"><code></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://github.com/Flynntes/Sleeky/archive/refs/tags/v2.5.0.zip
-</span></span><span class="line"><span class="cl">unzip v2.5.0.zip
-</span></span><span class="line"><span class="cl">cp -r Sleeky-2.5.0/sleeky-frontend/* public_html/
-</span></span><span class="line"><span class="cl">cp -r Sleeky-2.5.0/sleeky-backend/ public_html/user/plugins/
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"></code></pre></td></tr></table>
 </div>
-</div><p>默认css加载有问题，查看这个issuse解决：<a class="link" href="https://github.com/Flynntes/Sleeky/issues/89"  target="_blank" rel="noopener"
-    >https://github.com/Flynntes/Sleeky/issues/89</a></p>
-<p>安装主题后的结果</p>
-<p>前台：</p>
+</div><h2 id="主题">主题
+</h2><h3 id="sleeky">Sleeky
+</h3><p>Sleeky 是一个最小的接口包，用于 <a class="link" href="https://github.com/YOURLS/YOURLS"  target="_blank" rel="noopener"
+    >YOURLS</a>，一个开源的 URL 缩短器。Sleeky 添加了一个公共接口，并对后端（管理员）接口进行了大修。使用此主题，您可以创建自己的 Bitly / URL 缩短网站或公司内部使用的缩</p>
+<p>源码：<a class="link" href="https://github.com/Flynntes/Sleeky"  target="_blank" rel="noopener"
+    >https://github.com/Flynntes/Sleeky</a></p>
+<p>预览</p>
+<p>前台</p>
 <p><img src="https://s2.loli.net/2024/07/15/hwqLOfRBcymG2ae.png"
 	
 	
@@ -483,7 +498,7 @@
 	
 	
 ></p>
-<p>后台：</p>
+<p>后台</p>
 <p><img src="https://s2.loli.net/2024/07/15/JQmsdgE7NKvA4Rp.png"
 	
 	
@@ -494,27 +509,46 @@
 	
 	
 ></p>
-<h2 id="浏览器插件">浏览器插件
-</h2><ul>
+<p>安装</p>
+<p>下载地址：<a class="link" href="https://github.com/Flynntes/Sleeky/releases/tag/v2.5.0"  target="_blank" rel="noopener"
+    >v2.5.0</a></p>
+<ul>
+<li>安装并运行 YOURLS</li>
+<li>将 <code>sleeky-frontend</code> 目录的内容移动到 YOURLS 安装的根目录</li>
+<li>将 <code>sleeky-backend</code> 文件夹移动到 YOURLS 安装的 <code>user/plugins/</code> 文件夹</li>
+<li>在 YOURLS 管理区（<code>example.com/admin/plugins.php</code>）激活插件。该插件将显示为 Sleeky Backend</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># serv00</span>
+</span></span><span class="line"><span class="cl">wget https://github.com/Flynntes/Sleeky/archive/refs/tags/v2.5.0.zip
+</span></span><span class="line"><span class="cl">unzip v2.5.0.zip
+</span></span><span class="line"><span class="cl">cp -r Sleeky-2.5.0/sleeky-frontend/* public_html/
+</span></span><span class="line"><span class="cl">cp -r Sleeky-2.5.0/sleeky-backend/ public_html/user/plugins/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>如果 css 加载有问题，查看这个 issuse 解决：<a class="link" href="https://github.com/Flynntes/Sleeky/issues/89"  target="_blank" rel="noopener"
+    >https://github.com/Flynntes/Sleeky/issues/89</a></p>
+</blockquote>
+<h2 id="插件">插件
+</h2><h3 id="浏览器">浏览器
+</h3><ul>
 <li>Firefox：<a class="link" href="https://addons.mozilla.org/zh-CN/firefox/addon/yourls-shortener/?utm_source=addons.mozilla.org&amp;utm_medium=referral&amp;utm_content=search"  target="_blank" rel="noopener"
     >YOURLS shortener</a></li>
 </ul>
-<p>安装后长这样
-<img src="https://s2.loli.net/2024/07/15/zS2ROqH54Y8Xvgk.png" alt="image-20240715120110916" style="zoom:50%;" /></p>
 <p>点击<code>Setting</code>进入设置，填写信息后测试保存</p>
-<img src="https://s2.loli.net/2024/07/15/5BjgyHo1KnkPxmb.png" alt="image-20240715120149712" style="zoom: 50%;" />
-<p>Server URL就是你的网址链接</p>
-<p>Signature是密钥，在 Tools - Secure passwordless API call可以找到</p>
-<p><img src="https://s2.loli.net/2024/07/15/ESt29FGJQbjCd6V.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="image-20240715124107089"
-	
-	
-></p>
+<ul>
+<li><code>Server URL</code>：网址链接</li>
+<li><code>Signature</code>：密钥，在<code>Tools</code> - <code>Secure passwordless API call</code> 可以找到</li>
+</ul>
 
 </section>
 

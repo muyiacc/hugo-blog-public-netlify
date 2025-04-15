@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 支持的服务众多，可选择php版本，有多款数据库，MySQL，postgresql，mongdodb，支持ssh连接，没有广告，3G空间。">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连">
 <title>免费虚拟主机Serv00，使用部署各种服务教程</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/free-virtual-host-serv00-1/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="免费虚拟主机Serv00，使用部署各种服务教程">
-<meta property='og:description' content="介绍 支持的服务众多，可选择php版本，有多款数据库，MySQL，postgresql，mongdodb，支持ssh连接，没有广告，3G空间。">
+<meta property='og:description' content="简介 Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连">
 <meta property='og:url' content='https://hublog.netlify.app/p/free-virtual-host-serv00-1/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='serv00' /><meta property='article:published_time' content='2024-06-22T00:06:14&#43;08:00'/><meta property='article:modified_time' content='2024-06-22T00:06:14&#43;08:00'/>
 <meta name="twitter:title" content="免费虚拟主机Serv00，使用部署各种服务教程">
-<meta name="twitter:description" content="介绍 支持的服务众多，可选择php版本，有多款数据库，MySQL，postgresql，mongdodb，支持ssh连接，没有广告，3G空间。">
+<meta name="twitter:description" content="简介 Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连">
   
 
 
@@ -267,8 +267,16 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#pm2">PM2</a></li>
-    <li><a href="#halo博客">halo博客</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#添加自定义域名">添加自定义域名</a></li>
+    <li><a href="#serv00-修改-php-版本">Serv00 修改 php 版本</a></li>
+    <li><a href="#ssl-证书">SSL 证书</a></li>
+    <li><a href="#应用">应用</a>
+      <ol>
+        <li><a href="#pm2">PM2</a></li>
+        <li><a href="#halo-博客">halo 博客</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -334,8 +342,8 @@
     <section class="article-content">
     
     
-    <h1 id="介绍">介绍
-</h1><p>支持的服务众多，可选择php版本，有多款数据库，MySQL，postgresql，mongdodb，支持ssh连接，没有广告，3G空间。</p>
+    <h2 id="简介">简介
+</h2><p>Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连接，没有广告，3G 空间。</p>
 <p>地址：https://www.serv00.com/</p>
 <blockquote>
 <p>温馨提示：注册不要使用代理，建议把上述域名加入白名单</p>
@@ -360,11 +368,11 @@
 	
 	
 ></p>
-<h1 id="serv00添加自定义域名">Serv00添加自定义域名
-</h1><p>使用白嫖的二级域名添加三级域名作为serv00的自定义域名</p>
-<p>域名托管在cloudflare</p>
-<h1 id="serv00修改php版本">Serv00修改php版本
-</h1><p>参考：https://forum.serv00.com/d/8-upgrade-version-of-php/2</p>
+<h2 id="添加自定义域名">添加自定义域名
+</h2><p>使用白嫖的二级域名添加三级域名作为 serv00 的自定义域名</p>
+<p>域名托管在 cloudflare</p>
+<h2 id="serv00-修改-php-版本">Serv00 修改 php 版本
+</h2><p>参考：https://forum.serv00.com/d/8-upgrade-version-of-php/2</p>
 <p>在 domains/domain/ 新建文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -405,9 +413,43 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;AddType application/x-httpd-php74 .php&#34;</span> &gt;&gt; .htaccess
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="应用">应用
-</h1><h2 id="pm2">PM2
-</h2><p>为了更好使用 ，PM2必不可少</p>
+</div><h2 id="ssl-证书">SSL 证书
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$HOME</span>/domains/你的网站/public_html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>新建 <code>.htaccess</code>文件，开启重定向 http 到 https</p>
+<p>如果你不懂 <code>vim</code>，请找一个你熟悉的编辑软件上传，这里简要介绍一下</p>
+<p>编辑 <code>.htaccess</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim .htaccess
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>复制下面的内容，粘贴进去</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">RewriteEngine</span> <span class="nx">On</span>
+</span></span><span class="line"><span class="cl"><span class="nx">RewriteCond</span> <span class="o">%</span><span class="p">{</span><span class="nx">HTTPS</span><span class="p">}</span> <span class="nx">off</span>
+</span></span><span class="line"><span class="cl"><span class="nx">RewriteRule</span> <span class="o">^</span><span class="p">(</span><span class="o">.*</span><span class="p">)</span><span class="err">$</span> <span class="nx">https</span><span class="o">://%</span><span class="p">{</span><span class="nx">HTTP_HOST</span><span class="p">}</span><span class="o">%</span><span class="p">{</span><span class="nx">REQUEST_URI</span><span class="p">}</span> <span class="p">[</span><span class="nx">L</span><span class="p">,</span><span class="nx">R</span><span class="o">=</span><span class="mi">301</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>英文输入法下 <code>:wq</code> 退出保存</p>
+<h2 id="应用">应用
+</h2><h3 id="pm2">PM2
+</h3><p>为了更好使用 ，PM2 必不可少</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -416,8 +458,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">bash &lt;<span class="o">(</span>curl -s https://raw.githubusercontent.com/k0baya/alist_repl/main/serv00/install-pm2.sh<span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="halo博客">halo博客
-</h2><div class="highlight"><div class="chroma">
+</div><h3 id="halo-博客">halo 博客
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -545,6 +587,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250415091544/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">serv00部署halo，你的现代化博客系统</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">

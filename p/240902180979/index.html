@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色 led 灯，在刷入 armbian 系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果要自动动手调整">
 <title>玩客云onecloud刷机安装armbian系统，安装应用</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240902180979/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="玩客云onecloud刷机安装armbian系统，安装应用">
-<meta property='og:description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
+<meta property='og:description' content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色 led 灯，在刷入 armbian 系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果要自动动手调整">
 <meta property='og:url' content='https://hublog.netlify.app/p/240902180979/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='armbian' /><meta property='article:published_time' content='2024-09-02T18:09:19&#43;08:00'/><meta property='article:modified_time' content='2024-09-02T18:09:19&#43;08:00'/>
 <meta name="twitter:title" content="玩客云onecloud刷机安装armbian系统，安装应用">
-<meta name="twitter:description" content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如">
+<meta name="twitter:description" content="刷机过程 略 基本设置 灯 https://www.bilibili.com/read/cv21700714/ 玩客云这设备有个红、绿、蓝三色 led 灯，在刷入 armbian 系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。 如果要自动动手调整">
   
 
 
@@ -271,17 +271,18 @@
     <li><a href="#基本设置">基本设置</a>
       <ol>
         <li><a href="#灯">灯</a></li>
-        <li><a href="#静态ip">静态ip</a></li>
+        <li><a href="#静态-ip">静态 ip</a></li>
       </ol>
     </li>
     <li><a href="#应用">应用</a>
       <ol>
-        <li><a href="#casaos非必须不建议">casaos（非必须不建议）</a></li>
+        <li><a href="#casaos">casaos</a></li>
         <li><a href="#1panel">1panel</a></li>
-        <li><a href="#v2raya必装">v2raya（必装）</a></li>
+        <li><a href="#v2raya">v2raya</a></li>
         <li><a href="#alist">alist</a></li>
         <li><a href="#ddns-go">ddns-go</a></li>
         <li><a href="#wg-esay">wg-esay</a></li>
+        <li><a href="#transmission">transmission</a></li>
       </ol>
     </li>
   </ol>
@@ -355,8 +356,8 @@
 </h2><h3 id="灯">灯
 </h3><p><a class="link" href="https://www.bilibili.com/read/cv21700714/"  target="_blank" rel="noopener"
     >https://www.bilibili.com/read/cv21700714/</a></p>
-<p>玩客云这设备有个红、绿、蓝三色led灯，在刷入armbian系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。</p>
-<p>如果要自动动手调整led灯的颜色，控制命令如下（需要root用户执行）</p>
+<p>玩客云这设备有个红、绿、蓝三色 led 灯，在刷入 armbian 系统以后，这个灯的颜色就会显示异常，往往是一直显示红色。</p>
+<p>如果要自动动手调整 led 灯的颜色，控制命令如下（需要 root 用户执行）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -371,7 +372,7 @@
 </div>
 </div><p><code>echo 1</code>是开，<code>echo 0</code>就是关。现在可以组合出多种颜色，蓝绿、红蓝、红绿、红绿蓝。😄</p>
 <p>但这个设置重启后失效。╮(╯▽╰)╭</p>
-<h3 id="静态ip">静态ip
+<h3 id="静态-ip">静态 ip
 </h3><p>查看当前网络连接信息</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -381,7 +382,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli connection show
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>设置静态ip</p>
+</div><p>设置静态 ip</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -403,7 +404,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nmcli connection down &#34;Wired connection 1&#34; 
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nmcli connection down &#34;Wired connection 1&#34;
 </span></span><span class="line"><span class="cl">nmcli connection up &#34;Wired connection 1&#34;
 </span></span></code></pre></td></tr></table>
 </div>
@@ -417,8 +418,9 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="应用">应用
-</h2><h3 id="casaos非必须不建议">casaos（非必须不建议）
-</h3><p>内存占用很大，没需求不建议安装</p>
+</h2><h3 id="casaos">casaos
+</h3><p>非必须不建议</p>
+<p>内存占用很大，没需求不建议安装</p>
 <p>一键安装脚本：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -428,7 +430,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget -qO- https://get.casaos.io <span class="p">|</span> bash
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>casaos商店源
+</div><p>casaos 商店源
 <a class="link" href="https://play.cuse.eu.org/Cpe204-Appstore-play-arm.zip"  target="_blank" rel="noopener"
     >https://play.cuse.eu.org/Cpe204-Appstore-play-arm.zip</a></p>
 <h3 id="1panel">1panel
@@ -476,8 +478,8 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -sSL https://resource.fit2cloud.com/1panel/package/quick_start.sh -o quick_start.sh <span class="o">&amp;&amp;</span> bash quick_start.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="v2raya必装">v2raya（必装）
-</h3><p>代理工具，web端，默认端口 2017，初次下载速度较慢，耐心等待。</p>
+</div><h3 id="v2raya">v2raya
+</h3><p>代理工具，web 端，默认端口 2017，初次下载速度较慢，耐心等待。</p>
 <p>有了它，何必使用软路由，</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -513,8 +515,47 @@
 </blockquote>
 <p>二进制文件安装</p>
 <p>下载地址：<a class="link" href="https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz"  target="_blank" rel="noopener"
-    >https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz</a></p>
+    >v3.37.4/alist-linux-arm-7.tar.gz</a></p>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载</span>
+</span></span><span class="line"><span class="cl">mkdir -p /opt/alist
+</span></span><span class="line"><span class="cl">wget https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz
+</span></span><span class="line"><span class="cl">tar -zxvf alist-linux-arm-7.tar.gz -C /opt/alist
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装启动</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/alist
+</span></span><span class="line"><span class="cl">chmod +x alist
+</span></span><span class="line"><span class="cl">./alist server <span class="c1"># 启动会前台阻塞</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 新开一个终端设置密码</span>
+</span></span><span class="line"><span class="cl">./alist admin <span class="nb">set</span> 密码
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 安装服务</span>
+</span></span><span class="line"><span class="cl">vim /usr/lib/systemd/system/alist.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -529,49 +570,19 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 下载</span>
-</span></span><span class="line"><span class="cl">mkdir -p /opt/alist
-</span></span><span class="line"><span class="cl">wget https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz
-</span></span><span class="line"><span class="cl">tar -zxvf alist-linux-arm-7.tar.gz -C /opt/alist
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装启动</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /opt/alist
-</span></span><span class="line"><span class="cl">chmod +x alist
-</span></span><span class="line"><span class="cl">./alist server <span class="c1"># 启动会前台阻塞</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># 新开一个终端设置密码</span>
-</span></span><span class="line"><span class="cl">./alist admin <span class="nb">set</span> 密码
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 安装服务</span>
-</span></span><span class="line"><span class="cl">vim /usr/lib/systemd/system/alist.service
-</span></span><span class="line"><span class="cl"><span class="c1"># 填入一下内容</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 填入一下内容</span>
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Unit<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Description</span><span class="o">=</span>alist
 </span></span><span class="line"><span class="cl"><span class="nv">After</span><span class="o">=</span>network.target
-</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Service<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Type</span><span class="o">=</span>simple
 </span></span><span class="line"><span class="cl"><span class="nv">WorkingDirectory</span><span class="o">=</span>/opt/alist
 </span></span><span class="line"><span class="cl"><span class="nv">ExecStart</span><span class="o">=</span>/opt/alist/alist server
 </span></span><span class="line"><span class="cl"><span class="nv">Restart</span><span class="o">=</span>on-failure
-</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="o">[</span>Install<span class="o">]</span>
 </span></span><span class="line"><span class="cl"><span class="nv">WantedBy</span><span class="o">=</span>multi-user.target
 </span></span></code></pre></td></tr></table>
@@ -585,7 +596,7 @@
 <pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --restart<span class="o">=</span>unless-stopped -v /opt/alist:/opt/alist/data -p 5245:5244 -e <span class="nv">PUID</span><span class="o">=</span><span class="m">0</span> -e <span class="nv">PGID</span><span class="o">=</span><span class="m">0</span> -e <span class="nv">UMASK</span><span class="o">=</span><span class="m">022</span> --name<span class="o">=</span><span class="s2">&#34;alist&#34;</span> xhofe/alist-aria2:main
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>docker-compose安装</p>
+</div><p>docker-compose 安装</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -628,10 +639,10 @@
 </span></span><span class="line"><span class="cl">            - <span class="s1">&#39;/root:/root&#39;</span>
 </span></span><span class="line"><span class="cl">        ports:
 </span></span><span class="line"><span class="cl">            - <span class="s1">&#39;5245:5244&#39;</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">#environment:</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">#- PUID=0</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">#- PGID=0</span>
-</span></span><span class="line"><span class="cl">            <span class="c1">#- UMASK=022</span>
+</span></span><span class="line"><span class="cl">        environment:
+</span></span><span class="line"><span class="cl">            - <span class="nv">PUID</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">            - <span class="nv">PGID</span><span class="o">=</span><span class="m">0</span>
+</span></span><span class="line"><span class="cl">            - <span class="nv">UMASK</span><span class="o">=</span><span class="m">000</span>
 </span></span><span class="line"><span class="cl">        container_name: alist
 </span></span><span class="line"><span class="cl">        restart: unless-stopped
 </span></span></code></pre></td></tr></table>
@@ -646,17 +657,15 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="ddns-go">ddns-go
-</h3><p>ddns神器，go语言编写，内存占用低。</p>
-<blockquote>
-<p>源码：https://github.com/jeessy2/ddns-go</p>
-</blockquote>
+</h3><p>ddns 神器，go 语言编写，内存占用低。</p>
+<p>源码：<a class="link" href="https://github.com/jeessy2/ddns-go"  target="_blank" rel="noopener"
+    >https://github.com/jeessy2/ddns-go</a></p>
 <h3 id="wg-esay">wg-esay
-</h3><p>异地组网工具wireguard，wg-easy是简化wireguard部署过程的开源项目，使用docker部署，简单快速上手。</p>
-<p>wireguard 是虚拟加密网络（VPN）,它可以使异地的设备组成一个局域网，换句话说就是可以在外地可以像在家中一样访问家中的设备，ip地址都可以不变。</p>
-<blockquote>
-<p>源码：https://github.com/wg-easy/wg-easy</p>
-</blockquote>
-<p>部署方式：</p>
+</h3><p>异地组网工具 wireguard，wg-easy 是简化 wireguard 部署过程的开源项目，使用 docker 部署，简单快速上手。</p>
+<p>wireguard 是虚拟加密网络（VPN）,它可以使异地的设备组成一个局域网，换句话说就是可以在外地可以像在家中一样访问家中的设备，ip 地址都可以不变。</p>
+<p>源码：<a class="link" href="https://github.com/wg-easy/wg-easy"  target="_blank" rel="noopener"
+    >https://github.com/wg-easy/wg-easy</a></p>
+<p>部署</p>
 <p>docker</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -716,6 +725,156 @@
 </div>
 </div><p>如果是 单个 <code>$</code>要改成 <code>$$</code></p>
 <p>部署后请注意开放对应端口。</p>
+<h3 id="transmission">transmission
+</h3><p>一个快速、简单、免费的 Bittorrent 客户端</p>
+<p>官网：<a class="link" href="https://transmissionbt.com/"  target="_blank" rel="noopener"
+    >https://transmissionbt.com/</a></p>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install transmission-daemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置</p>
+<p>修改配置需要停用 transmission-daemon 服务，否则<strong>所做的一切配置都不会保存</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl stop transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/transmission-daemon/settings.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一般需要修改：</p>
+<p>默认下载路径</p>
+<p>找到下面这一项，后面的路径是默认下载的路径，你可以改成你想要的路径</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="s2">&#34;download-dir&#34;</span><span class="p">:</span> <span class="s2">&#34;/home/share/downloads&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>设置好后，不要忘记执行一下赋权命令，使下载目录可以读写，以免发生不必要的错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">p1</span><span class="o">/</span><span class="n">bt_downloads</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">p1</span><span class="o">/</span><span class="n">bt_downloads</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 WebUI</p>
+<p>按照下面的进行设置即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;rpc-authentication-required&#34;: true
+</span></span><span class="line"><span class="cl">&#34;rpc-enabled&#34;: true
+</span></span><span class="line"><span class="cl">&#34;rpc-password: &#34;这里改成你自己的密码&#34;
+</span></span><span class="line"><span class="cl">&#34;rpc-username&#34;:&#34;改成你自己的用户名&#34;
+</span></span><span class="line"><span class="cl">&#34;rpc-whitelist-enabled&#34;: false  不启用白名单，防止登不上
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完整如下，仅供参考</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;blocklist-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-dir&#34;</span><span class="p">:</span> <span class="s2">&#34;/mnt/p1/bt_downloads&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;encryption&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max-peers-global&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;peer-port&#34;</span><span class="p">:</span> <span class="mi">51413</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;pex-enabled&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;port-forwarding-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-authentication-required&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-password&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-port&#34;</span><span class="p">:</span> <span class="mi">9091</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-username&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist-enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist&#34;</span><span class="p">:</span> <span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置完这些基本就足够用了，如果还想进一步了解各参数的作用，可以参考<a class="link" href="https://github.com/transmission/transmission/wiki/Editing-Configuration-Files"  target="_blank" rel="noopener"
+    ><strong>官方文档</strong></a>以及各参数的<a class="link" href="https://blog.whsir.com/post-1182.html"  target="_blank" rel="noopener"
+    ><strong>中英对照</strong></a></p>
+<p>查看状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl status transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>开机自启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>WebUI</p>
+<p>IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录</p>
 
 </section>
 
