@@ -548,22 +548,13 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/app <span class="o">&amp;&amp;</span> java -Dfile.encoding<span class="o">=</span>UTF-8 -jar halo.jar --spring.config.additional-location<span class="o">=</span>optional:file:<span class="nv">$HOME</span>/.halo2/
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> ~/app <span class="o">&amp;&amp;</span> java  -server -Xms256m -Xmx400m -Dfile.encoding<span class="o">=</span>UTF-8 -jar halo.jar --spring.config.additional-location<span class="o">=</span>optional:file:<span class="nv">$HOME</span>/.halo2/
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="初始化-halo">初始化 halo
 </h3><p>设置站点名，用户名，密码，邮箱</p>
 <h3 id="后台运行">后台运行
-</h3><p>后台执行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nohup java -Dfile.encoding<span class="o">=</span>UTF-8 -jar <span class="nv">$HOME</span>/app/halo.jar --spring.config.additional-location<span class="o">=</span>optional:file:<span class="nv">$HOME</span>/.halo2/ &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>由于 serv00 不能使用 system，防止 serv00 杀掉进程，我们使用定时任务，定时重启</p>
+</h3><p>由于 serv00 不能使用 system，防止 serv00 杀掉进程，我们使用定时任务，定时重启</p>
 <p>登录 serv00 控制台，新增定时任务</p>
 <div class="table-wrapper"><table>
 <thead>
@@ -586,13 +577,13 @@
 </tr>
 <tr>
 <td>Minute</td>
-<td>Each time</td>
-<td>*</td>
+<td>Every</td>
+<td>10</td>
 </tr>
 <tr>
 <td>Hour</td>
-<td>Every</td>
-<td>5</td>
+<td>Each time</td>
+<td>*</td>
 </tr>
 <tr>
 <td>Day of month</td>
@@ -617,7 +608,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pkill -f halo.jar<span class="p">;</span> nohup java -Dfile.encoding<span class="o">=</span>UTF-8 -jar <span class="nv">$HOME</span>/app/halo.jar --spring.config.additional-location<span class="o">=</span>optional:file:<span class="nv">$HOME</span>/.halo2/ &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pkill -f halo.jar<span class="p">;</span> nohup java -server -Xms256m -Xmx400m -Dfile.encoding<span class="o">=</span>UTF-8 -jar <span class="nv">$HOME</span>/app/halo.jar --spring.config.additional-location<span class="o">=</span>optional:file:<span class="nv">$HOME</span>/.halo2/ &gt; /dev/null 2&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">&amp;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="访问">访问
@@ -634,8 +625,9 @@
 <p>推荐这个教程：<a class="link" href="https://linux.do/t/topic/15608"  target="_blank" rel="noopener"
     >使用 Vercel 部署反向代理的部署指南</a></p>
 <h2 id="在线预览">在线预览
-</h2><p><a class="link" href="https://serv00-halo.seektao.cc/"  target="_blank" rel="noopener"
-    >https://serv00-halo.seektao.cc/</a></p>
+</h2><p><a class="link" href="https://omni.seektao.cc/"  target="_blank" rel="noopener"
+    >https://omni.seektao.cc/</a></p>
+<p>PS：这是一个玩具，用不了多久就会被杀进程，只适合学习</p>
 
 </section>
 

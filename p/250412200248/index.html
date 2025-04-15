@@ -280,6 +280,7 @@
         <li><a href="#new-api">new-api</a></li>
         <li><a href="#qinglong">qinglong</a></li>
         <li><a href="#open-webui">Open WebUI</a></li>
+        <li><a href="#halo">halo</a></li>
       </ol>
     </li>
   </ol>
@@ -743,6 +744,62 @@
 	
 	
 ></p>
+<h3 id="halo">halo
+</h3><p>Halo 是一款开源的建站工具，专注于博客，同时也适合构建个人网站。它以其简洁、易用和强大的自定义能力而著称。</p>
+<p>官网：<a class="link" href="https://www.halo.run/"  target="_blank" rel="noopener"
+    >https://www.halo.run/</a></p>
+<p>部署</p>
+<p>进入 claw 控制台，点击 <code>App Launchpad</code>，点击 <code>Create App</code></p>
+<p>容器信息如下：</p>
+<p><code>Application Nmae</code>：<code>halo</code>
+<code>Image Name</code>:</p>
+<p>任选其一</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">halohub/halo:2.20
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">registry.fit2cloud.com/halo/halo:2.20
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以下参数大小最大化利用，作为参考，根据自己情况调整</p>
+<p><code>Usage</code>：Fixed，<code>0.5C 1G</code>
+<code>Network</code>：<code>8090</code>，启用网络访问，设置自定义域名</p>
+<p><code>Environment Variables</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">JVM_OPTS=-Xmx900m -Xms256m
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>Local Storage</code>：</p>
+<ul>
+<li><code>Capacity</code>：<code>6</code></li>
+<li><code>Mount Path</code>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/root/.halo2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>总费用：</p>
+<ul>
+<li>31 天：<code>0.16$/day*31day=4.96$</code></li>
+</ul>
+<p>确认无误，点击 <code>Deploy Application</code>部署即可</p>
 
 </section>
 

@@ -7,7 +7,82 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 13 Apr 2025 19:07:38 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 15 Apr 2025 14:01:45 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>图床概念详解：功能、类型、应用场景及免费图床推荐</title>
+        <link>https://hublog.netlify.app/p/250415140145/</link>
+        <pubDate>Tue, 15 Apr 2025 14:01:45 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250415140145/</guid>
+        <description>&lt;h2 id=&#34;资源&#34;&gt;资源
+&lt;/h2&gt;&lt;p&gt;文字教程：&lt;a class=&#34;link&#34; href=&#34;https://blog.seektao.cc/p/250415140145&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://blog.seektao.cc/p/250415140145&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;定义：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图床是一种&lt;strong&gt;在线存储图片的服务&lt;/strong&gt;，它允许用户将图片上传到服务器，并生成一个可公开访问的 URL（链接），用于在网站、论坛、博客、社交媒体等地方嵌入或分享图片。&lt;/li&gt;
+&lt;li&gt;本质上，图床就是一个&lt;strong&gt;专门用于存储和分发图片的网络空间&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;核心功能：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;图片存储：&lt;/strong&gt; 提供可靠的存储空间，用于存放用户上传的图片文件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;URL 生成：&lt;/strong&gt; 为每张上传的图片生成一个唯一的、可直接访问的 URL。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图片分发：&lt;/strong&gt; 通过 CDN (内容分发网络) 等技术，加速图片在全球范围内的访问速度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图片管理 (可选)：&lt;/strong&gt; 一些图床提供图片管理功能，例如：
+&lt;ul&gt;
+&lt;li&gt;分类、标签&lt;/li&gt;
+&lt;li&gt;图片编辑 (裁剪、旋转)&lt;/li&gt;
+&lt;li&gt;删除、替换&lt;/li&gt;
+&lt;li&gt;统计访问量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;作用：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;解决图片存储问题：&lt;/strong&gt; 避免直接将图片存储在自己的服务器上，减轻服务器压力，节省带宽。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提高网站加载速度：&lt;/strong&gt; 通过 CDN 加速图片访问，提升用户体验。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;方便图片分享：&lt;/strong&gt; 生成易于分享的图片链接，方便在各种平台上发布图片。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内容隔离：&lt;/strong&gt; 将图片内容与网站的其他内容分离，便于维护和管理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;类型：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;免费图床：&lt;/strong&gt; 提供免费的图片存储和分发服务，但通常有流量限制、广告或稳定性风险。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收费图床：&lt;/strong&gt; 提供更稳定、更快速、更可靠的图片存储和分发服务，通常按流量或存储空间收费。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自建图床：&lt;/strong&gt; 使用开源图床程序，在自己的服务器上搭建图床。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;使用场景：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;博客/网站：&lt;/strong&gt; 存储网站上的图片，提高加载速度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;论坛/社区：&lt;/strong&gt; 方便用户上传和分享图片。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;社交媒体：&lt;/strong&gt; 分享图片到社交平台。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Markdown 编辑器：&lt;/strong&gt; 在 Markdown 文档中插入图片。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发文档：&lt;/strong&gt; 在 API 文档或技术文档中插入图片。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;免费图床&#34;&gt;免费图床
+&lt;/h2&gt;&lt;h3 id=&#34;smms&#34;&gt;SM.MS
+&lt;/h3&gt;&lt;p&gt;SM.MS 是一个&lt;strong&gt;免费的、简洁的&lt;/strong&gt;在线图床服务。它允许用户上传图片并生成可用于嵌入到网站、论坛、博客等地方的链接。 SM.MS 因其&lt;strong&gt;简单易用、国内访问速度相对较快&lt;/strong&gt;而受到部分用户的欢迎。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://smms.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://smms.app/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;特点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;免费使用：&lt;/strong&gt; 提供免费的图片存储和分发服务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;简单易用：&lt;/strong&gt; 界面简洁，操作简单，无需注册即可上传图片。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种链接格式：&lt;/strong&gt; 上传后生成多种链接格式，包括：
+&lt;ul&gt;
+&lt;li&gt;HTML 链接&lt;/li&gt;
+&lt;li&gt;Markdown 链接&lt;/li&gt;
+&lt;li&gt;BBCode 链接&lt;/li&gt;
+&lt;li&gt;直链&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;国内访问速度较快：&lt;/strong&gt; 相对其他国外图床，在国内的访问速度可能更快一些。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持 HTTPS：&lt;/strong&gt; 支持 HTTPS 协议，保证数据传输的安全性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结
+&lt;/h2&gt;&lt;p&gt;图床最重要的是稳定，&lt;strong&gt;如果图床服务关闭，意味着之前所有使用的地方都将失效&lt;/strong&gt;，这是巨大的风险，所以一定要选择长期提供的服务商！&lt;/p&gt;
+&lt;p&gt;因为我的日常使用频率不高，我都是写博文的时候需要用到，我的选择是 &lt;code&gt;smms&lt;/code&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器</title>
         <link>https://hublog.netlify.app/p/250413190738/</link>
         <pubDate>Sun, 13 Apr 2025 19:07:38 +0800</pubDate>
@@ -11040,7 +11115,7 @@ debian：sudo apt install gcc&lt;/p&gt;
         
         <guid>https://hublog.netlify.app/p/2406013/</guid>
         <description>&lt;h2 id=&#34;marktext&#34;&gt;marktext
-&lt;/h2&gt;&lt;p&gt;破解typora怎么说都不是一件值得推广的事，在寻找typora替代软件的过程中，发现了 marktext，外观类似typora，有些方面可能更美观。神奇的是目前（2024-06-15）已经45k star了，但是已经很久没有更新发行版了，最新的版本还停留在2022年3月，Issuse已经积累到1.1k，pull requests42各没有处理。仓库的develop分支还在小幅度不定时更新，也一直没合并到主分支。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;破解 typora 怎么说都不是一件值得推广的事，在寻找 typora 替代软件的过程中，发现了 marktext，外观类似 typora，有些方面可能更美观。神奇的是目前（2024-06-15）已经 45k star 了，但是已经很久没有更新发行版了，最新的版本还停留在 2022 年 3 月，Issuse 已经积累到 1.1k，pull requests42 各没有处理。仓库的 develop 分支还在小幅度不定时更新，也一直没合并到主分支。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/marktext/marktext&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/marktext/marktext&lt;/a&gt;&lt;/p&gt;
@@ -11066,10 +11141,10 @@ debian：sudo apt install gcc&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;整体默认的样式看上去就很舒服，细心的同学可以看到，代码块有复制按钮，同obsibian一样，但是obsibian太丑了。&lt;/p&gt;
+&lt;p&gt;整体默认的样式看上去就很舒服，细心的同学可以看到，代码块有复制按钮，同 obsibian 一样，但是 obsibian 太丑了。&lt;/p&gt;
 &lt;p&gt;目前有几个影响写作体验感的方面：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;无法识别picgo，也无法设置命令行，这对写文章需要图片上传的时候是个很严重的影响。&lt;/li&gt;
+&lt;li&gt;无法识别 picgo，也无法设置命令行，这对写文章需要图片上传的时候是个很严重的影响。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/MFqmaxGDXSrJW5g.png&#34;
 	
@@ -11081,28 +11156,28 @@ debian：sudo apt install gcc&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;可以看到左侧显示没有picgo，右边全局变量设置后其实已经可以用了，切换到命令行脚本，实际上却无法保存。&lt;/p&gt;
+&lt;p&gt;可以看到左侧显示没有 picgo，右边全局变量设置后其实已经可以用了，切换到命令行脚本，实际上却无法保存。&lt;/p&gt;
 &lt;p&gt;当然了，这也不知道是不是和我的环境有关。&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;typora 剪贴板有超链接，使用ctrl+k后自动补全，光标自动跳转到链接标题，输入即可，这点体验感很好。但是marktext还是在链接末尾，需要手动调整光标到标题框。&lt;/p&gt;
-&lt;p&gt;另一个是marktext粘贴超链接到文档中有明显的卡顿。&lt;/p&gt;
+&lt;p&gt;typora 剪贴板有超链接，使用 ctrl+k 后自动补全，光标自动跳转到链接标题，输入即可，这点体验感很好。但是 marktext 还是在链接末尾，需要手动调整光标到标题框。&lt;/p&gt;
+&lt;p&gt;另一个是 marktext 粘贴超链接到文档中有明显的卡顿。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;这两点对于我写作就有相当大的考验，总观全文，你就知道我为了方便查看跳转设置了多个带标题的超链接，而不是直接粘贴链接，那样太影响阅读体验了。&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;marktext连续的两个代码块之间新增一行，~~变得很困难，~~比如我有时侯会修改内容，现在有两个代码块，我在后面的代码块前面新增说明而不是写入代码块中，typora只需要通过键盘将光标定位到前面的代码块最后一行的最后位置，按ctrl+enter，即可新建一行不包含代码块的内容。&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;在marktext中则是需要移动鼠标到代码块前面，在弹出的框选择&lt;code&gt;New Paragraph&lt;/code&gt;。&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;使用少，经验不足，原来有个内置的快捷键&lt;code&gt;ctrl+shift+n&lt;/code&gt;即可新建一行，不管光标在代码哪个位置，即可新建一行，反转！比typora更好用，typora要么使用上述使用的方案，要么使用菜单-段落-在下方插入段落。而这个操作typora自定义快捷键更麻烦。&lt;/p&gt;
+&lt;p&gt;marktext 连续的两个代码块之间新增一行，~~变得很困难，~~比如我有时侯会修改内容，现在有两个代码块，我在后面的代码块前面新增说明而不是写入代码块中，typora 只需要通过键盘将光标定位到前面的代码块最后一行的最后位置，按 ctrl+enter，即可新建一行不包含代码块的内容。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;在 marktext 中则是需要移动鼠标到代码块前面，在弹出的框选择&lt;code&gt;New Paragraph&lt;/code&gt;。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;使用少，经验不足，原来有个内置的快捷键&lt;code&gt;ctrl+shift+n&lt;/code&gt;即可新建一行，不管光标在代码哪个位置，即可新建一行，反转！比 typora 更好用，typora 要么使用上述使用的方案，要么使用菜单-段落-在下方插入段落。而这个操作 typora 自定义快捷键更麻烦。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;最后，如果在众多软件中选择一个替代品，我优先推荐 marktext。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;obsibian&#34;&gt;Obsibian
-&lt;/h2&gt;&lt;p&gt;它并不能算一个纯粹的Markdown编辑器，而是一个markdown仓库管理软件，网络上已经有很多人介绍过了，我这就不献丑了。&lt;/p&gt;
-&lt;p&gt;推荐和typora或marktext一起使用，obsibian管理仓库，不好编辑的时候交给typora或者marktext。&lt;/p&gt;
-&lt;p&gt;它很强大，但是默认有点点丑，需要自己摸索。我一般用来管理markdown文章。&lt;/p&gt;
-&lt;p&gt;下面是我定制obsibian过后的界面：&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;它并不能算一个纯粹的 Markdown 编辑器，而是一个 markdown 仓库管理软件，网络上已经有很多人介绍过了，我这就不献丑了。&lt;/p&gt;
+&lt;p&gt;推荐和 typora 或 marktext 一起使用，obsibian 管理仓库，不好编辑的时候交给 typora 或者 marktext。&lt;/p&gt;
+&lt;p&gt;它很强大，但是默认有点点丑，需要自己摸索。我一般用来管理 markdown 文章。&lt;/p&gt;
+&lt;p&gt;下面是我定制 obsibian 过后的界面：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/06/15/rxifpA6WVkQZNEC.png&#34;
 	
 	
