@@ -281,6 +281,7 @@
         <li><a href="#qinglong">qinglong</a></li>
         <li><a href="#open-webui">Open WebUI</a></li>
         <li><a href="#halo">halo</a></li>
+        <li><a href="#blinko">blinko</a></li>
       </ol>
     </li>
   </ol>
@@ -800,6 +801,85 @@
 <li>31 天：<code>0.16$/day*31day=4.96$</code></li>
 </ul>
 <p>确认无误，点击 <code>Deploy Application</code>部署即可</p>
+<h3 id="blinko">blinko
+</h3><p>简介</p>
+<p>Blinko 是一个创新的开源项目，专为想要快速捕捉和组织转瞬即逝的想法的个人而设计。Blinko 允许用户在想法出现的那一刻无缝记下想法，确保不会丢失任何创意火花。</p>
+<p>源码：<a class="link" href="https://github.com/blinko-space/blinko"  target="_blank" rel="noopener"
+    >https://github.com/blinko-space/blinko</a></p>
+<p>特性</p>
+<ul>
+<li><strong>🤖AI 增强的笔记检索：</strong> 借助 Blinko 先进的 AI 驱动的 RAG（检索增强生成）技术，您可以使用自然语言查询快速搜索和访问您的笔记，轻松找到所需内容。</li>
+<li><strong>🔒 数据所有权：</strong> 您的隐私至关重要。您的所有笔记和数据都安全地存储在您自托管的环境中，确保您对自己的信息拥有完全的控制权。</li>
+<li><strong>🚀 高效快速：</strong> 即时捕捉灵感，并将其存储为纯文本以便于访问，同时提供完整的 Markdown 支持，实现快速格式化和无缝共享。</li>
+<li><strong>💡 轻量级架构，强大的功能：</strong> Blinko 基于 Next.js 构建，提供了一个简洁、轻量级的架构，在不牺牲速度或效率的情况下，提供强大的性能。</li>
+<li><strong>🔓 开放协作：</strong> 作为一个开源项目，Blinko 欢迎社区的贡献。所有代码都是透明的，并在 GitHub 上可用，从而培养了协作和持续改进的精神。</li>
+</ul>
+<p>部署</p>
+<p>进入 claw 控制台，点击 <code>App Launchpad</code>，点击 <code>Create App</code></p>
+<p>容器信息如下：</p>
+<p><code>Application Nmae</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">blinko-website
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>Image Name</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">blinkospace/blinko:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以下参数大小最大化利用，作为参考，根据自己情况调整</p>
+<p><code>Usage</code>：</p>
+<ul>
+<li>Fixed，<code>0.5C 1G</code></li>
+</ul>
+<p><code>Network</code>：</p>
+<ul>
+<li><code>1111</code>，启用网络访问，设置自定义域名</li>
+</ul>
+<p><code>Environment Variables</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">NODE_ENV=production
+</span></span><span class="line"><span class="cl">NEXTAUTH_URL=http://localhost:1111
+</span></span><span class="line"><span class="cl">NEXT_PUBLIC_BASE_URL=http://localhost:1111
+</span></span><span class="line"><span class="cl">NEXTAUTH_SECRET=my_ultra_secure_nextauth_secret
+</span></span><span class="line"><span class="cl">DATABASE_URL=postgresql://postgres:mysecretpassword@blinko-postgres:5432/postgres
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>替换 <code>NEXTAUTH_SECRET</code>，<code>DATABASE_URL</code>的值</p>
+<p><code>Local Storage</code>：</p>
+<ul>
+<li><code>Capacity</code>：<code>6</code></li>
+<li><code>Mount Path</code>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/app/.blinko
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>总费用：</p>
+<ul>
+<li>31 天：<code>0.16$/day*31day=4.96$</code></li>
+</ul>
+<p>确认无误，点击 <code>Deploy Application</code>部署即可</p>
 
 </section>
 
@@ -875,7 +955,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">免费虚拟主机Serv00，使用部署各种服务教程</h2>
+            <h2 class="article-title">Serv00，免费虚拟主机，提供多种服务支持</h2>
         </div>
     </a>
 </article>

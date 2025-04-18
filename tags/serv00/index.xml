@@ -7,7 +7,123 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 15 Apr 2025 09:15:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/serv00/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 16 Apr 2025 09:28:05 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/serv00/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>blinko，快速捕捉和组织转瞬即逝的想法</title>
+        <link>https://hublog.netlify.app/p/250416092805/</link>
+        <pubDate>Wed, 16 Apr 2025 09:28:05 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250416092805/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Blinko 是一个创新的开源项目，专为想要快速捕捉和组织转瞬即逝的想法的个人而设计。Blinko 允许用户在想法出现的那一刻无缝记下想法，确保不会丢失任何创意火花。&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/blinko-space/blinko&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/blinko-space/blinko&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;预览
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://github.com/blinko-space/blinko/raw/main/public/home.webp&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Blinko&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特性&#34;&gt;特性
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🤖AI 增强的笔记检索：&lt;/strong&gt; 借助 Blinko 先进的 AI 驱动的 RAG（检索增强生成）技术，您可以使用自然语言查询快速搜索和访问您的笔记，轻松找到所需内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔒 数据所有权：&lt;/strong&gt; 您的隐私至关重要。您的所有笔记和数据都安全地存储在您自托管的环境中，确保您对自己的信息拥有完全的控制权。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🚀 高效快速：&lt;/strong&gt; 即时捕捉灵感，并将其存储为纯文本以便于访问，同时提供完整的 Markdown 支持，实现快速格式化和无缝共享。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;💡 轻量级架构，强大的功能：&lt;/strong&gt; Blinko 基于 Next.js 构建，提供了一个简洁、轻量级的架构，在不牺牲速度或效率的情况下，提供强大的性能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🔓 开放协作：&lt;/strong&gt; 作为一个开源项目，Blinko 欢迎社区的贡献。所有代码都是透明的，并在 GitHub 上可用，从而培养了协作和持续改进的精神。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署
+&lt;/h2&gt;&lt;h3 id=&#34;claw&#34;&gt;claw
+&lt;/h3&gt;&lt;p&gt;ClawCloud Run 是一个集成在线开发、测试和生产环境的云开发平台。只需单击几下，即可设置开发环境和数据库依赖项，从而显著降低复杂性。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带 AFF 注册链接（你我都有利）：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin?link=QKOTH00U6P8V&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;无 AFF 注册链接：&lt;a class=&#34;link&#34; href=&#34;https://console.run.claw.cloud/signin&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此跳转&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;目前注册可获赠&lt;code&gt;5$&lt;/code&gt;，注册方式只支持 GitHub、Google&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;获取 &lt;code&gt;5$&lt;/code&gt;条件&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首次注册赠送&lt;code&gt;5$&lt;/code&gt;：有效期一个月&lt;/li&gt;
+&lt;li&gt;每个月赠送&lt;code&gt;5$&lt;/code&gt;：注册账号后一个月内绑定 GitHub 账户，同时要求绑定的 GitHub 账户注册时间超过 180 天&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;建议&lt;strong&gt;直接使用 GitHub 注册&lt;/strong&gt;，免去绑定的步骤，当然也可以用其他邮箱注册再绑定 github&lt;/p&gt;
+&lt;p&gt;进入 claw 控制台，点击 &lt;code&gt;App Launchpad&lt;/code&gt;，点击 &lt;code&gt;Create App&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;容器信息如下：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Application Nmae&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;blinko-website
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;Image Name&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;blinkospace/blinko:latest
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;以下参数大小最大化利用，作为参考，根据自己情况调整&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Usage&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fixed，&lt;code&gt;0.5C 1G&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Network&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;1111&lt;/code&gt;，启用网络访问，设置自定义域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;Environment Variables&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NODE_ENV=production
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NEXTAUTH_URL=http://localhost:1111
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NEXT_PUBLIC_BASE_URL=http://localhost:1111
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NEXTAUTH_SECRET=my_ultra_secure_nextauth_secret
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DATABASE_URL=postgresql://postgres:mysecretpassword@blinko-postgres:5432/postgres
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;替换 &lt;code&gt;NEXTAUTH_SECRET&lt;/code&gt;，&lt;code&gt;DATABASE_URL&lt;/code&gt;的值&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Local Storage&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Capacity&lt;/code&gt;：&lt;code&gt;6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Mount Path&lt;/code&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/app/.blinko
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;总费用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;31 天：&lt;code&gt;0.16$/day*31day=4.96$&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;确认无误，点击 &lt;code&gt;Deploy Application&lt;/code&gt;部署即可&lt;/p&gt;
+&lt;h3 id=&#34;serv00&#34;&gt;serv00
+&lt;/h3&gt;&lt;p&gt;Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连接，没有广告，3G 空间。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://www.serv00.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.serv00.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>serv00部署halo，你的现代化博客系统</title>
         <link>https://hublog.netlify.app/p/250415091544/</link>
         <pubDate>Tue, 15 Apr 2025 09:15:44 +0800</pubDate>
@@ -15,7 +131,11 @@
         <guid>https://hublog.netlify.app/p/250415091544/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连接，没有广告，3G 空间。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://www.serv00.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.serv00.com/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Halo 是一款开源的建站工具，专注于博客，同时也适合构建个人网站。它以其简洁、易用和强大的自定义能力而著称。&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://www.halo.run/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.halo.run/&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;部署&#34;&gt;部署
 &lt;/h2&gt;&lt;h3 id=&#34;准备&#34;&gt;准备
 &lt;/h3&gt;&lt;p&gt;登录 serv00 控制台，开启可执行权限和开放一个端口&lt;/p&gt;
@@ -1401,14 +1521,15 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>免费虚拟主机Serv00，使用部署各种服务教程</title>
+        <title>Serv00，免费虚拟主机，提供多种服务支持</title>
         <link>https://hublog.netlify.app/p/free-virtual-host-serv00-1/</link>
         <pubDate>Sat, 22 Jun 2024 00:06:14 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/free-virtual-host-serv00-1/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;Serv00 是一个提供免费虚拟主机的平台，支持的服务众多，可选择 php 版本，有多款数据库，MySQL，postgresql，mongdodb，支持 ssh 连接，没有广告，3G 空间。&lt;/p&gt;
-&lt;p&gt;地址：https://www.serv00.com/&lt;/p&gt;
+&lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://www.serv00.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.serv00.com/&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;温馨提示：注册不要使用代理，建议把上述域名加入白名单&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -1432,10 +1553,10 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;添加自定义域名&#34;&gt;添加自定义域名
+&lt;h2 id=&#34;自定义域名&#34;&gt;自定义域名
 &lt;/h2&gt;&lt;p&gt;使用白嫖的二级域名添加三级域名作为 serv00 的自定义域名&lt;/p&gt;
 &lt;p&gt;域名托管在 cloudflare&lt;/p&gt;
-&lt;h2 id=&#34;serv00-修改-php-版本&#34;&gt;Serv00 修改 php 版本
+&lt;h2 id=&#34;修改-php-版本&#34;&gt;修改 php 版本
 &lt;/h2&gt;&lt;p&gt;参考：https://forum.serv00.com/d/8-upgrade-version-of-php/2&lt;/p&gt;
 &lt;p&gt;在 domains/domain/ 新建文件&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1511,10 +1632,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;英文输入法下 &lt;code&gt;:wq&lt;/code&gt; 退出保存&lt;/p&gt;
-&lt;h2 id=&#34;应用&#34;&gt;应用
+&lt;h2 id=&#34;服务&#34;&gt;服务
 &lt;/h2&gt;&lt;h3 id=&#34;pm2&#34;&gt;PM2
-&lt;/h3&gt;&lt;p&gt;为了更好使用 ，PM2 必不可少&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;

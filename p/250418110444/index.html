@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
+<title>Rime</title>
+
+<link rel='canonical' href='https://hublog.netlify.app/p/250418110444/'>
+
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Rime">
+<meta property='og:description' content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
+<meta property='og:url' content='https://hublog.netlify.app/p/250418110444/'>
+<meta property='og:site_name' content='寻道之旅'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rime' /><meta property='article:tag' content='rime-ice' /><meta property='article:published_time' content='2025-04-18T11:04:44&#43;08:00'/><meta property='article:modified_time' content='2025-04-18T11:04:44&#43;08:00'/>
+<meta name="twitter:title" content="Rime">
+<meta name="twitter:description" content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
+  
+
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hua656ab6dfe1fc382193f550011041410_6344_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/481543302'
+                        target="_blank"
+                        title="Bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-bilibili" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z"></path>
+    <path d="M8 3l2 3"></path>
+    <path d="M16 3l-2 3"></path>
+    <path d="M9 13v-2"></path>
+    <path d="M15 11v2"></path>
+  </svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/muyiacc'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#linux">Linux</a></li>
+      </ol>
+    </li>
+    <li><a href="#输入法方案">输入法方案</a>
+      <ol>
+        <li><a href="#rime-ice">rime-ice</a>
+          <ol>
+            <li><a href="#linux-1">Linux</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#同步">同步</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/default/" >
+                Default
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/250418110444/">Rime</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Apr 18, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="简介">简介
+</h2><p>Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版：</p>
+<ul>
+<li>【中州韻】 ibus-rime → Linux</li>
+<li>【小狼毫】 Weasel → Windows</li>
+<li>【鼠鬚管】 Squirrel → Mac OS X</li>
+</ul>
+<p>除程序文件以外，Rime 還包括多種數據文件。 這些數據文件存在於以下位置：</p>
+<p><a class="link" href="https://github.com/rime/home/wiki/SharedData"  target="_blank" rel="noopener"
+    >共享資料夾</a></p>
+<ul>
+<li>【中州韻】 <code>/usr/share/rime-data/</code></li>
+<li>【小狼毫】 <code>&quot;安裝目錄\data&quot;</code></li>
+<li>【鼠鬚管】 <code>&quot;/Library/Input Methods/Squirrel.app/Contents/SharedSupport/&quot;</code></li>
+</ul>
+<p><a class="link" href="https://github.com/rime/home/wiki/UserData"  target="_blank" rel="noopener"
+    >用戶資料夾</a></p>
+<ul>
+<li>【中州韻】 <code>~/.config/ibus/rime/</code> （0.9.1 以下版本爲 <code>~/.ibus/rime/</code>；fcitx5 为 <code>~/.local/share/fcitx5/rime/</code>）</li>
+<li>【小狼毫】 <code>%APPDATA%\Rime</code></li>
+<li>【鼠鬚管】 <code>~/Library/Rime/</code></li>
+</ul>
+<h2 id="安装">安装
+</h2><h3 id="linux">Linux
+</h3><p>Ubuntu / Debian / Deepin / Linuxmint</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt install fcitx5-rime
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Arch Linux</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo pacman -Sy fcitx5-rime
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装完成后，在终端里运行<code>fcitx5-configtool</code>（或在应用程序启动器中检索「Fcitx」关键字），打开 Fcitx 设置工具。然后，在右侧的「可用输入法」中找到 RIME，双击它，以将其添加到「当前输入法」列表。</p>
+<p>最后，在系统托盘右击 Fcitx 图标（通常显示为键盘图案，或者是一只小企鹅），选择「RIME」，这样就成功激活了。</p>
+<h2 id="输入法方案">输入法方案
+</h2><p>现成可以直接使用的输入法方案</p>
+<h3 id="rime-ice">rime-ice
+</h3><p>雾凇拼音提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。</p>
+<p>详细介绍：<a class="link" href="https://dvel.me/posts/rime-ice/"  target="_blank" rel="noopener"
+    >Rime 配置：雾凇拼音</a></p>
+<p><a class="link" href="https://github.com/iDvel/rime-ice/issues/133"  target="_blank" rel="noopener"
+    >常见问题</a></p>
+<p><a class="link" href="https://github.com/iDvel/rime-ice/blob/main/others/CHANGELOG.md"  target="_blank" rel="noopener"
+    >更新日志</a></p>
+<ul>
+<li>简体 | 全拼 | 双拼</li>
+<li>主要功能
+<ul>
+<li>轻量的英文输入，支持中英混输</li>
+<li><a class="link" href="https://dvel.me/posts/make-rime-en-better/"  target="_blank" rel="noopener"
+    >优化英文输入体验</a></li>
+<li>拆字反查（uU+拼音），拆字辅码（拼音+`+拆字辅码）</li>
+<li>自整理的 Emoji</li>
+<li>以词定字（左右中括号：[、]）</li>
+<li>长词优先</li>
+<li>Unicode（U+Unicode 码位）</li>
+<li>数字、人民币大写（R+数字）</li>
+<li>日期、时间、星期（详见方案 <code>/date_translator</code> 节点）</li>
+<li>农历（转写：N+八位数字；获取当前农历：全拼 nl，双拼 lunar）</li>
+<li>简易计算器（cC+算式）</li>
+<li>常见错音错字提示</li>
+<li>置顶候选项（详见方案 <code>/pin_cand_filter</code> 节点）</li>
+<li>所有标点符号直接上屏</li>
+<li>特殊符号、字符输入（全拼 v+首字母缩写；双拼 V+首字母缩写）</li>
+<li>拼音纠错（模糊音）</li>
+<li>更多默认未启用的功能请参考 <code>lua/</code> 及方案注释</li>
+</ul>
+</li>
+<li>简体字表、词库
+<ul>
+<li><a class="link" href="https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters"  target="_blank" rel="noopener"
+    >通用规范汉字表</a>（by 中华人民共和国教育部）8K 常用汉字</li>
+<li><a class="link" href="https://www.unicode.org/Public/"  target="_blank" rel="noopener"
+    >Unihan 字库</a>（by Unicode lnc | <a class="link" href="https://www.unicode.org/license.txt"  target="_blank" rel="noopener"
+    >UNICODE LICENSE V3</a>）40K 大字库， <strong>默认未启用</strong></li>
+<li><a class="link" href="https://zh.wikipedia.org/wiki/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8"  target="_blank" rel="noopener"
+    >现代汉语常用词表</a>（by 中国国家语言文字工作委员会）</li>
+<li><a class="link" href="http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&amp;tid=30049"  target="_blank" rel="noopener"
+    >华宇野风词库</a>（by 野风）</li>
+<li><a class="link" href="https://github.com/rime/rime-essay-simp"  target="_blank" rel="noopener"
+    >简化字八股文</a>（by rime | <a class="link" href="https://github.com/rime/rime-essay-simp/blob/master/LICENSE"  target="_blank" rel="noopener"
+    >LGPL</a>）</li>
+<li><a class="link" href="https://github.com/thunlp/THUOCL"  target="_blank" rel="noopener"
+    >清华大学开源词库</a>（by THUNLP | <a class="link" href="https://github.com/thunlp/THUOCL/blob/master/LICENSE"  target="_blank" rel="noopener"
+    >MIT</a>）</li>
+<li><a class="link" href="https://ai.tencent.com/ailab/nlp/en/download.html"  target="_blank" rel="noopener"
+    >腾讯词向量</a>（@Huandeep <a class="link" href="https://github.com/iDvel/rime-ice/issues/24"  target="_blank" rel="noopener"
+    >整理</a> | by Tencent AI Lab | <a class="link" href="https://creativecommons.org/licenses/by/3.0/"  target="_blank" rel="noopener"
+    >CC BY 3.0</a>）</li>
+</ul>
+</li>
+<li>词库修订
+<ul>
+<li>校对大量异形词、错别字、错误注音</li>
+<li>全词库完成注音</li>
+<li>同义多音字注音</li>
+<li>参考
+<ul>
+<li>《现代汉语词典》</li>
+<li>《同义词词林》</li>
+<li>《新华成语大词典》</li>
+<li><a class="link" href="http://www.jiaodui.com/bbs/"  target="_blank" rel="noopener"
+    >校对标准论坛</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Rime、Squirrel、Weasel 常用配置项的详尽注释</li>
+</ul>
+<h4 id="linux-1">Linux
+</h4><p>linux 快速使用 rime-ice</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p ~/.local/share/fcitx5/rime/
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~/.local/share/fcitx5/rime/
+</span></span><span class="line"><span class="cl">git clone --depth <span class="m">1</span> https://github.com/iDvel/rime-ice.git
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>重新部署 rime</p>
+<h2 id="同步">同步
+</h2><p>同步主要是同步词典，将输入过的内容合并同步</p>
+<p>配置目录下的<code>installation.yaml</code>文件会在第一次部署后会自动生成；在这里可以编辑当前设备的<code>ID</code>和<code>同步目录</code>，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">distribution_code_name: <span class="s2">&#34;fcitx-rime&#34;</span>
+</span></span><span class="line"><span class="cl">distribution_name: Rime
+</span></span><span class="line"><span class="cl">distribution_version: 5.1.4
+</span></span><span class="line"><span class="cl">install_time: <span class="s2">&#34;Fri Apr 18 11:14:51 2025&#34;</span>
+</span></span><span class="line"><span class="cl">installation_id: <span class="s2">&#34;linuxmint&#34;</span>
+</span></span><span class="line"><span class="cl">sync_dir: <span class="s2">&#34;/home/mint/backup/windows/rime/sync&#34;</span>
+</span></span><span class="line"><span class="cl">rime_version: 1.10.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改 <code>installation_id</code> 和增加 <code>sync_dir</code></p>
+<p>输入法同步后会在 <code>sync_dir</code>生成以 <code>installation_id</code>值命名的文件夹，所以同步只需要同步 <code>/home/mint/backup/windows/rime/sync</code>文件夹</p>
+<p>比如我的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">backup/windows/rime/sync/
+</span></span><span class="line"><span class="cl">├── android
+</span></span><span class="line"><span class="cl">├── linux
+</span></span><span class="line"><span class="cl">├── linuxmint
+</span></span><span class="line"><span class="cl">└── windows
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/rime/">Rime</a>
+        
+            <a href="/tags/rime-ice/">Rime-Ice</a>
+        
+    </section>
+
+
+    <section>
+        页面浏览量<span id="vercount_value_page_pv">Loading</span>
+    </section>
+</footer>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250418115243/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Zed，下一代代码编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250418101443/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">VSCode，强大、灵活、可定制的代码编辑器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250416092805/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">blinko，快速捕捉和组织转瞬即逝的想法</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250415140145/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">图床概念详解：功能、类型、应用场景及免费图床推荐</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250413190738/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">vaultwarden，用 Rust 编写的非官方 Bitwarden 兼容服务器</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="muyiacc/hugo-blog-public"
+    data-repo-id="R_kgDOML6rcA"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOML6rcM4ChQWO"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="light"
+    data-lang="en"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('light');
+            } else {
+                setGiscusTheme('dark_dimmed');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2023 - 
+        
+        2025 寻道之旅
+    </section>
+    
+    <section class="powerby">
+        
+            网站总访客数：<span id='vercount_value_site_uv'>Loading</span><br/>网站总访问量：<span id='vercount_value_site_pv'>Loading</span> <br/>
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.26.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script defer src="https://cn.vercount.one/js"></script> -->
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"3LPlvzNZdFeUNaJ3",ck:"3LPlvzNZdFeUNaJ3",autoTrack:true,hashMode:true,screenRecord:true})</script>
+    </body>
+</html>

@@ -7,10 +7,50 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 15 Apr 2025 09:15:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 18 Apr 2025 11:04:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Rime</title>
+        <link>https://hublog.netlify.app/tags/rime/</link>
+        <pubDate>Fri, 18 Apr 2025 11:04:44 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/rime/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rime-Ice</title>
+        <link>https://hublog.netlify.app/tags/rime-ice/</link>
+        <pubDate>Fri, 18 Apr 2025 11:04:44 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/rime-ice/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vscode</title>
+        <link>https://hublog.netlify.app/tags/vscode/</link>
+        <pubDate>Fri, 18 Apr 2025 10:14:43 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/vscode/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Sing-Box</title>
+        <link>https://hublog.netlify.app/tags/sing-box/</link>
+        <pubDate>Thu, 17 Apr 2025 23:37:32 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/sing-box/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Claw</title>
+        <link>https://hublog.netlify.app/tags/claw/</link>
+        <pubDate>Wed, 16 Apr 2025 09:28:05 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/claw/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Serv00</title>
         <link>https://hublog.netlify.app/tags/serv00/</link>
-        <pubDate>Tue, 15 Apr 2025 09:15:44 +0800</pubDate>
+        <pubDate>Wed, 16 Apr 2025 09:28:05 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/serv00/</guid>
         <description></description>
@@ -21,14 +61,6 @@
         <pubDate>Sun, 13 Apr 2025 17:17:12 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/github/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Claw</title>
-        <link>https://hublog.netlify.app/tags/claw/</link>
-        <pubDate>Sat, 12 Apr 2025 20:02:48 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/claw/</guid>
         <description></description>
         </item>
         <item>
@@ -381,14 +413,6 @@
         <pubDate>Fri, 01 Nov 2024 16:39:39 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/linux/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Vscode</title>
-        <link>https://hublog.netlify.app/tags/vscode/</link>
-        <pubDate>Wed, 30 Oct 2024 09:58:09 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/vscode/</guid>
         <description></description>
         </item>
         <item>
@@ -1416,14 +1440,6 @@
         <description></description>
         </item>
         <item>
-        <title>Proxy</title>
-        <link>https://hublog.netlify.app/tags/proxy/</link>
-        <pubDate>Sun, 10 Sep 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/proxy/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Bt</title>
         <link>https://hublog.netlify.app/tags/bt/</link>
         <pubDate>Sat, 09 Sep 2023 14:07:10 +0800</pubDate>
@@ -1437,6 +1453,14 @@
         <pubDate>Sat, 09 Sep 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/tracker/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Proxy</title>
+        <link>https://hublog.netlify.app/tags/proxy/</link>
+        <pubDate>Thu, 07 Sep 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/proxy/</guid>
         <description></description>
         </item>
         <item>
