@@ -382,9 +382,11 @@
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>my@example.com
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="国内服务器">国内服务器
@@ -451,7 +453,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    server_name mydomain.com<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name example.com<span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
 </span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:80<span class="p">;</span>
@@ -470,7 +472,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d mydomain.com --nginx
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com --nginx
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="no-web-server">no web server
@@ -480,7 +482,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d mydomain.com --standalone
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com --standalone
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>更高级的用法请参考: <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert"  target="_blank" rel="noopener"
@@ -496,7 +498,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue --dns -d mydomain.com \
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue --dns -d example.com \
 </span></span><span class="line"><span class="cl"> --yes-I-know-dns-manual-mode-enough-go-ahead-please
 </span></span></code></pre></td></tr></table>
 </div>
@@ -508,7 +510,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --renew -d mydomain.com \
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --renew -d example.com \
 </span></span><span class="line"><span class="cl">  --yes-I-know-dns-manual-mode-enough-go-ahead-please
 </span></span></code></pre></td></tr></table>
 </div>
@@ -541,7 +543,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_dp -d aa.com -d www.aa.com
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_dp -d example.com -d www.example.com
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来你在使用 dnspod api 的时候, 就不需要再次指定了. 直接生成就好了</p>
@@ -550,7 +552,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue -d mydomain2.com --dns  dns_dp
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue -d example.com.com --dns  dns_dp
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>更详细的 api 用法: <a class="link" href="https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md"  target="_blank" rel="noopener"
