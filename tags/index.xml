@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Fri, 18 Apr 2025 11:04:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 22 Apr 2025 18:50:12 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Ssh</title>
+        <link>https://hublog.netlify.app/tags/ssh/</link>
+        <pubDate>Tue, 22 Apr 2025 18:50:12 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/ssh/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Node</title>
+        <link>https://hublog.netlify.app/tags/node/</link>
+        <pubDate>Mon, 21 Apr 2025 18:48:16 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/node/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Rime</title>
         <link>https://hublog.netlify.app/tags/rime/</link>
         <pubDate>Fri, 18 Apr 2025 11:04:44 +0800</pubDate>
@@ -224,14 +240,6 @@
         <description></description>
         </item>
         <item>
-        <title>Node</title>
-        <link>https://hublog.netlify.app/tags/node/</link>
-        <pubDate>Sat, 15 Feb 2025 17:51:05 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/node/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Nvm</title>
         <link>https://hublog.netlify.app/tags/nvm/</link>
         <pubDate>Sat, 15 Feb 2025 17:51:05 +0800</pubDate>
@@ -421,14 +429,6 @@
         <pubDate>Sun, 27 Oct 2024 21:54:01 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/mail/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Ssh</title>
-        <link>https://hublog.netlify.app/tags/ssh/</link>
-        <pubDate>Fri, 25 Oct 2024 19:25:45 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/ssh/</guid>
         <description></description>
         </item>
         <item>

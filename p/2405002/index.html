@@ -268,6 +268,7 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#前言">前言</a></li>
+    <li><a href="#快速使用">快速使用</a></li>
     <li><a href="#安装-acmesh">安装 acme.sh</a>
       <ol>
         <li><a href="#国外服务器">国外服务器</a></li>
@@ -377,7 +378,40 @@
 <li>缺点是需要手动配置 ssl 证书的位置。</li>
 </ul>
 <p>项目地址：https://github.com/acmesh-official/acme.sh</p>
-<h2 id="安装-acmesh">安装 acme.sh
+<h2 id="快速使用">快速使用
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 安装 acme.sh</span>
+</span></span><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>邮箱
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改 SSL 证书默认的 CA 机构</span>
+</span></span><span class="line"><span class="cl">acme.sh --set-default-ca --server letsencrypt
+</span></span><span class="line"><span class="cl"><span class="c1"># 申请证书</span>
+</span></span><span class="line"><span class="cl">acme.sh --issue -d example.com --standalone
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建证书文件夹</span>
+</span></span><span class="line"><span class="cl">mkdir -p /etc/cert
+</span></span><span class="line"><span class="cl"><span class="c1"># 安装 SSL 证书</span>
+</span></span><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /etc/cert/key.pem  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /etc/cert/cert.pem
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装-acmesh">安装 acme.sh
 </h2><h3 id="国外服务器">国外服务器
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
