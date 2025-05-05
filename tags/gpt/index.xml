@@ -103,19 +103,19 @@
 </description>
         </item>
         <item>
-        <title>Docker部署ChatGPT-Next-Web</title>
+        <title>ChatGPT-Next-Web，一键部署AI大模型网页客户端</title>
         <link>https://hublog.netlify.app/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2310013/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用chatgpt接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Github 地址：https://github.com/Yidadaa/ChatGPT-Next-Web&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问查看，界面样式可以看见还是很美观的：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用 chatgpt 接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般&lt;/p&gt;
+&lt;p&gt;这个项目可以一键免费部署你的私人 ChatGPT 网页应用，支持 Claude, GPT4 &amp;amp; Gemini Pro 模型。&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Yidadaa/ChatGPT-Next-Web&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Yidadaa/ChatGPT-Next-Web&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;预览
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
 	
 	
 	
@@ -125,9 +125,9 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;使用docker compose 方式搭建。&lt;/p&gt;
-&lt;p&gt;docker-compose.yml&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署
+&lt;/h2&gt;&lt;h3 id=&#34;docker-compose&#34;&gt;docker compose
+&lt;/h3&gt;&lt;p&gt;docker-compose.yml&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -150,16 +150,19 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;yidadaa/chatgpt-next-web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;chatgpt-next-web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;CODE=#页面访问密码，&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;OPENAI_API_KEY=#你的api key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;BASE_URL=#接口地址&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;CODE=your_password&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;OPENAI_API_KEY=your_api_key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;BASE_URL=api_url&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;s1&#34;&gt;&amp;#39;3000:3000&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;unless-stopped&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上述的docker-compose 文件是一个简洁版，免去了代理proxy，我们使用免费的api接口，后面有介绍&lt;/p&gt;
-&lt;p&gt;关于完整的内容可以去官方查看。&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CODE&lt;/code&gt;：访问密钥&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OPENAI_API_KEY&lt;/code&gt;：OpenAI API key&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BASE_URL&lt;/code&gt;：OpenAI API URL&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;启动容器&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -170,15 +173,69 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;接口&#34;&gt;接口
-&lt;/h2&gt;&lt;p&gt;关于接口，网上也有一些免费的api 接口地址&lt;/p&gt;
-&lt;p&gt;这里提供一个Github的开源项目：&lt;a class=&#34;link&#34; href=&#34;https://github.com/chatanywhere/GPT_API_free&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GPT_API_free&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;快速获取api key，点击下面的连接获取api，获取的api用来替换上面配置的api，接口地址呢推荐使用下面的国内地址转发。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://api.chatanywhere.org/v1/oauth/free/github/render&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;申请领取内测免费API Key&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;转发Host1: &lt;code&gt;https://api.chatanywhere.com.cn&lt;/code&gt; (国内中转，延时更低，推荐)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;转发Host2: &lt;code&gt;https://api.chatanywhere.cn&lt;/code&gt; (国外使用,国内需要全局代理)&lt;/strong&gt;&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;h3 id=&#34;gpt_api_freehttpsgithubcomchatanywheregpt_api_free&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/chatanywhere/GPT_API_free&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GPT_API_free&lt;/a&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;支持 gpt | deepseek | claude | gemini | grok 等排名靠前的常用大模型。&lt;/li&gt;
+&lt;li&gt;免费版支持 gpt-4o，gpt-4.1 一天 5 次；支持 deepseek-r1, deepseek-v3 一天 30 次，支持 gpt-4o-mini，gpt-3.5-turbo，gpt-4.1-mini，gpt-4.1-nano 一天 200 次。&lt;/li&gt;
+&lt;li&gt;与官方完全一致的接口标准，兼容各种软件/插件。&lt;/li&gt;
+&lt;li&gt;支持流式响应。&lt;/li&gt;
+&lt;li&gt;国内线路使用动态加速，体验远优于使用代理连接官方。&lt;/li&gt;
+&lt;li&gt;无需科学上网，国内环境直接可用。&lt;/li&gt;
+&lt;li&gt;个人完全免费使用。&lt;/li&gt;
+&lt;li&gt;协议统一使用 openai 标准协议，其他厂商模型仅需更换模型名称，接入便捷&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🚀&lt;a class=&#34;link&#34; href=&#34;https://api.chatanywhere.org/v1/oauth/free/render&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;申请领取内测免费 API Key&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;免费版支持 deepseek, gpt-3.5-turbo, embedding, gpt-4o-mini, gpt-4o。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转发 Host1: &lt;code&gt;https://api.chatanywhere.tech&lt;/code&gt; (国内中转，延时更低)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转发 Host2: &lt;code&gt;https://api.chatanywhere.org&lt;/code&gt; (国外使用)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以使用的 API 模型&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4o
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deepseek-r1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deepseek-v3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4o-mini
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-3.5-turbo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1-mini
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1-nano
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置 chat-next-web 项目使用，添加 &lt;code&gt;CUSTOM_MODELS&lt;/code&gt;变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-env&#34; data-lang=&#34;env&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CUSTOM_MODELS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-all,gpt-4.1-mini,gpt-4o,gpt-4.1,deepseek-r1,deepseek-v3,gpt-4o-mini,gpt-3.5-turbo,gpt-4.1-nano,embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;添加默认模型 &lt;code&gt;DEFAULT_MODEL&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-env&#34; data-lang=&#34;env&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DEFAULT_MODEL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;gpt-4.1-mini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>pandora-免翻访问gpt</title>

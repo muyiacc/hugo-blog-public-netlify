@@ -271,8 +271,10 @@
     <li><a href="#部署后端">部署后端</a>
       <ol>
         <li><a href="#docker">docker</a></li>
+        <li><a href="#docker-compose">docker compose</a></li>
       </ol>
     </li>
+    <li><a href="#脚本">脚本</a></li>
   </ol>
 </nav>
         </div>
@@ -378,7 +380,7 @@
 <li><strong>V2Ray</strong></li>
 <li><strong>V2Ray URI</strong></li>
 </ul>
-<p>官网：<a class="link" href="https://github.com/sub-store-org/Sub-Store"  target="_blank" rel="noopener"
+<p>源码：<a class="link" href="https://github.com/sub-store-org/Sub-Store"  target="_blank" rel="noopener"
     >https://github.com/sub-store-org/Sub-Store</a></p>
 <h2 id="部署后端">部署后端
 </h2><p>详细介绍</p>
@@ -390,7 +392,72 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d -name xream/sub-store 
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d --name sub-store -p 3001:3001 -v /root/sub-store_data:/root/sub-store-data -e <span class="nv">SUB_STORE_BACKEND_API_HOST</span><span class="o">=</span>127.0.0.1 xream/sub-store
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="docker-compose">docker compose
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">version: <span class="s1">&#39;3.9&#39;</span>
+</span></span><span class="line"><span class="cl">servcies:
+</span></span><span class="line"><span class="cl">	sub-store:
+</span></span><span class="line"><span class="cl">		image: <span class="s1">&#39;xream/sub-store:http-meta&#39;</span>
+</span></span><span class="line"><span class="cl">		container_name: <span class="s1">&#39;sub-store&#39;</span>
+</span></span><span class="line"><span class="cl">		ports:
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;3000:3000&#39;</span>
+</span></span><span class="line"><span class="cl">		envirments:
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;HOST=127.0.0.1&#39;</span>
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;PORT=9807&#39;</span>
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;SUB_STORE_BACKEND_API_PORT=3000&#39;</span>
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;SUB_STORE_BACKEND_API_HOST=127.0.0.1&#39;</span>
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;SUB_STORE_BACKEND_MERGE=true&#39;</span>
+</span></span><span class="line"><span class="cl">			- <span class="s1">&#39;SUB_STORE_FRONTEND_BACKEND_PATH=/2cXaAxRGfddmGz2yx1wA&#39;</span>
+</span></span><span class="line"><span class="cl">		restart: unless-stopped
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="脚本">脚本
+</h2><p>节点美化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://raw.githubusercontent.com/Keywos/rule/main/rename.js
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置模板</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://raw.githubusercontent.com/xishang0128/sub-store-template/refs/heads/main/1.11.x/sing-box.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本覆写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://raw.githubusercontent.com/xishang0128/sub-store-template/refs/heads/main/1.11.x/sing-box.js#type<span class="o">=</span>1<span class="p">&amp;</span><span class="nv">name</span><span class="o">=</span>name
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

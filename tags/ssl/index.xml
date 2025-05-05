@@ -562,60 +562,112 @@ sudo pip uninstall certbot&lt;/p&gt;
         
         <guid>https://hublog.netlify.app/p/2405002/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
-&lt;/h2&gt;&lt;p&gt;我发现 certbot 安装还是过于麻烦，使用 snap 又不轻量，不使用 snap 而使用 nginx 容器出问题，今天使用 acme.sh 申请 ssl 之后，发现很方便，这篇教程来教如何使用 acme.sh&lt;/p&gt;
-&lt;p&gt;相比于 certbot 不同的地方在于 使用 nginx/apaceh 时候不会修改原有的配置&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;certbot 安装还是过于麻烦， snap 不轻量，不使用 snap 使用 nginx 申请容易出问题，使用 acme.sh 申请 ssl 证书 之后，发现很方便&lt;/p&gt;
+&lt;p&gt;相比于 certbot 不同的地方在于 acme 使用 nginx/apaceh 申请证书不会修改原有的配置&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;好处不用担心配置被搞坏&lt;/li&gt;
-&lt;li&gt;缺点是需要手动配置 ssl 证书的位置。&lt;/li&gt;
+&lt;li&gt;好处：不用担心配置被搞坏&lt;/li&gt;
+&lt;li&gt;缺点：需要手动配置 ssl 证书的位置。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;项目地址：https://github.com/acmesh-official/acme.sh&lt;/p&gt;
-&lt;h2 id=&#34;快速使用&#34;&gt;快速使用
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;acme.sh 是一个轻量级的、纯 Shell 脚本实现的 ACME 协议客户端，主要用于自动化获取和续订 SSL/TLS 证书。它支持 Let&amp;rsquo;s Encrypt 和其他 ACME 兼容的证书颁发机构（CA）。&lt;/p&gt;
+&lt;h3 id=&#34;主要特点&#34;&gt;主要特点
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：用户只需通过简单的命令行操作即可获取和管理证书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;轻量级&lt;/strong&gt;：不依赖于复杂的编程语言，易于部署和维护。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种 DNS 插件&lt;/strong&gt;：支持多种 DNS 提供商的 API，便于自动化 DNS 验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持多种证书类型&lt;/strong&gt;：可以获取通配符证书和普通域名证书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活的配置&lt;/strong&gt;：支持用户自定义配置和命令，满足不同需求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;acme.sh 是一个非常适合希望简化 SSL/TLS 证书管理流程的用户和开发者的工具。&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/acmesh-official/acme.sh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;后续所有 &lt;code&gt;SSL/TLS 证书&lt;/code&gt;简称 &lt;code&gt;证书&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;快速上手&#34;&gt;快速上手
+&lt;/h2&gt;&lt;p&gt;如果你想直接使用 acme.sh 这里提供一个简要教程&lt;/p&gt;
+&lt;p&gt;需要修改：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;邮箱&lt;code&gt;mail@example.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;域名&lt;code&gt;example.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装 acme.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 acme.sh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;邮箱
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 修改 SSL 证书默认的 CA 机构&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 申请证书&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --standalone
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建证书文件夹&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /etc/cert
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 SSL 证书&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --install-cert -d example.com &lt;span class=&#34;se&#34;&gt;\
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mail@example.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;刷新环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改证书 CA 机构&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;申请证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --standalone
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建证书文件夹&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /etc/cert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --install-cert -d example.com &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--key-file       /etc/cert/key.pem  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--fullchain-file /etc/cert/cert.pem
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;安装-acmesh&#34;&gt;安装 acme.sh
-&lt;/h2&gt;&lt;h3 id=&#34;国外服务器&#34;&gt;国外服务器
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;p&gt;详细内容请查看后续&lt;/p&gt;
+&lt;h2 id=&#34;安装-acmesh&#34;&gt;安装 acme.sh
+&lt;/h2&gt;&lt;p&gt;国外服务器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my@example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mail@example.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;国内服务器&#34;&gt;国内服务器
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;国内服务器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -643,9 +695,16 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;修改-ssl-证书默认的-ca-机构&#34;&gt;修改 SSL 证书默认的 CA 机构
-&lt;/h2&gt;&lt;p&gt;默认证书的 ca 机构是 Let&amp;rsquo;s Encrypt&lt;/p&gt;
-&lt;p&gt;在申请证书之前，可以通过如下命令修改 ca 机构&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;卸载-acmesh&#34;&gt;卸载 acme.sh
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;修改证书-ca-机构&#34;&gt;修改证书 CA 机构
+&lt;/h2&gt;&lt;p&gt;默认证书的 CA 机构是 zerossl&lt;/p&gt;
+&lt;p&gt;在申请证书之前，可以通过如下命令修改 CA 机构&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -654,12 +713,11 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;生成证书&#34;&gt;生成证书
-&lt;/h2&gt;&lt;h3 id=&#34;http-方式&#34;&gt;HTTP 方式
-&lt;/h3&gt;&lt;h4 id=&#34;apache&#34;&gt;apache
-&lt;/h4&gt;&lt;p&gt;&amp;hellip;&lt;/p&gt;
-&lt;h4 id=&#34;nginx&#34;&gt;nginx
-&lt;/h4&gt;&lt;p&gt;先在 nginx 配置文件夹新增 conf 文件，填好基础的模板，比如：&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;生成证书http-方式&#34;&gt;生成证书：HTTP 方式
+&lt;/h2&gt;&lt;h3 id=&#34;apache&#34;&gt;apache
+&lt;/h3&gt;&lt;p&gt;待续&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx
+&lt;/h3&gt;&lt;p&gt;先在 nginx 配置文件夹新增 conf 文件，填好基础的模板，比如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -700,8 +758,8 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;no-web-server&#34;&gt;no web server
-&lt;/h4&gt;&lt;p&gt;如果你还没有运行任何 web 服务, &lt;strong&gt;80&lt;/strong&gt; 端口是空闲的, 那么 &lt;strong&gt;acme.sh&lt;/strong&gt; 还能假装自己是一个 webserver, 临时听在&lt;strong&gt;80&lt;/strong&gt; 端口, 完成验证:&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;no-web-server&#34;&gt;no web server
+&lt;/h3&gt;&lt;p&gt;如果你还没有运行任何 web 服务, &lt;strong&gt;80&lt;/strong&gt; 端口是空闲的, 那么 &lt;strong&gt;acme.sh&lt;/strong&gt; 还能假装自己是一个 webserver, 临时听在&lt;strong&gt;80&lt;/strong&gt; 端口, 完成验证:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -712,9 +770,9 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;更高级的用法请参考: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;dns-方式&#34;&gt;DNS 方式
-&lt;/h3&gt;&lt;h4 id=&#34;手动-dns-方式&#34;&gt;手动 DNS 方式
-&lt;/h4&gt;&lt;p&gt;手动在域名上添加一条 txt 解析记录, 验证域名所有权.&lt;/p&gt;
+&lt;h2 id=&#34;生成证书dns-方式&#34;&gt;生成证书：DNS 方式
+&lt;/h2&gt;&lt;h3 id=&#34;手动-dns-方式&#34;&gt;手动 DNS 方式
+&lt;/h3&gt;&lt;p&gt;手动在域名上添加一条 txt 解析记录, 验证域名所有权.&lt;/p&gt;
 &lt;p&gt;好处：你不需要任何服务器, 不需要任何公网 ip, 只需要 dns 的解析记录即可完成验证&lt;/p&gt;
 &lt;p&gt;缺点：如果不同时配置 Automatic DNS API，使用这种方式 acme.sh 将无法自动更新证书，每次都需要手动再次重新解析验证域名所有权。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -740,10 +798,50 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意第二次这里用的是 &lt;code&gt;--renew&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;自动-dns-方式&#34;&gt;自动 DNS 方式
-&lt;/h4&gt;&lt;p&gt;DNS 方式的真正强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;acme.sh&lt;/strong&gt; 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十种解析商的自动集成.&lt;/p&gt;
-&lt;p&gt;以 dnspod 为例, 你需要先登录到 dnspod 账号, 生成你的 api id 和 api key。然后&lt;/p&gt;
+&lt;h3 id=&#34;自动-dns-方式推荐&#34;&gt;自动 DNS 方式（推荐）
+&lt;/h3&gt;&lt;p&gt;DNS 方式的强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;acme.sh&lt;/strong&gt; 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十种解析商的自动集成&lt;/p&gt;
+&lt;h4 id=&#34;cloudflare&#34;&gt;cloudflare
+&lt;/h4&gt;&lt;p&gt;域名托管在 cloudflare 上申请方式&lt;/p&gt;
+&lt;h5 id=&#34;单个域名&#34;&gt;单个域名
+&lt;/h5&gt;&lt;p&gt;登录 cloudflare ,&lt;/p&gt;
+&lt;p&gt;查看域名的 Zone ID&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;763eac4f1bcebd8b5c95e9fc50d010b4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建 &lt;a class=&#34;link&#34; href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;API Token&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;设置环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CF_Token&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Y_jpG9AnfQmuX5Ss9M_qaNab6SQwme3HWXNDzRWs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CF_Zone_ID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;763eac4f1bcebd8b5c95e9fc50d010b4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;申请证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_cf -d example.com -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.example.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里环境变量会被自动记录下来, 将来在使用的时候, 就不需要再次指定了，直接生成就好了&lt;/p&gt;
+&lt;p&gt;更多内容：&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh/wiki/dnsapi#1-cloudflare-option&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/acmesh-official/acme.sh/wiki/dnsapi#1-cloudflare-option&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dnspod&#34;&gt;dnspod
+&lt;/h4&gt;&lt;p&gt;域名托管在 dnspod 上&lt;/p&gt;
+&lt;p&gt;登录 dnspod 账号, 生成 api id 和 api key。&lt;/p&gt;
 &lt;p&gt;设置 dnspod id&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -768,24 +866,22 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_dp -d example.com -d www.example.com
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_dp -d example.com -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.example.com&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来你在使用 dnspod api 的时候, 就不需要再次指定了. 直接生成就好了&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来在使用 dnspod api 的时候, 就不需要再次指定了，直接生成就好了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com.com --dns  dns_dp
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com.com --dns  dns_dp
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;更详细的 api 用法: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装-ssl-证书&#34;&gt;安装 SSL 证书
+&lt;/div&gt;&lt;h2 id=&#34;安装证书&#34;&gt;安装证书
 &lt;/h2&gt;&lt;p&gt;前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.&lt;/p&gt;
 &lt;p&gt;注意, 默认生成的证书都放在安装目录下: &lt;code&gt;~/.acme.sh/&lt;/code&gt;, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx/apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.&lt;/p&gt;
-&lt;p&gt;正确的使用方法是使用 &lt;code&gt;--install-cert&lt;/code&gt; 命令,并指定目标位置, 然后证书文件会被 copy 到相应的位置, 例如:&lt;/p&gt;
+&lt;p&gt;正确的使用方法是使用 &lt;code&gt;--install-cert&lt;/code&gt; 命令,并指定目标位置, 然后证书文件会被 copy 到相应的位置&lt;/p&gt;
 &lt;h3 id=&#34;apache-1&#34;&gt;Apache
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -818,21 +914,17 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--reloadcmd     &lt;span class=&#34;s2&#34;&gt;&amp;#34;service nginx force-reload&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;/etc/nginx/ssl/example.com/key.pem&lt;/code&gt; &amp;gt; &lt;code&gt;/etc/nginx/ssl/example.com/cert.pem&lt;/code&gt;
-可自由指定位置，请保证&lt;code&gt;/etc/nginx/ssl/example.com&lt;/code&gt;路径存在&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;可自由指定位置，请保证&lt;code&gt;/etc/nginx/ssl/example.com&lt;/code&gt;路径存在&lt;/p&gt;
 &lt;p&gt;一个小提醒, 这里用的是 &lt;code&gt;service nginx force-reload&lt;/code&gt;, 不是 &lt;code&gt;service nginx reload&lt;/code&gt;, 据测试, &lt;code&gt;reload&lt;/code&gt; 并不会重新加载证书, 所以用的 &lt;code&gt;force-reload&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nginx 的配置 &lt;code&gt;ssl_certificate&lt;/code&gt; 使用 &lt;code&gt;/etc/nginx/ssl/fullchain.cert&lt;/code&gt; ，而非 &lt;code&gt;/etc/nginx/ssl/&amp;lt;domain&amp;gt;.cert&lt;/code&gt; ，否则 &lt;a class=&#34;link&#34; href=&#34;https://www.ssllabs.com/ssltest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;SSL Labs&lt;/a&gt; 的测试会报 &lt;code&gt;Chain issues Incomplete&lt;/code&gt; 错误。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;--install-cert&lt;/code&gt;命令可以携带很多参数, 来指定目标文件. 并且可以指定 reloadcmd, 当证书更新以后, reloadcmd 会被自动调用,让服务器生效.&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;详细参数请参考: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用.&lt;/p&gt;
-&lt;h2 id=&#34;查看已安装证书信息&#34;&gt;查看已安装证书信息
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;查看证书&#34;&gt;查看证书
+&lt;/h2&gt;&lt;p&gt;查看已安装证书信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -885,7 +977,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;更新证书&#34;&gt;更新证书
-&lt;/h2&gt;&lt;p&gt;目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心&lt;/p&gt;
 &lt;p&gt;请确保 cronjob 正确安装, 看起来是类似这样的：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -900,10 +992,13 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;关于修改-reloadcmd&#34;&gt;关于修改 ReloadCmd
-&lt;/h2&gt;&lt;p&gt;目前修改&lt;code&gt;ReloadCmd&lt;/code&gt;没有专门的命令，可以通过重新安装证书来实现修改&lt;code&gt;reloadCmd&lt;/code&gt;的目的。 此外，安装证书后，相关信息是保存在&lt;code&gt;~/.acme.sh/example.com/example.conf&lt;/code&gt;文件下的，内容就是&lt;code&gt;acme.sh --info -d example.com&lt;/code&gt;输出的信息，不过&lt;code&gt;ReloadCmd&lt;/code&gt;在文件中使用了 Base64 编码。理论上可以通过直接修改该文件来修改&lt;code&gt;ReloadCmd&lt;/code&gt;，且修改时，无需 Base64 编码，直接写命令原文&lt;code&gt;acme.sh&lt;/code&gt;也可以识别。 不过，&lt;code&gt;example.conf&lt;/code&gt;文件的位置和内容格式以后可能会改变！&lt;code&gt;example.conf&lt;/code&gt;一直都是内部使用, 后面有可能会改为用 sqlite 或者 mysql 格式存储. 所以一般不建议自己修改。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前，修改 &lt;code&gt;ReloadCmd&lt;/code&gt; 并没有专门的命令实现。我们可以通过重新安装证书来间接达到修改的目的。&lt;/p&gt;
+&lt;p&gt;此外，安装证书后，相关信息会保存在 &lt;code&gt;~/.acme.sh/example.com/example.conf&lt;/code&gt; 文件中，内容与执行 &lt;code&gt;acme.sh --info -d example.com&lt;/code&gt; 输出的信息一致，但 &lt;code&gt;ReloadCmd&lt;/code&gt; 在文件中使用了 Base64 编码。&lt;/p&gt;
+&lt;p&gt;理论上，我们可以直接修改该文件来更改 &lt;code&gt;ReloadCmd&lt;/code&gt;，而且在修改时无需进行 Base64 编码，直接写入命令的原文 &lt;code&gt;acme.sh&lt;/code&gt; 也能被识别。&lt;/p&gt;
+&lt;p&gt;然而，请注意，&lt;code&gt;example.conf&lt;/code&gt; 文件的位置和内容格式在未来可能会发生变化！该文件一直以来都是内部使用，未来可能会转为使用 SQLite 或 MySQL 格式存储。因此，一般不建议自行修改。&lt;/p&gt;
 &lt;h2 id=&#34;更新-acmesh&#34;&gt;更新 acme.sh
-&lt;/h2&gt;&lt;p&gt;目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.&lt;/p&gt;
-&lt;p&gt;升级 acme.sh 到最新版 :&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步&lt;/p&gt;
+&lt;p&gt;升级 acme.sh 到最新版&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -912,7 +1007,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;如果你不想手动升级, 可以开启自动升级:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;如果你不想手动升级, 可以开启自动升级&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -921,8 +1016,8 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade --auto-upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;之后, acme.sh 就会自动保持更新了.&lt;/p&gt;
-&lt;p&gt;你也可以随时关闭自动更新:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;之后, acme.sh 就会自动保持更新了&lt;/p&gt;
+&lt;p&gt;你也可以随时关闭自动更新&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -931,7 +1026,7 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade --auto-upgrade  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;出错怎么办&#34;&gt;出错怎么办：
+&lt;/div&gt;&lt;h2 id=&#34;出错怎么办&#34;&gt;出错怎么办
 &lt;/h2&gt;&lt;p&gt;如果出错, 请添加 debug log：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -950,10 +1045,8 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue  .....  --debug  &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;请参考： &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;p&gt;请参考： &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;在 DNS 验证模式下如果 debug 中出现诸如&amp;quot;timed out&amp;quot;等字样可能是因为 GFW 拦截了相应请求，需要添加 http(s) proxy 环境变量。（请按照自己实际设定修改）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -994,18 +1087,9 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;p&gt;最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;一键脚本适合初次申请&#34;&gt;一键脚本（适合初次申请）
-&lt;/h2&gt;&lt;p&gt;暂时未完成&amp;hellip;&lt;/p&gt;
-&lt;p&gt;本脚本为了简化 acme.sh 申请证书过程，会修改配置，如已有的配置，请勿使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim acme-autossl.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;h2 id=&#34;一键脚本待续&#34;&gt;一键脚本（待续）
+&lt;/h2&gt;&lt;p&gt;待续&amp;hellip;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>openssl小小使用</title>

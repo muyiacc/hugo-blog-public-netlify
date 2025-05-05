@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 之前介绍过一个免翻使用chatgpt接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体">
-<title>Docker部署ChatGPT-Next-Web</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 之前介绍过一个免翻使用 chatgpt 接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般 这个项目">
+<title>ChatGPT-Next-Web，一键部署AI大模型网页客户端</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2310013/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Docker部署ChatGPT-Next-Web">
-<meta property='og:description' content="介绍 之前介绍过一个免翻使用chatgpt接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="ChatGPT-Next-Web，一键部署AI大模型网页客户端">
+<meta property='og:description' content="简介 之前介绍过一个免翻使用 chatgpt 接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般 这个项目">
 <meta property='og:url' content='https://hublog.netlify.app/p/2310013/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='chatgpt-next-web' /><meta property='article:tag' content='gpt' /><meta property='article:published_time' content='2023-10-13T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-10-13T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="Docker部署ChatGPT-Next-Web">
-<meta name="twitter:description" content="介绍 之前介绍过一个免翻使用chatgpt接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体">
+<meta name="twitter:title" content="ChatGPT-Next-Web，一键部署AI大模型网页客户端">
+<meta name="twitter:description" content="简介 之前介绍过一个免翻使用 chatgpt 接口的项目 Pandora，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般 这个项目">
   
 
 
@@ -267,9 +267,18 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#介绍">介绍</a></li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#接口">接口</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#预览">预览</a></li>
+    <li><a href="#部署">部署</a>
+      <ol>
+        <li><a href="#docker-compose">docker compose</a></li>
+      </ol>
+    </li>
+    <li><a href="#接口">接口</a>
+      <ol>
+        <li><a href="#gpt_api_freehttpsgithubcomchatanywheregpt_api_free"><a href="https://github.com/chatanywhere/GPT_API_free">GPT_API_free</a></a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -288,8 +297,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" >
-                Linux
+            <a href="/categories/default/" >
+                Default
             </a>
         
     </header>
@@ -297,7 +306,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2310013/">Docker部署ChatGPT-Next-Web</a>
+            <a href="/p/2310013/">ChatGPT-Next-Web，一键部署AI大模型网页客户端</a>
         </h2>
     
         
@@ -335,14 +344,14 @@
     <section class="article-content">
     
     
-    <h2 id="介绍">介绍
-</h2><p>之前介绍过一个免翻使用chatgpt接口的项目 <a class="link" href="https://www.seektao.cc/archives/8140777793851"  target="_blank" rel="noopener"
-    >Pandora</a>，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。</p>
-<blockquote>
-<p>Github 地址：https://github.com/Yidadaa/ChatGPT-Next-Web</p>
-</blockquote>
-<p>访问查看，界面样式可以看见还是很美观的：</p>
-<p><img src="https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png"
+    <h2 id="简介">简介
+</h2><p>之前介绍过一个免翻使用 chatgpt 接口的项目 <a class="link" href="https://www.seektao.cc/archives/8140777793851"  target="_blank" rel="noopener"
+    >Pandora</a>，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般</p>
+<p>这个项目可以一键免费部署你的私人 ChatGPT 网页应用，支持 Claude, GPT4 &amp; Gemini Pro 模型。</p>
+<p>源码：<a class="link" href="https://github.com/Yidadaa/ChatGPT-Next-Web"  target="_blank" rel="noopener"
+    >https://github.com/Yidadaa/ChatGPT-Next-Web</a></p>
+<h2 id="预览">预览
+</h2><p><img src="https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png"
 	
 	
 	
@@ -352,9 +361,9 @@
 	
 	
 ></p>
-<h2 id="安装">安装
-</h2><p>使用docker compose 方式搭建。</p>
-<p>docker-compose.yml</p>
+<h2 id="部署">部署
+</h2><h3 id="docker-compose">docker compose
+</h3><p>docker-compose.yml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -377,16 +386,19 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">yidadaa/chatgpt-next-web</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">chatgpt-next-web</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">environment</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">CODE=#页面访问密码，</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">OPENAI_API_KEY=#你的api key</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">BASE_URL=#接口地址</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">CODE=your_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">OPENAI_API_KEY=your_api_key</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="l">BASE_URL=api_url</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">ports</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span>- <span class="s1">&#39;3000:3000&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>上述的docker-compose 文件是一个简洁版，免去了代理proxy，我们使用免费的api接口，后面有介绍</p>
-<p>关于完整的内容可以去官方查看。</p>
+</div><ul>
+<li><code>CODE</code>：访问密钥</li>
+<li><code>OPENAI_API_KEY</code>：OpenAI API key</li>
+<li><code>BASE_URL</code>：OpenAI API URL</li>
+</ul>
 <p>启动容器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -397,15 +409,69 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="接口">接口
-</h2><p>关于接口，网上也有一些免费的api 接口地址</p>
-<p>这里提供一个Github的开源项目：<a class="link" href="https://github.com/chatanywhere/GPT_API_free"  target="_blank" rel="noopener"
-    >GPT_API_free</a></p>
-<p>快速获取api key，点击下面的连接获取api，获取的api用来替换上面配置的api，接口地址呢推荐使用下面的国内地址转发。</p>
-<p><strong><a class="link" href="https://api.chatanywhere.org/v1/oauth/free/github/render"  target="_blank" rel="noopener"
-    >申请领取内测免费API Key</a></strong></p>
-<p><strong>转发Host1: <code>https://api.chatanywhere.com.cn</code> (国内中转，延时更低，推荐)</strong></p>
-<p><strong>转发Host2: <code>https://api.chatanywhere.cn</code> (国外使用,国内需要全局代理)</strong></p>
-
+</h2><h3 id="gpt_api_freehttpsgithubcomchatanywheregpt_api_free"><a class="link" href="https://github.com/chatanywhere/GPT_API_free"  target="_blank" rel="noopener"
+    >GPT_API_free</a>
+</h3><ol>
+<li>支持 gpt | deepseek | claude | gemini | grok 等排名靠前的常用大模型。</li>
+<li>免费版支持 gpt-4o，gpt-4.1 一天 5 次；支持 deepseek-r1, deepseek-v3 一天 30 次，支持 gpt-4o-mini，gpt-3.5-turbo，gpt-4.1-mini，gpt-4.1-nano 一天 200 次。</li>
+<li>与官方完全一致的接口标准，兼容各种软件/插件。</li>
+<li>支持流式响应。</li>
+<li>国内线路使用动态加速，体验远优于使用代理连接官方。</li>
+<li>无需科学上网，国内环境直接可用。</li>
+<li>个人完全免费使用。</li>
+<li>协议统一使用 openai 标准协议，其他厂商模型仅需更换模型名称，接入便捷</li>
+</ol>
+<ul>
+<li><strong>🚀<a class="link" href="https://api.chatanywhere.org/v1/oauth/free/render"  target="_blank" rel="noopener"
+    >申请领取内测免费 API Key</a></strong></li>
+<li>免费版支持 deepseek, gpt-3.5-turbo, embedding, gpt-4o-mini, gpt-4o。</li>
+<li><strong>转发 Host1: <code>https://api.chatanywhere.tech</code> (国内中转，延时更低)</strong></li>
+<li><strong>转发 Host2: <code>https://api.chatanywhere.org</code> (国外使用)</strong></li>
+</ul>
+<p>可以使用的 API 模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpt-4o
+</span></span><span class="line"><span class="cl">gpt-4.1
+</span></span><span class="line"><span class="cl">deepseek-r1
+</span></span><span class="line"><span class="cl">deepseek-v3
+</span></span><span class="line"><span class="cl">gpt-4o-mini
+</span></span><span class="line"><span class="cl">gpt-3.5-turbo
+</span></span><span class="line"><span class="cl">gpt-4.1-mini
+</span></span><span class="line"><span class="cl">gpt-4.1-nano
+</span></span><span class="line"><span class="cl">embedding
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 chat-next-web 项目使用，添加 <code>CUSTOM_MODELS</code>变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl"><span class="nv">CUSTOM_MODELS</span><span class="o">=</span>-all,gpt-4.1-mini,gpt-4o,gpt-4.1,deepseek-r1,deepseek-v3,gpt-4o-mini,gpt-3.5-turbo,gpt-4.1-nano,embedding
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加默认模型 <code>DEFAULT_MODEL</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-env" data-lang="env"><span class="line"><span class="cl"><span class="nv">DEFAULT_MODEL</span><span class="o">=</span>gpt-4.1-mini
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -463,12 +529,12 @@
             
                 
 <article class="">
-    <a href="/p/250418121729/">
+    <a href="/p/2407002/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">linuxmint体验</h2>
+            <h2 class="article-title">ChatGPT-Next-Web 最新部署对接new-api部署方法</h2>
         </div>
     </a>
 </article>
@@ -476,12 +542,12 @@
             
                 
 <article class="">
-    <a href="/p/250401175501/">
+    <a href="/p/2405009/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">starship，跨 shell 的极简、速度极快的提示符</h2>
+            <h2 class="article-title">Monica，一个使用最先进的AI模型（GPT-4、Claude3、Gemini 等）帮助你对话、搜索、写作、翻译的一站式 AI 助手。</h2>
         </div>
     </a>
 </article>
@@ -489,12 +555,12 @@
             
                 
 <article class="">
-    <a href="/p/250327110145/">
+    <a href="/p/2405008/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">tmux，终端复用神器</h2>
+            <h2 class="article-title">Monica，ChatGPT AI助手</h2>
         </div>
     </a>
 </article>
@@ -502,12 +568,12 @@
             
                 
 <article class="">
-    <a href="/p/250326202040/">
+    <a href="/p/2404002/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">nixos命令行安装（待续）</h2>
+            <h2 class="article-title">gpt4free免费的aigc项目</h2>
         </div>
     </a>
 </article>
@@ -515,12 +581,12 @@
             
                 
 <article class="">
-    <a href="/p/250310184501/">
+    <a href="/p/2309005/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux设置时间，时区</h2>
+            <h2 class="article-title">pandora-免翻访问gpt</h2>
         </div>
     </a>
 </article>

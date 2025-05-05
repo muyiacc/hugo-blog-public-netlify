@@ -7,7 +7,17 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 04 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 04 May 2025 17:50:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>cloudflare常见配置</title>
+        <link>https://hublog.netlify.app/p/250504175051/</link>
+        <pubDate>Sun, 04 May 2025 17:50:51 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250504175051/</guid>
+        <description>&lt;p&gt;开启 gRPC：&lt;/p&gt;
+&lt;p&gt;Network&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Debain12安装cloudflare-warp</title>
         <link>https://hublog.netlify.app/p/2310004/</link>
         <pubDate>Wed, 04 Oct 2023 14:07:10 +0800</pubDate>

@@ -270,7 +270,13 @@
     <li><a href="#简介">简介</a></li>
     <li><a href="#安装">安装</a></li>
     <li><a href="#使用">使用</a></li>
-    <li><a href="#案例">案例</a></li>
+    <li><a href="#案例">案例</a>
+      <ol>
+        <li><a href="#创建-alist-系统服务">创建 alist 系统服务</a></li>
+        <li><a href="#创建-syncthing-服务">创建 syncthing 服务</a></li>
+        <li><a href="#创建-sing-boxconfig-mixed-服务">创建 sing-box@config-mixed 服务</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -406,8 +412,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="案例">案例
-</h2><p>创建 alist 系统服务</p>
-<div class="highlight"><div class="chroma">
+</h2><h3 id="创建-alist-系统服务">创建 alist 系统服务
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -415,13 +421,47 @@
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">install</span> <span class="n">alist</span> <span class="s2">&#34;D:\Program Files\alist\alist.exe&#34;</span> <span class="s2">&#34;server --data=\&#34;</span><span class="n">D:</span><span class="p">\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">alist</span><span class="p">\</span><span class="n">data</span><span class="p">\</span><span class="s2">&#34;&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>创建 syncthing 服务</p>
-<div class="highlight"><div class="chroma">
+</div><h3 id="创建-syncthing-服务">创建 syncthing 服务
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">install</span> <span class="n">syncthing</span> <span class="s2">&#34;D:\remote\syncthing-windows-amd64-v1.29.2\syncthing.exe&#34;</span> <span class="n">-no-browser</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="创建-sing-boxconfig-mixed-服务">创建 sing-box@config-mixed 服务
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm install sing-box@config-mixed <span class="s2">&#34;C:\Users\taoone\AppData\Local\Microsoft\WinGet\Links\sing-box.exe&#34;</span> <span class="s2">&#34;-D&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows&#34;</span> <span class="s2">&#34;-c&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows\config-mixed.json&#34;</span> <span class="s2">&#34;run&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>进入服务，找到 <code>sing-box@config-mixed</code>，设置用户为当前用户，启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm start sing-box@config-mixed
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm remove sing-box@config-mixed
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm stop sing-box@config-mixed
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

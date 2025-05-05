@@ -7,7 +7,525 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 22 Apr 2025 18:50:12 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 05 May 2025 21:17:19 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>cloudflare常见配置</title>
+        <link>https://hublog.netlify.app/p/250504175051/</link>
+        <pubDate>Sun, 04 May 2025 17:50:51 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250504175051/</guid>
+        <description>&lt;p&gt;开启 gRPC：&lt;/p&gt;
+&lt;p&gt;Network&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>优化bing搜索结果</title>
+        <link>https://hublog.netlify.app/p/250504122128/</link>
+        <pubDate>Sun, 04 May 2025 12:21:28 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250504122128/</guid>
+        <description>&lt;h2 id=&#34;优化前&#34;&gt;优化前
+&lt;/h2&gt;&lt;p&gt;先看看 Google 搜索显示的结果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/05/04/Fn9gOHr5TaJzACQ.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250504130640295&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;结果简洁而不简单&lt;/p&gt;
+&lt;p&gt;这是 bing 搜索默认显示的结果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/05/04/kmoGK3bFROgIcVu.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250504130108239&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“毒瘤”&lt;strong&gt;CSDN&lt;/strong&gt;占据搜索前列&lt;/li&gt;
+&lt;li&gt;默认&lt;strong&gt;一大屏摘要&lt;/strong&gt;，默认很多情况并非是需要的内容，向下寻找需要滑动多次滚轮，而每次都是这种，体验可想而知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这是优化后的结果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/05/04/KY2BvS4RtZ1pAaj.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250504130133308&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;优化后&#34;&gt;优化后
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;优化了什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;去掉了“毒瘤”&lt;strong&gt;CSDN&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;去掉了 bing 默认&lt;strong&gt;一大屏摘要&lt;/strong&gt;，实际并没有什么用，默认推荐还是“毒瘤”&lt;strong&gt;CSDN&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;优化方式&#34;&gt;优化方式
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;如何优化？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两个插件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;stylebot&lt;/li&gt;
+&lt;li&gt;uBlacklist&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;stylebot&#34;&gt;stylebot
+&lt;/h3&gt;&lt;p&gt;Stylebot 是一款功能强大的浏览器扩展程序，支持 Chrome、Firefox 和 Edge 等主流浏览器。能让用户通过直观 UI 操作或 CSS 代码编辑器自定义网页样式，以优化阅读体验或实现个性化定制。&lt;/p&gt;
+&lt;p&gt;进入设置，样式，添加新样式&lt;/p&gt;
+&lt;p&gt;URL&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://cn.bing.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;样式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;b_ans&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;display&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;none&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;ublacklist&#34;&gt;uBlacklist
+&lt;/h3&gt;&lt;p&gt;uBlacklist 是一款支持 Chrome、Firefox、Safari 等浏览器的扩展程序，能通过匹配模式或正则表达式设定规则，屏蔽指定网站出现在谷歌、必应、DuckDuckGo 等多个主流搜索引擎的结果中，还具备云同步和订阅公共规则集等功能。&lt;/p&gt;
+&lt;p&gt;进入设置，常规，添加以下内容，保存&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.csdn.net/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.csdn.com/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.csdnimg.cn/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.gitcode.com/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.gitcode.net/*
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;*://*.gitcode.host/*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;彩蛋&#34;&gt;彩蛋
+&lt;/h2&gt;&lt;p&gt;不做任何设置，使用bing-cn 国际版效果也比国内版好&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/05/04/CnsNZpI9xkgzdFB.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;image-20250504135037795&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>fofa，搜索语法</title>
+        <link>https://hublog.netlify.app/p/250504120615/</link>
+        <pubDate>Sun, 04 May 2025 12:06:15 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250504120615/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;FOFA 是一款网络空间测绘的搜索引擎，英文全称为 “Fingerprinting Organizations with Advanced Tools”，由北京华顺信安科技有限公司开发。以下是其相关介绍：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;功能特点&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;资产发现与指纹识别&lt;/strong&gt;：能快速识别和收录网站、服务器、路由器、摄像头等各种网络资产，并通过网络响应等信息对设备、操作系统、应用程序等进行精确指纹识别，帮助用户发现特定类型的设备。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;漏洞扫描与安全评估&lt;/strong&gt;：配合其他工具，可利用收集的数据进行漏洞扫描，帮助企业了解网络暴露面，及时发现潜在安全威胁。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定制搜索与数据分析&lt;/strong&gt;：提供大量搜索语法和过滤器，用户可根据 IP、域名、端口、协议等进行精确搜索，还能通过关键词组合、逻辑运算符等进行高级搜索，以满足精细化需求。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;图形化界面与历史数据&lt;/strong&gt;：提供图形化搜索界面，用户可直观查看搜索结果、图表和图谱，更好地理解网络设备布局。同时记录历史搜索结果，方便用户查看设备和服务的历史信息，了解网络发展变化。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;API 支持&lt;/strong&gt;：提供 API，用户能够通过编程方式访问搜索引擎，将其功能集成到自己的应用程序或工作流程中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应用场景&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;网络安全领域&lt;/strong&gt;：安全研究人员和企业安全团队可用于资产发现和漏洞挖掘，帮助企业梳理公网暴露面，保护互联网资产安全。白帽子团体也可通过它进行漏洞挖掘，判断漏洞影响范围，帮助企业应对网络安全问题。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他领域&lt;/strong&gt;：高校或机构研究人员可通过它快速确认某一款产品在全球的资产分布情况，为研究提供数据支撑。个人也可用于寻找一些有趣的东西，如通过搜索特定关键词找到使用特定框架搭建的网站等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;搜索语法&#34;&gt;搜索语法
+&lt;/h2&gt;&lt;p&gt;FOFA 的搜索语法丰富多样，以下是一些常见的搜索语法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;基本语法结构&lt;/strong&gt;：&lt;code&gt;keyword1=&amp;quot;value1&amp;quot; keyword2=&amp;quot;value2&amp;quot;&lt;/code&gt;，多个查询条件之间默认是 “与”（AND）关系。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;常用查询字段&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;port&lt;/code&gt;：用于搜索特定端口开放的资产，如&lt;code&gt;port=&amp;quot;80&amp;quot;&lt;/code&gt;表示搜索开放 80 端口的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;domain&lt;/code&gt;：搜索与某个域名相关的资产，例如&lt;code&gt;domain=&amp;quot;example.com&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;：搜索网页标题中包含特定关键词的资产，如&lt;code&gt;title=&amp;quot;admin&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;header&lt;/code&gt;：搜索 HTTP 头部中包含特定关键词的资产，例如&lt;code&gt;header=&amp;quot;nginx&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;body&lt;/code&gt;：搜索网页正文中包含特定关键词的资产，如&lt;code&gt;body=&amp;quot;login&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;protocol&lt;/code&gt;：搜索使用特定协议的资产，如&lt;code&gt;protocol=&amp;quot;http&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;country&lt;/code&gt;：搜索位于某个国家的资产，&lt;code&gt;country=&amp;quot;CN&amp;quot;&lt;/code&gt;表示搜索中国的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;status_code&lt;/code&gt;：搜索返回特定 HTTP 状态码的资产，如&lt;code&gt;status_code=&amp;quot;200&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;as_number&lt;/code&gt;：搜索属于特定自治系统编号（AS 号）的资产，例如&lt;code&gt;as_number=&amp;quot;AS15169&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app&lt;/code&gt;：搜索使用特定软件或技术的资产，如&lt;code&gt;app=&amp;quot;Apache&amp;quot;&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;逻辑运算符&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;AND&lt;/code&gt;：默认逻辑运算符，例如&lt;code&gt;ip=&amp;quot;1.1.1.1&amp;quot; port=&amp;quot;80&amp;quot;&lt;/code&gt;表示搜索 IP 为&lt;code&gt;1.1.1.1&lt;/code&gt;且端口为 80 的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OR&lt;/code&gt;：逻辑 “或” 运算，如&lt;code&gt;ip=&amp;quot;1.1.1.1&amp;quot; OR ip=&amp;quot;8.8.8.8&amp;quot;&lt;/code&gt;表示搜索 IP 为&lt;code&gt;1.1.1.1&lt;/code&gt;或&lt;code&gt;8.8.8.8&lt;/code&gt;的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NOT&lt;/code&gt;：排除特定条件，例如&lt;code&gt;ip=&amp;quot;1.1.1.1&amp;quot; NOT port=&amp;quot;80&amp;quot;&lt;/code&gt;表示搜索 IP 为&lt;code&gt;1.1.1.1&lt;/code&gt;但端口不为 80 的资产。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模糊查询和通配符&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt;：通配符，可以匹配任意字符。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~&lt;/code&gt;：模糊查询，如&lt;code&gt;body~=&amp;quot;keyword&amp;quot;&lt;/code&gt;表示搜索网页正文中包含近似关键词的内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他语法&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;city&lt;/code&gt;：按城市筛选，如&lt;code&gt;city=&amp;quot;Hangzhou&amp;quot;&lt;/code&gt;搜索位于杭州的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;os&lt;/code&gt;：按操作系统筛选，&lt;code&gt;os=&amp;quot;Windows&amp;quot;&lt;/code&gt;搜索运行 Windows 操作系统的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;cert&lt;/code&gt;：按证书相关信息检索，如&lt;code&gt;cert=&amp;quot;google&amp;quot;&lt;/code&gt;搜索证书中带有 “google” 的资产。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ports&lt;/code&gt;：搜索同时开放多个端口的 IP 资产，如&lt;code&gt;ports=&amp;quot;3306,443,22&amp;quot;&lt;/code&gt;搜索同时开启 3306、443 和 22 端口的 IP。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ports==&amp;quot;3306,443,22&amp;quot;&lt;/code&gt;则表示搜索只开启这三个端口的 IP。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;after&lt;/code&gt;和&lt;code&gt;before&lt;/code&gt;：按时间筛选，&lt;code&gt;after=&amp;quot;2017&amp;quot; &amp;amp;&amp;amp; before=&amp;quot;2017-10-01&amp;quot;&lt;/code&gt;表示搜索 2017 年 1 月 1 日之后且在 2017 年 10 月 1 日之前的数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;此外，FOFA 还支持子网查询，使用 CIDR 表示法对特定子网范围进行查询，如&lt;code&gt;ip=&amp;quot;220.181.111.1/24&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;。同时，也可以使用括号和逻辑运算符组合复杂的搜索条件，进行更精确的筛选。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Github链接指南，代理下载</title>
+        <link>https://hublog.netlify.app/p/250504093108/</link>
+        <pubDate>Sun, 04 May 2025 09:31:08 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250504093108/</guid>
+        <description>&lt;p&gt;某个分支下的某个文件的链接格式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://github.com/{用户名}/{仓库名}/blob/{分支名}/{文件路径}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;某个分支下的某个文件的直接下载链接格式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/{用户名}/{仓库名}/{分支名}/{文件路径}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;某个分支以 ZIP 格式直接下载的链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://github.com/{用户名}/{仓库名}/archive/refs/heads/{分支名}.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;代理&#34;&gt;代理
+&lt;/h2&gt;&lt;p&gt;免费的GitHub代理链接&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghfast.top
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://gh-proxy.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghfast.top/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Paru，Archlinux轻量级的AUR管理器</title>
+        <link>https://hublog.netlify.app/p/250502173451/</link>
+        <pubDate>Fri, 02 May 2025 17:34:51 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250502173451/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Paru 是一个轻量级的 AUR（Arch User Repository）助手，用于在 Arch Linux 及其衍生版上方便地安装和管理用户提交的软件包。与其他 AUR 助手相比，Paru 的特点包括：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;性能优越&lt;/strong&gt;：Paru 使用 Rust 编写，具有较高的性能和较低的资源占用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户友好的界面&lt;/strong&gt;：提供了简洁的命令行界面，支持自动补全和简化的命令选项。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持多种功能&lt;/strong&gt;：除了基本的安装、升级和删除软件包外，还支持搜索、查看软件包信息、处理依赖关系等功能。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内置的 AUR 和官方仓库支持&lt;/strong&gt;：可以同时处理 AUR 和官方软件包，提高了管理的便利性。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S paru
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;常用命令&#34;&gt;常用命令
+&lt;/h2&gt;&lt;p&gt;更新所有已安装的软件包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Syu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装软件（注意，不要加 &lt;code&gt;sudo&lt;/code&gt;）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -S &amp;lt;package_name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;模糊查询软件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Ss &amp;lt;package_name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;卸载软件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -R &amp;lt;package_name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;卸载软件并删除依赖&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Rns &amp;lt;package_name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;列举所有已经安装的软件&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Q
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;列举所有已经安装的软件，不带版本号&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Qq
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;清理未使用的依赖&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;paru -Rns &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;paru -Qdtq&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;paru -Qdtq&lt;/code&gt;：这个部分会列出所有未被其他已安装软件包依赖的孤立依赖包。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-Q&lt;/code&gt;：查询已安装的软件包。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-d&lt;/code&gt;：仅显示依赖包。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-t&lt;/code&gt;：仅显示孤立的（未被其他包依赖的）包。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-q&lt;/code&gt;：仅输出包名称，不带版本信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;paru -Rns&lt;/code&gt;：这个部分会卸载那些孤立依赖包。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-R&lt;/code&gt;：卸载软件包。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-n&lt;/code&gt;：同时删除未使用的依赖。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-s&lt;/code&gt;：同时删除配置文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>fail2ban，保护服务器安全</title>
+        <link>https://hublog.netlify.app/p/250502114118/</link>
+        <pubDate>Fri, 02 May 2025 11:41:18 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250502114118/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;fail2ban&lt;/code&gt; 是一个开源的入侵防御软件，主要用于保护 Linux 服务器和其他 Unix 系统免受暴力破解和其他恶意攻击。它通过监视日志文件来检测可疑活动，并自动采取措施（通常是禁止 IP 地址）来防止进一步的攻击。&lt;/p&gt;
+&lt;h3 id=&#34;主要功能&#34;&gt;主要功能
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;自动禁止 IP 地址&lt;/strong&gt;: 当检测到特定服务（如 SSH、FTP、HTTP 等）中的多次失败登录尝试时，&lt;code&gt;fail2ban&lt;/code&gt; 会自动使用防火墙（如 &lt;code&gt;iptables&lt;/code&gt;）禁止这些 IP 地址。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;日志监控&lt;/strong&gt;: &lt;code&gt;fail2ban&lt;/code&gt; 监控系统日志（如 &lt;code&gt;/var/log/auth.log&lt;/code&gt; 或 &lt;code&gt;/var/log/secure&lt;/code&gt;），并根据预定义的规则（过滤器）分析日志内容。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可配置性&lt;/strong&gt;: 用户可以根据需求自定义配置文件，设置不同的监控规则、禁止时间、允许的失败尝试次数等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种服务支持&lt;/strong&gt;: &lt;code&gt;fail2ban&lt;/code&gt; 支持多种服务的保护，包括 SSH、HTTP、FTP、SMTP 等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;邮件通知&lt;/strong&gt;: 可以配置邮件通知功能，当 IP 被禁止时，系统会自动发送通知邮件给管理员。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可扩展性&lt;/strong&gt;: 用户可以创建自定义过滤器和动作，以适应特定的需求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;工作原理&#34;&gt;工作原理
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;配置&lt;/strong&gt;: 用户设置 &lt;code&gt;fail2ban&lt;/code&gt; 的配置文件，定义需要监控的服务、日志文件路径、过滤规则等。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;监控&lt;/strong&gt;: &lt;code&gt;fail2ban&lt;/code&gt; 定期扫描指定的日志文件，查找符合过滤器条件的日志条目。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;触发&lt;/strong&gt;: 如果在设定的时间窗口内，某个 IP 地址的失败尝试次数超过了允许的最大值，&lt;code&gt;fail2ban&lt;/code&gt; 会执行相应的动作（如禁止该 IP）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解除禁止&lt;/strong&gt;: 被禁止的 IP 地址在设定的时间后会自动解除禁止，或者管理员可以手动解除。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;p&gt;Debian / Ubuntu&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置
+&lt;/h2&gt;&lt;p&gt;配置文件所在的位置：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/etc/fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;以下配置参考了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://1panel.cn/docs/user_manual/toolbox/fail2ban/#1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;1panel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://gongzhe.tech/ubuntu-fail2ban-cannnot-start/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;新建 &lt;code&gt;jail.local&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo vim jail.local
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#DEFAULT-START&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DEFAULT&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;bantime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;findtime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;300&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;maxretry&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;banaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; iptables-allports
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;action&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; %&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;action_mwl&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;backend&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; systemd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#DEFAULT-END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;sshd&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;ignoreip&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; 127.0.0.1/8
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;enabled&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;filter&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; sshd
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;maxretry&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;findtime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;300&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;bantime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;600&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;banaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; iptables-allports
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;action&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; %&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;action_mwl&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;s
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;logpath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; /var/log/auth.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;启动&#34;&gt;启动
+&lt;/h2&gt;&lt;p&gt;启动服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;常见语法&#34;&gt;常见语法
+&lt;/h2&gt;&lt;p&gt;如果自己忘记了密码，被 fail2ban 阻止了，解除命令&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fail2ban-client &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &amp;lt;jail_name&amp;gt; unbanip &amp;lt;ip_address&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;例如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo fail2ban-client &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; ssh unbanip 192.168.1.100
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>webssh修改版，基于 Web 的轻量级 SSH 管理工具</title>
         <link>https://hublog.netlify.app/p/250422185012/</link>
         <pubDate>Tue, 22 Apr 2025 18:50:12 +0800</pubDate>
@@ -3514,23 +4032,135 @@ Flash
 &lt;/h2&gt;&lt;p&gt;在 tmux 中操作很多都需要一个前缀名来触发&lt;/p&gt;
 &lt;p&gt;默认快捷键是：&lt;code&gt;ctrl+b&lt;/code&gt;，后续使用 &lt;code&gt;C-b&lt;/code&gt;来表示&lt;/p&gt;
 &lt;p&gt;使用 tmux 开头的命令表示在命令行执行&lt;/p&gt;
-&lt;h3 id=&#34;会话&#34;&gt;会话
-&lt;/h3&gt;&lt;p&gt;新建会话：&lt;code&gt;tmux&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;新建会话：&lt;code&gt;tmux new&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;新建会话并指定名字：&lt;code&gt;tmux new -s 会话名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;分离（离开但不关闭）会话：&lt;code&gt;C-b d&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;查看所有的会话：&lt;code&gt;tmux ls&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;重新进入会话：&lt;code&gt;tmux a -t 会话名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;重命名会话：&lt;code&gt;C-b $&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;关闭会话：&lt;code&gt;C-b &amp;amp;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;关闭指定会话：&lt;code&gt;tmux kill-seesion -t 会话名&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;关闭所有会话：&lt;code&gt;tmux list-sessions | awk &#39;{print $1}&#39; | tr -d &#39;:&#39; | xargs -I {} tmux kill-session -t {} &lt;/code&gt;
-关闭所有会话：&lt;code&gt;tmux kill-server&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&#34;窗口&#34;&gt;窗口
-&lt;/h3&gt;&lt;p&gt;垂直分割：&lt;code&gt;C-b %&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;水平分割：&lt;code&gt;C-b &amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在窗口移动光标：&lt;code&gt;C-b 方向键移动&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;关闭窗口：&lt;code&gt;C-b x&lt;/code&gt; 输入&lt;code&gt;y&lt;/code&gt;确定关闭，关闭最后一个窗口将会关闭会话&lt;/p&gt;
+&lt;h3 id=&#34;会话管理&#34;&gt;会话管理
+&lt;/h3&gt;&lt;p&gt;新建会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;新建会话并指定名字：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux new -s 会话名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;分离（离开但不关闭）会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;查看所有的会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;重新进入会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux a -t 会话名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;重命名会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b ,
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭指定会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux kill-session -t 会话名
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭所有会话：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux list-sessions &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; awk &lt;span class=&#34;s1&#34;&gt;&amp;#39;{print $1}&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; xargs -I &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt; tmux kill-session -t &lt;span class=&#34;o&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭所有会话（另一种方法）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tmux kill-server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;窗口管理&#34;&gt;窗口管理
+&lt;/h3&gt;&lt;p&gt;垂直分割窗口：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b %
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;水平分割窗口：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b &lt;span class=&#34;s2&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在窗口中移动光标：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b 方向键
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;关闭窗口：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;C-b x
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;输入 &lt;code&gt;y&lt;/code&gt; 确定关闭。关闭最后一个窗口将会关闭会话。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -6178,26 +6808,28 @@ Flash
 &lt;h2 id=&#34;优选域名&#34;&gt;优选域名
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;icook.tw:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alphacoders.com:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;visa.com.cn:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;www.dogfight360.com:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cloudflare.182682.xyz:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fast-fast.asuscomm.com:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bestcf.top:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cfip.cfcdn.vip:443#优选域名
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dns.123zy.cool:443#优选域名
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;icook.tw:443#优选域名 1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alphacoders.com:443#优选域名 2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;visa.com.cn:443#优选域名 3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;www.dogfight360.com:443#优选域名 4
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cloudflare.182682.xyz:443#优选域名 5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fast-fast.asuscomm.com:443#优选域名 6
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bestcf.top:443#优选域名 7
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cfip.cfcdn.vip:443#优选域名 8
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;dns.123zy.cool:443#优选域名 9
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bestproxy.030101.xyz#优选域名 10
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;优选-ip&#34;&gt;优选 IP
@@ -9470,8 +10102,8 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;案例&#34;&gt;案例
-&lt;/h2&gt;&lt;p&gt;创建 alist 系统服务&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;创建-alist-系统服务&#34;&gt;创建 alist 系统服务
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -9479,13 +10111,47 @@ $env:MY_USER_ENV&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nssm&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;alist&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;server --data=\&amp;#34;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;D:&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Program&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Files&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;alist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;\&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;创建 syncthing 服务&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h3 id=&#34;创建-syncthing-服务&#34;&gt;创建 syncthing 服务
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;nssm&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;syncthing&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\remote\syncthing-windows-amd64-v1.29.2\syncthing.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;-no-browser&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;创建-sing-boxconfig-mixed-服务&#34;&gt;创建 sing-box@config-mixed 服务
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install sing-box@config-mixed &lt;span class=&#34;s2&#34;&gt;&amp;#34;C:\Users\taoone\AppData\Local\Microsoft\WinGet\Links\sing-box.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-D&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;E:\backup\application\sing-box\client\windows&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;-c&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;E:\backup\application\sing-box\client\windows\config-mixed.json&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;run&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;进入服务，找到 &lt;code&gt;sing-box@config-mixed&lt;/code&gt;，设置用户为当前用户，启动&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm start sing-box@config-mixed
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove sing-box@config-mixed
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm stop sing-box@config-mixed
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -17360,7 +18026,6 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;v2raya&#34;&gt;v2raya
 &lt;/h3&gt;&lt;p&gt;代理工具，web 端，默认端口 2017，初次下载速度较慢，耐心等待。&lt;/p&gt;
-&lt;p&gt;有了它，何必使用软路由，&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -17389,10 +18054,8 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;alist&#34;&gt;alist
 &lt;/h3&gt;&lt;p&gt;经典的网盘管理工具&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;官网：https://alist.nn.ci/zh/&lt;/p&gt;
 &lt;p&gt;源码：https://github.com/alist-org/alist&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;二进制文件安装&lt;/p&gt;
 &lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/download/v3.37.4/alist-linux-arm-7.tar.gz&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;v3.37.4/alist-linux-arm-7.tar.gz&lt;/a&gt;&lt;/p&gt;
@@ -17755,7 +18418,19 @@ sudo pip uninstall certbot&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;WebUI&lt;/p&gt;
 &lt;p&gt;IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录&lt;/p&gt;
-</description>
+&lt;h3 id=&#34;lucky&#34;&gt;lucky
+&lt;/h3&gt;&lt;p&gt;Lucky 最初是作为一个小工具，由开发者为自己的个人使用而开发，用于替代 socat，在小米路由 AX6000 官方系统上实现公网 IPv6 转内网 IPv4 的功能。Lucky 的设计始终致力于让更多的 Linux 嵌入式设备运行，以实现或集成个人用户常用功能，降低用户的硬件和软件操作学习成本，同时引导使用者注意网络安全。随着版本更新和网友反馈，Lucky 不断迭代改进，拥有更多功能和更好的性能，成为用户值得信赖的工具。&lt;/p&gt;
+&lt;p&gt;Lucky 的核心程序完全采用 Golang 实现，具有高效、稳定、跨平台等优点。其后台前端则采用 Vue3.2 技术进行开发，具有良好的用户体验和响应速度。此外，Lucky 的管理后台采用前后端分离的架构，第三方开发者也可以自由使用 OpenToken 轻松调用 Lucky 的各种功能接口。&lt;/p&gt;
+&lt;p&gt;安装&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;http://release.ilucky.net:66&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; curl -o /tmp/install.sh &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$URL&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;/install.sh&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; sh /tmp/install.sh &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$URL&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>OBS使用经验</title>
@@ -23546,14 +24221,126 @@ debian：sudo apt install gcc&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>lxmusic落雪音乐及音源分享</title>
+        <title>lx-music落雪音乐，音源</title>
         <link>https://hublog.netlify.app/p/2406012/</link>
         <pubDate>Wed, 12 Jun 2024 16:06:01 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2406012/</guid>
-        <description>&lt;p&gt;123盘：&lt;a class=&#34;link&#34; href=&#34;https://www.123pan.com/s/4MOKVv-LDnpd.html%e6%8f%90%e5%8f%96%e7%a0%81:love&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://www.123pan.com/s/4MOKVv-LDnpd.html提取码:love&lt;/a&gt;&lt;/p&gt;
-</description>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/pdone/lx-music-source&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/pdone/lx-music-source&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Huibq/keep-alive&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Huibq/keep-alive&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在线导入---原始链接&#34;&gt;在线导入 - 原始链接
+&lt;/h2&gt;&lt;h3 id=&#34;sixyin&#34;&gt;SixYin
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;huibq&#34;&gt;Huibq
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/huibq/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;flower&#34;&gt;Flower
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/flower/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;lx&#34;&gt;LX
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;ikun&#34;&gt;ikun
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/ikun/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;grass&#34;&gt;Grass
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://raw.githubusercontent.com/pdone/lx-music-source/main/grass/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;在线导入---加速链接&#34;&gt;在线导入 - 加速链接
+&lt;/h2&gt;&lt;h3 id=&#34;sixyin-1&#34;&gt;SixYin
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/sixyin/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;huibq-1&#34;&gt;Huibq
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/huibq/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;flower-1&#34;&gt;Flower
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/flower/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;lx-1&#34;&gt;LX
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/lx/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;ikun-1&#34;&gt;ikun
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/ikun/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;grass-1&#34;&gt;Grass
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://ghproxy.net/raw.githubusercontent.com/pdone/lx-music-source/main/grass/latest.js
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Linux系统桌面Kde plasma个性化设置</title>
@@ -25022,60 +25809,112 @@ debian：sudo apt install gcc&lt;/p&gt;
         
         <guid>https://hublog.netlify.app/p/2405002/</guid>
         <description>&lt;h2 id=&#34;前言&#34;&gt;前言
-&lt;/h2&gt;&lt;p&gt;我发现 certbot 安装还是过于麻烦，使用 snap 又不轻量，不使用 snap 而使用 nginx 容器出问题，今天使用 acme.sh 申请 ssl 之后，发现很方便，这篇教程来教如何使用 acme.sh&lt;/p&gt;
-&lt;p&gt;相比于 certbot 不同的地方在于 使用 nginx/apaceh 时候不会修改原有的配置&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;certbot 安装还是过于麻烦， snap 不轻量，不使用 snap 使用 nginx 申请容易出问题，使用 acme.sh 申请 ssl 证书 之后，发现很方便&lt;/p&gt;
+&lt;p&gt;相比于 certbot 不同的地方在于 acme 使用 nginx/apaceh 申请证书不会修改原有的配置&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;好处不用担心配置被搞坏&lt;/li&gt;
-&lt;li&gt;缺点是需要手动配置 ssl 证书的位置。&lt;/li&gt;
+&lt;li&gt;好处：不用担心配置被搞坏&lt;/li&gt;
+&lt;li&gt;缺点：需要手动配置 ssl 证书的位置。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;项目地址：https://github.com/acmesh-official/acme.sh&lt;/p&gt;
-&lt;h2 id=&#34;快速使用&#34;&gt;快速使用
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;acme.sh 是一个轻量级的、纯 Shell 脚本实现的 ACME 协议客户端，主要用于自动化获取和续订 SSL/TLS 证书。它支持 Let&amp;rsquo;s Encrypt 和其他 ACME 兼容的证书颁发机构（CA）。&lt;/p&gt;
+&lt;h3 id=&#34;主要特点&#34;&gt;主要特点
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt;：用户只需通过简单的命令行操作即可获取和管理证书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;轻量级&lt;/strong&gt;：不依赖于复杂的编程语言，易于部署和维护。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种 DNS 插件&lt;/strong&gt;：支持多种 DNS 提供商的 API，便于自动化 DNS 验证。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持多种证书类型&lt;/strong&gt;：可以获取通配符证书和普通域名证书。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活的配置&lt;/strong&gt;：支持用户自定义配置和命令，满足不同需求。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;acme.sh 是一个非常适合希望简化 SSL/TLS 证书管理流程的用户和开发者的工具。&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/acmesh-official/acme.sh&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;后续所有 &lt;code&gt;SSL/TLS 证书&lt;/code&gt;简称 &lt;code&gt;证书&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;快速上手&#34;&gt;快速上手
+&lt;/h2&gt;&lt;p&gt;如果你想直接使用 acme.sh 这里提供一个简要教程&lt;/p&gt;
+&lt;p&gt;需要修改：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;邮箱&lt;code&gt;mail@example.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;域名&lt;code&gt;example.com&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装 acme.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 acme.sh&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;邮箱
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 修改 SSL 证书默认的 CA 机构&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 申请证书&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --standalone
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建证书文件夹&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /etc/cert
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 安装 SSL 证书&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --install-cert -d example.com &lt;span class=&#34;se&#34;&gt;\
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mail@example.com
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;刷新环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改证书 CA 机构&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;申请证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --standalone
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建证书文件夹&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p /etc/cert
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;安装证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --install-cert -d example.com &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--key-file       /etc/cert/key.pem  &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--fullchain-file /etc/cert/cert.pem
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;安装-acmesh&#34;&gt;安装 acme.sh
-&lt;/h2&gt;&lt;h3 id=&#34;国外服务器&#34;&gt;国外服务器
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;p&gt;详细内容请查看后续&lt;/p&gt;
+&lt;h2 id=&#34;安装-acmesh&#34;&gt;安装 acme.sh
+&lt;/h2&gt;&lt;p&gt;国外服务器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;my@example.com
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl https://get.acme.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh -s &lt;span class=&#34;nv&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;mail@example.com
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;国内服务器&#34;&gt;国内服务器
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;国内服务器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -25103,9 +25942,16 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; ~/.bashrc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;修改-ssl-证书默认的-ca-机构&#34;&gt;修改 SSL 证书默认的 CA 机构
-&lt;/h2&gt;&lt;p&gt;默认证书的 ca 机构是 Let&amp;rsquo;s Encrypt&lt;/p&gt;
-&lt;p&gt;在申请证书之前，可以通过如下命令修改 ca 机构&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;卸载-acmesh&#34;&gt;卸载 acme.sh
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;修改证书-ca-机构&#34;&gt;修改证书 CA 机构
+&lt;/h2&gt;&lt;p&gt;默认证书的 CA 机构是 zerossl&lt;/p&gt;
+&lt;p&gt;在申请证书之前，可以通过如下命令修改 CA 机构&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -25114,12 +25960,11 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --set-default-ca --server letsencrypt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;生成证书&#34;&gt;生成证书
-&lt;/h2&gt;&lt;h3 id=&#34;http-方式&#34;&gt;HTTP 方式
-&lt;/h3&gt;&lt;h4 id=&#34;apache&#34;&gt;apache
-&lt;/h4&gt;&lt;p&gt;&amp;hellip;&lt;/p&gt;
-&lt;h4 id=&#34;nginx&#34;&gt;nginx
-&lt;/h4&gt;&lt;p&gt;先在 nginx 配置文件夹新增 conf 文件，填好基础的模板，比如：&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;生成证书http-方式&#34;&gt;生成证书：HTTP 方式
+&lt;/h2&gt;&lt;h3 id=&#34;apache&#34;&gt;apache
+&lt;/h3&gt;&lt;p&gt;待续&amp;hellip;&lt;/p&gt;
+&lt;h3 id=&#34;nginx&#34;&gt;nginx
+&lt;/h3&gt;&lt;p&gt;先在 nginx 配置文件夹新增 conf 文件，填好基础的模板，比如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -25160,8 +26005,8 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com --nginx
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h4 id=&#34;no-web-server&#34;&gt;no web server
-&lt;/h4&gt;&lt;p&gt;如果你还没有运行任何 web 服务, &lt;strong&gt;80&lt;/strong&gt; 端口是空闲的, 那么 &lt;strong&gt;acme.sh&lt;/strong&gt; 还能假装自己是一个 webserver, 临时听在&lt;strong&gt;80&lt;/strong&gt; 端口, 完成验证:&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;no-web-server&#34;&gt;no web server
+&lt;/h3&gt;&lt;p&gt;如果你还没有运行任何 web 服务, &lt;strong&gt;80&lt;/strong&gt; 端口是空闲的, 那么 &lt;strong&gt;acme.sh&lt;/strong&gt; 还能假装自己是一个 webserver, 临时听在&lt;strong&gt;80&lt;/strong&gt; 端口, 完成验证:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -25172,9 +26017,9 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;更高级的用法请参考: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;dns-方式&#34;&gt;DNS 方式
-&lt;/h3&gt;&lt;h4 id=&#34;手动-dns-方式&#34;&gt;手动 DNS 方式
-&lt;/h4&gt;&lt;p&gt;手动在域名上添加一条 txt 解析记录, 验证域名所有权.&lt;/p&gt;
+&lt;h2 id=&#34;生成证书dns-方式&#34;&gt;生成证书：DNS 方式
+&lt;/h2&gt;&lt;h3 id=&#34;手动-dns-方式&#34;&gt;手动 DNS 方式
+&lt;/h3&gt;&lt;p&gt;手动在域名上添加一条 txt 解析记录, 验证域名所有权.&lt;/p&gt;
 &lt;p&gt;好处：你不需要任何服务器, 不需要任何公网 ip, 只需要 dns 的解析记录即可完成验证&lt;/p&gt;
 &lt;p&gt;缺点：如果不同时配置 Automatic DNS API，使用这种方式 acme.sh 将无法自动更新证书，每次都需要手动再次重新解析验证域名所有权。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -25200,10 +26045,50 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意第二次这里用的是 &lt;code&gt;--renew&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;自动-dns-方式&#34;&gt;自动 DNS 方式
-&lt;/h4&gt;&lt;p&gt;DNS 方式的真正强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;acme.sh&lt;/strong&gt; 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十种解析商的自动集成.&lt;/p&gt;
-&lt;p&gt;以 dnspod 为例, 你需要先登录到 dnspod 账号, 生成你的 api id 和 api key。然后&lt;/p&gt;
+&lt;h3 id=&#34;自动-dns-方式推荐&#34;&gt;自动 DNS 方式（推荐）
+&lt;/h3&gt;&lt;p&gt;DNS 方式的强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;acme.sh&lt;/strong&gt; 目前支持 cloudflare, dnspod, cloudxns, godaddy 以及 ovh 等数十种解析商的自动集成&lt;/p&gt;
+&lt;h4 id=&#34;cloudflare&#34;&gt;cloudflare
+&lt;/h4&gt;&lt;p&gt;域名托管在 cloudflare 上申请方式&lt;/p&gt;
+&lt;h5 id=&#34;单个域名&#34;&gt;单个域名
+&lt;/h5&gt;&lt;p&gt;登录 cloudflare ,&lt;/p&gt;
+&lt;p&gt;查看域名的 Zone ID&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;763eac4f1bcebd8b5c95e9fc50d010b4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;创建 &lt;a class=&#34;link&#34; href=&#34;https://dash.cloudflare.com/profile/api-tokens&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;API Token&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;设置环境变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CF_Token&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Y_jpG9AnfQmuX5Ss9M_qaNab6SQwme3HWXNDzRWs&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CF_Zone_ID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;763eac4f1bcebd8b5c95e9fc50d010b4&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;申请证书&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_cf -d example.com -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.example.com&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里环境变量会被自动记录下来, 将来在使用的时候, 就不需要再次指定了，直接生成就好了&lt;/p&gt;
+&lt;p&gt;更多内容：&lt;a class=&#34;link&#34; href=&#34;https://github.com/acmesh-official/acme.sh/wiki/dnsapi#1-cloudflare-option&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/acmesh-official/acme.sh/wiki/dnsapi#1-cloudflare-option&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dnspod&#34;&gt;dnspod
+&lt;/h4&gt;&lt;p&gt;域名托管在 dnspod 上&lt;/p&gt;
+&lt;p&gt;登录 dnspod 账号, 生成 api id 和 api key。&lt;/p&gt;
 &lt;p&gt;设置 dnspod id&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -25228,24 +26113,22 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_dp -d example.com -d www.example.com
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue --dns dns_dp -d example.com -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;*.example.com&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来你在使用 dnspod api 的时候, 就不需要再次指定了. 直接生成就好了&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来在使用 dnspod api 的时候, 就不需要再次指定了，直接生成就好了&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com.com --dns  dns_dp
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue -d example.com.com --dns  dns_dp
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;更详细的 api 用法: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://github.com/Neilpang/acme.sh/blob/master/dnsapi/README.md&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装-ssl-证书&#34;&gt;安装 SSL 证书
+&lt;/div&gt;&lt;h2 id=&#34;安装证书&#34;&gt;安装证书
 &lt;/h2&gt;&lt;p&gt;前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.&lt;/p&gt;
 &lt;p&gt;注意, 默认生成的证书都放在安装目录下: &lt;code&gt;~/.acme.sh/&lt;/code&gt;, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx/apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.&lt;/p&gt;
-&lt;p&gt;正确的使用方法是使用 &lt;code&gt;--install-cert&lt;/code&gt; 命令,并指定目标位置, 然后证书文件会被 copy 到相应的位置, 例如:&lt;/p&gt;
+&lt;p&gt;正确的使用方法是使用 &lt;code&gt;--install-cert&lt;/code&gt; 命令,并指定目标位置, 然后证书文件会被 copy 到相应的位置&lt;/p&gt;
 &lt;h3 id=&#34;apache-1&#34;&gt;Apache
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -25278,21 +26161,17 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--reloadcmd     &lt;span class=&#34;s2&#34;&gt;&amp;#34;service nginx force-reload&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;/etc/nginx/ssl/example.com/key.pem&lt;/code&gt; &amp;gt; &lt;code&gt;/etc/nginx/ssl/example.com/cert.pem&lt;/code&gt;
-可自由指定位置，请保证&lt;code&gt;/etc/nginx/ssl/example.com&lt;/code&gt;路径存在&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;&lt;p&gt;可自由指定位置，请保证&lt;code&gt;/etc/nginx/ssl/example.com&lt;/code&gt;路径存在&lt;/p&gt;
 &lt;p&gt;一个小提醒, 这里用的是 &lt;code&gt;service nginx force-reload&lt;/code&gt;, 不是 &lt;code&gt;service nginx reload&lt;/code&gt;, 据测试, &lt;code&gt;reload&lt;/code&gt; 并不会重新加载证书, 所以用的 &lt;code&gt;force-reload&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Nginx 的配置 &lt;code&gt;ssl_certificate&lt;/code&gt; 使用 &lt;code&gt;/etc/nginx/ssl/fullchain.cert&lt;/code&gt; ，而非 &lt;code&gt;/etc/nginx/ssl/&amp;lt;domain&amp;gt;.cert&lt;/code&gt; ，否则 &lt;a class=&#34;link&#34; href=&#34;https://www.ssllabs.com/ssltest/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;SSL Labs&lt;/a&gt; 的测试会报 &lt;code&gt;Chain issues Incomplete&lt;/code&gt; 错误。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;--install-cert&lt;/code&gt;命令可以携带很多参数, 来指定目标文件. 并且可以指定 reloadcmd, 当证书更新以后, reloadcmd 会被自动调用,让服务器生效.&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;详细参数请参考: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh#3-install-the-issued-cert-to-apachenginx-etc&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;值得注意的是, 这里指定的所有参数都会被自动记录下来, 并在将来证书自动更新以后, 被再次自动调用.&lt;/p&gt;
-&lt;h2 id=&#34;查看已安装证书信息&#34;&gt;查看已安装证书信息
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;查看证书&#34;&gt;查看证书
+&lt;/h2&gt;&lt;p&gt;查看已安装证书信息&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -25345,7 +26224,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;更新证书&#34;&gt;更新证书
-&lt;/h2&gt;&lt;p&gt;目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前证书在 60 天以后会自动更新, 你无需任何操作. 今后有可能会缩短这个时间, 不过都是自动的, 你不用关心&lt;/p&gt;
 &lt;p&gt;请确保 cronjob 正确安装, 看起来是类似这样的：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -25360,10 +26239,13 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;关于修改-reloadcmd&#34;&gt;关于修改 ReloadCmd
-&lt;/h2&gt;&lt;p&gt;目前修改&lt;code&gt;ReloadCmd&lt;/code&gt;没有专门的命令，可以通过重新安装证书来实现修改&lt;code&gt;reloadCmd&lt;/code&gt;的目的。 此外，安装证书后，相关信息是保存在&lt;code&gt;~/.acme.sh/example.com/example.conf&lt;/code&gt;文件下的，内容就是&lt;code&gt;acme.sh --info -d example.com&lt;/code&gt;输出的信息，不过&lt;code&gt;ReloadCmd&lt;/code&gt;在文件中使用了 Base64 编码。理论上可以通过直接修改该文件来修改&lt;code&gt;ReloadCmd&lt;/code&gt;，且修改时，无需 Base64 编码，直接写命令原文&lt;code&gt;acme.sh&lt;/code&gt;也可以识别。 不过，&lt;code&gt;example.conf&lt;/code&gt;文件的位置和内容格式以后可能会改变！&lt;code&gt;example.conf&lt;/code&gt;一直都是内部使用, 后面有可能会改为用 sqlite 或者 mysql 格式存储. 所以一般不建议自己修改。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前，修改 &lt;code&gt;ReloadCmd&lt;/code&gt; 并没有专门的命令实现。我们可以通过重新安装证书来间接达到修改的目的。&lt;/p&gt;
+&lt;p&gt;此外，安装证书后，相关信息会保存在 &lt;code&gt;~/.acme.sh/example.com/example.conf&lt;/code&gt; 文件中，内容与执行 &lt;code&gt;acme.sh --info -d example.com&lt;/code&gt; 输出的信息一致，但 &lt;code&gt;ReloadCmd&lt;/code&gt; 在文件中使用了 Base64 编码。&lt;/p&gt;
+&lt;p&gt;理论上，我们可以直接修改该文件来更改 &lt;code&gt;ReloadCmd&lt;/code&gt;，而且在修改时无需进行 Base64 编码，直接写入命令的原文 &lt;code&gt;acme.sh&lt;/code&gt; 也能被识别。&lt;/p&gt;
+&lt;p&gt;然而，请注意，&lt;code&gt;example.conf&lt;/code&gt; 文件的位置和内容格式在未来可能会发生变化！该文件一直以来都是内部使用，未来可能会转为使用 SQLite 或 MySQL 格式存储。因此，一般不建议自行修改。&lt;/p&gt;
 &lt;h2 id=&#34;更新-acmesh&#34;&gt;更新 acme.sh
-&lt;/h2&gt;&lt;p&gt;目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步.&lt;/p&gt;
-&lt;p&gt;升级 acme.sh 到最新版 :&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;目前由于 acme 协议和 letsencrypt CA 都在频繁的更新, 因此 acme.sh 也经常更新以保持同步&lt;/p&gt;
+&lt;p&gt;升级 acme.sh 到最新版&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -25372,7 +26254,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;如果你不想手动升级, 可以开启自动升级:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;如果你不想手动升级, 可以开启自动升级&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -25381,8 +26263,8 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade --auto-upgrade
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;之后, acme.sh 就会自动保持更新了.&lt;/p&gt;
-&lt;p&gt;你也可以随时关闭自动更新:&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;之后, acme.sh 就会自动保持更新了&lt;/p&gt;
+&lt;p&gt;你也可以随时关闭自动更新&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -25391,7 +26273,7 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --upgrade --auto-upgrade  &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;出错怎么办&#34;&gt;出错怎么办：
+&lt;/div&gt;&lt;h2 id=&#34;出错怎么办&#34;&gt;出错怎么办
 &lt;/h2&gt;&lt;p&gt;如果出错, 请添加 debug log：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -25410,10 +26292,8 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;acme.sh --issue  .....  --debug  &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;请参考： &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/div&gt;&lt;p&gt;请参考： &lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki/How-to-debug-acme.sh&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;在 DNS 验证模式下如果 debug 中出现诸如&amp;quot;timed out&amp;quot;等字样可能是因为 GFW 拦截了相应请求，需要添加 http(s) proxy 环境变量。（请按照自己实际设定修改）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -25454,18 +26334,9 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;p&gt;最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Neilpang/acme.sh/wiki&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Neilpang/acme.sh/wiki&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;一键脚本适合初次申请&#34;&gt;一键脚本（适合初次申请）
-&lt;/h2&gt;&lt;p&gt;暂时未完成&amp;hellip;&lt;/p&gt;
-&lt;p&gt;本脚本为了简化 acme.sh 申请证书过程，会修改配置，如已有的配置，请勿使用&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim acme-autossl.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;h2 id=&#34;一键脚本待续&#34;&gt;一键脚本（待续）
+&lt;/h2&gt;&lt;p&gt;待续&amp;hellip;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>1panel安装</title>
@@ -27653,10 +28524,10 @@ debian：sudo apt install gcc&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;输出应包含完整指纹573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62如下:&lt;/p&gt;
-&lt;p&gt;pub   rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
+&lt;p&gt;输出应包含完整指纹 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 如下:&lt;/p&gt;
+&lt;p&gt;pub rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
-uid                      nginx signing key &lt;a class=&#34;link&#34; href=&#34;mailto:signing-key@nginx.com&#34; &gt;signing-key@nginx.com&lt;/a&gt;&lt;/p&gt;
+uid nginx signing key &lt;a class=&#34;link&#34; href=&#34;mailto:signing-key@nginx.com&#34; &gt;signing-key@nginx.com&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果指纹不同，删除文件。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;二选一：&lt;/strong&gt;&lt;/p&gt;
@@ -27690,7 +28561,7 @@ uid                      nginx signing key &lt;a class=&#34;link&#34; href=&#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/apt/sources.list.d/nginx.list
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;设置存储库固定，使用Nginx官方的软件包而不是发行版提供的软件包：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;设置存储库固定，使用 Nginx 官方的软件包而不是发行版提供的软件包：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -27748,8 +28619,8 @@ uid                      nginx signing key &lt;a class=&#34;link&#34; href=&#34;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;输出应包含完整指纹573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62如下:&lt;/p&gt;
-&lt;p&gt;pub   rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
+&lt;p&gt;输出应包含完整指纹 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62 如下:&lt;/p&gt;
+&lt;p&gt;pub rsa2048 2011-08-19 [SC] [expires: 2024-06-14]
 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 uid&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34243,19 +35114,19 @@ create_date: 2023-10-19&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Docker部署ChatGPT-Next-Web</title>
+        <title>ChatGPT-Next-Web，一键部署AI大模型网页客户端</title>
         <link>https://hublog.netlify.app/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2310013/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用chatgpt接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，而且访问比较慢，界面比较朴实，体验感不太好，后来发现另一个chatgpt的web项目，名字叫 ChatGPT-Next-Web，可以很方便的使用代理接口，我们可以使用一些免费的接口来提升使用感。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Github 地址：https://github.com/Yidadaa/ChatGPT-Next-Web&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;访问查看，界面样式可以看见还是很美观的：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;之前介绍过一个免翻使用 chatgpt 接口的项目 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/8140777793851&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pandora&lt;/a&gt;，但是呢，这个项目的代理是由项目作者提供的，访问比较慢，界面比较朴实，体验感一般&lt;/p&gt;
+&lt;p&gt;这个项目可以一键免费部署你的私人 ChatGPT 网页应用，支持 Claude, GPT4 &amp;amp; Gemini Pro 模型。&lt;/p&gt;
+&lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Yidadaa/ChatGPT-Next-Web&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/Yidadaa/ChatGPT-Next-Web&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;预览&#34;&gt;预览
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
 	
 	
 	
@@ -34265,9 +35136,9 @@ create_date: 2023-10-19&lt;/p&gt;
 	
 	
 &gt;&lt;/p&gt;
-&lt;h2 id=&#34;安装&#34;&gt;安装
-&lt;/h2&gt;&lt;p&gt;使用docker compose 方式搭建。&lt;/p&gt;
-&lt;p&gt;docker-compose.yml&lt;/p&gt;
+&lt;h2 id=&#34;部署&#34;&gt;部署
+&lt;/h2&gt;&lt;h3 id=&#34;docker-compose&#34;&gt;docker compose
+&lt;/h3&gt;&lt;p&gt;docker-compose.yml&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -34290,16 +35161,19 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;yidadaa/chatgpt-next-web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;chatgpt-next-web&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;CODE=#页面访问密码，&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;OPENAI_API_KEY=#你的api key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;BASE_URL=#接口地址&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;CODE=your_password&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;OPENAI_API_KEY=your_api_key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;BASE_URL=api_url&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;            &lt;/span&gt;- &lt;span class=&#34;s1&#34;&gt;&amp;#39;3000:3000&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;unless-stopped&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;上述的docker-compose 文件是一个简洁版，免去了代理proxy，我们使用免费的api接口，后面有介绍&lt;/p&gt;
-&lt;p&gt;关于完整的内容可以去官方查看。&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;CODE&lt;/code&gt;：访问密钥&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;OPENAI_API_KEY&lt;/code&gt;：OpenAI API key&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BASE_URL&lt;/code&gt;：OpenAI API URL&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;启动容器&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -34310,15 +35184,69 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;接口&#34;&gt;接口
-&lt;/h2&gt;&lt;p&gt;关于接口，网上也有一些免费的api 接口地址&lt;/p&gt;
-&lt;p&gt;这里提供一个Github的开源项目：&lt;a class=&#34;link&#34; href=&#34;https://github.com/chatanywhere/GPT_API_free&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;GPT_API_free&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;快速获取api key，点击下面的连接获取api，获取的api用来替换上面配置的api，接口地址呢推荐使用下面的国内地址转发。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://api.chatanywhere.org/v1/oauth/free/github/render&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;申请领取内测免费API Key&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;转发Host1: &lt;code&gt;https://api.chatanywhere.com.cn&lt;/code&gt; (国内中转，延时更低，推荐)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;转发Host2: &lt;code&gt;https://api.chatanywhere.cn&lt;/code&gt; (国外使用,国内需要全局代理)&lt;/strong&gt;&lt;/p&gt;
-</description>
+&lt;/h2&gt;&lt;h3 id=&#34;gpt_api_freehttpsgithubcomchatanywheregpt_api_free&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/chatanywhere/GPT_API_free&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GPT_API_free&lt;/a&gt;
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;支持 gpt | deepseek | claude | gemini | grok 等排名靠前的常用大模型。&lt;/li&gt;
+&lt;li&gt;免费版支持 gpt-4o，gpt-4.1 一天 5 次；支持 deepseek-r1, deepseek-v3 一天 30 次，支持 gpt-4o-mini，gpt-3.5-turbo，gpt-4.1-mini，gpt-4.1-nano 一天 200 次。&lt;/li&gt;
+&lt;li&gt;与官方完全一致的接口标准，兼容各种软件/插件。&lt;/li&gt;
+&lt;li&gt;支持流式响应。&lt;/li&gt;
+&lt;li&gt;国内线路使用动态加速，体验远优于使用代理连接官方。&lt;/li&gt;
+&lt;li&gt;无需科学上网，国内环境直接可用。&lt;/li&gt;
+&lt;li&gt;个人完全免费使用。&lt;/li&gt;
+&lt;li&gt;协议统一使用 openai 标准协议，其他厂商模型仅需更换模型名称，接入便捷&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;🚀&lt;a class=&#34;link&#34; href=&#34;https://api.chatanywhere.org/v1/oauth/free/render&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;申请领取内测免费 API Key&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;免费版支持 deepseek, gpt-3.5-turbo, embedding, gpt-4o-mini, gpt-4o。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转发 Host1: &lt;code&gt;https://api.chatanywhere.tech&lt;/code&gt; (国内中转，延时更低)&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转发 Host2: &lt;code&gt;https://api.chatanywhere.org&lt;/code&gt; (国外使用)&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可以使用的 API 模型&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4o
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deepseek-r1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;deepseek-v3
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4o-mini
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-3.5-turbo
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1-mini
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gpt-4.1-nano
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;配置 chat-next-web 项目使用，添加 &lt;code&gt;CUSTOM_MODELS&lt;/code&gt;变量&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-env&#34; data-lang=&#34;env&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;CUSTOM_MODELS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-all,gpt-4.1-mini,gpt-4o,gpt-4.1,deepseek-r1,deepseek-v3,gpt-4o-mini,gpt-3.5-turbo,gpt-4.1-nano,embedding
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;添加默认模型 &lt;code&gt;DEFAULT_MODEL&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-env&#34; data-lang=&#34;env&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;DEFAULT_MODEL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;gpt-4.1-mini
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Debian软件源之国内镜像源</title>

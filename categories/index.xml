@@ -7,26 +7,34 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 22 Apr 2025 18:50:12 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Default</title>
-        <link>https://hublog.netlify.app/categories/default/</link>
-        <pubDate>Tue, 22 Apr 2025 18:50:12 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/default/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
-        </item>
-        <item>
+        <lastBuildDate>Mon, 05 May 2025 21:17:19 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Proxy</title>
         <link>https://hublog.netlify.app/categories/proxy/</link>
-        <pubDate>Tue, 22 Apr 2025 07:54:26 +0800</pubDate>
+        <pubDate>Mon, 05 May 2025 21:17:19 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/proxy/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/proxy/proxy.webp" alt="Featured image of post Proxy" /&gt;</description>
         </item>
         <item>
+        <title>Default</title>
+        <link>https://hublog.netlify.app/categories/default/</link>
+        <pubDate>Sun, 04 May 2025 17:50:51 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/default/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Devops</title>
+        <link>https://hublog.netlify.app/categories/devops/</link>
+        <pubDate>Fri, 02 May 2025 22:43:58 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/devops/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
+        </item>
+        <item>
         <title>Linux</title>
         <link>https://hublog.netlify.app/categories/linux/</link>
-        <pubDate>Fri, 18 Apr 2025 12:17:29 +0800</pubDate>
+        <pubDate>Fri, 02 May 2025 17:34:51 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/linux/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
@@ -94,14 +102,6 @@
         
         <guid>https://hublog.netlify.app/categories/frontend/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/frontend/frontend.webp" alt="Featured image of post Frontend" /&gt;</description>
-        </item>
-        <item>
-        <title>Devops</title>
-        <link>https://hublog.netlify.app/categories/devops/</link>
-        <pubDate>Wed, 08 Jan 2025 22:37:00 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/devops/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
         </item>
         <item>
         <title>Tao</title>
