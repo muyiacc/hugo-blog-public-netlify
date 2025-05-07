@@ -7,7 +7,106 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 06 May 2025 12:44:20 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 May 2025 10:16:03 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>sink，一款简单、快速、安全的链路缩短器，配备分析功能</title>
+        <link>https://hublog.netlify.app/p/250507101603/</link>
+        <pubDate>Wed, 07 May 2025 10:16:03 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250507101603/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Sink 是一款简单、快速、安全的链路缩短器，配备分析功能，100% 在 Cloudflare 上运行。&lt;/p&gt;
+&lt;h3 id=&#34;特性&#34;&gt;特性
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;URL Shortening:&lt;/strong&gt; Compress your URLs to their minimal length.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; Monitor link analytics and gather insightful statistics.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Serverless:&lt;/strong&gt; Deploy without the need for traditional servers.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Customizable Slug:&lt;/strong&gt; Support for personalized slugs and case sensitivity.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Slug:&lt;/strong&gt; Leverage AI to generate slugs.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Link Expiration:&lt;/strong&gt; Set expiration dates for your links.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;URL 缩短：&lt;/strong&gt; 将您的 URL 压缩到最短长度。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分析：&lt;/strong&gt; 监控链接分析并收集有价值的统计数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无服务器：&lt;/strong&gt; 无需传统服务器即可部署。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自定义 Slug：&lt;/strong&gt; 支持个性化 Slug 和区分大小写。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI Slug：&lt;/strong&gt; 利用 AI 生成 Slug。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;链接过期：&lt;/strong&gt; 为您的链接设置过期日期。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;预览&#34;&gt;预览
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://github.com/ccbikai/Sink/raw/master/public/image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Hero&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;体验&#34;&gt;体验
+&lt;/h3&gt;&lt;p&gt;Experience the demo at &lt;a class=&#34;link&#34; href=&#34;https://sink.cool/dashboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sink.Cool&lt;/a&gt;. Log in using the Site Token below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Site Token: SinkCool
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;部署&#34;&gt;部署
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/ccbikai/Sink/fork&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fork&lt;/a&gt; 仓库到您的 GitHub 账户。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在 &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/pages/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Cloudflare Pages&lt;/a&gt; 中创建一个项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择 &lt;code&gt;Sink&lt;/code&gt; 仓库并选择 &lt;code&gt;Nuxt.js&lt;/code&gt; 预设。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置以下环境变量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;NUXT_SITE_TOKEN&lt;/code&gt;: 必须长于 &lt;strong&gt;8&lt;/strong&gt; 个字符。此令牌授予访问您仪表盘的权限。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NUXT_CF_ACCOUNT_ID&lt;/code&gt;: 找到您的 &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/fundamentals/setup/find-account-and-zone-ids/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;账户 ID&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;NUXT_CF_API_TOKEN&lt;/code&gt;: 创建一个至少具有 &lt;code&gt;Account.Account Analytics&lt;/code&gt; 权限的 &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/fundamentals/api/get-started/create-token/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Cloudflare API 令牌&lt;/a&gt;。 &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/analytics/analytics-engine/sql-api/#authentication&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;请参阅参考资料。&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;保存并部署项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;取消部署，然后导航到 &lt;strong&gt;设置&lt;/strong&gt; -&amp;gt; &lt;strong&gt;绑定&lt;/strong&gt; -&amp;gt; &lt;strong&gt;添加&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;KV 命名空间&lt;/strong&gt;: 将变量名 &lt;code&gt;KV&lt;/code&gt; 绑定到一个 &lt;a class=&#34;link&#34; href=&#34;https://developers.cloudflare.com/kv/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KV 命名空间&lt;/a&gt;（在 &lt;strong&gt;存储 &amp;amp; 数据库&lt;/strong&gt; -&amp;gt; &lt;strong&gt;KV&lt;/strong&gt; 下创建一个新的）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Workers AI&lt;/strong&gt; (&lt;em&gt;可选&lt;/em&gt;): 将变量名 &lt;code&gt;AI&lt;/code&gt; 绑定到 Workers AI Catalog。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Analytics Engine&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;在 &lt;strong&gt;Workers &amp;amp; Pages&lt;/strong&gt; 中，转到右侧的 &lt;strong&gt;账户详细信息&lt;/strong&gt;，找到 &lt;code&gt;Analytics Engine&lt;/code&gt;，然后单击 &lt;code&gt;设置&lt;/code&gt; 以启用免费版本。&lt;/li&gt;
+&lt;li&gt;返回到 &lt;strong&gt;设置&lt;/strong&gt; -&amp;gt; &lt;strong&gt;绑定&lt;/strong&gt; -&amp;gt; &lt;strong&gt;添加&lt;/strong&gt; 并选择 &lt;strong&gt;Analytics engine&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;将变量名 &lt;code&gt;ANALYTICS&lt;/code&gt; 绑定到 &lt;code&gt;sink&lt;/code&gt; 数据集。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重新部署项目。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;更新代码，请参考官方 GitHub 文档 &lt;a class=&#34;link&#34; href=&#34;https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-branch-from-the-web-ui&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;从 Web UI 同步 Fork 分支&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>Firefox支持垂直标签页</title>
         <link>https://hublog.netlify.app/p/250506124420/</link>
         <pubDate>Tue, 06 May 2025 12:44:20 +0800</pubDate>
@@ -28,10 +127,10 @@
         </item>
         <item>
         <title>地域分类大流量卡（电信，联通，移动，广电），以及宽带专区</title>
-        <link>https://hublog.netlify.app/p/250506123222/</link>
+        <link>https://hublog.netlify.app/p/haoka/</link>
         <pubDate>Tue, 06 May 2025 12:32:22 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/250506123222/</guid>
+        <guid>https://hublog.netlify.app/p/haoka/</guid>
         <description>&lt;p&gt;&lt;strong&gt;本文推荐皆是正规电话卡，官方 APP 可查，如有使用问题，请联系店铺客服&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;店铺链接：&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/index?k=alNtMUVBWnIvRDQ9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;三摩地通讯大流量卡在线选择&lt;/a&gt;&lt;/p&gt;
@@ -49,36 +148,60 @@
 &lt;p&gt;如果需要额外办宽带，推荐联通，联通也有很多大流量卡&lt;/p&gt;
 &lt;p&gt;需要办移动可以办广电替代，广电使用的移动的基站&lt;/p&gt;
 &lt;h2 id=&#34;电信&#34;&gt;电信
-&lt;/h2&gt;&lt;p&gt;全国：&lt;/p&gt;
-&lt;ul&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;全国审核为准&#34;&gt;全国（审核为准）
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3994&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;电信云岭卡 A 29 元 235G+100 分钟&lt;/a&gt;（全国发货，流量全部当月到账，首月免费，自主激活）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3989&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信烟花卡 29 元 185G+100 分钟通话&lt;/a&gt;(全国发货，&lt;strong&gt;长期套餐&lt;/strong&gt;，首月免费)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;湖南：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;地区限制&#34;&gt;地区限制
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3891&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信晨曦卡 29 元 185G+0.1 元/分钟&lt;/a&gt;(首月免费，&lt;strong&gt;长期套餐&lt;/strong&gt;，&lt;strong&gt;激活选号&lt;/strong&gt;，&lt;strong&gt;黄金 5G&lt;/strong&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3890&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信源泉卡 pro （发货优化）29 元 235G+100 分钟&lt;/a&gt;(首月免费，到期可续)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3993&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MF 电信烟花卡 29 元 155G 通用+30G 定向&lt;/a&gt;(首充 100,激活强充)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;神秘彩蛋卡&#34;&gt;&lt;strong&gt;神秘彩蛋卡&lt;/strong&gt;
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3602&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信隐秘卡 C (流量彩蛋，当天秒发)29 元 80G+0.1/分钟&lt;/a&gt;(赠送双会员，长期套餐，到期可续，流量彩蛋)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;湖南&#34;&gt;湖南
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=4005&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;电信湖南卡 A 29 元 155G 通用+30G 定向+100 分钟&lt;/a&gt;（仅发湖南,&lt;strong&gt;长期流量,到期自动续&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3992&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信爆款卡 A (湖南省)29 元 155G 通用+30G 定向&lt;/a&gt;(湖南专属，首充 50,激活强充)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;湖北：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3999&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;电信湖北星 29 元包 185G+0.1 元/分钟&lt;/a&gt;（激活选号，自主激活，强冲 100，&lt;strong&gt;黄金速率&lt;/strong&gt;，&lt;strong&gt;长期套餐&lt;/strong&gt;，其中 50G 次月初叠加）&lt;/li&gt;
+&lt;h3 id=&#34;湖北&#34;&gt;湖北
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3999&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信湖北星 29 元包 185G+0.1 元/分钟&lt;/a&gt;（激活选号，自主激活，强冲 100，&lt;strong&gt;黄金速率&lt;/strong&gt;，&lt;strong&gt;长期套餐&lt;/strong&gt;，其中 50G 次月初叠加）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3890&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;电信源泉卡 pro （发货优化）29 元 235G+100 分钟&lt;/a&gt;（首月免费，到期可续）&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;地区限制：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3890&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;电信源泉卡 pro （发货优化）29 元 235G+100 分钟&lt;/a&gt;（首月免费，到期可续）&lt;/li&gt;
+&lt;h3 id=&#34;广东&#34;&gt;广东
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3973&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广东电信 205G 通用+30G 定向+100 分钟&lt;/a&gt;(只发广东,次月加流量,29 原月租)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;联通&#34;&gt;联通
-&lt;/h2&gt;&lt;p&gt;全国：&lt;/p&gt;
-&lt;ul&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;全国审核为准-1&#34;&gt;全国（审核为准）
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=4007&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;联通玉龙卡 A 215G 通用+0G 定向+100 分钟&lt;/a&gt;（全国发货,大流量产品,自主激活）&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3671&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;联通全国会员卡 A 155G 流量+送一年优酷会员&lt;/a&gt;（全国通用，到期可续，长期套餐，视频会员）&lt;/li&gt;
+    &gt;联通全国会员卡 A 155G 流量+送一年优酷会员&lt;/a&gt;（全国通用，&lt;strong&gt;到期可续，长期套餐&lt;/strong&gt;，视频会员）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;云南：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;云南&#34;&gt;云南
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3933&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;联通云南卡 1.0A 29 元 185G+100 分钟&lt;/a&gt;（只发云南，流量全国通用）&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3937&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -86,8 +209,8 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3936&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;联通云南卡 3.0 39 元包 185G 通用+100 分钟&lt;/a&gt;（云南专属，全国通用）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;四川：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;四川&#34;&gt;四川
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3893&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;联通新大四卡 A 39 元 215G+100 分钟&lt;/a&gt;（四川专属，&lt;strong&gt;长期套餐&lt;/strong&gt;）&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3894&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -95,30 +218,55 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=4004&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;联通极品靓号卡 A 39 元 215G 通用+100 分钟&lt;/a&gt;（四川专属,&lt;strong&gt;极品靓号&lt;/strong&gt;，限量款，数量有限抢完下架）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;海南：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;海南&#34;&gt;海南
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3971&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;海南省内联通 302G 通用+0G 定向+200 分钟&lt;/a&gt;（仅发海南,大流量,&lt;strong&gt;可选号&lt;/strong&gt;,&lt;strong&gt;长期套餐&lt;/strong&gt;）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;移动&#34;&gt;移动
-&lt;/h2&gt;&lt;p&gt;全国：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3932&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;移动新集运卡 A (接听外呼发货)29 元 80G+0.1 元/分钟&lt;/a&gt;（全国无禁区，&lt;strong&gt;本地归属地&lt;/strong&gt;，全部国发货，首月免费）&lt;/li&gt;
+&lt;h3 id=&#34;上海&#34;&gt;上海
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3639&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;联通上海会员卡 A239 元 235G+100 分钟+一年会员&lt;/a&gt;(&lt;strong&gt;长期套餐，赠送一年优酷会员&lt;/strong&gt;)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;重庆：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;广西&#34;&gt;广西
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3644&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;联通广西 39 会员卡 A39 元 219G+100 分钟+一年会员&lt;/a&gt;(&lt;strong&gt;长期套餐&lt;/strong&gt;，广西专属)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;浙江&#34;&gt;浙江
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3593&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;联通浙江省内 A (无需首充)39 元 185G+100 分钟&lt;/a&gt;(浙江专属，&lt;strong&gt;长期套餐&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安徽&#34;&gt;安徽
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3552&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;联通如意卡 A49 元 204G+100 分钟&lt;/a&gt;(安徽省内，&lt;strong&gt;流量可结转&lt;/strong&gt;，到期自动续约，首月半量半价)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;移动&#34;&gt;移动
+&lt;/h2&gt;&lt;h3 id=&#34;全国审核为准-2&#34;&gt;全国（审核为准）
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3932&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;移动新集运卡 A (接听外呼发货)29 元 80G+0.1 元/分钟&lt;/a&gt;（全国无禁区，&lt;strong&gt;本地归属地&lt;/strong&gt;，全国发货，首月免费）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;广东-1&#34;&gt;广东
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3338&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;移动广东本地卡 A (只发广东)29 元 80G+0.19 元/分钟+4 个亲情号&lt;/a&gt;(本地归属地，广东专属，首月免费)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;重庆&#34;&gt;重庆
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3637&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;移动重庆省内 A 29 元 135G+0.1 元/分钟&lt;/a&gt;（首月免费，重庆专属，3 个亲情号）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;上海：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;上海-1&#34;&gt;上海
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3599&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;移动上海省内 A 29 元 245G 通用+100 分钟&lt;/a&gt;（4.29 之后变成 39 月租，上海专属，极速发货）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;广电&#34;&gt;广电
-&lt;/h2&gt;&lt;p&gt;全国：&lt;/p&gt;
-&lt;ul&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;全国审核为准-3&#34;&gt;全国（审核为准）
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3969&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;广电正龙卡 A 99G 通用+0G 定向+0.15 元/分钟&lt;/a&gt;（全国发货,下单可选号,&lt;strong&gt;流量结转&lt;/strong&gt;）&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3665&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -126,67 +274,102 @@
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3666&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;广电小双百套餐 A 19 元 100G+100 分钟&lt;/a&gt;（首月免费，本地归属地）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;浙江：&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;地区限制-1&#34;&gt;地区限制
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3968&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广电爆款卡 A（无需首充）28 元 220G 通用+30G 定向+200 分钟&lt;/a&gt;（大流量产品,爆款）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3967&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广电爆款卡 A（无需首充）260G 通用+30G 定向+300 分钟&lt;/a&gt;（大流量产品,爆款）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3997&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广电大通卡 220G 通用+30G 定向+200 分钟&lt;/a&gt;（全国发货,可转寄禁发地,22-35 岁）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3996&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广电大越卡 260G 通用+30G 定向+300 分钟&lt;/a&gt;（全国发货,可转寄禁发地,22-35 岁）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;浙江-1&#34;&gt;浙江
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3845&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;广电浙神卡 A 28 元 350G+200 分钟&lt;/a&gt;（浙江专属，&lt;strong&gt;长期套餐，流量结转，多用多送&lt;/strong&gt;）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;区域限制（云南,北京, 四川,广东,新疆,江西,河北,河南,湖南,甘肃,西藏,陕西）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3968&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广电爆款卡 A（无需首充）28 元 220G 通用+30G 定向+200 分钟&lt;/a&gt;（全国发货,大流量产品,爆款）&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3967&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广电爆款卡 A（无需首充）260G 通用+30G 定向+300 分钟&lt;/a&gt;（全国发货,大流量产品,爆款）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;区域限制（云南, 四川,广东,新疆,江西,河北,河南,湖南,甘肃,西藏,陕西）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3997&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广电大通卡 220G 通用+30G 定向+200 分钟&lt;/a&gt;（全国发货,可转寄禁发地,22-35 岁,禁止电商仅限私域宣传）&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3996&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广电大越卡 260G 通用+30G 定向+300 分钟&lt;/a&gt;（全国发货,可转寄禁发地,22-35 岁,禁止电商仅限私域宣传）&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;宽带专区&#34;&gt;宽带专区
-&lt;/h2&gt;&lt;p&gt;天津：&lt;/p&gt;
+&lt;/h2&gt;&lt;h3 id=&#34;全国&#34;&gt;全国
+&lt;/h3&gt;&lt;p&gt;移动：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3039&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;移动宽带卡 A49 元 50G+100 分钟+免费宽带，首月免费，本地归属&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;天津&#34;&gt;天津
+&lt;/h3&gt;&lt;p&gt;电信：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3916&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;天津电信融合宽带 1000M129 元/月&lt;/a&gt;&lt;/li&gt;
+    &gt;天津电信融合宽带 1000M129 元/月，套餐 80G 流量，800 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3919&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;天津电信融合宽带 500M99 元/月&lt;/a&gt;&lt;/li&gt;
+    &gt;天津电信融合宽带 500M99 元/月，套餐 40G 流量，500 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3920&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;天津电信融合宽带 300M69 元/月&lt;/a&gt;&lt;/li&gt;
+    &gt;天津电信融合宽带 300M69 元/月，套餐 20G 流量，400 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;湖北：&lt;/p&gt;
+&lt;h3 id=&#34;湖北-1&#34;&gt;湖北
+&lt;/h3&gt;&lt;p&gt;电信：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3911&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;湖北电信融合宽带 1000M199 元/月&lt;/a&gt;&lt;/li&gt;
+    &gt;湖北电信融合宽带 1000M199 元/月，套餐 60G 流量，1000 分钟&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3913&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;湖北电信融合宽带 500M169 元/月，套餐 40G 流量，800 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3914&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;湖北电信融合宽带 500M129 元/月&lt;/a&gt;&lt;/li&gt;
+    &gt;湖北电信融合宽带 500M129 元/月，套餐 30G 流量，500 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3917&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;湖北电信融合宽带 300M79 元/月（非武汉）&lt;/a&gt;&lt;/li&gt;
+    &gt;湖北电信融合宽带 300M79 元/月（非武汉），套餐 15G 流量，300 分钟&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3918&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;湖北电信融合宽带 300M59 元/月（非武汉），套餐 10G 流量，200 分钟&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;广州：&lt;/p&gt;
+&lt;h3 id=&#34;广东-2&#34;&gt;广东
+&lt;/h3&gt;&lt;p&gt;移动：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3949&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广州移动融合承诺 138 元低消 360 元享 1000M 宽带／年&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3948&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广州移动融合承诺 98 元低消 360 元享 600M 宽带／年&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3947&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;广州移动融合承诺 58 元低消 360 元享 300M 宽带／年&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3949&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广州移动融合承诺 138 元低消 360 元享 1000M 宽带／年&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3948&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广州移动融合承诺 98 元低消 360 元享 600M 宽带／年&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3947&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广州移动融合承诺 58 元低消 360 元享 300M 宽带／年&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3945&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广东东莞移动单宽 1000M 60 元/月&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3946&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;广东东莞移动单宽 300M 40 元/月&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;山东：&lt;/p&gt;
+&lt;h3 id=&#34;山东&#34;&gt;山东
+&lt;/h3&gt;&lt;p&gt;联通：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3903&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;山东联通单宽带 1000M 65 元/月&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;山东联通单宽带 500M 45 元/月&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;广电：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3900&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;山东广电单宽带 500M&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3907&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;山东联通单宽带 1000M&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;山东联通单宽带 500M&lt;/a&gt;&lt;/li&gt;
+    &gt;山东广电单宽带 500M 42 元/月&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3901&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;山东广电单宽带 300M 30 元/月&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;陕西：&lt;/p&gt;
+&lt;h3 id=&#34;陕西&#34;&gt;陕西
+&lt;/h3&gt;&lt;p&gt;电信：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/order/index.php?uid=alNtMUVBWnIvRDQ9&amp;amp;pid=3915&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;陕西电信融合宽带 300M59 元/月&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;招收代理&#34;&gt;招收代理
+&lt;/h2&gt;&lt;img src=&#34;https://s2.loli.net/2025/05/07/ceNkGAdqsDBmxWM.png&#34; alt=&#34;download&#34; style=&#34;zoom:50%;&#34; /&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cyhaoka.mwks77.cn/wap5app/reg.php?code=BOFHHPQG&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击加入&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

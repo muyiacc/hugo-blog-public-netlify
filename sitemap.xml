@@ -8,14 +8,20 @@
     <loc>https://hublog.netlify.app/categories/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
+    <loc>https://hublog.netlify.app/post/</loc>
+    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/categories/project/</loc>
+    <lastmod>2025-05-07T10:16:03+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250507101603/</loc>
+    <lastmod>2025-05-07T10:16:03+08:00</lastmod>
+  </url><url>
     <loc>https://hublog.netlify.app/categories/default/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250506124420/</loc>
     <lastmod>2025-05-06T12:44:20+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/post/</loc>
-    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/categories/promotion/</loc>
     <lastmod>2025-05-06T12:32:22+08:00</lastmod>
@@ -26,7 +32,7 @@
     <loc>https://hublog.netlify.app/p/250506123222/</loc>
     <lastmod>2025-05-06T12:32:22+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/p/250506123222/</loc>
+    <loc>https://hublog.netlify.app/p/haoka/</loc>
     <lastmod>2025-05-06T12:32:22+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/</loc>
@@ -1673,7 +1679,11 @@
     <loc>https://hublog.netlify.app/tags/%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2023-09-03T14:12:15+08:00</lastmod>
   </url><url>
+    <loc>https://hublog.netlify.app/categories/api/</loc>
+  </url><url>
     <loc>https://hublog.netlify.app/p/navicat-desktop/</loc>
+  </url><url>
+    <loc>https://hublog.netlify.app/categories/software/</loc>
   </url><url>
     <loc>https://hublog.netlify.app/tags/tabby/</loc>
   </url><url>
