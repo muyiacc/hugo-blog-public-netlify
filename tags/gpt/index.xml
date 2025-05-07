@@ -82,27 +82,6 @@
 </description>
         </item>
         <item>
-        <title>gpt4free免费的aigc项目</title>
-        <link>https://hublog.netlify.app/p/2404002/</link>
-        <pubDate>Tue, 02 Apr 2024 15:07:04 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/2404002/</guid>
-        <description>&lt;p&gt;docker一键启动&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker run -itd -p 8461:8080 -p 1337:1337 -p 7900:7900 --shm-size&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;2g&amp;#34;&lt;/span&gt; --restart unless-stopped --name gpt4free hlohaus789/g4f:latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;访问地址：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ip:8461&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        </item>
-        <item>
         <title>ChatGPT-Next-Web，一键部署AI大模型网页客户端</title>
         <link>https://hublog.netlify.app/p/2310013/</link>
         <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>

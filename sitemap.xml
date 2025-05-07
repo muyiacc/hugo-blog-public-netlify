@@ -8,17 +8,35 @@
     <loc>https://hublog.netlify.app/categories/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
+    <loc>https://hublog.netlify.app/categories/default/</loc>
+    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250506124420/</loc>
+    <lastmod>2025-05-06T12:44:20+08:00</lastmod>
+  </url><url>
     <loc>https://hublog.netlify.app/post/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/categories/promotion/</loc>
+    <lastmod>2025-05-06T12:32:22+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/</loc>
+    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250506123222/</loc>
+    <lastmod>2025-05-06T12:32:22+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250506123222/</loc>
+    <lastmod>2025-05-06T12:32:22+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/</loc>
+    <lastmod>2025-05-06T12:32:22+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/categories/proxy/</loc>
     <lastmod>2025-05-05T21:17:19+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/sing-box/</loc>
     <lastmod>2025-05-05T21:17:19+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/tags/</loc>
-    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250505211719/</loc>
     <lastmod>2025-05-05T21:17:19+08:00</lastmod>
@@ -28,9 +46,6 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/250504175051/</loc>
     <lastmod>2025-05-04T17:50:51+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/categories/default/</loc>
-    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/bing/</loc>
     <lastmod>2025-05-04T12:21:28+08:00</lastmod>
@@ -79,6 +94,9 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/250422183637/</loc>
     <lastmod>2025-04-22T18:36:37+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/sub-store/</loc>
+    <lastmod>2025-04-22T07:54:26+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250422075426/</loc>
     <lastmod>2025-04-22T07:54:26+08:00</lastmod>
@@ -415,6 +433,9 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/250218224247/</loc>
     <lastmod>2025-02-18T22:42:47+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/nssm/</loc>
+    <lastmod>2025-02-18T17:06:59+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250218170659/</loc>
     <lastmod>2025-02-18T17:06:59+08:00</lastmod>
@@ -1142,10 +1163,10 @@
     <loc>https://hublog.netlify.app/tags/ddns/</loc>
     <lastmod>2024-05-03T16:05:43+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/p/2405003/</loc>
+    <loc>https://hublog.netlify.app/tags/ddns-go/</loc>
     <lastmod>2024-05-03T16:05:43+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/tags/ddns-go/</loc>
+    <loc>https://hublog.netlify.app/p/2405003/</loc>
     <lastmod>2024-05-03T16:05:43+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/2405002/</loc>

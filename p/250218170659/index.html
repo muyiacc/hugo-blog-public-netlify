@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下载">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提供这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下">
 <title>nssm，创建Windows系统服务的工具</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250218170659/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="nssm，创建Windows系统服务的工具">
-<meta property='og:description' content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下载">
+<meta property='og:description' content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提供这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下">
 <meta property='og:url' content='https://hublog.netlify.app/p/250218170659/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-18T17:06:59&#43;08:00'/><meta property='article:modified_time' content='2025-02-18T17:06:59&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nssm' /><meta property='article:published_time' content='2025-02-18T17:06:59&#43;08:00'/><meta property='article:modified_time' content='2025-02-18T17:06:59&#43;08:00'/>
 <meta name="twitter:title" content="nssm，创建Windows系统服务的工具">
-<meta name="twitter:description" content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下载">
+<meta name="twitter:description" content="简介 Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提供这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。 安装 下">
   
 
 
@@ -343,7 +343,7 @@
     
     
     <h2 id="简介">简介
-</h2><p>Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。</p>
+</h2><p>Window 平台上，很多软件需要开机自启动，后台运行，但软件本身没有提供这样的功能，这时候可以借助 NSSM 帮助创建系统服务，实现像 Linux 那样的 systemd 单元。</p>
 <h2 id="安装">安装
 </h2><p>下载地址：<a class="link" href="https://nssm.cc/release/nssm-2.24.zip"  target="_blank" rel="noopener"
     >https://nssm.cc/release/nssm-2.24.zip</a></p>
@@ -413,12 +413,22 @@
 </div>
 </div><h2 id="案例">案例
 </h2><h3 id="创建-alist-系统服务">创建 alist 系统服务
-</h3><div class="highlight"><div class="chroma">
+</h3><p>方式 1</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">install</span> <span class="n">alist</span> <span class="s2">&#34;D:\Program Files\alist\alist.exe&#34;</span> <span class="s2">&#34;server --data=\&#34;</span><span class="n">D:</span><span class="p">\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">alist</span><span class="p">\</span><span class="n">data</span><span class="p">\</span><span class="s2">&#34;&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>方式 2</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">install</span> <span class="n">alist</span> <span class="s2">&#34;D:\remote\alist\alist.exe&#34;</span> <span class="s2">&#34;server&#34;</span> <span class="s2">&#34;--data&#34;</span> <span class="s2">&#34;D:\remote\alist\data&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="创建-syncthing-服务">创建 syncthing 服务
@@ -436,7 +446,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm install sing-box@config-mixed <span class="s2">&#34;C:\Users\taoone\AppData\Local\Microsoft\WinGet\Links\sing-box.exe&#34;</span> <span class="s2">&#34;-D&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows&#34;</span> <span class="s2">&#34;-c&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows\config-mixed.json&#34;</span> <span class="s2">&#34;run&#34;</span>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">install</span> <span class="nb">sing-box</span><span class="nv">@config</span><span class="n">-mixed</span> <span class="s2">&#34;C:\Users\taoone\AppData\Local\Microsoft\WinGet\Links\sing-box.exe&#34;</span> <span class="s2">&#34;-D&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows&#34;</span> <span class="s2">&#34;-c&#34;</span> <span class="s2">&#34;E:\backup\application\sing-box\client\windows\config-mixed.json&#34;</span> <span class="s2">&#34;run&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>进入服务，找到 <code>sing-box@config-mixed</code>，设置用户为当前用户，启动</p>
@@ -445,7 +455,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm start sing-box@config-mixed
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="nb">start sing-box</span><span class="nv">@config</span><span class="n">-mixed</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -453,7 +463,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm remove sing-box@config-mixed
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">remove</span> <span class="nb">sing-box</span><span class="nv">@config</span><span class="n">-mixed</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -461,7 +471,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nssm stop sing-box@config-mixed
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">nssm</span> <span class="n">stop</span> <span class="nb">sing-box</span><span class="nv">@config</span><span class="n">-mixed</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -470,6 +480,12 @@
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/nssm/">Nssm</a>
+        
+    </section>
+
 
     <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>

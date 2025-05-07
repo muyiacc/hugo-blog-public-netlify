@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 部署 native 版本 native 版本内存占用更少 1 2 mkdir -p /opt/container/alist-tvbox cd /opt/container/alist-tvbox 1 vim docker-compose.yml 填入一下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 功能 管理界面 海报墙 多个 AList 站点 多个阿里云盘账号 挂载我的云盘 支持夸克、UC、115 网盘 自动签到 自动刷新阿里">
 <title>alist-tvbox，AList代理，支持xiaoya版AList界面管理</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250221182433/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="alist-tvbox，AList代理，支持xiaoya版AList界面管理">
-<meta property='og:description' content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 部署 native 版本 native 版本内存占用更少 1 2 mkdir -p /opt/container/alist-tvbox cd /opt/container/alist-tvbox 1 vim docker-compose.yml 填入一下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21">
+<meta property='og:description' content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 功能 管理界面 海报墙 多个 AList 站点 多个阿里云盘账号 挂载我的云盘 支持夸克、UC、115 网盘 自动签到 自动刷新阿里">
 <meta property='og:url' content='https://hublog.netlify.app/p/250221182433/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-21T18:24:33&#43;08:00'/><meta property='article:modified_time' content='2025-02-21T18:24:33&#43;08:00'/>
 <meta name="twitter:title" content="alist-tvbox，AList代理，支持xiaoya版AList界面管理">
-<meta name="twitter:description" content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 部署 native 版本 native 版本内存占用更少 1 2 mkdir -p /opt/container/alist-tvbox cd /opt/container/alist-tvbox 1 vim docker-compose.yml 填入一下内容 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21">
+<meta name="twitter:description" content="简介 alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理 功能 管理界面 海报墙 多个 AList 站点 多个阿里云盘账号 挂载我的云盘 支持夸克、UC、115 网盘 自动签到 自动刷新阿里">
   
 
 
@@ -267,7 +267,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#功能">功能</a></li>
+      </ol>
+    </li>
     <li><a href="#部署">部署</a>
       <ol>
         <li><a href="#native-版本">native 版本</a></li>
@@ -340,6 +344,27 @@
     
     <h2 id="简介">简介
 </h2><p>alist-tvbox 是一个 AList 代理，支持 xiaoya 版 AList 界面管理</p>
+<h3 id="功能">功能
+</h3><ul>
+<li>管理界面</li>
+<li>海报墙</li>
+<li>多个 AList 站点</li>
+<li>多个阿里云盘账号</li>
+<li>挂载我的云盘</li>
+<li>支持夸克、UC、115 网盘</li>
+<li>自动签到</li>
+<li>自动刷新阿里 Token</li>
+<li>自定义 TvBox 配置</li>
+<li>安全订阅配置</li>
+<li>TvBox 配置聚合</li>
+<li>添加阿里云盘分享</li>
+<li>添加 PikPak 分享</li>
+<li>支持 BiliBili</li>
+<li>管理 AList 服务</li>
+<li>小雅配置文件管理</li>
+<li>构建索引</li>
+<li>在线日志</li>
+</ul>
 <h2 id="部署">部署
 </h2><h3 id="native-版本">native 版本
 </h3><p>native 版本内存占用更少</p>
@@ -361,7 +386,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim docker-compose.yml
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>填入一下内容</p>
+</div><p>填入内容</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -398,7 +423,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">xiaoya-tvbox</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;./alist-tvbox_data:/data&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;./xiaoya-tvbox_data:/data&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">ALIST_PORT=5344</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
@@ -450,6 +475,19 @@
             
                 
 <article class="">
+    <a href="/p/250506124420/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Firefox支持垂直标签页</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250504175051/">
         
         
@@ -495,19 +533,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Github链接指南，代理下载</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250422185012/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">webssh修改版，基于 Web 的轻量级 SSH 管理工具</h2>
         </div>
     </a>
 </article>
