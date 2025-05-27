@@ -7,7 +7,39 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 06 May 2025 12:32:22 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 11:03:52 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>2fa</title>
+        <link>https://hublog.netlify.app/tags/2fa/</link>
+        <pubDate>Sun, 25 May 2025 11:03:52 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/2fa/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Microsoft</title>
+        <link>https://hublog.netlify.app/tags/microsoft/</link>
+        <pubDate>Sun, 25 May 2025 11:03:52 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/microsoft/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Prompt</title>
+        <link>https://hublog.netlify.app/tags/prompt/</link>
+        <pubDate>Fri, 23 May 2025 09:54:52 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/prompt/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rsync</title>
+        <link>https://hublog.netlify.app/tags/rsync/</link>
+        <pubDate>Sat, 10 May 2025 11:01:45 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/rsync/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>流量卡</title>
         <link>https://hublog.netlify.app/tags/%E6%B5%81%E9%87%8F%E5%8D%A1/</link>
         <pubDate>Tue, 06 May 2025 12:32:22 +0800</pubDate>
@@ -229,14 +261,6 @@
         <pubDate>Wed, 19 Mar 2025 08:48:54 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/nginx/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Acme</title>
-        <link>https://hublog.netlify.app/tags/acme/</link>
-        <pubDate>Wed, 19 Mar 2025 08:20:32 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/acme/</guid>
         <description></description>
         </item>
         <item>
@@ -864,14 +888,6 @@
         <description></description>
         </item>
         <item>
-        <title>Chatgpt-Next-Web</title>
-        <link>https://hublog.netlify.app/tags/chatgpt-next-web/</link>
-        <pubDate>Tue, 02 Jul 2024 23:07:42 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/chatgpt-next-web/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Keyboard</title>
         <link>https://hublog.netlify.app/tags/keyboard/</link>
         <pubDate>Sun, 23 Jun 2024 13:06:24 +0800</pubDate>
@@ -1064,6 +1080,14 @@
         <description></description>
         </item>
         <item>
+        <title>Acme</title>
+        <link>https://hublog.netlify.app/tags/acme/</link>
+        <pubDate>Thu, 02 May 2024 16:05:43 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/acme/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Apache</title>
         <link>https://hublog.netlify.app/tags/apache/</link>
         <pubDate>Thu, 02 May 2024 16:05:43 +0800</pubDate>
@@ -1077,14 +1101,6 @@
         <pubDate>Wed, 01 May 2024 16:05:43 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/1panel/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Command</title>
-        <link>https://hublog.netlify.app/tags/command/</link>
-        <pubDate>Wed, 01 May 2024 13:05:46 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/command/</guid>
         <description></description>
         </item>
         <item>
@@ -1365,6 +1381,14 @@
         <pubDate>Mon, 16 Oct 2023 14:07:10 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/log/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Chatgpt-Next-Web</title>
+        <link>https://hublog.netlify.app/tags/chatgpt-next-web/</link>
+        <pubDate>Fri, 13 Oct 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/chatgpt-next-web/</guid>
         <description></description>
         </item>
         <item>

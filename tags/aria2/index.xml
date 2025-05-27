@@ -8,13 +8,89 @@
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
         <lastBuildDate>Wed, 08 Jan 2025 22:37:00 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/aria2/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>docker安装aria2-pro</title>
+        <title>aria2-pro，更好用的Aria2 Docker容器镜像</title>
         <link>https://hublog.netlify.app/p/250108223700/</link>
         <pubDate>Wed, 08 Jan 2025 22:37:00 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/250108223700/</guid>
-        <description>&lt;h2 id=&#34;介绍&#34;&gt;介绍
-&lt;/h2&gt;&lt;p&gt;aria2-pro 是一个配置好的aria2镜像&lt;/p&gt;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;Aria2 是目前最强大的全能型下载工具，它支持 BT、磁力、HTTP、FTP 等下载协议，常用做离线下载的服务端。目前有非常多的 Aria2 Docker 方案，大多都整合了 We­bUI 和文件管理功能，看似很好很强大，实际上都只是做了简单的打包的工作，完全没有考虑到核心的下载体验和资源占用等问题。这也导致很多人在初次使用 Aria2 时会遇到 BT 下载无速度、文件残留占用空间、任务丢失等问题，所以会觉得 Aria2 并不好用，但事实并非如此。&lt;a class=&#34;link&#34; href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9hcmlhMi5jb25m&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aria2 完美配置&lt;/a&gt;是博主经过长时间使用和研究官方文档后总结出来的一套配置方案，其最初目的是为了解决这些问题，而且为 Aria2 添加了额外的一些功能，经过一年多时间的打磨已经积累了大量的使用者和良好的口碑，其中不乏一些知名开源项目开发者、影视字幕组、科技视频 UP 主。之前一直使用&lt;a class=&#34;link&#34; href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9hcmlhMi5zaA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;一键脚本&lt;/a&gt;作为部署方案，为了满足小伙伴们使用 Docker 部署的需求，博主特意制作了基于 Aria2 完美配置和特殊定制优化的 Aria2 Docker ，为了和一般的 Aria2 Docker 方案做区分所以将其取名为 &lt;a class=&#34;link&#34; href=&#34;https://p3terx.com/go/aHR0cHM6Ly9naXRodWIuY29tL1AzVEVSWC9kb2NrZXItYXJpYTItcHJv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aria2 Pro&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;特点&#34;&gt;特点
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;下载性能优化&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;BT 下载率高、速度快&lt;/li&gt;
+&lt;li&gt;单服务器线程数最大值无上限（已破解线程数限制）&lt;/li&gt;
+&lt;li&gt;防掉线程优化&lt;/li&gt;
+&lt;li&gt;内存消耗优化&lt;/li&gt;
+&lt;li&gt;读写性能优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;任务管理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重启后不丢失任务进度、不重复下载&lt;/li&gt;
+&lt;li&gt;删除正在下载的任务自动删除未完成的文件&lt;/li&gt;
+&lt;li&gt;下载错误自动删除未完成的文件&lt;/li&gt;
+&lt;li&gt;下载完成自动删除控制文件（.aria2 后缀名文件）&lt;/li&gt;
+&lt;li&gt;下载完成自动删除种子文件（.torrent 后缀名文件）&lt;/li&gt;
+&lt;li&gt;下载完成自动删除空目录&lt;/li&gt;
+&lt;li&gt;BT 下载完成自动清除垃圾文件（文件类型过滤功能）&lt;/li&gt;
+&lt;li&gt;BT 下载完成自动清除小文件（文件大小过滤功能）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;防版权投诉与支持&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有一定的防版权投诉、防迅雷吸血效果&lt;/li&gt;
+&lt;li&gt;更好的 PT 下载支持&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;软件特性&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 Aria2 Pro Core 项目最新静态编译二进制文件&lt;/li&gt;
+&lt;li&gt;多平台支持：amd64, i386, arm64, armhf（VPS、群辉、树莓派等常见平台完美支持）&lt;/li&gt;
+&lt;li&gt;全功能：Async DNS, BitTorrent, Firefox3 Cookie, GZip, HTTPS, Message Digest, Metalink, XML-RPC, SFTP&lt;/li&gt;
+&lt;li&gt;最新依赖库，下载更安全、稳定、快速&lt;/li&gt;
+&lt;li&gt;持续更新最新版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;云存储支持&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持与 RCLONE 联动&lt;/li&gt;
+&lt;li&gt;自动上传 OneDrive、Google Drive 等网盘&lt;/li&gt;
+&lt;li&gt;百度网盘转存到其它网盘&lt;/li&gt;
+&lt;li&gt;多网盘自由选择&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;网络协议支持&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持新一代互联网协议 IPv6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;文件管理&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载完成自动移动文件到指定目录（文件自动归档/分类）&lt;/li&gt;
+&lt;li&gt;定时自动更新 BT tracker 列表（无感知、无重启），保持 BT 下载高速率&lt;/li&gt;
+&lt;li&gt;用户文件权限自动配置功能&lt;/li&gt;
+&lt;li&gt;配置文件持久化，支持使用 watchtower 更新容器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;设计理念&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;极简设计，专注下载，简单易用，少即是多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;官方网址：&lt;a class=&#34;link&#34; href=&#34;https://p3terx.com/archives/docker-aria2-pro.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://p3terx.com/archives/docker-aria2-pro.html&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
@@ -51,7 +127,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    p3terx/aria2-pro
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;替换&lt;code&gt;&amp;lt;TOKEN&amp;gt;&lt;/code&gt;字段(RPC密钥)即可启动。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;替换&lt;code&gt;&amp;lt;TOKEN&amp;gt;&lt;/code&gt;字段(RPC 密钥)即可启动。&lt;/p&gt;
 &lt;p&gt;docker-compose.yml&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -161,7 +237,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;max-size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;1m&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;替换&lt;code&gt;&amp;lt;TOKEN&amp;gt;&lt;/code&gt;字段(RPC密钥)即可启动。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;替换&lt;code&gt;&amp;lt;TOKEN&amp;gt;&lt;/code&gt;字段(RPC 密钥)即可启动。&lt;/p&gt;
 </description>
         </item>
         <item>

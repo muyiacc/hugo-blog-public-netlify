@@ -284,7 +284,7 @@
         <li><a href="#no-web-server">no web server</a></li>
       </ol>
     </li>
-    <li><a href="#生成证书dns-方式">生成证书：DNS 方式</a>
+    <li><a href="#生成证书dns-方式推荐">生成证书：DNS 方式（推荐）</a>
       <ol>
         <li><a href="#手动-dns-方式">手动 DNS 方式</a></li>
         <li><a href="#自动-dns-方式推荐">自动 DNS 方式（推荐）</a>
@@ -306,6 +306,8 @@
     <li><a href="#关于修改-reloadcmd">关于修改 ReloadCmd</a></li>
     <li><a href="#更新-acmesh">更新 acme.sh</a></li>
     <li><a href="#出错怎么办">出错怎么办</a></li>
+    <li><a href="#删除证书">删除证书</a></li>
+    <li><a href="#常用命令">常用命令</a></li>
     <li><a href="#一键脚本待续">一键脚本（待续）</a></li>
   </ol>
 </nav>
@@ -397,7 +399,7 @@
 </h2><p>如果你想直接使用 acme.sh 这里提供一个简要教程</p>
 <p>需要修改：</p>
 <ul>
-<li>邮箱<code>mail@example.com</code></li>
+<li>邮箱<code>mail@yourdomain.com</code></li>
 <li>域名<code>example.com</code></li>
 </ul>
 <p>安装 acme.sh</p>
@@ -406,7 +408,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>mail@example.com
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>mail@yourdomain.com
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>刷新环境变量</p>
@@ -466,7 +468,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>mail@example.com
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">curl https://get.acme.sh <span class="p">|</span> sh -s <span class="nv">email</span><span class="o">=</span>mail@yourdomain.com
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -481,37 +483,23 @@
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir .acme.sh <span class="o">&amp;&amp;</span> <span class="nb">cd</span> .acme.sh <span class="o">&amp;&amp;</span> vim acme.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>填入 <a class="link" href="https://raw.githubusercontent.com/acmesh-official/acme.sh/master/acme.sh"  target="_blank" rel="noopener"
-    >acme.sh 脚本</a>内容</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x acme.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;alias acme.sh=~/.acme.sh/acme.sh&#39;</span> &gt;&gt; ~/.bashrc
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> ~/.bashrc
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git clone https://gitee.com/neilpang/acme.sh.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> acme.sh
+</span></span><span class="line"><span class="cl">./acme.sh --install -m mail@yourdomain.com
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="卸载-acmesh">卸载 acme.sh
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 待续</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="修改证书-ca-机构">修改证书 CA 机构
 </h2><p>默认证书的 CA 机构是 zerossl</p>
@@ -581,7 +569,7 @@
 </div>
 </div><p>更高级的用法请参考: <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert</a></p>
-<h2 id="生成证书dns-方式">生成证书：DNS 方式
+<h2 id="生成证书dns-方式推荐">生成证书：DNS 方式（推荐）
 </h2><h3 id="手动-dns-方式">手动 DNS 方式
 </h3><p>手动在域名上添加一条 txt 解析记录, 验证域名所有权.</p>
 <p>好处：你不需要任何服务器, 不需要任何公网 ip, 只需要 dns 的解析记录即可完成验证</p>
@@ -615,7 +603,8 @@
 <h4 id="cloudflare">cloudflare
 </h4><p>域名托管在 cloudflare 上申请方式</p>
 <h5 id="单个域名">单个域名
-</h5><p>登录 cloudflare ,</p>
+</h5><p>登录 <a class="link" href="https://dash.cloudflare.com"  target="_blank" rel="noopener"
+    >cloudflare</a> ,</p>
 <p>查看域名的 Zone ID</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -898,7 +887,89 @@
 <p>最后, 本文并非完全的使用说明, 还有很多高级的功能, 更高级的用法请参看其他 wiki 页面.</p>
 <p><a class="link" href="https://github.com/Neilpang/acme.sh/wiki"  target="_blank" rel="noopener"
     >https://github.com/Neilpang/acme.sh/wiki</a></p>
-<h2 id="一键脚本待续">一键脚本（待续）
+<h2 id="删除证书">删除证书
+</h2><p>要使用 <code>acme.sh</code> 删除证书，主要涉及两个步骤：<strong>吊销 (revoke)</strong> 证书和<strong>移除 (remove)</strong> <code>acme.sh</code> 对该域名的管理。</p>
+<p><strong>重要提示：</strong></p>
+<ul>
+<li><strong>吊销证书 (Revoke)：</strong> 吊销证书会告知证书颁发机构 (CA) 该证书已不再受信任。这通常在你认为私钥可能已泄露时才需要执行。如果你只是想停止使用该证书，或者换用另一个证书，通常不需要吊销。吊销操作是不可逆的。</li>
+<li><strong>移除证书 (Remove)：</strong> 移除操作会从 <code>acme.sh</code> 的配置中删除该域名的证书信息，停止 <code>acme.sh</code> 对其进行自动续期。这并不会从 CA 那里吊销证书，也不会删除你服务器上已安装的证书文件。</li>
+</ul>
+<p>以下是具体步骤：</p>
+<p>吊销证书（可选但推荐，如果私钥可能泄露）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">acme.sh --revoke -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>移除 <code>acme.sh</code> 对该域名的管理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">acme.sh --remove -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="常用命令">常用命令
+</h2><p>查看证书列表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --list
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>吊销证书</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">acme.sh --remove -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>移除证书</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --remove -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用 DNS 自动更新</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">## dnspod id</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&#34;1234&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## dnspod token</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&#34;sADDsdasdgdsf&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 申请命令</span>
+</span></span><span class="line"><span class="cl">acme.sh --issue --dns dns_dp -d yourdomain.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>修改 SSL 证书默认的 CA 机构</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">acme.sh --set-default-ca --server letsencrypt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="一键脚本待续">一键脚本（待续）
 </h2><p>待续&hellip;</p>
 
 </section>
@@ -1019,12 +1090,12 @@
             
                 
 <article class="">
-    <a href="/p/250319082032/">
+    <a href="/p/2403008/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">acme.sh命令</h2>
+            <h2 class="article-title">openssl小小使用</h2>
         </div>
     </a>
 </article>
@@ -1032,12 +1103,12 @@
             
                 
 <article class="">
-    <a href="/p/2403008/">
+    <a href="/p/2403005/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">openssl小小使用</h2>
+            <h2 class="article-title">nginx-proxy-manager申请证书失败，缺乏zope模块(已解决)</h2>
         </div>
     </a>
 </article>

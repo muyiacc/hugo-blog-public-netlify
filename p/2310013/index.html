@@ -272,6 +272,7 @@
     <li><a href="#部署">部署</a>
       <ol>
         <li><a href="#docker-compose">docker compose</a></li>
+        <li><a href="#vercel">vercel</a></li>
       </ol>
     </li>
     <li><a href="#接口">接口</a>
@@ -408,6 +409,74 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker compose up -d
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="vercel">vercel
+</h3><p>克隆仓库，新建项目，选中 chatgpt-next-web</p>
+<p>环境变量</p>
+<p>OPENAI_API_KEY</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sk-xxxx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>BASE_URL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://api.openai.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>CUSTOM_MODELS</p>
+<p>自定义模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">-all,+gemini-2.5-flash-preview-05-20,+gemini-2.5-pro-preview-05-06,+gemini-2.0-flash,+gemini-2.0-flash-preview-image-generation,+gemini-2.0-flash-lite,+gemini-1.5-flash,+gemini-1.5-flash-8b,+gemini-1.5-pro,+gemini-embedding-exp,+imagen-3.0-generate-002,+veo-2.0-generate-001,+gemini-2.0-flash-live-001
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>GOOGLE_URL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">https://generativelanguage.googleapis.com
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>GOOGLE_API_KEY</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">asdfasfg,safdasfa
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>CODE</p>
+<p>访问密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">code1,code2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>STABILITY_API_KEY</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sk-xxxxx
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="接口">接口
 </h2><h3 id="gpt_api_freehttpsgithubcomchatanywheregpt_api_free"><a class="link" href="https://github.com/chatanywhere/GPT_API_free"  target="_blank" rel="noopener"
     >GPT_API_free</a>
@@ -529,19 +598,6 @@
             
                 
 <article class="">
-    <a href="/p/2407002/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">ChatGPT-Next-Web 最新部署对接new-api部署方法</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/2405009/">
         
         
@@ -574,6 +630,19 @@
 
         <div class="article-details">
             <h2 class="article-title">pandora-免翻访问gpt</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250525114035/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">微软开发者URL指南</h2>
         </div>
     </a>
 </article>

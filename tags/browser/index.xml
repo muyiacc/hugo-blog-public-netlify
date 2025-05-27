@@ -28,7 +28,7 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Local Profiles&lt;/td&gt;
-&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Cloud Profiles&lt;/td&gt;
@@ -66,6 +66,9 @@
 &lt;h3 id=&#34;free-计划-1&#34;&gt;Free 计划
 &lt;/h3&gt;&lt;p&gt;Browser profiles：10&lt;/p&gt;
 &lt;p&gt;Profiles created per month：200&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;不支持批量操作&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;付费计划-1&#34;&gt;付费计划
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://dolphin-anty.com/panel/#/payment&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://dolphin-anty.com/panel/#/payment&lt;/a&gt;&lt;/p&gt;
@@ -80,7 +83,9 @@
 &lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.adspower.net/pricing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://www.adspower.net/pricing&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;hubstudio&#34;&gt;Hubstudio
-&lt;/h2&gt;&lt;p&gt;每天只能打开 20 次&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;http://suo.im/abXhy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hubstudio&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;无限配置文件，每天打开 20 次&lt;/p&gt;
 &lt;h3 id=&#34;free-计划-3&#34;&gt;Free 计划
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;浏览器环境数 无限量&lt;/li&gt;

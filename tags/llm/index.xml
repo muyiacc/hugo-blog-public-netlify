@@ -164,6 +164,9 @@
 &lt;/div&gt;&lt;p&gt;MacOS&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://ollama.com/download/Ollama-darwin.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://ollama.com/download/Ollama-darwin.zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;配置&#34;&gt;配置
+&lt;/h2&gt;&lt;p&gt;修改监听地址，让其他设备可以访问&lt;/p&gt;
+&lt;p&gt;将其从默认的 &lt;code&gt;127.0.0.1&lt;/code&gt;（只允许本地访问）改为 &lt;code&gt;0.0.0.0&lt;/code&gt;（允许所有网络接口访问）。&lt;/p&gt;
 &lt;h2 id=&#34;运行模型&#34;&gt;运行模型
 &lt;/h2&gt;&lt;h3 id=&#34;直接运行&#34;&gt;直接运行
 &lt;/h3&gt;&lt;p&gt;示例&lt;/p&gt;

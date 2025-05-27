@@ -7,13 +7,45 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Wed, 07 May 2025 23:06:28 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 11:40:35 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Default</title>
+        <link>https://hublog.netlify.app/categories/default/</link>
+        <pubDate>Sun, 25 May 2025 11:40:35 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/default/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
+        </item>
+        <item>
+        <title>Llm</title>
+        <link>https://hublog.netlify.app/categories/llm/</link>
+        <pubDate>Fri, 23 May 2025 09:54:52 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/llm/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/llm/llm.webp" alt="Featured image of post Llm" /&gt;</description>
+        </item>
+        <item>
         <title>Software</title>
         <link>https://hublog.netlify.app/categories/software/</link>
-        <pubDate>Wed, 07 May 2025 23:06:28 +0800</pubDate>
+        <pubDate>Tue, 20 May 2025 10:42:04 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/categories/software/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/software/software.webp" alt="Featured image of post Software" /&gt;</description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://hublog.netlify.app/categories/linux/</link>
+        <pubDate>Sat, 10 May 2025 11:01:45 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/linux/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
+        </item>
+        <item>
+        <title>Promotion</title>
+        <link>https://hublog.netlify.app/categories/promotion/</link>
+        <pubDate>Fri, 09 May 2025 01:02:19 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/promotion/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/promotion/promotion.webp" alt="Featured image of post Promotion" /&gt;</description>
         </item>
         <item>
         <title>Project</title>
@@ -22,22 +54,6 @@
         
         <guid>https://hublog.netlify.app/categories/project/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/project/project.webp" alt="Featured image of post Project" /&gt;</description>
-        </item>
-        <item>
-        <title>Default</title>
-        <link>https://hublog.netlify.app/categories/default/</link>
-        <pubDate>Tue, 06 May 2025 12:44:20 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/default/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/default/default.webp" alt="Featured image of post Default" /&gt;</description>
-        </item>
-        <item>
-        <title>Promotion</title>
-        <link>https://hublog.netlify.app/categories/promotion/</link>
-        <pubDate>Tue, 06 May 2025 12:32:22 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/promotion/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/promotion/promotion.webp" alt="Featured image of post Promotion" /&gt;</description>
         </item>
         <item>
         <title>Proxy</title>
@@ -54,14 +70,6 @@
         
         <guid>https://hublog.netlify.app/categories/devops/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://hublog.netlify.app/categories/linux/</link>
-        <pubDate>Fri, 02 May 2025 17:34:51 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/linux/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/linux/linux.webp" alt="Featured image of post Linux" /&gt;</description>
         </item>
         <item>
         <title>Free</title>
@@ -102,14 +110,6 @@
         
         <guid>https://hublog.netlify.app/categories/bigdata/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/bigdata/bigdata.webp" alt="Featured image of post Bigdata" /&gt;</description>
-        </item>
-        <item>
-        <title>Llm</title>
-        <link>https://hublog.netlify.app/categories/llm/</link>
-        <pubDate>Mon, 10 Mar 2025 18:54:32 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/llm/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/llm/llm.webp" alt="Featured image of post Llm" /&gt;</description>
         </item>
         <item>
         <title>Windows</title>

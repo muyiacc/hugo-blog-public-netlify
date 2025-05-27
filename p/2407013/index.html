@@ -268,7 +268,6 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#特性">特性</a></li>
     <li><a href="#部署">部署</a>
       <ol>
         <li><a href="#docker">docker</a></li>
@@ -346,71 +345,14 @@
     
     
     <h2 id="简介">简介
-</h2><p>AI 模型接口管理与分发系统，支持将多种大模型转为统一格式调用，支持 OpenAI、Claude 等格式，可供个人或者企业内部管理与分发渠道使用，基于 One API 二次开发。</p>
-<h2 id="特性">特性
-</h2><p>New API 提供了丰富的功能，详细特性请参考<a class="link" href="https://docs.newapi.pro/wiki/features-introduction"  target="_blank" rel="noopener"
-    >特性说明</a>：</p>
-<ol>
-<li>🎨 全新的 UI 界面</li>
-<li>🌍 多语言支持</li>
-<li>💰 支持在线充值功能（易支付）</li>
-<li>🔍 支持用 key 查询使用额度（配合<a class="link" href="https://github.com/Calcium-Ion/neko-api-key-tool"  target="_blank" rel="noopener"
-    >neko-api-key-tool</a>）</li>
-<li>🔄 兼容原版 One API 的数据库</li>
-<li>💵 支持模型按次数收费</li>
-<li>⚖️ 支持渠道加权随机</li>
-<li>📈 数据看板（控制台）</li>
-<li>🔒 令牌分组、模型限制</li>
-<li>🤖 支持更多授权登陆方式（LinuxDO,Telegram、OIDC）</li>
-<li>🔄 支持 Rerank 模型（Cohere 和 Jina），<a class="link" href="https://docs.newapi.pro/api/jinaai-rerank"  target="_blank" rel="noopener"
-    >接口文档</a></li>
-<li>⚡ 支持 OpenAI Realtime API（包括 Azure 渠道），<a class="link" href="https://docs.newapi.pro/api/openai-realtime"  target="_blank" rel="noopener"
-    >接口文档</a></li>
-<li>⚡ 支持 Claude Messages 格式，<a class="link" href="https://docs.newapi.pro/api/anthropic-chat"  target="_blank" rel="noopener"
-    >接口文档</a></li>
-<li>支持使用路由/chat2link 进入聊天界面</li>
-<li>🧠 支持通过模型名称后缀设置 reasoning effort：
-<ol>
-<li>OpenAI o 系列模型
-<ul>
-<li>添加后缀 <code>-high</code> 设置为 high reasoning effort (例如: <code>o3-mini-high</code>)</li>
-<li>添加后缀 <code>-medium</code> 设置为 medium reasoning effort (例如: <code>o3-mini-medium</code>)</li>
-<li>添加后缀 <code>-low</code> 设置为 low reasoning effort (例如: <code>o3-mini-low</code>)</li>
-</ul>
-</li>
-<li>Claude 思考模型
-<ul>
-<li>添加后缀 <code>-thinking</code> 启用思考模式 (例如: <code>claude-3-7-sonnet-20250219-thinking</code>)</li>
-</ul>
-</li>
-</ol>
-</li>
-<li>🔄 思考转内容功能</li>
-<li>🔄 针对用户的模型限流功能</li>
-<li>💰 缓存计费支持，开启后可以在缓存命中时按照设定的比例计费：
-<ol>
-<li>在 <code>系统设置-运营设置</code> 中设置 <code>提示缓存倍率</code> 选项</li>
-<li>在渠道中设置 <code>提示缓存倍率</code>，范围 0-1，例如设置为 0.5 表示缓存命中时按照 50% 计费</li>
-<li>支持的渠道：
-<ul>
-<li><input checked="" disabled="" type="checkbox"> OpenAI</li>
-<li><input checked="" disabled="" type="checkbox"> Azure</li>
-<li><input checked="" disabled="" type="checkbox"> DeepSeek</li>
-<li><input checked="" disabled="" type="checkbox"> Claude</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
+</h2><p>全新的高颜值/高性能的 AI 模型接口管理与分发系统，仅供个人学习使用，请勿用于任何商业用途，本项目基于 NewAPI 开发。A brand new high aesthetic/high-performance AI model interface management and distribution system is only for personal or internal management and distribution channels of enterprises. Please do not use it for commercial purposes.</p>
 <h2 id="部署">部署
 </h2><h3 id="docker">docker
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre tabindex="0" class="chroma"><code></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker run --name new-api -d --restart always -p 3000:3000 -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai -v /home/ubuntu/data/new-api:/data calciumion/new-api:latest
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
 </div>
 </div><h3 id="docker-compose">docker-compose
 </h3><div class="highlight"><div class="chroma">
@@ -418,7 +360,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir -p /opt/new-api
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir -p /opt/voapi
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -428,7 +370,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /opt/new-api
-</span></span><span class="line"><span class="cl">sudo vim /opt/new-api/docker-compose.yml
+</span></span><span class="line"><span class="cl">sudo vim /opt/voapi/docker-compose.yml
 </span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
@@ -445,20 +387,62 @@
 </span><span class="lnt">10
 </span><span class="lnt">11
 </span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">version: <span class="s1">&#39;3.9&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">version: <span class="s1">&#39;3.4&#39;</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">services:
-</span></span><span class="line"><span class="cl">    new-api:
-</span></span><span class="line"><span class="cl">        image: <span class="s1">&#39;calciumion/new-api:latest&#39;</span>
-</span></span><span class="line"><span class="cl">        volumes:
-</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;./data:/data&#39;</span>
-</span></span><span class="line"><span class="cl">        environment:
-</span></span><span class="line"><span class="cl">            - <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai
-</span></span><span class="line"><span class="cl">        ports:
-</span></span><span class="line"><span class="cl">            - <span class="s1">&#39;3000:3000&#39;</span>
-</span></span><span class="line"><span class="cl">        restart: unless-stopped
-</span></span><span class="line"><span class="cl">        container_name: new-api
+</span></span><span class="line"><span class="cl">  voapi:
+</span></span><span class="line"><span class="cl">    image: voapi/voapi:latest
+</span></span><span class="line"><span class="cl">    container_name: voapi
+</span></span><span class="line"><span class="cl">    restart: always
+</span></span><span class="line"><span class="cl">    command: --log-dir /app/logs
+</span></span><span class="line"><span class="cl">    ports:
+</span></span><span class="line"><span class="cl">      - <span class="s2">&#34;3000:3000&#34;</span>
+</span></span><span class="line"><span class="cl">    volumes:
+</span></span><span class="line"><span class="cl">      - ./data:/data
+</span></span><span class="line"><span class="cl">      - ./logs:/app/logs
+</span></span><span class="line"><span class="cl">    extra_hosts:
+</span></span><span class="line"><span class="cl">      - <span class="s2">&#34;host.docker.internal:host-gateway&#34;</span>
+</span></span><span class="line"><span class="cl">    environment:
+</span></span><span class="line"><span class="cl">      - <span class="nv">SQL_DSN</span><span class="o">=</span>root:123456@tcp<span class="o">(</span>host.docker.internal:3306<span class="o">)</span>/voapi?charset<span class="o">=</span>utf8mb4<span class="p">&amp;</span><span class="nv">parseTime</span><span class="o">=</span>True<span class="p">&amp;</span><span class="nv">loc</span><span class="o">=</span>Local  <span class="c1"># 修改此行，或注释掉以使用 SQLite 作为数据库</span>
+</span></span><span class="line"><span class="cl">      - <span class="nv">REDIS_CONN_STRING</span><span class="o">=</span>redis://redis
+</span></span><span class="line"><span class="cl">      - <span class="nv">SESSION_SECRET</span><span class="o">=</span>random_string  <span class="c1"># 启动前必须手动修改此值为随机字符串</span>
+</span></span><span class="line"><span class="cl">      - <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    depends_on:
+</span></span><span class="line"><span class="cl">      - redis
+</span></span><span class="line"><span class="cl">    healthcheck:
+</span></span><span class="line"><span class="cl">      test: <span class="o">[</span> <span class="s2">&#34;CMD-SHELL&#34;</span>, <span class="s2">&#34;wget -q -O - http://localhost:3000/api/status | grep -o &#39;\&#34;success\&#34;:\\s*true&#39; | awk -F: &#39;{print </span><span class="nv">$2</span><span class="s2">}&#39;&#34;</span> <span class="o">]</span>
+</span></span><span class="line"><span class="cl">      interval: 30s
+</span></span><span class="line"><span class="cl">      timeout: 10s
+</span></span><span class="line"><span class="cl">      retries: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  redis:
+</span></span><span class="line"><span class="cl">    image: redis:latest
+</span></span><span class="line"><span class="cl">    container_name: redis
+</span></span><span class="line"><span class="cl">    restart: always
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动</p>
@@ -561,6 +545,19 @@
             
                 
 <article class="">
+    <a href="/p/2407013/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">new-api，基于one-api修改的LLM接口管理和分发系统</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/2407015/">
         
         
@@ -574,12 +571,12 @@
             
                 
 <article class="">
-    <a href="/p/2407002/">
+    <a href="/p/250525114035/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">ChatGPT-Next-Web 最新部署对接new-api部署方法</h2>
+            <h2 class="article-title">微软开发者URL指南</h2>
         </div>
     </a>
 </article>
@@ -606,19 +603,6 @@
 
         <div class="article-details">
             <h2 class="article-title">cloudflare常见配置</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504122128/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">优化bing搜索结果</h2>
         </div>
     </a>
 </article>

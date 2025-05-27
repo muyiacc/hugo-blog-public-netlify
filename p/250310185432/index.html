@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 安装 pip 1 pip install open-webui 1 open-webui serve 访问：http://localhost:8080">
-<title>open-webui安装</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Open WebUI 是一个用户友好的 Web 界面，让你既可以轻松使用本地运行的语言模型（Ollama）又可以连接 OpenAI 的 API。">
+<title>Open-WebUI，一个用户友好界面友好的大模型客户端</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250310185432/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="open-webui安装">
-<meta property='og:description' content="简介 安装 pip 1 pip install open-webui 1 open-webui serve 访问：http://localhost:8080">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Open-WebUI，一个用户友好界面友好的大模型客户端">
+<meta property='og:description' content="Open WebUI 是一个用户友好的 Web 界面，让你既可以轻松使用本地运行的语言模型（Ollama）又可以连接 OpenAI 的 API。">
 <meta property='og:url' content='https://hublog.netlify.app/p/250310185432/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-03-10T18:54:32&#43;08:00'/><meta property='article:modified_time' content='2025-03-10T18:54:32&#43;08:00'/>
-<meta name="twitter:title" content="open-webui安装">
-<meta name="twitter:description" content="简介 安装 pip 1 pip install open-webui 1 open-webui serve 访问：http://localhost:8080">
+<meta name="twitter:title" content="Open-WebUI，一个用户友好界面友好的大模型客户端">
+<meta name="twitter:description" content="Open WebUI 是一个用户友好的 Web 界面，让你既可以轻松使用本地运行的语言模型（Ollama）又可以连接 OpenAI 的 API。">
   
 
 
@@ -268,9 +268,22 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#简介">简介</a></li>
-    <li><a href="#安装">安装</a>
+    <li><a href="#部署">部署</a>
       <ol>
-        <li><a href="#pip">pip</a></li>
+        <li><a href="#source">source</a>
+          <ol>
+            <li><a href="#uv未完成">uv(未完成)</a></li>
+            <li><a href="#pip">pip</a></li>
+          </ol>
+        </li>
+        <li><a href="#docker-compose">docker compose</a></li>
+      </ol>
+    </li>
+    <li><a href="#访问">访问</a></li>
+    <li><a href="#配置">配置</a>
+      <ol>
+        <li><a href="#使用-openai-格式兼容的-api-服务">使用 OpenAI 格式兼容的 API 服务</a></li>
+        <li><a href="#图像生成">图像生成</a></li>
       </ol>
     </li>
   </ol>
@@ -300,9 +313,13 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250310185432/">open-webui安装</a>
+            <a href="/p/250310185432/">Open-WebUI，一个用户友好界面友好的大模型客户端</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            Open WebUI 是一个用户友好的 Web 界面，让你既可以轻松使用本地运行的语言模型（Ollama）又可以连接 OpenAI 的 API。
+        </h3>
         
     </div>
 
@@ -339,9 +356,75 @@
     
     
     <h2 id="简介">简介
-</h2><h2 id="安装">安装
-</h2><h3 id="pip">pip
-</h3><div class="highlight"><div class="chroma">
+</h2><p><strong>Open-WebUI</strong> 是一个开源的、功能丰富且用户友好的自托管 AI 平台，主要设计用于与各种大型语言模型 (LLM) 运行器进行交互，并提供一个直观的 Web 用户界面。</p>
+<p><strong>主要特点和用途：</strong></p>
+<ol>
+<li><strong>LLM 前端界面：</strong> 它提供了一个美观、响应式的 Web 界面，让用户可以方便地与本地或远程部署的大型语言模型（如通过 Ollama 运行的模型）进行对话和交互。它也支持与 OpenAI 兼容的 API。</li>
+<li><strong>离线运行能力：</strong> 设计为可以完全离线运行，这意味着你可以在本地机器上托管并与 AI 模型交互，无需依赖外部云服务。</li>
+<li><strong>多模型支持：</strong> 能够管理和切换不同的 LLM 模型，支持包括 LLaMA、Mistral、Qwen、Gemma 等多种开源模型。</li>
+<li><strong>会话管理：</strong> 提供多会话管理、指令模式等功能，方便用户组织和回顾与 AI 的对话历史。</li>
+<li><strong>RAG（检索增强生成）集成：</strong> 内置推理引擎，支持 RAG 功能，这意味着它可以结合外部文档或知识库来增强模型的回答，例如与本地 PDF、CSV、TXT、MD、DOCX 等文档进行对话。</li>
+<li><strong>功能扩展：</strong> 允许通过 Functions 和 Pipelines 等机制进行功能扩展，例如实现自定义函数调用、构建复杂的 RAG 流程、消息监控、速率限制过滤、实时翻译等。</li>
+<li><strong>易于部署：</strong> 支持通过 Docker、Kubernetes 等容器化技术轻松部署，简化了设置过程。</li>
+<li><strong>用户权限管理：</strong> 提供细粒度的用户权限和用户组管理功能，确保多用户环境下的安全性和定制化体验。</li>
+</ol>
+<h2 id="部署">部署
+</h2><h3 id="source">source
+</h3><h4 id="uv未完成">uv(未完成)
+</h4><p>安装 uv</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># On macOS and Linux.</span>
+</span></span><span class="line"><span class="cl">curl -LsSf https://astral.sh/uv/install.sh <span class="p">|</span> sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="c"># On Windows.</span>
+</span></span><span class="line"><span class="cl"><span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">ByPass</span> <span class="n">-c</span> <span class="s2">&#34;irm https://astral.sh/uv/install.ps1 | iex&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建环境，并激活</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">uv venv
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> .venv/bin/activate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载 vllm</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">uv pip install vllm
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行模型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Load and run the model:</span>
+</span></span><span class="line"><span class="cl">vllm serve <span class="s2">&#34;HuggingFaceTB/SmolLM-135M&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="pip">pip
+</h4><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -357,8 +440,82 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">open-webui serve
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>访问：<a class="link" href="http://localhost:8080"  target="_blank" rel="noopener"
-    >http://localhost:8080</a></p>
+</div><h3 id="docker-compose">docker compose
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">open-webui</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">ghcr.io/open-webui/open-webui:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">open-webui</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">8080</span><span class="p">:</span><span class="m">8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">ENABLE_OPENAI_API=False </span><span class="w"> </span><span class="c"># 禁用 OpenAI 集成，卡死的原因就是这个</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">OFFLINE_MODE=True       </span><span class="w"> </span><span class="c"># 启用离线模式，不从 HuggingFace 拉取模型数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># - OLLAMA_BASE_URL=http://&lt;Ollama-Server-IP&gt;:&lt;Port&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">USE_OLLAMA_DOCKER=False </span><span class="w"> </span><span class="c"># 不使用集成 Ollama 容器</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TZ=Asia/Shanghai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./open-webui_data:/app/backend/data</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="访问">访问
+</h2><p>IP:8080</p>
+<h2 id="配置">配置
+</h2><h3 id="使用-openai-格式兼容的-api-服务">使用 OpenAI 格式兼容的 API 服务
+</h3><ol>
+<li>左下角或者右上角头像</li>
+<li>Admin Panel</li>
+<li>Settings</li>
+<li>Connections，开启OpenAI API</li>
+<li>添加 api，注意 url 端点需要加上版本号<code>v1</code></li>
+</ol>
+<h3 id="图像生成">图像生成
+</h3><ol>
+<li>左下角或者右上角头像</li>
+<li>Admin Panel</li>
+<li>Settings</li>
+<li>Images</li>
+<li>开启图像生成</li>
+<li>选择图像生成服务</li>
+</ol>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>URL</th>
+<th>KEY</th>
+<th>Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gemini</td>
+<td><a class="link" href="https://generativelanguage.googleapis.com/v1beta"  target="_blank" rel="noopener"
+    >https://generativelanguage.googleapis.com/v1beta</a></td>
+<td></td>
+<td>gemini-2.0-flash-preview-image-generation</td>
+</tr>
+</tbody>
+</table></div>
 
 </section>
 
@@ -382,6 +539,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250523095452/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI画图提示词，draw prompt</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
