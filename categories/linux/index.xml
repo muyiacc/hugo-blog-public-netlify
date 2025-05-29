@@ -2520,7 +2520,7 @@ tags:
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Linux下安装使用alist</title>
+        <title>alist，一个功能强大的网盘文件列表程序和 WebDAV/S3服务器</title>
         <link>https://hublog.netlify.app/p/2407005/</link>
         <pubDate>Fri, 05 Jul 2024 23:07:42 +0800</pubDate>
         
@@ -2530,8 +2530,8 @@ tags:
 &lt;p&gt;🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。&lt;/p&gt;
 &lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://alist.nn.ci/zh/guide&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://alist.nn.ci/zh/guide&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特性&#34;&gt;特性
-&lt;/h2&gt;&lt;ul&gt;
+&lt;h3 id=&#34;特性&#34;&gt;特性
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;⚡ 使用简单&lt;/strong&gt;
 AList 从一开始就设计为易于安装, 并且可以在所有平台上使用。&lt;/p&gt;

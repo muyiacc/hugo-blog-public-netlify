@@ -630,13 +630,13 @@
 </div><p>执行后将会自动打包备份到家目录的 <code>backup/application</code>下，然后上传到 b2</p>
 <h3 id="定时任务">定时任务
 </h3><p>为了实现定期备份，可以添加定时任务</p>
-<p>这个表示每天 0 点 0 分备份上传</p>
+<p>这个表示每天 23 点 55 分备份上传</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;0 0 * * * /root/bin/backup_and_upload.sh b2 tebi &gt;&gt; /root/logs/backup_and_upload.log&#34;</span> &gt;&gt; /var/spool/cron/crontabs/root
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;55 23 * * * /root/bin/backup_and_upload.sh b2 tebi &gt;&gt; /root/logs/backup_and_upload.log&#34;</span> &gt;&gt; /var/spool/cron/crontabs/root
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -703,12 +703,25 @@
             
                 
 <article class="">
+    <a href="/p/250528150817/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">YouTube封面图下载网站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250525114035/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">微软开发者URL指南</h2>
+            <h2 class="article-title">Microsoft微软URL指南</h2>
         </div>
     </a>
 </article>
@@ -722,19 +735,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Firefox支持垂直标签页</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504175051/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">cloudflare常见配置</h2>
         </div>
     </a>
 </article>

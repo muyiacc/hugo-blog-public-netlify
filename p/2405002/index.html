@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 certbot 安装还是过于麻烦， snap 不轻量，不使用 snap 使用 nginx 申请容易出问题，使用 acme.sh 申请 ssl 证书 之后，发现很方便 相比于 certbot 不同的地方在于 acme 使用 nginx/apaceh 申请证书不会修">
-<title>acme.sh，SSL证书申请工具</title>
+<title>acme.sh，SSL，TSL证书申请工具【万字长文详解⚠️】</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2405002/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="acme.sh，SSL证书申请工具">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="acme.sh，SSL，TSL证书申请工具【万字长文详解⚠️】">
 <meta property='og:description' content="前言 certbot 安装还是过于麻烦， snap 不轻量，不使用 snap 使用 nginx 申请容易出问题，使用 acme.sh 申请 ssl 证书 之后，发现很方便 相比于 certbot 不同的地方在于 acme 使用 nginx/apaceh 申请证书不会修">
 <meta property='og:url' content='https://hublog.netlify.app/p/2405002/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssl' /><meta property='article:tag' content='acme' /><meta property='article:tag' content='nginx' /><meta property='article:tag' content='apache' /><meta property='article:published_time' content='2024-05-02T16:05:43&#43;08:00'/><meta property='article:modified_time' content='2025-03-19T15:10:45&#43;08:00'/>
-<meta name="twitter:title" content="acme.sh，SSL证书申请工具">
+<meta name="twitter:title" content="acme.sh，SSL，TSL证书申请工具【万字长文详解⚠️】">
 <meta name="twitter:description" content="前言 certbot 安装还是过于麻烦， snap 不轻量，不使用 snap 使用 nginx 申请容易出问题，使用 acme.sh 申请 ssl 证书 之后，发现很方便 相比于 certbot 不同的地方在于 acme 使用 nginx/apaceh 申请证书不会修">
   
 
@@ -336,7 +336,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/2405002/">acme.sh，SSL证书申请工具</a>
+            <a href="/p/2405002/">acme.sh，SSL，TSL证书申请工具【万字长文详解⚠️】</a>
         </h2>
     
         
@@ -400,9 +400,10 @@
 <p>需要修改：</p>
 <ul>
 <li>邮箱<code>mail@yourdomain.com</code></li>
-<li>域名<code>example.com</code></li>
+<li>域名<code>yourdomain.com</code></li>
 </ul>
 <p>安装 acme.sh</p>
+<p>将 <code>mail@yourdoamin.com</code> 修改为申请证书的邮箱</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -435,7 +436,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com --standalone
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d yourdomain.com --standalone
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建证书文件夹</p>
@@ -455,7 +456,7 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d yourdomain.com <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /etc/cert/key.pem  <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /etc/cert/cert.pem
 </span></span></code></pre></td></tr></table>
@@ -463,6 +464,7 @@
 </div><p>详细内容请查看后续</p>
 <h2 id="安装-acmesh">安装 acme.sh
 </h2><p>国外服务器</p>
+<p>将 <code>mail@yourdoamin.com</code> 修改为申请证书的邮箱</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -480,6 +482,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>国内服务器</p>
+<p>将 <code>mail@yourdoamin.com</code> 修改为申请证书的邮箱</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -493,13 +496,12 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="卸载-acmesh">卸载 acme.sh
-</h2><div class="highlight"><div class="chroma">
+</h2><p>待续</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
+<pre tabindex="0" class="chroma"><code></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 待续</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"></code></pre></td></tr></table>
 </div>
 </div><h2 id="修改证书-ca-机构">修改证书 CA 机构
 </h2><p>默认证书的 CA 机构是 zerossl</p>
@@ -535,10 +537,10 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
 </span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    server_name example.com<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    server_name yourdomain.com<span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:8080<span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
@@ -554,7 +556,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com --nginx
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d yourdomain.com --nginx
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="no-web-server">no web server
@@ -564,7 +566,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com --standalone
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d yourdomain.com --standalone
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>更高级的用法请参考: <a class="link" href="https://github.com/Neilpang/acme.sh/wiki/How-to-issue-a-cert"  target="_blank" rel="noopener"
@@ -580,7 +582,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue --dns -d example.com \
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --issue --dns -d yourdomain.com \
 </span></span><span class="line"><span class="cl"> --yes-I-know-dns-manual-mode-enough-go-ahead-please
 </span></span></code></pre></td></tr></table>
 </div>
@@ -592,7 +594,7 @@
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --renew -d example.com \
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">acme.sh --renew -d yourdomain.com \
 </span></span><span class="line"><span class="cl">  --yes-I-know-dns-manual-mode-enough-go-ahead-please
 </span></span></code></pre></td></tr></table>
 </div>
@@ -633,7 +635,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_cf -d example.com -d <span class="s1">&#39;*.example.com&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_cf -d yourdomain.com -d <span class="s1">&#39;*.yourdomain.com&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>证书就会自动生成了. 这里环境变量会被自动记录下来, 将来在使用的时候, 就不需要再次指定了，直接生成就好了</p>
@@ -666,7 +668,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_dp -d example.com -d <span class="s1">&#39;*.example.com&#39;</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue --dns dns_dp -d yourdomain.com -d <span class="s1">&#39;*.yourdomain.com&#39;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>证书就会自动生成了. 这里给出的 api id 和 api key 会被自动记录下来, 将来在使用 dnspod api 的时候, 就不需要再次指定了，直接生成就好了</p>
@@ -675,7 +677,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d example.com.com --dns  dns_dp
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --issue -d yourdomain.com.com --dns  dns_dp
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="安装证书">安装证书
@@ -692,7 +694,7 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d yourdomain.com <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--cert-file      /path/to/certfile/in/apache/cert.pem  <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /path/to/keyfile/in/apache/key.pem  <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /path/to/fullchain/certfile/apache/fullchain.pem <span class="se">\
@@ -708,13 +710,13 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d example.com <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /etc/nginx/ssl/example.com/key.pem  <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /etc/nginx/ssl/example.com/cert.pem <span class="se">\
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --install-cert -d yourdomain.com <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--key-file       /etc/nginx/ssl/yourdomain.com/key.pem  <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>--fullchain-file /etc/nginx/ssl/yourdomain.com/cert.pem <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>--reloadcmd     <span class="s2">&#34;service nginx force-reload&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>可自由指定位置，请保证<code>/etc/nginx/ssl/example.com</code>路径存在</p>
+</div><p>可自由指定位置，请保证<code>/etc/nginx/ssl/yourdomain.com</code>路径存在</p>
 <p>一个小提醒, 这里用的是 <code>service nginx force-reload</code>, 不是 <code>service nginx reload</code>, 据测试, <code>reload</code> 并不会重新加载证书, 所以用的 <code>force-reload</code></p>
 <p>Nginx 的配置 <code>ssl_certificate</code> 使用 <code>/etc/nginx/ssl/fullchain.cert</code> ，而非 <code>/etc/nginx/ssl/&lt;domain&gt;.cert</code> ，否则 <a class="link" href="https://www.ssllabs.com/ssltest/"  target="_blank" rel="noopener"
     >SSL Labs</a> 的测试会报 <code>Chain issues Incomplete</code> 错误。</p>
@@ -751,10 +753,10 @@
 </span><span class="lnt">23
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --info -d example.com
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">acme.sh --info -d yourdomain.com
 </span></span><span class="line"><span class="cl"><span class="c1"># 会输出如下内容：</span>
-</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN_CONF</span><span class="o">=</span>/root/.acme.sh/example.com/example.com.conf
-</span></span><span class="line"><span class="cl"><span class="nv">Le_Domain</span><span class="o">=</span>example.com
+</span></span><span class="line"><span class="cl"><span class="nv">DOMAIN_CONF</span><span class="o">=</span>/root/.acme.sh/yourdomain.com/yourdomain.com.conf
+</span></span><span class="line"><span class="cl"><span class="nv">Le_Domain</span><span class="o">=</span>yourdomain.com
 </span></span><span class="line"><span class="cl"><span class="nv">Le_Alt</span><span class="o">=</span>no
 </span></span><span class="line"><span class="cl"><span class="nv">Le_Webroot</span><span class="o">=</span>dns_ali
 </span></span><span class="line"><span class="cl"><span class="nv">Le_PreHook</span><span class="o">=</span>
@@ -771,9 +773,9 @@
 </span></span><span class="line"><span class="cl"><span class="nv">Le_NextRenewTime</span><span class="o">=</span><span class="m">1654456325</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Le_RealCertPath</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl"><span class="nv">Le_RealCACertPath</span><span class="o">=</span>
-</span></span><span class="line"><span class="cl"><span class="nv">Le_RealKeyPath</span><span class="o">=</span>/etc/acme/example.com/privkey.pem
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealKeyPath</span><span class="o">=</span>/etc/acme/yourdomain.com/privkey.pem
 </span></span><span class="line"><span class="cl"><span class="nv">Le_ReloadCmd</span><span class="o">=</span>service nginx force-reload
-</span></span><span class="line"><span class="cl"><span class="nv">Le_RealFullChainPath</span><span class="o">=</span>/etc/acme/example.com/chain.pem
+</span></span><span class="line"><span class="cl"><span class="nv">Le_RealFullChainPath</span><span class="o">=</span>/etc/acme/yourdomain.com/chain.pem
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="更新证书">更新证书
@@ -793,7 +795,7 @@
 </div>
 </div><h2 id="关于修改-reloadcmd">关于修改 ReloadCmd
 </h2><p>目前，修改 <code>ReloadCmd</code> 并没有专门的命令实现。我们可以通过重新安装证书来间接达到修改的目的。</p>
-<p>此外，安装证书后，相关信息会保存在 <code>~/.acme.sh/example.com/example.conf</code> 文件中，内容与执行 <code>acme.sh --info -d example.com</code> 输出的信息一致，但 <code>ReloadCmd</code> 在文件中使用了 Base64 编码。</p>
+<p>此外，安装证书后，相关信息会保存在 <code>~/.acme.sh/yourdomain.com/example.conf</code> 文件中，内容与执行 <code>acme.sh --info -d yourdomain.com</code> 输出的信息一致，但 <code>ReloadCmd</code> 在文件中使用了 Base64 编码。</p>
 <p>理论上，我们可以直接修改该文件来更改 <code>ReloadCmd</code>，而且在修改时无需进行 Base64 编码，直接写入命令的原文 <code>acme.sh</code> 也能被识别。</p>
 <p>然而，请注意，<code>example.conf</code> 文件的位置和内容格式在未来可能会发生变化！该文件一直以来都是内部使用，未来可能会转为使用 SQLite 或 MySQL 格式存储。因此，一般不建议自行修改。</p>
 <h2 id="更新-acmesh">更新 acme.sh
@@ -880,7 +882,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">https_proxy</span><span class="o">=</span><span class="s2">&#34;socks5h://[代理A]:1234&#34;</span> <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network container:<span class="o">[</span>代理A<span class="o">]</span><span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>  neilpang/acme.sh <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --issue -d example.com --dns dns_cf --debug
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --issue -d yourdomain.com --dns dns_cf --debug
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>上述例子中使用 cloudflare 的 DNS 来签发证书，并通过把 acme.sh 链接到容器[代理 A]，来转发 curl 请求（请按照自己实际设定修改）</p>
