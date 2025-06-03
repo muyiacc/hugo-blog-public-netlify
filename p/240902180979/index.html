@@ -282,7 +282,6 @@
         <li><a href="#alist">alist</a></li>
         <li><a href="#ddns-go">ddns-go</a></li>
         <li><a href="#wg-esay">wg-esay</a></li>
-        <li><a href="#transmission">transmission</a></li>
         <li><a href="#lucky">lucky</a></li>
       </ol>
     </li>
@@ -723,156 +722,6 @@
 </div>
 </div><p>如果是 单个 <code>$</code>要改成 <code>$$</code></p>
 <p>部署后请注意开放对应端口。</p>
-<h3 id="transmission">transmission
-</h3><p>一个快速、简单、免费的 Bittorrent 客户端</p>
-<p>官网：<a class="link" href="https://transmissionbt.com/"  target="_blank" rel="noopener"
-    >https://transmissionbt.com/</a></p>
-<p>安装</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install transmission-daemon
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>配置</p>
-<p>修改配置需要停用 transmission-daemon 服务，否则<strong>所做的一切配置都不会保存</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl stop transmission-daemon.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/transmission-daemon/settings.json
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>一般需要修改：</p>
-<p>默认下载路径</p>
-<p>找到下面这一项，后面的路径是默认下载的路径，你可以改成你想要的路径</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="s2">&#34;download-dir&#34;</span><span class="p">:</span> <span class="s2">&#34;/home/share/downloads&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>设置好后，不要忘记执行一下赋权命令，使下载目录可以读写，以免发生不必要的错误：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">p1</span><span class="o">/</span><span class="n">bt_downloads</span>
-</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">chmod</span> <span class="o">-</span><span class="n">R</span> <span class="mi">777</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">p1</span><span class="o">/</span><span class="n">bt_downloads</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>配置 WebUI</p>
-<p>按照下面的进行设置即可</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;rpc-authentication-required&#34;: true
-</span></span><span class="line"><span class="cl">&#34;rpc-enabled&#34;: true
-</span></span><span class="line"><span class="cl">&#34;rpc-password: &#34;这里改成你自己的密码&#34;
-</span></span><span class="line"><span class="cl">&#34;rpc-username&#34;:&#34;改成你自己的用户名&#34;
-</span></span><span class="line"><span class="cl">&#34;rpc-whitelist-enabled&#34;: false  不启用白名单，防止登不上
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>完整如下，仅供参考</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;blocklist-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-dir&#34;</span><span class="p">:</span> <span class="s2">&#34;/mnt/p1/bt_downloads&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;encryption&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max-peers-global&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;peer-port&#34;</span><span class="p">:</span> <span class="mi">51413</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;pex-enabled&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;port-forwarding-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-authentication-required&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-password&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-port&#34;</span><span class="p">:</span> <span class="mi">9091</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-username&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist-enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist&#34;</span><span class="p">:</span> <span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>配置完这些基本就足够用了，如果还想进一步了解各参数的作用，可以参考<a class="link" href="https://github.com/transmission/transmission/wiki/Editing-Configuration-Files"  target="_blank" rel="noopener"
-    ><strong>官方文档</strong></a>以及各参数的<a class="link" href="https://blog.whsir.com/post-1182.html"  target="_blank" rel="noopener"
-    ><strong>中英对照</strong></a></p>
-<p>查看状态</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl status transmission-daemon.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start transmission-daemon.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>开机自启动</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> transmission-daemon.service
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>WebUI</p>
-<p>IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录</p>
 <h3 id="lucky">lucky
 </h3><p>Lucky 最初是作为一个小工具，由开发者为自己的个人使用而开发，用于替代 socat，在小米路由 AX6000 官方系统上实现公网 IPv6 转内网 IPv4 的功能。Lucky 的设计始终致力于让更多的 Linux 嵌入式设备运行，以实现或集成个人用户常用功能，降低用户的硬件和软件操作学习成本，同时引导使用者注意网络安全。随着版本更新和网友反馈，Lucky 不断迭代改进，拥有更多功能和更好的性能，成为用户值得信赖的工具。</p>
 <p>Lucky 的核心程序完全采用 Golang 实现，具有高效、稳定、跨平台等优点。其后台前端则采用 Vue3.2 技术进行开发，具有良好的用户体验和响应速度。此外，Lucky 的管理后台采用前后端分离的架构，第三方开发者也可以自由使用 OpenToken 轻松调用 Lucky 的各种功能接口。</p>
@@ -941,6 +790,32 @@
             
                 
 <article class="">
+    <a href="/p/250531171638/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">transmission，Bittorrent客户端</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250530150227/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">speedtest测速网站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250528150817/">
         
         
@@ -973,32 +848,6 @@
 
         <div class="article-details">
             <h2 class="article-title">cloudflare常见配置</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504122128/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">优化bing搜索结果</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504120615/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">fofa，搜索语法</h2>
         </div>
     </a>
 </article>

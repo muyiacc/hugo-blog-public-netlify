@@ -93,8 +93,8 @@
 &lt;p&gt;这个项目可以一键免费部署你的私人 ChatGPT 网页应用，支持 Claude, GPT4 &amp;amp; Gemini Pro 模型。&lt;/p&gt;
 &lt;p&gt;源码：&lt;a class=&#34;link&#34; href=&#34;https://github.com/Yidadaa/ChatGPT-Next-Web&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/Yidadaa/ChatGPT-Next-Web&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;预览&#34;&gt;预览
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
+&lt;h3 id=&#34;预览&#34;&gt;预览
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2023/10/28/Tu5iPkerLvBpK3E.png&#34;
 	
 	
 	
@@ -105,7 +105,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;部署&#34;&gt;部署
-&lt;/h2&gt;&lt;h3 id=&#34;docker-compose&#34;&gt;docker compose
+&lt;/h2&gt;&lt;h3 id=&#34;docker&#34;&gt;Docker
 &lt;/h3&gt;&lt;p&gt;docker-compose.yml&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -217,6 +217,15 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sk-xxxxx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;DEFAULT_MODEL&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;gemini-2.0-flash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;接口&#34;&gt;接口

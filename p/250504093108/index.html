@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="某个分支下的某个文件的链接格式 1 https://github.com/{用户名}/{仓库名}/blob/{分支名}/{文件路径} 某个分支下的">
-<title>Github链接指南，代理下载</title>
+<title>Github链接指南，Github代理</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250504093108/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Github链接指南，代理下载">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Github链接指南，Github代理">
 <meta property='og:description' content="某个分支下的某个文件的链接格式 1 https://github.com/{用户名}/{仓库名}/blob/{分支名}/{文件路径} 某个分支下的">
 <meta property='og:url' content='https://hublog.netlify.app/p/250504093108/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='github' /><meta property='article:published_time' content='2025-05-04T09:31:08&#43;08:00'/><meta property='article:modified_time' content='2025-05-04T09:31:08&#43;08:00'/>
-<meta name="twitter:title" content="Github链接指南，代理下载">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='github' /><meta property='article:tag' content='proxy' /><meta property='article:published_time' content='2025-05-04T09:31:08&#43;08:00'/><meta property='article:modified_time' content='2025-05-04T09:31:08&#43;08:00'/>
+<meta name="twitter:title" content="Github链接指南，Github代理">
 <meta name="twitter:description" content="某个分支下的某个文件的链接格式 1 https://github.com/{用户名}/{仓库名}/blob/{分支名}/{文件路径} 某个分支下的">
   
 
@@ -245,7 +245,50 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#github-代理">Github 代理</a>
+      <ol>
+        <li><a href="#代理链接">代理链接</a></li>
+        <li><a href="#使用方法">使用方法</a></li>
+        <li><a href="#自建-github-代理">自建 GitHub 代理</a></li>
+      </ol>
+    </li>
+    <li><a href="#api">API</a>
+      <ol>
+        <li><a href="#用户">用户</a></li>
+        <li><a href="#仓库">仓库</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -264,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250504093108/">Github链接指南，代理下载</a>
+            <a href="/p/250504093108/">Github链接指南，Github代理</a>
         </h2>
     
         
@@ -329,19 +372,28 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://github.com/{用户名}/{仓库名}/archive/refs/heads/{分支名}.zip
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="代理">代理
-</h2><p>免费的GitHub代理链接</p>
+</div><h2 id="github-代理">Github 代理
+</h2><p>GitHub 文件 , Releases , archive , gist , raw.githubusercontent.com 文件代理加速下载服务.</p>
+<h3 id="代理链接">代理链接
+</h3><ul>
+<li><a class="link" href="https://ghfast.top/"  target="_blank" rel="noopener"
+    >https://ghfast.top/</a></li>
+<li><a class="link" href="https://gh-proxy.com/"  target="_blank" rel="noopener"
+    >https://gh-proxy.com/</a></li>
+<li><a class="link" href="https://gh-proxy.net/"  target="_blank" rel="noopener"
+    >https://gh-proxy.net/</a></li>
+</ul>
+<p>镜像站点搜集：<a class="link" href="https://github.com/hunshcn/gh-proxy/issues/116"  target="_blank" rel="noopener"
+    >https://github.com/hunshcn/gh-proxy/issues/116</a></p>
+<h3 id="使用方法">使用方法
+</h3><p>原始链接 <a class="link" href="https://raw.githubusercontent.com/username/repo/main/file.txt"  target="_blank" rel="noopener"
+    >https://raw.githubusercontent.com/username/repo/main/file.txt</a></p>
+<p>代理链接 <a class="link" href="https://gh-proxy.com/raw.githubusercontent.com/username/repo/main/file.txt"  target="_blank" rel="noopener"
+    >https://gh-proxy.com/raw.githubusercontent.com/username/repo/main/file.txt</a></p>
+<p>代理链接 <a class="link" href="https://gh-proxy.com/https://raw.githubusercontent.com/username/repo/main/file.txt"  target="_blank" rel="noopener"
+    >https://gh-proxy.com/https://raw.githubusercontent.com/username/repo/main/file.txt</a></p>
+<p>例如：</p>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://ghfast.top
-</span></span><span class="line"><span class="cl">https://gh-proxy.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -357,6 +409,33 @@
 <pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="自建-github-代理">自建 GitHub 代理
+</h3><p>项目：</p>
+<p><a class="link" href="https://github.com/yangyanggu/gh-proxy-page"  target="_blank" rel="noopener"
+    >https://github.com/yangyanggu/gh-proxy-page</a></p>
+<p><a class="link" href="https://github.com/hunshcn/gh-proxy"  target="_blank" rel="noopener"
+    >https://github.com/hunshcn/gh-proxy</a></p>
+<h2 id="api">API
+</h2><h3 id="用户">用户
+</h3><p>查看用户信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.github.com/users/{username}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="仓库">仓库
+</h3><p>查看仓库信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.github.com/repos/{username}/{repo_name}
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
 </section>
 
@@ -366,6 +445,8 @@
     <section class="article-tags">
         
             <a href="/tags/github/">Github</a>
+        
+            <a href="/tags/proxy/">Proxy</a>
         
     </section>
 
@@ -389,6 +470,45 @@
             
                 
 <article class="">
+    <a href="/p/2309005/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">pandora-免翻访问gpt</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250531171638/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">transmission，Bittorrent客户端</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250530150227/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">speedtest测速网站</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250528150817/">
         
         
@@ -408,45 +528,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Firefox支持垂直标签页</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504175051/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">cloudflare常见配置</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504122128/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">优化bing搜索结果</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504120615/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">fofa，搜索语法</h2>
         </div>
     </a>
 </article>

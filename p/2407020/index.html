@@ -300,6 +300,7 @@
       </ol>
     </li>
     <li><a href="#双向同步">双向同步</a></li>
+    <li><a href="#开启命令补全">开启命令补全</a></li>
     <li><a href="#web-ui">Web UI</a></li>
     <li><a href="#其他命令">其他命令</a></li>
     <li><a href="#小技巧">小技巧</a>
@@ -516,8 +517,10 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
-<li><code>--buffer-size</code>：指定缓存大小</li>
-<li><code>--vfs-cache-mode</code>：缓存模式</li>
+<li><code>--buffer-size</code>：在传输文件时，读取和写入操作的缓冲区大小</li>
+<li><code>--vfs-cache-mode</code>：缓存模式，可选 off（默认），writes，full</li>
+<li><code>--vfs-cache-max-size</code>：限制 VFS 缓存的最大大小</li>
+<li><code>--vfs-cache-max-age</code>：限制缓存文件的最大存活时间</li>
 <li><code>--daemon</code>：后台挂载</li>
 </ul>
 <p>使用 <code>alist</code> 在线播放 115 上的视频可能会失败，但挂载后即可播放</p>
@@ -677,6 +680,50 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone bisync remote1:path1 remote2:path2 <span class="o">[</span>flags<span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="开启命令补全">开启命令补全
+</h2><p>如果输入 <code>rclone</code>按住 tab 没有补全，可以使用如下方法开启命令补全</p>
+<p>rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启</p>
+<p>先安装 <code>bash-completion</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt update  <span class="c1"># Debian/Ubuntu</span>
+</span></span><span class="line"><span class="cl">sudo apt install bash-completion
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo yum update  <span class="c1"># CentOS/RHEL/Fedora</span>
+</span></span><span class="line"><span class="cl">sudo yum install bash-completion
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo pacman -S bash-completion <span class="c1"># Arch Linux/Manjaro</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>开启补全功能</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rclone genautocomplete bash <span class="p">|</span> sudo tee /etc/bash_completion.d/rclone
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/bash_completion.d/rclone
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>再次尝试 rclone 命令，输入，使用 tab 键查看是否有补全</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone lsd remote-name
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h2 id="web-ui">Web UI
 </h2><p>rclone 也提供了 Web UI 界面：</p>
 <div class="highlight"><div class="chroma">
@@ -806,12 +853,25 @@
             
                 
 <article class="">
-    <a href="/p/250117155426/">
+    <a href="/p/250531171638/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rclone开启命令补全</h2>
+            <h2 class="article-title">transmission，Bittorrent客户端</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250530150227/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">speedtest测速网站</h2>
         </div>
     </a>
 </article>
@@ -838,19 +898,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Firefox支持垂直标签页</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250504175051/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">cloudflare常见配置</h2>
         </div>
     </a>
 </article>

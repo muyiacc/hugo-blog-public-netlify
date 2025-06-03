@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启 先安装 bash-completion 1 2">
-<title>Rclone开启命令补全</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="https://fiber.google.com/speedtest/ https://speedtest.xfinity.com/ https://fast.com/ https://www.cccitu.com/ez8eu3ux4.html https://test.ustc.edu.cn/ http://speedtest.im/ https://www.speakeasy.net/speedtest/">
+<title>speedtest测速网站</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/250117155426/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250530150227/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Rclone开启命令补全">
-<meta property='og:description' content="rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启 先安装 bash-completion 1 2">
-<meta property='og:url' content='https://hublog.netlify.app/p/250117155426/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="speedtest测速网站">
+<meta property='og:description' content="https://fiber.google.com/speedtest/ https://speedtest.xfinity.com/ https://fast.com/ https://www.cccitu.com/ez8eu3ux4.html https://test.ustc.edu.cn/ http://speedtest.im/ https://www.speakeasy.net/speedtest/">
+<meta property='og:url' content='https://hublog.netlify.app/p/250530150227/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rclone' /><meta property='article:published_time' content='2025-01-17T15:54:26&#43;08:00'/><meta property='article:modified_time' content='2025-01-17T15:54:26&#43;08:00'/>
-<meta name="twitter:title" content="Rclone开启命令补全">
-<meta name="twitter:description" content="rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启 先安装 bash-completion 1 2">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-30T15:02:27&#43;08:00'/><meta property='article:modified_time' content='2025-05-30T15:02:27&#43;08:00'/>
+<meta name="twitter:title" content="speedtest测速网站">
+<meta name="twitter:description" content="https://fiber.google.com/speedtest/ https://speedtest.xfinity.com/ https://fast.com/ https://www.cccitu.com/ez8eu3ux4.html https://test.ustc.edu.cn/ http://speedtest.im/ https://www.speakeasy.net/speedtest/">
   
 
 
@@ -264,7 +264,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250117155426/">Rclone开启命令补全</a>
+            <a href="/p/250530150227/">speedtest测速网站</a>
         </h2>
     
         
@@ -286,7 +286,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 17, 2025</time>
+                <time class="article-time--published">May 30, 2025</time>
             </div>
         
 
@@ -302,90 +302,32 @@
     <section class="article-content">
     
     
-    <p>rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启</p>
-<p>先安装 <code>bash-completion</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt update  <span class="c1"># Debian/Ubuntu</span>
-</span></span><span class="line"><span class="cl">sudo apt install bash-completion
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo yum update  <span class="c1"># CentOS/RHEL/Fedora</span>
-</span></span><span class="line"><span class="cl">sudo yum install bash-completion
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo pacman -S bash-completion <span class="c1"># Arch Linux/Manjaro</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>开启补全功能</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo rclone genautocomplete bash <span class="p">|</span> sudo tee /etc/bash_completion.d/rclone
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/bash_completion.d/rclone
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>再次尝试 rclone 命令，输入，使用 tab 键查看是否有补全</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone lsd remote-name
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+    <p><a class="link" href="https://fiber.google.com/speedtest/"  target="_blank" rel="noopener"
+    >https://fiber.google.com/speedtest/</a></p>
+<p><a class="link" href="https://speedtest.xfinity.com/"  target="_blank" rel="noopener"
+    >https://speedtest.xfinity.com/</a></p>
+<p><a class="link" href="https://fast.com/"  target="_blank" rel="noopener"
+    >https://fast.com/</a></p>
+<p><a class="link" href="https://www.cccitu.com/ez8eu3ux4.html"  target="_blank" rel="noopener"
+    >https://www.cccitu.com/ez8eu3ux4.html</a></p>
+<p><a class="link" href="https://test.ustc.edu.cn/"  target="_blank" rel="noopener"
+    >https://test.ustc.edu.cn/</a></p>
+<p><a class="link" href="http://speedtest.im/"  target="_blank" rel="noopener"
+    >http://speedtest.im/</a></p>
+<p><a class="link" href="https://www.speakeasy.net/speedtest/"  target="_blank" rel="noopener"
+    >https://www.speakeasy.net/speedtest/</a></p>
+
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/rclone/">Rclone</a>
-        
-    </section>
-
 
     <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
 
-    
-        <link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
-            ><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
-                defer
-                >
-            </script><script>
-    window.addEventListener("DOMContentLoaded", () => {
-        renderMathInElement(document.body, {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ],
-            ignoredClasses: ["gist"]
-        });})
-</script>
     
 </article>
 
@@ -400,31 +342,12 @@
             
                 
 <article class="">
-    <a href="/p/250405194220/">
+    <a href="/p/250531171638/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">服务器自动化打包备份，rclone自动备份脚本分享</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/2407020/">
-        
-        
-            <div class="article-image">
-                
-                    <img src="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp" loading="lazy" data-key="2407020" data-hash="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp"/>
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">rclone，统一管理、备份，同步文件，文件夹到多种云存储平台</h2>
+            <h2 class="article-title">transmission，Bittorrent客户端</h2>
         </div>
     </a>
 </article>
@@ -464,6 +387,19 @@
 
         <div class="article-details">
             <h2 class="article-title">cloudflare常见配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250504122128/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">优化bing搜索结果</h2>
         </div>
     </a>
 </article>

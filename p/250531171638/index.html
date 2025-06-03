@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="用户 查看用户信息 1 https://api.github.com/users/{username} 仓库 查看仓库信息 1 https://api.github.com/repos/{username}/{repo_name}">
-<title>github公开api</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 一个快速、简单、免费的 Bittorrent 客户端 官网：https://transmissionbt.com/ 部署 1 sudo apt install transmission-daemon 配置 修改配置需要停用 transmission-daemon 服务，否则">
+<title>transmission，Bittorrent客户端</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/250413171712/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250531171638/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="github公开api">
-<meta property='og:description' content="用户 查看用户信息 1 https://api.github.com/users/{username} 仓库 查看仓库信息 1 https://api.github.com/repos/{username}/{repo_name}">
-<meta property='og:url' content='https://hublog.netlify.app/p/250413171712/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="transmission，Bittorrent客户端">
+<meta property='og:description' content="简介 一个快速、简单、免费的 Bittorrent 客户端 官网：https://transmissionbt.com/ 部署 1 sudo apt install transmission-daemon 配置 修改配置需要停用 transmission-daemon 服务，否则">
+<meta property='og:url' content='https://hublog.netlify.app/p/250531171638/'>
 <meta property='og:site_name' content='寻道之旅'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='github' /><meta property='article:published_time' content='2025-04-13T17:17:12&#43;08:00'/><meta property='article:modified_time' content='2025-04-13T17:17:12&#43;08:00'/>
-<meta name="twitter:title" content="github公开api">
-<meta name="twitter:description" content="用户 查看用户信息 1 https://api.github.com/users/{username} 仓库 查看仓库信息 1 https://api.github.com/repos/{username}/{repo_name}">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-31T17:16:38&#43;08:00'/><meta property='article:modified_time' content='2025-05-31T17:16:38&#43;08:00'/>
+<meta name="twitter:title" content="transmission，Bittorrent客户端">
+<meta name="twitter:description" content="简介 一个快速、简单、免费的 Bittorrent 客户端 官网：https://transmissionbt.com/ 部署 1 sudo apt install transmission-daemon 配置 修改配置需要停用 transmission-daemon 服务，否则">
   
 
 
@@ -267,8 +267,9 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#用户">用户</a></li>
-    <li><a href="#仓库">仓库</a></li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#部署">部署</a></li>
+    <li><a href="#配置">配置</a></li>
   </ol>
 </nav>
         </div>
@@ -287,8 +288,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/backend/" >
-                Backend
+            <a href="/categories/default/" >
+                Default
             </a>
         
     </header>
@@ -296,7 +297,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250413171712/">github公开api</a>
+            <a href="/p/250531171638/">transmission，Bittorrent客户端</a>
         </h2>
     
         
@@ -318,7 +319,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Apr 13, 2025</time>
+                <time class="article-time--published">May 31, 2025</time>
             </div>
         
 
@@ -334,38 +335,164 @@
     <section class="article-content">
     
     
-    <h2 id="用户">用户
-</h2><p>查看用户信息</p>
+    <h2 id="简介">简介
+</h2><p>一个快速、简单、免费的 Bittorrent 客户端</p>
+<p>官网：<a class="link" href="https://transmissionbt.com/"  target="_blank" rel="noopener"
+    >https://transmissionbt.com/</a></p>
+<h2 id="部署">部署
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install transmission-daemon
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="配置">配置
+</h2><p>修改配置需要停用 transmission-daemon 服务，否则<strong>所做的一切配置都不会保存</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.github.com/users/{username}
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl stop transmission-daemon.service
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="仓库">仓库
-</h2><p>查看仓库信息</p>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim /etc/transmission-daemon/settings.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一般需要修改：</p>
+<ul>
+<li>默认下载路径</li>
+</ul>
+<p>找到下面这一项，后面的路径是默认下载的路径，你可以改成你想要的路径</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://api.github.com/repos/{username}/{repo_name}
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="s2">&#34;download-dir&#34;</span>: <span class="s2">&#34;/home/share/downloads&#34;</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>设置好后，不要忘记执行一下赋权命令，使下载目录可以读写，以免发生不必要的错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mkdir -p /mnt/p1/bt_downloads
+</span></span><span class="line"><span class="cl">sudo chmod -R <span class="m">777</span> /mnt/p1/bt_downloads
+</span></span></code></pre></td></tr></table>
 </div>
+</div><p>配置 WebUI</p>
+<p>按照下面的进行设置即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&#34;rpc-authentication-required&#34;: true
+</span></span><span class="line"><span class="cl">&#34;rpc-enabled&#34;: true
+</span></span><span class="line"><span class="cl">&#34;rpc-password: &#34;这里改成你自己的密码&#34;
+</span></span><span class="line"><span class="cl">&#34;rpc-username&#34;:&#34;改成你自己的用户名&#34;
+</span></span><span class="line"><span class="cl">&#34;rpc-whitelist-enabled&#34;: false  不启用白名单，防止登不上
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>完整如下，仅供参考</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;blocklist-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-dir&#34;</span><span class="p">:</span> <span class="s2">&#34;/mnt/p1/bt_downloads&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;download-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;encryption&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;max-peers-global&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;peer-port&#34;</span><span class="p">:</span> <span class="mi">51413</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;pex-enabled&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;port-forwarding-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-authentication-required&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-password&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-port&#34;</span><span class="p">:</span> <span class="mi">9091</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-username&#34;</span><span class="p">:</span> <span class="s2">&#34;transmission&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist-enabled&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;rpc-whitelist&#34;</span><span class="p">:</span> <span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;upload-limit-enabled&#34;</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置完这些基本就足够用了，如果还想进一步了解各参数的作用，可以参考<a class="link" href="https://github.com/transmission/transmission/wiki/Editing-Configuration-Files"  target="_blank" rel="noopener"
+    ><strong>官方文档</strong></a>以及各参数的<a class="link" href="https://blog.whsir.com/post-1182.html"  target="_blank" rel="noopener"
+    ><strong>中英对照</strong></a></p>
+<p>查看状态</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl status transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>开机自启动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> transmission-daemon.service
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>WebUI</p>
+<p>IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录</p>
+
 </section>
 
 
     <footer class="article-footer">
     
-    <section class="article-tags">
-        
-            <a href="/tags/github/">Github</a>
-        
-    </section>
-
 
     <section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
@@ -386,12 +513,12 @@
             
                 
 <article class="">
-    <a href="/p/250402091603/">
+    <a href="/p/250530150227/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Go语言指南</h2>
+            <h2 class="article-title">speedtest测速网站</h2>
         </div>
     </a>
 </article>
@@ -399,12 +526,12 @@
             
                 
 <article class="">
-    <a href="/p/250305223057/">
+    <a href="/p/250528150817/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Pandas入门教程</h2>
+            <h2 class="article-title">YouTube封面图下载网站</h2>
         </div>
     </a>
 </article>
@@ -412,12 +539,12 @@
             
                 
 <article class="">
-    <a href="/p/250305222607/">
+    <a href="/p/250506124420/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Minconda安装使用</h2>
+            <h2 class="article-title">Firefox支持垂直标签页</h2>
         </div>
     </a>
 </article>
@@ -425,12 +552,12 @@
             
                 
 <article class="">
-    <a href="/p/250302101746/">
+    <a href="/p/250504175051/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Go语言交叉编译</h2>
+            <h2 class="article-title">cloudflare常见配置</h2>
         </div>
     </a>
 </article>
@@ -438,12 +565,12 @@
             
                 
 <article class="">
-    <a href="/p/250217154914/">
+    <a href="/p/250504122128/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Java版本管理工具，jabba</h2>
+            <h2 class="article-title">优化bing搜索结果</h2>
         </div>
     </a>
 </article>

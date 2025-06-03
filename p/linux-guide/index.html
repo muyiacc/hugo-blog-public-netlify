@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="挂载 设备信息 查看块设备信息 1 lsblk -f 或 --fs: 显示文件系统信息，例如文件系统类型和 UUID。 -m 或 --perms: 显示设备的所有权和权限。 -o 或 --output &lt;list&gt;: 指定要显示的列的列表">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="解压缩 tar tar (Tape Archive) 是一个 Linux/Unix 系统中常用的归档工具，用于将多个文件和目录打包成一个单独的文件，通常称为 &ldquo;tarball&rdquo; 文件。 它本身并不压缩文件，只是将多个文件打包">
 <title>Linux指南</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/linux-guide/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux指南">
-<meta property='og:description' content="挂载 设备信息 查看块设备信息 1 lsblk -f 或 --fs: 显示文件系统信息，例如文件系统类型和 UUID。 -m 或 --perms: 显示设备的所有权和权限。 -o 或 --output &lt;list&gt;: 指定要显示的列的列表">
+<meta property='og:description' content="解压缩 tar tar (Tape Archive) 是一个 Linux/Unix 系统中常用的归档工具，用于将多个文件和目录打包成一个单独的文件，通常称为 &ldquo;tarball&rdquo; 文件。 它本身并不压缩文件，只是将多个文件打包">
 <meta property='og:url' content='https://hublog.netlify.app/p/linux-guide/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-07-14T13:07:10&#43;08:00'/><meta property='article:modified_time' content='2024-07-14T13:07:10&#43;08:00'/>
 <meta name="twitter:title" content="Linux指南">
-<meta name="twitter:description" content="挂载 设备信息 查看块设备信息 1 lsblk -f 或 --fs: 显示文件系统信息，例如文件系统类型和 UUID。 -m 或 --perms: 显示设备的所有权和权限。 -o 或 --output &lt;list&gt;: 指定要显示的列的列表">
+<meta name="twitter:description" content="解压缩 tar tar (Tape Archive) 是一个 Linux/Unix 系统中常用的归档工具，用于将多个文件和目录打包成一个单独的文件，通常称为 &ldquo;tarball&rdquo; 文件。 它本身并不压缩文件，只是将多个文件打包">
   
 
 
@@ -267,6 +267,11 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#解压缩">解压缩</a>
+      <ol>
+        <li><a href="#tar">tar</a></li>
+      </ol>
+    </li>
     <li><a href="#挂载">挂载</a>
       <ol>
         <li><a href="#设备信息">设备信息</a></li>
@@ -340,7 +345,23 @@
     <section class="article-content">
     
     
-    <h2 id="挂载">挂载
+    <h2 id="解压缩">解压缩
+</h2><h3 id="tar">tar
+</h3><p><code>tar</code> (Tape Archive) 是一个 Linux/Unix 系统中常用的归档工具，用于将多个文件和目录打包成一个单独的文件，通常称为 &ldquo;tarball&rdquo; 文件。 它本身并不压缩文件，只是将多个文件打包在一起。</p>
+<p><strong>主要功能：</strong></p>
+<ul>
+<li><strong>归档 (Archiving):</strong> 将多个文件和目录合并成一个单一的归档文件。</li>
+<li><strong>备份 (Backup):</strong> 创建文件系统的备份。</li>
+<li><strong>传输 (Transmission):</strong> 方便地传输一组文件。</li>
+</ul>
+<p><strong>常见参数：</strong></p>
+<ul>
+<li><strong>-t (或 &ndash;list):</strong> 列出归档文件中的内容。</li>
+<li><strong>-z (或 &ndash;gzip, &ndash;gunzip, &ndash;ungzip):</strong> 使用 gzip 解压归档文件。</li>
+<li><strong>-v (或 &ndash;verbose):</strong> 显示详细信息，包括文件名、大小、权限等。</li>
+<li><strong>-f (或 &ndash;file=ARCHIVE):</strong> 指定要操作的归档文件名。 必须紧跟文件名。</li>
+</ul>
+<h2 id="挂载">挂载
 </h2><h3 id="设备信息">设备信息
 </h3><p>查看块设备信息</p>
 <div class="highlight"><div class="chroma">
