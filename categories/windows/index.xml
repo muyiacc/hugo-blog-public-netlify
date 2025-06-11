@@ -7,7 +7,51 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Sun, 02 Mar 2025 10:09:16 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 05 Jun 2025 10:13:06 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>关闭Windows文件管理器默认总是使用缩略图打开</title>
+        <link>https://hublog.netlify.app/p/250605101306/</link>
+        <pubDate>Thu, 05 Jun 2025 10:13:06 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250605101306/</guid>
+        <description>&lt;p&gt;在 Windows 中，可以通过以下步骤来关闭文件管理器默认使用缩略图查看文件，以减少在访问大量文件时的延迟。这对于使用 &lt;code&gt;rclone&lt;/code&gt; 挂载的文件尤其重要，因为处理缩略图会增加加载时间。&lt;/p&gt;
+&lt;h3 id=&#34;关闭缩略图的步骤&#34;&gt;关闭缩略图的步骤：
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;打开文件资源管理器&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可以通过点击任务栏的文件夹图标，或使用快捷键 &lt;code&gt;Win + E&lt;/code&gt; 打开文件资源管理器。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;访问“选项”&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在文件管理器中，点击上方的“查看”选项卡。&lt;/li&gt;
+&lt;li&gt;然后在右侧找到“选项”或“更改文件夹和搜索选项”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;选择“查看”选项卡&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在弹出的窗口中，选择“查看”选项卡。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;更改文件夹选项&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在“高级设置”部分，找到“始终显示图标，从不显示缩略图”这一选项。&lt;/li&gt;
+&lt;li&gt;选中“始终显示图标，从不显示缩略图”。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;应用更改&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击“应用”按钮，然后点击“确定”以保存更改。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        <item>
         <title>Windows安装gcc环境第二种选择，w64devkit</title>
         <link>https://hublog.netlify.app/p/250302100916/</link>
         <pubDate>Sun, 02 Mar 2025 10:09:16 +0800</pubDate>
@@ -933,7 +977,7 @@
         
         <guid>https://hublog.netlify.app/p/241223162747/</guid>
         <description>&lt;p&gt;众所周知，Windows 的更新很频繁，有时候会在重要的时候更新导致系统卡顿，甚至打断当前的动作，很多介绍的关闭更新教程会导致 Windows 的 store 商店无法使用，并且我也不建议安装其他第三方软件对系统更改（你甚至不知道它会干什么）。&lt;/p&gt;
-&lt;p&gt;本次介绍的的方式为”曲线救国“，因为 &lt;strong&gt;Windows 本身支持延长时间&lt;/strong&gt;，但是只能延长5周，我们需要做的就是&lt;strong&gt;增加延长更新的时间&lt;/strong&gt;，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：&lt;/p&gt;
+&lt;p&gt;本次介绍的的方式为”曲线救国“，因为 &lt;strong&gt;Windows 本身支持延长时间&lt;/strong&gt;，但是只能延长 5 周，我们需要做的就是&lt;strong&gt;增加延长更新的时间&lt;/strong&gt;，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2024/12/23/DVPbYCTmt6LZWyj.png&#34;
 	
 	
@@ -945,36 +989,54 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;本次使用的是修改注册表的方式，操作的时候请仔细小心！以免删除了系统某些注册表，导致系统出现问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Win+R&lt;/code&gt; 打开注册表 ，输入&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;Win+R&lt;/code&gt; 打开注册表 ，输入：&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;regedit
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;regedit
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;注册表编辑器地址栏输入&lt;/p&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;注册表编辑器地址栏输入：&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;在其空白处，右键，选择 新建(N) - &lt;code&gt;DWORD(32位)值(D)&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;命名为&lt;/p&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;在其空白处，右键，选择 新建(N) - &lt;code&gt;DWORD(32位)值(D)&lt;/code&gt;，命名为：&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FlightSettingsMaxPauseDays
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;FlightSettingsMaxPauseDays
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;双击新建的项，基数改为 &lt;strong&gt;十进制&lt;/strong&gt;，数值数据表示天数，比如填入 &lt;code&gt;36500&lt;/code&gt;，表示支持最大延长 100 年&lt;/p&gt;
-&lt;p&gt;保存退出，打开 Windows更新设置，在暂停更新（Windows 10 在高级选项中）那里，就可以选择暂停更新的日子，如果设置了最大100年，现在就可以选择 100年之后。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;双击新建的项，基数改为 &lt;strong&gt;十进制&lt;/strong&gt;，数值数据表示天数，比如填入：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;36500
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;表示支持最大延长 100 年&lt;/p&gt;
+&lt;p&gt;保存退出&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;打开 Windows 更新设置（Win+i，更新和安全）， 高级选项（Windows 10），下滑找到“暂停更新”，选择暂停更新的日子&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果设置了最大 100 年，现在就可以选择 100 年之后。&lt;/p&gt;
 &lt;p&gt;如果你想重新开启系统更新，只需要点击继续更新即可。想要再次暂停，只需要设置暂停更新的日志，&lt;strong&gt;就是这么简单，就是这么方便&lt;/strong&gt;。&lt;/p&gt;
 </description>
         </item>
@@ -1767,7 +1829,7 @@
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Windows下安装Alist，并安装系统服务自启动</title>
+        <title>alist，Windows平台安装，并配置系统服务实现开机自启动</title>
         <link>https://hublog.netlify.app/p/2311012/</link>
         <pubDate>Sun, 12 Nov 2023 14:07:10 +0800</pubDate>
         
@@ -1780,15 +1842,17 @@
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;p&gt;下载地址： &lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/alist-org/alist/releases/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;点击下载 v3.29.1&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载 v3.29.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;下载的文件解压到一个目录，最好先手动创建一个文件夹，比如&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:&lt;span class=&#34;se&#34;&gt;\P&lt;/span&gt;rogram Files&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list.exe
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:&lt;span class=&#34;se&#34;&gt;\r&lt;/span&gt;emote&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list.exe
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;运行&#34;&gt;运行
@@ -1836,7 +1900,7 @@
 &lt;/div&gt;&lt;p&gt;回到浏览器：输入：&lt;code&gt;localhost:5244&lt;/code&gt; 即可使用 alist 了。&lt;/p&gt;
 &lt;p&gt;现在我们使用的是默认端口，由于我的电脑上 &lt;code&gt;小白羊盘&lt;/code&gt; 内置了 alist 占用了 5244 端口，所以在运行 alist 的时候可以把 端口修改，进入 data，可以看到有个 &lt;code&gt;config.json&lt;/code&gt;的文件，里面就包含了端口的信息。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;文件所在的路径：D:\Program Files\alist\data\config.json&lt;/li&gt;
+&lt;li&gt;文件所在的路径：D:\remote\alist\data\config.json&lt;/li&gt;
 &lt;li&gt;打开 config.json，修改以下的值
 &lt;ul&gt;
 &lt;li&gt;修改 &amp;ldquo;http_port&amp;rdquo;: 5244, 为 &amp;ldquo;http_port&amp;rdquo;: 5245,&lt;/li&gt;
@@ -1857,14 +1921,14 @@
 &lt;/h2&gt;&lt;p&gt;还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。&lt;/p&gt;
 &lt;p&gt;下载 nssm： &lt;a class=&#34;link&#34; href=&#34;https://nssm.cc/release/nssm-2.24.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;将 nssm 解压之后，将所在的路径（比如 &lt;code&gt;D:\Program Files\nssm-2.24\win64&lt;/code&gt;）添加到系统环境变量，确保可随处执行 nssm。&lt;/p&gt;
+&lt;p&gt;将 nssm 解压之后，将所在的路径（比如 &lt;code&gt;D:\tool\nssm\win64&lt;/code&gt;）添加到系统环境变量，确保可随处执行 nssm。&lt;/p&gt;
 &lt;p&gt;创建 alist 自启动 服务，使用管理员运行 cmd：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;server --data=\&amp;#34;&lt;/span&gt;D:\Program Files\alist\data\&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\remote\alist\alist.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;--data&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\remote\alist\data&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;停止之前运行中的 alist，使用 系统服务运行。&lt;/p&gt;
@@ -1924,6 +1988,170 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sc create alist binPath= &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Program Files\alist\alist.exe server --data=\&amp;#34;&lt;/span&gt;D:\Program Files\alist\data\&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;附录&#34;&gt;附录
+&lt;/h2&gt;&lt;p&gt;关于 帮助命令&lt;/p&gt;
+&lt;p&gt;alist&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist -h
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist admin -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;nssm&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Windows下安装Alist，并安装系统服务自启动</title>
+        <link>https://hublog.netlify.app/p/2311012/</link>
+        <pubDate>Sun, 12 Nov 2023 14:07:10 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2311012/</guid>
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提供保险箱加密和更多高级功能。&lt;/p&gt;
+&lt;p&gt;🗂️ 一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs。&lt;/p&gt;
+&lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://alist.nn.ci/zh/guide&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://alist.nn.ci/zh/guide&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;p&gt;下载地址： &lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/alist-org/alist/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载 v3.29.1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载的文件解压到一个目录，最好先手动创建一个文件夹，比如&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;D:&lt;span class=&#34;se&#34;&gt;\r&lt;/span&gt;emote&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list&lt;span class=&#34;se&#34;&gt;\a&lt;/span&gt;list.exe
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;运行&#34;&gt;运行
+&lt;/h2&gt;&lt;p&gt;启动服务，在地址栏输入 cmd 快速进入当前目录，输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;就会在当前目录下生成 data 文件夹。包含了程序的数据。&lt;/p&gt;
+&lt;p&gt;打开浏览器：&lt;code&gt;localhost:5244&lt;/code&gt; 即可访问，终端出现了随机密码，但是默认密码太麻烦了，建议直接重置密码。&lt;/p&gt;
+&lt;p&gt;回到 alist 所在目录，看到 第一次运行的时候生成的 data 文件夹，这个是存放数据的文件夹。&lt;/p&gt;
+&lt;p&gt;生成（重置）密码：回到 &lt;code&gt;alist.exe&lt;/code&gt;所在目录，重新打开一个 cmd 窗口&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 指定密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe admin set 你的密码 --data .\data
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 随机生成密码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe admin random --data .\data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--data&lt;/code&gt; 表示指定数据目录。不指定可能会报错&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果出现了如下报错，表示修改密码没有生效，报错如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ERRO[2023-11-29 17:42:49] [del_user_cache_online] error: that&amp;#39;s not even a token
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;回到浏览器：输入：&lt;code&gt;localhost:5244&lt;/code&gt; 即可使用 alist 了。&lt;/p&gt;
+&lt;p&gt;现在我们使用的是默认端口，由于我的电脑上 &lt;code&gt;小白羊盘&lt;/code&gt; 内置了 alist 占用了 5244 端口，所以在运行 alist 的时候可以把 端口修改，进入 data，可以看到有个 &lt;code&gt;config.json&lt;/code&gt;的文件，里面就包含了端口的信息。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文件所在的路径：D:\remote\alist\data\config.json&lt;/li&gt;
+&lt;li&gt;打开 config.json，修改以下的值
+&lt;ul&gt;
+&lt;li&gt;修改 &amp;ldquo;http_port&amp;rdquo;: 5244, 为 &amp;ldquo;http_port&amp;rdquo;: 5245,&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重新启动服务，指定数据所在的目录&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alist.exe server --data=.\data
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;现在打开浏览器：输入 localhost:5245 即可打开 alist&lt;/p&gt;
+&lt;h2 id=&#34;系统服务&#34;&gt;系统服务
+&lt;/h2&gt;&lt;p&gt;还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。&lt;/p&gt;
+&lt;p&gt;下载 nssm： &lt;a class=&#34;link&#34; href=&#34;https://nssm.cc/release/nssm-2.24.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将 nssm 解压之后，将所在的路径（比如 &lt;code&gt;D:\remote\nssm\win64&lt;/code&gt;）添加到系统环境变量，确保可随处执行 nssm。&lt;/p&gt;
+&lt;p&gt;创建 alist 自启动 服务，使用管理员运行 cmd：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm install alist &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\remote\alist\alist.exe&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;server&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;--data&amp;#34;&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\remote\alist\data&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;停止之前运行中的 alist，使用 系统服务运行。&lt;/p&gt;
+&lt;p&gt;启动服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm start alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;停止服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm stop alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;重启服务&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm restart alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;移除服务（先要停止）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nssm remove alist
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;附录&#34;&gt;附录

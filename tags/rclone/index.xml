@@ -367,8 +367,10 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone config
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;配置文件所在的位置&lt;/p&gt;
-&lt;p&gt;Linux&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;配置文件所在的位置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -377,7 +379,9 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.config/rclone
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Windows&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Windows&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -444,28 +448,37 @@
 &lt;/h3&gt;&lt;p&gt;tips：复制可当作备份使用，写为脚本文件，加入定时和任务即可&lt;/p&gt;
 &lt;h2 id=&#34;挂载&#34;&gt;挂载
 &lt;/h2&gt;&lt;p&gt;将远程存储挂载到本地，作为本地文件系统使用，支持本地播放视频、打开文件，编辑文件等操作&lt;/p&gt;
-&lt;h3 id=&#34;远程存储挂载到本地&#34;&gt;远程存储挂载到本地
-&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;p&gt;注意：Windows 平台挂载需要额外安装 &lt;a class=&#34;link&#34; href=&#34;https://github.com/winfsp/winfsp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;winfsp&lt;/a&gt;，且默认路径不存在&lt;/p&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone mount --buffer-size 4M --vfs-cache-mode writes remote_name:remote_path local_path --daemon
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone mount remote:path/to/files /path/to/local/mount
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;--buffer-size&lt;/code&gt;：在传输文件时，读取和写入操作的缓冲区大小&lt;/li&gt;
+&lt;/div&gt;&lt;p&gt;参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;--buffer-size&lt;/code&gt;：在传输文件时，读取和写入操作的缓冲区大小，默认不清楚，建议挂载加上，大小 4M&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--vfs-cache-mode&lt;/code&gt;：缓存模式，可选 off（默认），writes，full&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--vfs-cache-max-size&lt;/code&gt;：限制 VFS 缓存的最大大小&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--vfs-cache-max-age&lt;/code&gt;：限制缓存文件的最大存活时间&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;--daemon&lt;/code&gt;：后台挂载&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--vfs-cache-max-size&lt;/code&gt;：限制 VFS 缓存的最大大小，默认无限制&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--vfs-cache-max-age&lt;/code&gt;：限制缓存文件的最大存活时间，默认 1 小时&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--daemon&lt;/code&gt;：后台挂载，Windows 不支持&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;--volname&lt;/code&gt;：挂载名字，Windows 平台&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;使用 &lt;code&gt;alist&lt;/code&gt; 在线播放 115 上的视频可能会失败，但挂载后即可播放&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;播放器推荐使用 &lt;code&gt;mpv&lt;/code&gt;，了解更多可观看以下视频：&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1uu4y1p7iS/?share_source=copy_web&amp;amp;vd_source=2189262040010d0e0c521cbe8e51303e&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;mpv 播放器，安装配置，脚本推荐&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
+&lt;p&gt;取消挂载&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fusermount -u 挂载路径
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;远程存储挂载到本地&#34;&gt;远程存储挂载到本地
+&lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;案例：坚果云挂载到 &lt;code&gt;$HOME/mnt/jianguoyun&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;创建挂载点&lt;/p&gt;
@@ -540,6 +553,17 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;fusermount -u &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/mnt/alist
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;windows：挂载alist film路径到本地驱动器 K&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone mount alist:/film K: --buffer-size 4M --vfs-cache-mode writes --vfs-cache-max-size 2G --volname alist_127.0.0.1_film --network-mode
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;开机自动挂载&#34;&gt;开机自动挂载

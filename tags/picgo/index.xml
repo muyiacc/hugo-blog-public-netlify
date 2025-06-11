@@ -13,38 +13,96 @@
         <pubDate>Mon, 08 Apr 2024 15:07:04 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/2404008/</guid>
-        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;此前已经写过一篇关于 picgo 的文章，&lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言
+&lt;/h2&gt;&lt;p&gt;此前已经写过一篇关于 picgo 的文章，请参考 &lt;a class=&#34;link&#34; href=&#34;https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;使用 picgo-core 将 markdown 图片上传至 smms 图床&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;为何要切换安装方式？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;之前使用 npm 安装到当前 node 版本的全局，后来使用 nvm 管理 node 版本，在切换版本后，切换的版本还是没有 picgo 的，&lt;/p&gt;
-&lt;p&gt;比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：&lt;/p&gt;
+&lt;p&gt;本次在之前的基础上更改一些内容：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;固定安装依赖位置，每安装切换一个新版本 node，对当前的 node 都重新设置全局依赖位置到之前固定的依赖位置。缺点：每次切换很麻烦&lt;/li&gt;
-&lt;li&gt;直接安装 picgo app。 缺点：图形化一直常驻占内存。&lt;/li&gt;
+&lt;li&gt;采用 yarn 的方式全局安装 picgo ，使其不再收到 nodejs 版本管理器改变 nodejs 之后，导致 picgo 路径失效&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;所以有了如下的优化版&lt;/p&gt;
-&lt;h2 id=&#34;安装-yarn&#34;&gt;安装 yarn
-&lt;/h2&gt;&lt;p&gt;采用 yarn 来安装 picgo。&lt;/p&gt;
-&lt;p&gt;yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 安装 picgo 到全局，就是一个固定的位置&lt;/p&gt;
-&lt;p&gt;yarn 下载：&lt;/p&gt;
+&lt;p&gt;具体原因：&lt;/p&gt;
+&lt;p&gt;之前使用 npm 安装到当前 nodejs 版本的全局，后来使用 nvm 管理 nodejs 版本，在切换 nodejs 版本后，切换的 nodejs 版本没有 picgo 的，导致无法使用 picgo 命令&lt;/p&gt;
+&lt;p&gt;比如我使用 nodejs 16 全局安装 picgo，在切换成 nodejs 18 就没有 picgo&lt;/p&gt;
+&lt;p&gt;解决办法有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;固定安装依赖位置&lt;/strong&gt;，每安装一个新版本 nodejs 并切换，对当前的 nodejs 都重新设置全局依赖位置到之前固定的依赖位置，缺点是每次切换 nodejs 版本很麻烦&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安装 picgo app&lt;/strong&gt;。 缺点是图形化一直常驻占内存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此有如下的优化版&lt;/p&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;准备&#34;&gt;准备
+&lt;/h3&gt;&lt;h4 id=&#34;安装-nodejs&#34;&gt;安装 nodejs
+&lt;/h4&gt;&lt;p&gt;安装 nvm：&lt;/p&gt;
+&lt;p&gt;下载安装即可：&lt;a class=&#34;link&#34; href=&#34;https://github.com/coreybutler/nvm-windows/releases/tag/1.1.11&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/coreybutler/nvm-windows/releases/tag/1.1.11&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装 nodejs：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nvm install 20.18.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nvm use 20.18.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;安装-yarn&#34;&gt;安装 yarn
+&lt;/h4&gt;&lt;p&gt;yarn 是一个包管理工具，使用 nvm 切换 nodejs 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 全局安装 picgo ，就是一个固定的位置&lt;/p&gt;
+&lt;p&gt;下载：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/latest.msi&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Windows 版点此下载&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;详情页：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/lang/en/docs/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://classic.yarnpkg.com/lang/en/docs/install&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;注意：不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。&lt;/p&gt;
+&lt;p&gt;详情页：&lt;a class=&#34;link&#34; href=&#34;https://classic.yarnpkg.com/lang/en/docs/install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://classic.yarnpkg.com/lang/en/docs/install&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;安装-picgo&#34;&gt;安装 picgo
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：不要采用 npm 安装 yarn，如果使用 npm 安装 yarn， 会导致 yarn 受到了 nodejs 版本切换的影响。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;将 yarn 的安装位置添加到环境变量（默认自动添加）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;将 yarn 全局安装的位置加入环境变量，大多数情况下，全局安装目录位置：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;\AppData\Local\Yarn\bin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/local/share/.config/yarn/global/node_modules
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/usr/local/share/.config/yarn/global/node_modules
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;安装-1&#34;&gt;安装
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -52,33 +110,72 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yarn global add picgo
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;将 yarn 全局的安装位置加入环境变量&lt;/p&gt;
-&lt;p&gt;大多数情况下，全局安装目录位于以下位置：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;重启终端，输入&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo -v
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;有版本号显示成功&lt;/p&gt;
+&lt;p&gt;picgo 的配置文件：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Windows&lt;/strong&gt;：&lt;code&gt;C:\Users\用户名\AppData\Local\Yarn\bin&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mac&lt;/strong&gt;：&lt;code&gt;/usr/local/share/.config/yarn/global/node_modules&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Linux&lt;/strong&gt;：&lt;code&gt;/usr/local/share/.config/yarn/global/node_modules&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Windows：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;picgo-配置&#34;&gt;picgo 配置
-&lt;/h2&gt;&lt;p&gt;安装插件 smms-user&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo install smms-user
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;%USERPROFILE%&lt;span class=&#34;se&#34;&gt;\.&lt;/span&gt;picgo&lt;span class=&#34;se&#34;&gt;\c&lt;/span&gt;onfig.json
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;配置 smms-user&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Linux / macOS：&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pcigo use
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.picgo/config.json
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;出现如下信息&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;插件&#34;&gt;插件
+&lt;/h2&gt;&lt;p&gt;picgo 是一个图床上传软件，需要配置图床使用，使用前需要配置一下图床对应的插件&lt;/p&gt;
+&lt;h3 id=&#34;picgo-plugin-smms-user&#34;&gt;picgo-plugin-smms-user
+&lt;/h3&gt;&lt;p&gt;这个插件用于图床 &lt;a class=&#34;link&#34; href=&#34;https://sm.ms/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;sm.ms&lt;/a&gt;，注册用户免费使用 5G，稳定很多年，博客使用足够&lt;/p&gt;
+&lt;p&gt;sm.ms 有两个域名：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://sm.ms&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://sm.ms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://smms.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://smms.app/&lt;/a&gt; 国内使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;安装-2&#34;&gt;安装
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo install picgo-plugin-smms-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;使用&#34;&gt;使用
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo use
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;出现如下信息，下滑找到 smms-user，注意不是 smms，回车确定&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -105,7 +202,54 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Move up and down to reveal more choices&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;选择 smms-user，回车，下一步，跟着操作即可&lt;/p&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;选择路径风格：
+&lt;ul&gt;
+&lt;li&gt;path：路径为日期&lt;/li&gt;
+&lt;li&gt;base64：路径为 base64 编码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;使用插件，选择 &lt;code&gt;picgo-plugin-smms-user&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;配置&#34;&gt;配置
+&lt;/h4&gt;&lt;p&gt;使用 picgo-plugin-smms-user 只有，还需要配置一下 sm.ms 的 token&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://smms.app/home/apitoken&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;点此获取&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;配置上传器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; uploader
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;选择 &lt;code&gt;smms-user&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;输入 token&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;上传&#34;&gt;上传
+&lt;/h2&gt;&lt;p&gt;上传剪贴板的图片&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;picgo u
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://s2.loli.net/2025/06/10/AUiSZ5sf6KvpqR4.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;AUiSZ5sf6KvpqR4.png&#34;
+	
+	
+&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

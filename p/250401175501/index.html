@@ -267,10 +267,19 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#主要特点"><strong>主要特点:</strong></a></li>
+      </ol>
+    </li>
     <li><a href="#安装">安装</a>
       <ol>
-        <li><a href="#linux">Linux</a></li>
+        <li><a href="#1-安装-starship-二进制文件">1. 安装 <strong>starship</strong> 二进制文件：</a></li>
+        <li><a href="#2-将初始化脚本添加到您的-shell-的配置文件中">2. 将初始化脚本添加到您的 shell 的配置文件中：</a>
+          <ol>
+            <li><a href="#bash">Bash</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
   </ol>
@@ -340,8 +349,12 @@
     
     <h2 id="简介">简介
 </h2><p>Starship 是一个跨 shell 的极简、速度极快的提示符。 它的目标是为所有 shell 提供一致、美观且可定制的提示符体验。 简单来说，它让你的命令行提示符变得更漂亮、更有用。</p>
-<p><strong>主要特点:</strong></p>
-<ul>
+<p>官网：<a class="link" href="https://starship.rs/zh-CN/"  target="_blank" rel="noopener"
+    >https://starship.rs/zh-CN/</a></p>
+<p>源码：<a class="link" href="https://github.com/starship/starship"  target="_blank" rel="noopener"
+    >https://github.com/starship/starship</a></p>
+<h3 id="主要特点"><strong>主要特点:</strong>
+</h3><ul>
 <li><strong>跨 Shell 兼容:</strong> 支持 Bash, Zsh, Fish, PowerShell, Ion, Elvish, Nushell, Xonsh 等多种 shell。这意味着你可以在不同的 shell 环境中使用相同的提示符配置。</li>
 <li><strong>速度快:</strong> 用 Rust 编写，性能极佳。即使在大型项目或慢速文件系统中，也能保持快速响应。</li>
 <li><strong>高度可定制:</strong> 通过简单的配置文件，你可以完全控制提示符的外观和行为。 可以自定义显示哪些信息、使用什么颜色、图标等等。</li>
@@ -372,8 +385,8 @@
 <li><strong>跨平台一致性:</strong> 在不同的操作系统和 shell 环境中使用相同的提示符，保持一致性。</li>
 </ul>
 <h2 id="安装">安装
-</h2><h3 id="linux">Linux
-</h3><p>general</p>
+</h2><h3 id="1-安装-starship-二进制文件">1. 安装 <strong>starship</strong> 二进制文件：
+</h3><p>使用 Shell 命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -391,6 +404,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt install starship
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-将初始化脚本添加到您的-shell-的配置文件中">2. 将初始化脚本添加到您的 shell 的配置文件中：
+</h3><h4 id="bash">Bash
+</h4><p>在 <code>~/.bashrc</code> 的最后，添加以下内容：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># ~/.bashrc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">eval &#34;$(starship init bash)&#34;
 </span></span></code></pre></td></tr></table>
 </div>
 </div>

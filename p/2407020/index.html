@@ -430,8 +430,10 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rclone config
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>配置文件所在的位置</p>
-<p>Linux</p>
+</div><p>配置文件所在的位置：</p>
+<ul>
+<li>Linux</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -440,7 +442,9 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">~/.config/rclone
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Windows</p>
+</div><ul>
+<li>Windows</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -507,28 +511,37 @@
 </h3><p>tips：复制可当作备份使用，写为脚本文件，加入定时和任务即可</p>
 <h2 id="挂载">挂载
 </h2><p>将远程存储挂载到本地，作为本地文件系统使用，支持本地播放视频、打开文件，编辑文件等操作</p>
-<h3 id="远程存储挂载到本地">远程存储挂载到本地
-</h3><div class="highlight"><div class="chroma">
+<p>注意：Windows 平台挂载需要额外安装 <a class="link" href="https://github.com/winfsp/winfsp"  target="_blank" rel="noopener"
+    >winfsp</a>，且默认路径不存在</p>
+<p>语法：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rclone mount --buffer-size 4M --vfs-cache-mode writes remote_name:remote_path local_path --daemon
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rclone mount remote:path/to/files /path/to/local/mount
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li><code>--buffer-size</code>：在传输文件时，读取和写入操作的缓冲区大小</li>
+</div><p>参数：</p>
+<ul>
+<li><code>--buffer-size</code>：在传输文件时，读取和写入操作的缓冲区大小，默认不清楚，建议挂载加上，大小 4M</li>
 <li><code>--vfs-cache-mode</code>：缓存模式，可选 off（默认），writes，full</li>
-<li><code>--vfs-cache-max-size</code>：限制 VFS 缓存的最大大小</li>
-<li><code>--vfs-cache-max-age</code>：限制缓存文件的最大存活时间</li>
-<li><code>--daemon</code>：后台挂载</li>
+<li><code>--vfs-cache-max-size</code>：限制 VFS 缓存的最大大小，默认无限制</li>
+<li><code>--vfs-cache-max-age</code>：限制缓存文件的最大存活时间，默认 1 小时</li>
+<li><code>--daemon</code>：后台挂载，Windows 不支持</li>
+<li><code>--volname</code>：挂载名字，Windows 平台</li>
 </ul>
-<p>使用 <code>alist</code> 在线播放 115 上的视频可能会失败，但挂载后即可播放</p>
-<blockquote>
-<p>播放器推荐使用 <code>mpv</code>，了解更多可观看以下视频：<a class="link" href="https://www.bilibili.com/video/BV1uu4y1p7iS/?share_source=copy_web&amp;vd_source=2189262040010d0e0c521cbe8e51303e"  target="_blank" rel="noopener"
-    >mpv 播放器，安装配置，脚本推荐</a></p>
-</blockquote>
-<blockquote>
+<p>取消挂载</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fusermount -u 挂载路径
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="远程存储挂载到本地">远程存储挂载到本地
+</h3><blockquote>
 <p>案例：坚果云挂载到 <code>$HOME/mnt/jianguoyun</code></p>
 </blockquote>
 <p>创建挂载点</p>
@@ -603,6 +616,17 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">fusermount -u <span class="nv">$HOME</span>/mnt/alist
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>windows：挂载alist film路径到本地驱动器 K</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">rclone mount alist:/film K: --buffer-size 4M --vfs-cache-mode writes --vfs-cache-max-size 2G --volname alist_127.0.0.1_film --network-mode
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="开机自动挂载">开机自动挂载
@@ -853,6 +877,19 @@
             
                 
 <article class="">
+    <a href="/p/250610113907/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一键激活JetBrains全家桶</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250604164733/">
         
         
@@ -885,19 +922,6 @@
 
         <div class="article-details">
             <h2 class="article-title">speedtest测速网站</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250528150817/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YouTube封面图下载网站</h2>
         </div>
     </a>
 </article>

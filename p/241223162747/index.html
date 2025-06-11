@@ -303,7 +303,7 @@
     
     
     <p>众所周知，Windows 的更新很频繁，有时候会在重要的时候更新导致系统卡顿，甚至打断当前的动作，很多介绍的关闭更新教程会导致 Windows 的 store 商店无法使用，并且我也不建议安装其他第三方软件对系统更改（你甚至不知道它会干什么）。</p>
-<p>本次介绍的的方式为”曲线救国“，因为 <strong>Windows 本身支持延长时间</strong>，但是只能延长5周，我们需要做的就是<strong>增加延长更新的时间</strong>，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：</p>
+<p>本次介绍的的方式为”曲线救国“，因为 <strong>Windows 本身支持延长时间</strong>，但是只能延长 5 周，我们需要做的就是<strong>增加延长更新的时间</strong>，让它一直无法更新，通过设置后，你可以延长 1 个月，1 年，10 年，甚至 100 年，这样就达到了“关闭更新”的作用。比如：</p>
 <p><img src="https://s2.loli.net/2024/12/23/DVPbYCTmt6LZWyj.png"
 	
 	
@@ -315,36 +315,54 @@
 	
 ></p>
 <p><strong>本次使用的是修改注册表的方式，操作的时候请仔细小心！以免删除了系统某些注册表，导致系统出现问题</strong></p>
-<p><code>Win+R</code> 打开注册表 ，输入</p>
+<ol>
+<li><code>Win+R</code> 打开注册表 ，输入：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">regedit
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">regedit
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>注册表编辑器地址栏输入</p>
+</div><ol start="2">
+<li>注册表编辑器地址栏输入：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>在其空白处，右键，选择 新建(N) - <code>DWORD(32位)值(D)</code></p>
-<p>命名为</p>
+</div><ol start="3">
+<li>在其空白处，右键，选择 新建(N) - <code>DWORD(32位)值(D)</code>，命名为：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FlightSettingsMaxPauseDays
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">FlightSettingsMaxPauseDays
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>双击新建的项，基数改为 <strong>十进制</strong>，数值数据表示天数，比如填入 <code>36500</code>，表示支持最大延长 100 年</p>
-<p>保存退出，打开 Windows更新设置，在暂停更新（Windows 10 在高级选项中）那里，就可以选择暂停更新的日子，如果设置了最大100年，现在就可以选择 100年之后。</p>
+</div><p>双击新建的项，基数改为 <strong>十进制</strong>，数值数据表示天数，比如填入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">36500
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>表示支持最大延长 100 年</p>
+<p>保存退出</p>
+<ol start="4">
+<li>打开 Windows 更新设置（Win+i，更新和安全）， 高级选项（Windows 10），下滑找到“暂停更新”，选择暂停更新的日子</li>
+</ol>
+<p>如果设置了最大 100 年，现在就可以选择 100 年之后。</p>
 <p>如果你想重新开启系统更新，只需要点击继续更新即可。想要再次暂停，只需要设置暂停更新的日志，<strong>就是这么简单，就是这么方便</strong>。</p>
 
 </section>
@@ -402,6 +420,19 @@
             
                 
 <article class="">
+    <a href="/p/250605101306/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关闭Windows文件管理器默认总是使用缩略图打开</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250302100916/">
         
         
@@ -447,19 +478,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Windows安装qBittorrent(EE)，qBittorrent-ClientBlocker</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/241223133231/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Windows安装aria2</h2>
         </div>
     </a>
 </article>

@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前言 此前已经写过一篇关于 picgo 的文章，请参考 使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容： 采用 yarn 的方式全局安装 picgo ，使其不再收到 nodejs 版本">
 <title>picgo自动上传图片到图床（优化版）</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2404008/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="picgo自动上传图片到图床（优化版）">
-<meta property='og:description' content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
+<meta property='og:description' content="前言 此前已经写过一篇关于 picgo 的文章，请参考 使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容： 采用 yarn 的方式全局安装 picgo ，使其不再收到 nodejs 版本">
 <meta property='og:url' content='https://hublog.netlify.app/p/2404008/'>
 <meta property='og:site_name' content='寻道之旅'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='picgo' /><meta property='article:published_time' content='2024-04-08T15:07:04&#43;08:00'/><meta property='article:modified_time' content='2024-04-08T15:07:04&#43;08:00'/>
 <meta name="twitter:title" content="picgo自动上传图片到图床（优化版）">
-<meta name="twitter:description" content="简介 此前已经写过一篇关于 picgo 的文章，使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收">
+<meta name="twitter:description" content="前言 此前已经写过一篇关于 picgo 的文章，请参考 使用 picgo-core 将 markdown 图片上传至 smms 图床 本次在之前的基础上更改一些内容： 采用 yarn 的方式全局安装 picgo ，使其不再收到 nodejs 版本">
   
 
 
@@ -267,10 +267,30 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#安装-yarn">安装 yarn</a></li>
-    <li><a href="#安装-picgo">安装 picgo</a></li>
-    <li><a href="#picgo-配置">picgo 配置</a></li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#准备">准备</a>
+          <ol>
+            <li><a href="#安装-nodejs">安装 nodejs</a></li>
+            <li><a href="#安装-yarn">安装 yarn</a></li>
+          </ol>
+        </li>
+        <li><a href="#安装-1">安装</a></li>
+      </ol>
+    </li>
+    <li><a href="#插件">插件</a>
+      <ol>
+        <li><a href="#picgo-plugin-smms-user">picgo-plugin-smms-user</a>
+          <ol>
+            <li><a href="#安装-2">安装</a></li>
+            <li><a href="#使用">使用</a></li>
+            <li><a href="#配置">配置</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#上传">上传</a></li>
   </ol>
 </nav>
         </div>
@@ -336,38 +356,96 @@
     <section class="article-content">
     
     
-    <h2 id="简介">简介
-</h2><p>此前已经写过一篇关于 picgo 的文章，<a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
+    <h2 id="前言">前言
+</h2><p>此前已经写过一篇关于 picgo 的文章，请参考 <a class="link" href="https://www.seektao.cc/archives/shi-yong-picgo-core-jiang-markdown-tu-pian-shang-chuan-zhi-smms-tu-chuang"  target="_blank" rel="noopener"
     >使用 picgo-core 将 markdown 图片上传至 smms 图床</a></p>
-<p>本次在之前的基础上更改一些内容，采用 yarn 的方式全局安装 picgo ，使其不再收到 node 版本变动收到影响。</p>
-<blockquote>
-<p>为何要切换安装方式？</p>
-</blockquote>
-<p>之前使用 npm 安装到当前 node 版本的全局，后来使用 nvm 管理 node 版本，在切换版本后，切换的版本还是没有 picgo 的，</p>
-<p>比如我使用 node 16 安装 picgo，在切换成 node 18 就没有 picgo，解决办法有：</p>
+<p>本次在之前的基础上更改一些内容：</p>
 <ul>
-<li>固定安装依赖位置，每安装切换一个新版本 node，对当前的 node 都重新设置全局依赖位置到之前固定的依赖位置。缺点：每次切换很麻烦</li>
-<li>直接安装 picgo app。 缺点：图形化一直常驻占内存。</li>
+<li>采用 yarn 的方式全局安装 picgo ，使其不再收到 nodejs 版本管理器改变 nodejs 之后，导致 picgo 路径失效</li>
 </ul>
-<p>所以有了如下的优化版</p>
-<h2 id="安装-yarn">安装 yarn
-</h2><p>采用 yarn 来安装 picgo。</p>
-<p>yarn 也是一个包管理工具，使用 nvm 切换 node 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 安装 picgo 到全局，就是一个固定的位置</p>
-<p>yarn 下载：</p>
+<p>具体原因：</p>
+<p>之前使用 npm 安装到当前 nodejs 版本的全局，后来使用 nvm 管理 nodejs 版本，在切换 nodejs 版本后，切换的 nodejs 版本没有 picgo 的，导致无法使用 picgo 命令</p>
+<p>比如我使用 nodejs 16 全局安装 picgo，在切换成 nodejs 18 就没有 picgo</p>
+<p>解决办法有：</p>
+<ul>
+<li><strong>固定安装依赖位置</strong>，每安装一个新版本 nodejs 并切换，对当前的 nodejs 都重新设置全局依赖位置到之前固定的依赖位置，缺点是每次切换 nodejs 版本很麻烦</li>
+<li><strong>安装 picgo app</strong>。 缺点是图形化一直常驻占内存</li>
+</ul>
+<p>因此有如下的优化版</p>
+<h2 id="安装">安装
+</h2><h3 id="准备">准备
+</h3><h4 id="安装-nodejs">安装 nodejs
+</h4><p>安装 nvm：</p>
+<p>下载安装即可：<a class="link" href="https://github.com/coreybutler/nvm-windows/releases/tag/1.1.11"  target="_blank" rel="noopener"
+    >https://github.com/coreybutler/nvm-windows/releases/tag/1.1.11</a></p>
+<p>安装 nodejs：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">nvm install 20.18.0
+</span></span><span class="line"><span class="cl">nvm use 20.18.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="安装-yarn">安装 yarn
+</h4><p>yarn 是一个包管理工具，使用 nvm 切换 nodejs 版本，yarn 不受影响，且 yarn 不存在切换版本的情况，所以 yarn 全局安装 picgo ，就是一个固定的位置</p>
+<p>下载：</p>
 <ul>
 <li><a class="link" href="https://classic.yarnpkg.com/latest.msi"  target="_blank" rel="noopener"
     >Windows 版点此下载</a></li>
 </ul>
-<p>详情页：</p>
-<ul>
-<li><a class="link" href="https://classic.yarnpkg.com/lang/en/docs/install"  target="_blank" rel="noopener"
-    >https://classic.yarnpkg.com/lang/en/docs/install</a></li>
-</ul>
 <blockquote>
-<p>注意：不要采用 npm 安装 yarn，如果使用，yarn 也就受到了 node 版本切换的影响。</p>
+<p>详情页：<a class="link" href="https://classic.yarnpkg.com/lang/en/docs/install"  target="_blank" rel="noopener"
+    >https://classic.yarnpkg.com/lang/en/docs/install</a></p>
 </blockquote>
-<h2 id="安装-picgo">安装 picgo
-</h2><div class="highlight"><div class="chroma">
+<blockquote>
+<p>注意：不要采用 npm 安装 yarn，如果使用 npm 安装 yarn， 会导致 yarn 受到了 nodejs 版本切换的影响。</p>
+</blockquote>
+<ul>
+<li>
+<p>将 yarn 的安装位置添加到环境变量（默认自动添加）</p>
+</li>
+<li>
+<p>将 yarn 全局安装的位置加入环境变量，大多数情况下，全局安装目录位置：</p>
+</li>
+<li>
+<p><strong>Windows</strong>：</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"><span class="nv">%USERPROFILE%</span>\AppData\Local\Yarn\bin
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>Mac</strong>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/usr/local/share/.config/yarn/global/node_modules
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>Linux</strong>：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">/usr/local/share/.config/yarn/global/node_modules
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-1">安装
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -375,33 +453,72 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yarn global add picgo
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>将 yarn 全局的安装位置加入环境变量</p>
-<p>大多数情况下，全局安装目录位于以下位置：</p>
+</div><p>重启终端，输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">picgo -v
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有版本号显示成功</p>
+<p>picgo 的配置文件：</p>
 <ul>
-<li><strong>Windows</strong>：<code>C:\Users\用户名\AppData\Local\Yarn\bin</code></li>
-<li><strong>Mac</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
-<li><strong>Linux</strong>：<code>/usr/local/share/.config/yarn/global/node_modules</code></li>
+<li>Windows：</li>
 </ul>
-<h2 id="picgo-配置">picgo 配置
-</h2><p>安装插件 smms-user</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">picgo install smms-user
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">%USERPROFILE%<span class="se">\.</span>picgo<span class="se">\c</span>onfig.json
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>配置 smms-user</p>
+</div><ul>
+<li>Linux / macOS：</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">pcigo use
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">~/.picgo/config.json
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>出现如下信息</p>
+</div><h2 id="插件">插件
+</h2><p>picgo 是一个图床上传软件，需要配置图床使用，使用前需要配置一下图床对应的插件</p>
+<h3 id="picgo-plugin-smms-user">picgo-plugin-smms-user
+</h3><p>这个插件用于图床 <a class="link" href="https://sm.ms/"  target="_blank" rel="noopener"
+    >sm.ms</a>，注册用户免费使用 5G，稳定很多年，博客使用足够</p>
+<p>sm.ms 有两个域名：</p>
+<ul>
+<li><a class="link" href="https://sm.ms"  target="_blank" rel="noopener"
+    >https://sm.ms</a></li>
+<li><a class="link" href="https://smms.app/"  target="_blank" rel="noopener"
+    >https://smms.app/</a> 国内使用</li>
+</ul>
+<h4 id="安装-2">安装
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">picgo install picgo-plugin-smms-user
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="使用">使用
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">picgo use
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>出现如下信息，下滑找到 smms-user，注意不是 smms，回车确定</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -428,7 +545,54 @@
 </span></span><span class="line"><span class="cl"><span class="o">(</span>Move up and down to reveal more choices<span class="o">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>选择 smms-user，回车，下一步，跟着操作即可</p>
+</div><ol start="2">
+<li>选择路径风格：
+<ul>
+<li>path：路径为日期</li>
+<li>base64：路径为 base64 编码</li>
+</ul>
+</li>
+<li>使用插件，选择 <code>picgo-plugin-smms-user</code></li>
+</ol>
+<h4 id="配置">配置
+</h4><p>使用 picgo-plugin-smms-user 只有，还需要配置一下 sm.ms 的 token</p>
+<p><a class="link" href="https://smms.app/home/apitoken"  target="_blank" rel="noopener"
+    >点此获取</a></p>
+<ol>
+<li>配置上传器</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo <span class="nb">set</span> uploader
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>选择 <code>smms-user</code></li>
+<li>输入 token</li>
+</ol>
+<h2 id="上传">上传
+</h2><p>上传剪贴板的图片</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">picgo u
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://s2.loli.net/2025/06/10/AUiSZ5sf6KvpqR4.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="AUiSZ5sf6KvpqR4.png"
+	
+	
+></p>
 
 </section>
 
@@ -498,6 +662,19 @@
             
                 
 <article class="">
+    <a href="/p/250610113907/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">一键激活JetBrains全家桶</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250604164733/">
         
         
@@ -530,19 +707,6 @@
 
         <div class="article-details">
             <h2 class="article-title">speedtest测速网站</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250528150817/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YouTube封面图下载网站</h2>
         </div>
     </a>
 </article>

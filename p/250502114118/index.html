@@ -273,10 +273,16 @@
         <li><a href="#工作原理">工作原理</a></li>
       </ol>
     </li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#配置">配置</a></li>
-    <li><a href="#启动">启动</a></li>
-    <li><a href="#常见语法">常见语法</a></li>
+    <li><a href="#部署">部署</a></li>
+    <li><a href="#配置">配置</a>
+      <ol>
+        <li><a href="#准备工作">准备工作</a></li>
+        <li><a href="#简单配置">简单配置</a></li>
+        <li><a href="#多种策略">多种策略</a></li>
+      </ol>
+    </li>
+    <li><a href="#服务">服务</a></li>
+    <li><a href="#常见命令">常见命令</a></li>
   </ol>
 </nav>
         </div>
@@ -360,7 +366,7 @@
 <li><strong>触发</strong>: 如果在设定的时间窗口内，某个 IP 地址的失败尝试次数超过了允许的最大值，<code>fail2ban</code> 会执行相应的动作（如禁止该 IP）。</li>
 <li><strong>解除禁止</strong>: 被禁止的 IP 地址在设定的时间后会自动解除禁止，或者管理员可以手动解除。</li>
 </ol>
-<h2 id="安装">安装
+<h2 id="部署">部署
 </h2><p>Debian / Ubuntu</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -373,7 +379,8 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="配置">配置
-</h2><p>配置文件所在的位置：</p>
+</h2><h3 id="准备工作">准备工作
+</h3><p>配置文件所在的位置：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -382,14 +389,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/etc/fail2ban
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>以下配置参考了：</p>
-<ul>
-<li><a class="link" href="https://1panel.cn/docs/user_manual/toolbox/fail2ban/#1"  target="_blank" rel="noopener"
-    >1panel</a></li>
-<li><a class="link" href="https://gongzhe.tech/ubuntu-fail2ban-cannnot-start/"  target="_blank" rel="noopener"
-    >blog</a></li>
-</ul>
-<p>新建 <code>jail.local</code></p>
+</div><p>新建 <code>jail.local</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -398,7 +398,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo vim jail.local
 </span></span></code></pre></td></tr></table>
 </div>
-</div><div class="highlight"><div class="chroma">
+</div><h3 id="简单配置">简单配置
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -446,7 +447,102 @@
 </span></span><span class="line"><span class="cl"><span class="nv">logpath</span> <span class="o">=</span> /var/log/auth.log
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="启动">启动
+</div><p>配置参考了：</p>
+<ul>
+<li><a class="link" href="https://1panel.cn/docs/user_manual/toolbox/fail2ban/#1"  target="_blank" rel="noopener"
+    >1panel</a></li>
+<li><a class="link" href="https://gongzhe.tech/ubuntu-fail2ban-cannnot-start/"  target="_blank" rel="noopener"
+    >blog</a></li>
+</ul>
+<h3 id="多种策略">多种策略
+</h3><p>此 Fail2Ban 配置通过多个 jail 实现更精细的 SSH 保护，根据登录失败尝试的频率和时间段，应用不同的禁止时长：</p>
+<ul>
+<li><code>DEFAULT</code>: 设置全局默认值，使用 <code>systemd</code> 日志后端，<code>iptables-allports</code> 禁止所有端口，并发送邮件告警。</li>
+<li><code>sshd-short</code>: 5 分钟内 5 次失败尝试 -&gt; 禁止 10 分钟</li>
+<li><code>sshd-medium</code>: 30 分钟内 10 次失败尝试 -&gt; 禁止 1 小时</li>
+<li><code>sshd-long</code>: 24 小时内 30 次失败尝试 -&gt; 禁止 100 天</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># /etc/fail2ban/jail.local (或者 /etc/fail2ban/jail.d/custom.conf)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ; 表示单行注释</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>DEFAULT<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">bantime</span> <span class="o">=</span> <span class="m">600</span> <span class="p">;</span> 封禁时间
+</span></span><span class="line"><span class="cl"><span class="nv">findtime</span> <span class="o">=</span> <span class="m">300</span> <span class="p">;</span> 指定时间内
+</span></span><span class="line"><span class="cl"><span class="nv">maxretry</span> <span class="o">=</span> <span class="m">5</span> <span class="p">;</span> 最大尝试次数
+</span></span><span class="line"><span class="cl"><span class="nv">backend</span> <span class="o">=</span> systemd       <span class="p">;</span> 使用 systemd 日志后端
+</span></span><span class="line"><span class="cl"><span class="nv">banaction</span> <span class="o">=</span> iptables-allports  <span class="p">;</span> 使用 iptables 阻止所有端口
+</span></span><span class="line"><span class="cl"><span class="nv">action</span> <span class="o">=</span> %<span class="o">(</span>action_mwl<span class="o">)</span>s    <span class="p">;</span> 邮件告警 + 日志记录
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>sshd-short<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span>  <span class="o">=</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">filter</span>   <span class="o">=</span> sshd        <span class="p">;</span> 使用 sshd 过滤器
+</span></span><span class="line"><span class="cl"><span class="nv">logpath</span>  <span class="o">=</span> /var/log/auth.log  <span class="p">;</span> SSH 日志文件
+</span></span><span class="line"><span class="cl"><span class="nv">port</span>     <span class="o">=</span> ssh
+</span></span><span class="line"><span class="cl"><span class="nv">findtime</span> <span class="o">=</span> <span class="m">300</span>       <span class="p">;</span> <span class="m">5</span> 分钟
+</span></span><span class="line"><span class="cl"><span class="nv">maxretry</span> <span class="o">=</span> <span class="m">5</span>
+</span></span><span class="line"><span class="cl"><span class="nv">bantime</span>  <span class="o">=</span> <span class="m">600</span>       <span class="p">;</span> <span class="m">10</span> 分钟 <span class="o">(</span>5分钟内超过5次<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>sshd-medium<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span>  <span class="o">=</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">filter</span>   <span class="o">=</span> sshd
+</span></span><span class="line"><span class="cl"><span class="nv">logpath</span>  <span class="o">=</span> /var/log/auth.log
+</span></span><span class="line"><span class="cl"><span class="nv">port</span>     <span class="o">=</span> ssh
+</span></span><span class="line"><span class="cl"><span class="nv">findtime</span> <span class="o">=</span> <span class="m">1800</span>      <span class="p">;</span> <span class="m">30</span> 分钟
+</span></span><span class="line"><span class="cl"><span class="nv">maxretry</span> <span class="o">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="nv">bantime</span>  <span class="o">=</span> <span class="m">3600</span>      <span class="p">;</span> <span class="m">1</span> 小时 <span class="o">(</span>30分钟内超过10次<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>sshd-long<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">enabled</span>  <span class="o">=</span> <span class="nb">true</span>
+</span></span><span class="line"><span class="cl"><span class="nv">filter</span>   <span class="o">=</span> sshd
+</span></span><span class="line"><span class="cl"><span class="nv">logpath</span>  <span class="o">=</span> /var/log/auth.log
+</span></span><span class="line"><span class="cl"><span class="nv">port</span>     <span class="o">=</span> ssh
+</span></span><span class="line"><span class="cl"><span class="nv">findtime</span> <span class="o">=</span> <span class="m">86400</span>     <span class="p">;</span> <span class="m">24</span> 小时
+</span></span><span class="line"><span class="cl"><span class="nv">maxretry</span> <span class="o">=</span> <span class="m">30</span>
+</span></span><span class="line"><span class="cl"><span class="nv">bantime</span>  <span class="o">=</span> <span class="m">8640000</span>    <span class="p">;</span> <span class="m">100</span> 天 <span class="o">(</span>24小时超过30次<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="服务">服务
 </h2><p>启动服务</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -456,8 +552,26 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start fail2ban
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="常见语法">常见语法
-</h2><p>如果自己忘记了密码，被 fail2ban 阻止了，解除命令</p>
+</div><h2 id="常见命令">常见命令
+</h2><p>查看 Fail2Ban 中被禁止的 IP 地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">fail2ban-client status &lt;jail_name&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看名为 <code>sshd</code> 的监狱的被禁止 IP</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">fail2ban-client status sshd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果自己忘记了密码，被 fail2ban 阻止了，解除命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1

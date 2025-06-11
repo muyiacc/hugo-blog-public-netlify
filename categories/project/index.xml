@@ -104,7 +104,12 @@
         <pubDate>Sat, 31 May 2025 18:59:15 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/250531185915/</guid>
-        <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;YOUR_ADDRESS&lt;/code&gt;：自定义域名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;YOUR_TOKEN&lt;/code&gt;：alist 的令牌&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;YOUR_WORKER_ADDRESS&lt;/code&gt;：worker 所在的网址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;  1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;  2

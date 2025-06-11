@@ -7,8 +7,62 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 20 May 2025 10:42:04 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>vimium</title>
+        <lastBuildDate>Mon, 09 Jun 2025 08:30:02 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>图片查看，预览软件</title>
+        <link>https://hublog.netlify.app/p/250609083002/</link>
+        <pubDate>Mon, 09 Jun 2025 08:30:02 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250609083002/</guid>
+        <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名字&lt;/th&gt;
+&lt;th&gt;星级&lt;/th&gt;
+&lt;th&gt;评价&lt;/th&gt;
+&lt;th&gt;地址&lt;/th&gt;
+&lt;th&gt;语言&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;qimgv&lt;/td&gt;
+&lt;td&gt;⭐&lt;/td&gt;
+&lt;td&gt;无法在软件内预览下一张图片，只能切换后查看&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/easymodo/qimgv&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/easymodo/qimgv&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;c++&lt;/td&gt;
+&lt;td&gt;距 2025-06-09 发布版截止到 2021-11-30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;qView&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐&lt;/td&gt;
+&lt;td&gt;极简图片查看，无法在软件内预览下一张图片，只能切换后查看&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/jurplel/qView&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/jurplel/qView&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;c++&lt;/td&gt;
+&lt;td&gt;距 2025-06-09 发布版截止到 2023-8-16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ImageGlass&lt;/td&gt;
+&lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+&lt;td&gt;软件内可预览下一张图片，速度稍慢&lt;/td&gt;
+&lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/d2phap/ImageGlass&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://github.com/d2phap/ImageGlass&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;c#&lt;/td&gt;
+&lt;td&gt;距 2025-06-09 发布版截止到 2025-5-19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/30941577162&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://zhuanlan.zhihu.com/p/30941577162&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>vimium，提供基于键盘的网页导航和控制</title>
         <link>https://hublog.netlify.app/p/250520104204/</link>
         <pubDate>Tue, 20 May 2025 10:42:04 +0800</pubDate>
         
