@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Disk on 寻道之旅</title>
+        <title>Disk on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/disk/</link>
-        <description>Recent content in Disk on 寻道之旅</description>
+        <description>Recent content in Disk on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Sun, 09 Jun 2024 16:06:01 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/disk/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux开机自动挂载Windows磁盘</title>
         <link>https://hublog.netlify.app/p/2406009/</link>

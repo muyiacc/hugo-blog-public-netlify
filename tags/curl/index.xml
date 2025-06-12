@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Curl on 寻道之旅</title>
+        <title>Curl on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/curl/</link>
-        <description>Recent content in Curl on 寻道之旅</description>
+        <description>Recent content in Curl on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Mon, 19 Aug 2024 11:08:08 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/curl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>curl，命令行或脚本中与 URL 进行交互的工具</title>
         <link>https://hublog.netlify.app/p/240819110878/</link>

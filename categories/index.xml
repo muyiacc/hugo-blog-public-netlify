@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories on 寻道之旅</title>
+        <title>Categories on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/categories/</link>
-        <description>Recent content in Categories on 寻道之旅</description>
+        <description>Recent content in Categories on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
-        <lastBuildDate>Tue, 10 Jun 2025 11:39:07 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>寻道之旅的博客</copyright>
+        <lastBuildDate>Thu, 12 Jun 2025 09:55:27 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Devops</title>
+        <link>https://hublog.netlify.app/categories/devops/</link>
+        <pubDate>Thu, 12 Jun 2025 09:55:27 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/categories/devops/</guid>
+        <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
+        </item>
+        <item>
         <title>Default</title>
         <link>https://hublog.netlify.app/categories/default/</link>
         <pubDate>Tue, 10 Jun 2025 11:39:07 +0800</pubDate>
@@ -78,14 +86,6 @@
         
         <guid>https://hublog.netlify.app/categories/proxy/</guid>
         <description>&lt;img src="https://hublog.netlify.app/categories/proxy/proxy.webp" alt="Featured image of post Proxy" /&gt;</description>
-        </item>
-        <item>
-        <title>Devops</title>
-        <link>https://hublog.netlify.app/categories/devops/</link>
-        <pubDate>Fri, 02 May 2025 22:43:58 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/categories/devops/</guid>
-        <description>&lt;img src="https://hublog.netlify.app/categories/devops/devops.webp" alt="Featured image of post Devops" /&gt;</description>
         </item>
         <item>
         <title>Free</title>

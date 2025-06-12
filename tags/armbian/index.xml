@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Armbian on 寻道之旅</title>
+        <title>Armbian on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/armbian/</link>
-        <description>Recent content in Armbian on 寻道之旅</description>
+        <description>Recent content in Armbian on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Mon, 02 Sep 2024 18:09:19 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/armbian/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>玩客云onecloud刷机安装armbian系统，安装应用</title>
         <link>https://hublog.netlify.app/p/240902180979/</link>

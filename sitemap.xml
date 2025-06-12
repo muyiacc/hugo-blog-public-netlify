@@ -8,10 +8,22 @@
     <loc>https://hublog.netlify.app/categories/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/categories/default/</loc>
-    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+    <loc>https://hublog.netlify.app/categories/devops/</loc>
+    <lastmod>2025-06-12T09:55:27+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/post/</loc>
+    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/</loc>
+    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/virtual/</loc>
+    <lastmod>2025-06-12T09:55:27+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250612095527/</loc>
+    <lastmod>2025-06-12T09:55:27+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/categories/default/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250610113907/</loc>
@@ -52,9 +64,6 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/250528205242/</loc>
     <lastmod>2025-05-28T20:52:42+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/tags/</loc>
-    <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/youtube/</loc>
     <lastmod>2025-05-28T15:08:17+08:00</lastmod>
@@ -172,9 +181,6 @@
   </url><url>
     <loc>https://hublog.netlify.app/tags/proxy/</loc>
     <lastmod>2025-05-04T09:31:08+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/categories/devops/</loc>
-    <lastmod>2025-05-02T22:46:37+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/docker/</loc>
     <lastmod>2025-05-02T22:46:37+08:00</lastmod>

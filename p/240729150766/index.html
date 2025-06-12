@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单配置 可用于certbot申请ssl证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:80; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简单配置 可用于 certbot 申请 ssl 证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:8080; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
 <title>Nginx模板</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240729150766/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Nginx模板">
-<meta property='og:description' content="简单配置 可用于certbot申请ssl证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:80; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
+<meta property='og:description' content="简单配置 可用于 certbot 申请 ssl 证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:8080; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
 <meta property='og:url' content='https://hublog.netlify.app/p/240729150766/'>
-<meta property='og:site_name' content='寻道之旅'>
+<meta property='og:site_name' content='寻道之旅的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' />
 <meta name="twitter:title" content="Nginx模板">
-<meta name="twitter:description" content="简单配置 可用于certbot申请ssl证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:80; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
+<meta name="twitter:description" content="简单配置 可用于 certbot 申请 ssl 证书 1 2 3 4 5 6 7 8 9 10 11 12 server { listen 80; server_name domain.com; location / { proxy_pass http://127.0.0.1:8080; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; } }">
   
 
 
@@ -70,7 +70,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h1 class="site-name"><a href="/">寻道之旅的博客</a></h1>
             <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
@@ -307,7 +307,7 @@
     
     
     <h2 id="简单配置">简单配置
-</h2><p>可用于certbot申请ssl证书</p>
+</h2><p>可用于 certbot 申请 ssl 证书</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -329,7 +329,7 @@
 </span></span><span class="line"><span class="cl">    server_name domain.com<span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">        proxy_pass http://127.0.0.1:8080<span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header Host <span class="nv">$host</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header X-Real-IP <span class="nv">$remote_addr</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">        proxy_set_header X-Forwarded-For <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
@@ -418,7 +418,7 @@
         
             2023 - 
         
-        2025 寻道之旅
+        2025 寻道之旅的博客
     </section>
     
     <section class="powerby">

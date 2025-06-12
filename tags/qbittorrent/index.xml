@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Qbittorrent on 寻道之旅</title>
+        <title>Qbittorrent on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/qbittorrent/</link>
-        <description>Recent content in Qbittorrent on 寻道之旅</description>
+        <description>Recent content in Qbittorrent on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Thu, 09 Jan 2025 18:50:27 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/qbittorrent/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Windows安装qBittorrent(EE)，qBittorrent-ClientBlocker</title>
         <link>https://hublog.netlify.app/p/250109185027/</link>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Alist on 寻道之旅</title>
+        <title>Alist on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/alist/</link>
-        <description>Recent content in Alist on 寻道之旅</description>
+        <description>Recent content in Alist on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Fri, 05 Jul 2024 23:07:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/alist/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>alist，一个功能强大的网盘文件列表程序和 WebDAV/S3服务器</title>
         <link>https://hublog.netlify.app/p/2407005/</link>

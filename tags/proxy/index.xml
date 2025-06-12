@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Proxy on 寻道之旅</title>
+        <title>Proxy on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/proxy/</link>
-        <description>Recent content in Proxy on 寻道之旅</description>
+        <description>Recent content in Proxy on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Sun, 04 May 2025 09:31:08 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/proxy/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Github链接指南，Github代理</title>
         <link>https://hublog.netlify.app/p/250504093108/</link>

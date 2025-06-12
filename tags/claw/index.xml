@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Claw on 寻道之旅</title>
+        <title>Claw on 寻道之旅的博客</title>
         <link>https://hublog.netlify.app/tags/claw/</link>
-        <description>Recent content in Claw on 寻道之旅</description>
+        <description>Recent content in Claw on 寻道之旅的博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅</copyright>
+        <copyright>寻道之旅的博客</copyright>
         <lastBuildDate>Wed, 16 Apr 2025 09:28:05 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/claw/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>blinko，快速捕捉和组织转瞬即逝的想法</title>
         <link>https://hublog.netlify.app/p/250416092805/</link>

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Nginx，一个高性能的开源 Web 服务器，Nginx指南">
 <meta property='og:description' content="简介 Nginx（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。 Nginx">
 <meta property='og:url' content='https://hublog.netlify.app/p/250319084854/'>
-<meta property='og:site_name' content='寻道之旅'>
+<meta property='og:site_name' content='寻道之旅的博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nginx' /><meta property='article:published_time' content='2025-03-19T08:48:54&#43;08:00'/><meta property='article:modified_time' content='2025-03-19T08:50:02&#43;08:00'/>
 <meta name="twitter:title" content="Nginx，一个高性能的开源 Web 服务器，Nginx指南">
 <meta name="twitter:description" content="简介 Nginx（发音为&quot;engine-x&quot;）是一个高性能的开源 Web 服务器，也可以用作反向代理服务器、负载均衡器和 HTTP 缓存。 Nginx">
@@ -70,7 +70,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">寻道之旅</a></h1>
+            <h1 class="site-name"><a href="/">寻道之旅的博客</a></h1>
             <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
@@ -279,25 +279,34 @@
         </li>
       </ol>
     </li>
-    <li><a href="#配置">配置</a>
-      <ol>
-        <li><a href="#配置文件">配置文件</a></li>
-        <li><a href="#配置件结构">配置⽂件结构</a></li>
-        <li><a href="#简单示例">简单示例</a></li>
-      </ol>
-    </li>
-    <li><a href="#模块">模块</a>
+    <li><a href="#配置文件">配置文件</a></li>
+    <li><a href="#配置件结构">配置⽂件结构</a>
       <ol>
         <li><a href="#全局块">全局块</a></li>
         <li><a href="#events-块">events 块</a></li>
-        <li><a href="#http-块">http 块</a></li>
-        <li><a href="#server-块">server 块</a></li>
+        <li><a href="#http-块">http 块</a>
+          <ol>
+            <li><a href="#server-块">server 块</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#ssltls">SSL/TLS</a></li>
+    <li><a href="#一些常见的需求">一些常见的需求</a>
+      <ol>
+        <li><a href="#设置客户端-body-最大值">设置客户端 body 最大值</a>
+          <ol>
+            <li><a href="#设置方法">设置方法</a></li>
+            <li><a href="#设置单位">设置单位</a></li>
+            <li><a href="#设置为-无限制-不推荐">设置为 &ldquo;无限制&rdquo; (不推荐)</a></li>
+          </ol>
+        </li>
       </ol>
     </li>
     <li><a href="#常用命令">常用命令</a></li>
-    <li><a href="#ssltls-配置">SSL/TLS 配置</a></li>
     <li><a href="#案例">案例</a>
       <ol>
+        <li><a href="#简单示例">简单示例</a></li>
         <li><a href="#web-服务器">web 服务器</a></li>
         <li><a href="#反向代理">反向代理</a></li>
       </ol>
@@ -588,13 +597,12 @@ uid</p>
 <a class="link" href="https://nginx.org/en/linux_packages.html#Ubuntu"  target="_blank" rel="noopener"
     >https://nginx.org/en/linux_packages.html#Ubuntu</a></p>
 </blockquote>
-<h2 id="配置">配置
-</h2><h3 id="配置文件">配置文件
-</h3><p>通过包管理工具安装的 Nginx 一般在 <code>/etc/nginx</code>下</p>
+<h2 id="配置文件">配置文件
+</h2><p>通过包管理工具安装的 Nginx 一般在 <code>/etc/nginx</code>下</p>
 <p>其中有一个 <code>nginx.conf</code> 文件，它就是 Nginx 的配置文件，但是为了方便管理，一般不直接修改该文件，而是在 <code>/etc/nginx/conf.d/</code> 下新建文件。</p>
 <p>在默认的 <code>nginx.conf</code>中 <code>http</code>模块下，有这样一条命令 <code>include /etc/nginx/conf.d/*.conf;</code> 它表示包含了 <code>/etc/nginx/conf.d/</code>下所有文件，所以我们在<code>/etc/nginx/conf.d/</code>直接添加新文件即可，如果没有该命令需要手动把文件的路径添加到 <code>nginx.conf</code>中</p>
-<h3 id="配置件结构">配置⽂件结构
-</h3><p>Nginx 的配置⽂件是由模块（⼀系列的指令）组成的，每个模块都是由⼀个或者多个<code>指令+参数</code>组成的。</p>
+<h2 id="配置件结构">配置⽂件结构
+</h2><p>Nginx 的配置⽂件是由模块（⼀系列的指令）组成的，每个模块都是由⼀个或者多个<code>指令+参数</code>组成的。</p>
 <p>指令和参数之间使⽤空格来分隔，指令以分号 ; 结尾，参数可以使⽤单引号或者双引号来包裹。</p>
 <p>配置⽂件分为以下⼏个模块：</p>
 <div class="highlight"><div class="chroma">
@@ -615,96 +623,35 @@ uid</p>
 </span><span class="lnt">14
 </span><span class="lnt">15
 </span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># 全局块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">worker_processes</span> <span class="mi">1</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">events</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1"># events块
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># events块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">events</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">http</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1"># http块
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># http块
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">http</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># server块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kn">server</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="c1"># server块
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="c1"># location块
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		    <span class="c1"># location块
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="简单示例">简单示例
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">seektao.cc</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://www.seektao.cc</span><span class="nv">$request_uri</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这个 Nginx 配置文件包含了三个 server 块，每个块定义了不同的虚拟主机配置。</p>
-<ol>
-<li>第一个 server 块：
-<ul>
-<li><code>listen 80;</code>: 监听 80 端口，表示这个 server 块用于处理 HTTP 请求。</li>
-<li><code>server_name seektao.cc;</code>: 指定服务器的域名为<code>seektao.cc</code>。</li>
-<li><code>return 301 https://www.seektao.cc$request_uri;</code>: 当有 HTTP 请求访问<code>seektao.cc</code>时，返回 301 重定向到<code>https://www.seektao.cc$request_uri</code>，即将 HTTP 请求重定向到 HTTPS 协议的<code>www.seektao.cc</code>。</li>
-</ul>
-</li>
-<li>第二个 server 块：
-<ul>
-<li><code>listen 80;</code>: 同样监听 80 端口，处理 HTTP 请求。</li>
-<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
-<li><code>return 301 https://$host$request_uri;</code>: 当有 HTTP 请求访问<code>www.seektao.cc</code>时，返回 301 重定向到<code>https://$host$request_uri</code>，即将 HTTP 请求重定向到 HTTPS 协议的<code>www.seektao.cc</code>。</li>
-</ul>
-</li>
-<li>第三个 server 块：
-<ul>
-<li><code>listen 443 ssl http2;</code>: 监听 443 端口，启用 SSL 和 HTTP/2 协议。</li>
-<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
-</ul>
-</li>
-</ol>
-<p>这个配置文件的作用是：</p>
-<ul>
-<li>当有 HTTP 请求访问<code>seektao.cc</code>或<code>www.seektao.cc</code>时，会将请求重定向到相应的 HTTPS 地址。</li>
-<li>对于 HTTPS 请求，只有<code>www.seektao.cc</code>会被处理</li>
-</ul>
-<p>这是一个简单的配置示例，实际环境中还需要根据具体需求进行进一步配置，例如配置 SSL 证书、代理、缓存等功能。</p>
-<h2 id="模块">模块
-</h2><h3 id="全局块">全局块
+</div><h3 id="全局块">全局块
 </h3><p>全局块是配置⽂件的第⼀个块，也是配置⽂件的主体部分，主要⽤来设置⼀些影响 Nginx 服务器整体运⾏的配置指令，主要包括配置运⾏ Nginx 服务器的⽤户（组）、允许⽣成的 workerprocess 数、进程 PID 存放路径、⽇志存放路径和类型以及配置⽂件引⼊等。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -760,7 +707,7 @@ uid</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="http-块">http 块
-</h3><p>http 块是配置⽂件的主要部分，包括 http 全局块和 server 块。</p>
+</h3><p>http 块是配置⽂件的主要部分，包括 http 全局块和其下的 server 块。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -879,9 +826,74 @@ uid</p>
 </span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="server-块">server 块
-</h3><p>server 块是配置虚拟主机的，⼀个 http 块可以包含多个 server 块，每个 server 块就是⼀个虚拟主机。</p>
+</div><h4 id="server-块">server 块
+</h4><p>server 块是配置虚拟主机的，⼀个 http 块可以包含多个 server 块，每个 server 块就是⼀个虚拟主机。</p>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 监听IP和端口</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen的格式为：</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen [ip]:port [default_server] [ssl] [http2] [spdy] [proxy_protocol] [setfib=number] [fastopen=number] [backlog=number];</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen指令非常灵活，可以指定多个IP和端口，也可以使用通配符</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是几个实际的例子：</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1:80; # 监听来自127.0.0.1的80端口的请求</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 80; # 监听来自所有IP的80端口的请求</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen *:80; # 监听来自所有IP的80端口的请求，同上</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1; # 监听来自来自127.0.0.1的80端口，默认端口为80</span>
+</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name 用来指定虚拟主机的域名，可以使用精确匹配、通配符匹配和正则匹配等方式</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name example.org www.example.org; # 精确匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name *.example.org; # 通配符匹配</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># server_name ~^www\d+\.example\.net$; # 正则匹配</span>
+</span></span><span class="line"><span class="cl">    server_name localhost<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1"># location 块</span>
+</span></span><span class="line"><span class="cl">	location / <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="c1"># ...</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># error_page 用于指定错误页面，可以指定多个，按照优先级从高到低依次查找</span>
+</span></span><span class="line"><span class="cl">    error_page <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span> /50x.html<span class="p">;</span> <span class="c1"># 错误页面</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="location-块">location 块
+</h5><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -927,91 +939,202 @@ uid</p>
 </span><span class="lnt">42
 </span><span class="lnt">43
 </span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">server <span class="o">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 监听IP和端口</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen的格式为：</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen [ip]:port [default_server] [ssl] [http2] [spdy] [proxy_protocol] [setfib=number] [fastopen=number] [backlog=number];</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen指令非常灵活，可以指定多个IP和端口，也可以使用通配符</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是几个实际的例子：</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1:80; # 监听来自127.0.0.1的80端口的请求</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen 80; # 监听来自所有IP的80端口的请求</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen *:80; # 监听来自所有IP的80端口的请求，同上</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># listen 127.0.0.1; # 监听来自来自127.0.0.1的80端口，默认端口为80</span>
-</span></span><span class="line"><span class="cl">    listen 80<span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">#############
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1"># server 块配置...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">#############
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1"># location块用来配置请求的路由，一个server块可以包含多个location块，每个location块就是一个请求路由
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># location块的格式是：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># location [=|~|~*|^~] /uri/ { ... }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># = 表示精确匹配，只有完全匹配上才能生效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># ~ 表示区分大小写的正则匹配
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># ~* 表示不区分大小写的正则匹配
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># ^~ 表示普通字符匹配，如果匹配成功，则不再匹配其他location
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># /uri/ 表示请求的URI，可以是字符串，也可以是正则表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1"># { ... } 表示location块的配置内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># root指令用于指定请求的根目录，可以是绝对路径，也可以是相对路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span> <span class="c1"># 根目录
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># index指令用于指定默认文件，如果请求的是目录，则会在目录下查找默认文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span> <span class="c1"># 默认文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># server_name 用来指定虚拟主机的域名，可以使用精确匹配、通配符匹配和正则匹配等方式</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># server_name example.org www.example.org; # 精确匹配</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># server_name *.example.org; # 通配符匹配</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># server_name ~^www\d+\.example\.net$; # 正则匹配</span>
-</span></span><span class="line"><span class="cl">    server_name localhost<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是一些location的示例：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="p">=</span> <span class="s">/</span> <span class="p">{</span> <span class="c1"># 精确匹配请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">index</span> <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># location块用来配置请求的路由，一个server块可以包含多个location块，每个location块就是一个请求路由</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># location块的格式是：</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># location [=|~|~*|^~] /uri/ { ... }</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># = 表示精确匹配，只有完全匹配上才能生效</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># ~ 表示区分大小写的正则匹配</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># ~* 表示不区分大小写的正则匹配</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># ^~ 表示普通字符匹配，如果匹配成功，则不再匹配其他location</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># /uri/ 表示请求的URI，可以是字符串，也可以是正则表达式</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># { ... } 表示location块的配置内容</span>
-</span></span><span class="line"><span class="cl">    location / <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1"># root指令用于指定请求的根目录，可以是绝对路径，也可以是相对路径</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span> <span class="c1"># 根目录</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">^~</span> <span class="s">/images/</span> <span class="p">{</span> <span class="c1"># 匹配以/images/开头的请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="c1"># index指令用于指定默认文件，如果请求的是目录，则会在目录下查找默认文件</span>
-</span></span><span class="line"><span class="cl">        index index.html index.htm<span class="p">;</span> <span class="c1"># 默认文件</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">\.(gif|jpg|jpeg)</span>$ <span class="p">{</span> <span class="c1"># 匹配以gif、jpg或者jpeg结尾的请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># 下面是一些location的示例：</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">location</span> <span class="o">=</span> / <span class="o">{</span> <span class="c1"># 精确匹配请求</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">        index index.html index.htm<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">!~</span> <span class="s">\.(gif|jpg|jpeg)</span>$ <span class="p">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    location ^~ /images/ <span class="o">{</span> <span class="c1"># 匹配以/images/开头的请求</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    location ~* <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 匹配以gif、jpg或者jpeg结尾的请求</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    location !~ <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    location !~* <span class="se">\.</span><span class="o">(</span>gif<span class="p">|</span>jpg<span class="p">|</span>jpeg<span class="o">)</span>$ <span class="o">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1"># error_page 用于指定错误页面，可以指定多个，按照优先级从高到低依次查找</span>
-</span></span><span class="line"><span class="cl">    error_page <span class="m">500</span> <span class="m">502</span> <span class="m">503</span> <span class="m">504</span> /50x.html<span class="p">;</span> <span class="c1"># 错误页面</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">location</span> <span class="o">=</span> /50x.html <span class="o">{</span>
-</span></span><span class="line"><span class="cl">        root /usr/share/nginx/html<span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="o">}</span>
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">!~*</span> <span class="s">\.(gif|jpg|jpeg)</span>$ <span class="p">{</span> <span class="c1"># 不匹配以gif、jpg或者jpeg结尾的请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">root</span> <span class="s">/usr/share/nginx/html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="ssltls">SSL/TLS
+</h2><p>在 server 块增加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl">	<span class="c1"># 证书文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate</span> <span class="s">/path/to/yourdomain/cert.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 私钥文件路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate_key</span> <span class="s">/path/to/yourdomain/key.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 配置 (推荐的配置)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">ssl_ciphers</span> <span class="s">&#34;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">ssl_session_timeout</span> <span class="mi">10m</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="一些常见的需求">一些常见的需求
+</h2><h3 id="设置客户端-body-最大值">设置客户端 body 最大值
+</h3><p><code>client_max_body_size</code> 这个指令定义了客户端请求主体的最大允许大小，在网盘项目中，需要设置。</p>
+<p>默认值是 <code>1m</code></p>
+<p>可以在 <code>http</code>, <code>server</code>, <code>location</code>中设置</p>
+<h4 id="设置方法">设置方法
+</h4><p><strong>在 <code>http</code> 块中设置 (全局设置)</strong>：</p>
+<p>这将对 Nginx 处理的所有站点和所有请求生效。适用于你的所有网站都有相似上传需求的情况。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># /etc/nginx/nginx.conf (或你的主配置文件)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">http</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">client_max_body_size</span> <span class="mi">100m</span><span class="p">;</span> <span class="c1"># 允许最大上传100MB的文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... 其他 http 配置 ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>在 <code>server</code> 块中设置 (针对特定网站)</strong>： 如果你有多个网站，并且每个网站的上传需求不同，可以在每个 <code>server</code> 块中单独设置。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="c1"># /etc/nginx/sites-available/your_website.conf
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">your_domain.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">client_max_body_size</span> <span class="mi">500m</span><span class="p">;</span> <span class="c1"># 该网站允许最大上传500MB的文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># ... 其他 server 配置 ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>在 <code>location</code> 块中设置 (针对特定 URL 路径)</strong>： 这是最细粒度的控制，只对匹配特定 URL 路径的请求生效。例如，你可能只在 <code>/upload</code> 路径下允许大文件上传。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">your_domain.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 默认的或较小的上传限制
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">client_max_body_size</span> <span class="mi">10m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">location</span> <span class="s">/upload</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 仅此上传路径允许较大的文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">client_max_body_size</span> <span class="s">2g</span><span class="p">;</span> <span class="c1"># 允许最大上传2GB的文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1"># ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="设置单位">设置单位
+</h4><p><code>size</code> 可以使用以下单位：</p>
+<ul>
+<li><code>k</code> 或 <code>K</code> (千字节)</li>
+<li><code>m</code> 或 <code>M</code> (兆字节)</li>
+<li><code>g</code> 或 <code>G</code> (吉字节)</li>
+</ul>
+<p>例如：<code>100k</code>, <code>10m</code>, <code>2g</code>。</p>
+<h4 id="设置为-无限制-不推荐">设置为 &ldquo;无限制&rdquo; (不推荐)
+</h4><p>将 <code>client_max_body_size</code> 设置为 <code>0</code> 会禁用对客户端请求主体大小的检查。这意味着 Nginx 会接受任意大小的请求主体。 <strong>但请注意：</strong> 设置为 <code>0</code> 意味着请求体根本不会被读取，实际上就是不允许上传文件。 如果你真的需要允许非常大的文件上传，应该设置一个非常大的具体值，而不是 <code>0</code>。</p>
+<p>例如，允许非常大的文件（但仍有上限）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">client_max_body_size</span> <span class="s">10g</span><span class="p">;</span> <span class="c1"># 允许最大10GB的文件
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="常用命令">常用命令
 </h2><div class="highlight"><div class="chroma">
@@ -1046,9 +1169,9 @@ uid</p>
 </span></span><span class="line"><span class="cl">sudo nginx -s reopen 	<span class="c1"># 重新打开⽇志⽂件</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="ssltls-配置">SSL/TLS 配置
-</h2><p>在 server 块增加</p>
-<div class="highlight"><div class="chroma">
+</div><h2 id="案例">案例
+</h2><h3 id="简单示例">简单示例
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1060,22 +1183,62 @@ uid</p>
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl">	<span class="c1"># 证书文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate</span> <span class="s">/path/to/your_domain/cert.pem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># 私钥文件路径
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_certificate_key</span> <span class="s">/path/to/your_domain/key.pem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 配置 (推荐的配置)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">ssl_ciphers</span> <span class="s">&#34;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">ssl_session_cache</span> <span class="s">shared:SSL:10m</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">ssl_session_timeout</span> <span class="mi">10m</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://www.seektao.cc</span><span class="nv">$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span> <span class="s">http2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">www.seektao.cc</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="案例">案例
-</h2><h3 id="web-服务器">web 服务器
+</div><p>这个 Nginx 配置文件包含了三个 server 块，每个块定义了不同的虚拟主机配置。</p>
+<ol>
+<li>第一个 server 块：
+<ul>
+<li><code>listen 80;</code>: 监听 80 端口，表示这个 server 块用于处理 HTTP 请求。</li>
+<li><code>server_name seektao.cc;</code>: 指定服务器的域名为<code>seektao.cc</code>。</li>
+<li><code>return 301 https://www.seektao.cc$request_uri;</code>: 当有 HTTP 请求访问<code>seektao.cc</code>时，返回 301 重定向到<code>https://www.seektao.cc$request_uri</code>，即将 HTTP 请求重定向到 HTTPS 协议的<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+<li>第二个 server 块：
+<ul>
+<li><code>listen 80;</code>: 同样监听 80 端口，处理 HTTP 请求。</li>
+<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
+<li><code>return 301 https://$host$request_uri;</code>: 当有 HTTP 请求访问<code>www.seektao.cc</code>时，返回 301 重定向到<code>https://$host$request_uri</code>，即将 HTTP 请求重定向到 HTTPS 协议的<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+<li>第三个 server 块：
+<ul>
+<li><code>listen 443 ssl http2;</code>: 监听 443 端口，启用 SSL 和 HTTP/2 协议。</li>
+<li><code>server_name www.seektao.cc;</code>: 指定服务器的域名为<code>www.seektao.cc</code>。</li>
+</ul>
+</li>
+</ol>
+<p>这个配置文件的作用是：</p>
+<ul>
+<li>当有 HTTP 请求访问<code>seektao.cc</code>或<code>www.seektao.cc</code>时，会将请求重定向到相应的 HTTPS 地址。</li>
+<li>对于 HTTPS 请求，只有<code>www.seektao.cc</code>会被处理</li>
+</ul>
+<p>这是一个简单的配置示例，实际环境中还需要根据具体需求进行进一步配置，例如配置 SSL 证书、代理、缓存等功能。</p>
+<h3 id="web-服务器">web 服务器
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -1226,37 +1389,37 @@ uid</p>
 </span></span><span class="line"><span class="cl">        <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://</span><span class="nv">$host$request_uri</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="c1"># managed by Certbot
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">yourdomain.com</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://yourdomain.com</span><span class="nv">$request_uri</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">yourdomain.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://yourdomain.com</span><span class="nv">$request_uri</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>  
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">http2</span> <span class="no">on</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">yourdomain.com</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 证书配置  
+</span></span><span class="line"><span class="cl">    <span class="kn">server_name</span> <span class="s">yourdomain.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># SSL 证书配置
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_certificate</span> <span class="s">/etc/nginx/ssl/yourdomain.com/cert.pem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/yourdomain.com/key.pem</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 安全设置  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 反向代理  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>  
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8080/</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>  
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>  
-</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_certificate_key</span> <span class="s">/etc/nginx/ssl/yourdomain.com/key.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 安全设置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">ssl_protocols</span> <span class="s">TLSv1.2</span> <span class="s">TLSv1.3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_ciphers</span> <span class="s">HIGH:!aNULL:!MD5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kn">ssl_prefer_server_ciphers</span> <span class="no">on</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 反向代理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:8080/</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-Proto</span> <span class="s">https</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1"># 上传的最大文件尺寸
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">client_max_body_size</span> <span class="mi">200000m</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -1264,11 +1427,11 @@ uid</p>
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">proxy_connect_timeout</span> <span class="mi">600</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">proxy_send_timeout</span> <span class="mi">600</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">proxy_read_timeout</span> <span class="mi">600</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">    <span class="c1"># 日志配置  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">access_log</span> <span class="s">/var/log/nginx/yourdomain.com.access.log</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 日志配置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kn">access_log</span> <span class="s">/var/log/nginx/yourdomain.com.access.log</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kn">error_log</span> <span class="s">/var/log/nginx/yourdomain.com.error.log</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -1455,7 +1618,7 @@ uid</p>
         
             2023 - 
         
-        2025 寻道之旅
+        2025 寻道之旅的博客
     </section>
     
     <section class="powerby">
