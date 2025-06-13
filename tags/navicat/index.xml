@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Navicat on 寻道之旅的博客</title>
+        <title>Navicat on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/navicat/</link>
-        <description>Recent content in Navicat on 寻道之旅的博客</description>
+        <description>Recent content in Navicat on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Tue, 07 Nov 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/navicat/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Ncat替代netcat</title>
         <link>https://hublog.netlify.app/p/2311007/</link>

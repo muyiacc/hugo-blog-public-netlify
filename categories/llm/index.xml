@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Llm on 寻道之旅的博客</title>
+        <title>Llm on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/categories/llm/</link>
-        <description>Recent content in Llm on 寻道之旅的博客</description>
+        <description>Recent content in Llm on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Wed, 28 May 2025 20:52:42 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/llm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI画图提示词，draw prompt</title>
         <link>https://hublog.netlify.app/p/250523095452/</link>

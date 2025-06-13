@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Flutter on 寻道之旅的博客</title>
+        <title>Flutter on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/flutter/</link>
-        <description>Recent content in Flutter on 寻道之旅的博客</description>
+        <description>Recent content in Flutter on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Tue, 05 Nov 2024 12:02:22 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/flutter/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>VSCode调试控制台隐藏Flutter使用模拟器输出的大量日志</title>
         <link>https://hublog.netlify.app/p/241105120222/</link>

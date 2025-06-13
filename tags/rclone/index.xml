@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Rclone on 寻道之旅的博客</title>
+        <title>Rclone on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/rclone/</link>
-        <description>Recent content in Rclone on 寻道之旅的博客</description>
+        <description>Recent content in Rclone on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Sat, 05 Apr 2025 19:42:20 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/rclone/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>服务器自动化打包备份，rclone自动备份脚本分享</title>
+        <title>服务器自动化打包，备份到云存储，基于rclone</title>
         <link>https://hublog.netlify.app/p/250405194220/</link>
         <pubDate>Sat, 05 Apr 2025 19:42:20 +0800</pubDate>
         
@@ -25,11 +25,13 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir -p &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin/backup_and_upload.sh
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin/backup_and_upload.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin/backup_and_upload.sh &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod +x &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin/backup_and_upload.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin/backup_and_upload.sh
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
@@ -320,6 +322,8 @@
         <guid>https://hublog.netlify.app/p/2407020/</guid>
         <description>&lt;img src="https://s2.loli.net/2024/08/06/IyYvUsDeqloum4M.webp" alt="Featured image of post rclone，统一管理、备份，同步文件，文件夹到多种云存储平台" /&gt;&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;rclone 是一个强大的命令行工具，旨在管理和同步文件到多种云存储服务及本地文件系统。它支持超过 70 种不同的云存储提供商，如 Google Drive、Dropbox、Amazon S3、OneDrive 等。&lt;/p&gt;
+&lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://rclone.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://rclone.org&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;主要特点&#34;&gt;主要特点
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;多种存储支持&lt;/strong&gt;：支持超过 70 种不同的云存储服务。&lt;/li&gt;
@@ -329,8 +333,6 @@
 &lt;li&gt;&lt;strong&gt;跨平台&lt;/strong&gt;：可以在 Windows、macOS 和 Linux 上运行。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;脚本自动化&lt;/strong&gt;：可以通过脚本实现定期备份和同步。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;官网地址：&lt;a class=&#34;link&#34; href=&#34;https://rclone.org&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://rclone.org&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;安装&#34;&gt;安装
 &lt;/h2&gt;&lt;h3 id=&#34;linux--macos--bsd&#34;&gt;Linux / macOS / BSD
 &lt;/h3&gt;&lt;p&gt;在 Linux/macOS/BSD 系统上安装 rclone，可以运行以下命令：&lt;/p&gt;
@@ -352,12 +354,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;windows&#34;&gt;Windows
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/rclone/rclone/releases/download/v1.68.2/rclone-v1.68.2-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Windows AMD64&lt;/a&gt;&lt;/li&gt;
+&lt;/h3&gt;&lt;p&gt;下载地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;点击下载：&lt;a class=&#34;link&#34; href=&#34;https://github.com/rclone/rclone/releases/download/v1.68.2/rclone-v1.68.2-windows-amd64.zip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Windows AMD64 v1.68.2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;下载解压后，设置环境变量，终端运行 &lt;code&gt;rclone&lt;/code&gt; 即可使用。&lt;/p&gt;
-&lt;h2 id=&#34;配置首要步骤&#34;&gt;配置（首要步骤）
+&lt;p&gt;解压文件，将&lt;code&gt;rclone&lt;/code&gt;所在的目录添加到&lt;code&gt;PATH&lt;/code&gt;环境变量，即可在终端任意位置运行 &lt;code&gt;rclone&lt;/code&gt;命令&lt;/p&gt;
+&lt;h2 id=&#34;配置远程存储&#34;&gt;配置远程存储
 &lt;/h2&gt;&lt;p&gt;首次使用 rclone 时，需要配置远程存储。执行以下命令并根据提示操作：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -368,30 +371,105 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;配置文件所在的位置：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Linux&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Linux&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.config/rclone
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;~/.config/rclone/rclone.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Windows&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;\AppData\Roaming\rclone\rclone.conf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;如果第一次安装没有配置文件和对应的路径，运行 &lt;code&gt;rclone config&lt;/code&gt;退出就会自动创建，不过文件内容为空&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;命令补全&#34;&gt;命令补全
+&lt;/h2&gt;&lt;p&gt;rclone 含有命令补全，输入 &lt;code&gt;rclone&lt;/code&gt;按住 tab 键可以自动帮我们补全远程存储中的路径，如果没有这个功能，需要手动输入路径，可以尝试使用如下方法开启命令补全&lt;/p&gt;
+&lt;p&gt;安装 &lt;code&gt;bash-completion&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update  &lt;span class=&#34;c1&#34;&gt;# Debian/Ubuntu&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install bash-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum update  &lt;span class=&#34;c1&#34;&gt;# CentOS/RHEL/Fedora&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install bash-completion
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S bash-completion &lt;span class=&#34;c1&#34;&gt;# Arch Linux/Manjaro&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;开启补全功能&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo rclone genautocomplete bash &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/bash_completion.d/rclone
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /etc/bash_completion.d/rclone
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;再次尝试 rclone 命令，输入，使用 tab 键查看是否有补全&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone lsd remote:/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;基本用法&#34;&gt;基本用法
+&lt;/h2&gt;&lt;p&gt;rclone的语法结构：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone &amp;lt;命令&amp;gt;  &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;参数&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &amp;lt;源路径&amp;gt; &amp;lt;目标路径&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;Windows&lt;/li&gt;
+&lt;li&gt;命令：rclone支持的命令，可以通过 &lt;a class=&#34;link&#34; href=&#34;https://rclone.org/commands/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://rclone.org/commands/&lt;/a&gt;查看所有支持的命令&lt;/li&gt;
+&lt;li&gt;参数：命令支持的参数，参考对应的命令&lt;/li&gt;
+&lt;li&gt;源路径：顾名思义&lt;/li&gt;
+&lt;li&gt;目标路径：顾名思义&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;额外说明，为了区分本地路径和远程路径，使用远程路径需要使用 &lt;code&gt;name:path&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt;：rclone配置远程存储时起的名字&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;path&lt;/code&gt;：配置的远程存储的路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;p&gt;查看远程存储的文件列表（假设已经创建了一个名为 jianguoyun的远程存储）&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cmd&#34; data-lang=&#34;cmd&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;%USERPROFILE%&lt;/span&gt;\AppData\Roaming\rclone
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone lsd jianguoyun:/
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;复制备份&#34;&gt;复制/备份
-&lt;/h2&gt;&lt;p&gt;将文件从源位置复制到目标位置：根据文件大小、修改时间或 MD5SUM 判断跳过相同的文件&lt;/p&gt;
+&lt;/div&gt;&lt;h2 id=&#34;复制&#34;&gt;复制
+&lt;/h2&gt;&lt;p&gt;将文件从源位置复制到目标位置，根据文件大小、修改时间或 MD5SUM 判断跳过相同的文件&lt;/p&gt;
+&lt;p&gt;语法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -400,8 +478,13 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone copy source:sourcepath dest:destpath -P
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;复制（复制到远程可能需要等待完成）&lt;/p&gt;
-&lt;p&gt;参数 -P 可查看具体信息&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-P&lt;/code&gt;：查看具体信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;复制亦可当作备份使用，不会删除远程文件&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h3 id=&#34;本地复制到远程存储&#34;&gt;本地复制到远程存储
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;案例：本地 &lt;code&gt;software&lt;/code&gt; 文件夹复制到 &lt;code&gt;alist&lt;/code&gt; 下的 &lt;code&gt;aliyunpan/software&lt;/code&gt;&lt;/p&gt;
@@ -445,7 +528,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;定时备份复制&#34;&gt;定时备份/复制
-&lt;/h3&gt;&lt;p&gt;tips：复制可当作备份使用，写为脚本文件，加入定时和任务即可&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;Tips：复制可当作备份使用，写入到脚本文件，定时任务执行脚本即可&lt;/p&gt;
 &lt;h2 id=&#34;挂载&#34;&gt;挂载
 &lt;/h2&gt;&lt;p&gt;将远程存储挂载到本地，作为本地文件系统使用，支持本地播放视频、打开文件，编辑文件等操作&lt;/p&gt;
 &lt;p&gt;注意：Windows 平台挂载需要额外安装 &lt;a class=&#34;link&#34; href=&#34;https://github.com/winfsp/winfsp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -556,7 +639,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;windows：挂载alist film路径到本地驱动器 K&lt;/p&gt;
+&lt;p&gt;案例：windows 挂载 alist film 路径到本地驱动器 K&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -567,16 +650,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;开机自动挂载&#34;&gt;开机自动挂载
-&lt;/h3&gt;&lt;p&gt;使用定时任务&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;crontab -e
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;blockquote&gt;
+&lt;/h3&gt;&lt;p&gt;借助定时任务实现或者创建系统服务&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;案例：开机挂载 alist&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -597,8 +672,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;单向同步&#34;&gt;单向同步
 &lt;/h2&gt;&lt;p&gt;将 &lt;strong&gt;源路径&lt;/strong&gt; 文件同步到 &lt;strong&gt;目的路径&lt;/strong&gt;，会 &lt;strong&gt;删除目的路径文件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果只是需要备份文件，使用 &lt;strong&gt;复制&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;这可能导致数据丢失，首先使用 &lt;code&gt;--dry-run&lt;/code&gt; 或 &lt;code&gt;--interactive&lt;/code&gt;/&lt;code&gt;-i&lt;/code&gt; 进行测试。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果只是需要备份文件，使用 &lt;strong&gt;复制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;语法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -607,7 +682,8 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone sync --interactive SOURCE remote:DESTINATION
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;远程存储同步到本地&#34;&gt;远程存储同步到本地
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;这可能导致数据丢失，首先使用 &lt;code&gt;--dry-run&lt;/code&gt; 或 &lt;code&gt;--interactive&lt;/code&gt;/&lt;code&gt;-i&lt;/code&gt; 进行测试。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;远程存储同步到本地&#34;&gt;远程存储同步到本地
 &lt;/h3&gt;&lt;blockquote&gt;
 &lt;p&gt;案例：坚果云同步文件到本地&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -632,7 +708,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;双向同步&#34;&gt;双向同步
-&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;暂处于测试阶段，不建议使用！！&lt;/strong&gt;&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;语法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -641,52 +717,9 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone bisync remote1:path1 remote2:path2 &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;flags&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;开启命令补全&#34;&gt;开启命令补全
-&lt;/h2&gt;&lt;p&gt;如果输入 &lt;code&gt;rclone&lt;/code&gt;按住 tab 没有补全，可以使用如下方法开启命令补全&lt;/p&gt;
-&lt;p&gt;rclone 是有命令补全功能的，可以自动帮我们补全网盘中的路径，如果没有这个功能，还需要手动输入路径，这是不太友好的，这个教程教你如何开启&lt;/p&gt;
-&lt;p&gt;先安装 &lt;code&gt;bash-completion&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update  &lt;span class=&#34;c1&#34;&gt;# Debian/Ubuntu&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install bash-completion
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum update  &lt;span class=&#34;c1&#34;&gt;# CentOS/RHEL/Fedora&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install bash-completion
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo pacman -S bash-completion &lt;span class=&#34;c1&#34;&gt;# Arch Linux/Manjaro&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;开启补全功能&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo rclone genautocomplete bash &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sudo tee /etc/bash_completion.d/rclone
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; /etc/bash_completion.d/rclone
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;再次尝试 rclone 命令，输入，使用 tab 键查看是否有补全&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone lsd remote-name
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;web-ui&#34;&gt;Web UI
-&lt;/h2&gt;&lt;p&gt;rclone 也提供了 Web UI 界面：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;暂处于测试阶段，不建议使用！！&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;web-ui&#34;&gt;Web UI
+&lt;/h2&gt;&lt;p&gt;rclone 提供了 Web UI 界面：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -697,9 +730,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;此命令会从 GitHub 下载 UI 文件，因此需要能够访问 GitHub。&lt;/p&gt;
 &lt;h2 id=&#34;其他命令&#34;&gt;其他命令
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;列出所有配置&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/h2&gt;&lt;p&gt;列出所有已经配置的远程存储名字&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -708,9 +739,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone listremotes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;查看特定远程的配置&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;&lt;p&gt;查看特定远程存储的配置详情&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -719,9 +748,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone config show &amp;lt;remote_name&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;查看所有配置的详细信息&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/div&gt;&lt;p&gt;查看所有远程存储的详情，以&lt;code&gt;json&lt;/code&gt;格式输出&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -732,18 +759,18 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;小技巧&#34;&gt;小技巧
 &lt;/h2&gt;&lt;h3 id=&#34;只创建相同目录结构&#34;&gt;只创建相同目录结构
-&lt;/h3&gt;&lt;p&gt;如果只想创建文件夹结构，而不上传文件&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;将目标位置拥有原位置同样的目录结构，保持目录结构的一致&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone copy  source_path remote_name:remote_path --filter &lt;span class=&#34;s2&#34;&gt;&amp;#34;+ */&amp;#34;&lt;/span&gt; --filter &lt;span class=&#34;s2&#34;&gt;&amp;#34;- *&amp;#34;&lt;/span&gt; --progress
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rclone copy  source:/path dest:/path --filter &lt;span class=&#34;s2&#34;&gt;&amp;#34;+ */&amp;#34;&lt;/span&gt; --filter &lt;span class=&#34;s2&#34;&gt;&amp;#34;- *&amp;#34;&lt;/span&gt; --progress
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;source_path：源路径&lt;/li&gt;
-&lt;li&gt;remote_name:remote_path：远程目录和远程路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;source:/path&lt;/code&gt;：源路径&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dest:/path&lt;/code&gt;：远程目录&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>

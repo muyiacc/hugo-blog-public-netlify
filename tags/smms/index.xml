@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Smms on 寻道之旅的博客</title>
+        <title>Smms on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/smms/</link>
-        <description>Recent content in Smms on 寻道之旅的博客</description>
+        <description>Recent content in Smms on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Sat, 21 Oct 2023 14:07:10 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/smms/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>使用picgo-core将markdown图片上传至smms图床</title>
         <link>https://hublog.netlify.app/p/2310021/</link>

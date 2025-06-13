@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="什么是 curl？ curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传">
-<title>curl，命令行或脚本中与 URL 进行交互的工具</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求">
+<title>curl，命令行或脚本中与URL进行交互的工具</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240819110878/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="curl，命令行或脚本中与 URL 进行交互的工具">
-<meta property='og:description' content="什么是 curl？ curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="curl，命令行或脚本中与URL进行交互的工具">
+<meta property='og:description' content="简介 curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求">
 <meta property='og:url' content='https://hublog.netlify.app/p/240819110878/'>
-<meta property='og:site_name' content='寻道之旅的博客'>
+<meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='curl' /><meta property='article:published_time' content='2024-08-19T11:08:08&#43;08:00'/><meta property='article:modified_time' content='2024-08-19T11:08:08&#43;08:00'/>
-<meta name="twitter:title" content="curl，命令行或脚本中与 URL 进行交互的工具">
-<meta name="twitter:description" content="什么是 curl？ curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传">
+<meta name="twitter:title" content="curl，命令行或脚本中与URL进行交互的工具">
+<meta name="twitter:description" content="简介 curl 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求">
   
 
 
@@ -70,7 +70,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">寻道之旅的博客</a></h1>
+            <h1 class="site-name"><a href="/">寻道之旅博客</a></h1>
             <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
@@ -267,16 +267,20 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#安装">安装</a></li>
+    <li><a href="#基本用法">基本用法</a></li>
+    <li><a href="#常见参数按功能分类">常见参数（按功能分类）</a>
       <ol>
-        <li><a href="#什么是-curl">什么是 <code>curl</code>？</a></li>
-        <li><a href="#安装-curl">安装 <code>curl</code></a></li>
-        <li><a href="#常见用法">常见用法</a></li>
-        <li><a href="#常用参数">常用参数</a></li>
-        <li><a href="#示例">示例</a></li>
-        <li><a href="#总结">总结</a></li>
+        <li><a href="#输出控制-output-control">输出控制 (Output Control)</a></li>
+        <li><a href="#http-请求方法-http-method">HTTP 请求方法 (HTTP Method)</a></li>
+        <li><a href="#发送数据-sending-data">发送数据 (Sending Data)</a></li>
+        <li><a href="#自定义请求头-custom-headers">自定义请求头 (Custom Headers)</a></li>
+        <li><a href="#安全与认证-security--authentication">安全与认证 (Security &amp; Authentication)</a></li>
+        <li><a href="#连接控制-connection-control">连接控制 (Connection Control)</a></li>
       </ol>
     </li>
+    <li><a href="#常用参数速查表"><em>常用参数速查表</em></a></li>
   </ol>
 </nav>
         </div>
@@ -304,7 +308,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/240819110878/">curl，命令行或脚本中与 URL 进行交互的工具</a>
+            <a href="/p/240819110878/">curl，命令行或脚本中与URL进行交互的工具</a>
         </h2>
     
         
@@ -342,10 +346,10 @@
     <section class="article-content">
     
     
-    <h3 id="什么是-curl">什么是 <code>curl</code>？
-</h3><p><code>curl</code> 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求。</p>
-<h3 id="安装-curl">安装 <code>curl</code>
-</h3><p>在大多数 Linux 发行版中，<code>curl</code> 通常预装。你可以通过以下命令检查是否已安装：</p>
+    <h2 id="简介">简介
+</h2><p><code>curl</code> 是一个用于从命令行或脚本中与 URL 进行交互的工具。它支持多种协议，包括 HTTP、HTTPS、FTP、SFTP 等，广泛用于数据传输和网络请求。</p>
+<h2 id="安装">安装
+</h2><p>在大多数 Linux 发行版中，<code>curl</code> 通常预装。你可以通过以下命令检查是否已安装：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -390,134 +394,214 @@
 </div>
 </div></li>
 </ul>
-<h3 id="常见用法">常见用法
-</h3><ol>
-<li>
-<p><strong>基本 GET 请求</strong>:</p>
+<h2 id="基本用法">基本用法
+</h2><p>最简单的用法是直接跟上 URL，<code>curl</code> 会默认使用 GET 方法请求该 URL，并将其响应内容（通常是 HTML 或 JSON）打印到标准输出（你的终端屏幕上）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl http://example.com
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 请求一个网页并显示其 HTML 内容</span>
+</span></span><span class="line"><span class="cl">curl https://www.example.com
 </span></span></code></pre></td></tr></table>
 </div>
-</div></li>
-<li>
-<p><strong>下载文件</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -O http://example.com/file.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>保存为指定文件</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -o myfile.txt http://example.com/file.txt
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>跟随重定向</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -L http://example.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>发送 POST 请求</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -X POST -d <span class="s2">&#34;param1=value1&amp;param2=value2&#34;</span> http://example.com/api
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>添加自定义请求头</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -H <span class="s2">&#34;Authorization: Bearer &lt;token&gt;&#34;</span> http://example.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>获取 HTTP 头信息</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -I http://example.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<h3 id="常用参数">常用参数
-</h3><ul>
-<li><strong><code>-s</code></strong>: 静默模式，不显示进度条。</li>
-<li><strong><code>-L</code></strong>: 跟随重定向。</li>
-<li><strong><code>-O</code></strong>: 保存文件为远程文件名。</li>
-<li><strong><code>-o &lt;file&gt;</code></strong>: 保存为指定文件名。</li>
-<li><strong><code>-d &lt;data&gt;</code></strong>: 发送 POST 数据。</li>
-<li><strong><code>-H &lt;header&gt;</code></strong>: 添加请求头。</li>
-<li><strong><code>-u &lt;user:password&gt;</code></strong>: 基本 HTTP 身份验证。</li>
+</div><h2 id="常见参数按功能分类">常见参数（按功能分类）
+</h2><h3 id="输出控制-output-control">输出控制 (Output Control)
+</h3><p>默认情况下，<code>curl</code> 将所有内容输出到屏幕。以下参数可以控制输出行为。</p>
+<ul>
+<li><code>-o, --output &lt;file&gt;</code>
+<ul>
+<li><strong>功能</strong>：将输出保存到指定的文件，而不是屏幕。</li>
+<li><strong>示例</strong>：<code>curl -o page.html https://www.example.com</code></li>
 </ul>
-<h3 id="示例">示例
-</h3><ol>
-<li>
-<p><strong>获取网页内容</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl http://www.example.com
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>下载并保存文件</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -O https://example.com/file.zip
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-<li>
-<p><strong>发送 JSON 数据的 POST 请求</strong>:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -X POST -H <span class="s2">&#34;Content-Type: application/json&#34;</span> -d <span class="s1">&#39;{&#34;key&#34;:&#34;value&#34;}&#39;</span> http://example.com/api
-</span></span></code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-<h3 id="总结">总结
-</h3><p><code>curl</code> 是一个灵活且强大的工具，适用于各种网络请求和数据传输场景。通过掌握基本用法和参数，你可以高效地进行网络交互。</p>
+</li>
+<li><code>-O, --remote-name</code>
+<ul>
+<li><strong>功能</strong>：将输出保存到文件，并以 URL 中指定的文件名来命名。</li>
+<li><strong>示例</strong>：<code>curl -O https://curl.se/download/curl-7.85.0.tar.gz</code> (会保存为 <code>curl-7.85.0.tar.gz</code> 文件)</li>
+</ul>
+</li>
+<li><code>-s, --silent</code>
+<ul>
+<li><strong>功能</strong>：静默模式。不显示进度表或错误信息。非常适合在脚本中使用。</li>
+<li><strong>示例</strong>：<code>cron_job_result=$(curl -s https://api.example.com/status)</code></li>
+</ul>
+</li>
+<li><code>-i, --include</code>
+<ul>
+<li><strong>功能</strong>：在输出中包含 HTTP 响应头（Response Headers）。这对于调试非常有用。</li>
+<li><strong>示例</strong>：<code>curl -i https://www.example.com</code></li>
+</ul>
+</li>
+<li><code>-v, --verbose</code>
+<ul>
+<li><strong>功能</strong>：显示详细的通信过程，包括请求头、响应头和连接信息。是终极调试利器。</li>
+<li><strong>示例</strong>：<code>curl -v https://api.example.com/data</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="http-请求方法-http-method">HTTP 请求方法 (HTTP Method)
+</h3><ul>
+<li><code>-X, --request &lt;METHOD&gt;</code>
+<ul>
+<li><strong>功能</strong>：指定要使用的 HTTP 请求方法，如 <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code> 等。默认是 <code>GET</code>。</li>
+<li><strong>示例</strong>：
+<ul>
+<li><code>curl -X POST https://api.example.com/users</code></li>
+<li><code>curl -X DELETE https://api.example.com/users/123</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="发送数据-sending-data">发送数据 (Sending Data)
+</h3><p>常用于 <code>POST</code> 或 <code>PUT</code> 请求。</p>
+<ul>
+<li><code>-d, --data &lt;data&gt;</code>
+<ul>
+<li><strong>功能</strong>：发送 HTTP POST 请求的数据。<code>Content-Type</code> 默认为 <code>application/x-www-form-urlencoded</code>。</li>
+<li><strong>示例 (发送表单数据)</strong>：<code>curl -X POST -d &quot;name=John&amp;age=30&quot; https://api.example.com/register</code></li>
+<li><strong>示例 (发送 JSON 数据)</strong>：需要配合 <code>-H</code> 指定 <code>Content-Type</code>。 <code>curl -X POST -d '{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30}' -H &quot;Content-Type: application/json&quot; https://api.example.com/users</code></li>
+<li><strong>从文件读取数据</strong>：<code>curl -d @data.json -H &quot;Content-Type: application/json&quot; https://api.example.com/users</code> (注意 <code>@</code> 符号)</li>
+</ul>
+</li>
+<li><code>-F, --form &lt;name=content&gt;</code>
+<ul>
+<li><strong>功能</strong>：发送 <code>multipart/form-data</code> 类型的数据，常用于文件上传。</li>
+<li><strong>示例 (上传文件)</strong>：<code>curl -X POST -F &quot;file=@/path/to/your/image.jpg&quot; -F &quot;username=dave&quot; https://api.example.com/upload</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="自定义请求头-custom-headers">自定义请求头 (Custom Headers)
+</h3><ul>
+<li><code>-H, --header &lt;header&gt;</code>
+<ul>
+<li><strong>功能</strong>：添加自定义的 HTTP 请求头。可以多次使用以添加多个头。</li>
+<li><strong>示例</strong>：
+<ul>
+<li><strong>设置内容类型</strong>：<code>curl -H &quot;Content-Type: application/json&quot; ...</code></li>
+<li><strong>设置认证 Token</strong>：<code>curl -H &quot;Authorization: Bearer your_jwt_token&quot; https://api.example.com/secure-data</code></li>
+<li><strong>模拟浏览器</strong>：<code>curl -H &quot;User-Agent: Mozilla/5.0&quot; https://www.example.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="安全与认证-security--authentication">安全与认证 (Security &amp; Authentication)
+</h3><ul>
+<li><code>-u, --user &lt;user:password&gt;</code>
+<ul>
+<li><strong>功能</strong>：设置 HTTP Basic Authentication 的用户名和密码。</li>
+<li><strong>示例</strong>：<code>curl -u admin:123456 https://api.example.com/admin</code></li>
+</ul>
+</li>
+<li><code>-k, --insecure</code>
+<ul>
+<li><strong>功能</strong>：允许 <code>curl</code> 连接到没有有效 SSL/TLS 证书的 HTTPS 站点（例如，使用自签名证书的开发环境）。<strong>警告：请勿在生产环境中使用此选项！</strong></li>
+<li><strong>示例</strong>：<code>curl -k https://localhost:8443</code></li>
+</ul>
+</li>
+<li><code>-L, --location</code>
+<ul>
+<li><strong>功能</strong>：自动跟踪 HTTP 重定向（响应状态码为 3xx）。很多网站会使用重定向，所以这是一个非常实用的参数。</li>
+<li><strong>示例</strong>：<code>curl -L http://google.com</code> (http 会重定向到 https)</li>
+</ul>
+</li>
+</ul>
+<h3 id="连接控制-connection-control">连接控制 (Connection Control)
+</h3><ul>
+<li><code>--connect-timeout &lt;seconds&gt;</code>
+<ul>
+<li><strong>功能</strong>：设置建立连接的最大等待时间（秒）。</li>
+<li><strong>示例</strong>：<code>curl --connect-timeout 5 https://api.example.com</code></li>
+</ul>
+</li>
+<li><code>-m, --max-time &lt;seconds&gt;</code>
+<ul>
+<li><strong>功能</strong>：设置整个操作（连接、数据传输等）允许花费的最长时间。</li>
+<li><strong>示例</strong>：<code>curl -m 10 https://api.example.com</code></li>
+</ul>
+</li>
+<li><code>-x, --proxy &lt;[protocol://]host[:port]&gt;</code>
+<ul>
+<li><strong>功能</strong>：通过指定的代理服务器发送请求。</li>
+<li><strong>示例</strong>：<code>curl -x http://proxyserver:8080 https://www.example.com</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="常用参数速查表"><em>常用参数速查表</em>
+</h2><div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>短参数</th>
+<th>长参数</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-X</code></td>
+<td><code>--request</code></td>
+<td>指定 HTTP 请求方法 (GET, POST, PUT, DELETE)</td>
+</tr>
+<tr>
+<td><code>-H</code></td>
+<td><code>--header</code></td>
+<td>添加自定义请求头 (例如 <code>Content-Type</code>, <code>Authorization</code>)</td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td><code>--data</code></td>
+<td>发送 <code>application/x-www-form-urlencoded</code> 格式的数据</td>
+</tr>
+<tr>
+<td><code>-F</code></td>
+<td><code>--form</code></td>
+<td>发送 <code>multipart/form-data</code> 数据，常用于文件上传</td>
+</tr>
+<tr>
+<td><code>-i</code></td>
+<td><code>--include</code></td>
+<td>在输出中包含响应头</td>
+</tr>
+<tr>
+<td><code>-v</code></td>
+<td><code>--verbose</code></td>
+<td>显示详细的通信过程，用于调试</td>
+</tr>
+<tr>
+<td><code>-o</code></td>
+<td><code>--output</code></td>
+<td>将输出保存到指定文件</td>
+</tr>
+<tr>
+<td><code>-O</code></td>
+<td><code>--remote-name</code></td>
+<td>以远程文件名保存输出</td>
+</tr>
+<tr>
+<td><code>-s</code></td>
+<td><code>--silent</code></td>
+<td>静默模式，不显示进度和错误</td>
+</tr>
+<tr>
+<td><code>-L</code></td>
+<td><code>--location</code></td>
+<td>自动跟随 HTTP 重定向</td>
+</tr>
+<tr>
+<td><code>-u</code></td>
+<td><code>--user</code></td>
+<td>设置 HTTP 基本认证的用户名和密码</td>
+</tr>
+<tr>
+<td><code>-k</code></td>
+<td><code>--insecure</code></td>
+<td>忽略 SSL 证书验证 (<strong>慎用！</strong>)</td>
+</tr>
+</tbody>
+</table></div>
 
 </section>
 
@@ -702,7 +786,7 @@
         
             2023 - 
         
-        2025 寻道之旅的博客
+        2025 寻道之旅博客
     </section>
     
     <section class="powerby">

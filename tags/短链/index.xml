@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>短链 on 寻道之旅的博客</title>
+        <title>短链 on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/%E7%9F%AD%E9%93%BE/</link>
-        <description>Recent content in 短链 on 寻道之旅的博客</description>
+        <description>Recent content in 短链 on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Tue, 23 Jul 2024 15:07:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E7%9F%AD%E9%93%BE/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>yourls，行业标准自托管的PHP网址缩短程序</title>
         <link>https://hublog.netlify.app/p/2407027/</link>

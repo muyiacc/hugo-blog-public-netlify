@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Frontend on 寻道之旅的博客</title>
+        <title>Frontend on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/categories/frontend/</link>
-        <description>Recent content in Frontend on 寻道之旅的博客</description>
+        <description>Recent content in Frontend on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Sat, 15 Feb 2025 17:51:05 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/frontend/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>nvm-windows，Windows下Node版本管理工具</title>
         <link>https://hublog.netlify.app/p/250215175105/</link>

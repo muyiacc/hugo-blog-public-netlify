@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Kodbox on 寻道之旅的博客</title>
+        <title>Kodbox on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/kodbox/</link>
-        <description>Recent content in Kodbox on 寻道之旅的博客</description>
+        <description>Recent content in Kodbox on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Thu, 03 Apr 2025 13:55:51 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/kodbox/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>kodbox，新一代企业私有云存储，协同办公平台</title>
         <link>https://hublog.netlify.app/p/250403135551/</link>

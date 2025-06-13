@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 安装 命令 查看文件元数据信息 1 ffmpeg -i 4K.mp4">
-<title>ffmpeg使用指南</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 FFmpeg 是一套能够处理音频、视频和其它多媒体文件及流的完整解决方案。由于其无与伦比的通用性和强大的功能，它被誉为数字媒体领域的“瑞士军刀”。 官">
+<title>ffmpeg，一套能够处理音频、视频和其它多媒体文件及流的完整解决方案</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250109164732/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="ffmpeg使用指南">
-<meta property='og:description' content="简介 安装 命令 查看文件元数据信息 1 ffmpeg -i 4K.mp4">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="ffmpeg，一套能够处理音频、视频和其它多媒体文件及流的完整解决方案">
+<meta property='og:description' content="简介 FFmpeg 是一套能够处理音频、视频和其它多媒体文件及流的完整解决方案。由于其无与伦比的通用性和强大的功能，它被誉为数字媒体领域的“瑞士军刀”。 官">
 <meta property='og:url' content='https://hublog.netlify.app/p/250109164732/'>
-<meta property='og:site_name' content='寻道之旅的博客'>
+<meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ffmpeg' /><meta property='article:published_time' content='2025-01-09T16:47:32&#43;08:00'/><meta property='article:modified_time' content='2025-01-09T16:47:32&#43;08:00'/>
-<meta name="twitter:title" content="ffmpeg使用指南">
-<meta name="twitter:description" content="简介 安装 命令 查看文件元数据信息 1 ffmpeg -i 4K.mp4">
+<meta name="twitter:title" content="ffmpeg，一套能够处理音频、视频和其它多媒体文件及流的完整解决方案">
+<meta name="twitter:description" content="简介 FFmpeg 是一套能够处理音频、视频和其它多媒体文件及流的完整解决方案。由于其无与伦比的通用性和强大的功能，它被誉为数字媒体领域的“瑞士军刀”。 官">
   
 
 
@@ -70,7 +70,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">寻道之旅的博客</a></h1>
+            <h1 class="site-name"><a href="/">寻道之旅博客</a></h1>
             <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
@@ -267,9 +267,23 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#核心组成">核心组成</a></li>
+        <li><a href="#主要功能">主要功能</a></li>
+      </ol>
+    </li>
     <li><a href="#安装">安装</a></li>
-    <li><a href="#命令">命令</a></li>
+    <li><a href="#基础使用示例">基础使用示例</a>
+      <ol>
+        <li><a href="#查看文件信息">查看文件信息</a></li>
+        <li><a href="#格式转换-将-mp4-转换为-avi">格式转换 (将 MP4 转换为 AVI)</a></li>
+        <li><a href="#改变视频分辨率-缩放到-1280x720">改变视频分辨率 (缩放到 1280x720)</a></li>
+        <li><a href="#提取音频-保存为-mp3">提取音频 (保存为 MP3)</a></li>
+        <li><a href="#提取音频不转换">提取音频（不转换）</a></li>
+        <li><a href="#剪切视频-从第-10-秒开始持续-15-秒">剪切视频 (从第 10 秒开始，持续 15 秒)</a></li>
+      </ol>
+    </li>
   </ol>
 </nav>
         </div>
@@ -297,7 +311,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250109164732/">ffmpeg使用指南</a>
+            <a href="/p/250109164732/">ffmpeg，一套能够处理音频、视频和其它多媒体文件及流的完整解决方案</a>
         </h2>
     
         
@@ -336,18 +350,127 @@
     
     
     <h2 id="简介">简介
-</h2><h2 id="安装">安装
-</h2><h2 id="命令">命令
-</h2><p>查看文件元数据信息</p>
+</h2><p><strong>FFmpeg 是一套能够处理音频、视频和其它多媒体文件及流的完整解决方案</strong>。由于其无与伦比的通用性和强大的功能，它被誉为数字媒体领域的“瑞士军刀”。</p>
+<p>官网：<a class="link" href="https://ffmpeg.org/"  target="_blank" rel="noopener"
+    >https://ffmpeg.org/</a></p>
+<h3 id="核心组成">核心组成
+</h3><p>FFmpeg 项目不仅仅是一个单一的程序，它主要由以下几个部分构成：</p>
+<ol>
+<li>
+<p><strong><code>ffmpeg</code></strong>：这是最核心的命令行工具。用户通过它来进行音视频的转码（格式转换）、剪辑、缩放、添加滤镜、合并文件等几乎所有操作。绝大多数人说“使用 FFmpeg”时，指的就是使用这个工具。</p>
+</li>
+<li>
+<p><strong><code>ffplay</code></strong>：一个基于 SDL 和 FFmpeg 库的简易媒体播放器。它功能简单，但非常适合用来快速预览和测试经过 <code>ffmpeg</code> 处理后的文件，或者直接播放各种奇特的媒体格式。</p>
+</li>
+<li>
+<p><strong><code>ffprobe</code></strong>：一个媒体信息分析工具。它可以从音视频文件中提取出详细的元数据（Metadata）和流信息，例如编码格式、分辨率、帧率、码率、时长、音轨、字幕等。这对于调试和自动化处理流程至关重要。</p>
+</li>
+<li>
+<p><strong>一系列核心库 (Libraries)</strong>：这才是 FFmpeg 的真正动力源泉。许多著名的软件（如 VLC 播放器、Chrome 浏览器、YouTube、Blender 等）都在底层使用了 FFmpeg 的库来处理多媒体。主要包括：</p>
+<ul>
+<li><code>libavcodec</code>：包含了几乎所有主流的音视频编码器和解码器。</li>
+<li><code>libavformat</code>：用于处理各种多媒体容器格式（如 MP4, MKV, AVI）的封装和解封装。</li>
+<li><code>libavfilter</code>：提供了丰富的音视频滤镜，如裁剪、缩放、水印、调速等。</li>
+<li><code>libavutil</code>：包含了一些核心的工具函数。</li>
+<li><code>libswscale</code>：用于图像的缩放和色彩空间转换。</li>
+<li><code>libswresample</code>：用于音频的重采样。</li>
+</ul>
+</li>
+</ol>
+<h3 id="主要功能">主要功能
+</h3><p>FFmpeg 的功能几乎涵盖了音视频处理的方方面面，以下是一些最常见的应用场景：</p>
+<ul>
+<li><strong>格式转换 (Transcoding)</strong>：将视频从一种格式转换到另一种，例如 <code>MKV</code> 转 <code>MP4</code>，<code>MOV</code> 转 <code>WebM</code>。</li>
+<li><strong>编解码转换</strong>：改变视频的编码方式，例如将 <code>H.264</code> 编码的视频转换为更高效的 <code>H.265 (HEVC)</code>。</li>
+<li><strong>剪辑与合并</strong>：从一个长视频中截取一小段，或者将多个视频片段无缝拼接成一个文件。</li>
+<li><strong>调整参数</strong>：改变视频的分辨率、帧率、码率，以适应不同设备或网络环境。</li>
+<li><strong>音视频分离/合并</strong>：从视频中提取出音频轨道（例如 <code>MP4</code> -&gt; <code>MP3</code>），或为视频添加新的音轨。</li>
+<li><strong>添加滤镜和效果</strong>：给视频添加水印、文字、模糊效果，调整亮度/对比度，旋转视频等。</li>
+<li><strong>屏幕录制</strong>：可以直接录制桌面操作。</li>
+<li><strong>制作 GIF</strong>：将视频片段转换为高质量的 GIF 动图。</li>
+<li><strong>直播推流</strong>：将本地视频文件或摄像头/桌面捕获的画面推送到流媒体服务器（RTMP/HLS 协议）。</li>
+</ul>
+<h2 id="安装">安装
+</h2><p>下载地址：<a class="link" href="https://ffmpeg.org/download.html"  target="_blank" rel="noopener"
+    >https://ffmpeg.org/download.html</a></p>
+<p>将解压后 <code>bin</code> 目录的路径添加到系统的 <code>PATH</code> 环境变量中。这样你就可以在任何路径下直接运行 <code>ffmpeg</code> 命令，而不需要每次都输入完整路径。</p>
+<h2 id="基础使用示例">基础使用示例
+</h2><p>FFmpeg 是通过命令行操作的，语法通常是：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffmpeg -i 4K.mp4
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg <span class="o">[</span>全局选项<span class="o">]</span> <span class="o">[</span>输入文件选项<span class="o">]</span> -i <span class="o">[</span>输入文件<span class="o">]</span> <span class="o">[</span>输出文件选项<span class="o">]</span> <span class="o">[</span>输出文件<span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="查看文件信息">查看文件信息
+</h3><p>这是处理任何文件的第一步。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe video.mp4
+</span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="格式转换-将-mp4-转换为-avi">格式转换 (将 MP4 转换为 AVI)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 output.avi
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>FFmpeg 会自动根据输出文件的扩展名选择合适的编码器。</p>
+<h3 id="改变视频分辨率-缩放到-1280x720">改变视频分辨率 (缩放到 1280x720)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1280:720 output_720p.mp4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>-vf</code> 代表 &ldquo;video filter&rdquo;（视频滤镜）。<code>scale</code> 是其中一个滤镜。</p>
+<h3 id="提取音频-保存为-mp3">提取音频 (保存为 MP3)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a <span class="m">2</span> output.mp3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>-vn: 表示 &ldquo;no video&rdquo;（不包含视频）。</li>
+<li>-acodec libmp3lame: 指定使用 LAME 库来编码 MP3。</li>
+</ul>
+<h3 id="提取音频不转换">提取音频（不转换）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i <span class="o">[</span>输入视频文件<span class="o">]</span> -ss <span class="o">[</span>开始时间<span class="o">]</span> -to <span class="o">[</span>结束时间<span class="o">]</span> -vn -acodec copy <span class="o">[</span>输出音频文件<span class="o">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="剪切视频-从第-10-秒开始持续-15-秒">剪切视频 (从第 10 秒开始，持续 15 秒)
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><code>-ss</code>: seek start (开始时间)。</li>
+<li><code>-t</code>: duration (持续时间)。</li>
+<li><code>-c copy</code>: 表示“直接复制流”，不对音视频进行重新编码。这样做速度极快，且无质量损失，是剪辑、合并时的首选。</li>
+</ul>
+
 </section>
 
 
@@ -531,7 +654,7 @@
         
             2023 - 
         
-        2025 寻道之旅的博客
+        2025 寻道之旅博客
     </section>
     
     <section class="powerby">

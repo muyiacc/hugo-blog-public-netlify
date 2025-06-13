@@ -8,14 +8,26 @@
     <loc>https://hublog.netlify.app/categories/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
-    <loc>https://hublog.netlify.app/categories/devops/</loc>
-    <lastmod>2025-06-12T09:55:27+08:00</lastmod>
-  </url><url>
     <loc>https://hublog.netlify.app/post/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
   </url><url>
+    <loc>https://hublog.netlify.app/categories/windows/</loc>
+    <lastmod>2025-06-13T08:27:20+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250613082720/</loc>
+    <lastmod>2025-06-13T08:27:20+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/tags/firewall/</loc>
+    <lastmod>2025-06-12T12:44:24+08:00</lastmod>
+  </url><url>
     <loc>https://hublog.netlify.app/tags/</loc>
     <lastmod>2025-10-13T17:51:36+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/p/250612124424/</loc>
+    <lastmod>2025-06-12T12:44:24+08:00</lastmod>
+  </url><url>
+    <loc>https://hublog.netlify.app/categories/devops/</loc>
+    <lastmod>2025-06-12T09:55:27+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/virtual/</loc>
     <lastmod>2025-06-12T09:55:27+08:00</lastmod>
@@ -34,9 +46,6 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/250609083002/</loc>
     <lastmod>2025-06-09T08:30:02+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/categories/windows/</loc>
-    <lastmod>2025-06-05T10:13:06+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/p/250605101306/</loc>
     <lastmod>2025-06-05T10:13:06+08:00</lastmod>
@@ -923,6 +932,9 @@
     <loc>https://hublog.netlify.app/p/240801170846/</loc>
     <lastmod>2024-08-01T17:08:46+08:00</lastmod>
   </url><url>
+    <loc>https://hublog.netlify.app/p/240729150766/</loc>
+    <lastmod>2024-07-29T15:07:06+08:00</lastmod>
+  </url><url>
     <loc>https://hublog.netlify.app/page/</loc>
     <lastmod>2024-08-04T15:31:10+08:00</lastmod>
   </url><url>
@@ -967,9 +979,6 @@
   </url><url>
     <loc>https://hublog.netlify.app/p/2407020/</loc>
     <lastmod>2024-07-20T15:07:50+08:00</lastmod>
-  </url><url>
-    <loc>https://hublog.netlify.app/p/2407018/</loc>
-    <lastmod>2024-07-17T15:07:48+08:00</lastmod>
   </url><url>
     <loc>https://hublog.netlify.app/tags/pmail/</loc>
     <lastmod>2024-07-16T15:07:47+08:00</lastmod>
@@ -1757,8 +1766,6 @@
     <loc>https://hublog.netlify.app/categories/api/</loc>
   </url><url>
     <loc>https://hublog.netlify.app/p/navicat-desktop/</loc>
-  </url><url>
-    <loc>https://hublog.netlify.app/p/240729150766/</loc>
   </url><url>
     <loc>https://hublog.netlify.app/tags/tabby/</loc>
   </url><url>

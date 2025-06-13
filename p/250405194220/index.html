@@ -2,16 +2,16 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
-<title>服务器自动化打包备份，rclone自动备份脚本分享</title>
+<title>服务器自动化打包，备份到云存储，基于rclone</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250405194220/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="服务器自动化打包备份，rclone自动备份脚本分享">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="服务器自动化打包，备份到云存储，基于rclone">
 <meta property='og:description' content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
 <meta property='og:url' content='https://hublog.netlify.app/p/250405194220/'>
-<meta property='og:site_name' content='寻道之旅的博客'>
+<meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rclone' /><meta property='article:published_time' content='2025-04-05T19:42:20&#43;08:00'/><meta property='article:modified_time' content='2025-04-05T19:42:20&#43;08:00'/>
-<meta name="twitter:title" content="服务器自动化打包备份，rclone自动备份脚本分享">
+<meta name="twitter:title" content="服务器自动化打包，备份到云存储，基于rclone">
 <meta name="twitter:description" content="简介 下面是备份的脚本 脚本 简介 这个脚本将指定的目录备份打包成 tar.gz文件，备份到家目录 下的 backup/application 文件夹下，然后使用 rclone 上传到指定的远程存储 创建 1">
   
 
@@ -70,7 +70,7 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">寻道之旅的博客</a></h1>
+            <h1 class="site-name"><a href="/">寻道之旅博客</a></h1>
             <h2 class="site-description">皈依佛法僧，回头观自性。仁者，欢迎你！</h2>
         </div>
     </header><ol class="menu-social">
@@ -304,7 +304,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250405194220/">服务器自动化打包备份，rclone自动备份脚本分享</a>
+            <a href="/p/250405194220/">服务器自动化打包，备份到云存储，基于rclone</a>
         </h2>
     
         
@@ -354,11 +354,13 @@
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">mkdir -p <span class="nv">$HOME</span>/bin
-</span></span><span class="line"><span class="cl">touch <span class="nv">$HOME</span>/bin/backup_and_upload.sh
-</span></span><span class="line"><span class="cl">chmod +x <span class="nv">$HOME</span>/bin/backup_and_upload.sh
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">touch <span class="nv">$HOME</span>/bin/backup_and_upload.sh <span class="o">&amp;&amp;</span> chmod +x <span class="nv">$HOME</span>/bin/backup_and_upload.sh
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">vim <span class="nv">$HOME</span>/bin/backup_and_upload.sh
 </span></span></code></pre></td></tr></table>
 </div>
@@ -805,7 +807,7 @@
         
             2023 - 
         
-        2025 寻道之旅的博客
+        2025 寻道之旅博客
     </section>
     
     <section class="powerby">

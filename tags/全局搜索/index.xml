@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>全局搜索 on 寻道之旅的博客</title>
+        <title>全局搜索 on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/</link>
-        <description>Recent content in 全局搜索 on 寻道之旅的博客</description>
+        <description>Recent content in 全局搜索 on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Sat, 13 Jul 2024 19:07:28 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux配置开始菜单，全局搜索，桌面图标</title>
         <link>https://hublog.netlify.app/p/linux-start-menu/</link>

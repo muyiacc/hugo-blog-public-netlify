@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Root on 寻道之旅的博客</title>
+        <title>Root on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/root/</link>
-        <description>Recent content in Root on 寻道之旅的博客</description>
+        <description>Recent content in Root on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Fri, 02 Aug 2024 15:08:25 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/root/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux开启ssh密码登陆，root用户远程登陆</title>
         <link>https://hublog.netlify.app/p/240802150825/</link>

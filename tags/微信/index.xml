@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>微信 on 寻道之旅的博客</title>
+        <title>微信 on 寻道之旅博客</title>
         <link>https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/</link>
-        <description>Recent content in 微信 on 寻道之旅的博客</description>
+        <description>Recent content in 微信 on 寻道之旅博客</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>寻道之旅的博客</copyright>
+        <copyright>寻道之旅博客</copyright>
         <lastBuildDate>Fri, 05 Jul 2024 10:07:32 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/%E5%BE%AE%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux原生版微信在高分辨率屏幕字体小，分辨率异常</title>
         <link>https://hublog.netlify.app/p/linux-wechat/</link>
