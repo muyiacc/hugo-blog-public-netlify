@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="参考文档 https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1 https://learn.microsoft.com/zh-cn/windows/wsl/">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。 借助适用于 Linux 的 Windows 子系统（WSL），开发人员可以安装 Linux 分发版（如 Ubuntu、OpenS">
 <title>Windows使用WSL安装Linux系统</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240818210841/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Windows使用WSL安装Linux系统">
-<meta property='og:description' content="参考文档 https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1 https://learn.microsoft.com/zh-cn/windows/wsl/">
+<meta property='og:description' content="简介 开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。 借助适用于 Linux 的 Windows 子系统（WSL），开发人员可以安装 Linux 分发版（如 Ubuntu、OpenS">
 <meta property='og:url' content='https://hublog.netlify.app/p/240818210841/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='wsl' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2024-08-18T21:08:41&#43;08:00'/><meta property='article:modified_time' content='2024-08-18T21:08:41&#43;08:00'/>
 <meta name="twitter:title" content="Windows使用WSL安装Linux系统">
-<meta name="twitter:description" content="参考文档 https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1 https://learn.microsoft.com/zh-cn/windows/wsl/">
+<meta name="twitter:description" content="简介 开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。 借助适用于 Linux 的 Windows 子系统（WSL），开发人员可以安装 Linux 分发版（如 Ubuntu、OpenS">
   
 
 
@@ -245,7 +245,46 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#简介">简介</a></li>
+    <li><a href="#先决条件">先决条件</a></li>
+    <li><a href="#安装-wsl">安装 WSL</a></li>
+    <li><a href="#更改安装的默认-linux-分发版">更改安装的默认 Linux 分发版</a></li>
+    <li><a href="#设置-linux-用户信息">设置 Linux 用户信息</a></li>
+    <li><a href="#配置和最佳实践">配置和最佳实践</a></li>
+    <li><a href="#检查你正在运行的-wsl-的版本">检查你正在运行的 WSL 的版本</a></li>
+    <li><a href="#将版本从-wsl-1-升级到-wsl-2">将版本从 WSL 1 升级到 WSL 2</a></li>
+    <li><a href="#使用-wsl-运行多个-linux-分发版的方法">使用 WSL 运行多个 Linux 分发版的方法</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -302,7 +341,86 @@
     <section class="article-content">
     
     
-    <p>参考文档</p>
+    <h2 id="简介">简介
+</h2><p>开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。 借助适用于 Linux 的 Windows 子系统（WSL），开发人员可以安装 Linux 分发版（如 Ubuntu、OpenSUSE、Kali、Debian、Arch Linux 等），并在 Windows 上直接使用 Linux 应用程序、实用工具和 Bash 命令行工具（未经修改），无需传统虚拟机或双包设置的开销。</p>
+<p>官方文档：<a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/"  target="_blank" rel="noopener"
+    >https://learn.microsoft.com/zh-cn/windows/wsl/</a></p>
+<h2 id="先决条件">先决条件
+</h2><p>必须运行 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）或 Windows 11 才能使用以下命令。 如果使用的是早期版本，请参阅 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual"  target="_blank" rel="noopener"
+    >手动安装页</a>。</p>
+<h2 id="安装-wsl">安装 WSL
+</h2><p>现在，可以使用单个命令安装运行 WSL 所需的所有内容。 右键单击并选择“以管理员身份运行”，在 <strong>管理员</strong> 模式下打开 PowerShell 或 Windows 命令提示符，输入 wsl &ndash;install 命令，然后重新启动计算机。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">wsl</span> <span class="p">-</span><span class="n">-install</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此命令将启用运行 WSL 并安装 Linux 的 Ubuntu 分发所需的功能。 （<a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands#install"  target="_blank" rel="noopener"
+    >可以更改此默认分布</a>）。</p>
+<p>如果运行的是较旧的版本，或者只是不想使用安装命令，并且想要分步说明，请参阅 <strong><a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual"  target="_blank" rel="noopener"
+    >适用于旧版本的 WSL 手动安装步骤</a></strong>。</p>
+<p>首次启动新安装的 Linux 分发版时，控制台窗口将打开，系统会要求你等待文件取消压缩并存储在计算机上。 所有未来的发射应该需要不到一秒钟的时间。</p>
+<h2 id="更改安装的默认-linux-分发版">更改安装的默认 Linux 分发版
+</h2><p>默认情况下，已安装的 Linux 分发版将为 Ubuntu。 可以通过使用<code>-d</code>标志来更改这一点。</p>
+<ul>
+<li>若要更改安装的分发版，请输入： <code>wsl --install -d &lt;Distribution Name&gt;</code> 将 <code>&lt;Distribution Name&gt;</code> 替换为您想要安装的分发版名称。</li>
+<li>若要查看可通过在线商店下载的可用 Linux 分发版的列表，请输入： <code>wsl --list --online</code> 或 <code>wsl -l -o</code>。</li>
+<li>若要在初始安装后安装其他 Linux 分发版，也可以使用以下命令： <code>wsl --install -d &lt;Distribution Name&gt;</code></li>
+</ul>
+<blockquote>
+<p>如果要从 Linux/Bash 命令行（而不是 PowerShell 或命令提示符）安装其他分发版，则必须在命令中使用 .exe：或列出可用分发版： <code>wsl.exe --install -d &lt;Distribution Name&gt;``wsl.exe -l -o</code></p>
+</blockquote>
+<p>如果在安装过程中遇到问题，请查看故障排除指南 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/troubleshooting#installation-issues"  target="_blank" rel="noopener"
+    ></a>安装部分。</p>
+<p>若要安装未列为可用的 Linux 分发版，可以使用 TAR 文件 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro"  target="_blank" rel="noopener"
+    >导入任何 Linux 分发</a> 版。 或者在某些情况下，与 <a class="link" href="https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/"  target="_blank" rel="noopener"
+    >Arch Linux 一样</a>，可以使用文件进行安装 <code>.appx</code> 。 还可以创建自己的 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/build-custom-distro"  target="_blank" rel="noopener"
+    >自定义 Linux 分发版</a> ，以便与 WSL 一起使用。</p>
+<h2 id="设置-linux-用户信息">设置 Linux 用户信息
+</h2><p>安装 WSL 后，需要为新安装的 Linux 分发版创建用户帐户和密码。 请参阅 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password"  target="_blank" rel="noopener"
+    >设置 WSL 开发环境指南的最佳做法</a> ，了解详细信息。</p>
+<h2 id="配置和最佳实践">配置和最佳实践
+</h2><p>建议遵循我们的 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment"  target="_blank" rel="noopener"
+    >设置 WSL 开发环境的最佳实践</a> 指南，通过逐步演示来了解如何为已安装的 Linux 发行版设置用户名和密码，使用基本 WSL 命令，安装和自定义 Windows 终端，为 Git 版本控制、代码编辑和调试使用 VS Code 远程服务器，好的文件存储实践，设置数据库，装载外部驱动器，设置 GPU 加速等。</p>
+<h2 id="检查你正在运行的-wsl-的版本">检查你正在运行的 WSL 的版本
+</h2><p>可以通过在 PowerShell 或 Windows 命令提示符中输入命令 <code>wsl -l -v</code> 来列出已安装的 Linux 发行版，并检查每个发行版设置的 WSL 版本。</p>
+<p>若要在安装新的 Linux 分发版时将默认版本设置为 WSL 1 或 WSL 2，请使用以下命令 <code>wsl --set-default-version &lt;Version#&gt;</code>，替换为 <code>&lt;Version#&gt;</code> 1 或 2。</p>
+<p>要设置默认的 Linux 发行版以用于 <code>wsl</code> 命令，请输入：在 <code>wsl -s &lt;DistributionName&gt;</code> 或 <code>wsl --set-default &lt;DistributionName&gt;</code> 中将 <code>&lt;DistributionName&gt;</code> 替换为你想使用的 Linux 发行版名称。 例如，在 PowerShell/CMD 中，输入： <code>wsl -s Debian</code> 将默认分发设置为 Debian。 现在，从 Powershell 运行 <code>wsl npm init</code> 将在 Debian 中运行 <code>npm init</code> 命令。</p>
+<p>若要在不更改默认分发的情况下从 PowerShell 或 Windows 命令提示符内运行特定的 wsl 分发版，请使用以下命令： <code>wsl -d &lt;DistributionName&gt;</code>，替换为 <code>&lt;DistributionName&gt;</code> 要使用的分发的名称。</p>
+<p>在 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands"  target="_blank" rel="noopener"
+    >WSL 基本命令</a>指南中了解详细信息。</p>
+<h2 id="将版本从-wsl-1-升级到-wsl-2">将版本从 WSL 1 升级到 WSL 2
+</h2><p>默认情况下，使用 <code>wsl --install</code> 命令安装的新 Linux 安装将设置为 WSL 2。</p>
+<p>该 <code>wsl --set-version</code> 命令可用于从 WSL 2 降级到 WSL 1，或将以前安装的 Linux 分发版从 WSL 1 降级到 WSL 2。</p>
+<p>若要查看 Linux 分发版是否设置为 WSL 1 或 WSL 2，请使用以下命令： <code>wsl -l -v</code></p>
+<p>若要更改版本，请使用命令： <code>wsl --set-version &lt;distro name&gt; 2</code> 替换为 <code>&lt;distro name&gt;</code> 要更新的 Linux 分发版的名称。 例如， <code>wsl --set-version Ubuntu-20.04 2</code> 将 Ubuntu 20.04 分发版设置为使用 WSL 2。</p>
+<p>如果在命令可用之前 <code>wsl --install</code> 手动安装了 WSL，则还可能需要启用 WSL 2 使用的 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-3---enable-virtual-machine-feature"  target="_blank" rel="noopener"
+    >虚拟机可选组件</a> ，并 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package"  target="_blank" rel="noopener"
+    >安装内核包</a> （如果尚未这样做）。</p>
+<p>若要了解更多信息，请参阅 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands"  target="_blank" rel="noopener"
+    >WSL 的命令参考</a>以获取 WSL 命令列表，查看 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions"  target="_blank" rel="noopener"
+    >WSL 1 和 WSL 2 的比较</a>以获得关于您工作场景适用版本的指导，或参考 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment"  target="_blank" rel="noopener"
+    >设置 WSL 开发环境的最佳实践</a>以获取关于设置高效开发工作流程的一般指导。</p>
+<h2 id="使用-wsl-运行多个-linux-分发版的方法">使用 WSL 运行多个 Linux 分发版的方法
+</h2><p>WSL 支持运行您想安装的许多不同的 Linux 发行版。 这包括从 <a class="link" href="https://aka.ms/wslstore"  target="_blank" rel="noopener"
+    >Microsoft 应用商店</a>中选择分发版、 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro"  target="_blank" rel="noopener"
+    >导入自定义分发版</a>或 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/build-custom-distro"  target="_blank" rel="noopener"
+    >生成自己的自定义分发版</a>。</p>
+<p>安装 Linux 分发版后，可通过多种方式运行：</p>
+<ul>
+<li><a class="link" href="https://learn.microsoft.com/zh-cn/windows/terminal/get-started"  target="_blank" rel="noopener"
+    >安装 Windows 终端</a><em><strong>（推荐）</strong></em>。使用 Windows 终端可以支持多个命令行，并允许您在多个选项卡或窗口窗格中打开它们，并能在多个 Linux 发行版或其他命令行（如 PowerShell、命令提示符、Azure CLI 等）之间快速切换。 可以使用独特的配色方案、字体样式、大小、背景图像和自定义键盘快捷方式完全自定义终端。 <a class="link" href="https://learn.microsoft.com/zh-cn/windows/terminal"  target="_blank" rel="noopener"
+    >了解详细信息</a>。</li>
+<li>可以通过访问 Windows 开始菜单并键入已安装的分发版的名称来直接打开 Linux 分发版。 例如：“Ubuntu”。 这将在一个独立的控制台窗口中打开 Ubuntu。</li>
+<li>在 Windows 命令提示符或 PowerShell 中，可以输入已安装的分发版的名称。 例如：<code>ubuntu</code></li>
+<li>在 Windows 命令提示符或 PowerShell 中，可以通过输入： <code>wsl.exe</code>在当前命令行中打开默认 Linux 分发版。</li>
+<li>在 Windows 命令提示符或 PowerShell 中，可以通过输入：<code>wsl [command]</code>，在当前命令行中使用默认 Linux 分发版，而无需输入新发行版。 你可以用 <code>[command]</code> 替换为 WSL 命令，例如：<code>wsl -l -v</code> 列出已安装的发行版，或 <code>wsl pwd</code> 查看当前目录路径在 WSL 中装载的位置。 在 PowerShell 中，该命令 <code>get-date</code> 将提供 Windows 文件系统中的日期，并提供 <code>wsl date</code> Linux 文件系统中的日期。</li>
+</ul>
+<p>选择的方法应取决于你正在做的事情。 如果已在 Windows 提示符或 PowerShell 窗口中打开 WSL 命令行并想要退出，请输入以下命令： <code>exit</code></p>
+<p>参考文档</p>
 <p><a class="link" href="https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1"  target="_blank" rel="noopener"
     >https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1</a></p>
 <p><a class="link" href="https://learn.microsoft.com/zh-cn/windows/wsl/"  target="_blank" rel="noopener"
@@ -365,6 +483,19 @@
             
                 
 <article class="">
+    <a href="/p/250620174220/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows被禁止运行脚本</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250613082720/">
         
         
@@ -410,19 +541,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Windows安装gcc环境第二种选择，w64devkit</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250218224247/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Windows安装gcc环境，mingw-builds-binaries</h2>
         </div>
     </a>
 </article>

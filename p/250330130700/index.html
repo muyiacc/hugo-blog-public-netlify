@@ -267,8 +267,15 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
-    <li><a href="#常见命令">常见命令</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#主要功能">主要功能</a></li>
+        <li><a href="#工作原理">工作原理</a></li>
+        <li><a href="#优势">优势</a></li>
+      </ol>
+    </li>
+    <li><a href="#安全性建议">安全性建议</a></li>
+    <li><a href="#常用命令">常用命令</a></li>
   </ol>
 </nav>
         </div>
@@ -336,15 +343,15 @@
     
     <h2 id="简介">简介
 </h2><p>SSH（Secure Shell）是一种广泛使用的网络协议，用于在不安全的网络上安全地访问和管理远程服务器或其他设备。 它通过加密网络连接来保护数据传输，防止窃听、中间人攻击和其他安全威胁。 简而言之，SSH 提供了一种安全的远程登录方式。</p>
-<p><strong>SSH 的主要功能：</strong></p>
-<ul>
+<h3 id="主要功能">主要功能
+</h3><ul>
 <li><strong>远程登录:</strong>  允许用户从本地计算机安全地连接到远程服务器，并像直接在服务器上操作一样执行命令。</li>
 <li><strong>安全文件传输:</strong>  提供  <code>scp</code> (secure copy) 和  <code>sftp</code> (secure FTP) 等工具，用于安全地在本地计算机和远程服务器之间传输文件。</li>
 <li><strong>端口转发 (Tunneling):</strong>  允许用户将本地端口转发到远程服务器上的端口，或者将远程服务器上的端口转发到本地端口。 这可以用于创建安全的隧道来访问受防火墙保护的应用程序或服务。</li>
 <li><strong>X11 转发:</strong>  允许用户在远程服务器上运行图形化应用程序，并将它们显示在本地计算机上。</li>
 </ul>
-<p><strong>SSH 的工作原理：</strong></p>
-<p>SSH 使用客户端-服务器模型。 SSH 客户端运行在用户的本地计算机上，而 SSH 服务器运行在远程服务器上。 连接过程如下：</p>
+<h3 id="工作原理">工作原理
+</h3><p>SSH 使用客户端-服务器模型。 SSH 客户端运行在用户的本地计算机上，而 SSH 服务器运行在远程服务器上。 连接过程如下：</p>
 <ol>
 <li><strong>连接请求:</strong> SSH 客户端发起与 SSH 服务器的连接请求。</li>
 <li><strong>密钥交换 (Key Exchange):</strong>  客户端和服务器协商一个用于加密连接的密钥。 SSH 协议支持多种密钥交换算法，如 Diffie-Hellman 和椭圆曲线 Diffie-Hellman。</li>
@@ -358,25 +365,16 @@
 <li><strong>加密通信:</strong>  身份验证成功后，客户端和服务器之间的所有通信都将使用协商好的密钥进行加密。</li>
 <li><strong>会话管理:</strong>  客户端和服务器建立一个 SSH 会话，用户可以在会话中执行命令、传输文件等。</li>
 </ol>
-<p><strong>SSH 的优势：</strong></p>
-<ul>
+<h3 id="优势">优势
+</h3><ul>
 <li><strong>安全性:</strong> SSH 使用强大的加密算法来保护数据传输，防止窃听和中间人攻击。</li>
 <li><strong>可靠性:</strong> SSH 提供了可靠的连接，即使在不稳定的网络环境下也能正常工作。</li>
 <li><strong>灵活性:</strong> SSH 提供了多种功能，如端口转发和 X11 转发，可以满足各种不同的需求。</li>
 <li><strong>标准化:</strong> SSH 是一种标准协议，在各种操作系统和平台上都有广泛的支持。</li>
 <li><strong>广泛应用:</strong>  被广泛用于服务器管理，代码部署，远程协作等场景。</li>
 </ul>
-<p><strong>SSH 的常用命令：</strong></p>
-<ul>
-<li><code>ssh &lt;username&gt;@&lt;hostname&gt;</code>: 连接到远程服务器。 例如，<code>ssh user@example.com</code>。</li>
-<li><code>ssh -p &lt;port&gt; &lt;username&gt;@&lt;hostname&gt;</code>: 连接到远程服务器，指定端口。例如，<code>ssh -p 2222 user@example.com</code></li>
-<li><code>scp &lt;source&gt; &lt;destination&gt;</code>: 安全地复制文件。 例如，<code>scp file.txt user@example.com:/home/user/</code>。</li>
-<li><code>sftp &lt;username&gt;@&lt;hostname&gt;</code>: 使用安全的 FTP 协议连接到远程服务器。</li>
-<li><code>ssh-keygen</code>: 生成 SSH 密钥对。</li>
-<li><code>ssh-copy-id &lt;username&gt;@&lt;hostname&gt;</code>: 将本地公钥复制到远程服务器的  <code>authorized_keys</code>  文件中，以便进行公钥验证。</li>
-</ul>
-<p><strong>安全性建议：</strong></p>
-<ul>
+<h2 id="安全性建议">安全性建议
+</h2><ul>
 <li><strong>使用公钥验证而不是密码验证。</strong>  密码验证容易受到暴力破解攻击，而公钥验证更安全。</li>
 <li><strong>禁用 root 用户直接登录。</strong>  这可以防止攻击者通过暴力破解 root 用户的密码来获取服务器的完全控制权。</li>
 <li><strong>使用强密码。</strong>  如果必须使用密码验证，请使用包含大小写字母、数字和特殊字符的强密码。</li>
@@ -385,9 +383,7 @@
 <li><strong>使用双因素身份验证 (2FA)。</strong>  增加额外的安全层，即使密码泄露，攻击者也无法登录。</li>
 <li><strong>监控 SSH 日志。</strong>  定期检查 SSH 日志，以便及时发现可疑活动。</li>
 </ul>
-<p><strong>总结：</strong></p>
-<p>SSH 是一种必不可少的工具，用于安全地访问和管理远程服务器。 通过了解 SSH 的工作原理和遵循安全建议，可以确保远程连接的安全性，防止未经授权的访问和数据泄露。 它是一个强大、灵活和安全的工具，广泛应用于各种场景。</p>
-<h2 id="常见命令">常见命令
+<h2 id="常用命令">常用命令
 </h2><p>连接主机</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -403,7 +399,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh username@host -u /path/to/your/key
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh username@host -i /path/to/your/key
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>指定端口</p>
@@ -441,6 +437,32 @@
             
                 
 <article class="">
+    <a href="/p/250620151416/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PT站点收集</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250618151403/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Bittorrent指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250610113907/">
         
         
@@ -473,32 +495,6 @@
 
         <div class="article-details">
             <h2 class="article-title">transmission，Bittorrent客户端</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250530150227/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">speedtest测速网站</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250528150817/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YouTube封面图下载网站</h2>
         </div>
     </a>
 </article>

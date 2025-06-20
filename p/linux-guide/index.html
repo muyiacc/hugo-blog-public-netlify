@@ -279,7 +279,8 @@
         <li><a href="#取消挂载">取消挂载</a></li>
       </ol>
     </li>
-    <li><a href="#常用命令">常用命令</a></li>
+    <li><a href="#统计目录大小">统计目录大小</a></li>
+    <li><a href="#反向传参">反向传参</a></li>
   </ol>
 </nav>
         </div>
@@ -485,7 +486,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">umount /mnt/p1
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="常用命令">常用命令
+</div><h2 id="统计目录大小">统计目录大小
 </h2><p>使用 <code>du</code> 命令查看当前目录下所有子目录的大小，并只显示当前目录的大小</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -532,7 +533,9 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">find . -mindepth <span class="m">1</span> -type d -not -path <span class="s1">&#39;*/cgi-bin&#39;</span> -exec rm -rf <span class="o">{}</span> +
 </span></span></code></pre></td></tr></table>
 </div>
-</div>
+</div><h2 id="反向传参">反向传参
+</h2><p><code>xargs</code> 默认会将标准输入的内容作为参数追加到指定的命令后面。 &ldquo;反向传参&rdquo; 通常指的是将标准输入的内容作为命令的前缀，而不是后缀。 <code>xargs</code> 本身并不直接支持这种反向传参的方式，但可以通过一些技巧来实现。</p>
+
 </section>
 
 

@@ -7,7 +7,28 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Tue, 10 Jun 2025 11:39:07 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Jun 2025 15:14:16 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/default/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PT站点收集</title>
+        <link>https://hublog.netlify.app/p/250620151416/</link>
+        <pubDate>Fri, 20 Jun 2025 15:14:16 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250620151416/</guid>
+        <description>&lt;h3 id=&#34;ptfans&#34;&gt;PTFans
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://ptfans.cc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://ptfans.cc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2025-06-20 发现，注册时发现没有限制，可以尝试&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Bittorrent指南</title>
+        <link>https://hublog.netlify.app/p/250618151403/</link>
+        <pubDate>Wed, 18 Jun 2025 15:14:03 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250618151403/</guid>
+        <description>&lt;h2 id=&#34;术语&#34;&gt;术语
+&lt;/h2&gt;</description>
+        </item>
+        <item>
         <title>一键激活JetBrains全家桶</title>
         <link>https://hublog.netlify.app/p/250610113907/</link>
         <pubDate>Tue, 10 Jun 2025 11:39:07 +0800</pubDate>
@@ -73,14 +94,66 @@
 &lt;/h2&gt;&lt;p&gt;一个快速、简单、免费的 Bittorrent 客户端&lt;/p&gt;
 &lt;p&gt;官网：&lt;a class=&#34;link&#34; href=&#34;https://transmissionbt.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://transmissionbt.com/&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;部署&#34;&gt;部署
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;安装&#34;&gt;安装
+&lt;/h2&gt;&lt;h3 id=&#34;包管理器&#34;&gt;包管理器
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install transmission-daemon
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;docker&#34;&gt;Docker
+&lt;/h3&gt;&lt;p&gt;docker compose&lt;/p&gt;
+&lt;p&gt;gists/transmission:latest 镜像，支持多种镜像&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yml&#34; data-lang=&#34;yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;services&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;transmission&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;container_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;transmission&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;gists/transmission:latest&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;ports&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;9091:9091&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;51413:51413&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;volumes&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;./transmission_data:/data&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;/mnt/p1/film:/root/film&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;/mnt/p1/porn:/root/porn&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;s2&#34;&gt;&amp;#34;/mnt/p1/bt_downloads:/root/bt_downloads&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;environment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;USERNAME=username&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;PASSWORD=password&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;restart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;unless-stopped&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;logging&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;driver&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;json-file&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;options&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;max-size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;10m&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;max-file&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;配置&#34;&gt;配置
 &lt;/h2&gt;&lt;p&gt;修改配置需要停用 transmission-daemon 服务，否则&lt;strong&gt;所做的一切配置都不会保存&lt;/strong&gt;&lt;/p&gt;
@@ -221,7 +294,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;WebUI&lt;/p&gt;
 &lt;p&gt;IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录&lt;/p&gt;
-</description>
+&lt;h2 id=&#34;备份恢复&#34;&gt;备份恢复
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>speedtest测速网站</title>
@@ -2285,15 +2359,15 @@ Flash
         <guid>https://hublog.netlify.app/p/250330130700/</guid>
         <description>&lt;h2 id=&#34;简介&#34;&gt;简介
 &lt;/h2&gt;&lt;p&gt;SSH（Secure Shell）是一种广泛使用的网络协议，用于在不安全的网络上安全地访问和管理远程服务器或其他设备。 它通过加密网络连接来保护数据传输，防止窃听、中间人攻击和其他安全威胁。 简而言之，SSH 提供了一种安全的远程登录方式。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;SSH 的主要功能：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;主要功能&#34;&gt;主要功能
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;远程登录:&lt;/strong&gt;  允许用户从本地计算机安全地连接到远程服务器，并像直接在服务器上操作一样执行命令。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;安全文件传输:&lt;/strong&gt;  提供  &lt;code&gt;scp&lt;/code&gt; (secure copy) 和  &lt;code&gt;sftp&lt;/code&gt; (secure FTP) 等工具，用于安全地在本地计算机和远程服务器之间传输文件。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;端口转发 (Tunneling):&lt;/strong&gt;  允许用户将本地端口转发到远程服务器上的端口，或者将远程服务器上的端口转发到本地端口。 这可以用于创建安全的隧道来访问受防火墙保护的应用程序或服务。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;X11 转发:&lt;/strong&gt;  允许用户在远程服务器上运行图形化应用程序，并将它们显示在本地计算机上。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;SSH 的工作原理：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;SSH 使用客户端-服务器模型。 SSH 客户端运行在用户的本地计算机上，而 SSH 服务器运行在远程服务器上。 连接过程如下：&lt;/p&gt;
+&lt;h3 id=&#34;工作原理&#34;&gt;工作原理
+&lt;/h3&gt;&lt;p&gt;SSH 使用客户端-服务器模型。 SSH 客户端运行在用户的本地计算机上，而 SSH 服务器运行在远程服务器上。 连接过程如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;连接请求:&lt;/strong&gt; SSH 客户端发起与 SSH 服务器的连接请求。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;密钥交换 (Key Exchange):&lt;/strong&gt;  客户端和服务器协商一个用于加密连接的密钥。 SSH 协议支持多种密钥交换算法，如 Diffie-Hellman 和椭圆曲线 Diffie-Hellman。&lt;/li&gt;
@@ -2307,25 +2381,16 @@ Flash
 &lt;li&gt;&lt;strong&gt;加密通信:&lt;/strong&gt;  身份验证成功后，客户端和服务器之间的所有通信都将使用协商好的密钥进行加密。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;会话管理:&lt;/strong&gt;  客户端和服务器建立一个 SSH 会话，用户可以在会话中执行命令、传输文件等。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;SSH 的优势：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;优势&#34;&gt;优势
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;安全性:&lt;/strong&gt; SSH 使用强大的加密算法来保护数据传输，防止窃听和中间人攻击。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;可靠性:&lt;/strong&gt; SSH 提供了可靠的连接，即使在不稳定的网络环境下也能正常工作。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;灵活性:&lt;/strong&gt; SSH 提供了多种功能，如端口转发和 X11 转发，可以满足各种不同的需求。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;标准化:&lt;/strong&gt; SSH 是一种标准协议，在各种操作系统和平台上都有广泛的支持。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;广泛应用:&lt;/strong&gt;  被广泛用于服务器管理，代码部署，远程协作等场景。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;SSH 的常用命令：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;ssh &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 连接到远程服务器。 例如，&lt;code&gt;ssh user@example.com&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ssh -p &amp;lt;port&amp;gt; &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 连接到远程服务器，指定端口。例如，&lt;code&gt;ssh -p 2222 user@example.com&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;scp &amp;lt;source&amp;gt; &amp;lt;destination&amp;gt;&lt;/code&gt;: 安全地复制文件。 例如，&lt;code&gt;scp file.txt user@example.com:/home/user/&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sftp &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 使用安全的 FTP 协议连接到远程服务器。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ssh-keygen&lt;/code&gt;: 生成 SSH 密钥对。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ssh-copy-id &amp;lt;username&amp;gt;@&amp;lt;hostname&amp;gt;&lt;/code&gt;: 将本地公钥复制到远程服务器的  &lt;code&gt;authorized_keys&lt;/code&gt;  文件中，以便进行公钥验证。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;安全性建议：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;安全性建议&#34;&gt;安全性建议
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;使用公钥验证而不是密码验证。&lt;/strong&gt;  密码验证容易受到暴力破解攻击，而公钥验证更安全。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;禁用 root 用户直接登录。&lt;/strong&gt;  这可以防止攻击者通过暴力破解 root 用户的密码来获取服务器的完全控制权。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;使用强密码。&lt;/strong&gt;  如果必须使用密码验证，请使用包含大小写字母、数字和特殊字符的强密码。&lt;/li&gt;
@@ -2334,9 +2399,7 @@ Flash
 &lt;li&gt;&lt;strong&gt;使用双因素身份验证 (2FA)。&lt;/strong&gt;  增加额外的安全层，即使密码泄露，攻击者也无法登录。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;监控 SSH 日志。&lt;/strong&gt;  定期检查 SSH 日志，以便及时发现可疑活动。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;总结：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;SSH 是一种必不可少的工具，用于安全地访问和管理远程服务器。 通过了解 SSH 的工作原理和遵循安全建议，可以确保远程连接的安全性，防止未经授权的访问和数据泄露。 它是一个强大、灵活和安全的工具，广泛应用于各种场景。&lt;/p&gt;
-&lt;h2 id=&#34;常见命令&#34;&gt;常见命令
+&lt;h2 id=&#34;常用命令&#34;&gt;常用命令
 &lt;/h2&gt;&lt;p&gt;连接主机&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2352,7 +2415,7 @@ Flash
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh username@host -u /path/to/your/key
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh username@host -i /path/to/your/key
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;指定端口&lt;/p&gt;
@@ -2833,40 +2896,93 @@ Flash
 </description>
         </item>
         <item>
-        <title>公共DNS列表</title>
+        <title>DNS指南，公共DNS列表，DNS泄露</title>
         <link>https://hublog.netlify.app/p/250321175125/</link>
         <pubDate>Fri, 21 Mar 2025 17:51:25 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/250321175125/</guid>
-        <description>&lt;h2 id=&#34;国内&#34;&gt;国内
+        <description>&lt;h2 id=&#34;dns-列表-国内&#34;&gt;DNS 列表-国内
 &lt;/h2&gt;&lt;h3 id=&#34;阿里&#34;&gt;阿里
-&lt;/h3&gt;&lt;p&gt;223.5.5.5&lt;/p&gt;
-&lt;p&gt;223.6.6.6&lt;/p&gt;
-&lt;p&gt;2400:3200::1&lt;/p&gt;
-&lt;p&gt;2400:3200:baba::1&lt;/p&gt;
-&lt;p&gt;dns.alidns.com&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://dns.alidns.com/dns-query&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://dns.alidns.com/dns-query&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;114dns&#34;&gt;114dns
-&lt;/h3&gt;&lt;p&gt;114.114.114.114&lt;/p&gt;
-&lt;p&gt;114.114.115.115&lt;/p&gt;
-&lt;h2 id=&#34;dnspod&#34;&gt;dnspod
-&lt;/h2&gt;&lt;p&gt;119.29.29.29&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://doh.pub/dns-query&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://doh.pub/dns-query&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;国外&#34;&gt;国外
-&lt;/h2&gt;&lt;h3 id=&#34;google&#34;&gt;google
-&lt;/h3&gt;&lt;p&gt;8.8.8.8&lt;/p&gt;
-&lt;p&gt;8.8.4.4&lt;/p&gt;
-&lt;p&gt;dns.google&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://dns.google/dns-query&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://dns.google/dns-query&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;cloudflare&#34;&gt;cloudflare
-&lt;/h3&gt;&lt;p&gt;1.1.1.1&lt;/p&gt;
-&lt;p&gt;1.0.0.1&lt;/p&gt;
-&lt;p&gt;2606:4700:4700::1111&lt;/p&gt;
-&lt;p&gt;2606:4700:4700::1001&lt;/p&gt;
-</description>
+&lt;/h3&gt;&lt;p&gt;阿里DNS已经限速，不建议使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 223.5.5.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 223.6.6.6
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv6: 2400:3200::1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv6: 2400:3200:baba::1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoT: dns.alidns.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH: https://dns.alidns.com/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;114dns&#34;&gt;114dns
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 114.114.114.114
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 114.114.115.115
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;dnspod&#34;&gt;Dnspod
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 119.29.29.29
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH: https://doh.pub/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;dns-列表-国外&#34;&gt;DNS 列表-国外
+&lt;/h2&gt;&lt;h3 id=&#34;google&#34;&gt;Google
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 8.8.8.8
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 8.8.4.4
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoT: dns.google
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH: https://dns.google/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;cloudflare&#34;&gt;cloudflare
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 1.1.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv4: 1.0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv6: 2606:4700:4700::1111
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IPv6: 2606:4700:4700::1001
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH：https://1.1.1.1/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH：https://1.0.0.1/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DoH：https://cloudflare-dns.com/dns-query
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;dns-泄露&#34;&gt;DNS 泄露
+&lt;/h2&gt;</description>
         </item>
         <item>
         <title>哪吒探针配置</title>
@@ -5424,7 +5540,7 @@ uid&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>cloudflare优选域名，优选ip</title>
+        <title>cloudflare优选域名，优选ip，优选反代IP</title>
         <link>https://hublog.netlify.app/p/250316222249/</link>
         <pubDate>Sun, 16 Mar 2025 22:22:49 +0800</pubDate>
         
@@ -5494,7 +5610,27 @@ uid&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[2606:4700:3010:2d55:d795:96ed:10f8:89f9]:443#[2606:4700:3010:2d55:d795:96ed:10f8:89f9]
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;h2 id=&#34;优选反代-ip&#34;&gt;优选反代 IP
+&lt;/h2&gt;&lt;p&gt;443 端口 cloudflare-dns.com&lt;/p&gt;
+&lt;p&gt;fofa.info&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;cloudflare&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;asn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;45102&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;port&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;443&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;country&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;CN&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;搜索 ip&lt;/p&gt;
+&lt;p&gt;8.218.175.216
+8.217.64.226
+8.217.131.231
+47.76.46.220
+149.129.115.111
+47.238.170.225
+47.242.192.198
+47.57.13.107&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>Obsidian设置图片为markdown标准格式</title>
@@ -6931,17 +7067,37 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.org/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://ffmpeg.org/download.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;将解压后 &lt;code&gt;bin&lt;/code&gt; 目录的路径添加到系统的 &lt;code&gt;PATH&lt;/code&gt; 环境变量中。这样你就可以在任何路径下直接运行 &lt;code&gt;ffmpeg&lt;/code&gt; 命令，而不需要每次都输入完整路径。&lt;/p&gt;
-&lt;h2 id=&#34;基础使用示例&#34;&gt;基础使用示例
+&lt;h2 id=&#34;语法&#34;&gt;语法
 &lt;/h2&gt;&lt;p&gt;FFmpeg 是通过命令行操作的，语法通常是：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;全局选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入文件选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出文件选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usage: ffmpeg &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt;infile options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i infile&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;... &lt;span class=&#34;o&#34;&gt;{[&lt;/span&gt;outfile options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; outfile&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;查看文件信息&#34;&gt;查看文件信息
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;[]&lt;/code&gt; (方括号):&lt;/strong&gt; 表示可选参数或选项。 这意味着这部分内容可以存在，也可以不存在，ffmpeg 仍然可以正常运行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;{}&lt;/code&gt; (花括号):&lt;/strong&gt; 表示必须参数或选项。 这意味着这部分内容是必需的，ffmpeg 才能正常运行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-vn&lt;/code&gt;：忽略输入文件中的视频流&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-acodec&lt;/code&gt;：指定音频编码器 (Audio Codec)，可选的有：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;copy&lt;/code&gt;:&lt;/strong&gt; 直接复制音频流，不进行重新编码。 这通常是最快的，并且不会降低音频质量（如果输入音频已经是你想要的格式）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libmp3lame&lt;/code&gt;:&lt;/strong&gt; 使用 LAME MP3 编码器。 这是创建 MP3 文件的常用选择。需要安装 LAME 库才能使用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;aac&lt;/code&gt;:&lt;/strong&gt; 使用 AAC (Advanced Audio Coding) 编码器。 AAC 通常比 MP3 提供更好的音质。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libfdk_aac&lt;/code&gt;:&lt;/strong&gt; 使用 Fraunhofer FDK AAC 编码器。 比 &lt;code&gt;aac&lt;/code&gt; 性能更好，但可能需要单独编译支持。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libopus&lt;/code&gt;:&lt;/strong&gt; 使用 Opus 编码器。 提供非常好的音质，尤其是在较低的比特率下。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;pcm_s16le&lt;/code&gt;:&lt;/strong&gt; 使用 PCM (Pulse Code Modulation) 编码器，将其保存为 16 位 Little Endian PCM，通常用于未经压缩的音频（例如 WAV 文件）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;flac&lt;/code&gt;:&lt;/strong&gt; 使用 FLAC (Free Lossless Audio Codec) 编码器。 用于无损压缩音频。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用
+&lt;/h2&gt;&lt;h3 id=&#34;查看文件信息&#34;&gt;查看文件信息
 &lt;/h3&gt;&lt;p&gt;这是处理任何文件的第一步。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -6951,13 +7107,22 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffprobe video.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmprg -i video.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;格式转换-将-mp4-转换为-avi&#34;&gt;格式转换 (将 MP4 转换为 AVI)
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 output.avi
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 output.avi
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;FFmpeg 会自动根据输出文件的扩展名选择合适的编码器。&lt;/p&gt;
@@ -6967,7 +7132,7 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1280:720 output_720p.mp4
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1280:720 output_720p.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;-vf&lt;/code&gt; 代表 &amp;ldquo;video filter&amp;rdquo;（视频滤镜）。&lt;code&gt;scale&lt;/code&gt; 是其中一个滤镜。&lt;/p&gt;
@@ -6977,7 +7142,7 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; output.mp3
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; output.mp3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
@@ -6990,7 +7155,7 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入视频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;开始时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -to &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;结束时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -vn -acodec copy &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出音频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入视频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;开始时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -to &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;结束时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -vn -acodec copy &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出音频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;剪切视频-从第-10-秒开始持续-15-秒&#34;&gt;剪切视频 (从第 10 秒开始，持续 15 秒)
@@ -6999,7 +7164,7 @@ syncthing 首页主要分为三类：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
@@ -17769,17 +17934,6 @@ Motrix: &lt;a class=&#34;link&#34; href=&#34;https://dl.motrix.app/release/Motri
 	
 	
 &gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>DNS泄露</title>
-        <link>https://hublog.netlify.app/p/2312004/</link>
-        <pubDate>Mon, 04 Dec 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/2312004/</guid>
-        <description>&lt;p&gt;在线查看&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://pan.seektao.cc/s/AOf3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;https://pan.seektao.cc/s/AOf3&lt;/a&gt;&lt;/p&gt;
 </description>
         </item>
         <item>

@@ -58,17 +58,37 @@
 &lt;/h2&gt;&lt;p&gt;下载地址：&lt;a class=&#34;link&#34; href=&#34;https://ffmpeg.org/download.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://ffmpeg.org/download.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;将解压后 &lt;code&gt;bin&lt;/code&gt; 目录的路径添加到系统的 &lt;code&gt;PATH&lt;/code&gt; 环境变量中。这样你就可以在任何路径下直接运行 &lt;code&gt;ffmpeg&lt;/code&gt; 命令，而不需要每次都输入完整路径。&lt;/p&gt;
-&lt;h2 id=&#34;基础使用示例&#34;&gt;基础使用示例
+&lt;h2 id=&#34;语法&#34;&gt;语法
 &lt;/h2&gt;&lt;p&gt;FFmpeg 是通过命令行操作的，语法通常是：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;全局选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入文件选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出文件选项&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;usage: ffmpeg &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[[&lt;/span&gt;infile options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -i infile&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;... &lt;span class=&#34;o&#34;&gt;{[&lt;/span&gt;outfile options&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; outfile&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;...
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;查看文件信息&#34;&gt;查看文件信息
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;[]&lt;/code&gt; (方括号):&lt;/strong&gt; 表示可选参数或选项。 这意味着这部分内容可以存在，也可以不存在，ffmpeg 仍然可以正常运行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;{}&lt;/code&gt; (花括号):&lt;/strong&gt; 表示必须参数或选项。 这意味着这部分内容是必需的，ffmpeg 才能正常运行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-vn&lt;/code&gt;：忽略输入文件中的视频流&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-acodec&lt;/code&gt;：指定音频编码器 (Audio Codec)，可选的有：
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;copy&lt;/code&gt;:&lt;/strong&gt; 直接复制音频流，不进行重新编码。 这通常是最快的，并且不会降低音频质量（如果输入音频已经是你想要的格式）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libmp3lame&lt;/code&gt;:&lt;/strong&gt; 使用 LAME MP3 编码器。 这是创建 MP3 文件的常用选择。需要安装 LAME 库才能使用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;aac&lt;/code&gt;:&lt;/strong&gt; 使用 AAC (Advanced Audio Coding) 编码器。 AAC 通常比 MP3 提供更好的音质。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libfdk_aac&lt;/code&gt;:&lt;/strong&gt; 使用 Fraunhofer FDK AAC 编码器。 比 &lt;code&gt;aac&lt;/code&gt; 性能更好，但可能需要单独编译支持。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;libopus&lt;/code&gt;:&lt;/strong&gt; 使用 Opus 编码器。 提供非常好的音质，尤其是在较低的比特率下。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;pcm_s16le&lt;/code&gt;:&lt;/strong&gt; 使用 PCM (Pulse Code Modulation) 编码器，将其保存为 16 位 Little Endian PCM，通常用于未经压缩的音频（例如 WAV 文件）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;flac&lt;/code&gt;:&lt;/strong&gt; 使用 FLAC (Free Lossless Audio Codec) 编码器。 用于无损压缩音频。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用&#34;&gt;使用
+&lt;/h2&gt;&lt;h3 id=&#34;查看文件信息&#34;&gt;查看文件信息
 &lt;/h3&gt;&lt;p&gt;这是处理任何文件的第一步。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -78,13 +98,22 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffprobe video.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;或者&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmprg -i video.mp4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;格式转换-将-mp4-转换为-avi&#34;&gt;格式转换 (将 MP4 转换为 AVI)
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 output.avi
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 output.avi
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;FFmpeg 会自动根据输出文件的扩展名选择合适的编码器。&lt;/p&gt;
@@ -94,7 +123,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1280:720 output_720p.mp4
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vf &lt;span class=&#34;nv&#34;&gt;scale&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1280:720 output_720p.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;code&gt;-vf&lt;/code&gt; 代表 &amp;ldquo;video filter&amp;rdquo;（视频滤镜）。&lt;code&gt;scale&lt;/code&gt; 是其中一个滤镜。&lt;/p&gt;
@@ -104,7 +133,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; output.mp3
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; output.mp3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
@@ -117,7 +146,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入视频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;开始时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -to &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;结束时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -vn -acodec copy &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出音频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输入视频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -ss &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;开始时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -to &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;结束时间&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; -vn -acodec copy &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;输出音频文件&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;剪切视频-从第-10-秒开始持续-15-秒&#34;&gt;剪切视频 (从第 10 秒开始，持续 15 秒)
@@ -126,7 +155,7 @@
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;

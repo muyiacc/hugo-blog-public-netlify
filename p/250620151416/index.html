@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="概述 作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下 Shell 中常见的语">
-<title>Shell教程01-解释器-脚本格式-脚本执行方式</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PTFans https://ptfans.cc 2025-06-20 发现，注册时发现没有限制，可以尝试">
+<title>PT站点收集</title>
 
-<link rel='canonical' href='https://hublog.netlify.app/p/shell01/'>
+<link rel='canonical' href='https://hublog.netlify.app/p/250620151416/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Shell教程01-解释器-脚本格式-脚本执行方式">
-<meta property='og:description' content="概述 作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下 Shell 中常见的语">
-<meta property='og:url' content='https://hublog.netlify.app/p/shell01/'>
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="PT站点收集">
+<meta property='og:description' content="PTFans https://ptfans.cc 2025-06-20 发现，注册时发现没有限制，可以尝试">
+<meta property='og:url' content='https://hublog.netlify.app/p/250620151416/'>
 <meta property='og:site_name' content='寻道之旅博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='shell' /><meta property='article:tag' content='linux' /><meta property='article:published_time' content='2023-09-08T14:07:10&#43;08:00'/><meta property='article:modified_time' content='2023-09-08T14:07:10&#43;08:00'/>
-<meta name="twitter:title" content="Shell教程01-解释器-脚本格式-脚本执行方式">
-<meta name="twitter:description" content="概述 作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下 Shell 中常见的语">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='bittorrent' /><meta property='article:tag' content='pt' /><meta property='article:published_time' content='2025-06-20T15:14:16&#43;08:00'/><meta property='article:modified_time' content='2025-06-20T15:14:16&#43;08:00'/>
+<meta name="twitter:title" content="PT站点收集">
+<meta name="twitter:description" content="PTFans https://ptfans.cc 2025-06-20 发现，注册时发现没有限制，可以尝试">
   
 
 
@@ -267,13 +267,9 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#概述">概述</a></li>
-    <li><a href="#解释器">解释器</a></li>
-    <li><a href="#脚本格式">脚本格式</a></li>
-    <li><a href="#脚本执行方式">脚本执行方式</a>
+    <li>
       <ol>
-        <li><a href="#方式-1">方式 1</a></li>
-        <li><a href="#方式-2">方式 2</a></li>
+        <li><a href="#ptfans">PTFans</a></li>
       </ol>
     </li>
   </ol>
@@ -294,8 +290,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/linux/" >
-                Linux
+            <a href="/categories/default/" >
+                Default
             </a>
         
     </header>
@@ -303,7 +299,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/shell01/">Shell教程01-解释器-脚本格式-脚本执行方式</a>
+            <a href="/p/250620151416/">PT站点收集</a>
         </h2>
     
         
@@ -325,7 +321,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Sep 08, 2023</time>
+                <time class="article-time--published">Jun 20, 2025</time>
             </div>
         
 
@@ -341,145 +337,11 @@
     <section class="article-content">
     
     
-    <h2 id="概述">概述
-</h2><p>作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下 Shell 中常见的语法</p>
-<h2 id="解释器">解释器
-</h2><p>Linux 中，解析脚本的是命令解释器，也就是终端解释器，如 Bash、Zsh。</p>
-<p>在脚本中常见的头部声明如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>或者</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl"><span class="cp">#!/bin/zsh
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>一般情况下 Linux 默认解释器是 bash</p>
-<p>查看所有支持的 shell</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat /etc/shells
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>临时进入 解释器的方法为 <code>exec 解释器</code></p>
-<ul>
-<li><code>exec /bin/bash</code></li>
-<li><code>exec /bin/zsh</code></li>
-</ul>
-<p>查看当前解释器：<code>echo #SHELL</code></p>
-<h2 id="脚本格式">脚本格式
-</h2><p>脚本以 <code>#!解释器</code> 为开头</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># 脚本内容</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>按照习惯，bash 对应的脚本文件的后缀一般是 .sh 结尾，而 zsh 对应的脚本文件以 .zsh 结尾，当然，这不是必须的。</p>
-<p>例如：在家目录新建目录 bin, 继续在 bin 目录新建一个文件 test1.sh</p>
-<p><code>vim test1.sh</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#! /bin/sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">echo</span> <span class="s2">&#34;我的解释器为 </span><span class="nv">$SHELL</span><span class="s2">&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="脚本执行方式">脚本执行方式
-</h2><p>在新建 test1.sh 之后，如何执行呢？</p>
-<h3 id="方式-1">方式 1
-</h3><p>语法：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">解释器 脚本
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>脚本的路径可使用相对路径也可以使用绝对路径</p>
-<p>例如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 切换到 bin 目录</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$HOME</span>/bin
-</span></span><span class="line"><span class="cl"><span class="c1"># 相对路径</span>
-</span></span><span class="line"><span class="cl">sh test1.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 绝对路径，不用切换到对应目录</span>
-</span></span><span class="line"><span class="cl">sh ~/bin/test1.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>执行结果</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">我的解释器为 /bin/bash
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="方式-2">方式 2
-</h3><p>对脚本增加可执行权限</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod +x test1.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>直接运行脚本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">$HOme</span>/bin/test1.sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>执行结果</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">我的解释器为 /bin/zsh
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+    <h3 id="ptfans">PTFans
+</h3><p><a class="link" href="https://ptfans.cc"  target="_blank" rel="noopener"
+    >https://ptfans.cc</a></p>
+<p>2025-06-20 发现，注册时发现没有限制，可以尝试</p>
+
 </section>
 
 
@@ -487,9 +349,9 @@
     
     <section class="article-tags">
         
-            <a href="/tags/shell/">Shell</a>
+            <a href="/tags/bittorrent/">Bittorrent</a>
         
-            <a href="/tags/linux/">Linux</a>
+            <a href="/tags/pt/">Pt</a>
         
     </section>
 
@@ -513,12 +375,12 @@
             
                 
 <article class="">
-    <a href="/p/shell02/">
+    <a href="/p/250618151403/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Shell教程02-变量-运算符-条件判断</h2>
+            <h2 class="article-title">Bittorrent指南</h2>
         </div>
     </a>
 </article>
@@ -526,12 +388,12 @@
             
                 
 <article class="">
-    <a href="/p/2311008/">
+    <a href="/p/250610113907/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Shell脚本：快速比对文件的SHA256哈希值，判断文件是否被篡改</h2>
+            <h2 class="article-title">一键激活JetBrains全家桶</h2>
         </div>
     </a>
 </article>
@@ -539,12 +401,12 @@
             
                 
 <article class="">
-    <a href="/p/2310015/">
+    <a href="/p/250604164733/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux下的Typora 安装和激活</h2>
+            <h2 class="article-title">影视，电视，电影观看记录</h2>
         </div>
     </a>
 </article>
@@ -552,12 +414,12 @@
             
                 
 <article class="">
-    <a href="/p/2309003/">
+    <a href="/p/250531171638/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux系统的系统变量合集</h2>
+            <h2 class="article-title">transmission，Bittorrent客户端</h2>
         </div>
     </a>
 </article>
@@ -565,12 +427,12 @@
             
                 
 <article class="">
-    <a href="/p/250510110145/">
+    <a href="/p/250530150227/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">rsync，快速且极其通用的文件复制工具</h2>
+            <h2 class="article-title">speedtest测速网站</h2>
         </div>
     </a>
 </article>

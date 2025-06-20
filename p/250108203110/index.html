@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="介绍 家用 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent 安装 1 apt update 1 apt install qbittorrent-nox 启动 1 qbittorrent-nox 默认端口： 8080 默认用户：admin 默认密码：adminadmin 配">
-<title>Linux无图形化界面安装qBittorrent</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 qBittorrent 是一个免费开源的 BitTorrent 客户端，旨在替代 uTorrent。 它使用 C++ 编写，并基于 Qt 工具包构建，因此拥有跨平台支持，可以在 Linux、Windo">
+<title>qBittorrent，一个免费开源的 BitTorrent 客户端</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250108203110/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux无图形化界面安装qBittorrent">
-<meta property='og:description' content="介绍 家用 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent 安装 1 apt update 1 apt install qbittorrent-nox 启动 1 qbittorrent-nox 默认端口： 8080 默认用户：admin 默认密码：adminadmin 配">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="qBittorrent，一个免费开源的 BitTorrent 客户端">
+<meta property='og:description' content="简介 qBittorrent 是一个免费开源的 BitTorrent 客户端，旨在替代 uTorrent。 它使用 C++ 编写，并基于 Qt 工具包构建，因此拥有跨平台支持，可以在 Linux、Windo">
 <meta property='og:url' content='https://hublog.netlify.app/p/250108203110/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='qbittorrent' /><meta property='article:published_time' content='2025-01-08T20:31:10&#43;08:00'/><meta property='article:modified_time' content='2025-01-08T20:31:10&#43;08:00'/>
-<meta name="twitter:title" content="Linux无图形化界面安装qBittorrent">
-<meta name="twitter:description" content="介绍 家用 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent 安装 1 apt update 1 apt install qbittorrent-nox 启动 1 qbittorrent-nox 默认端口： 8080 默认用户：admin 默认密码：adminadmin 配">
+<meta name="twitter:title" content="qBittorrent，一个免费开源的 BitTorrent 客户端">
+<meta name="twitter:description" content="简介 qBittorrent 是一个免费开源的 BitTorrent 客户端，旨在替代 uTorrent。 它使用 C++ 编写，并基于 Qt 工具包构建，因此拥有跨平台支持，可以在 Linux、Windo">
   
 
 
@@ -267,11 +267,19 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#介绍">介绍</a></li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#启动">启动</a></li>
-    <li><a href="#修改端口">修改端口</a></li>
-    <li><a href="#创建系统服务">创建系统服务</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#核心功能">核心功能</a></li>
+      </ol>
+    </li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#linux-无图形化界面安装">Linux 无图形化界面安装</a></li>
+        <li><a href="#docker">Docker</a></li>
+      </ol>
+    </li>
+    <li><a href="#配置">配置</a></li>
+    <li><a href="#备份恢复">备份恢复</a></li>
   </ol>
 </nav>
         </div>
@@ -299,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250108203110/">Linux无图形化界面安装qBittorrent</a>
+            <a href="/p/250108203110/">qBittorrent，一个免费开源的 BitTorrent 客户端</a>
         </h2>
     
         
@@ -337,10 +345,45 @@
     <section class="article-content">
     
     
-    <h2 id="介绍">介绍
-</h2><p>家用 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent</p>
+    <h2 id="简介">简介
+</h2><p>qBittorrent 是一个免费开源的 BitTorrent 客户端，旨在替代 uTorrent。 它使用 C++ 编写，并基于 Qt 工具包构建，因此拥有跨平台支持，可以在 Linux、Windows、macOS、FreeBSD 和其他操作系统上运行。</p>
+<h3 id="核心功能">核心功能
+</h3><ul>
+<li><strong>易于使用：</strong> 提供用户友好的图形界面 (GUI)，即使是新手也能轻松上手。</li>
+<li><strong>开源免费：</strong> 完全免费使用，没有广告或恶意软件。</li>
+<li><strong>轻量级：</strong> 占用资源较少，即使在老旧的计算机上也能运行良好。</li>
+<li><strong>支持多种 BitTorrent 协议：</strong> 支持 DHT, Peer Exchange, Full encryption, Magnet links 等标准协议。</li>
+<li><strong>内置搜索引擎：</strong> 可以直接在 qBittorrent 界面中搜索种子，无需依赖外部网站。</li>
+<li><strong>高级下载控制：</strong>
+<ul>
+<li>按种子/Tracker/类别进行下载优先级设置</li>
+<li>可以选择下载文件内容</li>
+<li>支持顺序下载</li>
+<li>可以限制全局和单个种子的上传/下载速度</li>
+</ul>
+</li>
+<li><strong>远程控制：</strong> 可以通过 Web 界面进行远程管理，方便从其他设备控制下载。</li>
+<li><strong>IP 过滤：</strong> 可以导入和更新 IP 过滤列表，阻止恶意或受监控的 IP 地址。</li>
+<li><strong>Unicode 支持：</strong> 支持各种语言和字符集。</li>
+<li><strong>UPnP / NAT-PMP 端口转发：</strong> 自动配置路由器，简化端口转发设置。</li>
+<li><strong>IPv6 支持:</strong> 充分支持 IPv6 网络。</li>
+<li><strong>Tracker 编辑器：</strong> 可以手动添加、编辑或删除 Tracker 地址。</li>
+<li><strong>RSS 源支持:</strong> 可以订阅 RSS 源，自动下载最新的种子。</li>
+<li><strong>计划器：</strong> 可以设置下载计划，在特定时间段启动或停止下载。</li>
+<li><strong>HTTP Tracker 支持:</strong> 支持使用 HTTP Tracker。</li>
+</ul>
+<p><strong>与其他 BitTorrent 客户端相比的优势:</strong></p>
+<ul>
+<li><strong>无广告：</strong> 相比 uTorrent 等客户端，qBittorrent 没有广告，用户体验更好。</li>
+<li><strong>更强大的功能：</strong> 提供了更多高级功能，如内置搜索引擎、高级下载控制等。</li>
+<li><strong>更好的隐私保护：</strong> 开源特性意味着代码可以被审查，更容易发现和修复安全漏洞，从而更好地保护用户隐私。</li>
+<li><strong>跨平台支持：</strong> 可以在多种操作系统上运行。</li>
+</ul>
 <h2 id="安装">安装
-</h2><div class="highlight"><div class="chroma">
+</h2><h3 id="linux-无图形化界面安装">Linux 无图形化界面安装
+</h3><p>家用小型 linux 服务器没有图形化界面，且是 armv7 结构，安装 qBittorrent</p>
+<p>安装</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -356,8 +399,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt install qbittorrent-nox
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="启动">启动
-</h2><div class="highlight"><div class="chroma">
+</div><p>启动</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -370,7 +413,7 @@
 <li>默认用户：admin</li>
 <li>默认密码：adminadmin</li>
 </ul>
-<p>配置文件所在位置</p>
+<p>配置文件夹所在位置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -379,8 +422,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> ~/.config/qBittorrent
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="修改端口">修改端口
-</h2><div class="highlight"><div class="chroma">
+</div><p>修改端口</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -388,8 +431,8 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">qbittorrent-nox --webui-port<span class="o">=</span>XXXX
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="创建系统服务">创建系统服务
-</h2><div class="highlight"><div class="chroma">
+</div><p>创建系统服务</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -470,7 +513,281 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> qbittorrent-nox.service
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h3 id="docker">Docker
+</h3><p>使用 docker 可以方便的安装 qBittorrent</p>
+<ul>
+<li>linuxserver/qbittorrent：下载量大，只支持 amd64 和 arm64</li>
+<li>gists/qbittorrent：支持多种架构，<a class="link" href="https://github.com/vgist/dockerfiles/tree/master/qbittorrent"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+<li>crazymax/qbittorrent：支持多种架构，<a class="link" href="https://github.com/crazy-max/docker-qbittorrent"  target="_blank" rel="noopener"
+    >GitHub</a></li>
+</ul>
+<p>这些镜像对应的目录都不一样，按照先后使用顺序添加</p>
+<p>docker-compose</p>
+<p>linuxserver/qbittorrent</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">qbittorrent</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">linuxserver/qbittorrent:arm32v7-4.5.3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">qbittorrent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="l">root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># - PUID=1000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># - PGID=1000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TZ=Asia/Shanghai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">WEBUI_PORT=8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TORRENTING_PORT=6881</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./qbittorrent_data:/config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c"># - ./downloads:/downloads #optional</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">/mnt/p1:/root</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">8020</span><span class="p">:</span><span class="m">8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6881</span><span class="p">:</span><span class="m">6881</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="m">6881</span><span class="p">:</span><span class="m">6881</span><span class="l">/udp</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
+</div><p>gists/qbittorrent</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">qbittorrent</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">gists/qbittorrent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8081:8080&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;6881:6881&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;6881:6881/udp&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./qbittorrent_data:/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TZ=Asia/Shanghai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PUID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PGID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">WEBUI_PORT=8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">logging</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">json-file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;10m&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>crazymax/qbittorrent</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">qbittorrent</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">crazymax/qbittorrent</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;8081:8080&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;6881:6881&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;6881:6881/udp&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./qbittorrent_data:/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">TZ=Asia/Shanghai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PUID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">PGID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">WEBUI_PORT=8080</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">logging</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l">json-file</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">options</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;10m&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>docker-cli</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name<span class="o">=</span>qbittorrent <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">PUID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">PGID</span><span class="o">=</span><span class="m">1000</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">TZ</span><span class="o">=</span>Etc/UTC <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">WEBUI_PORT</span><span class="o">=</span><span class="m">8080</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">TORRENTING_PORT</span><span class="o">=</span><span class="m">6881</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 8080:8080 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 6881:6881 <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -p 6881:6881/udp <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /path/to/qbittorrent/appdata:/config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /path/to/downloads:/downloads <span class="sb">`</span><span class="c1">#optional` \</span>
+</span></span><span class="line"><span class="cl">  --restart unless-stopped <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  lscr.io/linuxserver/qbittorrent:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>支持的变量</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-p 8080:8080</code></td>
+<td>WebUI</td>
+</tr>
+<tr>
+<td><code>-p 6881:6881</code></td>
+<td>tcp connection port</td>
+</tr>
+<tr>
+<td><code>-p 6881:6881/udp</code></td>
+<td>udp connection port</td>
+</tr>
+<tr>
+<td><code>-e PUID=1000</code></td>
+<td>for UserID - see below for explanation</td>
+</tr>
+<tr>
+<td><code>-e PGID=1000</code></td>
+<td>for GroupID - see below for explanation</td>
+</tr>
+<tr>
+<td><code>-e TZ=Etc/UTC</code></td>
+<td>specify a timezone to use, see this <a class="link" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List"  target="_blank" rel="noopener"
+    >list⁠</a></td>
+</tr>
+<tr>
+<td><code>-e WEBUI_PORT=8080</code></td>
+<td>for changing the port of the web UI, see below for explanation</td>
+</tr>
+<tr>
+<td><code>-e TORRENTING_PORT=6881</code></td>
+<td>for changing the port of tcp/udp connection, see below for explanation</td>
+</tr>
+<tr>
+<td><code>-v /config</code></td>
+<td>Contains all relevant configuration files.</td>
+</tr>
+<tr>
+<td><code>-v /downloads</code></td>
+<td>Location of downloads on disk.</td>
+</tr>
+<tr>
+<td><code>--read-only=true</code></td>
+<td>Run container with a read-only filesystem. Please <a class="link" href="https://docs.linuxserver.io/misc/read-only/"  target="_blank" rel="noopener"
+    >read the docs⁠</a></td>
+</tr>
+<tr>
+<td><code>--user=1000:1000</code></td>
+<td>Run container with a non-root user. Please <a class="link" href="https://docs.linuxserver.io/misc/non-root/"  target="_blank" rel="noopener"
+    >read the docs⁠</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="配置">配置
+</h2><p>如果是局域网远程设备，首次打开显示 <code>Unauthorized</code>，</p>
+<p>新增配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">WebUI\AuthSubnetWhitelist=192.168.68.0/24
+</span></span><span class="line"><span class="cl">WebUI\AuthSubnetWhitelistEnabled=true
+</span></span><span class="line"><span class="cl">WebUI\HostHeaderValidation=false
+</span></span><span class="line"><span class="cl">WebUI\CSRFProtection=false
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>AuthSubnetWhitelist：白名单</li>
+</ul>
+<h2 id="备份恢复">备份恢复
+</h2><p>找到 qbittorrent 程序目录，复制 BT_backup 文件夹，里面包含了种子文件与状态信息，重新安装后覆盖还原即可。</p>
+<p>1、以群晖为例，打开 winscp 连接上群晖，找到 qbittorrent 安装目录，<br>
+2、复制 BT_backup 文件夹到本地电脑上，<br>
+3 、重新安装 qbittorrent 后，使用 winscp 上传覆盖 BT_backup 文件夹，重启 qbittorrent，查看时候恢复之前的状态。</p>
+
 </section>
 
 
@@ -531,7 +848,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">Linux安装qBittorrent-ClientBlocker</h2>
+            <h2 class="article-title">qBittorrent-ClientBlocker，某些不友好的IP和客户端，保护 BT 网络，保护宽带</h2>
         </div>
     </a>
 </article>

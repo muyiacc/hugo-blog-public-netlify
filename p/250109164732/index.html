@@ -274,7 +274,8 @@
       </ol>
     </li>
     <li><a href="#安装">安装</a></li>
-    <li><a href="#基础使用示例">基础使用示例</a>
+    <li><a href="#语法">语法</a></li>
+    <li><a href="#使用">使用</a>
       <ol>
         <li><a href="#查看文件信息">查看文件信息</a></li>
         <li><a href="#格式转换-将-mp4-转换为-avi">格式转换 (将 MP4 转换为 AVI)</a></li>
@@ -394,17 +395,37 @@
 </h2><p>下载地址：<a class="link" href="https://ffmpeg.org/download.html"  target="_blank" rel="noopener"
     >https://ffmpeg.org/download.html</a></p>
 <p>将解压后 <code>bin</code> 目录的路径添加到系统的 <code>PATH</code> 环境变量中。这样你就可以在任何路径下直接运行 <code>ffmpeg</code> 命令，而不需要每次都输入完整路径。</p>
-<h2 id="基础使用示例">基础使用示例
+<h2 id="语法">语法
 </h2><p>FFmpeg 是通过命令行操作的，语法通常是：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg <span class="o">[</span>全局选项<span class="o">]</span> <span class="o">[</span>输入文件选项<span class="o">]</span> -i <span class="o">[</span>输入文件<span class="o">]</span> <span class="o">[</span>输出文件选项<span class="o">]</span> <span class="o">[</span>输出文件<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">usage: ffmpeg <span class="o">[</span>options<span class="o">]</span> <span class="o">[[</span>infile options<span class="o">]</span> -i infile<span class="o">]</span>... <span class="o">{[</span>outfile options<span class="o">]</span> outfile<span class="o">}</span>...
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="查看文件信息">查看文件信息
+</div><ul>
+<li><strong><code>[]</code> (方括号):</strong> 表示可选参数或选项。 这意味着这部分内容可以存在，也可以不存在，ffmpeg 仍然可以正常运行。</li>
+<li><strong><code>{}</code> (花括号):</strong> 表示必须参数或选项。 这意味着这部分内容是必需的，ffmpeg 才能正常运行。</li>
+</ul>
+<p>选项：</p>
+<ul>
+<li><code>-vn</code>：忽略输入文件中的视频流</li>
+<li><code>-acodec</code>：指定音频编码器 (Audio Codec)，可选的有：
+<ul>
+<li><strong><code>copy</code>:</strong> 直接复制音频流，不进行重新编码。 这通常是最快的，并且不会降低音频质量（如果输入音频已经是你想要的格式）。</li>
+<li><strong><code>libmp3lame</code>:</strong> 使用 LAME MP3 编码器。 这是创建 MP3 文件的常用选择。需要安装 LAME 库才能使用。</li>
+<li><strong><code>aac</code>:</strong> 使用 AAC (Advanced Audio Coding) 编码器。 AAC 通常比 MP3 提供更好的音质。</li>
+<li><strong><code>libfdk_aac</code>:</strong> 使用 Fraunhofer FDK AAC 编码器。 比 <code>aac</code> 性能更好，但可能需要单独编译支持。</li>
+<li><strong><code>libopus</code>:</strong> 使用 Opus 编码器。 提供非常好的音质，尤其是在较低的比特率下。</li>
+<li><strong><code>pcm_s16le</code>:</strong> 使用 PCM (Pulse Code Modulation) 编码器，将其保存为 16 位 Little Endian PCM，通常用于未经压缩的音频（例如 WAV 文件）。</li>
+<li><strong><code>flac</code>:</strong> 使用 FLAC (Free Lossless Audio Codec) 编码器。 用于无损压缩音频。</li>
+</ul>
+</li>
+</ul>
+<h2 id="使用">使用
+</h2><h3 id="查看文件信息">查看文件信息
 </h3><p>这是处理任何文件的第一步。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -414,13 +435,22 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ffprobe video.mp4
 </span></span></code></pre></td></tr></table>
 </div>
+</div><p>或者</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmprg -i video.mp4
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h3 id="格式转换-将-mp4-转换为-avi">格式转换 (将 MP4 转换为 AVI)
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 output.avi
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mp4 output.avi
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>FFmpeg 会自动根据输出文件的扩展名选择合适的编码器。</p>
@@ -430,7 +460,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1280:720 output_720p.mp4
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vf <span class="nv">scale</span><span class="o">=</span>1280:720 output_720p.mp4
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>-vf</code> 代表 &ldquo;video filter&rdquo;（视频滤镜）。<code>scale</code> 是其中一个滤镜。</p>
@@ -440,7 +470,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a <span class="m">2</span> output.mp3
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mp4 -vn -acodec libmp3lame -q:a <span class="m">2</span> output.mp3
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -453,7 +483,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i <span class="o">[</span>输入视频文件<span class="o">]</span> -ss <span class="o">[</span>开始时间<span class="o">]</span> -to <span class="o">[</span>结束时间<span class="o">]</span> -vn -acodec copy <span class="o">[</span>输出音频文件<span class="o">]</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i <span class="o">[</span>输入视频文件<span class="o">]</span> -ss <span class="o">[</span>开始时间<span class="o">]</span> -to <span class="o">[</span>结束时间<span class="o">]</span> -vn -acodec copy <span class="o">[</span>输出音频文件<span class="o">]</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="剪切视频-从第-10-秒开始持续-15-秒">剪切视频 (从第 10 秒开始，持续 15 秒)
@@ -462,7 +492,7 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ffmpeg -i input.mp4 -ss 00:00:10 -t 00:00:15 -c copy output_cut.mp4
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -526,6 +556,32 @@
             
                 
 <article class="">
+    <a href="/p/250620151416/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">PT站点收集</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250618151403/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Bittorrent指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250610113907/">
         
         
@@ -558,32 +614,6 @@
 
         <div class="article-details">
             <h2 class="article-title">transmission，Bittorrent客户端</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250530150227/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">speedtest测速网站</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250528150817/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">YouTube封面图下载网站</h2>
         </div>
     </a>
 </article>

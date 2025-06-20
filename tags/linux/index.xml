@@ -13,7 +13,86 @@
         <pubDate>Sun, 18 Aug 2024 21:08:41 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/p/240818210841/</guid>
-        <description>&lt;p&gt;参考文档&lt;/p&gt;
+        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
+&lt;/h2&gt;&lt;p&gt;开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。 借助适用于 Linux 的 Windows 子系统（WSL），开发人员可以安装 Linux 分发版（如 Ubuntu、OpenSUSE、Kali、Debian、Arch Linux 等），并在 Windows 上直接使用 Linux 应用程序、实用工具和 Bash 命令行工具（未经修改），无需传统虚拟机或双包设置的开销。&lt;/p&gt;
+&lt;p&gt;官方文档：&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://learn.microsoft.com/zh-cn/windows/wsl/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;先决条件&#34;&gt;先决条件
+&lt;/h2&gt;&lt;p&gt;必须运行 Windows 10 版本 2004 及更高版本（内部版本 19041 及更高版本）或 Windows 11 才能使用以下命令。 如果使用的是早期版本，请参阅 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install-manual&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;手动安装页&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;安装-wsl&#34;&gt;安装 WSL
+&lt;/h2&gt;&lt;p&gt;现在，可以使用单个命令安装运行 WSL 所需的所有内容。 右键单击并选择“以管理员身份运行”，在 &lt;strong&gt;管理员&lt;/strong&gt; 模式下打开 PowerShell 或 Windows 命令提示符，输入 wsl &amp;ndash;install 命令，然后重新启动计算机。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-powershell&#34; data-lang=&#34;powershell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;wsl&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;-install&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此命令将启用运行 WSL 并安装 Linux 的 Ubuntu 分发所需的功能。 （&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands#install&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;可以更改此默认分布&lt;/a&gt;）。&lt;/p&gt;
+&lt;p&gt;如果运行的是较旧的版本，或者只是不想使用安装命令，并且想要分步说明，请参阅 &lt;strong&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install-manual&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;适用于旧版本的 WSL 手动安装步骤&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;首次启动新安装的 Linux 分发版时，控制台窗口将打开，系统会要求你等待文件取消压缩并存储在计算机上。 所有未来的发射应该需要不到一秒钟的时间。&lt;/p&gt;
+&lt;h2 id=&#34;更改安装的默认-linux-分发版&#34;&gt;更改安装的默认 Linux 分发版
+&lt;/h2&gt;&lt;p&gt;默认情况下，已安装的 Linux 分发版将为 Ubuntu。 可以通过使用&lt;code&gt;-d&lt;/code&gt;标志来更改这一点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若要更改安装的分发版，请输入： &lt;code&gt;wsl --install -d &amp;lt;Distribution Name&amp;gt;&lt;/code&gt; 将 &lt;code&gt;&amp;lt;Distribution Name&amp;gt;&lt;/code&gt; 替换为您想要安装的分发版名称。&lt;/li&gt;
+&lt;li&gt;若要查看可通过在线商店下载的可用 Linux 分发版的列表，请输入： &lt;code&gt;wsl --list --online&lt;/code&gt; 或 &lt;code&gt;wsl -l -o&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;若要在初始安装后安装其他 Linux 分发版，也可以使用以下命令： &lt;code&gt;wsl --install -d &amp;lt;Distribution Name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果要从 Linux/Bash 命令行（而不是 PowerShell 或命令提示符）安装其他分发版，则必须在命令中使用 .exe：或列出可用分发版： &lt;code&gt;wsl.exe --install -d &amp;lt;Distribution Name&amp;gt;``wsl.exe -l -o&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果在安装过程中遇到问题，请查看故障排除指南 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/troubleshooting#installation-issues&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;/a&gt;安装部分。&lt;/p&gt;
+&lt;p&gt;若要安装未列为可用的 Linux 分发版，可以使用 TAR 文件 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;导入任何 Linux 分发&lt;/a&gt; 版。 或者在某些情况下，与 &lt;a class=&#34;link&#34; href=&#34;https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Arch Linux 一样&lt;/a&gt;，可以使用文件进行安装 &lt;code&gt;.appx&lt;/code&gt; 。 还可以创建自己的 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/build-custom-distro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;自定义 Linux 分发版&lt;/a&gt; ，以便与 WSL 一起使用。&lt;/p&gt;
+&lt;h2 id=&#34;设置-linux-用户信息&#34;&gt;设置 Linux 用户信息
+&lt;/h2&gt;&lt;p&gt;安装 WSL 后，需要为新安装的 Linux 分发版创建用户帐户和密码。 请参阅 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment#set-up-your-linux-username-and-password&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;设置 WSL 开发环境指南的最佳做法&lt;/a&gt; ，了解详细信息。&lt;/p&gt;
+&lt;h2 id=&#34;配置和最佳实践&#34;&gt;配置和最佳实践
+&lt;/h2&gt;&lt;p&gt;建议遵循我们的 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;设置 WSL 开发环境的最佳实践&lt;/a&gt; 指南，通过逐步演示来了解如何为已安装的 Linux 发行版设置用户名和密码，使用基本 WSL 命令，安装和自定义 Windows 终端，为 Git 版本控制、代码编辑和调试使用 VS Code 远程服务器，好的文件存储实践，设置数据库，装载外部驱动器，设置 GPU 加速等。&lt;/p&gt;
+&lt;h2 id=&#34;检查你正在运行的-wsl-的版本&#34;&gt;检查你正在运行的 WSL 的版本
+&lt;/h2&gt;&lt;p&gt;可以通过在 PowerShell 或 Windows 命令提示符中输入命令 &lt;code&gt;wsl -l -v&lt;/code&gt; 来列出已安装的 Linux 发行版，并检查每个发行版设置的 WSL 版本。&lt;/p&gt;
+&lt;p&gt;若要在安装新的 Linux 分发版时将默认版本设置为 WSL 1 或 WSL 2，请使用以下命令 &lt;code&gt;wsl --set-default-version &amp;lt;Version#&amp;gt;&lt;/code&gt;，替换为 &lt;code&gt;&amp;lt;Version#&amp;gt;&lt;/code&gt; 1 或 2。&lt;/p&gt;
+&lt;p&gt;要设置默认的 Linux 发行版以用于 &lt;code&gt;wsl&lt;/code&gt; 命令，请输入：在 &lt;code&gt;wsl -s &amp;lt;DistributionName&amp;gt;&lt;/code&gt; 或 &lt;code&gt;wsl --set-default &amp;lt;DistributionName&amp;gt;&lt;/code&gt; 中将 &lt;code&gt;&amp;lt;DistributionName&amp;gt;&lt;/code&gt; 替换为你想使用的 Linux 发行版名称。 例如，在 PowerShell/CMD 中，输入： &lt;code&gt;wsl -s Debian&lt;/code&gt; 将默认分发设置为 Debian。 现在，从 Powershell 运行 &lt;code&gt;wsl npm init&lt;/code&gt; 将在 Debian 中运行 &lt;code&gt;npm init&lt;/code&gt; 命令。&lt;/p&gt;
+&lt;p&gt;若要在不更改默认分发的情况下从 PowerShell 或 Windows 命令提示符内运行特定的 wsl 分发版，请使用以下命令： &lt;code&gt;wsl -d &amp;lt;DistributionName&amp;gt;&lt;/code&gt;，替换为 &lt;code&gt;&amp;lt;DistributionName&amp;gt;&lt;/code&gt; 要使用的分发的名称。&lt;/p&gt;
+&lt;p&gt;在 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WSL 基本命令&lt;/a&gt;指南中了解详细信息。&lt;/p&gt;
+&lt;h2 id=&#34;将版本从-wsl-1-升级到-wsl-2&#34;&gt;将版本从 WSL 1 升级到 WSL 2
+&lt;/h2&gt;&lt;p&gt;默认情况下，使用 &lt;code&gt;wsl --install&lt;/code&gt; 命令安装的新 Linux 安装将设置为 WSL 2。&lt;/p&gt;
+&lt;p&gt;该 &lt;code&gt;wsl --set-version&lt;/code&gt; 命令可用于从 WSL 2 降级到 WSL 1，或将以前安装的 Linux 分发版从 WSL 1 降级到 WSL 2。&lt;/p&gt;
+&lt;p&gt;若要查看 Linux 分发版是否设置为 WSL 1 或 WSL 2，请使用以下命令： &lt;code&gt;wsl -l -v&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;若要更改版本，请使用命令： &lt;code&gt;wsl --set-version &amp;lt;distro name&amp;gt; 2&lt;/code&gt; 替换为 &lt;code&gt;&amp;lt;distro name&amp;gt;&lt;/code&gt; 要更新的 Linux 分发版的名称。 例如， &lt;code&gt;wsl --set-version Ubuntu-20.04 2&lt;/code&gt; 将 Ubuntu 20.04 分发版设置为使用 WSL 2。&lt;/p&gt;
+&lt;p&gt;如果在命令可用之前 &lt;code&gt;wsl --install&lt;/code&gt; 手动安装了 WSL，则还可能需要启用 WSL 2 使用的 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-3---enable-virtual-machine-feature&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;虚拟机可选组件&lt;/a&gt; ，并 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安装内核包&lt;/a&gt; （如果尚未这样做）。&lt;/p&gt;
+&lt;p&gt;若要了解更多信息，请参阅 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WSL 的命令参考&lt;/a&gt;以获取 WSL 命令列表，查看 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/compare-versions&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WSL 1 和 WSL 2 的比较&lt;/a&gt;以获得关于您工作场景适用版本的指导，或参考 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/setup/environment&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;设置 WSL 开发环境的最佳实践&lt;/a&gt;以获取关于设置高效开发工作流程的一般指导。&lt;/p&gt;
+&lt;h2 id=&#34;使用-wsl-运行多个-linux-分发版的方法&#34;&gt;使用 WSL 运行多个 Linux 分发版的方法
+&lt;/h2&gt;&lt;p&gt;WSL 支持运行您想安装的许多不同的 Linux 发行版。 这包括从 &lt;a class=&#34;link&#34; href=&#34;https://aka.ms/wslstore&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Microsoft 应用商店&lt;/a&gt;中选择分发版、 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/use-custom-distro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;导入自定义分发版&lt;/a&gt;或 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/build-custom-distro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;生成自己的自定义分发版&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;安装 Linux 分发版后，可通过多种方式运行：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/terminal/get-started&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安装 Windows 终端&lt;/a&gt;&lt;em&gt;&lt;strong&gt;（推荐）&lt;/strong&gt;&lt;/em&gt;。使用 Windows 终端可以支持多个命令行，并允许您在多个选项卡或窗口窗格中打开它们，并能在多个 Linux 发行版或其他命令行（如 PowerShell、命令提示符、Azure CLI 等）之间快速切换。 可以使用独特的配色方案、字体样式、大小、背景图像和自定义键盘快捷方式完全自定义终端。 &lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/terminal&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;了解详细信息&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;可以通过访问 Windows 开始菜单并键入已安装的分发版的名称来直接打开 Linux 分发版。 例如：“Ubuntu”。 这将在一个独立的控制台窗口中打开 Ubuntu。&lt;/li&gt;
+&lt;li&gt;在 Windows 命令提示符或 PowerShell 中，可以输入已安装的分发版的名称。 例如：&lt;code&gt;ubuntu&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在 Windows 命令提示符或 PowerShell 中，可以通过输入： &lt;code&gt;wsl.exe&lt;/code&gt;在当前命令行中打开默认 Linux 分发版。&lt;/li&gt;
+&lt;li&gt;在 Windows 命令提示符或 PowerShell 中，可以通过输入：&lt;code&gt;wsl [command]&lt;/code&gt;，在当前命令行中使用默认 Linux 分发版，而无需输入新发行版。 你可以用 &lt;code&gt;[command]&lt;/code&gt; 替换为 WSL 命令，例如：&lt;code&gt;wsl -l -v&lt;/code&gt; 列出已安装的发行版，或 &lt;code&gt;wsl pwd&lt;/code&gt; 查看当前目录路径在 WSL 中装载的位置。 在 PowerShell 中，该命令 &lt;code&gt;get-date&lt;/code&gt; 将提供 Windows 文件系统中的日期，并提供 &lt;code&gt;wsl date&lt;/code&gt; Linux 文件系统中的日期。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择的方法应取决于你正在做的事情。 如果已在 Windows 提示符或 PowerShell 窗口中打开 WSL 命令行并想要退出，请输入以下命令： &lt;code&gt;exit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参考文档&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://geekdaxue.co/read/xiaoyulive@wsl/flwxn1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/windows/wsl/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -328,16 +407,31 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Shell教程01-解释器-脚本格式-脚本执行方式</title>
-        <link>https://hublog.netlify.app/p/shell01/</link>
+        <title>Shell编程指南</title>
+        <link>https://hublog.netlify.app/p/shell/</link>
         <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
         
-        <guid>https://hublog.netlify.app/p/shell01/</guid>
+        <guid>https://hublog.netlify.app/p/shell/</guid>
         <description>&lt;h2 id=&#34;概述&#34;&gt;概述
-&lt;/h2&gt;&lt;p&gt;作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下 Shell 中常见的语法&lt;/p&gt;
-&lt;h2 id=&#34;解释器&#34;&gt;解释器
-&lt;/h2&gt;&lt;p&gt;Linux 中，解析脚本的是命令解释器，也就是终端解释器，如 Bash、Zsh。&lt;/p&gt;
-&lt;p&gt;在脚本中常见的头部声明如&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;作为一个开发人员，使用 Linux 实在是太频繁了，无论是观看别人程序的脚本，还是自己编写脚本，都离不开 Shell，所以这篇文章总结一下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;什么是 shell？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Shell 是一个连接用户和操作系统内核（Kernel）的桥梁。Shell 是一个&lt;strong&gt;命令行解释器（Command-Line Interpreter）&lt;/strong&gt;。它接收你输入的命令，将其翻译成内核能理解的指令，然后让内核去执行。执行完毕后，Shell 再把结果（通常是文本）返回并显示在你的屏幕上。&lt;/p&gt;
+&lt;p&gt;所以，你打开的那个黑乎乎的、可以输入命令的窗口（通常称为“终端”或“控制台”），里面运行的就是 Shell 程序。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;常见的 Shell 类型&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Shell 并非只有一种，它有许多不同的实现版本，各自具有不同的特性。最常见的有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Bash (Bourne-Again Shell)&lt;/strong&gt;：这是&lt;strong&gt;最流行、最通用&lt;/strong&gt;的 Shell，是绝大多数 Linux 发行版的默认 Shell，在 macOS 的旧版本中也是默认 Shell。它功能强大，易于学习。我们通常说的 “Shell 编程” 或 “Shell 脚本”，指的基本上就是 Bash。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Zsh (Z Shell)&lt;/strong&gt;：一个功能比 Bash 更强大的 Shell。它提供了更智能的自动补全、拼写纠错、更灵活的定制和丰富的主题（通过 Oh My Zsh 等框架）。现在是 macOS 的默认 Shell，也受到越来越多 Linux 用户的喜爱。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sh (Bourne Shell)&lt;/strong&gt;：一个非常古老的、经典的 Shell，是许多现代 Shell 的祖先。在很多系统中，&lt;code&gt;/bin/sh&lt;/code&gt; 实际上是一个指向 Bash 或其他兼容 Shell 的链接。编写脚本时，为了保证最大的可移植性，有时会遵循 sh 的标准。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;入门简介&#34;&gt;入门简介
+&lt;/h2&gt;&lt;h3 id=&#34;解释器&#34;&gt;解释器
+&lt;/h3&gt;&lt;p&gt;Linux 中，解析脚本的是命令解释器，也就是终端解释器，如 Bash、Zsh。&lt;/p&gt;
+&lt;p&gt;在脚本中常见的头部声明如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -370,9 +464,9 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;exec /bin/bash&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;exec /bin/zsh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;查看当前解释器：&lt;code&gt;echo #SHELL&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;脚本格式&#34;&gt;脚本格式
-&lt;/h2&gt;&lt;p&gt;脚本以 &lt;code&gt;#!解释器&lt;/code&gt; 为开头&lt;/p&gt;
+&lt;p&gt;查看当前解释器：&lt;code&gt;echo $SHELL&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;脚本格式&#34;&gt;脚本格式
+&lt;/h3&gt;&lt;p&gt;脚本以 &lt;code&gt;#!解释器&lt;/code&gt; 为开头&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -385,27 +479,51 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;按照习惯，bash 对应的脚本文件的后缀一般是 .sh 结尾，而 zsh 对应的脚本文件以 .zsh 结尾，当然，这不是必须的。&lt;/p&gt;
 &lt;p&gt;例如：在家目录新建目录 bin, 继续在 bin 目录新建一个文件 test1.sh&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;vim test1.sh&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;/bin
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch test.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim test1.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#! /bin/sh
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#! /bin/sh
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;我的解释器为 &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$SHELL&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;脚本执行方式&#34;&gt;脚本执行方式
-&lt;/h2&gt;&lt;p&gt;在新建 test1.sh 之后，如何执行呢？&lt;/p&gt;
-&lt;h3 id=&#34;方式-1&#34;&gt;方式 1
-&lt;/h3&gt;&lt;p&gt;语法：&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;脚本执行方式&#34;&gt;脚本执行方式
+&lt;/h3&gt;&lt;p&gt;在新建 test1.sh 之后，如何执行呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;方式 1&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解释器 脚本
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;解释器 脚本路径
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;脚本的路径可使用相对路径也可以使用绝对路径&lt;/p&gt;
@@ -443,8 +561,10 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我的解释器为 /bin/bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;方式-2&#34;&gt;方式 2
-&lt;/h3&gt;&lt;p&gt;对脚本增加可执行权限&lt;/p&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;方式 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对脚本增加可执行权限&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -468,65 +588,63 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我的解释器为 /bin/zsh
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;我的解释器为 /bin/bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
-        <title>Shell教程02-变量-运算符-条件判断</title>
-        <link>https://hublog.netlify.app/p/shell02/</link>
-        <pubDate>Fri, 08 Sep 2023 14:07:10 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/p/shell02/</guid>
-        <description>&lt;h2 id=&#34;简介&#34;&gt;简介
-&lt;/h2&gt;&lt;p&gt;这篇来介绍 shell 中变量&lt;/p&gt;
-&lt;h2 id=&#34;变量&#34;&gt;变量
-&lt;/h2&gt;&lt;p&gt;Shell 可以设置变量，&lt;/p&gt;
-&lt;p&gt;如系统默认的变量&lt;/p&gt;
+&lt;/div&gt;&lt;h1 id=&#34;变量&#34;&gt;变量
+&lt;/h1&gt;&lt;p&gt;Shell 中可以设置变量，变量表示了一些值，通过特定的字符加特定的方式可以表达出来&lt;/p&gt;
+&lt;p&gt;如系统默认的变量：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SHELL：当前用户的解释器&lt;/li&gt;
 &lt;li&gt;USER：当前用户&lt;/li&gt;
 &lt;li&gt;HOME：当前用户的家目录&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;查看这些变量的值只需要 &lt;code&gt;echo $变量名&lt;/code&gt;即可&lt;/p&gt;
-&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;查看这些变量的值只需要 &lt;code&gt;echo $变量名&lt;/code&gt;即可：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$SHELL&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$SHELL&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;输出结果：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/bin/bash
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-txt&#34; data-lang=&#34;txt&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/bin/bash
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;输出结果：
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ecs-user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HOME&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;输出结果：
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;/home/ecs-user
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h3 id=&#34;系统变量&#34;&gt;系统变量
 &lt;/h3&gt;&lt;p&gt;系统变量，顾名思义，就是系统自带的变量&lt;/p&gt;
-&lt;p&gt;除了已经介绍过的&lt;code&gt;SHELL、USER、HOME&lt;/code&gt;等外，还有如&lt;/p&gt;
+&lt;p&gt;除了已经介绍过的&lt;code&gt;SHELL、USER、HOME&lt;/code&gt;等外，还有如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -561,7 +679,7 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/h3&gt;&lt;p&gt;除了系统自带的系统变量以外，用户还可以自定义属于自己的变量&lt;/p&gt;
 &lt;p&gt;基本语法：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;定义变量：&lt;code&gt;变量名=变量值&lt;/code&gt;，等号两边不能有空格&lt;/li&gt;
+&lt;li&gt;定义变量：&lt;code&gt;变量名=变量值&lt;/code&gt;，&lt;strong&gt;等号两边不能有空格&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;撤销变量：&lt;code&gt;unset 变量名&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;静态变量：&lt;code&gt;readonly 变量名&lt;/code&gt;，静态变量不可撤销&lt;/li&gt;
 &lt;li&gt;全局变量：&lt;code&gt;export 变量名&lt;/code&gt;&lt;/li&gt;
@@ -583,7 +701,7 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;/h3&gt;&lt;p&gt;除了系统变量，自定义变量，还有一些特殊的变量，它们经常在 shell 脚本中使用&lt;/p&gt;
 &lt;h4 id=&#34;n&#34;&gt;&lt;code&gt;$n&lt;/code&gt;
 &lt;/h4&gt;&lt;p&gt;&lt;code&gt;n&lt;/code&gt; 代表是数字，如 0、1、2、3，&amp;hellip;，在大于 9 后，需要用 &lt;code&gt;{}&lt;/code&gt; 包裹，如 &lt;code&gt;${10}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;$0&lt;/code&gt; 表示的是当前脚本的名称或路径&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$0&lt;/code&gt;：表示当前脚本的名称或路径&lt;/p&gt;
 &lt;p&gt;如：&lt;/p&gt;
 &lt;p&gt;example.sh&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -769,6 +887,79 @@ create_date: 2023-10-19&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;0&lt;/code&gt;：表示前一个命令 &lt;code&gt;echo &#39;----- $? -----&#39;&lt;/code&gt; 运行成功了&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;127&lt;/code&gt;：因为&lt;code&gt;num = 10&lt;/code&gt; 变量赋值之间有空格，失败了，所以后面的 &lt;code&gt;echo $?&lt;/code&gt;输出了一个非 0 数字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;运算符&#34;&gt;运算符
+&lt;/h1&gt;&lt;p&gt;shell 中有运算表达式，可以进行运算&lt;/p&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$((运算表达式))&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$[ 运算表达式 ]&lt;/code&gt;：注意左右空格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例 1：&lt;/p&gt;
+&lt;p&gt;shell03_01.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;$((&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sh shell03_01.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;例 2：&lt;/p&gt;
+&lt;p&gt;shell03_02.sh&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; $&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt; 1+1 &lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行，注意是 bash&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;bash shell03_02.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行结果&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;条件判断&#34;&gt;条件判断
+&lt;/h2&gt;&lt;p&gt;shell 支持多种条件判断的方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if&amp;hellip;else&lt;/li&gt;
+&lt;li&gt;case..when&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
