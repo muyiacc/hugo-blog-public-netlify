@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带 安装 下载地址：https://github.com/Simple-Tracker/qB">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 为了防止被恶意 客户端/IP 吸血，封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带。 源码：https://github.com/Simp">
 <title>qBittorrent-ClientBlocker，某些不友好的IP和客户端，保护 BT 网络，保护宽带</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250109140203/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="qBittorrent-ClientBlocker，某些不友好的IP和客户端，保护 BT 网络，保护宽带">
-<meta property='og:description' content="简介 封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带 安装 下载地址：https://github.com/Simple-Tracker/qB">
+<meta property='og:description' content="简介 为了防止被恶意 客户端/IP 吸血，封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带。 源码：https://github.com/Simp">
 <meta property='og:url' content='https://hublog.netlify.app/p/250109140203/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='qbittorrent' /><meta property='article:published_time' content='2025-01-09T14:02:03&#43;08:00'/><meta property='article:modified_time' content='2025-01-09T14:02:03&#43;08:00'/>
 <meta name="twitter:title" content="qBittorrent-ClientBlocker，某些不友好的IP和客户端，保护 BT 网络，保护宽带">
-<meta name="twitter:description" content="简介 封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带 安装 下载地址：https://github.com/Simple-Tracker/qB">
+<meta name="twitter:description" content="简介 为了防止被恶意 客户端/IP 吸血，封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带。 源码：https://github.com/Simp">
   
 
 
@@ -270,6 +270,7 @@
     <li><a href="#简介">简介</a></li>
     <li><a href="#安装">安装</a></li>
     <li><a href="#系统服务">系统服务</a></li>
+    <li><a href="#winodws-快捷方式启动">winodws 快捷方式启动</a></li>
   </ol>
 </nav>
         </div>
@@ -336,12 +337,17 @@
     
     
     <h2 id="简介">简介
-</h2><p>封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带</p>
+</h2><p>为了防止被恶意 客户端/IP 吸血，封禁某些不友好的 IP/客户端，保护 BT 网络，保护宽带。</p>
+<p>源码：<a class="link" href="https://github.com/Simple-Tracker/qBittorrent-ClientBlocker"  target="_blank" rel="noopener"
+    >https://github.com/Simple-Tracker/qBittorrent-ClientBlocker</a></p>
 <h2 id="安装">安装
-</h2><p>下载地址：<a class="link" href="https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases"  target="_blank" rel="noopener"
-    >https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases</a></p>
-<p>armv7：<a class="link" href="https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases/download/3.6/qBittorrent-ClientBlocker-3.6-linux-armv7.tar.gz"  target="_blank" rel="noopener"
-    >https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases/download/3.6/qBittorrent-ClientBlocker-3.6-linux-armv7.tar.gz</a></p>
+</h2><ul>
+<li>windows: <a class="link" href="https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases/download/3.7/qBittorrent-ClientBlocker-3.7-windows-amd64.zip"  target="_blank" rel="noopener"
+    >amd64 3.7 点击下载</a></li>
+<li>linux：<a class="link" href="https://github.com/Simple-Tracker/qBittorrent-ClientBlocker/releases/download/3.6/qBittorrent-ClientBlocker-3.6-linux-armv7.tar.gz"  target="_blank" rel="noopener"
+    >armv7-v3.6 点击下载</a></li>
+</ul>
+<p>以 Linux 为例：</p>
 <p>创建文件夹</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -371,7 +377,7 @@
 </span></span><span class="line"><span class="cl">vim config.json
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>将 <code>&quot;clientURL&quot;: &quot;&quot;,</code> 修改为自己的 qbittorrent 所在 ip端口，比如</p>
+</div><p>将 <code>&quot;clientURL&quot;: &quot;&quot;,</code> 修改为自己的 qbittorrent 所在 ip 端口，比如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -465,6 +471,46 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">systemctl <span class="nb">enable</span> qbittorrent-clientblocker.service
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="winodws-快捷方式启动">winodws 快捷方式启动
+</h2><p>winodws 每次启动 qBittorrent 和 qbittorrent-clientblocker，有点繁琐，可以新建快捷方式启动，点击之后可以同时启动。</p>
+<p>桌面右键 -&gt; 新建快捷方式，“请键入对象的位置”填写为以下指示的内容：（先不要急着 copy）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\c</span>md.exe /c <span class="s2">&#34;(tasklist | findstr qBittorrent-ClientBlocker || start D:\download_tool\qBittorrent-ClientBlocker-3.6-windows-amd64\qBittorrent-ClientBlocker.exe --hidewindow) &amp;&amp; start D:\download_tool\qBittorrent\qbittorrent.exe&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在<code>copy</code>之前需要将其中软件的路径修改为自己机器所在的路径</p>
+<p>需要修改的地方：</p>
+<ul>
+<li>
+<p><code>D:\download_tool\qBittorrent-ClientBlocker-3.6-windows-amd64\qBittorrent-ClientBlocker.exe</code></p>
+</li>
+<li>
+<p><code>D:\download_tool\qBittorrent\qbittorrent.exe</code></p>
+</li>
+</ul>
+<p>修改并填入后，点击下一步，填入快捷方式的名称，比如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">qBittorrent and qBittorrent-ClientBlocker 快捷方式
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下一步完成即可。</p>
+<p>如果不喜欢默认的图标，可以 鼠标移动到 快捷方式上，右键 -&gt; 属性，找到 更改图标，设置 qBittorrent 所在的图标，比如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="cl">D:\download_tool\qBittorrent\qbittorrent.exe
+</span></span></code></pre></td></tr></table>
+</div>
 </div>
 </section>
 
@@ -526,7 +572,7 @@
         
 
         <div class="article-details">
-            <h2 class="article-title">qBittorrent，一个免费开源的 BitTorrent 客户端</h2>
+            <h2 class="article-title">qBittorrent，一个免费开源的BitTorrent 客户端</h2>
         </div>
     </a>
 </article>

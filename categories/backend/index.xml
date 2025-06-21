@@ -7,7 +7,24 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Wed, 02 Apr 2025 09:16:03 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/backend/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Jun 2025 09:54:48 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/categories/backend/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>随机图片API</title>
+        <link>https://hublog.netlify.app/p/250621095448/</link>
+        <pubDate>Sat, 21 Jun 2025 09:54:48 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250621095448/</guid>
+        <description>&lt;h2 id=&#34;次元-api&#34;&gt;次元 API
+&lt;/h2&gt;&lt;p&gt;官网：https://t.alcy.cc/&lt;/p&gt;
+&lt;p&gt;有很多的图片 API&lt;/p&gt;
+&lt;h3 id=&#34;二次元自适应&#34;&gt;二次元自适应
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://t.alcy.cc/ycy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://t.alcy.cc/ycy&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ai-画图&#34;&gt;AI 画图
+&lt;/h3&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://t.alcy.cc/ai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://t.alcy.cc/ai&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Go语言指南</title>
         <link>https://hublog.netlify.app/p/250402091603/</link>
         <pubDate>Wed, 02 Apr 2025 09:16:03 +0800</pubDate>

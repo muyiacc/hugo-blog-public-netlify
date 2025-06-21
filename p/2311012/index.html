@@ -2,7 +2,7 @@
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 AList 是一款易于安装且支持多平台的文件管理工具，可以挂载多种存储并提供多种实用功能。它支持 WebDAV、黑暗模式、文件预览、打包下载等，还提">
-<title>Windows下安装Alist，并安装系统服务自启动</title>
+<title>alist，Windows平台安装，并配置系统服务实现开机自启动</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/2311012/'>
 
@@ -345,8 +345,10 @@
 <h2 id="安装">安装
 </h2><p>下载地址： <a class="link" href="https://github.com/alist-org/alist/releases/"  target="_blank" rel="noopener"
     >https://github.com/alist-org/alist/releases/</a></p>
-<p><a class="link" href="https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip"  target="_blank" rel="noopener"
-    >点击下载 v3.29.1</a></p>
+<ul>
+<li><a class="link" href="https://github.com/alist-org/alist/releases/download/v3.29.1/alist-windows-amd64.zip"  target="_blank" rel="noopener"
+    >点击下载 v3.29.1</a></li>
+</ul>
 <p>下载的文件解压到一个目录，最好先手动创建一个文件夹，比如</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -422,7 +424,7 @@
 </h2><p>还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。</p>
 <p>下载 nssm： <a class="link" href="https://nssm.cc/release/nssm-2.24.zip"  target="_blank" rel="noopener"
     >点击下载</a></p>
-<p>将 nssm 解压之后，将所在的路径（比如 <code>D:\remote\nssm\win64</code>）添加到系统环境变量，确保可随处执行 nssm。</p>
+<p>将 nssm 解压之后，将所在的路径（比如 <code>D:\tool\nssm\win64</code>）添加到系统环境变量，确保可随处执行 nssm。</p>
 <p>创建 alist 自启动 服务，使用管理员运行 cmd：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -549,12 +551,12 @@
             
                 
 <article class="">
-    <a href="/p/2311012/">
+    <a href="/p/250621144548/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">alist，Windows平台安装，并配置系统服务实现开机自启动</h2>
+            <h2 class="article-title">Windows终端cmd命令指南，bat脚本编写</h2>
         </div>
     </a>
 </article>

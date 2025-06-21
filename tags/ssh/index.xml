@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Tue, 22 Apr 2025 18:50:12 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/ssh/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Jun 2025 08:05:44 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/ssh/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>SSH免密登录</title>
+        <link>https://hublog.netlify.app/p/250621080544/</link>
+        <pubDate>Sat, 21 Jun 2025 08:05:44 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250621080544/</guid>
+        <description>&lt;p&gt;要实现 ssh 免密登录，只需要将本地 ssh 生成密码的公钥添加到远程目的机器&lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt; 文件下&lt;/p&gt;
+&lt;p&gt;生成 SSH 密钥&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh-keygen -t ed25519
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;将 生成的 &lt;code&gt;id_ed25519.pub&lt;/code&gt;内容添加到 远程机器 SSH 目录下的 &lt;code&gt;authorized_keys&lt;/code&gt;文件&lt;/p&gt;
+&lt;p&gt;有两种方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手动添加：复制 &lt;code&gt;id_ed25519.pub&lt;/code&gt;内容 添加到要登录用户的 &lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;下&lt;/li&gt;
+&lt;li&gt;自动添加：使用 &lt;code&gt;ssh-copy-id username@ip&lt;/code&gt;命令登录后自动添加&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>webssh修改版，基于 Web 的轻量级 SSH 管理工具</title>
         <link>https://hublog.netlify.app/p/250422185012/</link>
         <pubDate>Tue, 22 Apr 2025 18:50:12 +0800</pubDate>

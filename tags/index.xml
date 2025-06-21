@@ -7,7 +7,55 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Fri, 20 Jun 2025 15:14:16 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 21 Jun 2025 21:45:34 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Openlist</title>
+        <link>https://hublog.netlify.app/tags/openlist/</link>
+        <pubDate>Sat, 21 Jun 2025 21:45:34 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/openlist/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cmd</title>
+        <link>https://hublog.netlify.app/tags/cmd/</link>
+        <pubDate>Sat, 21 Jun 2025 14:45:48 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/cmd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Api</title>
+        <link>https://hublog.netlify.app/tags/api/</link>
+        <pubDate>Sat, 21 Jun 2025 09:54:48 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/api/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>React</title>
+        <link>https://hublog.netlify.app/tags/react/</link>
+        <pubDate>Sat, 21 Jun 2025 09:01:17 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/react/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Css</title>
+        <link>https://hublog.netlify.app/tags/css/</link>
+        <pubDate>Sat, 21 Jun 2025 08:45:01 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/css/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Ssh</title>
+        <link>https://hublog.netlify.app/tags/ssh/</link>
+        <pubDate>Sat, 21 Jun 2025 08:05:44 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/ssh/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Bittorrent</title>
         <link>https://hublog.netlify.app/tags/bittorrent/</link>
         <pubDate>Fri, 20 Jun 2025 15:14:16 +0800</pubDate>
@@ -149,14 +197,6 @@
         <pubDate>Fri, 02 May 2025 17:34:51 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/archlinux/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Ssh</title>
-        <link>https://hublog.netlify.app/tags/ssh/</link>
-        <pubDate>Tue, 22 Apr 2025 18:50:12 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/ssh/</guid>
         <description></description>
         </item>
         <item>
@@ -317,6 +357,22 @@
         <pubDate>Sun, 16 Mar 2025 21:18:37 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/domain/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Linux</title>
+        <link>https://hublog.netlify.app/tags/linux/</link>
+        <pubDate>Tue, 11 Mar 2025 12:48:50 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/linux/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Windows</title>
+        <link>https://hublog.netlify.app/tags/windows/</link>
+        <pubDate>Tue, 11 Mar 2025 12:48:50 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/tags/windows/</guid>
         <description></description>
         </item>
         <item>
@@ -536,22 +592,6 @@
         <description></description>
         </item>
         <item>
-        <title>Api</title>
-        <link>https://hublog.netlify.app/tags/api/</link>
-        <pubDate>Sun, 03 Nov 2024 08:35:19 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/api/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Linux</title>
-        <link>https://hublog.netlify.app/tags/linux/</link>
-        <pubDate>Fri, 01 Nov 2024 16:39:39 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/linux/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Mail</title>
         <link>https://hublog.netlify.app/tags/mail/</link>
         <pubDate>Sun, 27 Oct 2024 21:54:01 +0800</pubDate>
@@ -573,14 +613,6 @@
         <pubDate>Fri, 25 Oct 2024 16:29:17 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/vim/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Css</title>
-        <link>https://hublog.netlify.app/tags/css/</link>
-        <pubDate>Sat, 12 Oct 2024 11:13:37 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/css/</guid>
         <description></description>
         </item>
         <item>
@@ -1005,14 +1037,6 @@
         <pubDate>Sun, 09 Jun 2024 16:06:01 +0800</pubDate>
         
         <guid>https://hublog.netlify.app/tags/mount/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Windows</title>
-        <link>https://hublog.netlify.app/tags/windows/</link>
-        <pubDate>Sun, 09 Jun 2024 16:06:01 +0800</pubDate>
-        
-        <guid>https://hublog.netlify.app/tags/windows/</guid>
         <description></description>
         </item>
         <item>

@@ -546,7 +546,17 @@
 </div><p>WebUI</p>
 <p>IP 加上端口号 9091，输入刚刚设置的用户名和密码进行登录</p>
 <h2 id="备份恢复">备份恢复
-</h2>
+</h2><p>找到 transmission 程序文件夹，找到 resume、torrents、blocklists 文件夹和 setting.json 文件，把它们全部保存下来，等到程序重新安装后把相关文件复制覆盖到程序安装路径，重启就可以了。下面以群晖为例，介绍一下备份还原教程。</p>
+<p>1、用到 winscp 软件，下载地址：https://winscp.net/eng/download.php。使用 winscp 软件登陆群晖，找到 transmission 安装目录，
+2、复制下载 resume、torrents、blocklists 三个文件夹和 setting.json 文件到本地电脑上，
+3、在重新安装 transmission 后，找到程序文件夹，使用 winscp 把备份的 resume、torrents、blocklists 三个文件夹和 setting.json 文件复制覆盖到程序文件夹，此时重新启动 transmission 就可以了。</p>
+<p>文件夹及文件解释</p>
+<pre><code>resume：存储每个种子的恢复信息
+torrents：存储已添加的种子文件
+blocklists：存储 IP 阻止列表，用于屏蔽特定 IP 地址或范围
+setting.json：transmission 的配置信息
+</code></pre>
+
 </section>
 
 
