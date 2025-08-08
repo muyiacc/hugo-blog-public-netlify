@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种常见的、逻辑">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="修改镜像位置 Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种">
 <title>Docker指南</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250502224358/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Docker指南">
-<meta property='og:description' content="Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种常见的、逻辑">
+<meta property='og:description' content="修改镜像位置 Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种">
 <meta property='og:url' content='https://hublog.netlify.app/p/250502224358/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='docker' /><meta property='article:published_time' content='2025-05-02T22:43:58&#43;08:00'/><meta property='article:modified_time' content='2025-05-02T22:46:37&#43;08:00'/>
 <meta name="twitter:title" content="Docker指南">
-<meta name="twitter:description" content="Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种常见的、逻辑">
+<meta name="twitter:description" content="修改镜像位置 Docker Compose 参数顺序 Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种">
   
 
 
@@ -267,6 +267,7 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#修改镜像位置">修改镜像位置</a></li>
     <li><a href="#docker-compose">Docker Compose</a>
       <ol>
         <li><a href="#参数顺序">参数顺序</a></li>
@@ -338,7 +339,8 @@
     <section class="article-content">
     
     
-    <h2 id="docker-compose">Docker Compose
+    <h2 id="修改镜像位置">修改镜像位置
+</h2><h2 id="docker-compose">Docker Compose
 </h2><h3 id="参数顺序">参数顺序
 </h3><p>Docker Compose 文件中的参数顺序并没有严格规定，但是为了可读性和维护性，通常会遵循一定的约定。 虽然没有强制的顺序，但是以下是一种常见的、逻辑性较强的顺序，可以参考：</p>
 <ol>
@@ -349,8 +351,8 @@
 <p><strong><code>services</code></strong></p>
 <p>每个服务内部：</p>
 <ul>
-<li><strong><code>container_name</code></strong>: 容器的名称。</li>
 <li><strong><code>image</code></strong> 或 <strong><code>build</code></strong>: 镜像或构建上下文。</li>
+<li><strong><code>container_name</code></strong>: 容器的名称。</li>
 <li><strong><code>depends_on</code></strong>: 服务依赖关系。</li>
 <li><strong><code>networks</code></strong>: 加入的网络</li>
 <li><strong><code>ports</code></strong>: 端口映射。</li>
@@ -465,7 +467,7 @@
 <pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">logging</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;json-file&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">options</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;32m&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">max-size</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;10m&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">max-file</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;3&#34;</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -671,38 +673,38 @@
             
                 
 <article class="">
+    <a href="/p/250806165837/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">bash配置 .bashrc</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250806143055/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">acme.sh nginx example</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250621080544/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">SSH免密登录</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250612095527/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Virtualbox，一款通用的全虚拟化软件</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250108223700/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">aria2-pro，更好用的Aria2 Docker容器镜像</h2>
         </div>
     </a>
 </article>

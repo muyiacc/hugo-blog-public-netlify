@@ -7,7 +7,17 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Fri, 21 Mar 2025 23:26:07 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 06 Aug 2025 14:25:13 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/postgresql/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PostgreSQL指南</title>
+        <link>https://hublog.netlify.app/p/250806142513/</link>
+        <pubDate>Wed, 06 Aug 2025 14:25:13 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/250806142513/</guid>
+        <description>&lt;p&gt;dsn&lt;/p&gt;
+&lt;p&gt;dsn := &amp;ldquo;user=username password=password dbname=mydb host=localhost port=5432 sslmode=disable&amp;rdquo;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>PostgreSQL教程第5章：数据定义</title>
         <link>https://hublog.netlify.app/p/pg-chapter05/</link>
         <pubDate>Fri, 21 Mar 2025 23:26:07 +0800</pubDate>

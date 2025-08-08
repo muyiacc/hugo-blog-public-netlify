@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="视图 简介 视图是一个或多个表的逻辑显示，它是一种虚拟表，不会存储数据，视图建立在已有表的基础上。通常不做对底层数据的修改 为什么要使用视图？ 基于">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data Control Language 数据查询语言 DQ">
 <title>MySQL基础篇</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250401120932/'>
 
 <link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="MySQL基础篇">
-<meta property='og:description' content="视图 简介 视图是一个或多个表的逻辑显示，它是一种虚拟表，不会存储数据，视图建立在已有表的基础上。通常不做对底层数据的修改 为什么要使用视图？ 基于">
+<meta property='og:description' content="简介 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data Control Language 数据查询语言 DQ">
 <meta property='og:url' content='https://hublog.netlify.app/p/250401120932/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='mysql' /><meta property='article:published_time' content='2025-04-01T12:09:32&#43;08:00'/><meta property='article:modified_time' content='2025-04-01T12:09:32&#43;08:00'/>
 <meta name="twitter:title" content="MySQL基础篇">
-<meta name="twitter:description" content="视图 简介 视图是一个或多个表的逻辑显示，它是一种虚拟表，不会存储数据，视图建立在已有表的基础上。通常不做对底层数据的修改 为什么要使用视图？ 基于">
+<meta name="twitter:description" content="简介 SQL 语句根据功能分为四种： 数据定义语言 DDL：Data Definition Language 数据操纵语言 DML：Data Maniplation Language 数据控制语言 DCL：Data Control Language 数据查询语言 DQ">
   
 
 
@@ -267,9 +267,17 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#ddl">DDL</a></li>
+        <li><a href="#dml">DML</a></li>
+        <li><a href="#dcl">DCL</a></li>
+        <li><a href="#dql">DQL</a></li>
+      </ol>
+    </li>
     <li><a href="#视图">视图</a>
       <ol>
-        <li><a href="#简介">简介</a></li>
+        <li><a href="#简介-1">简介</a></li>
         <li><a href="#查看">查看</a></li>
         <li><a href="#创建">创建</a></li>
         <li><a href="#修改">修改</a></li>
@@ -278,7 +286,7 @@
     </li>
     <li><a href="#存储过程">存储过程</a>
       <ol>
-        <li><a href="#简介-1">简介</a></li>
+        <li><a href="#简介-2">简介</a></li>
         <li><a href="#查看-1">查看</a></li>
         <li><a href="#创建-1">创建</a></li>
         <li><a href="#调用">调用</a></li>
@@ -286,6 +294,7 @@
         <li><a href="#删除-1">删除</a></li>
       </ol>
     </li>
+    <li><a href="#用户权限和管理">用户权限和管理</a></li>
   </ol>
 </nav>
         </div>
@@ -351,8 +360,30 @@
     <section class="article-content">
     
     
-    <h2 id="视图">视图
-</h2><h3 id="简介">简介
+    <h2 id="简介">简介
+</h2><p>SQL 语句根据功能分为四种：</p>
+<ul>
+<li>数据定义语言 DDL：Data Definition Language</li>
+<li>数据操纵语言 DML：Data Maniplation Language</li>
+<li>数据控制语言 DCL：Data Control Language</li>
+<li>数据查询语言 DQL：Data Query Language</li>
+</ul>
+<h3 id="ddl">DDL
+</h3><p>数据定义语言</p>
+<p>作用：用于定义数据库的结构，例如数据库对象（表、索引、视图、存储过程）的创建、修改和删除</p>
+<p>主要语句：</p>
+<ul>
+<li><code>CREATE</code>：创建数据库对象，例如：<code>CREATE TABLE</code>，<code>CREATE INDEX</code>，<code>CREATE INDEX</code></li>
+<li><code>ALTER</code>：修改数据库对象，例如 <code>ALTER TABLE</code></li>
+<li><code>DROP</code>：删除数据库对象，例如 <code>DROP TABLE</code>，<code>DROP INDEX</code>，<code>DROP VIEW</code></li>
+<li><code>TRUNCATE</code>：清空表中数据，但保留表结构，例如 <code>TRUNCATE TABLE</code></li>
+<li><code>RENAME</code>：重命名数据库对象，例如 <code>REANME TABLE</code></li>
+</ul>
+<h3 id="dml">DML
+</h3><h3 id="dcl">DCL
+</h3><h3 id="dql">DQL
+</h3><h2 id="视图">视图
+</h2><h3 id="简介-1">简介
 </h3><p>视图是一个或多个表的逻辑显示，它是一种虚拟表，不会存储数据，视图建立在已有表的基础上。通常不做对底层数据的修改</p>
 <blockquote>
 <p>为什么要使用视图？</p>
@@ -504,7 +535,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="存储过程">存储过程
-</h2><h3 id="简介-1">简介
+</h2><h3 id="简介-2">简介
 </h3><p>存储过程（Stored Procedure）是一组预先编译的 SQL 语句封装，好比编程语言中的函数封转</p>
 <h3 id="查看-1">查看
 </h3><p>查看当前数据库所有存储过程</p>
@@ -735,9 +766,9 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 调用存储过程  
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">first_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Adam&#39;</span><span class="p">;</span><span class="w">  
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">last_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Fripp&#39;</span><span class="p">;</span><span class="w">  
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 调用存储过程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">first_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Adam&#39;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">set</span><span class="w"> </span><span class="o">@</span><span class="n">last_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Fripp&#39;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">call</span><span class="w"> </span><span class="n">select_employee_salary_specify_name_procedure_in</span><span class="p">(</span><span class="o">@</span><span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="o">@</span><span class="n">last_name</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -757,7 +788,55 @@
 </div><p>inout 模式</p>
 <h3 id="修改-1">修改
 </h3><h3 id="删除-1">删除
-</h3>
+</h3><h2 id="用户权限和管理">用户权限和管理
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">-- 创建新数据库
+</span></span><span class="line"><span class="cl">CREATE DATABASE IF NOT EXISTS <span class="sb">`</span>new_database<span class="sb">`</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 创建新用户并赋予密码
+</span></span><span class="line"><span class="cl">CREATE USER <span class="s1">&#39;new_user&#39;</span>@<span class="s1">&#39;localhost&#39;</span> IDENTIFIED BY <span class="s1">&#39;user_password&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 授权新用户对新数据库的所有权限
+</span></span><span class="line"><span class="cl">GRANT ALL PRIVILEGES ON <span class="sb">`</span>new_database<span class="sb">`</span>.* TO <span class="s1">&#39;new_user&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 刷新权限
+</span></span><span class="line"><span class="cl">FLUSH PRIVILEGES<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">RENAME USER <span class="s1">&#39;maccms&#39;</span>@<span class="s1">&#39;%&#39;</span> TO <span class="s1">&#39;maccms&#39;</span>@<span class="s1">&#39;maccms10&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">FLUSH PRIVILEGES<span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">RENAME USER <span class="s1">&#39;maccms&#39;</span>@<span class="s1">&#39;maccms10&#39;</span> TO <span class="s1">&#39;maccms&#39;</span>@<span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">FLUSH PRIVILEGES<span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -789,12 +868,12 @@
             
                 
 <article class="">
-    <a href="/p/250304172136/">
+    <a href="/p/250806142618/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MySQL初识</h2>
+            <h2 class="article-title">MySQL指南</h2>
         </div>
     </a>
 </article>
@@ -802,12 +881,12 @@
             
                 
 <article class="">
-    <a href="/p/2404007/">
+    <a href="/p/250806141948/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">MySQL备份，恢复数据库</h2>
+            <h2 class="article-title">MySQL安装</h2>
         </div>
     </a>
 </article>

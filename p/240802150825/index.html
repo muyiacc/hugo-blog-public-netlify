@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
-<title>Linux开启ssh密码登陆，root用户远程登陆</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 1 sudo sed -i &#39;s/^#\\?PermitRootLogin no/PermitRootLogin yes/&#39; /etc/ssh/sshd_config 或者找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
+<title>Linux开启SSH密码登陆，ROOT用户远程登陆</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/240802150825/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux开启ssh密码登陆，root用户远程登陆">
-<meta property='og:description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Linux开启SSH密码登陆，ROOT用户远程登陆">
+<meta property='og:description' content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 1 sudo sed -i &#39;s/^#\\?PermitRootLogin no/PermitRootLogin yes/&#39; /etc/ssh/sshd_config 或者找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
 <meta property='og:url' content='https://hublog.netlify.app/p/240802150825/'>
 <meta property='og:site_name' content='寻道之旅博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssh' /><meta property='article:tag' content='root' /><meta property='article:tag' content='remote' /><meta property='article:tag' content='login' /><meta property='article:published_time' content='2024-08-02T15:08:25&#43;08:00'/><meta property='article:modified_time' content='2024-08-02T15:08:25&#43;08:00'/>
-<meta name="twitter:title" content="Linux开启ssh密码登陆，root用户远程登陆">
-<meta name="twitter:description" content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ssh' /><meta property='article:tag' content='root' /><meta property='article:published_time' content='2024-08-02T15:08:25&#43;08:00'/><meta property='article:modified_time' content='2024-08-02T15:08:25&#43;08:00'/>
+<meta name="twitter:title" content="Linux开启SSH密码登陆，ROOT用户远程登陆">
+<meta name="twitter:description" content="开启 ssh 密码登陆 1 sudo sed -i &#39;s/^#\\?PasswordAuthentication no/PasswordAuthentication yes/&#39; /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd root 用户远程登陆 1 sudo sed -i &#39;s/^#\\?PermitRootLogin no/PermitRootLogin yes/&#39; /etc/ssh/sshd_config 或者找到 PermitRootLogin ,修改为 PermitRootLogin yes 1 sudo vim /etc/ssh/sshd_config 重启 ssh 1 sudo systemctl restart sshd">
   
 
 
@@ -264,7 +264,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/240802150825/">Linux开启ssh密码登陆，root用户远程登陆</a>
+            <a href="/p/240802150825/">Linux开启SSH密码登陆，ROOT用户远程登陆</a>
         </h2>
     
         
@@ -321,7 +321,15 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>root 用户远程登陆</strong></p>
-<p>找到 <code>PermitRootLogin</code> ,修改为 <code>PermitRootLogin yes</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo sed -i <span class="s1">&#39;s/^#\?PermitRootLogin no/PermitRootLogin yes/&#39;</span> /etc/ssh/sshd_config
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者找到 <code>PermitRootLogin</code> ,修改为 <code>PermitRootLogin yes</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -350,10 +358,6 @@
             <a href="/tags/ssh/">Ssh</a>
         
             <a href="/tags/root/">Root</a>
-        
-            <a href="/tags/remote/">Remote</a>
-        
-            <a href="/tags/login/">Login</a>
         
     </section>
 

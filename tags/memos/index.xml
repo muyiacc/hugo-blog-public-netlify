@@ -7,6 +7,19 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>寻道之旅博客</copyright>
-        <lastBuildDate>Tue, 07 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/memos/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Tue, 07 May 2024 16:05:43 +0800</lastBuildDate><atom:link href="https://hublog.netlify.app/tags/memos/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>memos笔记软件，浏览器插件</title>
+        <link>https://hublog.netlify.app/p/2405007/</link>
+        <pubDate>Tue, 07 May 2024 16:05:43 +0800</pubDate>
+        
+        <guid>https://hublog.netlify.app/p/2405007/</guid>
+        <description>&lt;p&gt;地址：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://addons.mozilla.org/en-US/firefox/addon/memos-ff/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;firefox&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
     </channel>
 </rss>

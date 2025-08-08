@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 鉴于 openlist 事件，社区 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://github.com/OpenListTea">
-<title>openlist，openlist的fork版，安装，配置，迁移</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 鉴于 alist 事件，有网友自愿组织了一个团队，暂且称为社区，他们 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://gi">
+<title>openlist，alist的fork版，安装，配置，迁移</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250621214534/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="openlist，openlist的fork版，安装，配置，迁移">
-<meta property='og:description' content="简介 鉴于 openlist 事件，社区 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://github.com/OpenListTea">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="openlist，alist的fork版，安装，配置，迁移">
+<meta property='og:description' content="简介 鉴于 alist 事件，有网友自愿组织了一个团队，暂且称为社区，他们 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://gi">
 <meta property='og:url' content='https://hublog.netlify.app/p/250621214534/'>
 <meta property='og:site_name' content='寻道之旅博客'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='openlist' /><meta property='article:tag' content='openlist' /><meta property='article:published_time' content='2025-06-21T21:45:34&#43;08:00'/><meta property='article:modified_time' content='2025-06-21T21:45:34&#43;08:00'/>
-<meta name="twitter:title" content="openlist，openlist的fork版，安装，配置，迁移">
-<meta name="twitter:description" content="简介 鉴于 openlist 事件，社区 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://github.com/OpenListTea">
+<meta name="twitter:title" content="openlist，alist的fork版，安装，配置，迁移">
+<meta name="twitter:description" content="简介 鉴于 alist 事件，有网友自愿组织了一个团队，暂且称为社区，他们 fork 了一份版本，已经正式发布，版本号是 4.0.0 本文重新讲解安装 源码：https://gi">
   
 
 
@@ -269,9 +269,17 @@
   <ol>
     <li><a href="#简介">简介</a></li>
     <li><a href="#迁移">迁移</a></li>
-    <li><a href="#安装">安装</a></li>
-    <li><a href="#运行">运行</a></li>
-    <li><a href="#系统服务">系统服务</a></li>
+    <li><a href="#安装">安装</a>
+      <ol>
+        <li><a href="#docker">Docker</a></li>
+        <li><a href="#windows">Windows</a></li>
+      </ol>
+    </li>
+    <li><a href="#系统服务">系统服务</a>
+      <ol>
+        <li><a href="#windows-1">Windows</a></li>
+      </ol>
+    </li>
     <li><a href="#附录">附录</a></li>
   </ol>
 </nav>
@@ -300,7 +308,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250621214534/">openlist，openlist的fork版，安装，配置，迁移</a>
+            <a href="/p/250621214534/">openlist，alist的fork版，安装，配置，迁移</a>
         </h2>
     
         
@@ -339,7 +347,7 @@
     
     
     <h2 id="简介">简介
-</h2><p>鉴于 openlist 事件，社区 fork 了一份版本，已经正式发布，版本号是 4.0.0</p>
+</h2><p>鉴于 alist 事件，有网友自愿组织了一个团队，暂且称为社区，他们 fork 了一份版本，已经正式发布，版本号是 4.0.0</p>
 <p>本文重新讲解安装</p>
 <p>源码：<a class="link" href="https://github.com/OpenListTeam/OpenList"  target="_blank" rel="noopener"
     >https://github.com/OpenListTeam/OpenList</a></p>
@@ -348,7 +356,74 @@
 <h2 id="迁移">迁移
 </h2><p>如果之前安装过 openlist，将 data 文件夹复制，重新启动即可</p>
 <h2 id="安装">安装
-</h2><p>下载地址：<a class="link" href="https://github.com/OpenListTeam/OpenList/releases/tag/v4.0.0"  target="_blank" rel="noopener"
+</h2><h3 id="docker">Docker
+</h3><p>docker compose</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">alist</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">openlistteam/openlist:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">openlist</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">openlist_network</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;./openlist_data:/opt/openlist/data&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;/root:/root&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;5245:5244&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span>- <span class="l">PUID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span>- <span class="l">PGID=0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span>- <span class="l">UMASK=022</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">unless-stopped</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">deploy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">resources</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">limits</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0.85&#39;</span><span class="w">  </span><span class="c"># 限制 CPU 最大 85%</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">networks</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">openlist_network</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">docker network create openlist_network
+</span></span><span class="line"><span class="cl">docker compose up
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="windows">Windows
+</h3><p>下载地址：<a class="link" href="https://github.com/OpenListTeam/OpenList/releases/tag/v4.0.0"  target="_blank" rel="noopener"
     >https://github.com/OpenListTeam/OpenList/releases/tag/v4.0.0</a></p>
 <p>直接下载：</p>
 <ul>
@@ -364,8 +439,7 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">D:<span class="se">\d</span>ownload_tool<span class="se">\o</span>penlist<span class="se">\o</span>penlist.exe
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="运行">运行
-</h2><p>启动服务，在地址栏输入 cmd 快速进入当前目录，输入</p>
+</div><p>启动服务，在地址栏输入 cmd 快速进入当前目录，输入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -427,7 +501,8 @@
 </div>
 </div><p>现在打开浏览器：输入 localhost:5245 即可打开 openlist</p>
 <h2 id="系统服务">系统服务
-</h2><p>还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。</p>
+</h2><h3 id="windows-1">Windows
+</h3><p>还有一个问题，启动成功了，但是每次需要手动运行有点麻烦，最好的办法就是创建系统服务，让它开机自启。借助 NSSM 创建系统服务。</p>
 <p>下载 nssm： <a class="link" href="https://nssm.cc/release/nssm-2.24.zip"  target="_blank" rel="noopener"
     >点击下载</a></p>
 <p>将 nssm 解压之后，将所在的路径（比如 <code>D:\tool\nssm\win64</code>）添加到系统环境变量，确保可随处执行 nssm。</p>
@@ -533,6 +608,45 @@
             
                 
 <article class="">
+    <a href="/p/250807153515/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">potplayer常用设置</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250807132705/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">potplayer实时字幕生成&#43;实时字幕翻译</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250803140743/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">iperf3，一个用于主动测量 IP 网络上最大可达带宽的工具</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250609083002/">
         
         
@@ -552,19 +666,6 @@
 
         <div class="article-details">
             <h2 class="article-title">vimium，提供基于键盘的网页导航和控制</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250507230628/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">wps教育版，无广告版本</h2>
         </div>
     </a>
 </article>

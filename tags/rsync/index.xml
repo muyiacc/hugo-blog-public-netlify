@@ -68,6 +68,7 @@
 &lt;li&gt;&lt;code&gt;--exclude=PATTERN&lt;/code&gt;: 排除匹配 PATTERN 的文件或目录。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;--include=PATTERN&lt;/code&gt;: 包含匹配 PATTERN 的文件或目录，即使它被其他排除规则排除。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;-e&lt;/code&gt;: 指定使用的远程 shell，例如 &lt;code&gt;-e ssh&lt;/code&gt; 使用 SSH 进行传输。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-h&lt;/code&gt;：使输出的&lt;strong&gt;文件大小、传输速度和总数据量&lt;/strong&gt;等信息以更易于人类阅读的格式显示。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;基本用法&#34;&gt;基本用法
 &lt;/h2&gt;&lt;p&gt;将本地目录 &lt;code&gt;source_dir&lt;/code&gt; 同步到远程服务器 &lt;code&gt;user@remote_host:/path/to/destination_dir&lt;/code&gt;，使用 SSH 进行传输，并保留文件属性：&lt;/p&gt;

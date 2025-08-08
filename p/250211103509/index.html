@@ -269,6 +269,7 @@
   <ol>
     <li><a href="#安装">安装</a></li>
     <li><a href="#使用">使用</a></li>
+    <li><a href="#小提示">小提示</a></li>
     <li><a href="#附录">附录</a></li>
   </ol>
 </nav>
@@ -389,7 +390,16 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="使用">使用
-</h2><p>创建虚拟环境</p>
+</h2><p>初始化项目</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">uv init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建虚拟环境</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -398,7 +408,48 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">uv venv
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="附录">附录
+</div><h2 id="小提示">小提示
+</h2><p><code>UV_DEFAULT_INDEX</code>（替代<code>UV_INDEX_URL</code>）：设置PyPI源（默认的 python 第三方包来源地址），可以用来加快 python 第三方包的下载速度</p>
+<p>比如清华源：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以通过设置 <code>pyporject.toml</code> 或者 <code>uv.toml</code>来指定项目级别的第三方包下载地址，设置方法：</p>
+<p><code>pyproejct.toml</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">tool</span><span class="p">.</span><span class="nx">uv</span><span class="p">.</span><span class="nx">index</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">default</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>uv.toml</code>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">index</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">default</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>uv.toml</code>的优先级比<code>pyproject.toml</code>高</p>
+<p>详细请参考：<a class="link" href="https://docs.astral.sh/uv/concepts/configuration-files/"  target="_blank" rel="noopener"
+    >configuration</a></p>
+<h2 id="附录">附录
 </h2><p>中文文档：<a class="link" href="https://hellowac.github.io/uv-zh-cn/"  target="_blank" rel="noopener"
     >https://hellowac.github.io/uv-zh-cn/</a></p>
 

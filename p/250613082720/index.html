@@ -346,8 +346,36 @@
 </ul>
 <h2 id="文件资源管理">文件资源管理
 </h2><h2 id="cmd的-net-use"><code>cmd</code>的 <code>net use</code>
-</h2><p>待续&hellip;</p>
-<h2 id="powershell的-invoke-webrequest"><code>powershell</code>的 <code>Invoke-WebRequest</code>
+</h2><p>前提条件：</p>
+<ol>
+<li><strong>WebDAV 服务器已配置且可访问。</strong>（例如 Windows Server IIS WebDAV、Nextcloud、Seafile、群晖等）</li>
+<li><strong>网络连接正常。</strong></li>
+<li><strong>已启用 WebClient 服务</strong>（Windows WebDAV 客户端）：
+<ul>
+<li>按  <code>Win + R</code>，输入  <code>services.msc</code>；</li>
+<li>找到  <code>WebClient</code>  服务，确保其为运行状态，并设置为“自动”启动。</li>
+</ul>
+</li>
+</ol>
+<p>语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">net use [驱动器盘符]: <span class="s2">&#34;\\服务器地址@需求认证的端口\路径&#34;</span> /user:用户名 密码 /persistent:yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">net use Z: <span class="s2">&#34;\\webdav.example.com@80\webdav&#34;</span> /user:myusername mypassword /persistent:yes
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="powershell的-invoke-webrequest"><code>powershell</code>的 <code>Invoke-WebRequest</code>
 </h2><p>待续&hellip;</p>
 
 </section>
@@ -372,6 +400,32 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/250623082708/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows支持的变量名，更好的方式表示家目录</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250622121200/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Windows新终端WindowsTerminal设置每次打开默认位置</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -407,32 +461,6 @@
 
         <div class="article-details">
             <h2 class="article-title">Windows开启防火墙</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250605101306/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">关闭Windows文件管理器默认总是使用缩略图打开</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250302100916/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Windows安装gcc环境第二种选择，w64devkit</h2>
         </div>
     </a>
 </article>

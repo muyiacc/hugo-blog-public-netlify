@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
-<title>Rime，跨平台的输入法软件</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="简介 Rime 是跨平台的输入法引擎，可以高度自定义。 官网：https://rime.im/ 发行版 Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼">
+<title>Rime，跨平台的输入法引擎</title>
 
 <link rel='canonical' href='https://hublog.netlify.app/p/250418110444/'>
 
-<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Rime，跨平台的输入法软件">
-<meta property='og:description' content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
+<link rel="stylesheet" href="/scss/style.min.0304c6baf04e01a8fe70693791cb744d56a3578a3120a8796cefc66825aa39c7.css"><meta property='og:title' content="Rime，跨平台的输入法引擎">
+<meta property='og:description' content="简介 Rime 是跨平台的输入法引擎，可以高度自定义。 官网：https://rime.im/ 发行版 Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼">
 <meta property='og:url' content='https://hublog.netlify.app/p/250418110444/'>
 <meta property='og:site_name' content='寻道之旅博客'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rime' /><meta property='article:tag' content='rime-ice' /><meta property='article:published_time' content='2025-04-18T11:04:44&#43;08:00'/><meta property='article:modified_time' content='2025-04-18T11:04:44&#43;08:00'/>
-<meta name="twitter:title" content="Rime，跨平台的输入法软件">
-<meta name="twitter:description" content="简介 Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼毫】 Weasel → Windows 【鼠鬚管】 Squirrel → Mac OS X 除程序文件以外，Rime">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='rime' /><meta property='article:tag' content='rime-ice' /><meta property='article:published_time' content='2025-04-18T11:04:44&#43;08:00'/><meta property='article:modified_time' content='2025-06-22T17:04:44&#43;08:00'/>
+<meta name="twitter:title" content="Rime，跨平台的输入法引擎">
+<meta name="twitter:description" content="简介 Rime 是跨平台的输入法引擎，可以高度自定义。 官网：https://rime.im/ 发行版 Rime 輸入方案可通用於以下發行版： 【中州韻】 ibus-rime → Linux 【小狼">
   
 
 
@@ -267,22 +267,42 @@
         <div class="widget--toc">
             <nav id="TableOfContents">
   <ol>
-    <li><a href="#简介">简介</a></li>
+    <li><a href="#简介">简介</a>
+      <ol>
+        <li><a href="#发行版">发行版</a></li>
+      </ol>
+    </li>
     <li><a href="#安装">安装</a>
       <ol>
         <li><a href="#linux">Linux</a></li>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#android">Android</a></li>
       </ol>
     </li>
     <li><a href="#输入法方案">输入法方案</a>
       <ol>
-        <li><a href="#rime-ice">rime-ice</a>
+        <li><a href="#rime-ice-全拼-双拼">rime-ice 全拼 双拼</a></li>
+        <li><a href="#rime-wubi86-jidian-五笔">rime-wubi86-jidian 五笔</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用输入法方案">使用输入法方案</a>
+      <ol>
+        <li><a href="#linux-1">Linux</a></li>
+        <li><a href="#windows-1">Windows</a></li>
+        <li><a href="#android-1">Android</a></li>
+      </ol>
+    </li>
+    <li><a href="#同步">同步</a></li>
+    <li><a href="#皮肤风格">皮肤风格</a>
+      <ol>
+        <li><a href="#小狼毫">小狼毫</a>
           <ol>
-            <li><a href="#linux-1">Linux</a></li>
+            <li><a href="#google-风格">Google 风格</a></li>
+            <li><a href="#仿微软输入法">仿微软输入法</a></li>
           </ol>
         </li>
       </ol>
     </li>
-    <li><a href="#同步">同步</a></li>
   </ol>
 </nav>
         </div>
@@ -310,7 +330,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/250418110444/">Rime，跨平台的输入法软件</a>
+            <a href="/p/250418110444/">Rime，跨平台的输入法引擎</a>
         </h2>
     
         
@@ -349,7 +369,11 @@
     
     
     <h2 id="简介">简介
-</h2><p>Rime 是跨平臺的輸入法軟件，Rime 輸入方案可通用於以下發行版：</p>
+</h2><p>Rime 是跨平台的输入法引擎，可以高度自定义。</p>
+<p>官网：<a class="link" href="https://rime.im/"  target="_blank" rel="noopener"
+    >https://rime.im/</a></p>
+<h3 id="发行版">发行版
+</h3><p>Rime 輸入方案可通用於以下發行版：</p>
 <ul>
 <li>【中州韻】 ibus-rime → Linux</li>
 <li>【小狼毫】 Weasel → Windows</li>
@@ -392,83 +416,36 @@
 </div>
 </div><p>安装完成后，在终端里运行<code>fcitx5-configtool</code>（或在应用程序启动器中检索「Fcitx」关键字），打开 Fcitx 设置工具。然后，在右侧的「可用输入法」中找到 RIME，双击它，以将其添加到「当前输入法」列表。</p>
 <p>最后，在系统托盘右击 Fcitx 图标（通常显示为键盘图案，或者是一只小企鹅），选择「RIME」，这样就成功激活了。</p>
+<h3 id="windows">Windows
+</h3><p>使用 <a class="link" href="https://github.com/rime/weasel"  target="_blank" rel="noopener"
+    >小狼毫 weasel</a> ，安装需要的版本：</p>
+<ul>
+<li><a class="link" href="https://github.com/rime/weasel/releases/download/0.17.4/weasel-0.17.4.0-installer.exe"  target="_blank" rel="noopener"
+    >点击下载 0.17.4.0</a></li>
+</ul>
+<p>下载后，安装即可</p>
+<h3 id="android">Android
+</h3><p>使用 <a class="link" href="https://github.com/fcitx5-android/fcitx5-android"  target="_blank" rel="noopener"
+    >小企鹅输入法</a>，安装：</p>
+<ul>
+<li><a class="link" href="https://github.com/fcitx5-android/fcitx5-android/releases/download/0.1.1/org.fcitx.fcitx5.android-0.1.1-0-g3f41b65d-arm64-v8a-release.apk"  target="_blank" rel="noopener"
+    >点击下载 小企鹅本体 arm64-v8a</a></li>
+<li><a class="link" href="https://github.com/fcitx5-android/fcitx5-android/releases/download/0.1.1/org.fcitx.fcitx5.android.plugin.rime-0.1.1-0-g3f41b65d-arm64-v8a-release.apk"  target="_blank" rel="noopener"
+    >点击下载 小企鹅 rime 插件</a></li>
+</ul>
+<p>启用小企鹅输入法，在 <code>输入法</code>添加 <code>中州韵</code></p>
 <h2 id="输入法方案">输入法方案
-</h2><p>现成可以直接使用的输入法方案</p>
-<h3 id="rime-ice">rime-ice
-</h3><p>雾凇拼音提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。</p>
-<p>详细介绍：<a class="link" href="https://dvel.me/posts/rime-ice/"  target="_blank" rel="noopener"
+</h2><p>对于一开始使用 rime 的用户，推荐使用别人制作好的输入发方案。</p>
+<h3 id="rime-ice-全拼-双拼">rime-ice 全拼 双拼
+</h3><p>rime-ice 被称为雾凇拼音，提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。</p>
+<p>官网：<a class="link" href="https://dvel.me/posts/rime-ice/"  target="_blank" rel="noopener"
     >Rime 配置：雾凇拼音</a></p>
-<p><a class="link" href="https://github.com/iDvel/rime-ice/issues/133"  target="_blank" rel="noopener"
-    >常见问题</a></p>
-<p><a class="link" href="https://github.com/iDvel/rime-ice/blob/main/others/CHANGELOG.md"  target="_blank" rel="noopener"
-    >更新日志</a></p>
-<ul>
-<li>简体 | 全拼 | 双拼</li>
-<li>主要功能
-<ul>
-<li>轻量的英文输入，支持中英混输</li>
-<li><a class="link" href="https://dvel.me/posts/make-rime-en-better/"  target="_blank" rel="noopener"
-    >优化英文输入体验</a></li>
-<li>拆字反查（uU+拼音），拆字辅码（拼音+`+拆字辅码）</li>
-<li>自整理的 Emoji</li>
-<li>以词定字（左右中括号：[、]）</li>
-<li>长词优先</li>
-<li>Unicode（U+Unicode 码位）</li>
-<li>数字、人民币大写（R+数字）</li>
-<li>日期、时间、星期（详见方案 <code>/date_translator</code> 节点）</li>
-<li>农历（转写：N+八位数字；获取当前农历：全拼 nl，双拼 lunar）</li>
-<li>简易计算器（cC+算式）</li>
-<li>常见错音错字提示</li>
-<li>置顶候选项（详见方案 <code>/pin_cand_filter</code> 节点）</li>
-<li>所有标点符号直接上屏</li>
-<li>特殊符号、字符输入（全拼 v+首字母缩写；双拼 V+首字母缩写）</li>
-<li>拼音纠错（模糊音）</li>
-<li>更多默认未启用的功能请参考 <code>lua/</code> 及方案注释</li>
-</ul>
-</li>
-<li>简体字表、词库
-<ul>
-<li><a class="link" href="https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters"  target="_blank" rel="noopener"
-    >通用规范汉字表</a>（by 中华人民共和国教育部）8K 常用汉字</li>
-<li><a class="link" href="https://www.unicode.org/Public/"  target="_blank" rel="noopener"
-    >Unihan 字库</a>（by Unicode lnc | <a class="link" href="https://www.unicode.org/license.txt"  target="_blank" rel="noopener"
-    >UNICODE LICENSE V3</a>）40K 大字库， <strong>默认未启用</strong></li>
-<li><a class="link" href="https://zh.wikipedia.org/wiki/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8"  target="_blank" rel="noopener"
-    >现代汉语常用词表</a>（by 中国国家语言文字工作委员会）</li>
-<li><a class="link" href="http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&amp;tid=30049"  target="_blank" rel="noopener"
-    >华宇野风词库</a>（by 野风）</li>
-<li><a class="link" href="https://github.com/rime/rime-essay-simp"  target="_blank" rel="noopener"
-    >简化字八股文</a>（by rime | <a class="link" href="https://github.com/rime/rime-essay-simp/blob/master/LICENSE"  target="_blank" rel="noopener"
-    >LGPL</a>）</li>
-<li><a class="link" href="https://github.com/thunlp/THUOCL"  target="_blank" rel="noopener"
-    >清华大学开源词库</a>（by THUNLP | <a class="link" href="https://github.com/thunlp/THUOCL/blob/master/LICENSE"  target="_blank" rel="noopener"
-    >MIT</a>）</li>
-<li><a class="link" href="https://ai.tencent.com/ailab/nlp/en/download.html"  target="_blank" rel="noopener"
-    >腾讯词向量</a>（@Huandeep <a class="link" href="https://github.com/iDvel/rime-ice/issues/24"  target="_blank" rel="noopener"
-    >整理</a> | by Tencent AI Lab | <a class="link" href="https://creativecommons.org/licenses/by/3.0/"  target="_blank" rel="noopener"
-    >CC BY 3.0</a>）</li>
-</ul>
-</li>
-<li>词库修订
-<ul>
-<li>校对大量异形词、错别字、错误注音</li>
-<li>全词库完成注音</li>
-<li>同义多音字注音</li>
-<li>参考
-<ul>
-<li>《现代汉语词典》</li>
-<li>《同义词词林》</li>
-<li>《新华成语大词典》</li>
-<li><a class="link" href="http://www.jiaodui.com/bbs/"  target="_blank" rel="noopener"
-    >校对标准论坛</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Rime、Squirrel、Weasel 常用配置项的详尽注释</li>
-</ul>
-<h4 id="linux-1">Linux
-</h4><p>linux 快速使用 rime-ice</p>
+<p>GitHub：<a class="link" href="https://github.com/iDvel/rime-ice"  target="_blank" rel="noopener"
+    >Rime 配置：雾凇拼音 | 长期维护的简体词库</a></p>
+<h3 id="rime-wubi86-jidian-五笔">rime-wubi86-jidian 五笔
+</h3><h2 id="使用输入法方案">使用输入法方案
+</h2><h3 id="linux-1">Linux
+</h3><p>使用 rime-ice</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -482,6 +459,24 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>重新部署 rime</p>
+<h3 id="windows-1">Windows
+</h3><p>使用 rime-ice</p>
+<p>下载 <a class="link" href="https://github.com/iDvel/rime-ice/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
+    >rime-ice.zip</a>并解压到 <code>用户资料文件夹</code>，重新部署</p>
+<h3 id="android-1">Android
+</h3><p>下载 <a class="link" href="https://github.com/iDvel/rime-ice/archive/refs/heads/main.zip"  target="_blank" rel="noopener"
+    >rime-ice.zip</a>，安装 <a class="link" href="https://mt2.cn/"  target="_blank" rel="noopener"
+    >MT 管理器</a>，进入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">/storage/emulated/0/Android/data/org.fcitx.fcitx5.android/files/data/rime/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>将压缩包内容解压到上述的文件夹中</p>
+<p>打开输入法，重新部署</p>
 <h2 id="同步">同步
 </h2><p>同步主要是同步词典，将输入过的内容合并同步</p>
 <p>配置目录下的<code>installation.yaml</code>文件会在第一次部署后会自动生成；在这里可以编辑当前设备的<code>ID</code>和<code>同步目录</code>，如：</p>
@@ -501,13 +496,13 @@
 </span></span><span class="line"><span class="cl">distribution_version: 5.1.4
 </span></span><span class="line"><span class="cl">install_time: <span class="s2">&#34;Fri Apr 18 11:14:51 2025&#34;</span>
 </span></span><span class="line"><span class="cl">installation_id: <span class="s2">&#34;linuxmint&#34;</span>
-</span></span><span class="line"><span class="cl">sync_dir: <span class="s2">&#34;/home/mint/backup/windows/rime/sync&#34;</span>
+</span></span><span class="line"><span class="cl">sync_dir: <span class="s2">&#34;/home/mint/backup/application/rime/sync&#34;</span>
 </span></span><span class="line"><span class="cl">rime_version: 1.10.0
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>修改 <code>installation_id</code> 和增加 <code>sync_dir</code></p>
-<p>输入法同步后会在 <code>sync_dir</code>生成以 <code>installation_id</code>值命名的文件夹，所以同步只需要同步 <code>/home/mint/backup/windows/rime/sync</code>文件夹</p>
-<p>比如我的</p>
+<p>输入法同步后会在 <code>sync_dir</code>生成以 <code>installation_id</code>值命名的文件夹，所以同步只需要同步 <code>/home/mint/backup/application/rime/sync</code>文件夹</p>
+<p>比如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -517,12 +512,220 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">backup/windows/rime/sync/
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">backup/application/rime/sync/
 </span></span><span class="line"><span class="cl">├── android
 </span></span><span class="line"><span class="cl">├── linux
 </span></span><span class="line"><span class="cl">├── linuxmint
 </span></span><span class="line"><span class="cl">└── windows
 </span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="皮肤风格">皮肤风格
+</h2><p>为了自定义输入候选的皮肤风格，可参考如下</p>
+<h3 id="小狼毫">小狼毫
+</h3><p>新建 <code>weasel.custom.yaml</code> 文件</p>
+<p>通用格式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">customization</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">distribution_code_name</span><span class="p">:</span><span class="w"> </span><span class="l">Weasel</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">distribution_version</span><span class="p">:</span><span class="w"> </span><span class="m">0.16.3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Weasel::UIStyleSettings&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">modified_time</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Sun Jun 22 09:18:36 2025&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rime_version</span><span class="p">:</span><span class="w"> </span><span class="m">1.11.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加的输入法风格应该加在 <code>patch:</code> 下</p>
+<p>如果让候选词按照垂直排列，将以下内容添加到 皮肤风格最后</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="l">......</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c"># 设置为 true 启用横排显示</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="l">......</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nt">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># 可选：将输入码显示在候选词同一行</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="google-风格">Google 风格
+</h4><p>长这样：
+<img src="https://s2.loli.net/2025/06/25/q69lZwdjVnKGAUg.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="q69lZwdjVnKGAUg.pn"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">color_scheme</span><span class="p">:</span><span class="w"> </span><span class="l">google</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">font_face</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Source Han Sans SC, Microsoft YaHei&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">font_point</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">layout</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">baseline</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">linespacing</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">align_type</span><span class="p">:</span><span class="w"> </span><span class="l">center</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">max_height</span><span class="p">:</span><span class="w"> </span><span class="m">600</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">max_width</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">min_height</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">min_width</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_width</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">margin_x</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">margin_y</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">spacing</span><span class="p">:</span><span class="w"> </span><span class="m">13</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_spacing</span><span class="p">:</span><span class="w"> </span><span class="m">22</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilite_spacing</span><span class="p">:</span><span class="w"> </span><span class="m">6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilite_padding</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># hilite_padding_x: 8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="c"># hilite_padding_y: 8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shadow_radius</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shadow_offset_x</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">shadow_offset_y</span><span class="p">:</span><span class="w"> </span><span class="m">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">corner_radius</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">round_corner</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="仿微软输入法">仿微软输入法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">patch</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">preset_color_schemes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">microsoft_sim</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">仿微软输入法</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">plutotree</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xF4F4F4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xDCDCDC</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x000000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_text_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xF4F4F4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xFFD8A6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x000000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilited_candidate_back_color</span><span class="p">:</span><span class="w"> </span><span class="l">0xFFD8A6</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x000000</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">comment_text_color</span><span class="p">:</span><span class="w"> </span><span class="m">0x888888</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">style</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">color_scheme</span><span class="p">:</span><span class="w"> </span><span class="l">microsoft_sim</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">label_format</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;%s&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">font_face</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;微软雅黑&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">font_point</span><span class="p">:</span><span class="w"> </span><span class="m">14</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">horizontal</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">inline_preedit</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">layout</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">min_width</span><span class="p">:</span><span class="w"> </span><span class="m">160</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">min_height</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_width</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">border_height</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">margin_x</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">margin_y</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">spacing</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">candidate_spacing</span><span class="p">:</span><span class="w"> </span><span class="m">24</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilite_spacing</span><span class="p">:</span><span class="w"> </span><span class="m">8</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">hilite_padding</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">round_corner</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>
@@ -539,7 +742,19 @@
     </section>
 
 
-    <section>
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 Jun 22, 2025 17:04 &#43;0800
+        </span>
+    </section><section>
         页面浏览量<span id="vercount_value_page_pv">Loading</span>
     </section>
 </footer>
@@ -558,64 +773,64 @@
             
                 
 <article class="">
+    <a href="/p/250803114353/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavSP，汇总多站点数据的AV元数据刮削器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250803084049/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jellyfin指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250625072121/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Cloudflare Tunnel内网穿透服务指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/250624233349/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">字体指南</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/250620151416/">
         
         
 
         <div class="article-details">
             <h2 class="article-title">PT站点收集</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250618151403/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Bittorrent指南</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250610113907/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">一键激活JetBrains全家桶</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250604164733/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">影视，电视，电影观看记录</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/250531171638/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">transmission，Bittorrent客户端</h2>
         </div>
     </a>
 </article>
